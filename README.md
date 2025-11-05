@@ -10,15 +10,15 @@ This project provides **real, data-driven performance comparisons** between stat
 
 ### 🏆 **Performance Rankings** (Operations per Second)
 
-| Rank | Library | Category | Ops/sec | Margin |
-|------|---------|----------|---------|
-| 🥇 | **Solid Signals** | Signal-based | 45,855,042 | ±0.04% |
-| 🥈 | **Preact Signals** | Signal-based | 41,831,425 | ±0.04% |
-| 🥉 | **Zustand** | Atomic | 26,365,791 | ±0.80% |
-| 📍 | **MobX** | Reactive | 7,727,631 | ±0.46% |
-| 📍 | **Valtio** | Proxy-based | 6,140,662 | ±0.41% |
-| 📍 | **Jotai** | Atomic | 2,082,450 | ±0.58% |
-| 📍 | **Redux Toolkit** | Flux | 669,973 | ±0.54% |
+| Rank | Library            | Category      | Ops/sec     | Margin  |
+|------|--------------------|---------------|-------------|---------|
+| 🥇   | **Solid Signals**  | Signal-based  | 45,855,042  | ±0.04%  |
+| 🥈   | **Preact Signals** | Signal-based  | 41,831,425  | ±0.04%  |
+| 🥉   | **Zustand**        | Atomic        | 26,365,791  | ±0.80%  |
+| 📍   | **MobX**           | Reactive      | 7,727,631   | ±0.46%  |
+| 📍   | **Valtio**         | Proxy-based   | 6,140,662   | ±0.41%  |
+| 📍   | **Jotai**          | Atomic        | 2,082,450   | ±0.58%  |
+| 📍   | **Redux Toolkit**  | Flux          | 669,973     | ±0.54%  |
 
 ### 📈 **Key Insights**
 

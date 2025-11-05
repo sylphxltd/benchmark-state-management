@@ -11,11 +11,10 @@
     "benchmark:mobx": "tsx src/benchmarks/mobx.benchmark.ts",
     "benchmark:recoil": "tsx src/benchmarks/recoil.benchmark.ts",
     "benchmark:valtio": "tsx src/benchmarks/valtio.benchmark.ts",
+    "benchmark:zen": "tsx src/benchmarks/zen.benchmark.ts",
     "benchmark:compare": "tsx src/benchmark-all.ts",
     "report": "tsx src/generate-report.ts",
-    "clean": "rm -rf reports && mkdir -p reports",
-    "install:all": "npm install && npm run install:deps",
-    "install:deps": "tsx scripts/install-deps.ts"
+    "clean": "rm -rf reports && mkdir -p reports"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.10.1",
@@ -32,6 +31,7 @@
     "svelte": "^4.2.8",
     "valtio": "^1.13.2",
     "xstate": "^5.13.0",
+    "zen-monorepo": "github:sylphxltd/zen",
     "zustand": "^4.5.7"
   },
   "devDependencies": {

@@ -3,8 +3,13 @@
  */
 
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
+<<<<<<< HEAD
 import { StateOperations, BenchmarkScenario } from '../types/index.js';
 import { runBenchmark, generateTestData, STANDARD_SCENARIOS } from '../utils/benchmark-utils.js';
+=======
+import { StateOperations, BenchmarkScenario } from '@/types';
+import { runBenchmark, generateTestData, STANDARD_SCENARIOS } from '@/utils/benchmark-utils';
+>>>>>>> 41d07ac20024e9e456eea52acdb0cfa3cb6b53ee
 
 // Redux slice definition
 interface AppState {

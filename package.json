@@ -1,0 +1,51 @@
+{
+  "name": "state-management-benchmark",
+  "version": "1.0.0",
+  "description": "Comprehensive TypeScript benchmark for all state management libraries",
+  "type": "module",
+  "scripts": {
+    "benchmark": "tsx run src/benchmark-all.ts",
+    "benchmark:redux": "tsx run src/benchmarks/redux.benchmark.ts",
+    "benchmark:zustand": "tsx run src/benchmarks/zustand.benchmark.ts",
+    "benchmark:jotai": "tsx run src/benchmarks/jotai.benchmark.ts",
+    "benchmark:mobx": "tsx run src/benchmarks/mobx.benchmark.ts",
+    "benchmark:recoil": "tsx run src/benchmarks/recoil.benchmark.ts",
+    "benchmark:valtio": "tsx run src/benchmarks/valtio.benchmark.ts",
+    "benchmark:compare": "mitata \"tsx run src/benchmarks/*.benchmark.ts\"",
+    "report": "tsx run src/generate-report.ts",
+    "clean": "rm -rf reports && mkdir -p reports",
+    "install:all": "npm install && npm run install:deps",
+    "install:deps": "tsx scripts/install-deps.ts"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "redux": "^5.0.1",
+    "zustand": "^4.4.7",
+    "jotai": "^2.6.0",
+    "mobx": "^6.12.0",
+    "mobx-state-tree": "^5.4.1",
+    "recoil": "^0.7.7",
+    "valtio": "^1.13.0",
+    "xstate": "^5.13.0",
+    "effector": "^23.2.3",
+    "pinia": "^2.1.7",
+    "nanostores": "^0.10.3",
+    "@legend-state/state": "^3.0.0-beta.13",
+    "preact": "^10.19.3",
+    "solid-js": "^1.8.7",
+    "svelte": "^4.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "mitata": "^0.9.0",
+    "tinybench": "^2.6.0",
+    "@types/react": "^18.2.45",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

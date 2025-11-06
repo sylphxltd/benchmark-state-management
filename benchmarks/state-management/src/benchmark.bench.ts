@@ -152,40 +152,6 @@ describe('Array Push', () => {
   });
 });
 
-describe('Async Operations', () => {
-  bench('Redux Toolkit - Async Fetch', async () => {
-    await reduxActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Zustand - Async Fetch', async () => {
-    await zustandActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Jotai - Async Fetch', async () => {
-    await jotaiActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('MobX - Async Fetch', async () => {
-    await mobxActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Valtio - Async Fetch', async () => {
-    await valtioActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Preact Signals - Async Fetch', async () => {
-    await preactActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Solid Signals - Async Fetch', async () => {
-    await solidActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-
-  bench('Zen - Async Fetch', async () => {
-    await zenActions.fetchData({ id: Math.random(), data: 'test' });
-  });
-});
-
 describe('Loading State Toggle', () => {
   bench('Redux Toolkit', () => {
     reduxActions.setLoading(Math.random() > 0.5);

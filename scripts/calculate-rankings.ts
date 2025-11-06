@@ -159,30 +159,22 @@ export function calculateRankings(
 
   // 3. Calculate Coverage Rankings
   const totalTests = allBenchmarks.size;
+  const libraryTestCounts = new Map<string, number>();
 
-  // Track which tests each library supports (use Set to track unique tests)
-  const libraryTests = new Map<string, Set<string>>();
-
-  for (const [testName, results] of allBenchmarks.entries()) {
+  for (const results of allBenchmarks.values()) {
     for (const result of results) {
       if (!excludeList.includes(result.name) && result.hz > 0) {
-        // Extract base library name (remove variants like "- Async Fetch")
-        const baseName = result.name.replace(/ - .*$/, '');
-
-        if (!libraryTests.has(baseName)) {
-          libraryTests.set(baseName, new Set());
-        }
-        libraryTests.get(baseName)!.add(testName);
+        libraryTestCounts.set(result.name, (libraryTestCounts.get(result.name) || 0) + 1);
       }
     }
   }
 
-  const coverageRankings = Array.from(libraryTests.entries())
-    .map(([name, tests]) => ({
+  const coverageRankings = Array.from(libraryTestCounts.entries())
+    .map(([name, count]) => ({
       name,
-      supported: tests.size,
+      supported: count,
       total: totalTests,
-      percentage: Math.round((tests.size / totalTests) * 100)
+      percentage: Math.round((count / totalTests) * 100)
     }))
     .sort((a, b) => b.percentage - a.percentage);
 

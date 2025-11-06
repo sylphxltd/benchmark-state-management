@@ -144,6 +144,9 @@ export const zenActions = {
 
   fetchData: (data: any) => runKarma(zenFetchKarma, data),
 
-  // Reactive async karma access
-  getAsyncKarma: async () => runKarma(zenFetchKarma, { count: get(zenCountStore), timestamp: Date.now() })
+  // Reactive async karma access - read already computed state
+  getAsyncKarma: () => {
+    const state = getKarmaState(zenFetchKarma);
+    return state.data;
+  }
 };

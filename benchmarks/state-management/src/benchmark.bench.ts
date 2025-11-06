@@ -440,12 +440,12 @@ describe('Large State Update (1000 items)', () => {
   });
 });
 
-describe('Reactive Async Operations', () => {
+describe('Reactive Async State Access', () => {
   bench('Jotai', async () => {
     await jotaiActions.getAsyncAtom();
   });
 
-  bench('Zen', async () => {
-    await zenActions.getAsyncKarma();
+  bench('Zen', () => {
+    zenActions.getAsyncKarma();
   });
 });

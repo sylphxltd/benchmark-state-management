@@ -34,9 +34,9 @@
       }
     },
     "zustand": {
-      "current": "4.5.7",
+      "current": "5.0.8",
       "latest": "5.0.8",
-      "lastUpdated": "2025-11-06T17:11:41.733Z",
+      "lastUpdated": "2025-11-06T22:03:29.202Z",
       "size": {
         "gzip": 1201,
         "minified": 3151,
@@ -64,9 +64,9 @@
       }
     },
     "valtio": {
-      "current": "1.13.2",
+      "current": "2.2.0",
       "latest": "2.2.0",
-      "lastUpdated": "2025-11-06T17:11:41.371Z",
+      "lastUpdated": "2025-11-06T22:08:43.677Z",
       "size": {
         "gzip": 3145,
         "minified": 8466,

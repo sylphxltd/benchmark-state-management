@@ -474,4 +474,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-06T21:50:21.086Z*
+*Last generated: 2025-11-06T22:45:49.121Z*

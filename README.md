@@ -112,14 +112,14 @@ const bench = new Bench({
 - **Benchmark Framework**: tinybench v2.9.0
 
 ### **Libraries Tested**
-- **Zen** (@sylphx/zen) - Extreme minimalism, extreme speed with `task()` async pattern
-- **Solid Signals** - High-performance signals from SolidJS
-- **Preact Signals** - Lightweight signal implementation
-- **Zustand** - Atomic, minimalist state management
-- **MobX** - Reactive state management
-- **Valtio** - Proxy-based atomic state management
-- **Jotai** - Atomic state management
-- **Redux Toolkit** - Modern Redux implementation
+- **Zen** ([@sylphx/zen](https://github.com/sylphxltd)) - Extreme minimalism, extreme speed with `task()` async pattern
+- **Solid Signals** ([solidjs/solid](https://github.com/solidjs/solid)) - High-performance signals from SolidJS
+- **Preact Signals** ([@preact/signals](https://github.com/preactjs/signals)) - Lightweight signal implementation
+- **Zustand** ([pmndrs/zustand](https://github.com/pmndrs/zustand)) - Atomic, minimalist state management
+- **MobX** ([mobxjs/mobx](https://github.com/mobxjs/mobx)) - Reactive state management
+- **Valtio** ([pmndrs/valtio](https://github.com/pmndrs/valtio)) - Proxy-based atomic state management
+- **Jotai** ([pmndrs/jotai](https://github.com/pmndrs/jotai)) - Atomic state management
+- **Redux Toolkit** ([@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit)) - Modern Redux implementation
 
 ## 🌟 **Zen's task() Pattern - The Performance Secret**
 

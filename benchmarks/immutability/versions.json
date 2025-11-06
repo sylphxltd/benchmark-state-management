@@ -1,31 +1,31 @@
 {
-  "lastChecked": "2025-11-06T19:16:50.773Z",
+  "lastChecked": "2025-11-06T19:40:52.541Z",
   "lastBenchmarkRun": "2025-01-01T00:00:00.000Z",
-  "testFilesHash": "79a02b31d4954ce33c527343ecfd2fff0fc743866cec332e395890b8b449a7f1",
+  "testFilesHash": "261dbaac96bd9d75ef9d38340b1427e065e90483b0b5685334d1e79e3ddd718b",
   "libraries": {
     "immer": {
       "current": "10.1.1",
       "latest": "10.2.0",
-      "lastUpdated": "2025-11-06T19:16:48.009Z",
+      "lastUpdated": "2025-11-06T19:40:48.233Z",
       "size": {
         "gzip": 4809,
         "minified": 14159,
-        "lastChecked": "2025-11-06T19:16:50.022Z"
+        "lastChecked": "2025-11-06T19:40:50.030Z"
       }
     },
     "mutative": {
       "current": "1.1.1",
       "latest": "1.3.0",
-      "lastUpdated": "2025-11-06T19:16:48.992Z"
+      "lastUpdated": "2025-11-06T19:40:49.654Z"
     },
     "immutable": {
       "current": "4.3.7",
       "latest": "5.1.4",
-      "lastUpdated": "2025-11-06T19:16:49.257Z",
+      "lastUpdated": "2025-11-06T19:40:48.686Z",
       "size": {
         "gzip": 18166,
         "minified": 66601,
-        "lastChecked": "2025-11-06T19:16:50.436Z"
+        "lastChecked": "2025-11-06T19:40:50.246Z"
       }
     },
     "immutability-helper": {
@@ -46,6 +46,16 @@
         "gzip": 2779,
         "minified": 7734,
         "lastChecked": "2025-11-06T19:16:50.773Z"
+      }
+    },
+    "@sylphx/craft": {
+      "current": "1.2.1",
+      "latest": "1.2.1",
+      "lastUpdated": "2025-11-06T19:40:47.937Z",
+      "size": {
+        "gzip": 2825,
+        "minified": 9788,
+        "lastChecked": "2025-11-06T19:40:52.541Z"
       }
     }
   }

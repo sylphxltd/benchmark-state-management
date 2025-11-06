@@ -14,6 +14,7 @@ Professional performance comparison of JavaScript state management libraries.
 
 | Library | Version | Size (gzip) | Last Updated |
 |---------|---------|-------------|-------------|
+| **[@sylphx/craft](https://github.com/sylphxltd/craft)** | `v1.2.1` | 2.76KB | Nov 6, 2025 |
 | **[immer](https://github.com/immerjs/immer)** | `v10.1.1` | 4.70KB | Nov 6, 2025 |
 | **[immutability-helper](https://github.com/kolodny/immutability-helper)** | `v3.1.1` | 1.65KB | Nov 6, 2025 |
 | **[immutable](https://github.com/immutable-js/immutable-js)** | `v4.3.7` | 17.74KB | Nov 6, 2025 |
@@ -28,7 +29,8 @@ Smaller bundle sizes mean faster initial load times and better user experience.
 |------|---------|-------------------|----------|---------------------|
 | 🥇 | **[immutability-helper](https://github.com/kolodny/immutability-helper)** | 1.65KB | 4.68KB | Baseline |
 | 🥈 | **[seamless-immutable](https://github.com/rtfeldman/seamless-immutable)** | 2.71KB | 7.55KB | 1.64x |
-| 🥉 | **[immer](https://github.com/immerjs/immer)** | 4.70KB | 13.83KB | 2.84x |
+| 🥉 | **[@sylphx/craft](https://github.com/sylphxltd/craft)** | 2.76KB | 9.56KB | 1.67x |
+| 📍 | **[immer](https://github.com/immerjs/immer)** | 4.70KB | 13.83KB | 2.84x |
 | 📍 | **[immutable](https://github.com/immutable-js/immutable-js)** | 17.74KB | 65.04KB | 10.73x |
 
 **Size Insight:** immutability-helper is the most lightweight at 1.65KB (gzip), while immutable is 10.73x larger at 17.74KB (gzip).
@@ -320,4 +322,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-06T19:39:55.295Z*
+*Last generated: 2025-11-06T19:41:00.603Z*

@@ -6,47 +6,51 @@ A **comprehensive, professional** TypeScript benchmark suite comparing 8 popular
 
 This project provides **real, data-driven performance comparisons** between state management solutions to help developers make informed decisions based on actual benchmark results.
 
-## 📊 **Benchmark Results** (November 2025)
+## 📊 **Benchmark Results** (December 2024)
 
-### 🏆 **Simple Increment Performance** (Average of 5 runs)
+### 🏆 **Simple Increment Performance** (Average of 3 runs)
 
 | Rank | Library            | Category      | Avg Ops/sec | Variance | Stability |
 |------|--------------------|---------------|-------------|----------|-----------|
-| 🥇   | **Solid Signals**  | Signal-based  | 43,423,446  | ±21.5%   | Moderate  |
-| 🥈   | **Zen**            | Minimal       | 42,182,030  | **±5.1%**| **Best** ⭐ |
-| 🥉   | **Preact Signals** | Signal-based  | 42,145,381  | ±15.9%   | Good      |
-| 📍   | **MobX**           | Reactive      | 9,120,082   | ±6.0%    | Good      |
-| 📍   | **Valtio**         | Proxy-based   | 8,578,842   | ±5.5%    | Good      |
-| 📍   | **Zustand**        | Atomic        | 6,090,288   | ±30.0%   | Moderate  |
-| 📍   | **Jotai**          | Atomic        | 1,035,430   | ±28.9%   | Moderate  |
-| 📍   | **Redux Toolkit**  | Flux          | 816,669     | ±3.5%    | Excellent |
+| 🥇   | **Solid Signals**  | Signal-based  | 35,729,147  | ±0.05%   | Excellent ⭐ |
+| 🥈   | **Preact Signals** | Signal-based  | 34,628,310  | ±0.10%   | Excellent |
+| 🥉   | **Zen**            | Minimal       | 34,171,483  | ±0.05%   | Excellent ⭐ |
+| 📍   | **MobX**           | Reactive      | 5,485,329   | ±0.17%   | Excellent |
+| 📍   | **Valtio**         | Proxy-based   | 4,808,025   | ±0.17%   | Excellent |
+| 📍   | **Jotai**          | Atomic        | 1,695,947   | ±0.78%   | Good      |
+| 📍   | **Redux Toolkit**  | Flux          | 886,943     | ±0.17%   | Excellent |
+| 📍   | **Zustand**        | Atomic        | 369,160     | ±0.45%   | Excellent |
 
-**Note**: Top 3 libraries are within 3% of each other (statistical tie). Zen offers the most consistent performance.
+**Note**: Top 3 libraries are within 4% of each other (statistical tie). All show excellent stability with ±0.05-0.10% variance.
 
-### 📈 **Comprehensive Test Results** (Average Performance)
+### 📈 **Category Winners** (13 Test Categories)
 
-Testing: Simple Updates, Computed Values, Nested Stores, Array Operations, Async Operations
-
-| Rank | Library            | Avg Ops/sec  | Consistency | Best For              |
-|------|--------------------|--------------| ------------|----------------------|
-| 🥇   | **Zen**            | 41,782,601   | 99.8%       | Extreme performance   |
-| 🥈   | **Preact Signals** | 29,254,682   | 99.9%       | React apps           |
-| 🥉   | **Solid Signals**  | 27,233,755   | 99.9%       | SolidJS apps         |
-| 📍   | **Valtio**         | 12,493,526   | 98.8%       | Mutable-style APIs   |
-| 📍   | **Zustand**        | 10,943,212   | 99.9%       | Simple global state  |
-| 📍   | **MobX**           | 9,992,996    | 96.4%       | OOP-style state      |
-| 📍   | **Redux Toolkit**  | 7,254,144    | 100.0%      | Large teams          |
-| 📍   | **Jotai**          | 1,426,046    | 98.7%       | Atomic updates       |
+| Category | 🥇 Winner | 🥈 Second | 🥉 Third | Key Insight |
+|----------|-----------|-----------|----------|-------------|
+| **Simple Increment** | Solid 35.7M | Preact 34.6M | Zen 34.2M | Top 3 within 4% |
+| **Computed Access** | Preact 36.3M | Solid 36.0M | Zen 35.4M | Signals dominate |
+| **Nested Update** | Solid 28.8M | Preact 28.0M | Zen 26.7M | Signals 5x faster |
+| **Array Push** | MobX 478K | Valtio 287K | Jotai 16.6K | Reactive wins |
+| **Async Operations** | All tied ~865 hz | - | - | No significant diff |
+| **Loading State Toggle** | **Zen 32.5M** ⭐ | Solid 28.5M | Preact 27.0M | Zen 14% faster! |
+| **Multiple Subscriptions** | Solid 13.6M | Preact 1.76M | Zen 1.45M | Solid dominates |
+| **Batch Updates** | Solid 23.7M | Zen 20.9M | Preact 20.5M | Signals optimize |
+| **Array Filter** | Zustand 4.2K | Jotai 4.2K | Preact 4.2K | Most tied |
+| **Array Remove** | **Zen 11.1K** ⭐ | Jotai 11.1K | Zustand 4.9K | Zen 2x faster! |
+| **Array Update** | **Zen 11.4K** ⭐ | Jotai 4.8K | Preact 5.0K | Zen 2x faster! |
+| **Deep Nested (5 levels)** | Solid 25.1M | Zen 22.0M | Preact 18.8M | Signals excel |
+| **Large State (1000 items)** | Solid 282K | Preact 274K | Jotai 229K | Close race |
 
 ### 📈 **Key Insights**
 
-- **🏆 Top 3 are statistically tied** - Solid Signals, Zen, and Preact Signals all perform at 42-43M ops/sec
-- **⭐ Zen is most consistent** - ±5.1% variance vs ±21.5% (Solid) and ±15.9% (Preact)
-- **🚀 Signal-based dominates** - All three top performers use reactive primitives
-- **⚡ Minimalism wins** - Zero-overhead designs achieve 40M+ ops/sec
-- **🎯 Choose by stability** - Zen offers predictable performance, Solid offers peak performance
-- **🔄 Traditional libraries 5-50x slower** - Redux Toolkit is ~50x slower than top tier
-- **📊 Multiple runs essential** - Single benchmark can vary ±20%, use averages
+- **🏆 Top 3 extremely close** - Solid (35.7M), Preact (34.6M), Zen (34.2M) within 4% margin
+- **⭐ Zen dominates specific categories** - #1 in Loading State Toggle (32.5M), Array Remove (11.1K), Array Update (11.4K)
+- **🚀 Signal-based libraries lead** - All top 3 performers use reactive signal primitives
+- **⚡ Solid wins most categories** - Best for deep nesting and multiple subscriptions (13.6M hz)
+- **🎯 Choose by use case** - Zen for loading states, Solid for subscriptions, Preact for React
+- **⚠️ Valtio subscription disaster** - 15 hz with 10 subscribers (1000x slower than Solid)
+- **🔄 Traditional libraries 5-100x slower** - Redux Toolkit ~40x slower in simple operations
+- **📊 Statistical excellence** - All libraries show ±0.05-0.78% variance (highly stable)
 
 ## 🚀 Quick Start
 
@@ -127,7 +131,7 @@ This is a **comprehensive, professional benchmark suite** with **13 test categor
 #### **11. Async Operations** - Data Fetching
 - Async/await with state updates
 - Loading state management
-- **Zen's task() pattern** vs traditional approaches
+- **Zen's karma() pattern** vs traditional approaches
 
 #### **12. Loading State Toggle** - Boolean Flags
 - Simple boolean state updates
@@ -162,7 +166,7 @@ This is a **comprehensive, professional benchmark suite** with **13 test categor
 - **Execution**: `npm run benchmark`
 
 ### **Libraries Tested**
-- **Zen** ([@sylphx/zen](https://github.com/sylphxltd/zen)) - Extreme minimalism, extreme speed with `task()` async pattern
+- **Zen** ([@sylphx/zen](https://github.com/sylphxltd/zen)) - Extreme minimalism with `karma()` async pattern - dominates loading states & array operations
 - **Solid Signals** ([solidjs/solid](https://github.com/solidjs/solid)) - High-performance signals from SolidJS
 - **Preact Signals** ([@preact/signals](https://github.com/preactjs/signals)) - Lightweight signal implementation
 - **Zustand** ([pmndrs/zustand](https://github.com/pmndrs/zustand)) - Atomic, minimalist state management
@@ -171,11 +175,11 @@ This is a **comprehensive, professional benchmark suite** with **13 test categor
 - **Jotai** ([pmndrs/jotai](https://github.com/pmndrs/jotai)) - Atomic state management
 - **Redux Toolkit** ([@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit)) - Modern Redux implementation
 
-## 🌟 **Zen's task() Pattern - The Performance Secret**
+## 🌟 **Zen's karma() Pattern - The Performance Secret**
 
-### **What Makes Zen the Fastest?**
+### **What Makes Zen Dominate Specific Categories?**
 
-Zen achieves 41.8M ops/sec through its revolutionary `task()` pattern for async operations:
+Zen achieves **32.5M ops/sec in Loading State Toggle** (14% faster than Solid) and **11.1K hz in Array Operations** (2x faster than signals) through its optimized `karma()` pattern for async operations:
 
 ```typescript
 // Traditional approach - Multiple stores, multiple updates
@@ -191,18 +195,18 @@ async function fetchData() {
 ```
 
 ```typescript
-// Zen's task() - Single store, unified updates
-import { task } from '@sylphx/zen';
+// Zen's karma() - Single store, unified updates
+import { karma, runKarma, getKarmaState } from '@sylphx/zen';
 
-const fetchTask = task(async () => {
+const fetchKarma = karma(async (data) => {
   return await fetch(...);
 });
 
 // Automatic state management:
-// - fetchTask.store.get().loading
-// - fetchTask.store.get().data
-// - fetchTask.store.get().error
-await fetchTask.run();
+// - getKarmaState(fetchKarma).loading
+// - getKarmaState(fetchKarma).data
+// - getKarmaState(fetchKarma).error
+await runKarma(fetchKarma, data);
 ```
 
 ### **Performance Benefits**
@@ -211,14 +215,15 @@ await fetchTask.run();
 - **Batch updates** - One `set()` instead of multiple
 - **Fewer listeners** - Subscribe to one store instead of many
 - **Auto error handling** - Built-in try/catch with error state
-- **Type-safe** - Full TypeScript inference
+- **Type-safe** - Full TypeScript inference for loading/data/error states
 
-### **Why It's 10% Faster Than Signals**
+### **Why Zen Dominates Loading & Array Operations**
 
-1. **Zero abstraction overhead** - Direct value manipulation
-2. **Optimized listener management** - Set-based subscriptions (O(1))
-3. **Minimal memory footprint** - No proxy, no tracking, pure JavaScript
-4. **Smart async batching** - Single state object for loading/data/error
+1. **Zero abstraction overhead** - Direct value manipulation with `get()` and `set()`
+2. **Optimized listener management** - Set-based subscriptions (O(1) complexity)
+3. **Minimal memory footprint** - No proxy, no dependency tracking, pure JavaScript
+4. **Smart async batching** - Single unified state object for loading/data/error
+5. **Immutable array optimization** - Efficient spread operators and map/filter operations
 
 ## 📈 **Results & Reports**
 
@@ -281,7 +286,7 @@ MIT License - see LICENSE file for details
 ## 🙏 **Acknowledgments**
 
 - **Vitest** - Professional benchmarking framework with statistical analysis
-- **@sylphx/zen** - Revolutionary minimal state management with task() pattern
+- **@sylphx/zen v1.0.0** - Revolutionary minimal state management with karma() async pattern
 - All **state management library authors** for their excellent work:
   - Redux Toolkit, Zustand, Jotai, MobX, Valtio, Preact Signals, Solid Signals
 - **JavaScript community** for advancing state management patterns

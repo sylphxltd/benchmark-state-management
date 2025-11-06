@@ -13,6 +13,7 @@
   "dependencies": {
     "@preact/signals": "^2.3.2",
     "@reduxjs/toolkit": "^2.10.1",
+    "@sylphx/zen": "^1.0.0",
     "jotai": "^2.15.1",
     "mobx": "^6.15.0",
     "recoil": "^0.7.7",

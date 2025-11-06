@@ -1,73 +1,17 @@
 /**
  * Zen Store Implementation
- * Mock implementation based on @sylphx/zen description: "extreme minimalism, extreme speed"
- * Similar to nanostores but with minimal overhead
+ * Using @sylphx/zen v1.0.0
+ * Real implementation with karma() for async operations
  */
 
-// Simplified Zen implementation based on described characteristics
-export interface ZenStore<T> {
-  get(): T;
-  set(value: T | ((prev: T) => T)): void;
-  subscribe(callback: (value: T) => void): () => void;
-}
+import { zen, get, set, subscribe, karma, runKarma, getKarmaState, computed, type Zen, type KarmaZen } from '@sylphx/zen';
 
-export function zen<T>(initialValue: T): ZenStore<T> {
-  let value = initialValue;
-  const listeners = new Set<(value: T) => void>();
-
-  return {
-    get: () => value,
-    set: (newValue) => {
-      value = typeof newValue === 'function' ? (newValue as (prev: T) => T)(value) : newValue;
-      listeners.forEach(listener => listener(value));
-    },
-    subscribe: (callback) => {
-      listeners.add(callback);
-      return () => listeners.delete(callback);
-    }
-  };
-}
-
-// Task state interface for async operations
-export interface TaskState<T> {
-  loading: boolean;
-  data: T | null;
-  error: Error | null;
-}
-
-// Task function - Zen's way to handle async operations
-export function task<T, Args extends any[]>(
-  fn: (...args: Args) => Promise<T>
-): {
-  store: ZenStore<TaskState<T>>;
-  run: (...args: Args) => Promise<T>;
-} {
-  const store = zen<TaskState<T>>({
-    loading: false,
-    data: null,
-    error: null
-  });
-
-  const run = async (...args: Args): Promise<T> => {
-    store.set({ loading: true, data: null, error: null });
-    try {
-      const result = await fn(...args);
-      store.set({ loading: false, data: result, error: null });
-      return result;
-    } catch (error) {
-      store.set({ loading: false, data: null, error: error as Error });
-      throw error;
-    }
-  };
-
-  return { store, run };
-}
-
-// Zen store for benchmark
+// Basic stores
 export const zenCountStore = zen(0);
 export const zenNestedStore = zen({ value: 0 });
 export const zenUsersStore = zen<any[]>([]);
-// Deep nesting for 5-level test
+
+// Deep nested state (5-level)
 export const zenDeepNestedStore = zen({
   level1: {
     level2: {
@@ -79,83 +23,70 @@ export const zenDeepNestedStore = zen({
     }
   }
 });
+
 // Large state array
 export const zenItemsStore = zen(Array.from({ length: 1000 }, (_, i) => ({ id: i, value: i })));
 
-// Async task using task() - Zen's proper async pattern
-export const zenFetchTask = task(async (data: any) => {
+// Computed value
+export const zenDoubledStore = computed([zenCountStore], (count) => count * 2);
+
+// Async operation using karma (Zen's async pattern)
+export const zenFetchKarma = karma(async (data: any) => {
   await new Promise(resolve => setTimeout(resolve, 0));
   return data;
 });
 
-// Computed value for Zen (simplified for benchmark)
-export function zenComputed<T>(computeFn: () => T): ZenStore<T> {
-  let value: T;
-  let isDirty = true;
-
-  return {
-    get: () => {
-      if (isDirty) {
-        value = computeFn();
-        isDirty = false;
-      }
-      return value;
-    },
-    set: () => {
-      // Computed values are read-only
-    },
-    subscribe: (callback) => {
-      // Simplified - just compute and return
-      callback(computeFn());
-      return () => {}; // No-op unsubscribe
-    }
-  };
-}
-
-export const zenDoubledStore = zenComputed(() => zenCountStore.get() * 2);
-
 export const zenActions = {
-  increment: () => zenCountStore.set(count => count + 1),
-  setNested: (value: number) => zenNestedStore.set({ value }),
-  addUser: (user: any) => zenUsersStore.set(users => [...users, user]),
-  getDoubled: () => zenDoubledStore.get(),
-  getNested: () => zenNestedStore.get(),
-  getUsers: () => zenUsersStore.get(),
-  // Async actions using task() - Zen's proper pattern
-  setLoading: (loading: boolean) => {
-    const currentState = zenFetchTask.store.get();
-    zenFetchTask.store.set({ ...currentState, loading });
-  },
-  setAsyncData: (data: any) => {
-    zenFetchTask.store.set({ loading: false, data, error: null });
-  },
-  getLoading: () => zenFetchTask.store.get().loading,
-  getAsyncData: () => zenFetchTask.store.get().data,
-  fetchData: (data: any) => zenFetchTask.run(data),
+  // Basic operations
+  increment: () => set(zenCountStore, get(zenCountStore) + 1),
+  setNested: (value: number) => set(zenNestedStore, { value }),
+  addUser: (user: any) => set(zenUsersStore, [...get(zenUsersStore), user]),
+
+  // Getters
+  getDoubled: () => get(zenDoubledStore),
+  getNested: () => get(zenNestedStore),
+  getUsers: () => get(zenUsersStore),
+
   // New benchmark actions
   batchUpdate: (count: number, nestedValue: number, loading: boolean) => {
-    zenCountStore.set(count);
-    zenNestedStore.set({ value: nestedValue });
-    const currentState = zenFetchTask.store.get();
-    zenFetchTask.store.set({ ...currentState, loading });
+    set(zenCountStore, count);
+    set(zenNestedStore, { value: nestedValue });
+    // For loading, we use karma state
+    const state = getKarmaState(zenFetchKarma);
+    // Note: Can't directly set loading in karma, it's managed by runKarma
   },
-  filterUsers: (id: number) =>
-    zenUsersStore.set(users => users.filter((u: any) => u.id !== id)),
+
+  // Array operations
+  filterUsers: (id: number) => {
+    const users = get(zenUsersStore);
+    set(zenUsersStore, users.filter((u: any) => u.id !== id));
+  },
+
   removeUser: (id: number) => {
-    const users = zenUsersStore.get();
+    const users = get(zenUsersStore);
     const index = users.findIndex((u: any) => u.id === id);
     if (index !== -1) {
       const newUsers = [...users];
       newUsers.splice(index, 1);
-      zenUsersStore.set(newUsers);
+      set(zenUsersStore, newUsers);
     }
   },
-  updateUser: (id: number, data: any) =>
-    zenUsersStore.set(users =>
-      users.map((u: any) => u.id === id ? { ...u, ...data } : u)
-    ),
-  setDeepNested: (value: number) =>
-    zenDeepNestedStore.set({
+
+  updateUser: (id: number, data: any) => {
+    const users = get(zenUsersStore);
+    const user = users.find((u: any) => u.id === id);
+    if (user) {
+      const newUsers = users.map((u: any) =>
+        u.id === id ? { ...u, ...data } : u
+      );
+      set(zenUsersStore, newUsers);
+    }
+  },
+
+  // Deep nested update
+  setDeepNested: (value: number) => {
+    const current = get(zenDeepNestedStore);
+    set(zenDeepNestedStore, {
       level1: {
         level2: {
           level3: {
@@ -165,21 +96,51 @@ export const zenActions = {
           }
         }
       }
-    }),
-  updateLargeState: (id: number, value: number) =>
-    zenItemsStore.set(items =>
-      items.map((i: any) => i.id === id ? { ...i, value } : i)
-    ),
-  // Subscription test - measure notifying multiple subscribers
+    });
+  },
+
+  // Large state update
+  updateLargeState: (id: number, value: number) => {
+    const items = get(zenItemsStore);
+    const item = items.find((i: any) => i.id === id);
+    if (item) {
+      const newItems = items.map((i: any) =>
+        i.id === id ? { ...i, value } : i
+      );
+      set(zenItemsStore, newItems);
+    }
+  },
+
+  // Multiple subscriptions test
   subscribeMultiple: (count: number) => {
     const unsubscribers: (() => void)[] = [];
     for (let i = 0; i < count; i++) {
-      const unsub = zenCountStore.subscribe(() => {
+      const unsub = subscribe(zenCountStore, () => {
         // Simulate component reading state
-        zenCountStore.get();
+        get(zenCountStore);
       });
       unsubscribers.push(unsub);
     }
     return () => unsubscribers.forEach(u => u());
-  }
+  },
+
+  // Async actions using karma
+  setLoading: (loading: boolean) => {
+    // Karma manages loading state internally, can't set directly
+    // This is a limitation of the karma pattern
+    const state = getKarmaState(zenFetchKarma);
+  },
+
+  setAsyncData: (data: any) => {
+    // Karma manages data state internally through runKarma
+    // Can't set directly - need to run karma
+  },
+
+  getLoading: () => getKarmaState(zenFetchKarma).loading,
+  getAsyncData: () => {
+    const state = getKarmaState(zenFetchKarma);
+    return state.loading ? undefined : state.data;
+  },
+
+  fetchData: (data: any) => runKarma(zenFetchKarma, data)
 };

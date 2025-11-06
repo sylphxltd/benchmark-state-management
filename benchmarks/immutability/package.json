@@ -1,25 +1,20 @@
 {
   "name": "immutability-benchmark",
   "version": "1.0.0",
-  "description": "Professional immutability library benchmark suite using Vitest Bench",
   "type": "module",
   "scripts": {
-    "benchmark": "vitest bench --run --outputJson=results/latest.json && node ../../scripts/save-dated-result.cjs results",
-    "clean": "rm -rf results && mkdir -p results"
+    "benchmark": "vitest bench --run --outputJson=results/latest.json && node ../../scripts/save-dated-result.cjs results"
   },
   "dependencies": {
     "@sylphx/craft": "^1.2.1",
-    "immer": "^10.1.1",
+    "immer": "10.2.0",
     "immutability-helper": "^3.1.1",
-    "immutable": "^4.3.7",
-    "mutative": "^1.1.1",
+    "immutable": "5.1.4",
+    "mutative": "1.3.0",
     "seamless-immutable": "^7.1.4"
   },
   "devDependencies": {
     "tsx": "^4.20.6",
     "vitest": "^4.0.7"
-  },
-  "engines": {
-    "node": ">=20.0.0"
   }
 }

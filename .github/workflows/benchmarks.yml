@@ -133,9 +133,8 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      - name: Install dependencies
-        working-directory: benchmarks/state-management
-        run: npm ci
+      - name: Update packages incrementally
+        run: npx tsx scripts/update-single-package.ts benchmarks/state-management
 
       - name: Run benchmarks
         working-directory: benchmarks/state-management
@@ -184,9 +183,8 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      - name: Install dependencies
-        working-directory: benchmarks/immutability
-        run: npm ci
+      - name: Update packages incrementally
+        run: npx tsx scripts/update-single-package.ts benchmarks/immutability
 
       - name: Run benchmarks
         working-directory: benchmarks/immutability
@@ -235,9 +233,8 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      - name: Install dependencies
-        working-directory: benchmarks/router
-        run: npm ci
+      - name: Update packages incrementally
+        run: npx tsx scripts/update-single-package.ts benchmarks/router
 
       - name: Run benchmarks
         working-directory: benchmarks/router
@@ -307,7 +304,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          # Add all benchmark results (including READMEs, results, versions.json)
+          # Add all benchmark results (including READMEs, results, versions.json, package files)
           git add benchmarks/ README.md
 
           # Create commit message
@@ -329,7 +326,7 @@ jobs:
             COMMIT_MSG="$COMMIT_MSG\n\nUpdated categories:$UPDATED"
           fi
 
-          COMMIT_MSG="$COMMIT_MSG\n\n- Ran complete benchmark suite\n- Generated category READMEs with latest results\n- Updated root README with library counts\n- Updated versions.json"
+          COMMIT_MSG="$COMMIT_MSG\n\n- Ran complete benchmark suite\n- Updated packages incrementally (one at a time)\n- Tested each package update independently\n- Rolled back incompatible updates\n- Generated category READMEs with latest results\n- Updated root README with library counts\n- Updated versions.json, package.json, and package-lock.json"
 
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           git push || echo "Nothing to push"

@@ -214,8 +214,8 @@ function generateReadme(benchmarkDir: string) {
 
   // Library versions table
   readme += '## 📦 Library Versions\n\n';
-  readme += '| Library | Version | Size (gzip) | Last Updated |\n';
-  readme += '|---------|---------|-------------|-------------|\n';
+  readme += '| Library | Version | Size (gzip) | Last Updated | Status |\n';
+  readme += '|---------|---------|-------------|--------------|--------|\n';
 
   const sortedLibs = Object.entries(versions.libraries)
     .sort(([a], [b]) => a.localeCompare(b));
@@ -227,7 +227,15 @@ function generateReadme(benchmarkDir: string) {
       day: 'numeric'
     });
     const sizeKB = info.size ? `${(info.size.gzip / 1024).toFixed(2)}KB` : 'N/A';
-    readme += `| **${getLibraryLink(name, metadata)}** | \`v${info.current}\` | ${sizeKB} | ${updatedDate} |\n`;
+
+    let status = '✅ Latest';
+    if (info.incompatible && info.incompatibleVersion) {
+      status = `⚠️ v${info.incompatibleVersion} incompatible`;
+    } else if (info.current !== info.latest) {
+      status = `📦 v${info.latest} available`;
+    }
+
+    readme += `| **${getLibraryLink(name, metadata)}** | \`v${info.current}\` | ${sizeKB} | ${updatedDate} | ${status} |\n`;
   }
   readme += '\n';
 

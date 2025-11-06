@@ -83,8 +83,7 @@ async function checkVersions(benchmarkDir: string) {
       }).trim();
 
       const cleanCurrent = currentVersion.replace(/^[~^]/, '');
-      const hasUpdate = latestVersion !== cleanCurrent &&
-                        latestVersion !== versions.libraries[name]?.latest;
+      const hasUpdate = latestVersion !== cleanCurrent;
 
       if (hasUpdate) {
         console.log(`   ✨ ${name}: ${cleanCurrent} → ${latestVersion}`);
@@ -153,6 +152,10 @@ async function checkVersions(benchmarkDir: string) {
 
 // Main execution
 const benchmarkDir = process.argv[2] || join(process.cwd(), 'benchmarks/state-management');
-checkVersions(benchmarkDir).then((hasUpdates) => {
-  process.exit(hasUpdates ? 0 : 1);
+checkVersions(benchmarkDir).then(() => {
+  // Always exit 0 (success) - has_updates is communicated via GITHUB_OUTPUT
+  process.exit(0);
+}).catch((error) => {
+  console.error('❌ Error checking versions:', error);
+  process.exit(1);
 });

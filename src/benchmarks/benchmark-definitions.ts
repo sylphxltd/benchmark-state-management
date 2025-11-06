@@ -7,6 +7,7 @@ import {
   preactActions,
   solidActions
 } from '../stores';
+import { asyncBenchmarks } from './async-benchmark-definitions';
 
 export interface BenchmarkTest {
   name: string;
@@ -45,6 +46,16 @@ export const benchmarkLibraries: LibraryBenchmark[] = [
         name: 'Array Push',
         category: 'Array Push',
         fn: () => reduxActions.addUser({ ...testUser, id: Math.random() })
+      },
+      {
+        name: 'Async Data Fetch',
+        category: 'Async Operations',
+        fn: () => reduxActions.fetchData({ id: Math.random(), data: 'test' })
+      },
+      {
+        name: 'Loading State Toggle',
+        category: 'Async Operations',
+        fn: () => reduxActions.setLoading(Math.random() > 0.5)
       }
     ]
   },
@@ -70,134 +81,20 @@ export const benchmarkLibraries: LibraryBenchmark[] = [
         name: 'Array Push',
         category: 'Array Push',
         fn: () => zustandActions.addUser({ ...testUser, id: Math.random() })
+      },
+      {
+        name: 'Async Data Fetch',
+        category: 'Async Operations',
+        fn: () => zustandActions.fetchData({ id: Math.random(), data: 'test' })
+      },
+      {
+        name: 'Loading State Toggle',
+        category: 'Async Operations',
+        fn: () => zustandActions.setLoading(Math.random() > 0.5)
       }
     ]
   },
-  {
-    library: 'Jotai',
-    tests: [
-      {
-        name: 'Simple Increment',
-        category: 'Simple Increment',
-        fn: () => jotaiActions.increment()
-      },
-      {
-        name: 'Computed Access',
-        category: 'Computed Access',
-        fn: () => jotaiActions.getDoubled()
-      },
-      {
-        name: 'Nested Update',
-        category: 'Nested Update',
-        fn: () => jotaiActions.setNested(Math.random())
-      },
-      {
-        name: 'Array Push',
-        category: 'Array Push',
-        fn: () => jotaiActions.addUser({ ...testUser, id: Math.random() })
-      }
-    ]
-  },
-  {
-    library: 'MobX',
-    tests: [
-      {
-        name: 'Simple Increment',
-        category: 'Simple Increment',
-        fn: () => mobxActions.increment()
-      },
-      {
-        name: 'Computed Access',
-        category: 'Computed Access',
-        fn: () => mobxActions.getDoubled()
-      },
-      {
-        name: 'Nested Update',
-        category: 'Nested Update',
-        fn: () => mobxActions.setNested(Math.random())
-      },
-      {
-        name: 'Array Push',
-        category: 'Array Push',
-        fn: () => mobxActions.addUser({ ...testUser, id: Math.random() })
-      }
-    ]
-  },
-  {
-    library: 'Valtio',
-    tests: [
-      {
-        name: 'Simple Increment',
-        category: 'Simple Increment',
-        fn: () => valtioActions.increment()
-      },
-      {
-        name: 'Computed Access',
-        category: 'Computed Access',
-        fn: () => valtioActions.getDoubled()
-      },
-      {
-        name: 'Nested Update',
-        category: 'Nested Update',
-        fn: () => valtioActions.setNested(Math.random())
-      },
-      {
-        name: 'Array Push',
-        category: 'Array Push',
-        fn: () => valtioActions.addUser({ ...testUser, id: Math.random() })
-      }
-    ]
-  },
-  {
-    library: 'Preact Signals',
-    tests: [
-      {
-        name: 'Simple Increment',
-        category: 'Simple Increment',
-        fn: () => preactActions.increment()
-      },
-      {
-        name: 'Computed Access',
-        category: 'Computed Access',
-        fn: () => preactActions.getDoubled()
-      },
-      {
-        name: 'Nested Update',
-        category: 'Nested Update',
-        fn: () => preactActions.setNested(Math.random())
-      },
-      {
-        name: 'Array Push',
-        category: 'Array Push',
-        fn: () => preactActions.addUser({ ...testUser, id: Math.random() })
-      }
-    ]
-  },
-  {
-    library: 'Solid Signals',
-    tests: [
-      {
-        name: 'Simple Increment',
-        category: 'Simple Increment',
-        fn: () => solidActions.increment()
-      },
-      {
-        name: 'Computed Access',
-        category: 'Computed Access',
-        fn: () => solidActions.getDoubled()
-      },
-      {
-        name: 'Nested Update',
-        category: 'Nested Update',
-        fn: () => solidActions.setNested(Math.random())
-      },
-      {
-        name: 'Array Push',
-        category: 'Array Push',
-        fn: () => solidActions.addUser({ ...testUser, id: Math.random() })
-      }
-    ]
-  }
+  ...asyncBenchmarks
 ];
 
-export const benchmarkCategories = ['Simple Increment', 'Computed Access', 'Nested Update', 'Array Push'];
+export const benchmarkCategories = ['Simple Increment', 'Computed Access', 'Nested Update', 'Array Push', 'Async Operations'];

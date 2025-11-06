@@ -6,7 +6,9 @@ export const reduxSlice = createSlice({
     count: 0,
     doubled: 0,
     nested: { value: 0 },
-    users: []
+    users: [],
+    loading: false,
+    asyncData: null
   },
   reducers: {
     increment: (state) => {
@@ -18,6 +20,13 @@ export const reduxSlice = createSlice({
     },
     addUser: (state, action) => {
       state.users.push(action.payload);
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+    setAsyncData: (state, action) => {
+      state.asyncData = action.payload;
+      state.loading = false;
     }
   }
 });
@@ -36,5 +45,16 @@ export const reduxActions = {
   addUser: (user: any) => reduxStore.dispatch(reduxSlice.actions.addUser(user)),
   getDoubled: () => reduxStore.getState().counter.doubled,
   getNested: () => reduxStore.getState().counter.nested,
-  getUsers: () => reduxStore.getState().counter.users
+  getUsers: () => reduxStore.getState().counter.users,
+  // Async actions
+  setLoading: (loading: boolean) => reduxStore.dispatch(reduxSlice.actions.setLoading(loading)),
+  setAsyncData: (data: any) => reduxStore.dispatch(reduxSlice.actions.setAsyncData(data)),
+  getLoading: () => reduxStore.getState().counter.loading,
+  getAsyncData: () => reduxStore.getState().counter.asyncData,
+  fetchData: async (data: any) => {
+    reduxStore.dispatch(reduxSlice.actions.setLoading(true));
+    // Simulate async operation
+    await new Promise(resolve => setTimeout(resolve, 0));
+    reduxStore.dispatch(reduxSlice.actions.setAsyncData(data));
+  }
 };

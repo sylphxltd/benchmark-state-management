@@ -11,7 +11,8 @@ import {
   mobxActions,
   valtioActions,
   preactActions,
-  solidActions
+  solidActions,
+  zenActions
 } from './stores';
 
 console.log('🚀 Simple State Management Benchmark Suite');
@@ -42,6 +43,9 @@ bench
   })
   .add('Solid Signals', () => {
     solidActions.increment();
+  })
+  .add('Zen', () => {
+    zenActions.increment();
   });
 
 // Run benchmarks

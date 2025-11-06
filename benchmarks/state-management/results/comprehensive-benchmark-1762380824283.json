@@ -1,0 +1,377 @@
+{
+  "timestamp": "2025-11-05T22:13:44.283Z",
+  "nodeVersion": "v24.3.0",
+  "platform": "darwin",
+  "testSuite": "comprehensive",
+  "categories": {
+    "Simple Increment": [
+      {
+        "name": "Preact Signals",
+        "opsPerSec": 41279798.587112375,
+        "margin": 0.04245779265021764
+      },
+      {
+        "name": "Solid Signals",
+        "opsPerSec": 34979160.56630619,
+        "margin": 0.219798926379389
+      },
+      {
+        "name": "MobX",
+        "opsPerSec": 7561231.841184121,
+        "margin": 0.1862305312063053
+      },
+      {
+        "name": "Zustand",
+        "opsPerSec": 7549042.547049055,
+        "margin": 0.36446970022112
+      },
+      {
+        "name": "Valtio",
+        "opsPerSec": 7308125.441009205,
+        "margin": 1.3438345636382507
+      },
+      {
+        "name": "Jotai",
+        "opsPerSec": 964566.6122455118,
+        "margin": 0.30666439061707107
+      },
+      {
+        "name": "Redux Toolkit",
+        "opsPerSec": 882654.8826069477,
+        "margin": 0.4700327266115501
+      }
+    ],
+    "Computed Access": [
+      {
+        "name": "Preact Signals",
+        "opsPerSec": 39894087.76004615,
+        "margin": 0.23933341337907935
+      },
+      {
+        "name": "Solid Signals",
+        "opsPerSec": 39770748.687445916,
+        "margin": 0.03618602016869599
+      },
+      {
+        "name": "Redux Toolkit",
+        "opsPerSec": 36065417.386913404,
+        "margin": 0.15656095933363168
+      },
+      {
+        "name": "Zustand",
+        "opsPerSec": 35388598.61993096,
+        "margin": 0.03678659742531442
+      },
+      {
+        "name": "Valtio",
+        "opsPerSec": 34072402.807637304,
+        "margin": 0.045283379197865695
+      },
+      {
+        "name": "MobX",
+        "opsPerSec": 16882136.59473388,
+        "margin": 2.4663670938643474
+      },
+      {
+        "name": "Jotai",
+        "opsPerSec": 3031902.3754245904,
+        "margin": 0.2303182366697149
+      }
+    ],
+    "Nested Update": [
+      {
+        "name": "Preact Signals",
+        "opsPerSec": 36350031.545633264,
+        "margin": 0.14785784523215542
+      },
+      {
+        "name": "Solid Signals",
+        "opsPerSec": 34412674.13957845,
+        "margin": 0.1607152694743817
+      },
+      {
+        "name": "Valtio",
+        "opsPerSec": 7902150.82616625,
+        "margin": 2.323203844216349
+      },
+      {
+        "name": "Zustand",
+        "opsPerSec": 7499433.50504576,
+        "margin": 0.49777305666136334
+      },
+      {
+        "name": "MobX",
+        "opsPerSec": 7422017.153920593,
+        "margin": 0.17057635575545557
+      },
+      {
+        "name": "Jotai",
+        "opsPerSec": 1339873.4292150664,
+        "margin": 0.2890709886658237
+      },
+      {
+        "name": "Redux Toolkit",
+        "opsPerSec": 742186.5969932273,
+        "margin": 0.48621681735429795
+      }
+    ],
+    "Array Push": [
+      {
+        "name": "Valtio",
+        "opsPerSec": 665783.8488670974,
+        "margin": 5.90450339945678
+      },
+      {
+        "name": "MobX",
+        "opsPerSec": 615219.9969247853,
+        "margin": 4.794483540392949
+      },
+      {
+        "name": "Zustand",
+        "opsPerSec": 43451.35670266249,
+        "margin": 1.1590754650908415
+      },
+      {
+        "name": "Jotai",
+        "opsPerSec": 40524.32705300265,
+        "margin": 2.3941268228576646
+      },
+      {
+        "name": "Preact Signals",
+        "opsPerSec": 25578.23682217078,
+        "margin": 26.561593904377578
+      },
+      {
+        "name": "Solid Signals",
+        "opsPerSec": 21718.706927071184,
+        "margin": 62.927115258038825
+      },
+      {
+        "name": "Redux Toolkit",
+        "opsPerSec": 3512.8119591757836,
+        "margin": 2.085940483459425
+      }
+    ]
+  },
+  "overallAverages": [
+    {
+      "library": "Preact Signals",
+      "avgOpsPerSec": 29387374.032403488,
+      "minOpsPerSec": 25578.23682217078,
+      "maxOpsPerSec": 41279798.587112375,
+      "consistency": 0.06196308532899758
+    },
+    {
+      "library": "Solid Signals",
+      "avgOpsPerSec": 27296075.52506441,
+      "minOpsPerSec": 21718.706927071184,
+      "maxOpsPerSec": 39770748.687445916,
+      "consistency": 0.05460975124646556
+    },
+    {
+      "library": "Zustand",
+      "avgOpsPerSec": 12620131.507182108,
+      "minOpsPerSec": 43451.35670266249,
+      "maxOpsPerSec": 35388598.61993096,
+      "consistency": 0.12278349072062593
+    },
+    {
+      "library": "Valtio",
+      "avgOpsPerSec": 12487115.730919965,
+      "minOpsPerSec": 665783.8488670974,
+      "maxOpsPerSec": 34072402.807637304,
+      "consistency": 1.9540267019790645
+    },
+    {
+      "library": "Redux Toolkit",
+      "avgOpsPerSec": 9423442.91961819,
+      "minOpsPerSec": 3512.8119591757836,
+      "maxOpsPerSec": 36065417.386913404,
+      "consistency": 0.009740111757171658
+    },
+    {
+      "library": "MobX",
+      "avgOpsPerSec": 8120151.396690845,
+      "minOpsPerSec": 615219.9969247853,
+      "maxOpsPerSec": 16882136.59473388,
+      "consistency": 3.6442069608457834
+    },
+    {
+      "library": "Jotai",
+      "avgOpsPerSec": 1344216.6859845428,
+      "minOpsPerSec": 40524.32705300265,
+      "maxOpsPerSec": 3031902.3754245904,
+      "consistency": 1.3365973581958617
+    }
+  ],
+  "detailedResults": [
+    {
+      "name": "Redux Toolkit - Simple Increment",
+      "opsPerSec": 882654.8826069477,
+      "meanTime": 0.0011329456390095187,
+      "margin": 0.4700327266115501
+    },
+    {
+      "name": "Redux Toolkit - Computed Access",
+      "opsPerSec": 36065417.386913404,
+      "meanTime": 0.000027727392955747606,
+      "margin": 0.15656095933363168
+    },
+    {
+      "name": "Redux Toolkit - Nested Update",
+      "opsPerSec": 742186.5969932273,
+      "meanTime": 0.0013473700603746223,
+      "margin": 0.48621681735429795
+    },
+    {
+      "name": "Redux Toolkit - Array Push",
+      "opsPerSec": 3512.8119591757836,
+      "meanTime": 0.28467222601765213,
+      "margin": 2.085940483459425
+    },
+    {
+      "name": "Zustand - Simple Increment",
+      "opsPerSec": 7549042.547049055,
+      "meanTime": 0.0001324671299396641,
+      "margin": 0.36446970022112
+    },
+    {
+      "name": "Zustand - Computed Access",
+      "opsPerSec": 35388598.61993096,
+      "meanTime": 0.00002825768860586633,
+      "margin": 0.03678659742531442
+    },
+    {
+      "name": "Zustand - Nested Update",
+      "opsPerSec": 7499433.50504576,
+      "meanTime": 0.00013334340511549054,
+      "margin": 0.49777305666136334
+    },
+    {
+      "name": "Zustand - Array Push",
+      "opsPerSec": 43451.35670266249,
+      "meanTime": 0.023014241116635258,
+      "margin": 1.1590754650908415
+    },
+    {
+      "name": "Jotai - Simple Increment",
+      "opsPerSec": 964566.6122455118,
+      "meanTime": 0.0010367350344752232,
+      "margin": 0.30666439061707107
+    },
+    {
+      "name": "Jotai - Computed Access",
+      "opsPerSec": 3031902.3754245904,
+      "meanTime": 0.00032982592319119743,
+      "margin": 0.2303182366697149
+    },
+    {
+      "name": "Jotai - Nested Update",
+      "opsPerSec": 1339873.4292150664,
+      "meanTime": 0.0007463391527853693,
+      "margin": 0.2890709886658237
+    },
+    {
+      "name": "Jotai - Array Push",
+      "opsPerSec": 40524.32705300265,
+      "meanTime": 0.024676535620001248,
+      "margin": 2.3941268228576646
+    },
+    {
+      "name": "MobX - Simple Increment",
+      "opsPerSec": 7561231.841184121,
+      "meanTime": 0.0001322535826177492,
+      "margin": 0.1862305312063053
+    },
+    {
+      "name": "MobX - Computed Access",
+      "opsPerSec": 16882136.59473388,
+      "meanTime": 0.000059234208560540524,
+      "margin": 2.4663670938643474
+    },
+    {
+      "name": "MobX - Nested Update",
+      "opsPerSec": 7422017.153920593,
+      "meanTime": 0.00013473426149005353,
+      "margin": 0.17057635575545557
+    },
+    {
+      "name": "MobX - Array Push",
+      "opsPerSec": 615219.9969247853,
+      "meanTime": 0.0016254348119348542,
+      "margin": 4.794483540392949
+    },
+    {
+      "name": "Valtio - Simple Increment",
+      "opsPerSec": 7308125.441009205,
+      "meanTime": 0.00013683399499255262,
+      "margin": 1.3438345636382507
+    },
+    {
+      "name": "Valtio - Computed Access",
+      "opsPerSec": 34072402.807637304,
+      "meanTime": 0.000029349265610814237,
+      "margin": 0.045283379197865695
+    },
+    {
+      "name": "Valtio - Nested Update",
+      "opsPerSec": 7902150.82616625,
+      "meanTime": 0.00012654782501603462,
+      "margin": 2.323203844216349
+    },
+    {
+      "name": "Valtio - Array Push",
+      "opsPerSec": 665783.8488670974,
+      "meanTime": 0.0015019889739013755,
+      "margin": 5.90450339945678
+    },
+    {
+      "name": "Preact Signals - Simple Increment",
+      "opsPerSec": 41279798.587112375,
+      "meanTime": 0.00002422492439951492,
+      "margin": 0.04245779265021764
+    },
+    {
+      "name": "Preact Signals - Computed Access",
+      "opsPerSec": 39894087.76004615,
+      "meanTime": 0.000025066370887204446,
+      "margin": 0.23933341337907935
+    },
+    {
+      "name": "Preact Signals - Nested Update",
+      "opsPerSec": 36350031.545633264,
+      "meanTime": 0.000027510292494371445,
+      "margin": 0.14785784523215542
+    },
+    {
+      "name": "Preact Signals - Array Push",
+      "opsPerSec": 25578.23682217078,
+      "meanTime": 0.03909573622890289,
+      "margin": 26.561593904377578
+    },
+    {
+      "name": "Solid Signals - Simple Increment",
+      "opsPerSec": 34979160.56630619,
+      "meanTime": 0.000028588450489096467,
+      "margin": 0.219798926379389
+    },
+    {
+      "name": "Solid Signals - Computed Access",
+      "opsPerSec": 39770748.687445916,
+      "meanTime": 0.000025144107994015743,
+      "margin": 0.03618602016869599
+    },
+    {
+      "name": "Solid Signals - Nested Update",
+      "opsPerSec": 34412674.13957845,
+      "meanTime": 0.000029059061087318625,
+      "margin": 0.1607152694743817
+    },
+    {
+      "name": "Solid Signals - Array Push",
+      "opsPerSec": 21718.706927071184,
+      "meanTime": 0.046043256781256835,
+      "margin": 62.927115258038825
+    }
+  ]
+}

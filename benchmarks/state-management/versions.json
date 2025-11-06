@@ -1,0 +1,57 @@
+{
+  "lastChecked": "2025-11-06T16:12:17.167Z",
+  "lastBenchmarkRun": "2024-12-06T15:59:00.000Z",
+  "testFilesHash": "ab47b444366e12659478da836ebb9d84e3e2d317a01bc424b62c05ed147f50ad",
+  "libraries": {
+    "@sylphx/zen": {
+      "current": "1.0.0",
+      "latest": "1.0.0",
+      "lastUpdated": "2024-12-06T15:43:00.000Z"
+    },
+    "@preact/signals": {
+      "current": "2.3.2",
+      "latest": "2.3.2",
+      "lastUpdated": "2024-12-06T00:00:00.000Z"
+    },
+    "solid-js": {
+      "current": "1.9.10",
+      "latest": "1.9.10",
+      "lastUpdated": "2024-12-06T00:00:00.000Z"
+    },
+    "zustand": {
+      "current": "4.5.7",
+      "latest": "5.0.8",
+      "lastUpdated": "2025-11-06T16:12:17.167Z"
+    },
+    "jotai": {
+      "current": "2.15.1",
+      "latest": "2.15.1",
+      "lastUpdated": "2024-12-06T00:00:00.000Z"
+    },
+    "mobx": {
+      "current": "6.15.0",
+      "latest": "6.15.0",
+      "lastUpdated": "2024-12-06T00:00:00.000Z"
+    },
+    "valtio": {
+      "current": "1.13.2",
+      "latest": "2.2.0",
+      "lastUpdated": "2025-11-06T16:12:16.919Z"
+    },
+    "@reduxjs/toolkit": {
+      "current": "2.10.1",
+      "latest": "2.10.1",
+      "lastUpdated": "2024-12-06T00:00:00.000Z"
+    },
+    "recoil": {
+      "current": "0.7.7",
+      "latest": "0.7.7",
+      "lastUpdated": "2025-11-06T16:12:16.226Z"
+    },
+    "tinybench": {
+      "current": "2.9.0",
+      "latest": "5.1.0",
+      "lastUpdated": "2025-11-06T16:12:16.698Z"
+    }
+  }
+}

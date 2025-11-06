@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-11-05T22:04:23.458Z",
+  "nodeVersion": "v25.0.0",
+  "platform": "darwin",
+  "results": [
+    {
+      "name": "Solid Signals",
+      "opsPerSec": 46553092.5766821,
+      "meanTime": 0.000021480850028444477,
+      "margin": 0.03972826003625271
+    },
+    {
+      "name": "Preact Signals",
+      "opsPerSec": 42571214.808089755,
+      "meanTime": 0.000023490050836180772,
+      "margin": 1.049259037750316
+    },
+    {
+      "name": "Zustand",
+      "opsPerSec": 26872987.408791624,
+      "meanTime": 0.00003721208903156205,
+      "margin": 0.5718266952212671
+    },
+    {
+      "name": "MobX",
+      "opsPerSec": 7710768.969184446,
+      "meanTime": 0.00012968875140682216,
+      "margin": 0.35025070456330737
+    },
+    {
+      "name": "Valtio",
+      "opsPerSec": 6123731.632577849,
+      "meanTime": 0.00016329912216924496,
+      "margin": 0.3597912819399726
+    },
+    {
+      "name": "Jotai",
+      "opsPerSec": 2046935.9119824017,
+      "meanTime": 0.000488535080236844,
+      "margin": 1.0296720071440049
+    },
+    {
+      "name": "Redux Toolkit",
+      "opsPerSec": 651184.9420445024,
+      "meanTime": 0.0015356620453481854,
+      "margin": 0.505677622945979
+    }
+  ]
+}

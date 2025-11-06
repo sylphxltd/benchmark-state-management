@@ -1,0 +1,154 @@
+name: State Management Benchmark
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+  push:
+    paths:
+      - 'benchmarks/state-management/**'
+      - '.github/workflows/state-management.yml'
+
+jobs:
+  check-updates:
+    name: Check for Updates
+    runs-on: ubuntu-latest
+    outputs:
+      has_updates: ${{ steps.check.outputs.has_updates }}
+      updated_libs: ${{ steps.check.outputs.updated_libs }}
+      new_versions: ${{ steps.check.outputs.new_versions }}
+      test_files_changed: ${{ steps.check.outputs.test_files_changed }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'benchmarks/state-management/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: benchmarks/state-management
+        run: npm ci
+
+      - name: Check for version updates
+        id: check
+        run: |
+          npx tsx scripts/check-versions.ts benchmarks/state-management
+        continue-on-error: true
+
+      - name: Upload versions file
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: versions
+          path: benchmarks/state-management/versions.json
+          retention-days: 1
+
+  run-benchmark:
+    name: Run Benchmarks
+    needs: check-updates
+    if: needs.check-updates.outputs.has_updates == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'benchmarks/state-management/package-lock.json'
+
+      - name: Download versions file
+        uses: actions/download-artifact@v4
+        with:
+          name: versions
+          path: benchmarks/state-management/
+
+      - name: Update library versions
+        if: needs.check-updates.outputs.updated_libs != '[]'
+        working-directory: benchmarks/state-management
+        run: |
+          echo "📦 Updating libraries: ${{ needs.check-updates.outputs.updated_libs }}"
+
+          # Update each library to latest version
+          LIBS=$(echo '${{ needs.check-updates.outputs.updated_libs }}' | jq -r '.[]')
+          for lib in $LIBS; do
+            echo "Updating $lib..."
+            npm install "$lib@latest"
+          done
+
+      - name: Install dependencies
+        working-directory: benchmarks/state-management
+        run: npm ci
+
+      - name: Run benchmarks
+        working-directory: benchmarks/state-management
+        run: |
+          echo "🏃 Running benchmarks..."
+          npm run benchmark
+
+          # Store results with timestamp
+          TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")
+          cp -r results/latest.json "results/benchmark-${TIMESTAMP}.json" || true
+
+      - name: Generate README
+        run: |
+          echo "📝 Generating README..."
+          npx tsx scripts/generate-readme.ts benchmarks/state-management
+
+      - name: Update versions.json with benchmark timestamp
+        run: |
+          cd benchmarks/state-management
+          jq '.lastBenchmarkRun = now | todate' versions.json > versions.tmp.json
+          mv versions.tmp.json versions.json
+
+      - name: Commit and push results
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add benchmarks/state-management/
+
+          # Create detailed commit message
+          UPDATED_LIBS="${{ needs.check-updates.outputs.updated_libs }}"
+          TEST_CHANGED="${{ needs.check-updates.outputs.test_files_changed }}"
+
+          COMMIT_MSG="chore(state-management): auto-update benchmark results"
+
+          if [ "$UPDATED_LIBS" != "[]" ] && [ "$UPDATED_LIBS" != "" ]; then
+            COMMIT_MSG="$COMMIT_MSG\n\nUpdated libraries:\n$(echo $UPDATED_LIBS | jq -r '.[]' | sed 's/^/- /')"
+          fi
+
+          if [ "$TEST_CHANGED" == "true" ]; then
+            COMMIT_MSG="$COMMIT_MSG\n\n- Test files were modified"
+          fi
+
+          COMMIT_MSG="$COMMIT_MSG\n\n- Ran complete benchmark suite\n- Generated README with latest results\n- Updated versions.json"
+
+          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+
+  skip-benchmark:
+    name: No Updates Detected
+    needs: check-updates
+    if: needs.check-updates.outputs.has_updates != 'true' && github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Report status
+        run: |
+          echo "✨ No updates detected"
+          echo "   - All libraries are up to date"
+          echo "   - Test files unchanged"
+          echo "   - Benchmark skipped"

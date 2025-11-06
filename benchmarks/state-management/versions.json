@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2025-11-06T17:06:31.804Z",
-  "lastBenchmarkRun": "2024-12-06T15:59:00.000Z",
+  "lastChecked": "2025-11-06T17:11:41.733Z",
+  "lastBenchmarkRun": "2025-11-06T17:14:06Z",
   "testFilesHash": "aa260b2e3d4b2f3ffbb4f59a27bdfb48ecb132b58e642f9f715b145303b8f3ff",
   "libraries": {
     "@sylphx/zen": {
@@ -21,7 +21,7 @@
     "zustand": {
       "current": "4.5.7",
       "latest": "5.0.8",
-      "lastUpdated": "2025-11-06T17:06:31.804Z"
+      "lastUpdated": "2025-11-06T17:11:41.733Z"
     },
     "jotai": {
       "current": "2.15.1",
@@ -36,7 +36,7 @@
     "valtio": {
       "current": "1.13.2",
       "latest": "2.2.0",
-      "lastUpdated": "2025-11-06T17:06:31.563Z"
+      "lastUpdated": "2025-11-06T17:11:41.371Z"
     },
     "@reduxjs/toolkit": {
       "current": "2.10.1",

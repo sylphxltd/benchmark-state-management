@@ -15,8 +15,8 @@
     "mobx": "^6.15.0",
     "recoil": "^0.7.7",
     "solid-js": "^1.9.10",
-    "valtio": "^1.13.2",
-    "zustand": "^4.5.7"
+    "valtio": "^2.2.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "tsx": "^4.20.6",

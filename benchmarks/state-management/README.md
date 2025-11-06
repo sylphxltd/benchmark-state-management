@@ -6,7 +6,7 @@ Professional performance comparison of JavaScript state management libraries.
 
 - **Last Updated:** December 6, 2024
 - **Last Run:** 3:59:00 PM UTC
-- **Environment:** Node.js v25.0.0, darwin arm64
+- **Environment:** Node.js v20.19.5, linux x64
 - **Test Framework:** Vitest Bench
 - **Iterations:** 3 runs averaged for statistical accuracy
 
@@ -21,7 +21,6 @@ Professional performance comparison of JavaScript state management libraries.
 | **mobx** | `v6.15.0` | Dec 6, 2024 |
 | **recoil** | `v0.7.7` | Nov 6, 2025 |
 | **solid-js** | `v1.9.10` | Dec 6, 2024 |
-| **tinybench** | `v2.9.0` | Nov 6, 2025 |
 | **valtio** | `v1.13.2` | Nov 6, 2025 |
 | **zustand** | `v4.5.7` | Nov 6, 2025 |
 
@@ -54,4 +53,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-06T16:12:27.784Z*
+*Last generated: 2025-11-06T17:14:06.571Z*

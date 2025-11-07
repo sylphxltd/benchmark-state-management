@@ -1,0 +1,94 @@
+{
+  "description": "Comparison of core features and capabilities across React router libraries",
+  "features": [
+    {
+      "id": "typeSafe",
+      "label": "Type Safety",
+      "description": "Full TypeScript support with type inference"
+    },
+    {
+      "id": "fileBasedRouting",
+      "label": "File-based Routing",
+      "description": "Automatic route generation from file system"
+    },
+    {
+      "id": "dataLoaders",
+      "label": "Data Loaders",
+      "description": "Built-in data loading/fetching mechanism"
+    },
+    {
+      "id": "nestedRoutes",
+      "label": "Nested Routes",
+      "description": "Support for nested route hierarchies"
+    },
+    {
+      "id": "codeSplitting",
+      "label": "Code Splitting",
+      "description": "Automatic route-based code splitting"
+    },
+    {
+      "id": "searchParams",
+      "label": "Search Params",
+      "description": "Type-safe search/query parameter handling"
+    }
+  ],
+  "libraries": {
+    "react-router-dom": {
+      "typeSafe": true,
+      "fileBasedRouting": true,
+      "dataLoaders": true,
+      "nestedRoutes": true,
+      "codeSplitting": true,
+      "searchParams": true,
+      "sources": {
+        "typeSafe": "https://reactrouter.com/start/modes",
+        "fileBasedRouting": "https://reactrouter.com/how-to/file-route-conventions",
+        "dataLoaders": "https://reactrouter.com/start/modes",
+        "nestedRoutes": "https://reactrouter.com/start/modes",
+        "codeSplitting": "https://reactrouter.com/explanation/code-splitting",
+        "searchParams": "https://reactrouter.com/api/hooks/useSearchParams"
+      }
+    },
+    "@tanstack/react-router": {
+      "typeSafe": true,
+      "fileBasedRouting": true,
+      "dataLoaders": true,
+      "nestedRoutes": true,
+      "codeSplitting": true,
+      "searchParams": true,
+      "sources": {
+        "typeSafe": "https://tanstack.com/router/v1/docs/framework/react/guide/type-safety",
+        "fileBasedRouting": "https://tanstack.com/router/v1/docs/framework/react/routing/file-based-routing",
+        "dataLoaders": "https://tanstack.com/router/v1/docs/framework/react/guide/data-loading",
+        "nestedRoutes": "https://tanstack.com/router/v1/docs/framework/react/guide/outlets",
+        "codeSplitting": "https://tanstack.com/router/v1/docs/framework/react/guide/automatic-code-splitting",
+        "searchParams": "https://tanstack.com/router/v1/docs/framework/react/guide/type-safety"
+      }
+    },
+    "wouter": {
+      "typeSafe": true,
+      "fileBasedRouting": false,
+      "dataLoaders": false,
+      "nestedRoutes": true,
+      "codeSplitting": false,
+      "searchParams": true,
+      "sources": {
+        "typeSafe": "https://github.com/molefrog/wouter#typescript-support",
+        "nestedRoutes": "https://github.com/molefrog/wouter#nesting-routes",
+        "searchParams": "https://github.com/molefrog/wouter#usesearch-working-with-query-strings"
+      }
+    },
+    "@sylphx/zen-router": {
+      "typeSafe": true,
+      "fileBasedRouting": false,
+      "dataLoaders": false,
+      "nestedRoutes": false,
+      "codeSplitting": false,
+      "searchParams": true,
+      "sources": {
+        "typeSafe": "https://github.com/sylphxltd/zen-router",
+        "searchParams": "https://github.com/sylphxltd/zen-router"
+      }
+    }
+  }
+}

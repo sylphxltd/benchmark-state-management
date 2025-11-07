@@ -50,6 +50,25 @@ interface LibraryMetadata {
   } | BenchmarkConfig;
 }
 
+interface FeatureDefinition {
+  id: string;
+  label: string;
+  description: string;
+}
+
+interface FeatureMatrix {
+  description: string;
+  features: FeatureDefinition[];
+  libraries: {
+    [packageName: string]: {
+      [featureId: string]: boolean | string;
+      sources?: {
+        [featureId: string]: string;
+      };
+    };
+  };
+}
+
 function formatNumber(num: number): string {
   if (num >= 1_000_000) {
     return (num / 1_000_000).toFixed(2) + 'M';
@@ -99,6 +118,65 @@ function loadLibraryMetadata(benchmarkDir: string): LibraryMetadata {
     return {};
   }
   return JSON.parse(readFileSync(metadataPath, 'utf-8'));
+}
+
+function loadFeatureMatrix(benchmarkDir: string): FeatureMatrix | null {
+  const featuresPath = join(benchmarkDir, 'features.json');
+  if (!existsSync(featuresPath)) {
+    return null;
+  }
+  return JSON.parse(readFileSync(featuresPath, 'utf-8'));
+}
+
+function generateFeatureMatrixTable(featureMatrix: FeatureMatrix, metadata: LibraryMetadata): string {
+  let table = '';
+
+  // Get all library package names in consistent order
+  const libraryPackages = Object.keys(featureMatrix.libraries).sort();
+
+  // Create header row with library display names
+  table += '| Feature | ' + libraryPackages.map(pkg => {
+    const displayName = metadata[pkg]?.displayName || pkg;
+    return `**${displayName}**`;
+  }).join(' | ') + ' |\n';
+
+  // Create separator row
+  table += '|---------|' + libraryPackages.map(() => ':---:').join('|') + '|\n';
+
+  // Create rows for each feature
+  for (const feature of featureMatrix.features) {
+    const cells: string[] = [];
+
+    for (const pkg of libraryPackages) {
+      const libraryFeatures = featureMatrix.libraries[pkg];
+      const value = libraryFeatures?.[feature.id];
+
+      // Format cell value
+      let cellValue: string;
+      if (value === true) {
+        cellValue = '✅';
+      } else if (value === false) {
+        cellValue = '❌';
+      } else if (typeof value === 'string') {
+        cellValue = value;
+      } else {
+        cellValue = '❌';
+      }
+
+      // Add source link if available
+      const source = libraryFeatures?.sources?.[feature.id];
+      if (source && value !== false) {
+        cellValue = `[${cellValue}](${source})`;
+      }
+
+      cells.push(cellValue);
+    }
+
+    // Add feature row with description as tooltip
+    table += `| **${feature.label}**<br/><sub>${feature.description}</sub> | ${cells.join(' | ')} |\n`;
+  }
+
+  return table;
 }
 
 function getLibraryLink(name: string, metadata: LibraryMetadata): string {
@@ -268,6 +346,9 @@ function generateReadme(benchmarkDir: string) {
   // Load library metadata
   const metadata = loadLibraryMetadata(benchmarkDir);
 
+  // Load feature matrix
+  const featureMatrix = loadFeatureMatrix(benchmarkDir);
+
   // Read versions
   const versions: VersionTracker = JSON.parse(readFileSync(versionsPath, 'utf-8'));
 
@@ -411,6 +492,15 @@ function generateReadme(benchmarkDir: string) {
   });
   readme += '\n';
   readme += '> 🎯 **Note:** Higher coverage means more features, but evaluate based on your specific needs.\n\n';
+
+  // Feature Matrix (if available)
+  if (featureMatrix) {
+    readme += '## ✨ Feature Comparison\n\n';
+    readme += `${featureMatrix.description}\n\n`;
+    readme += generateFeatureMatrixTable(featureMatrix, metadata);
+    readme += '\n';
+    readme += '> 💡 **Legend:** ✅ = Supported, ❌ = Not supported. Click checkmarks for documentation.\n\n';
+  }
 
   // Historical results (simplified - no trend charts)
   const historicalFiles = getHistoricalResults(benchmarkDir);

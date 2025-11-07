@@ -1,0 +1,148 @@
+{
+  "description": "Comparison of core features and capabilities across state management libraries",
+  "features": [
+    {
+      "id": "typeSafe",
+      "label": "Type Safety",
+      "description": "Native TypeScript support with full type inference"
+    },
+    {
+      "id": "devTools",
+      "label": "DevTools",
+      "description": "Browser DevTools extension for debugging"
+    },
+    {
+      "id": "timeTravel",
+      "label": "Time Travel",
+      "description": "Time-travel debugging capability"
+    },
+    {
+      "id": "middleware",
+      "label": "Middleware",
+      "description": "Middleware/plugin system for extensibility"
+    },
+    {
+      "id": "async",
+      "label": "Async Support",
+      "description": "Built-in async/thunk operations"
+    },
+    {
+      "id": "selectors",
+      "label": "Selectors",
+      "description": "Built-in selector/computed value system"
+    }
+  ],
+  "libraries": {
+    "@reduxjs/toolkit": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": true,
+      "middleware": true,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "devTools": "https://github.com/reduxjs/redux-devtools",
+        "timeTravel": "https://redux-toolkit.js.org/api/configureStore",
+        "middleware": "https://redux-toolkit.js.org/api/getDefaultMiddleware"
+      }
+    },
+    "zustand": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": true,
+      "middleware": true,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "devTools": "https://github.com/pmndrs/zustand#redux-devtools",
+        "middleware": "https://github.com/pmndrs/zustand#middleware"
+      }
+    },
+    "jotai": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": true,
+      "middleware": false,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "devTools": "https://jotai.org/docs/tools/devtools",
+        "async": "https://jotai.org/docs/guides/async"
+      }
+    },
+    "mobx": {
+      "typeSafe": true,
+      "devTools": false,
+      "timeTravel": false,
+      "middleware": false,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "typeSafe": "https://mobx.js.org/README.html#typescript",
+        "selectors": "https://mobx.js.org/computeds.html"
+      }
+    },
+    "valtio": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": true,
+      "middleware": false,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "devTools": "https://github.com/pmndrs/valtio#devtools",
+        "selectors": "https://github.com/pmndrs/valtio#computed-values"
+      }
+    },
+    "@preact/signals": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": false,
+      "middleware": false,
+      "async": false,
+      "selectors": true,
+      "sources": {
+        "typeSafe": "https://preactjs.com/guide/v10/signals/",
+        "selectors": "https://preactjs.com/guide/v10/signals/#computed-signals"
+      }
+    },
+    "solid-js": {
+      "typeSafe": true,
+      "devTools": false,
+      "timeTravel": false,
+      "middleware": false,
+      "async": false,
+      "selectors": true,
+      "sources": {
+        "typeSafe": "https://www.solidjs.com/docs/latest#typescript",
+        "selectors": "https://www.solidjs.com/docs/latest/api#creatememo"
+      }
+    },
+    "@sylphx/zen": {
+      "typeSafe": true,
+      "devTools": false,
+      "timeTravel": false,
+      "middleware": false,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "typeSafe": "https://github.com/sylphxltd/zen",
+        "async": "https://github.com/sylphxltd/zen",
+        "selectors": "https://github.com/sylphxltd/zen"
+      }
+    },
+    "recoil": {
+      "typeSafe": true,
+      "devTools": true,
+      "timeTravel": false,
+      "middleware": false,
+      "async": true,
+      "selectors": true,
+      "sources": {
+        "typeSafe": "https://recoiljs.org/docs/guides/typescript",
+        "devTools": "https://recoiljs.org/docs/guides/dev-tools",
+        "async": "https://recoiljs.org/docs/guides/asynchronous-data-queries"
+      }
+    }
+  }
+}

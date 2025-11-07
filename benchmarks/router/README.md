@@ -5,8 +5,8 @@ Professional performance comparison of JavaScript state management libraries.
 ## 📋 Benchmark Information
 
 - **Last Updated:** November 7, 2025
-- **Last Run:** 9:15:26 AM UTC
-- **Environment:** Node.js v20.19.5, linux x64
+- **Last Run:** 9:22:28 AM UTC
+- **Environment:** Node.js v25.0.0, darwin arm64
 - **Test Framework:** Vitest Bench
 - **Iterations:** 3 runs averaged for statistical accuracy
 
@@ -69,6 +69,21 @@ Percentage of benchmark tests supported:
 | 🥇 | **[Zen Router](https://github.com/sylphxltd/zen-router)** | 9/9 | 100% |
 
 > 🎯 **Note:** Higher coverage means more features, but evaluate based on your specific needs.
+
+## ✨ Feature Comparison
+
+Comparison of core features and capabilities across React router libraries
+
+| Feature | **Zen Router** | **TanStack Router** | **React Router** | **Wouter** |
+|---------|:---:|:---:|:---:|:---:|
+| **Type Safety**<br/><sub>Full TypeScript support with type inference</sub> | [✅](https://github.com/sylphxltd/zen-router) | [✅](https://tanstack.com/router/v1/docs/framework/react/guide/type-safety) | [✅](https://reactrouter.com/start/modes) | [✅](https://github.com/molefrog/wouter#typescript-support) |
+| **File-based Routing**<br/><sub>Automatic route generation from file system</sub> | ❌ | [✅](https://tanstack.com/router/v1/docs/framework/react/routing/file-based-routing) | [✅](https://reactrouter.com/how-to/file-route-conventions) | ❌ |
+| **Data Loaders**<br/><sub>Built-in data loading/fetching mechanism</sub> | ❌ | [✅](https://tanstack.com/router/v1/docs/framework/react/guide/data-loading) | [✅](https://reactrouter.com/start/modes) | ❌ |
+| **Nested Routes**<br/><sub>Support for nested route hierarchies</sub> | ❌ | [✅](https://tanstack.com/router/v1/docs/framework/react/guide/outlets) | [✅](https://reactrouter.com/start/modes) | [✅](https://github.com/molefrog/wouter#nesting-routes) |
+| **Code Splitting**<br/><sub>Automatic route-based code splitting</sub> | ❌ | [✅](https://tanstack.com/router/v1/docs/framework/react/guide/automatic-code-splitting) | [✅](https://reactrouter.com/explanation/code-splitting) | ❌ |
+| **Search Params**<br/><sub>Type-safe search/query parameter handling</sub> | [✅](https://github.com/sylphxltd/zen-router) | [✅](https://tanstack.com/router/v1/docs/framework/react/guide/type-safety) | [✅](https://reactrouter.com/api/hooks/useSearchParams) | [✅](https://github.com/molefrog/wouter#usesearch-working-with-query-strings) |
+
+> 💡 **Legend:** ✅ = Supported, ❌ = Not supported. Click checkmarks for documentation.
 
 ## 📜 Historical Results
 
@@ -260,4 +275,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-07T09:22:28.030Z*
+*Last generated: 2025-11-07T15:16:46.293Z*

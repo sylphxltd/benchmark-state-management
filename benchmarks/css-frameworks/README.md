@@ -5,8 +5,8 @@ Professional performance comparison of JavaScript state management libraries.
 ## 📋 Benchmark Information
 
 - **Last Updated:** November 7, 2025
-- **Last Run:** 9:15:43 AM UTC
-- **Environment:** Node.js v20.19.5, linux x64
+- **Last Run:** 9:22:49 AM UTC
+- **Environment:** Node.js v25.0.0, darwin arm64
 - **Test Framework:** Vitest Bench
 - **Iterations:** 3 runs averaged for statistical accuracy
 
@@ -74,6 +74,21 @@ Percentage of benchmark tests supported:
 | 🥇 | **[UnoCSS](https://github.com/unocss/unocss)** | 7/7 | 100% |
 
 > 🎯 **Note:** Higher coverage means more features, but evaluate based on your specific needs.
+
+## ✨ Feature Comparison
+
+Comparison of core features and capabilities across CSS frameworks
+
+| Feature | **Panda CSS** | **Silk** | **Tailwind CSS** | **UnoCSS** |
+|---------|:---:|:---:|:---:|:---:|
+| **Type Safety**<br/><sub>Native TypeScript support without runtime overhead</sub> | [✅](https://panda-css.com/docs/concepts/type-safety) | [✅](https://github.com/sylphxltd/silk#type-safety) | ❌ | ❌ |
+| **Codegen Required**<br/><sub>Requires code generation step for type safety</sub> | [✅](https://panda-css.com/docs/installation/cli) | ❌ | ❌ | ❌ |
+| **Design Tokens**<br/><sub>Built-in design token/theme configuration system</sub> | [✅](https://panda-css.com/docs/theming/tokens) | [✅](https://github.com/sylphxltd/silk#design-tokens) | [✅](https://tailwindcss.com/docs/theme) | [✅](https://unocss.dev/config/theme) |
+| **Preset System**<br/><sub>Installable preset packages for complete design systems</sub> | [Community presets](https://panda-css.com/docs/customization/presets) | [2 official (Material, Minimal)](https://github.com/sylphxltd/silk#presets) | ❌ | [20+ official presets](https://unocss.dev/presets/) |
+| **Critical CSS**<br/><sub>Automatic critical CSS extraction for performance</sub> | ❌ | [✅](https://github.com/sylphxltd/silk#critical-css) | ❌ | ❌ |
+| **Pure CSS Icons**<br/><sub>Icon support via pure CSS classes (no SVG/font)</sub> | ❌ | ❌ | ❌ | [✅](https://unocss.dev/presets/icons) |
+
+> 💡 **Legend:** ✅ = Supported, ❌ = Not supported. Click checkmarks for documentation.
 
 ## 📜 Historical Results
 
@@ -243,4 +258,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-07T09:22:49.343Z*
+*Last generated: 2025-11-07T15:16:45.275Z*

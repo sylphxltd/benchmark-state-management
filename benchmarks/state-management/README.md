@@ -93,6 +93,21 @@ Percentage of benchmark tests supported:
 
 > 🎯 **Note:** Higher coverage means more features, but evaluate based on your specific needs.
 
+## ✨ Feature Comparison
+
+Comparison of core features and capabilities across state management libraries
+
+| Feature | **Preact Signals** | **Redux Toolkit** | **Zen** | **Jotai** | **MobX** | **Recoil** | **Solid Signals** | **Valtio** | **Zustand** |
+|---------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Type Safety**<br/><sub>Native TypeScript support with full type inference</sub> | [✅](https://preactjs.com/guide/v10/signals/) | ✅ | [✅](https://github.com/sylphxltd/zen) | ✅ | [✅](https://mobx.js.org/README.html#typescript) | [✅](https://recoiljs.org/docs/guides/typescript) | [✅](https://www.solidjs.com/docs/latest#typescript) | ✅ | ✅ |
+| **DevTools**<br/><sub>Browser DevTools extension for debugging</sub> | ✅ | [✅](https://github.com/reduxjs/redux-devtools) | ❌ | [✅](https://jotai.org/docs/tools/devtools) | ❌ | [✅](https://recoiljs.org/docs/guides/dev-tools) | ❌ | [✅](https://github.com/pmndrs/valtio#devtools) | [✅](https://github.com/pmndrs/zustand#redux-devtools) |
+| **Time Travel**<br/><sub>Time-travel debugging capability</sub> | ❌ | [✅](https://redux-toolkit.js.org/api/configureStore) | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **Middleware**<br/><sub>Middleware/plugin system for extensibility</sub> | ❌ | [✅](https://redux-toolkit.js.org/api/getDefaultMiddleware) | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | [✅](https://github.com/pmndrs/zustand#middleware) |
+| **Async Support**<br/><sub>Built-in async/thunk operations</sub> | ❌ | ✅ | [✅](https://github.com/sylphxltd/zen) | [✅](https://jotai.org/docs/guides/async) | ✅ | [✅](https://recoiljs.org/docs/guides/asynchronous-data-queries) | ❌ | ✅ | ✅ |
+| **Selectors**<br/><sub>Built-in selector/computed value system</sub> | [✅](https://preactjs.com/guide/v10/signals/#computed-signals) | ✅ | [✅](https://github.com/sylphxltd/zen) | ✅ | [✅](https://mobx.js.org/computeds.html) | ✅ | [✅](https://www.solidjs.com/docs/latest/api#creatememo) | [✅](https://github.com/pmndrs/valtio#computed-values) | ✅ |
+
+> 💡 **Legend:** ✅ = Supported, ❌ = Not supported. Click checkmarks for documentation.
+
 ## 📜 Historical Results
 
 | Date | Results |
@@ -114,7 +129,7 @@ Percentage of benchmark tests supported:
    Valtio               █████ 4.44M
    Jotai                ██ 1.54M
    Redux Toolkit        █ 858.94K
-   Zustand               369.46K
+   Zustand              █ 369.46K
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -254,7 +269,7 @@ Percentage of benchmark tests supported:
    Zustand              █ 181.54K
    Jotai                █ 168.46K
    MobX                 █ 131.89K
-   Valtio                15.05
+   Valtio               █ 15.05
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -309,8 +324,8 @@ Percentage of benchmark tests supported:
    Solid Signals        █████████████████████████████████████ 4.04K
    Jotai                ████████████████████████████████████ 3.97K
    Redux Toolkit        ███ 383.15
-   MobX                  11.44
-   Valtio                4.72
+   MobX                 █ 11.44
+   Valtio               █ 4.72
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -337,8 +352,8 @@ Percentage of benchmark tests supported:
    Preact Signals       ██████████████████ 5.20K
    Zustand              █████████████████ 4.84K
    Redux Toolkit        ████ 1.03K
-   Valtio                40.96
-   MobX                  15.00
+   Valtio               █ 40.96
+   MobX                 █ 15.00
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -365,8 +380,8 @@ Percentage of benchmark tests supported:
    Jotai                █████████████████ 4.79K
    Preact Signals       ████████████████ 4.49K
    Redux Toolkit        ████ 1.03K
-   Valtio                41.76
-   MobX                  14.70
+   Valtio               █ 41.76
+   MobX                 █ 14.70
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -394,7 +409,7 @@ Percentage of benchmark tests supported:
    MobX                 ████ 2.37M
    Jotai                ███ 1.67M
    Zustand              █ 392.25K
-   Redux Toolkit         215.19K
+   Redux Toolkit        █ 215.19K
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -472,4 +487,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-07T03:25:14.957Z*
+*Last generated: 2025-11-07T15:16:45.616Z*

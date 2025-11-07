@@ -334,12 +334,65 @@ jobs:
           path: benchmarks/router/
           retention-days: 7
 
+  benchmark-css-frameworks:
+    name: Benchmark CSS Frameworks
+    needs: [check-updates, plan]
+    if: needs.plan.outputs.css-frameworks == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download versions file
+        uses: actions/download-artifact@v4
+        with:
+          name: versions-css-frameworks
+          path: benchmarks/css-frameworks/
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Update packages incrementally
+        id: update
+        run: npx tsx scripts/update-single-package.ts benchmarks/css-frameworks
+
+      - name: Run benchmarks
+        working-directory: benchmarks/css-frameworks
+        run: npm run benchmark
+        # Note: Always run benchmarks if this job runs, since we're here because
+        # check-updates detected changes (either package updates or test file changes)
+
+      - name: Generate trend charts
+        run: node scripts/generate-trend-charts.cjs benchmarks/css-frameworks || echo "Not enough historical data for charts"
+
+      - name: Generate README
+        run: npx tsx scripts/generate-readme.ts benchmarks/css-frameworks
+
+      - name: Update versions.json with benchmark timestamp
+        working-directory: benchmarks/css-frameworks
+        run: |
+          jq '.lastBenchmarkRun = (now | todate)' versions.json > versions.tmp.json
+          mv versions.tmp.json versions.json
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-css-frameworks
+          path: benchmarks/css-frameworks/
+          retention-days: 7
+
   # ============================================================================
   # Commit all results
   # ============================================================================
   commit-results:
     name: Commit Results
-    needs: [plan, benchmark-state-management, benchmark-immutability, benchmark-router]
+    needs: [plan, benchmark-state-management, benchmark-immutability, benchmark-router, benchmark-css-frameworks]
     if: always() && needs.plan.outputs.any-updates == 'true'
     runs-on: ubuntu-latest
 
@@ -376,6 +429,13 @@ jobs:
           name: results-router
           path: benchmarks/router/
 
+      - name: Download css-frameworks results
+        if: needs.plan.outputs.css-frameworks == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/download-artifact@v4
+        with:
+          name: results-css-frameworks
+          path: benchmarks/css-frameworks/
+
       - name: Generate root README
         run: npx tsx scripts/generate-root-readme.ts
 
@@ -401,6 +461,9 @@ jobs:
           if [ -f "benchmarks/router/README.md" ]; then
             UPDATED_CATEGORIES="$UPDATED_CATEGORIES\n- Router"
           fi
+          if [ -f "benchmarks/css-frameworks/README.md" ]; then
+            UPDATED_CATEGORIES="$UPDATED_CATEGORIES\n- CSS Frameworks"
+          fi
 
           if [ -n "$UPDATED_CATEGORIES" ]; then
             COMMIT_MSG="$COMMIT_MSG\n\nUpdated categories:$UPDATED_CATEGORIES"
@@ -411,7 +474,7 @@ jobs:
           FAILED_PACKAGES=""
 
           # Check for updated packages in each category
-          for category in state-management immutability router; do
+          for category in state-management immutability router css-frameworks; do
             versions_file="benchmarks/$category/versions.json"
             if [ -f "$versions_file" ]; then
               # Extract packages that were recently updated (within last hour)

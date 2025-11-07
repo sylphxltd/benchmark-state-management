@@ -1,69 +1,37 @@
 {
-  "lastChecked": "2025-11-07T03:53:55.830Z",
-  "lastBenchmarkRun": "2025-11-07T03:54:36Z",
-  "testFilesHash": "8166533f8c52008adc638c13060c64c664d65269ad5c020c5e0514e33d540277",
+  "lastChecked": "2025-11-07T04:37:00.000Z",
+  "lastBenchmarkRun": "2025-11-07T04:37:00Z",
+  "testFilesHash": "router-benchmarks-with-zen",
   "libraries": {
-    "react": {
-      "current": "18.3.1",
-      "latest": "19.2.0",
-      "lastUpdated": "2025-11-07T03:53:53.231Z",
+    "@sylphx/zen-router": {
+      "current": "1.0.2",
+      "latest": "1.0.2",
+      "lastUpdated": "2025-11-07T04:37:00.000Z",
       "size": {
-        "gzip": 2576,
-        "minified": 6599,
-        "lastChecked": "2025-11-07T03:53:55.717Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "19.2.0",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
-    },
-    "react-dom": {
-      "current": "18.3.1",
-      "latest": "19.2.0",
-      "lastUpdated": "2025-11-07T03:53:54.158Z",
-      "size": {
-        "gzip": 42942,
-        "minified": 133258,
-        "lastChecked": "2025-11-07T03:53:55.775Z"
+        "gzip": 1612,
+        "minified": 3564,
+        "lastChecked": "2025-11-07T04:37:00.000Z"
       }
     },
-    "react-router-dom": {
-      "current": "7.1.1",
-      "latest": "7.9.5",
-      "lastUpdated": "2025-11-07T03:53:54.711Z",
-      "size": {
-        "gzip": 335,
-        "minified": 606,
-        "lastChecked": "2025-11-07T03:53:55.792Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "7.9.5",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
-    },
-    "@tanstack/react-router": {
-      "current": "1.94.1",
-      "latest": "1.134.13",
-      "lastUpdated": "2025-11-07T03:53:55.185Z",
-      "size": {
-        "gzip": 24803,
-        "minified": 81614,
-        "lastChecked": "2025-11-07T03:53:55.814Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "1.134.13",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
-    },
     "wouter": {
-      "current": "3.3.5",
+      "current": "3.7.1",
       "latest": "3.7.1",
-      "lastUpdated": "2025-11-07T03:53:55.593Z",
+      "lastUpdated": "2025-11-07T04:37:00.000Z",
       "size": {
         "gzip": 2428,
         "minified": 5508,
-        "lastChecked": "2025-11-07T03:53:55.830Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "3.7.1",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
+        "lastChecked": "2025-11-07T04:37:00.000Z"
+      }
+    },
+    "react-router-dom": {
+      "current": "6.30.1",
+      "latest": "7.9.5",
+      "lastUpdated": "2025-11-07T04:37:00.000Z",
+      "size": {
+        "gzip": 26970,
+        "minified": 87795,
+        "lastChecked": "2025-11-07T04:37:00.000Z"
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 {
-  "lastChecked": "2025-11-07T04:37:00.000Z",
-  "lastBenchmarkRun": "2025-11-07T04:37:00Z",
-  "testFilesHash": "router-benchmarks-with-zen",
+  "lastChecked": "2025-11-07T04:56:54.258Z",
+  "lastBenchmarkRun": "2025-11-07T04:57:44Z",
+  "testFilesHash": "960380b56b645ae35e80d50a01d191a8164ab6d663b9a863907b303f65b709cb",
   "libraries": {
     "@sylphx/zen-router": {
       "current": "1.0.2",
@@ -26,11 +26,37 @@
     "react-router-dom": {
       "current": "6.30.1",
       "latest": "7.9.5",
-      "lastUpdated": "2025-11-07T04:37:00.000Z",
+      "lastUpdated": "2025-11-07T04:56:52.741Z",
       "size": {
         "gzip": 26970,
         "minified": 87795,
-        "lastChecked": "2025-11-07T04:37:00.000Z"
+        "lastChecked": "2025-11-07T04:56:54.150Z"
+      },
+      "incompatible": true,
+      "incompatibleVersion": "7.9.5",
+      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
+    },
+    "react": {
+      "current": "18.3.1",
+      "latest": "19.2.0",
+      "lastUpdated": "2025-11-07T04:56:51.677Z",
+      "size": {
+        "gzip": 2576,
+        "minified": 6599,
+        "lastChecked": "2025-11-07T04:56:54.186Z"
+      },
+      "incompatible": true,
+      "incompatibleVersion": "19.2.0",
+      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
+    },
+    "react-dom": {
+      "current": "18.3.1",
+      "latest": "19.2.0",
+      "lastUpdated": "2025-11-07T04:56:52.292Z",
+      "size": {
+        "gzip": 42942,
+        "minified": 133258,
+        "lastChecked": "2025-11-07T04:56:54.258Z"
       }
     }
   }

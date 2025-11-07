@@ -19,7 +19,7 @@
 |----------|-------------|-----------|--------|--------------|
 | **[🗃️ State Management](./benchmarks/state-management/)** | React state management libraries | 9 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/state-management/)** |
 | **[🔄 Immutability](./benchmarks/immutability/)** | Immutability helper libraries | 6 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/immutability/)** |
-| **[🧭 Router](./benchmarks/router/)** | React routing libraries | 3 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/router/)** |
+| **[🧭 Router](./benchmarks/router/)** | React routing libraries | 4 | ![WIP](https://img.shields.io/badge/WIP-yellow) | **[View →](./benchmarks/router/)** |
 
 Each category has its own detailed README with benchmark results, methodology, and insights.
 

@@ -12,7 +12,7 @@
     "displayName": "Wouter"
   },
   "@sylphx/zen-router": {
-    "github": "https://github.com/sylphxltd/zen-router",
+    "github": "https://github.com/sylphx/zen",
     "displayName": "Zen Router"
   }
 }

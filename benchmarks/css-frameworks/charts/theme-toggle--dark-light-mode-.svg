@@ -41,22 +41,22 @@
   <text x="740" y="365" text-anchor="middle" font-size="10" fill="#6b7280" transform="rotate(-45, 740, 365)">
     11-09
   </text>
-  <polyline points="60,85.79691963669615 400,92.12127000852067 740,86.80343493890493" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <polyline points="60,85.79691963669615 400,92.12127000852067 740,86.19834219775882" fill="none" stroke="#3b82f6" stroke-width="2"/>
   <circle cx="60" cy="85.79691963669615" r="4" fill="#3b82f6"/>
   <circle cx="400" cy="92.12127000852067" r="4" fill="#3b82f6"/>
-  <circle cx="740" cy="86.80343493890493" r="4" fill="#3b82f6"/>
-  <polyline points="60,85.60480549223573 400,87.03148013863904 740,86.00513425030337" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="740" cy="86.19834219775882" r="4" fill="#3b82f6"/>
+  <polyline points="60,85.60480549223573 400,87.03148013863904 740,85.57905201056096" fill="none" stroke="#ef4444" stroke-width="2"/>
   <circle cx="60" cy="85.60480549223573" r="4" fill="#ef4444"/>
   <circle cx="400" cy="87.03148013863904" r="4" fill="#ef4444"/>
-  <circle cx="740" cy="86.00513425030337" r="4" fill="#ef4444"/>
-  <polyline points="60,86.31472283236954 400,85.47313524864879 740,87.15303614300367" fill="none" stroke="#10b981" stroke-width="2"/>
+  <circle cx="740" cy="85.57905201056096" r="4" fill="#ef4444"/>
+  <polyline points="60,86.31472283236954 400,85.47313524864879 740,93.5675408043885" fill="none" stroke="#10b981" stroke-width="2"/>
   <circle cx="60" cy="86.31472283236954" r="4" fill="#10b981"/>
   <circle cx="400" cy="85.47313524864879" r="4" fill="#10b981"/>
-  <circle cx="740" cy="87.15303614300367" r="4" fill="#10b981"/>
-  <polyline points="60,85.6553590962022 400,85.45454545454547 740,85.8620516455735" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="740" cy="93.5675408043885" r="4" fill="#10b981"/>
+  <polyline points="60,85.6553590962022 400,85.45454545454547 740,86.04182978146758" fill="none" stroke="#f59e0b" stroke-width="2"/>
   <circle cx="60" cy="85.6553590962022" r="4" fill="#f59e0b"/>
   <circle cx="400" cy="85.45454545454547" r="4" fill="#f59e0b"/>
-  <circle cx="740" cy="85.8620516455735" r="4" fill="#f59e0b"/>
+  <circle cx="740" cy="86.04182978146758" r="4" fill="#f59e0b"/>
   <rect x="650" y="42" width="12" height="12" fill="#3b82f6"/>
   <text x="668" y="53" font-size="12" fill="#374151">Silk - Toggle theme 1000x</text>
   <rect x="650" y="62" width="12" height="12" fill="#ef4444"/>

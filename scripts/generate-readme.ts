@@ -197,6 +197,26 @@ function getHistoricalResults(benchmarkDir: string): string[] {
   return files;
 }
 
+function getCategoryTitle(categoryName: string): string {
+  switch (categoryName) {
+    case 'state-management': return 'State Management Benchmark 🏆';
+    case 'immutability': return 'Immutability Benchmark 🔄';
+    case 'router': return 'Router Benchmark 🛤️';
+    case 'css-frameworks': return 'CSS Frameworks Benchmark 🎨';
+    default: return `${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} Benchmark 📊`;
+  }
+}
+
+function getCategoryDescription(categoryName: string): string {
+  switch (categoryName) {
+    case 'state-management': return 'Professional performance comparison of JavaScript state management libraries.';
+    case 'immutability': return 'Comprehensive performance testing of JavaScript immutability libraries and patterns.';
+    case 'router': return 'Performance comparison of JavaScript routing libraries and frameworks.';
+    case 'css-frameworks': return 'Professional performance comparison of CSS-in-JS and utility-first CSS frameworks.';
+    default: return `Professional performance comparison of ${categoryName} libraries.`;
+  }
+}
+
 function generateASCIIChart(results: BenchmarkResult[], maxBarLength: number = 40): string {
   if (results.length === 0) return '';
 
@@ -352,6 +372,28 @@ function generateReadme(benchmarkDir: string) {
   // Read versions
   const versions: VersionTracker = JSON.parse(readFileSync(versionsPath, 'utf-8'));
 
+  // Determine category information from path
+  const categoryName = benchmarkDir.split('/').pop() || 'benchmark';
+  const categoryTitle = getCategoryTitle(categoryName);
+  const categoryDescription = getCategoryDescription(categoryName);
+
+  // Generate table of contents
+  const tableOfContents =
+`## 📑 Table of Contents
+
+- [📋 Benchmark Information](#-benchmark-information)
+- [📦 Library Versions](#-library-versions)
+- [📦 Bundle Size Comparison](#-bundle-size-comparison)
+- [🚀 Performance Rankings](#-performance-rankings)
+- [📦 Bundle Size Rankings](#-bundle-size-rankings)
+- [🎯 Feature Coverage Rankings](#-feature-coverage-rankings)${featureMatrix ? '\n- [✨ Feature Comparison](#-feature-comparison)' : ''}
+- [📜 Historical Results](#-historical-results)
+- [📊 Detailed Results](#-detailed-results)
+- [🚀 Running Benchmarks](#-running-benchmarks)
+- [ℹ️ About](#️-about)
+
+`;
+
   // Parse benchmark results
   const groupedResults = parseResultsFromLatestRun(resultsDir);
   if (!groupedResults) {
@@ -360,8 +402,9 @@ function generateReadme(benchmarkDir: string) {
   }
 
   // Start building README
-  let readme = '# State Management Benchmark 🏆\n\n';
-  readme += 'Professional performance comparison of JavaScript state management libraries.\n\n';
+  let readme = `# ${categoryTitle}\n\n`;
+  readme += `${categoryDescription}\n\n`;
+  readme += tableOfContents;
 
   // Metadata section
   const lastRun = new Date(versions.lastBenchmarkRun);

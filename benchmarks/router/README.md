@@ -1,12 +1,26 @@
-# State Management Benchmark 🏆
+# Router Benchmark 🛤️
 
-Professional performance comparison of JavaScript state management libraries.
+Performance comparison of JavaScript routing libraries and frameworks.
+
+## 📑 Table of Contents
+
+- [📋 Benchmark Information](#-benchmark-information)
+- [📦 Library Versions](#-library-versions)
+- [📦 Bundle Size Comparison](#-bundle-size-comparison)
+- [🚀 Performance Rankings](#-performance-rankings)
+- [📦 Bundle Size Rankings](#-bundle-size-rankings)
+- [🎯 Feature Coverage Rankings](#-feature-coverage-rankings)
+- [✨ Feature Comparison](#-feature-comparison)
+- [📜 Historical Results](#-historical-results)
+- [📊 Detailed Results](#-detailed-results)
+- [🚀 Running Benchmarks](#-running-benchmarks)
+- [ℹ️ About](#️-about)
 
 ## 📋 Benchmark Information
 
 - **Last Updated:** November 9, 2025
-- **Last Run:** 12:17:15 AM UTC
-- **Environment:** Node.js v20.19.5, linux x64
+- **Last Run:** 6:16:23 AM UTC
+- **Environment:** Node.js v25.0.0, darwin arm64
 - **Test Framework:** Vitest Bench
 - **Iterations:** 3 runs averaged for statistical accuracy
 
@@ -277,4 +291,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-09T06:16:23.618Z*
+*Last generated: 2025-11-09T13:50:38.533Z*

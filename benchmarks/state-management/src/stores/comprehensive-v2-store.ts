@@ -788,20 +788,26 @@ class MobxStoreV2 {
   }
 
   increment = () => {
-    const previousCount = this.count;
-    this.count++;
-    return this.count - previousCount;
+    return runInAction(() => {
+      const previousCount = this.count;
+      this.count++;
+      return this.count - previousCount;
+    });
   };
 
   spliceUser = (index, deleteCount, item) => {
-    this.users.splice(index, deleteCount, item);
+    return runInAction(() => {
+      this.users.splice(index, deleteCount, item);
+    });
   };
 
   sortUsers = (key) => {
-    this.users.sort((a, b) => {
-      if (a[key] < b[key]) return -1;
-      if (a[key] > b[key]) return 1;
-      return 0;
+    return runInAction(() => {
+      this.users.sort((a, b) => {
+        if (a[key] < b[key]) return -1;
+        if (a[key] > b[key]) return 1;
+        return 0;
+      });
     });
   };
 

@@ -568,15 +568,19 @@ function generateReadme(benchmarkDir: string) {
   if (groupedResults.size > 1) {
     readme += '### 📑 Test Categories\n\n';
     for (const [category] of groupedResults.entries()) {
-      const anchorName = category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      // Generate GitHub-compatible anchor name: lowercase, replace spaces and punctuation with hyphens
+      const anchorName = category.toLowerCase()
+        .replace(/[^\w\s-]/g, '') // Remove special characters except spaces and hyphens
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
       readme += `- [${category}](#${anchorName})\n`;
     }
     readme += '\n';
   }
 
   for (const [category, results] of groupedResults.entries()) {
-    const anchorName = category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    readme += `### ${category} {#${anchorName}}\n\n`;
+    readme += `### ${category}\n\n`;
 
     // Add ASCII performance chart (exclude benchmarks from config)
     readme += '**Performance Comparison:**\n\n';

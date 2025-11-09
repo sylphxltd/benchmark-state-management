@@ -1,0 +1,92 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="white"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1f2937">
+    Simple Increment - Performance Trend
+  </text>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="60" x2="740" y2="60" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="65" text-anchor="end" font-size="12" fill="#6b7280">
+    38.4M
+  </text>
+  <line x1="60" y1="116" x2="740" y2="116" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="121" text-anchor="end" font-size="12" fill="#6b7280">
+    30.7M
+  </text>
+  <line x1="60" y1="172" x2="740" y2="172" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="177" text-anchor="end" font-size="12" fill="#6b7280">
+    23.0M
+  </text>
+  <line x1="60" y1="228" x2="740" y2="228" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="233" text-anchor="end" font-size="12" fill="#6b7280">
+    15.4M
+  </text>
+  <line x1="60" y1="284" x2="740" y2="284" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="289" text-anchor="end" font-size="12" fill="#6b7280">
+    7.7M
+  </text>
+  <line x1="60" y1="340" x2="740" y2="340" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="50" y="345" text-anchor="end" font-size="12" fill="#6b7280">
+    0
+  </text>
+  <text x="60" y="365" text-anchor="middle" font-size="10" fill="#6b7280" transform="rotate(-45, 60, 365)">
+    11-06
+  </text>
+  <text x="400" y="365" text-anchor="middle" font-size="10" fill="#6b7280" transform="rotate(-45, 400, 365)">
+    11-07
+  </text>
+  <text x="740" y="365" text-anchor="middle" font-size="10" fill="#6b7280" transform="rotate(-45, 740, 365)">
+    11-09
+  </text>
+  <polyline points="60,333.50406344932605 400,333.7383140900728 740,337.9339245891519" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="60" cy="333.50406344932605" r="4" fill="#3b82f6"/>
+  <circle cx="400" cy="333.7383140900728" r="4" fill="#3b82f6"/>
+  <circle cx="740" cy="337.9339245891519" r="4" fill="#3b82f6"/>
+  <polyline points="60,337.4268219269406 400,337.30665107985783 740,338.7715356836872" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <circle cx="60" cy="337.4268219269406" r="4" fill="#ef4444"/>
+  <circle cx="400" cy="337.30665107985783" r="4" fill="#ef4444"/>
+  <circle cx="740" cy="338.7715356836872" r="4" fill="#ef4444"/>
+  <polyline points="60,327.6710033196855 400,328.7521705160434 740,336.0979449384412" fill="none" stroke="#10b981" stroke-width="2"/>
+  <circle cx="60" cy="327.6710033196855" r="4" fill="#10b981"/>
+  <circle cx="400" cy="328.7521705160434" r="4" fill="#10b981"/>
+  <circle cx="740" cy="336.0979449384412" r="4" fill="#10b981"/>
+  <polyline points="60,300.8220896129707 400,302.2377373484016 740,325.6231315848591" fill="none" stroke="#f59e0b" stroke-width="2"/>
+  <circle cx="60" cy="300.8220896129707" r="4" fill="#f59e0b"/>
+  <circle cx="400" cy="302.2377373484016" r="4" fill="#f59e0b"/>
+  <circle cx="740" cy="325.6231315848591" r="4" fill="#f59e0b"/>
+  <polyline points="60,298.78104724016015 400,307.63846838845177 740,328.4245797610075" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <circle cx="60" cy="298.78104724016015" r="4" fill="#8b5cf6"/>
+  <circle cx="400" cy="307.63846838845177" r="4" fill="#8b5cf6"/>
+  <circle cx="740" cy="328.4245797610075" r="4" fill="#8b5cf6"/>
+  <polyline points="60,101.17875443832264 400,106.0976719284129 740,266.2963831707998" fill="none" stroke="#ec4899" stroke-width="2"/>
+  <circle cx="60" cy="101.17875443832264" r="4" fill="#ec4899"/>
+  <circle cx="400" cy="106.0976719284129" r="4" fill="#ec4899"/>
+  <circle cx="740" cy="266.2963831707998" r="4" fill="#ec4899"/>
+  <polyline points="60,85.4545454545455 400,101.07942687889232 740,263.8741286653625" fill="none" stroke="#06b6d4" stroke-width="2"/>
+  <circle cx="60" cy="85.4545454545455" r="4" fill="#06b6d4"/>
+  <circle cx="400" cy="101.07942687889232" r="4" fill="#06b6d4"/>
+  <circle cx="740" cy="263.8741286653625" r="4" fill="#06b6d4"/>
+  <polyline points="60,95.16745040274273 400,98.1110742710749 740,262.5281051171622" fill="none" stroke="#84cc16" stroke-width="2"/>
+  <circle cx="60" cy="95.16745040274273" r="4" fill="#84cc16"/>
+  <circle cx="400" cy="98.1110742710749" r="4" fill="#84cc16"/>
+  <circle cx="740" cy="262.5281051171622" r="4" fill="#84cc16"/>
+  <rect x="650" y="42" width="12" height="12" fill="#3b82f6"/>
+  <text x="668" y="53" font-size="12" fill="#374151">Redux Toolkit</text>
+  <rect x="650" y="62" width="12" height="12" fill="#ef4444"/>
+  <text x="668" y="73" font-size="12" fill="#374151">Zustand</text>
+  <rect x="650" y="82" width="12" height="12" fill="#10b981"/>
+  <text x="668" y="93" font-size="12" fill="#374151">Jotai</text>
+  <rect x="650" y="102" width="12" height="12" fill="#f59e0b"/>
+  <text x="668" y="113" font-size="12" fill="#374151">MobX</text>
+  <rect x="650" y="122" width="12" height="12" fill="#8b5cf6"/>
+  <text x="668" y="133" font-size="12" fill="#374151">Valtio</text>
+  <rect x="650" y="142" width="12" height="12" fill="#ec4899"/>
+  <text x="668" y="153" font-size="12" fill="#374151">Preact Signals</text>
+  <rect x="650" y="162" width="12" height="12" fill="#06b6d4"/>
+  <text x="668" y="173" font-size="12" fill="#374151">Solid Signals</text>
+  <rect x="650" y="182" width="12" height="12" fill="#84cc16"/>
+  <text x="668" y="193" font-size="12" fill="#374151">Zen</text>
+</svg>

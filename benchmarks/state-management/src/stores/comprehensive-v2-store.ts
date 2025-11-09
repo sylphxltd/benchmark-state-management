@@ -575,6 +575,12 @@ export const zustandActionsV2 = {
     }));
     return largeArray;
   },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    const state = zustandStoreV2.getState();
+    return state.count * 4 + 100;
+  },
 };
 
 // ============================================================================
@@ -757,6 +763,11 @@ export const jotaiActionsV2 = {
   getDoubled: () => {
     return jotaiStore.count * 2;
   },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return jotaiStore.count * 4 + 100;
+  },
 };
 
 // ============================================================================
@@ -931,6 +942,11 @@ export const mobxActionsV2 = {
   getDoubled: () => {
     return mobxStoreV2.count * 2;
   },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return mobxStoreV2.count * 4 + 100;
+  },
 };
 
 // ============================================================================
@@ -1074,6 +1090,11 @@ export const valtioActionsV2 = {
       data: new Array(100).fill(Math.random())
     }));
     return largeArray;
+  },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return valtioStoreV2.count * 4 + 100;
   },
 };
 
@@ -1252,6 +1273,11 @@ export const preactActionsV2 = {
   // Add missing getDoubled method
   getDoubled: () => {
     return preactCountSignal.value * 2;
+  },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return preactCountSignal.value * 4 + 100;
   },
 };
 
@@ -1434,6 +1460,11 @@ export const solidActionsV2 = {
   // Add missing getDoubled method
   getDoubled: () => {
     return solidCountSignal() * 2;
+  },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return solidCountSignal() * 4 + 100;
   },
 };
 
@@ -1619,5 +1650,10 @@ export const zenActionsV2 = {
   // Add missing getDoubled method
   getDoubled: () => {
     return get(zenCountStore) * 2;
+  },
+
+  // Add missing getComplexComputed method
+  getComplexComputed: () => {
+    return get(zenCountStore) * 4 + 100;
   },
 };

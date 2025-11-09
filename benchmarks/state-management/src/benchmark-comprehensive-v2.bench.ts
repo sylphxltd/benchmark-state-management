@@ -21,69 +21,69 @@ import {
 
 describe('Store Creation', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.createStore();
+    reduxActionsV2.createStore();
   });
 
   bench('Zustand', () => {
-    zustandActions.createStore();
+    zustandActionsV2.createStore();
   });
 
   bench('Jotai', () => {
-    jotaiActions.createStore();
+    jotaiActionsV2.createStore();
   });
 
   bench('MobX', () => {
-    mobxActions.createStore();
+    mobxActionsV2.createStore();
   });
 
   bench('Valtio', () => {
-    valtioActions.createStore();
+    valtioActionsV2.createStore();
   });
 
   bench('Preact Signals', () => {
-    preactActions.createStore();
+    preactActionsV2.createStore();
   });
 
   bench('Solid Signals', () => {
-    solidActions.createStore();
+    solidActionsV2.createStore();
   });
 
   bench('Zen', () => {
-    zenActions.createStore();
+    zenActionsV2.createStore();
   });
 });
 
 describe('Simple Increment', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.increment();
+    reduxActionsV2.increment();
   });
 
   bench('Zustand', () => {
-    zustandActions.increment();
+    zustandActionsV2.increment();
   });
 
   bench('Jotai', () => {
-    jotaiActions.increment();
+    jotaiActionsV2.increment();
   });
 
   bench('MobX', () => {
-    mobxActions.increment();
+    mobxActionsV2.increment();
   });
 
   bench('Valtio', () => {
-    valtioActions.increment();
+    valtioActionsV2.increment();
   });
 
   bench('Preact Signals', () => {
-    preactActions.increment();
+    preactActionsV2.increment();
   });
 
   bench('Solid Signals', () => {
-    solidActions.increment();
+    solidActionsV2.increment();
   });
 
   bench('Zen', () => {
-    zenActions.increment();
+    zenActionsV2.increment();
   });
 });
 
@@ -94,49 +94,49 @@ describe('Simple Increment', () => {
 describe('High Frequency Read', () => {
   bench('Redux Toolkit', () => {
     for (let i = 0; i < 1000; i++) {
-      reduxActions.getDoubled();
+      reduxActionsV2.getDoubled();
     }
   });
 
   bench('Zustand', () => {
     for (let i = 0; i < 1000; i++) {
-      zustandActions.getDoubled();
+      zustandActionsV2.getDoubled();
     }
   });
 
   bench('Jotai', () => {
     for (let i = 0; i < 1000; i++) {
-      jotaiActions.getDoubled();
+      jotaiActionsV2.getDoubled();
     }
   });
 
   bench('MobX', () => {
     for (let i = 0; i < 1000; i++) {
-      mobxActions.getDoubled();
+      mobxActionsV2.getDoubled();
     }
   });
 
   bench('Valtio', () => {
     for (let i = 0; i < 1000; i++) {
-      valtioActions.getDoubled();
+      valtioActionsV2.getDoubled();
     }
   });
 
   bench('Preact Signals', () => {
     for (let i = 0; i < 1000; i++) {
-      preactActions.getDoubled();
+      preactActionsV2.getDoubled();
     }
   });
 
   bench('Solid Signals', () => {
     for (let i = 0; i < 1000; i++) {
-      solidActions.getDoubled();
+      solidActionsV2.getDoubled();
     }
   });
 
   bench('Zen', () => {
     for (let i = 0; i < 1000; i++) {
-      zenActions.getDoubled();
+      zenActionsV2.getDoubled();
     }
   });
 });
@@ -144,49 +144,49 @@ describe('High Frequency Read', () => {
 describe('Burst Updates', () => {
   bench('Redux Toolkit', () => {
     for (let i = 0; i < 100; i++) {
-      reduxActions.increment();
+      reduxActionsV2.increment();
     }
   });
 
   bench('Zustand', () => {
     for (let i = 0; i < 100; i++) {
-      zustandActions.increment();
+      zustandActionsV2.increment();
     }
   });
 
   bench('Jotai', () => {
     for (let i = 0; i < 100; i++) {
-      jotaiActions.increment();
+      jotaiActionsV2.increment();
     }
   });
 
   bench('MobX', () => {
     for (let i = 0; i < 100; i++) {
-      mobxActions.increment();
+      mobxActionsV2.increment();
     }
   });
 
   bench('Valtio', () => {
     for (let i = 0; i < 100; i++) {
-      valtioActions.increment();
+      valtioActionsV2.increment();
     }
   });
 
   bench('Preact Signals', () => {
     for (let i = 0; i < 100; i++) {
-      preactActions.increment();
+      preactActionsV2.increment();
     }
   });
 
   bench('Solid Signals', () => {
     for (let i = 0; i < 100; i++) {
-      solidActions.increment();
+      solidActionsV2.increment();
     }
   });
 
   bench('Zen', () => {
     for (let i = 0; i < 100; i++) {
-      zenActions.increment();
+      zenActionsV2.increment();
     }
   });
 });
@@ -197,69 +197,69 @@ describe('Burst Updates', () => {
 
 describe('Array Splice Operations', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    reduxActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Zustand', () => {
-    zustandActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    zustandActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Jotai', () => {
-    jotaiActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    jotaiActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('MobX', () => {
-    mobxActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    mobxActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Valtio', () => {
-    valtioActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    valtioActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Preact Signals', () => {
-    preactActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    preactActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Solid Signals', () => {
-    solidActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    solidActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 
   bench('Zen', () => {
-    zenActions.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
+    zenActionsV2.spliceUser(50, 1, { id: Date.now(), name: 'Spliced User' });
   });
 });
 
 describe('Large Array Sort', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.sortUsers('name');
+    reduxActionsV2.sortUsers('name');
   });
 
   bench('Zustand', () => {
-    zustandActions.sortUsers('name');
+    zustandActionsV2.sortUsers('name');
   });
 
   bench('Jotai', () => {
-    jotaiActions.sortUsers('name');
+    jotaiActionsV2.sortUsers('name');
   });
 
   bench('MobX', () => {
-    mobxActions.sortUsers('name');
+    mobxActionsV2.sortUsers('name');
   });
 
   bench('Valtio', () => {
-    valtioActions.sortUsers('name');
+    valtioActionsV2.sortUsers('name');
   });
 
   bench('Preact Signals', () => {
-    preactActions.sortUsers('name');
+    preactActionsV2.sortUsers('name');
   });
 
   bench('Solid Signals', () => {
-    solidActions.sortUsers('name');
+    solidActionsV2.sortUsers('name');
   });
 
   bench('Zen', () => {
-    zenActions.sortUsers('name');
+    zenActionsV2.sortUsers('name');
   });
 });
 
@@ -267,35 +267,35 @@ describe('Array Find Operations', () => {
   const targetId = Math.floor(Math.random() * 1000);
 
   bench('Redux Toolkit', () => {
-    reduxActions.findUser(targetId);
+    reduxActionsV2.findUser(targetId);
   });
 
   bench('Zustand', () => {
-    zustandActions.findUser(targetId);
+    zustandActionsV2.findUser(targetId);
   });
 
   bench('Jotai', () => {
-    jotaiActions.findUser(targetId);
+    jotaiActionsV2.findUser(targetId);
   });
 
   bench('MobX', () => {
-    mobxActions.findUser(targetId);
+    mobxActionsV2.findUser(targetId);
   });
 
   bench('Valtio', () => {
-    valtioActions.findUser(targetId);
+    valtioActionsV2.findUser(targetId);
   });
 
   bench('Preact Signals', () => {
-    preactActions.findUser(targetId);
+    preactActionsV2.findUser(targetId);
   });
 
   bench('Solid Signals', () => {
-    solidActions.findUser(targetId);
+    solidActionsV2.findUser(targetId);
   });
 
   bench('Zen', () => {
-    zenActions.findUser(targetId);
+    zenActionsV2.findUser(targetId);
   });
 });
 
@@ -305,103 +305,103 @@ describe('Array Find Operations', () => {
 
 describe('Deep Object Creation', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.createDeepObject();
+    reduxActionsV2.createDeepObject();
   });
 
   bench('Zustand', () => {
-    zustandActions.createDeepObject();
+    zustandActionsV2.createDeepObject();
   });
 
   bench('Jotai', () => {
-    jotaiActions.createDeepObject();
+    jotaiActionsV2.createDeepObject();
   });
 
   bench('MobX', () => {
-    mobxActions.createDeepObject();
+    mobxActionsV2.createDeepObject();
   });
 
   bench('Valtio', () => {
-    valtioActions.createDeepObject();
+    valtioActionsV2.createDeepObject();
   });
 
   bench('Preact Signals', () => {
-    preactActions.createDeepObject();
+    preactActionsV2.createDeepObject();
   });
 
   bench('Solid Signals', () => {
-    solidActions.createDeepObject();
+    solidActionsV2.createDeepObject();
   });
 
   bench('Zen', () => {
-    zenActions.createDeepObject();
+    zenActionsV2.createDeepObject();
   });
 });
 
 describe('10-Level Nested Update', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.setTenLevelNested(Math.random());
+    reduxActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Zustand', () => {
-    zustandActions.setTenLevelNested(Math.random());
+    zustandActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Jotai', () => {
-    jotaiActions.setTenLevelNested(Math.random());
+    jotaiActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('MobX', () => {
-    mobxActions.setTenLevelNested(Math.random());
+    mobxActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Valtio', () => {
-    valtioActions.setTenLevelNested(Math.random());
+    valtioActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Preact Signals', () => {
-    preactActions.setTenLevelNested(Math.random());
+    preactActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Solid Signals', () => {
-    solidActions.setTenLevelNested(Math.random());
+    solidActionsV2.setTenLevelNested(Math.random());
   });
 
   bench('Zen', () => {
-    zenActions.setTenLevelNested(Math.random());
+    zenActionsV2.setTenLevelNested(Math.random());
   });
 });
 
 describe('Deep Read Access', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.getDeepValue();
+    reduxActionsV2.getDeepValue();
   });
 
   bench('Zustand', () => {
-    zustandActions.getDeepValue();
+    zustandActionsV2.getDeepValue();
   });
 
   bench('Jotai', () => {
-    jotaiActions.getDeepValue();
+    jotaiActionsV2.getDeepValue();
   });
 
   bench('MobX', () => {
-    mobxActions.getDeepValue();
+    mobxActionsV2.getDeepValue();
   });
 
   bench('Valtio', () => {
-    valtioActions.getDeepValue();
+    valtioActionsV2.getDeepValue();
   });
 
   bench('Preact Signals', () => {
-    preactActions.getDeepValue();
+    preactActionsV2.getDeepValue();
   });
 
   bench('Solid Signals', () => {
-    solidActions.getDeepValue();
+    solidActionsV2.getDeepValue();
   });
 
   bench('Zen', () => {
-    zenActions.getDeepValue();
+    zenActionsV2.getDeepValue();
   });
 });
 
@@ -411,69 +411,69 @@ describe('Deep Read Access', () => {
 
 describe('Complex Computed Chain', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.getComplexComputed();
+    reduxActionsV2.getComplexComputed();
   });
 
   bench('Zustand', () => {
-    zustandActions.getComplexComputed();
+    zustandActionsV2.getComplexComputed();
   });
 
   bench('Jotai', () => {
-    jotaiActions.getComplexComputed();
+    jotaiActionsV2.getComplexComputed();
   });
 
   bench('MobX', () => {
-    mobxActions.getComplexComputed();
+    mobxActionsV2.getComplexComputed();
   });
 
   bench('Valtio', () => {
-    valtioActions.getComplexComputed();
+    valtioActionsV2.getComplexComputed();
   });
 
   bench('Preact Signals', () => {
-    preactActions.getComplexComputed();
+    preactActionsV2.getComplexComputed();
   });
 
   bench('Solid Signals', () => {
-    solidActions.getComplexComputed();
+    solidActionsV2.getComplexComputed();
   });
 
   bench('Zen', () => {
-    zenActions.getComplexComputed();
+    zenActionsV2.getComplexComputed();
   });
 });
 
 describe('Computed Invalidation', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.invalidateComputed();
+    reduxActionsV2.invalidateComputed();
   });
 
   bench('Zustand', () => {
-    zustandActions.invalidateComputed();
+    zustandActionsV2.invalidateComputed();
   });
 
   bench('Jotai', () => {
-    jotaiActions.invalidateComputed();
+    jotaiActionsV2.invalidateComputed();
   });
 
   bench('MobX', () => {
-    mobxActions.invalidateComputed();
+    mobxActionsV2.invalidateComputed();
   });
 
   bench('Valtio', () => {
-    valtioActions.invalidateComputed();
+    valtioActionsV2.invalidateComputed();
   });
 
   bench('Preact Signals', () => {
-    preactActions.invalidateComputed();
+    preactActionsV2.invalidateComputed();
   });
 
   bench('Solid Signals', () => {
-    solidActions.invalidateComputed();
+    solidActionsV2.invalidateComputed();
   });
 
   bench('Zen', () => {
-    zenActions.invalidateComputed();
+    zenActionsV2.invalidateComputed();
   });
 });
 
@@ -483,69 +483,69 @@ describe('Computed Invalidation', () => {
 
 describe('Subscription Cascade', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.setupSubscriptionCascade();
+    reduxActionsV2.setupSubscriptionCascade();
   });
 
   bench('Zustand', () => {
-    zustandActions.setupSubscriptionCascade();
+    zustandActionsV2.setupSubscriptionCascade();
   });
 
   bench('Jotai', () => {
-    jotaiActions.setupSubscriptionCascade();
+    jotaiActionsV2.setupSubscriptionCascade();
   });
 
   bench('MobX', () => {
-    mobxActions.setupSubscriptionCascade();
+    mobxActionsV2.setupSubscriptionCascade();
   });
 
   bench('Valtio', () => {
-    valtioActions.setupSubscriptionCascade();
+    valtioActionsV2.setupSubscriptionCascade();
   });
 
   bench('Preact Signals', () => {
-    preactActions.setupSubscriptionCascade();
+    preactActionsV2.setupSubscriptionCascade();
   });
 
   bench('Solid Signals', () => {
-    solidActions.setupSubscriptionCascade();
+    solidActionsV2.setupSubscriptionCascade();
   });
 
   bench('Zen', () => {
-    zenActions.setupSubscriptionCascade();
+    zenActionsV2.setupSubscriptionCascade();
   });
 });
 
 describe('Reaction Performance', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.triggerReaction();
+    reduxActionsV2.triggerReaction();
   });
 
   bench('Zustand', () => {
-    zustandActions.triggerReaction();
+    zustandActionsV2.triggerReaction();
   });
 
   bench('Jotai', () => {
-    jotaiActions.triggerReaction();
+    jotaiActionsV2.triggerReaction();
   });
 
   bench('MobX', () => {
-    mobxActions.triggerReaction();
+    mobxActionsV2.triggerReaction();
   });
 
   bench('Valtio', () => {
-    valtioActions.triggerReaction();
+    valtioActionsV2.triggerReaction();
   });
 
   bench('Preact Signals', () => {
-    preactActions.triggerReaction();
+    preactActionsV2.triggerReaction();
   });
 
   bench('Solid Signals', () => {
-    solidActions.triggerReaction();
+    solidActionsV2.triggerReaction();
   });
 
   bench('Zen', () => {
-    zenActions.triggerReaction();
+    zenActionsV2.triggerReaction();
   });
 });
 
@@ -555,69 +555,69 @@ describe('Reaction Performance', () => {
 
 describe('Multi-Store Operations', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.multiStoreOperation();
+    reduxActionsV2.multiStoreOperation();
   });
 
   bench('Zustand', () => {
-    zustandActions.multiStoreOperation();
+    zustandActionsV2.multiStoreOperation();
   });
 
   bench('Jotai', () => {
-    jotaiActions.multiStoreOperation();
+    jotaiActionsV2.multiStoreOperation();
   });
 
   bench('MobX', () => {
-    mobxActions.multiStoreOperation();
+    mobxActionsV2.multiStoreOperation();
   });
 
   bench('Valtio', () => {
-    valtioActions.multiStoreOperation();
+    valtioActionsV2.multiStoreOperation();
   });
 
   bench('Preact Signals', () => {
-    preactActions.multiStoreOperation();
+    preactActionsV2.multiStoreOperation();
   });
 
   bench('Solid Signals', () => {
-    solidActions.multiStoreOperation();
+    solidActionsV2.multiStoreOperation();
   });
 
   bench('Zen', () => {
-    zenActions.multiStoreOperation();
+    zenActionsV2.multiStoreOperation();
   });
 });
 
 describe('Memory Allocation', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.allocateLargeState();
+    reduxActionsV2.allocateLargeState();
   });
 
   bench('Zustand', () => {
-    zustandActions.allocateLargeState();
+    zustandActionsV2.allocateLargeState();
   });
 
   bench('Jotai', () => {
-    jotaiActions.allocateLargeState();
+    jotaiActionsV2.allocateLargeState();
   });
 
   bench('MobX', () => {
-    mobxActions.allocateLargeState();
+    mobxActionsV2.allocateLargeState();
   });
 
   bench('Valtio', () => {
-    valtioActions.allocateLargeState();
+    valtioActionsV2.allocateLargeState();
   });
 
   bench('Preact Signals', () => {
-    preactActions.allocateLargeState();
+    preactActionsV2.allocateLargeState();
   });
 
   bench('Solid Signals', () => {
-    solidActions.allocateLargeState();
+    solidActionsV2.allocateLargeState();
   });
 
   bench('Zen', () => {
-    zenActions.allocateLargeState();
+    zenActionsV2.allocateLargeState();
   });
 });
 
@@ -627,137 +627,137 @@ describe('Memory Allocation', () => {
 
 describe('Form State Management', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.updateFormField('email', 'test@example.com');
+    reduxActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Zustand', () => {
-    zustandActions.updateFormField('email', 'test@example.com');
+    zustandActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Jotai', () => {
-    jotaiActions.updateFormField('email', 'test@example.com');
+    jotaiActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('MobX', () => {
-    mobxActions.updateFormField('email', 'test@example.com');
+    mobxActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Valtio', () => {
-    valtioActions.updateFormField('email', 'test@example.com');
+    valtioActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Preact Signals', () => {
-    preactActions.updateFormField('email', 'test@example.com');
+    preactActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Solid Signals', () => {
-    solidActions.updateFormField('email', 'test@example.com');
+    solidActionsV2.updateFormField('email', 'test@example.com');
   });
 
   bench('Zen', () => {
-    zenActions.updateFormField('email', 'test@example.com');
+    zenActionsV2.updateFormField('email', 'test@example.com');
   });
 });
 
 describe('Optimistic Update', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.optimisticUpdate();
+    reduxActionsV2.optimisticUpdate();
   });
 
   bench('Zustand', () => {
-    zustandActions.optimisticUpdate();
+    zustandActionsV2.optimisticUpdate();
   });
 
   bench('Jotai', () => {
-    jotaiActions.optimisticUpdate();
+    jotaiActionsV2.optimisticUpdate();
   });
 
   bench('MobX', () => {
-    mobxActions.optimisticUpdate();
+    mobxActionsV2.optimisticUpdate();
   });
 
   bench('Valtio', () => {
-    valtioActions.optimisticUpdate();
+    valtioActionsV2.optimisticUpdate();
   });
 
   bench('Preact Signals', () => {
-    preactActions.optimisticUpdate();
+    preactActionsV2.optimisticUpdate();
   });
 
   bench('Solid Signals', () => {
-    solidActions.optimisticUpdate();
+    solidActionsV2.optimisticUpdate();
   });
 
   bench('Zen', () => {
-    zenActions.optimisticUpdate();
+    zenActionsV2.optimisticUpdate();
   });
 });
 
 describe('Undo/Redo Operations', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.undo();
+    reduxActionsV2.undo();
   });
 
   bench('Zustand', () => {
-    zustandActions.undo();
+    zustandActionsV2.undo();
   });
 
   bench('Jotai', () => {
-    jotaiActions.undo();
+    jotaiActionsV2.undo();
   });
 
   bench('MobX', () => {
-    mobxActions.undo();
+    mobxActionsV2.undo();
   });
 
   bench('Valtio', () => {
-    valtioActions.undo();
+    valtioActionsV2.undo();
   });
 
   bench('Preact Signals', () => {
-    preactActions.undo();
+    preactActionsV2.undo();
   });
 
   bench('Solid Signals', () => {
-    solidActions.undo();
+    solidActionsV2.undo();
   });
 
   bench('Zen', () => {
-    zenActions.undo();
+    zenActionsV2.undo();
   });
 });
 
 describe('Batch State Operations', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.batchComplexState();
+    reduxActionsV2.batchComplexState();
   });
 
   bench('Zustand', () => {
-    zustandActions.batchComplexState();
+    zustandActionsV2.batchComplexState();
   });
 
   bench('Jotai', () => {
-    jotaiActions.batchComplexState();
+    jotaiActionsV2.batchComplexState();
   });
 
   bench('MobX', () => {
-    mobxActions.batchComplexState();
+    mobxActionsV2.batchComplexState();
   });
 
   bench('Valtio', () => {
-    valtioActions.batchComplexState();
+    valtioActionsV2.batchComplexState();
   });
 
   bench('Preact Signals', () => {
-    preactActions.batchComplexState();
+    preactActionsV2.batchComplexState();
   });
 
   bench('Solid Signals', () => {
-    solidActions.batchComplexState();
+    solidActionsV2.batchComplexState();
   });
 
   bench('Zen', () => {
-    zenActions.batchComplexState();
+    zenActionsV2.batchComplexState();
   });
 });
 
@@ -767,69 +767,69 @@ describe('Batch State Operations', () => {
 
 describe('Null Value Handling', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.setNullValue();
+    reduxActionsV2.setNullValue();
   });
 
   bench('Zustand', () => {
-    zustandActions.setNullValue();
+    zustandActionsV2.setNullValue();
   });
 
   bench('Jotai', () => {
-    jotaiActions.setNullValue();
+    jotaiActionsV2.setNullValue();
   });
 
   bench('MobX', () => {
-    mobxActions.setNullValue();
+    mobxActionsV2.setNullValue();
   });
 
   bench('Valtio', () => {
-    valtioActions.setNullValue();
+    valtioActionsV2.setNullValue();
   });
 
   bench('Preact Signals', () => {
-    preactActions.setNullValue();
+    preactActionsV2.setNullValue();
   });
 
   bench('Solid Signals', () => {
-    solidActions.setNullValue();
+    solidActionsV2.setNullValue();
   });
 
   bench('Zen', () => {
-    zenActions.setNullValue();
+    zenActionsV2.setNullValue();
   });
 });
 
 describe('Undefined Value Handling', () => {
   bench('Redux Toolkit', () => {
-    reduxActions.setUndefinedValue();
+    reduxActionsV2.setUndefinedValue();
   });
 
   bench('Zustand', () => {
-    zustandActions.setUndefinedValue();
+    zustandActionsV2.setUndefinedValue();
   });
 
   bench('Jotai', () => {
-    jotaiActions.setUndefinedValue();
+    jotaiActionsV2.setUndefinedValue();
   });
 
   bench('MobX', () => {
-    mobxActions.setUndefinedValue();
+    mobxActionsV2.setUndefinedValue();
   });
 
   bench('Valtio', () => {
-    valtioActions.setUndefinedValue();
+    valtioActionsV2.setUndefinedValue();
   });
 
   bench('Preact Signals', () => {
-    preactActions.setUndefinedValue();
+    preactActionsV2.setUndefinedValue();
   });
 
   bench('Solid Signals', () => {
-    solidActions.setUndefinedValue();
+    solidActionsV2.setUndefinedValue();
   });
 
   bench('Zen', () => {
-    zenActions.setUndefinedValue();
+    zenActionsV2.setUndefinedValue();
   });
 });
 
@@ -839,68 +839,68 @@ describe('Undefined Value Handling', () => {
 
 describe('Async State Loading', () => {
   bench('Redux Toolkit', async () => {
-    await reduxActions.loadAsyncData();
+    await reduxActionsV2.loadAsyncData();
   });
 
   bench('Zustand', async () => {
-    await zustandActions.loadAsyncData();
+    await zustandActionsV2.loadAsyncData();
   });
 
   bench('Jotai', async () => {
-    await jotaiActions.loadAsyncData();
+    await jotaiActionsV2.loadAsyncData();
   });
 
   bench('MobX', async () => {
-    await mobxActions.loadAsyncData();
+    await mobxActionsV2.loadAsyncData();
   });
 
   bench('Valtio', async () => {
-    await valtioActions.loadAsyncData();
+    await valtioActionsV2.loadAsyncData();
   });
 
   bench('Preact Signals', async () => {
-    await preactActions.loadAsyncData();
+    await preactActionsV2.loadAsyncData();
   });
 
   bench('Solid Signals', async () => {
-    await solidActions.loadAsyncData();
+    await solidActionsV2.loadAsyncData();
   });
 
   bench('Zen', async () => {
-    await zenActions.loadAsyncData();
+    await zenActionsV2.loadAsyncData();
   });
 });
 
 describe('Concurrent Async Operations', () => {
   bench('Redux Toolkit', async () => {
-    await reduxActions.concurrentAsync();
+    await reduxActionsV2.concurrentAsync();
   });
 
   bench('Zustand', async () => {
-    await zustandActions.concurrentAsync();
+    await zustandActionsV2.concurrentAsync();
   });
 
   bench('Jotai', async () => {
-    await jotaiActions.concurrentAsync();
+    await jotaiActionsV2.concurrentAsync();
   });
 
   bench('MobX', async () => {
-    await mobxActions.concurrentAsync();
+    await mobxActionsV2.concurrentAsync();
   });
 
   bench('Valtio', async () => {
-    await valtioActions.concurrentAsync();
+    await valtioActionsV2.concurrentAsync();
   });
 
   bench('Preact Signals', async () => {
-    await preactActions.concurrentAsync();
+    await preactActionsV2.concurrentAsync();
   });
 
   bench('Solid Signals', async () => {
-    await solidActions.concurrentAsync();
+    await solidActionsV2.concurrentAsync();
   });
 
   bench('Zen', async () => {
-    await zenActions.concurrentAsync();
+    await zenActionsV2.concurrentAsync();
   });
 });

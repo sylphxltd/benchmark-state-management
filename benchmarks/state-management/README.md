@@ -101,7 +101,7 @@ Explore detailed performance results for each category:
 
 | Category | Description | Status |
 |----------|-------------|--------|
-| [📖 Read Operations](groups/read/) | Performance of state reading operations across different scales | ⏳ Pending |
+| [📖 Read Operations](groups/read/) | Performance of state reading operations across different scales | ✅ Results Available |
 | [✏️ Write Operations](groups/write/) | Performance of state writing and update operations | ✅ Results Available |
 | [🏗️ Store Creation](groups/creation/) | Performance of creating new stores and instances | ⏳ Pending |
 | [⚡ Async Operations](groups/async/) | Performance of asynchronous state operations | ✅ Results Available |
@@ -202,4 +202,4 @@ The modular structure makes it easy to:
 - Extend to new libraries
 
 ---
-*Last updated: 2025-11-10T15:18:35.529Z*
+*Last updated: 2025-11-10T16:19:20.206Z*

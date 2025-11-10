@@ -189,6 +189,10 @@ export const reduxActionsV2 = {
     return reduxStoreV2.getState().comprehensive.count - previousCount;
   },
 
+  getCount: () => {
+    return reduxStoreV2.getState().comprehensive.count;
+  },
+
   // Array operations
   spliceUser: (index, deleteCount, item) => {
     const previousLength = reduxStoreV2.getState().comprehensive.users.length;
@@ -476,6 +480,10 @@ export const zustandActionsV2 = {
     const state = zustandStoreV2.getState();
     return state.increment();
   },
+  getCount: () => {
+    const state = zustandStoreV2.getState();
+    return state.count;
+  },
   spliceUser: (index, deleteCount, item) => {
     const state = zustandStoreV2.getState();
     return state.spliceUser(index, deleteCount, item);
@@ -628,6 +636,10 @@ export const jotaiActionsV2 = {
     jotaiStore.count++;
     notifyListeners();
     return jotaiStore.count - previousCount;
+  },
+  getCount: () => {
+    // Implementation will vary by library
+    return jotaiStore.count;
   },
 
   spliceUser: (index, deleteCount, item) => {
@@ -921,6 +933,10 @@ export const mobxActionsV2 = {
     mobxStoreV2.count++;
     return mobxStoreV2.count - previousCount;
   },
+  getCount: () => {
+    // Implementation will vary by library
+    return 0;
+  },
 
   setupSubscriptionCascade: () => {
     // MobX has built-in reactions
@@ -979,6 +995,10 @@ export const valtioActionsV2 = {
     const previousCount = valtioStoreV2.count;
     valtioStoreV2.count++;
     return valtioStoreV2.count - previousCount;
+  },
+  getCount: () => {
+    // Implementation will vary by library
+    return valtioStoreV2.count;
   },
 
   spliceUser: (index, deleteCount, item) => {
@@ -1137,6 +1157,10 @@ export const preactActionsV2 = {
     const previousValue = preactCountSignal.value;
     preactCountSignal.value++;
     return preactCountSignal.value - previousValue;
+  },
+  getCount: () => {
+    // Implementation will vary by library
+    return preactCountSignal.value;
   },
 
   spliceUser: (index, deleteCount, item) => {
@@ -1323,6 +1347,10 @@ export const solidActionsV2 = {
     const previousValue = solidCountSignal();
     setSolidCount(c => c + 1);
     return solidCountSignal() - previousValue;
+  },
+  getCount: () => {
+    // Implementation will vary by library
+    return solidCountSignal();
   },
 
   spliceUser: (index, deleteCount, item) => {
@@ -1511,6 +1539,10 @@ export const zenActionsV2 = {
     const previousValue = get(zenCountStore);
     set(zenCountStore, get(zenCountStore) + 1);
     return get(zenCountStore) - previousValue;
+  },
+  getCount: () => {
+    // Implementation will vary by library
+    return get(zenCountStore);
   },
 
   spliceUser: (index, deleteCount, item) => {

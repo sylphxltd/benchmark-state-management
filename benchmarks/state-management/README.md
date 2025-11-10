@@ -80,17 +80,6 @@ Libraries participate only if they have native support for the tested capability
 
 **Simple Read** (single value access)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Solid Signals | 39.9M | 1.00x (fastest) |
-| Jotai | 36.3M | 0.91x |
-| Preact Signals | 34.3M | 0.86x |
-| Zen | 32.2M | 0.81x |
-| Valtio | 4.9M | 0.12x |
-| MobX | 3.8M | 0.10x |
-| Redux Toolkit | 960K | 0.02x |
-| Zustand | 363K | 0.01x |
-
 ```
 👑 Solid Signals        ████████████████████████████████████████ 39.9M
   Jotai                ████████████████████████████████████ 36.3M
@@ -102,22 +91,21 @@ Libraries participate only if they have native support for the tested capability
   Zustand               363K
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Solid Signals | 39.9M | 1.00x (fastest) |
+| Jotai | 36.3M | 0.91x |
+| Preact Signals | 34.3M | 0.86x |
+| Zen | 32.2M | 0.81x |
+| Valtio | 4.9M | 0.12x |
+| MobX | 3.8M | 0.10x |
+| Redux Toolkit | 960K | 0.02x |
+| Zustand | 363K | 0.01x |
 ---
 
 ### 02 - Write Operations
 
 **Simple Increment** (single value update)
-
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Jotai | 33.9M | 1.00x (fastest) |
-| Solid Signals | 33.1M | 0.98x |
-| Zen | 28.2M | 0.83x |
-| Preact Signals | 28.2M | 0.83x |
-| Valtio | 4.2M | 0.13x |
-| MobX | 3.0M | 0.09x |
-| Redux Toolkit | 784K | 0.02x |
-| Zustand | 351K | 0.01x |
 
 ```
 👑 Jotai                ████████████████████████████████████████ 33.9M
@@ -130,22 +118,21 @@ Libraries participate only if they have native support for the tested capability
   Zustand               351K
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Jotai | 33.9M | 1.00x (fastest) |
+| Solid Signals | 33.1M | 0.98x |
+| Zen | 28.2M | 0.83x |
+| Preact Signals | 28.2M | 0.83x |
+| Valtio | 4.2M | 0.13x |
+| MobX | 3.0M | 0.09x |
+| Redux Toolkit | 784K | 0.02x |
+| Zustand | 351K | 0.01x |
 ---
 
 ### 03 - Store Creation
 
 **Store/Instance Creation Overhead**
-
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Preact Signals | 33.4M | 1.00x (fastest) |
-| Zen | 32.2M | 0.96x |
-| Solid Signals | 32.1M | 0.96x |
-| Zustand | 10.9M | 0.33x |
-| Jotai | 2.3M | 0.07x |
-| Valtio | 235K | 0.01x |
-| Redux Toolkit | 173K | 0.01x |
-| MobX | 278 | 0.00x |
 
 ```
 👑 Preact Signals       ████████████████████████████████████████ 33.4M
@@ -158,6 +145,16 @@ Libraries participate only if they have native support for the tested capability
   MobX                  278
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Preact Signals | 33.4M | 1.00x (fastest) |
+| Zen | 32.2M | 0.96x |
+| Solid Signals | 32.1M | 0.96x |
+| Zustand | 10.9M | 0.33x |
+| Jotai | 2.3M | 0.07x |
+| Valtio | 235K | 0.01x |
+| Redux Toolkit | 173K | 0.01x |
+| MobX | 278 | 0.00x |
 > **Note**: MobX's low creation performance is expected due to makeAutoObservable overhead.
 
 ---
@@ -165,17 +162,6 @@ Libraries participate only if they have native support for the tested capability
 ### 06 - Memory Allocation
 
 **Large State Allocation** (1000-field objects)
-
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 MobX | 925 | 1.00x (fastest) |
-| Zen | 924 | 1.00x |
-| Solid Signals | 923 | 1.00x |
-| Jotai | 917 | 0.99x |
-| Zustand | 907 | 0.98x |
-| Preact Signals | 904 | 0.98x |
-| Valtio | 898 | 0.97x |
-| Redux Toolkit | 892 | 0.96x |
 
 ```
 👑 MobX                 ████████████████████████████████████████ 925
@@ -188,6 +174,16 @@ Libraries participate only if they have native support for the tested capability
   Redux Toolkit        ███████████████████████████████████████ 892
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 MobX | 925 | 1.00x (fastest) |
+| Zen | 924 | 1.00x |
+| Solid Signals | 923 | 1.00x |
+| Jotai | 917 | 0.99x |
+| Zustand | 907 | 0.98x |
+| Preact Signals | 904 | 0.98x |
+| Valtio | 898 | 0.97x |
+| Redux Toolkit | 892 | 0.96x |
 > **Note**: All libraries perform similarly for large state allocation, indicating minimal per-field overhead.
 
 ---
@@ -211,14 +207,6 @@ Libraries participate only if they have native support for the tested capability
 
 **Simple Computed** (value * 2)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Solid Signals | 38.5M | 1.00x (fastest) |
-| Zen | 22.4M | 0.58x |
-| Preact Signals | 22.1M | 0.57x |
-| MobX | 4.0M | 0.11x |
-| Jotai | 640K | 0.02x |
-
 ```
 👑 Solid Signals        ████████████████████████████████████████ 38.5M
   Zen                  ███████████████████████ 22.4M
@@ -227,15 +215,14 @@ Libraries participate only if they have native support for the tested capability
   Jotai                █ 640K
 ```
 
-**Chained Computed** (computed from computed, 2 levels)
-
 | Library | ops/sec | Relative |
 |---------|---------|----------|
-| 👑 Solid Signals | 37.9M | 1.00x (fastest) |
-| Zen | 33.6M | 0.89x |
-| Preact Signals | 12.1M | 0.32x |
-| MobX | 2.2M | 0.06x |
-| Jotai | 394K | 0.01x |
+| 👑 Solid Signals | 38.5M | 1.00x (fastest) |
+| Zen | 22.4M | 0.58x |
+| Preact Signals | 22.1M | 0.57x |
+| MobX | 4.0M | 0.11x |
+| Jotai | 640K | 0.02x |
+**Chained Computed** (computed from computed, 2 levels)
 
 ```
 👑 Solid Signals        ████████████████████████████████████████ 37.9M
@@ -245,15 +232,14 @@ Libraries participate only if they have native support for the tested capability
   Jotai                 394K
 ```
 
-**Computed Update Performance** (triggering computed recalculation)
-
 | Library | ops/sec | Relative |
 |---------|---------|----------|
-| 👑 Solid Signals | 19.9M | 1.00x (fastest) |
-| Preact Signals | 486K | 0.02x |
-| Zen | 454K | 0.02x |
-| MobX | 40K | 0.00x |
-| Jotai | 5K | 0.00x |
+| 👑 Solid Signals | 37.9M | 1.00x (fastest) |
+| Zen | 33.6M | 0.89x |
+| Preact Signals | 12.1M | 0.32x |
+| MobX | 2.2M | 0.06x |
+| Jotai | 394K | 0.01x |
+**Computed Update Performance** (triggering computed recalculation)
 
 ```
 👑 Solid Signals        ████████████████████████████████████████ 19.9M
@@ -263,6 +249,13 @@ Libraries participate only if they have native support for the tested capability
   Jotai                 5K
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Solid Signals | 19.9M | 1.00x (fastest) |
+| Preact Signals | 486K | 0.02x |
+| Zen | 454K | 0.02x |
+| MobX | 40K | 0.00x |
+| Jotai | 5K | 0.00x |
 ---
 
 ### 10 - Selectors (Feature Test)
@@ -271,18 +264,17 @@ Libraries participate only if they have native support for the tested capability
 
 **Simple Selector**
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Valtio | 5.3M | 1.00x (fastest) |
-| Redux Toolkit | 597K | 0.11x |
-| Zustand | 365K | 0.07x |
-
 ```
 👑 Valtio               ████████████████████████████████████████ 5.3M
   Redux Toolkit        █████ 597K
   Zustand              ███ 365K
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Valtio | 5.3M | 1.00x (fastest) |
+| Redux Toolkit | 597K | 0.11x |
+| Zustand | 365K | 0.07x |
 ---
 
 ### 11 - Batching Native (Feature Test)
@@ -291,25 +283,18 @@ Libraries participate only if they have native support for the tested capability
 
 **Batched Updates** (3 fields)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
-| 👑 Solid Signals | 39.8M | 1.00x (fastest) |
-| Valtio | 4.8M | 0.12x |
-| MobX | 3.3M | 0.08x |
-
 ```
 👑 Solid Signals        ████████████████████████████████████████ 39.8M
   Valtio               █████ 4.8M
   MobX                 ███ 3.3M
 ```
 
-**Large Batch** (100 updates)
-
 | Library | ops/sec | Relative |
 |---------|---------|----------|
-| 👑 Solid Signals | 27.9M | 1.00x (fastest) |
-| MobX | 146K | 0.01x |
-| Valtio | 68K | 0.00x |
+| 👑 Solid Signals | 39.8M | 1.00x (fastest) |
+| Valtio | 4.8M | 0.12x |
+| MobX | 3.3M | 0.08x |
+**Large Batch** (100 updates)
 
 ```
 👑 Solid Signals        ████████████████████████████████████████ 27.9M
@@ -317,13 +302,12 @@ Libraries participate only if they have native support for the tested capability
   Valtio                68K
 ```
 
-**Unbatched Updates** (3 fields, no batching)
-
 | Library | ops/sec | Relative |
 |---------|---------|----------|
-| 👑 Solid Signals | 42.5M | 1.00x (fastest) |
-| Valtio | 4.8M | 0.11x |
-| MobX | 3.8M | 0.09x |
+| 👑 Solid Signals | 27.9M | 1.00x (fastest) |
+| MobX | 146K | 0.01x |
+| Valtio | 68K | 0.00x |
+**Unbatched Updates** (3 fields, no batching)
 
 ```
 👑 Solid Signals        ████████████████████████████████████████ 42.5M
@@ -331,13 +315,12 @@ Libraries participate only if they have native support for the tested capability
   MobX                 ████ 3.8M
 ```
 
-**Batch with Subscriptions** (3 fields with observers)
-
 | Library | ops/sec | Relative |
 |---------|---------|----------|
-| 👑 Solid Signals | 41.1M | 1.00x (fastest) |
-| Valtio | 4.7M | 0.11x |
-| MobX | 3.2M | 0.08x |
+| 👑 Solid Signals | 42.5M | 1.00x (fastest) |
+| Valtio | 4.8M | 0.11x |
+| MobX | 3.8M | 0.09x |
+**Batch with Subscriptions** (3 fields with observers)
 
 ```
 👑 Solid Signals        ████████████████████████████████████████ 41.1M
@@ -345,6 +328,11 @@ Libraries participate only if they have native support for the tested capability
   MobX                 ███ 3.2M
 ```
 
+| Library | ops/sec | Relative |
+|---------|---------|----------|
+| 👑 Solid Signals | 41.1M | 1.00x (fastest) |
+| Valtio | 4.7M | 0.11x |
+| MobX | 3.2M | 0.08x |
 ---
 
 ## Methodology

@@ -50,20 +50,20 @@ function formatNumber(num, decimals = 0) {
 
 function generateBarChart(benchmarks, maxValue) {
   const maxBarLength = 40;
-  let chart = '\n```\n';
+  let chart = '```\n';
 
   benchmarks.forEach((b, index) => {
     const value = b.hz || 0;
     const percentage = maxValue > 0 ? value / maxValue : 0;
     const barLength = Math.round(percentage * maxBarLength);
     const bar = '█'.repeat(barLength);
-    const crown = index === 0 ? '👑 ' : '  ';
+    const crown = index === 0 ? '👑' : ' ';
 
     // Extract library name
     const nameParts = b.name.split(' - ');
     const libName = nameParts[nameParts.length - 1];
 
-    chart += `${crown}${libName.padEnd(20)} ${bar} ${formatNumber(value)}\n`;
+    chart += `${crown} ${libName.padEnd(20)} ${bar} ${formatNumber(value)}\n`;
   });
 
   chart += '```\n\n';
@@ -297,21 +297,24 @@ function generateDetailedResults() {
 
 **Simple Read** (single value access)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const readBenches = extractBenchmarks(results['01-read'], 'Simple Read -');
   const maxRead = Math.max(...readBenches.map(b => b.hz || 0));
-  readBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  readBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(readBenches, maxRead);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  readBenches.forEach((b, i) => {
     const lib = b.name.replace('Simple Read - ', '');
     const rel = ((b.hz || 0) / maxRead).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(readBenches, maxRead);
   section += '---\n\n';
 
   // 02 - Write Operations
@@ -319,21 +322,24 @@ function generateDetailedResults() {
 
 **Simple Increment** (single value update)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const writeBenches = extractBenchmarks(results['02-write'], 'Simple Increment -');
   const maxWrite = Math.max(...writeBenches.map(b => b.hz || 0));
-  writeBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  writeBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(writeBenches, maxWrite);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  writeBenches.forEach((b, i) => {
     const lib = b.name.replace('Simple Increment - ', '');
     const rel = ((b.hz || 0) / maxWrite).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(writeBenches, maxWrite);
   section += '---\n\n';
 
   // 03 - Store Creation
@@ -341,21 +347,24 @@ function generateDetailedResults() {
 
 **Store/Instance Creation Overhead**
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const creationBenches = extractBenchmarks(results['03-creation'], 'Store Creation -');
   const maxCreation = Math.max(...creationBenches.map(b => b.hz || 0));
-  creationBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  creationBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(creationBenches, maxCreation);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  creationBenches.forEach((b, i) => {
     const lib = b.name.replace('Store Creation - ', '');
     const rel = ((b.hz || 0) / maxCreation).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(creationBenches, maxCreation);
   section += `> **Note**: MobX's low creation performance is expected due to makeAutoObservable overhead.
 
 ---
@@ -367,21 +376,24 @@ function generateDetailedResults() {
 
 **Large State Allocation** (1000-field objects)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const memoryBenches = extractBenchmarks(results['06-memory'], 'Large State Allocation -');
   const maxMemory = Math.max(...memoryBenches.map(b => b.hz || 0));
-  memoryBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  memoryBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(memoryBenches, maxMemory);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  memoryBenches.forEach((b, i) => {
     const lib = b.name.replace('Large State Allocation - ', '');
     const rel = ((b.hz || 0) / maxMemory).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(memoryBenches, maxMemory);
   section += `> **Note**: All libraries perform similarly for large state allocation, indicating minimal per-field overhead.
 
 ---
@@ -412,55 +424,64 @@ function generateDetailedResults() {
 
 **Simple Computed** (value * 2)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const computedBenches = extractBenchmarks(results['09-computed-native'], 'Native Computed -');
   const maxComputed = Math.max(...computedBenches.map(b => b.hz || 0));
-  computedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  computedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(computedBenches, maxComputed);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  computedBenches.forEach((b, i) => {
     const lib = b.name.replace('Native Computed - ', '');
     const rel = ((b.hz || 0) / maxComputed).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(computedBenches, maxComputed);
   section += `**Chained Computed** (computed from computed, 2 levels)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const chainedBenches = extractBenchmarks(results['09-computed-native'], 'Chained Computed -');
   const maxChained = Math.max(...chainedBenches.map(b => b.hz || 0));
-  chainedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  chainedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(chainedBenches, maxChained);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  chainedBenches.forEach((b, i) => {
     const lib = b.name.replace('Chained Computed - ', '');
     const rel = ((b.hz || 0) / maxChained).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(chainedBenches, maxChained);
   section += `**Computed Update Performance** (triggering computed recalculation)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const updateBenches = extractBenchmarks(results['09-computed-native'], 'Computed Updates -');
   const maxUpdate = Math.max(...updateBenches.map(b => b.hz || 0));
-  updateBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  updateBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(updateBenches, maxUpdate);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  updateBenches.forEach((b, i) => {
     const lib = b.name.replace('Computed Updates - ', '');
     const rel = ((b.hz || 0) / maxUpdate).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(updateBenches, maxUpdate);
   section += '---\n\n';
 
   // 10 - Selectors
@@ -470,22 +491,25 @@ function generateDetailedResults() {
 
 **Simple Selector**
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const selectorBenches = extractBenchmarks(results['10-selectors'], 'Selector - ')
     .filter(b => !b.name.includes('Chained') && !b.name.includes('Repeated') && !b.name.includes('Updates'));
   const maxSelector = Math.max(...selectorBenches.map(b => b.hz || 0));
-  selectorBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  selectorBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(selectorBenches, maxSelector);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  selectorBenches.forEach((b, i) => {
     const lib = b.name.replace('Selector - ', '');
     const rel = ((b.hz || 0) / maxSelector).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(selectorBenches, maxSelector);
   section += '---\n\n';
 
   // 11 - Batching Native
@@ -495,72 +519,84 @@ function generateDetailedResults() {
 
 **Batched Updates** (3 fields)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const batchingBenches = extractBenchmarks(results['11-batching-native'], 'Batched Updates -');
   const maxBatching = Math.max(...batchingBenches.map(b => b.hz || 0));
-  batchingBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  batchingBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(batchingBenches, maxBatching);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  batchingBenches.forEach((b, i) => {
     const lib = b.name.replace('Batched Updates - ', '');
     const rel = ((b.hz || 0) / maxBatching).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(batchingBenches, maxBatching);
   section += `**Large Batch** (100 updates)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const largeBatchBenches = extractBenchmarks(results['11-batching-native'], 'Large Batch -');
   const maxLargeBatch = Math.max(...largeBatchBenches.map(b => b.hz || 0));
-  largeBatchBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  largeBatchBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(largeBatchBenches, maxLargeBatch);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  largeBatchBenches.forEach((b, i) => {
     const lib = b.name.replace('Large Batch - ', '');
     const rel = ((b.hz || 0) / maxLargeBatch).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(largeBatchBenches, maxLargeBatch);
   section += `**Unbatched Updates** (3 fields, no batching)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const unbatchedBenches = extractBenchmarks(results['11-batching-native'], 'Unbatched Updates -');
   const maxUnbatched = Math.max(...unbatchedBenches.map(b => b.hz || 0));
-  unbatchedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  unbatchedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(unbatchedBenches, maxUnbatched);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  unbatchedBenches.forEach((b, i) => {
     const lib = b.name.replace('Unbatched Updates - ', '');
     const rel = ((b.hz || 0) / maxUnbatched).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(unbatchedBenches, maxUnbatched);
   section += `**Batch with Subscriptions** (3 fields with observers)
 
-| Library | ops/sec | Relative |
-|---------|---------|----------|
 `;
 
   const batchSubBenches = extractBenchmarks(results['11-batching-native'], 'Batched with Observers -');
   const maxBatchSub = Math.max(...batchSubBenches.map(b => b.hz || 0));
-  batchSubBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
+  batchSubBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+
+  section += generateBarChart(batchSubBenches, maxBatchSub);
+  section += `| Library | ops/sec | Relative |
+|---------|---------|----------|
+`;
+
+  batchSubBenches.forEach((b, i) => {
     const lib = b.name.replace('Batched with Observers - ', '');
     const rel = ((b.hz || 0) / maxBatchSub).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     const crown = i === 0 ? '👑 ' : '';
     section += `| ${crown}${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;
   });
-
-  section += generateBarChart(batchSubBenches, maxBatchSub);
   section += '---\n\n';
   return section;
 }

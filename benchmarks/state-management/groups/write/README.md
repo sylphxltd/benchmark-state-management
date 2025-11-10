@@ -2,79 +2,47 @@
 
 Performance benchmarks for state write and mutation operations.
 
-## Benchmark Results
+## Simple Increment
 
-### 1. Solid Signals
+**Performance Comparison:**
 
-**Average Performance:** 26,969,220.08 ops/sec
+🥇 Solid Signals        ████████████████████ 28.45M ops/sec
+🥈 Jotai                ████████████████████ 27.77M ops/sec
+🥉 Preact Signals       ██████████████████   24.94M ops/sec
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 28,449,865.78 | N/A | N/A | ±1.81% |
-| Burst Updates | 25,488,574.37 | N/A | N/A | ±0.14% |
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|----------|
+| 🥇 | **Solid Signals** | 28,449,865.78 | ±1.81% | N/A | N/A | 14,224,934 |
+| 🥈 | **Jotai** | 27,766,588.11 | ±0.35% | N/A | N/A | 13,883,295 |
+| 🥉 | **Preact Signals** | 24,941,333.5 | ±0.63% | N/A | N/A | 12,470,667 |
+| 4 | **Zen** | 24,120,665.04 | ±0.17% | N/A | N/A | 12,060,333 |
+| 5 | **Valtio** | 3,369,223.37 | ±0.33% | 0.0002ms | 0.0003ms | 1,684,612 |
+| 6 | **MobX** | 2,767,973.25 | ±0.38% | 0.0002ms | 0.0004ms | 1,383,987 |
+| 7 | **Redux Toolkit** | 764,869.42 | ±0.28% | 0.0010ms | 0.0013ms | 382,435 |
+| 8 | **Zustand** | 281,066.02 | ±2.36% | 0.0026ms | 0.0038ms | 140,534 |
 
-### 2. Jotai
+**Key Insight:** Solid Signals is 101.22x faster than Zustand in this category.
 
-**Average Performance:** 19,019,533.76 ops/sec
+## Burst Updates
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 27,766,588.11 | N/A | N/A | ±0.35% |
-| Burst Updates | 10,272,479.4 | N/A | 0.0001 | ±0.13% |
+**Performance Comparison:**
 
-### 3. Preact Signals
+🥇 Solid Signals        ████████████████████ 25.49M ops/sec
+🥈 Jotai                ████████             10.27M ops/sec
+🥉 Preact Signals       ███████              9.29M ops/sec
 
-**Average Performance:** 17,116,296.84 ops/sec
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|----------|
+| 🥇 | **Solid Signals** | 25,488,574.37 | ±0.14% | N/A | N/A | 12,744,288 |
+| 🥈 | **Jotai** | 10,272,479.4 | ±0.13% | N/A | 0.0001ms | 5,136,240 |
+| 🥉 | **Preact Signals** | 9,291,260.18 | ±0.07% | N/A | 0.0001ms | 4,645,631 |
+| 4 | **Zen** | 7,089,524.37 | ±0.80% | N/A | 0.0002ms | 3,544,763 |
+| 5 | **Valtio** | 330,642.67 | ±0.34% | 0.0027ms | 0.0030ms | 165,322 |
+| 6 | **MobX** | 296,671.09 | ±0.36% | 0.0031ms | 0.0034ms | 148,336 |
+| 7 | **Redux Toolkit** | 75,274.23 | ±0.55% | 0.0110ms | 0.0133ms | 37,638 |
+| 8 | **Zustand** | 28,142.89 | ±0.27% | 0.0336ms | 0.0355ms | 14,072 |
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 24,941,333.5 | N/A | N/A | ±0.63% |
-| Burst Updates | 9,291,260.18 | N/A | 0.0001 | ±0.07% |
-
-### 4. Zen
-
-**Average Performance:** 15,605,094.71 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 24,120,665.04 | N/A | N/A | ±0.17% |
-| Burst Updates | 7,089,524.37 | N/A | 0.0002 | ±0.80% |
-
-### 5. Valtio
-
-**Average Performance:** 1,849,933.02 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 3,369,223.37 | 0.0002 | 0.0003 | ±0.33% |
-| Burst Updates | 330,642.67 | 0.0027 | 0.0030 | ±0.34% |
-
-### 6. MobX
-
-**Average Performance:** 1,532,322.17 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 2,767,973.25 | 0.0002 | 0.0004 | ±0.38% |
-| Burst Updates | 296,671.09 | 0.0031 | 0.0034 | ±0.36% |
-
-### 7. Redux Toolkit
-
-**Average Performance:** 420,071.83 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 764,869.42 | 0.0010 | 0.0013 | ±0.28% |
-| Burst Updates | 75,274.23 | 0.0110 | 0.0133 | ±0.55% |
-
-### 8. Zustand
-
-**Average Performance:** 154,604.46 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Increment | 281,066.02 | 0.0026 | 0.0038 | ±2.36% |
-| Burst Updates | 28,142.89 | 0.0336 | 0.0355 | ±0.27% |
+**Key Insight:** Solid Signals is 905.68x faster than Zustand in this category.
 
 ## Available Tests
 
@@ -130,7 +98,7 @@ npx tsx scripts/test-generator.ts state-management # Regenerate tests
 - Statistical variance
 
 ---
-*Last updated: 2025-11-10T17:57:50.784Z*
+*Last updated: 2025-11-10T18:09:23.857Z*
 *Generated by: group-readme-generator.cjs*
 
 🔗 [← Back to State Management Overview](../README.md)

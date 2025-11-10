@@ -2,79 +2,47 @@
 
 Performance benchmarks for state read operations across different scales and access patterns.
 
-## Benchmark Results
+## Simple Read
 
-### 1. Solid Signals
+**Performance Comparison:**
 
-**Average Performance:** 25,421,491 ops/sec
+🥇 Solid Signals        ████████████████████ 31.08M ops/sec
+🥈 Jotai                ███████████████████  29.54M ops/sec
+🥉 Preact Signals       ██████████████████   27.49M ops/sec
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Read | 31,081,769.378 | 0.0322 | 0.0830 | ±0.05% |
-| High Frequency Read | 19,761,212.617 | 0.0506 | 0.0840 | ±0.32% |
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|----------|
+| 🥇 | **Solid Signals** | 31,081,769.378 | ±0.05% | 0.0322ms | 0.0830ms | 15,540,885 |
+| 🥈 | **Jotai** | 29,539,014.169 | ±0.14% | 0.0339ms | 0.0830ms | 14,769,508 |
+| 🥉 | **Preact Signals** | 27,490,558.625 | ±0.05% | 0.0364ms | 0.0840ms | 13,745,280 |
+| 4 | **Zen** | 26,014,626.855 | ±0.05% | 0.0384ms | 0.0840ms | 13,007,314 |
+| 5 | **Valtio** | 3,908,039.171 | ±0.27% | 0.2559ms | 0.4580ms | 1,954,020 |
+| 6 | **MobX** | 3,131,450.81 | ±0.33% | 0.3193ms | 0.5410ms | 1,565,726 |
+| 7 | **Redux Toolkit** | 820,947.233 | ±0.23% | 1.2181ms | 1.7500ms | 410,474 |
+| 8 | **Zustand** | 289,117.403 | ±2.02% | 3.4588ms | 6.4170ms | 144,560 |
 
-### 2. Jotai
+**Key Insight:** Solid Signals is 107.51x faster than Zustand in this category.
 
-**Average Performance:** 22,726,801.83 ops/sec
+## High Frequency Read
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Read | 29,539,014.169 | 0.0339 | 0.0830 | ±0.14% |
-| High Frequency Read | 15,914,589.491 | 0.0628 | 0.1250 | ±0.05% |
+**Performance Comparison:**
 
-### 3. Zen
+🥇 MobX                 ████████████████████ 21.55M ops/sec
+🥈 Solid Signals        ██████████████████   19.76M ops/sec
+🥉 Jotai                ███████████████      15.91M ops/sec
 
-**Average Performance:** 20,419,213.86 ops/sec
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|----------|
+| 🥇 | **MobX** | 21,551,988.75 | ±0.04% | 0.0464ms | 0.0840ms | 10,775,995 |
+| 🥈 | **Solid Signals** | 19,761,212.617 | ±0.32% | 0.0506ms | 0.0840ms | 9,880,607 |
+| 🥉 | **Jotai** | 15,914,589.491 | ±0.05% | 0.0628ms | 0.1250ms | 7,957,295 |
+| 4 | **Zen** | 14,823,800.874 | ±0.47% | 0.0675ms | 0.1250ms | 7,411,901 |
+| 5 | **Preact Signals** | 5,768,812.177 | ±1.14% | 0.1733ms | 0.2920ms | 2,884,407 |
+| 6 | **Redux Toolkit** | 5,428,006.306 | ±0.04% | 0.1842ms | 0.2910ms | 2,714,004 |
+| 7 | **Zustand** | 2,445,711.433 | ±0.07% | 0.4089ms | 0.6670ms | 1,222,856 |
+| 8 | **Valtio** | 1,088,832.003 | ±0.05% | 0.9184ms | 1.0840ms | 544,417 |
 
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Read | 26,014,626.855 | 0.0384 | 0.0840 | ±0.05% |
-| High Frequency Read | 14,823,800.874 | 0.0675 | 0.1250 | ±0.47% |
-
-### 4. Preact Signals
-
-**Average Performance:** 16,629,685.4 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Read | 27,490,558.625 | 0.0364 | 0.0840 | ±0.05% |
-| High Frequency Read | 5,768,812.177 | 0.1733 | 0.2920 | ±1.14% |
-
-### 5. MobX
-
-**Average Performance:** 12,341,719.78 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| High Frequency Read | 21,551,988.75 | 0.0464 | 0.0840 | ±0.04% |
-| Simple Read | 3,131,450.81 | 0.3193 | 0.5410 | ±0.33% |
-
-### 6. Redux Toolkit
-
-**Average Performance:** 3,124,476.77 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| High Frequency Read | 5,428,006.306 | 0.1842 | 0.2910 | ±0.04% |
-| Simple Read | 820,947.233 | 1.2181 | 1.7500 | ±0.23% |
-
-### 7. Valtio
-
-**Average Performance:** 2,498,435.59 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| Simple Read | 3,908,039.171 | 0.2559 | 0.4580 | ±0.27% |
-| High Frequency Read | 1,088,832.003 | 0.9184 | 1.0840 | ±0.05% |
-
-### 8. Zustand
-
-**Average Performance:** 1,367,414.42 ops/sec
-
-| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |
-|------|---------------|-----------|-----------|----------|
-| High Frequency Read | 2,445,711.433 | 0.4089 | 0.6670 | ±0.07% |
-| Simple Read | 289,117.403 | 3.4588 | 6.4170 | ±2.02% |
+**Key Insight:** MobX is 19.79x faster than Valtio in this category.
 
 ## Available Tests
 
@@ -130,7 +98,7 @@ npx tsx scripts/test-generator.ts state-management # Regenerate tests
 - Statistical variance
 
 ---
-*Last updated: 2025-11-10T17:57:50.784Z*
+*Last updated: 2025-11-10T18:09:23.856Z*
 *Generated by: group-readme-generator.cjs*
 
 🔗 [← Back to State Management Overview](../README.md)

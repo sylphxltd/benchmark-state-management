@@ -76,46 +76,69 @@ class GroupReadmeGenerator {
     resultsData.files.forEach(file => {
       file.groups.forEach(group => {
         if (group.benchmarks && group.benchmarks.length > 0) {
-          table += `## Benchmark Results\n\n`;
-
-          // Group benchmarks by library
-          const byLibrary = {};
+          // Group benchmarks by test name (arena benchmark - all libraries compete in same test)
+          const byTestName = {};
           group.benchmarks.forEach(bench => {
-            if (!byLibrary[bench.library]) {
-              byLibrary[bench.library] = [];
+            // Extract test name (e.g., "Simple Read" from "Simple Read - Solid Signals")
+            const testName = bench.name.split(' - ')[0];
+            if (!byTestName[testName]) {
+              byTestName[testName] = [];
             }
-            byLibrary[bench.library].push(bench);
+            byTestName[testName].push(bench);
           });
 
-          // Calculate average for each library and sort
-          const libraryAverages = Object.entries(byLibrary)
-            .map(([library, benches]) => {
-              const avgHz = benches.reduce((sum, b) => sum + (b.hz || 0), 0) / benches.length;
-              return { library, avgHz, benches };
-            })
-            .sort((a, b) => b.avgHz - a.avgHz);
+          // Display each test as an arena (all libraries compete)
+          Object.entries(byTestName).forEach(([testName, benchmarks]) => {
+            table += `## ${testName}\n\n`;
 
-          // Display each library with its tests
-          libraryAverages.forEach(({library, avgHz, benches}, libIndex) => {
-            const formattedLibName = this.formatLibraryName(library);
+            // Sort libraries by performance for this test
+            const sortedBenchmarks = benchmarks
+              .filter(bench => bench.hz)
+              .sort((a, b) => b.hz - a.hz);
 
-            table += `### ${libIndex + 1}. ${formattedLibName}\n\n`;
-            table += `**Average Performance:** ${avgHz.toLocaleString(undefined, {maximumFractionDigits: 2})} ops/sec\n\n`;
+            // Performance comparison chart
+            if (sortedBenchmarks.length > 0) {
+              const maxHz = sortedBenchmarks[0].hz;
+              table += `**Performance Comparison:**\n\n`;
 
-            table += '| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |\n';
-            table += '|------|---------------|-----------|-----------|----------|\n';
+              sortedBenchmarks.slice(0, 3).forEach((bench, idx) => {
+                const emoji = idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉';
+                const libraryName = this.formatLibraryName(bench.library);
+                const barLength = Math.round((bench.hz / maxHz) * 20);
+                const bar = '█'.repeat(barLength);
+                const opsFormatted = (bench.hz / 1000000).toFixed(2);
+                table += `${emoji} ${libraryName.padEnd(20)} ${bar.padEnd(20)} ${opsFormatted}M ops/sec\n`;
+              });
+              table += '\n';
+            }
 
-            // Sort tests by performance within each library
-            benches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach(bench => {
-              // Extract just the test name (remove library suffix)
-              const testName = bench.name.split(' - ')[0];
+            // Detailed results table
+            table += '| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |\n';
+            table += '|------|---------|---------|----------|------|-----|----------|\n';
+
+            sortedBenchmarks.forEach((bench, index) => {
+              const rank = index + 1;
+              const emoji = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';
+              const rankDisplay = emoji || rank.toString();
+              const libraryName = this.formatLibraryName(bench.library);
               const opsPerSec = bench.hz ? bench.hz.toLocaleString() : 'N/A';
-              const mean = bench.mean ? (bench.mean * 1000).toFixed(4) : 'N/A';
-              const p99 = bench.p99 ? (bench.p99 * 1000).toFixed(4) : 'N/A';
               const variance = bench.rme ? `±${bench.rme.toFixed(2)}%` : 'N/A';
+              const mean = bench.mean ? `${(bench.mean * 1000).toFixed(4)}ms` : 'N/A';
+              const p99 = bench.p99 ? `${(bench.p99 * 1000).toFixed(4)}ms` : 'N/A';
+              const samples = bench.samples ? bench.samples.toLocaleString() : 'N/A';
 
-              table += `| ${testName} | ${opsPerSec} | ${mean} | ${p99} | ${variance} |\n`;
+              table += `| ${rankDisplay} | **${libraryName}** | ${opsPerSec} | ${variance} | ${mean} | ${p99} | ${samples} |\n`;
             });
+
+            // Add key insight
+            if (sortedBenchmarks.length >= 2) {
+              const fastest = sortedBenchmarks[0];
+              const slowest = sortedBenchmarks[sortedBenchmarks.length - 1];
+              const fastestName = this.formatLibraryName(fastest.library);
+              const slowestName = this.formatLibraryName(slowest.library);
+              const speedup = (fastest.hz / slowest.hz).toFixed(2);
+              table += `\n**Key Insight:** ${fastestName} is ${speedup}x faster than ${slowestName} in this category.\n`;
+            }
 
             table += '\n';
           });

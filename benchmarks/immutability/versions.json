@@ -1,6 +1,6 @@
 {
-  "lastChecked": "2025-11-10T19:16:18.287Z",
-  "lastBenchmarkRun": "2025-11-10T19:18:14Z",
+  "lastChecked": "2025-11-10T20:26:59.475Z",
+  "lastBenchmarkRun": "2025-11-10T20:29:05Z",
   "testFilesHash": "e92c80c969cd4574bd8999e71c04c9605ef5814c272cb39d9dc844c396f826b8",
   "libraries": {
     "immer": {
@@ -56,11 +56,11 @@
     "@sylphx/craft": {
       "current": "1.2.1",
       "latest": "1.3.0",
-      "lastUpdated": "2025-11-10T19:16:16.278Z",
+      "lastUpdated": "2025-11-10T20:26:57.224Z",
       "size": {
         "gzip": 2825,
         "minified": 9788,
-        "lastChecked": "2025-11-10T19:16:18.287Z"
+        "lastChecked": "2025-11-10T20:26:59.475Z"
       },
       "incompatible": true,
       "incompatibleVersion": "1.3.0",

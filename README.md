@@ -17,7 +17,7 @@
 
 | Category | Description | Libraries | Status | View Results |
 |----------|-------------|-----------|--------|--------------|
-| **[🗃️ State Management](./benchmarks/state-management/)** | React state management libraries | 9 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/state-management/)** |
+| **[🗃️ State Management](./benchmarks/state-management/)** | React state management libraries | 1 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/state-management/)** |
 | **[🔄 Immutability](./benchmarks/immutability/)** | Immutability helper libraries | 6 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/immutability/)** |
 | **[🧭 Router](./benchmarks/router/)** | React routing libraries | 4 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/router/)** |
 | **[🎨 CSS Frameworks](./benchmarks/css-frameworks/)** | CSS-in-JS and utility-first CSS frameworks | 4 | ![Active](https://img.shields.io/badge/Active-success) | **[View →](./benchmarks/css-frameworks/)** |

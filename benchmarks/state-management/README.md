@@ -14,14 +14,14 @@ Based on aggregated results across all test categories:
 
 | Rank | Library | Best Category | Peak Performance | Avg Performance |
 |------|---------|--------------|------------------|---------------|
-| 1 | **Solid Signals** | write | ~28.4M ops/sec | ⚡⚡⚡⚡ |
-| 2 | **Jotai** | write | ~27.8M ops/sec | ⚡⚡⚡⚡ |
-| 3 | **Preact Signals** | write | ~24.9M ops/sec | ⚡⚡⚡⚡ |
-| 4 | **Zen** | write | ~24.1M ops/sec | ⚡⚡⚡⚡ |
-| 5 | **Valtio** | write | ~3.4M ops/sec | ⚡⚡⚡ |
-| 6 | **MobX** | write | ~2.8M ops/sec | ⚡⚡⚡ |
-| 7 | **Redux Toolkit** | write | ~765K ops/sec | ⚡⚡ |
-| 8 | **Zustand** | write | ~281K ops/sec | ⚡⚡ |
+| 1 | **Solid Signals** | read | ~31.1M ops/sec | ⚡⚡⚡⚡ |
+| 2 | **Jotai** | read | ~29.5M ops/sec | ⚡⚡⚡⚡ |
+| 3 | **Preact Signals** | read | ~27.5M ops/sec | ⚡⚡⚡⚡ |
+| 4 | **Zen** | read | ~26.0M ops/sec | ⚡⚡⚡⚡ |
+| 5 | **MobX** | read | ~21.6M ops/sec | ⚡⚡⚡⚡ |
+| 6 | **Redux Toolkit** | read | ~5.4M ops/sec | ⚡⚡⚡ |
+| 7 | **Valtio** | read | ~3.9M ops/sec | ⚡⚡⚡ |
+| 8 | **Zustand** | read | ~2.4M ops/sec | ⚡⚡⚡ |
 
 ### 📖 Read Operations
 
@@ -29,9 +29,14 @@ Based on aggregated results across all test categories:
 
 | Rank | Library | Operations/sec | Performance |
 |------|---------|----------------|-------------|
-| - | - | ⏳ Pending | - |
-
-> Run benchmarks: `npm run benchmark:read`
+| 1 | **Solid Signals** | ~31.1M ops/sec | ⚡⚡⚡⚡ |
+| 2 | **Jotai** | ~29.5M ops/sec | ⚡⚡⚡⚡ |
+| 3 | **Preact Signals** | ~27.5M ops/sec | ⚡⚡⚡⚡ |
+| 4 | **Zen** | ~26.0M ops/sec | ⚡⚡⚡⚡ |
+| 5 | **MobX** | ~21.6M ops/sec | ⚡⚡⚡⚡ |
+| 6 | **Solid Signals** | ~19.8M ops/sec | ⚡⚡⚡⚡ |
+| 7 | **Jotai** | ~15.9M ops/sec | ⚡⚡⚡⚡ |
+| 8 | **Zen** | ~14.8M ops/sec | ⚡⚡⚡⚡ |
 
 ### ✏️ Write Operations
 
@@ -202,4 +207,4 @@ The modular structure makes it easy to:
 - Extend to new libraries
 
 ---
-*Last updated: 2025-11-10T16:19:20.206Z*
+*Last updated: 2025-11-10T16:27:21.022Z*

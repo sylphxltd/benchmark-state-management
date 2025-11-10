@@ -1,3 +1,158 @@
 {
-  "files": []
+  "files": [
+    {
+      "filepath": "/Users/kyle/benchmark-state/benchmarks/state-management/groups/read/read-x1.bench.ts",
+      "groups": [
+        {
+          "fullName": "groups/read/read-x1.bench.ts > Read Operations - x1",
+          "benchmarks": [
+            {
+              "name": "Simple Read - Redux Toolkit",
+              "library": "redux-toolkit",
+              "hz": 820947.2332352974,
+              "mean": 0.0012181050858275845,
+              "p99": 0.0017500000000154614,
+              "rme": 0.2253865654183223,
+              "samples": 410474
+            },
+            {
+              "name": "Simple Read - Zustand",
+              "library": "zustand",
+              "hz": 289117.40314748645,
+              "mean": 0.0034588025110680507,
+              "p99": 0.006416999999942163,
+              "rme": 2.0239021226390417,
+              "samples": 144560
+            },
+            {
+              "name": "Simple Read - Jotai",
+              "library": "jotai",
+              "hz": 29539014.16857995,
+              "mean": 0.0000338535333065949,
+              "p99": 0.00008300000035887933,
+              "rme": 0.143751064902431,
+              "samples": 14769508
+            },
+            {
+              "name": "Simple Read - MobX",
+              "library": "mobx",
+              "hz": 3131450.810049833,
+              "mean": 0.0003193407978150825,
+              "p99": 0.0005410000003394089,
+              "rme": 0.327813133840602,
+              "samples": 1565726
+            },
+            {
+              "name": "Simple Read - Valtio",
+              "library": "valtio",
+              "hz": 3908039.1714954507,
+              "mean": 0.0002558827985384138,
+              "p99": 0.0004579999995257822,
+              "rme": 0.2655860815541328,
+              "samples": 1954020
+            },
+            {
+              "name": "Simple Read - Preact Signals",
+              "library": "preact-signals",
+              "hz": 27490558.625388797,
+              "mean": 0.000036376125113603694,
+              "p99": 0.00008399999933317304,
+              "rme": 0.05435511056671486,
+              "samples": 13745280
+            },
+            {
+              "name": "Simple Read - Solid Signals",
+              "library": "solid-signals",
+              "hz": 31081769.378254946,
+              "mean": 0.00003217320056108543,
+              "p99": 0.00008300000081362668,
+              "rme": 0.050039533283998176,
+              "samples": 15540885
+            },
+            {
+              "name": "Simple Read - Zen",
+              "library": "zen",
+              "hz": 26014626.855219558,
+              "mean": 0.00003843991326746094,
+              "p99": 0.00008399999933317304,
+              "rme": 0.05075686858826839,
+              "samples": 13007314
+            },
+            {
+              "name": "High Frequency Read - Redux Toolkit",
+              "library": "redux-toolkit",
+              "hz": 5428006.306498742,
+              "mean": 0.00018422970489233566,
+              "p99": 0.00029100000028847717,
+              "rme": 0.042294212230297126,
+              "samples": 2714004
+            },
+            {
+              "name": "High Frequency Read - Zustand",
+              "library": "zustand",
+              "hz": 2445711.4325883137,
+              "mean": 0.00040887898166370876,
+              "p99": 0.0006670000002486631,
+              "rme": 0.06819008024845061,
+              "samples": 1222856
+            },
+            {
+              "name": "High Frequency Read - Jotai",
+              "library": "jotai",
+              "hz": 15914589.490936644,
+              "mean": 0.0000628354253541695,
+              "p99": 0.0001249999986612238,
+              "rme": 0.049777402813839,
+              "samples": 7957295
+            },
+            {
+              "name": "High Frequency Read - MobX",
+              "library": "mobx",
+              "hz": 21551988.75002688,
+              "mean": 0.000046399430307736804,
+              "p99": 0.00008399999933317304,
+              "rme": 0.04362578344430268,
+              "samples": 10775995
+            },
+            {
+              "name": "High Frequency Read - Valtio",
+              "library": "valtio",
+              "hz": 1088832.0030828167,
+              "mean": 0.0009184153268536321,
+              "p99": 0.0010839999995368998,
+              "rme": 0.04917005700214175,
+              "samples": 544417
+            },
+            {
+              "name": "High Frequency Read - Preact Signals",
+              "library": "preact-signals",
+              "hz": 5768812.17708504,
+              "mean": 0.00017334591061435743,
+              "p99": 0.0002920000006270129,
+              "rme": 1.139994912254128,
+              "samples": 2884407
+            },
+            {
+              "name": "High Frequency Read - Solid Signals",
+              "library": "solid-signals",
+              "hz": 19761212.616596315,
+              "mean": 0.000050604182010579506,
+              "p99": 0.00008400000297115184,
+              "rme": 0.322660273993735,
+              "samples": 9880607
+            },
+            {
+              "name": "High Frequency Read - Zen",
+              "library": "zen",
+              "hz": 14823800.87361035,
+              "mean": 0.0000674590820887389,
+              "p99": 0.0001250000022992026,
+              "rme": 0.47331431722051015,
+              "samples": 7411901
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

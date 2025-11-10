@@ -49,8 +49,16 @@ function formatNumber(num, decimals = 0) {
 }
 
 function extractBenchmarks(result, pattern) {
-  if (!result?.files?.[0]?.groups?.[0]?.benchmarks) return [];
-  return result.files[0].groups[0].benchmarks.filter(b => b.name.includes(pattern));
+  if (!result?.files?.[0]?.groups) return [];
+  const benchmarks = [];
+  // Search through ALL groups, not just groups[0]
+  result.files[0].groups.forEach(group => {
+    if (group.benchmarks) {
+      const matches = group.benchmarks.filter(b => b.name.includes(pattern));
+      benchmarks.push(...matches);
+    }
+  });
+  return benchmarks;
 }
 
 function getAllBenchmarks(result) {
@@ -358,10 +366,10 @@ function generateDetailedResults() {
 |---------|---------|----------|
 `;
 
-  const computedBenches = extractBenchmarks(results['09-computed-native'], 'Simple Computed -');
+  const computedBenches = extractBenchmarks(results['09-computed-native'], 'Native Computed -');
   const maxComputed = Math.max(...computedBenches.map(b => b.hz || 0));
   computedBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach((b, i) => {
-    const lib = b.name.replace('Simple Computed - ', '');
+    const lib = b.name.replace('Native Computed - ', '');
     const rel = ((b.hz || 0) / maxComputed).toFixed(2) + 'x';
     const note = i === 0 ? ' (fastest)' : '';
     section += `| ${lib} | ${formatNumber(b.hz)} | ${rel}${note} |\n`;

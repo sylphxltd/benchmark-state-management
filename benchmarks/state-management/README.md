@@ -169,6 +169,11 @@ Libraries participate only if they have native support for the tested capability
 
 | Library | ops/sec | Relative |
 |---------|---------|----------|
+| Solid Signals | 38.5M | 1.00x (fastest) |
+| Zen | 22.4M | 0.58x |
+| Preact Signals | 22.1M | 0.57x |
+| MobX | 4.0M | 0.11x |
+| Jotai | 640K | 0.02x |
 
 ---
 
@@ -202,6 +207,9 @@ Libraries participate only if they have native support for the tested capability
 
 | Library | ops/sec | Relative |
 |---------|---------|----------|
+| Solid Signals | 27.9M | 1.00x (fastest) |
+| MobX | 146K | 0.01x |
+| Valtio | 68K | 0.00x |
 
 ---
 

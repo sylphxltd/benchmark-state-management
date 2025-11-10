@@ -8,14 +8,76 @@ Comprehensive performance testing for client-side state management libraries.
 
 ## 📊 Performance Rankings
 
-Based on write operations benchmark (single state mutation):
+### 🏆 Overall Performance
+
+Based on aggregated results across all test categories:
+
+| Rank | Library | Best Category | Peak Performance | Avg Performance |
+|------|---------|--------------|------------------|-----------------|
+| 1 | **Zustand** | Write Operations | ~5.4M ops/sec | ⚡⚡⚡ Excellent |
+| 2 | **Redux Toolkit** | Write Operations | ~91K ops/sec | ⚡ Good |
+| 3 | **Jotai** | - | - | ⏳ Pending |
+
+### ✏️ Write Operations Ranking
+
+[📊 View Detailed Results →](groups/write/)
 
 | Rank | Library | Operations/sec | Performance |
 |------|---------|----------------|-------------|
-| 1 | **Zustand** | ~5.4M ops/sec | ⚡⚡⚡ Excellent |
-| 2 | **Redux Toolkit** | ~0.1M ops/sec | ⚡ Good |
+| 1 | **Zustand** | ~5.4M ops/sec | ⚡⚡⚡ |
+| 2 | **Redux Toolkit** | ~91K ops/sec | ⚡ |
 
-> 💡 Rankings based on real benchmark results. [View detailed methodology →](docs/methodology.md)
+### 📖 Read Operations Ranking
+
+[📊 View Detailed Results →](groups/read/)
+
+| Rank | Library | Operations/sec | Performance |
+|------|---------|----------------|-------------|
+| - | - | ⏳ Pending | - |
+
+> Run benchmarks: `npm run benchmark:read`
+
+### 🔄 Async Operations Ranking
+
+[📊 View Detailed Results →](groups/async/)
+
+| Rank | Library | Operations/sec | Performance |
+|------|---------|----------------|-------------|
+| - | - | ⏳ Pending | - |
+
+> Run benchmarks: `npm run benchmark:async`
+
+### 📝 Form State Ranking
+
+[📊 View Detailed Results →](groups/form/)
+
+| Rank | Library | Operations/sec | Performance |
+|------|---------|----------------|-------------|
+| - | - | ⏳ Pending | - |
+
+> Run benchmarks: `npm run benchmark:form`
+
+### 🧠 Memory Management Ranking
+
+[📊 View Detailed Results →](groups/memory/)
+
+| Rank | Library | Memory Usage | Performance |
+|------|---------|--------------|-------------|
+| - | - | ⏳ Pending | - |
+
+> Run benchmarks: `npm run benchmark:memory`
+
+### 💾 Cache Performance Ranking
+
+[📊 View Detailed Results →](groups/cache/)
+
+| Rank | Library | Operations/sec | Performance |
+|------|---------|----------------|-------------|
+| - | - | ⏳ Pending | - |
+
+> Run benchmarks: `npm run benchmark:cache`
+
+---
 
 ## 🗂️ Test Categories
 
@@ -23,30 +85,46 @@ Explore detailed performance results for each category:
 
 | Category | Description | Status |
 |----------|-------------|--------|
-| [📖 Read Operations](groups/read/) | State access performance across different scales | ✅ Results Available |
+| [📖 Read Operations](groups/read/) | State access performance across different scales | ⏳ Pending |
 | [✏️ Write Operations](groups/write/) | State mutation and update performance | ✅ Results Available |
-| [📝 Form State](groups/form/) | Complex form state management | ⏳ Running |
-| [🔄 Async Operations](groups/async/) | Promise handling and async patterns | ⏳ Running |
-| [🧠 Memory Management](groups/memory/) | Memory usage and allocation patterns | ⏳ Running |
-| [💾 Cache Performance](groups/cache/) | Memoization and caching efficiency | ⏳ Running |
+| [📝 Form State](groups/form/) | Complex form state management | ⏳ Pending |
+| [🔄 Async Operations](groups/async/) | Promise handling and async patterns | ⏳ Pending |
+| [🧠 Memory Management](groups/memory/) | Memory usage and allocation patterns | ⏳ Pending |
+| [💾 Cache Performance](groups/cache/) | Memoization and caching efficiency | ⏳ Pending |
 
-> 📊 Click each category to view detailed benchmark results and analysis
+> 📊 Click each category to view detailed benchmark results, test methodology, and performance analysis
+
+---
 
 ## 🚀 Quick Start
 
-### Run Benchmarks
+### Run All Benchmarks
 
 ```bash
-# Run all benchmarks
+# Run all benchmarks and generate results
 npm run benchmark:all-groups
 
 # Run specific category
 npm run benchmark:read
 npm run benchmark:write
 npm run benchmark:form
+npm run benchmark:async
+npm run benchmark:memory
+npm run benchmark:cache
 
 # Interactive developer dashboard
 node scripts/dev-dashboard.cjs
+```
+
+### Extract and View Results
+
+```bash
+# Extract results from all benchmarks
+node scripts/extract-results.cjs
+
+# Generate updated READMEs with results
+node main-readme-generator.cjs
+node scripts/group-readme-generator.cjs
 ```
 
 ### Add New Library
@@ -63,6 +141,8 @@ touch libraries/your-library/store.ts
 npx tsx scripts/test-generator.ts state-management
 ```
 
+---
+
 ## 🏗️ Architecture
 
 This benchmark suite uses a **revolutionary auto-discovery architecture**:
@@ -76,28 +156,39 @@ This benchmark suite uses a **revolutionary auto-discovery architecture**:
 
 ```
 benchmarks/state-management/
-├── groups/              # Test categories with detailed results
-│   ├── read/           # Read operation benchmarks + results
-│   ├── write/          # Write operation benchmarks + results
-│   ├── form/           # Form state benchmarks + results
-│   └── async/          # Async operation benchmarks + results
-├── libraries/          # Self-describing library implementations
-├── test-types/         # Test type configurations
-├── generated/          # Auto-generated comparison tests
-└── scripts/            # Automation and generation tools
+├── README.md               # This file - overview and rankings
+├── groups/                 # Test categories with detailed results
+│   ├── read/              # 📖 Read operation benchmarks + results
+│   ├── write/             # ✏️ Write operation benchmarks + results
+│   ├── form/              # 📝 Form state benchmarks + results
+│   ├── async/             # 🔄 Async operation benchmarks + results
+│   ├── memory/            # 🧠 Memory management benchmarks + results
+│   └── cache/             # 💾 Cache performance benchmarks + results
+├── libraries/             # Self-describing library implementations
+├── test-types/            # Test type configurations
+├── generated/             # Auto-generated comparison tests
+└── scripts/               # Automation and generation tools
+    ├── extract-results.cjs       # Extract benchmark results
+    ├── main-readme-generator.cjs # Generate this README
+    └── group-readme-generator.cjs # Generate group READMEs
 ```
 
-## 📚 Documentation
-
-- [Methodology](docs/methodology.md) - How benchmarks are measured
-- [Contributing](docs/contributing.md) - Add new libraries or tests
-- [Architecture](docs/architecture.md) - Deep dive into the system design
+---
 
 ## 📊 Stats
 
 - **3 Libraries Tested**: Redux Toolkit, Zustand, Jotai
-- **7 Test Categories**: Read, Write, Form, Async, Memory, Cache, Spike
+- **6 Test Categories**: Read, Write, Form, Async, Memory, Cache
 - **60+ Generated Tests**: Automatically created comparison benchmarks
+- **Multiple Scales**: Single, Burst, Batch, Heavy, Extreme
+
+---
+
+## 📚 Documentation
+
+- **[Architecture](docs/architecture.md)** - Deep dive into the auto-discovery system
+- **[Methodology](docs/methodology.md)** - How benchmarks are measured
+- **[Contributing](docs/contributing.md)** - Add new libraries or test types
 
 ---
 

@@ -76,31 +76,69 @@ class GroupReadmeGenerator {
     resultsData.files.forEach(file => {
       file.groups.forEach(group => {
         if (group.benchmarks && group.benchmarks.length > 0) {
-          table += `## ${group.fullName}\n\n`;
+          table += `## Benchmark Results\n\n`;
 
-          table += '| Rank | Library | Operations/sec | Mean (ms) | p99 (ms) | Variance |\n';
-          table += '|------|---------|---------------|-----------|-----------|----------|\n';
-
-          const sortedBenchmarks = group.benchmarks
-            .filter(bench => bench.hz)
-            .sort((a, b) => b.hz - a.hz);
-
-          sortedBenchmarks.forEach((bench, index) => {
-            const rank = index + 1;
-            const opsPerSec = bench.hz ? bench.hz.toLocaleString() : 'N/A';
-            const mean = bench.mean ? (bench.mean * 1000).toFixed(4) : 'N/A';
-            const p99 = bench.p99 ? (bench.p99 * 1000).toFixed(4) : 'N/A';
-            const variance = bench.rme ? `±${bench.rme.toFixed(2)}%` : 'N/A';
-
-            table += `| ${rank} | ${bench.name} | ${opsPerSec} | ${mean} | ${p99} | ${variance} |\n`;
+          // Group benchmarks by library
+          const byLibrary = {};
+          group.benchmarks.forEach(bench => {
+            if (!byLibrary[bench.library]) {
+              byLibrary[bench.library] = [];
+            }
+            byLibrary[bench.library].push(bench);
           });
 
-          table += '\n';
+          // Calculate average for each library and sort
+          const libraryAverages = Object.entries(byLibrary)
+            .map(([library, benches]) => {
+              const avgHz = benches.reduce((sum, b) => sum + (b.hz || 0), 0) / benches.length;
+              return { library, avgHz, benches };
+            })
+            .sort((a, b) => b.avgHz - a.avgHz);
+
+          // Display each library with its tests
+          libraryAverages.forEach(({library, avgHz, benches}, libIndex) => {
+            const formattedLibName = this.formatLibraryName(library);
+
+            table += `### ${libIndex + 1}. ${formattedLibName}\n\n`;
+            table += `**Average Performance:** ${avgHz.toLocaleString(undefined, {maximumFractionDigits: 2})} ops/sec\n\n`;
+
+            table += '| Test | Operations/sec | Mean (ms) | p99 (ms) | Variance |\n';
+            table += '|------|---------------|-----------|-----------|----------|\n';
+
+            // Sort tests by performance within each library
+            benches.sort((a, b) => (b.hz || 0) - (a.hz || 0)).forEach(bench => {
+              // Extract just the test name (remove library suffix)
+              const testName = bench.name.split(' - ')[0];
+              const opsPerSec = bench.hz ? bench.hz.toLocaleString() : 'N/A';
+              const mean = bench.mean ? (bench.mean * 1000).toFixed(4) : 'N/A';
+              const p99 = bench.p99 ? (bench.p99 * 1000).toFixed(4) : 'N/A';
+              const variance = bench.rme ? `±${bench.rme.toFixed(2)}%` : 'N/A';
+
+              table += `| ${testName} | ${opsPerSec} | ${mean} | ${p99} | ${variance} |\n`;
+            });
+
+            table += '\n';
+          });
         }
       });
     });
 
     return table;
+  }
+
+  formatLibraryName(library) {
+    const nameMap = {
+      'jotai': 'Jotai',
+      'zustand': 'Zustand',
+      'redux': 'Redux Toolkit',
+      'redux-toolkit': 'Redux Toolkit',
+      'mobx': 'MobX',
+      'valtio': 'Valtio',
+      'preact-signals': 'Preact Signals',
+      'solid-signals': 'Solid Signals',
+      'zen': 'Zen'
+    };
+    return nameMap[library] || library;
   }
 
   generateNoResultsSection(groupName) {

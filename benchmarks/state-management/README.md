@@ -26,14 +26,14 @@ Comprehensive performance benchmarks for JavaScript/TypeScript state management 
 
 | Library | Version | Bundle Size (gzip) | Overall Score | Read | Write | Creation | Memory |
 |---------|---------|-------------------|---------------|------|-------|----------|--------|
-| 👑 Solid Signals | 1.9.10 | 4.0 KB | 2.5M | 39.9M | 33.1M | 32.1M | 923 |
-| Preact Signals | 2.4.0 | 3.0 KB | 2.3M | 34.3M | 28.2M | 33.4M | 904 |
+| Solid Signals | 1.9.10 | 4.0 KB | 👑 2.5M | 👑 39.9M | 33.1M | 32.1M | 923 |
+| Preact Signals | 2.4.0 | 3.0 KB | 2.3M | 34.3M | 28.2M | 👑 33.4M | 904 |
 | Zen | 1.2.1 | 5.3 KB | 2.3M | 32.2M | 28.2M | 32.2M | 924 |
-| Jotai | 2.15.1 | 4.3 KB | 1.3M | 36.3M | 33.9M | 2.3M | 917 |
+| Jotai | 2.15.1 | 4.3 KB | 1.3M | 36.3M | 👑 33.9M | 2.3M | 917 |
 | Valtio | 2.2.0 | 3.1 KB | 258K | 4.9M | 4.2M | 235K | 898 |
-| Zustand | 5.0.8 | 1.2 KB | 188K | 363K | 351K | 10.9M | 907 |
+| Zustand | 5.0.8 | 👑 1.2 KB | 188K | 363K | 351K | 10.9M | 907 |
 | Redux Toolkit | 2.10.1 | 13.8 KB | 104K | 960K | 784K | 173K | 892 |
-| MobX | 6.15.0 | 17.6 KB | 42K | 3.8M | 3.0M | 278 | 925 |
+| MobX | 6.15.0 | 17.6 KB | 42K | 3.8M | 3.0M | 278 | 👑 925 |
 
 ---
 

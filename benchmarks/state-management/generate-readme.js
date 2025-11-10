@@ -182,6 +182,21 @@ function generateLibraryComparison(scores) {
 |---------|---------|-------------------|---------------|------|-------|----------|--------|
 `;
 
+  // Find best value for each metric
+  const maxOverall = Math.max(...scores.map(s => s.overall));
+  const maxRead = Math.max(...scores.map(s => s.read));
+  const maxWrite = Math.max(...scores.map(s => s.write));
+  const maxCreation = Math.max(...scores.map(s => s.creation));
+  const maxMemory = Math.max(...scores.map(s => s.memory));
+
+  // Find smallest bundle size (best)
+  const minSize = Math.min(...scores.map(entry => {
+    const libKey = Object.keys(libraryMetadata.libraries).find(key =>
+      libraryMetadata.libraries[key].displayName === entry.library
+    );
+    return versions.libraries[libKey]?.size?.gzip || Infinity;
+  }));
+
   scores.forEach((entry, index) => {
     const libKey = Object.keys(libraryMetadata.libraries).find(key =>
       libraryMetadata.libraries[key].displayName === entry.library
@@ -189,9 +204,16 @@ function generateLibraryComparison(scores) {
     const version = versions.libraries[libKey]?.current || 'N/A';
     const size = versions.libraries[libKey]?.size?.gzip || 0;
     const sizeKB = (size / 1024).toFixed(1);
-    const crown = index === 0 ? '👑 ' : '';
 
-    section += `| ${crown}${entry.library} | ${version} | ${sizeKB} KB | ${formatNumber(entry.overall)} | ${formatNumber(entry.read)} | ${formatNumber(entry.write)} | ${formatNumber(entry.creation)} | ${formatNumber(entry.memory)} |\n`;
+    // Add crown to each metric's winner
+    const sizeCrown = size === minSize ? '👑 ' : '';
+    const overallCrown = entry.overall === maxOverall ? '👑 ' : '';
+    const readCrown = entry.read === maxRead ? '👑 ' : '';
+    const writeCrown = entry.write === maxWrite ? '👑 ' : '';
+    const creationCrown = entry.creation === maxCreation ? '👑 ' : '';
+    const memoryCrown = entry.memory === maxMemory ? '👑 ' : '';
+
+    section += `| ${entry.library} | ${version} | ${sizeCrown}${sizeKB} KB | ${overallCrown}${formatNumber(entry.overall)} | ${readCrown}${formatNumber(entry.read)} | ${writeCrown}${formatNumber(entry.write)} | ${creationCrown}${formatNumber(entry.creation)} | ${memoryCrown}${formatNumber(entry.memory)} |\n`;
   });
 
   section += '\n---\n\n';

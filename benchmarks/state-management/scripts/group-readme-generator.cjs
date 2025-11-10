@@ -96,20 +96,27 @@ class GroupReadmeGenerator {
               .filter(bench => bench.hz)
               .sort((a, b) => b.hz - a.hz);
 
-            // Performance comparison chart
+            // Performance comparison chart (vertical, all libraries)
             if (sortedBenchmarks.length > 0) {
               const maxHz = sortedBenchmarks[0].hz;
               table += `**Performance Comparison:**\n\n`;
+              table += '```\n';
 
-              sortedBenchmarks.slice(0, 3).forEach((bench, idx) => {
-                const emoji = idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉';
+              sortedBenchmarks.forEach((bench, idx) => {
+                const rank = idx + 1;
+                const emoji = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}.`;
                 const libraryName = this.formatLibraryName(bench.library);
-                const barLength = Math.round((bench.hz / maxHz) * 20);
+                const barLength = Math.round((bench.hz / maxHz) * 40);
                 const bar = '█'.repeat(barLength);
-                const opsFormatted = (bench.hz / 1000000).toFixed(2);
-                table += `${emoji} ${libraryName.padEnd(20)} ${bar.padEnd(20)} ${opsFormatted}M ops/sec\n`;
+                const opsFormatted = bench.hz >= 1000000
+                  ? (bench.hz / 1000000).toFixed(2) + 'M'
+                  : bench.hz >= 1000
+                  ? (bench.hz / 1000).toFixed(2) + 'K'
+                  : bench.hz.toFixed(2);
+
+                table += `${emoji.toString().padEnd(4)} ${libraryName.padEnd(18)} ${bar.padEnd(42)} ${opsFormatted.padStart(10)} ops/sec\n`;
               });
-              table += '\n';
+              table += '```\n\n';
             }
 
             // Detailed results table

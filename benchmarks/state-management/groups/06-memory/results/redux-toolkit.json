@@ -9,44 +9,44 @@
             {
               "id": "Large State Read (1000 items) - Redux Toolkit",
               "name": "Large State Read (1000 items)",
-              "hz": 38718744.14,
+              "hz": 42047926.47,
               "min": 0,
-              "max": 0.0889,
+              "max": 1.4096,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
-              "rme": 0.07,
-              "samples": 19359373
+              "rme": 0.56,
+              "samples": 21023965
             },
             {
               "id": "Large State Update (1000 items) - Redux Toolkit",
               "name": "Large State Update (1000 items)",
-              "hz": 22778.51,
-              "min": 0.0325,
-              "max": 0.5293,
-              "mean": 0.0439,
-              "p75": 0.0506,
-              "p99": 0.0737,
-              "p995": 0.0878,
-              "p999": 0.1292,
-              "rme": 0.55,
-              "samples": 11390
+              "hz": 23610.09,
+              "min": 0.0332,
+              "max": 0.2962,
+              "mean": 0.0424,
+              "p75": 0.047,
+              "p99": 0.0629,
+              "p995": 0.0698,
+              "p999": 0.0988,
+              "rme": 0.33,
+              "samples": 11806
             },
             {
               "id": "Large State Filter - Redux Toolkit",
               "name": "Large State Filter",
-              "hz": 38827.77,
-              "min": 0.0205,
-              "max": 0.3464,
-              "mean": 0.0258,
-              "p75": 0.028,
-              "p99": 0.0445,
-              "p995": 0.045,
-              "p999": 0.0742,
-              "rme": 0.35,
-              "samples": 19414
+              "hz": 44145.26,
+              "min": 0.0193,
+              "max": 0.2897,
+              "mean": 0.0227,
+              "p75": 0.0239,
+              "p99": 0.0296,
+              "p995": 0.03,
+              "p999": 0.0333,
+              "rme": 0.21,
+              "samples": 22073
             }
           ]
         }

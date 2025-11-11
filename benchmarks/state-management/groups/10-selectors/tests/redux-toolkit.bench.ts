@@ -1,10 +1,15 @@
 /**
  * 10-selectors - Redux Toolkit
- * Auto-generated per-library test file
+ * Manual selector pattern (createSelector)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import {
+  reduxStore,
+  reduxSlice,
+  reduxDoubledSelector,
+  reduxLevel3Selector
+} from '../../../src/stores/redux-store';
 
 describe('10-selectors - Redux Toolkit', () => {
   bench('Selector', () => {

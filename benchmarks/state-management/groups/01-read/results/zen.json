@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Zen",
               "name": "Simple Read",
-              "hz": 45882093.54,
+              "hz": 42813394.37,
               "min": 0,
-              "max": 0.0427,
+              "max": 0.0845,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0,
-              "rme": 0.05,
-              "samples": 22941047
+              "rme": 0.06,
+              "samples": 21406698
             },
             {
               "id": "High Frequency Read (x10) - Zen",
               "name": "High Frequency Read (x10)",
-              "hz": 45335842.46,
+              "hz": 43626225.04,
               "min": 0,
-              "max": 0.1722,
+              "max": 0.0114,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
-              "p999": 0.0001,
-              "rme": 0.1,
-              "samples": 22667922
+              "p999": 0,
+              "rme": 0.04,
+              "samples": 21813113
             },
             {
               "id": "High Frequency Read (x100) - Zen",
               "name": "High Frequency Read (x100)",
-              "hz": 22548620.6,
+              "hz": 22081417.29,
               "min": 0,
-              "max": 0.0262,
+              "max": 0.0173,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 0.03,
-              "samples": 11274311
+              "rme": 0.02,
+              "samples": 11040709
             },
             {
               "id": "High Frequency Read (x1000) - Zen",
               "name": "High Frequency Read (x1000)",
-              "hz": 3212282.45,
+              "hz": 3294121.55,
               "min": 0.0002,
-              "max": 0.033,
+              "max": 0.0122,
               "mean": 0.0003,
               "p75": 0.0003,
               "p99": 0.0004,
-              "p995": 0.0005,
-              "p999": 0.0006,
-              "rme": 0.04,
-              "samples": 1606142
+              "p995": 0.0004,
+              "p999": 0.0004,
+              "rme": 0.02,
+              "samples": 1647061
             },
             {
               "id": "High Frequency Read (x10000) - Zen",
               "name": "High Frequency Read (x10000)",
-              "hz": 349084.57,
+              "hz": 336678.27,
               "min": 0.0027,
-              "max": 0.1289,
-              "mean": 0.0029,
-              "p75": 0.0028,
+              "max": 0.0335,
+              "mean": 0.003,
+              "p75": 0.0031,
               "p99": 0.0035,
-              "p995": 0.0035,
+              "p995": 0.0038,
               "p999": 0.004,
-              "rme": 0.06,
-              "samples": 174543
+              "rme": 0.04,
+              "samples": 168340
             }
           ]
         }

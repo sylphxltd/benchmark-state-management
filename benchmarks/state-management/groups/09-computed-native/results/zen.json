@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "filepath": "groups/09-computed-native/tests/zen.bench.ts",
+      "groups": [
+        {
+          "fullName": "09-computed-native - Zen",
+          "benchmarks": [
+            {
+              "id": "Native Computed - Zen",
+              "name": "Native Computed",
+              "hz": 15924757.81,
+              "min": 0,
+              "max": 0.6242,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.26,
+              "samples": 7962379
+            },
+            {
+              "id": "Chained Computed - Zen",
+              "name": "Chained Computed",
+              "hz": 22177148.8,
+              "min": 0,
+              "max": 0.031,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.04,
+              "samples": 11088575
+            },
+            {
+              "id": "Computed Updates - Zen",
+              "name": "Computed Updates",
+              "hz": 251384.49,
+              "min": 0.0029,
+              "max": 0.4632,
+              "mean": 0.004,
+              "p75": 0.0045,
+              "p99": 0.007,
+              "p995": 0.0095,
+              "p999": 0.0118,
+              "rme": 0.4,
+              "samples": 125693
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

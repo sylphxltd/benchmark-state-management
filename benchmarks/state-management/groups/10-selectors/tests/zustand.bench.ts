@@ -1,10 +1,14 @@
 /**
  * 10-selectors - Zustand
- * Auto-generated per-library test file
+ * Manual selector pattern (selector functions)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import {
+  zustandStore,
+  zustandDoubledSelector,
+  zustandLevel3Selector
+} from '../../../src/stores/zustand-store';
 
 describe('10-selectors - Zustand', () => {
   bench('Selector', () => {

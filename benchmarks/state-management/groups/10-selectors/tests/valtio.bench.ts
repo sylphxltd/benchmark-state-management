@@ -1,10 +1,10 @@
 /**
  * 10-selectors - Valtio
- * Auto-generated per-library test file
+ * Manual selector pattern (proxy getters)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import { valtioStore } from '../../../src/stores/valtio-store';
 
 describe('10-selectors - Valtio', () => {
   bench('Selector', () => {

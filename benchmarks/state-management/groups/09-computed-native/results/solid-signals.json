@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "filepath": "groups/09-computed-native/tests/solid-signals.bench.ts",
+      "groups": [
+        {
+          "fullName": "09-computed-native - Solid Signals",
+          "benchmarks": [
+            {
+              "id": "Native Computed - Solid Signals",
+              "name": "Native Computed",
+              "hz": 26319411.63,
+              "min": 0,
+              "max": 3.8102,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 1.49,
+              "samples": 13159706
+            },
+            {
+              "id": "Chained Computed - Solid Signals",
+              "name": "Chained Computed",
+              "hz": 25709392.97,
+              "min": 0,
+              "max": 0.1167,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.08,
+              "samples": 12854697
+            },
+            {
+              "id": "Computed Updates - Solid Signals",
+              "name": "Computed Updates",
+              "hz": 745165.77,
+              "min": 0.001,
+              "max": 0.0239,
+              "mean": 0.0013,
+              "p75": 0.0014,
+              "p99": 0.0021,
+              "p995": 0.0021,
+              "p999": 0.0025,
+              "rme": 0.05,
+              "samples": 372583
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

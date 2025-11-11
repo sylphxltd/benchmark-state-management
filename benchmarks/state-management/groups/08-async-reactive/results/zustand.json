@@ -9,58 +9,58 @@
             {
               "id": "Async Reactive Read - Zustand",
               "name": "Async Reactive Read",
-              "hz": 1511994.92,
+              "hz": 1456122.87,
               "min": 0,
-              "max": 57.1064,
+              "max": 59.9981,
               "mean": 0.0007,
               "p75": 0.0001,
               "p99": 0.0003,
               "p995": 0.0004,
               "p999": 0.0007,
-              "rme": 39.04,
-              "samples": 757552
+              "rme": 39.27,
+              "samples": 746045
             },
             {
               "id": "Async Reactive Chained - Zustand",
               "name": "Async Reactive Chained",
-              "hz": 1009912,
+              "hz": 887711.02,
               "min": 0.0001,
-              "max": 32.3337,
-              "mean": 0.001,
+              "max": 28.4596,
+              "mean": 0.0011,
               "p75": 0.0002,
-              "p99": 0.0005,
-              "p995": 0.0006,
-              "p999": 0.001,
-              "rme": 38.35,
-              "samples": 506160
+              "p99": 0.0003,
+              "p995": 0.0005,
+              "p999": 0.0007,
+              "rme": 39.58,
+              "samples": 448944
             },
             {
               "id": "Async Reactive Complex - Zustand",
               "name": "Async Reactive Complex",
-              "hz": 566057.26,
+              "hz": 600032.7,
               "min": 0.0002,
-              "max": 25.0821,
-              "mean": 0.0018,
+              "max": 24.8305,
+              "mean": 0.0017,
               "p75": 0.0003,
               "p99": 0.0006,
               "p995": 0.0007,
               "p999": 0.0009,
-              "rme": 37.06,
-              "samples": 291188
+              "rme": 35.99,
+              "samples": 304464
             },
             {
               "id": "Async Reactive Concurrent - Zustand",
               "name": "Async Reactive Concurrent",
-              "hz": 312134.39,
+              "hz": 316326.03,
               "min": 0.0002,
-              "max": 71.8687,
+              "max": 38.4663,
               "mean": 0.0032,
               "p75": 0.0003,
-              "p99": 0.0008,
-              "p995": 0.0009,
-              "p999": 0.0017,
-              "rme": 47.94,
-              "samples": 158414
+              "p99": 0.0007,
+              "p995": 0.0008,
+              "p999": 0.001,
+              "rme": 43.56,
+              "samples": 162681
             }
           ]
         }

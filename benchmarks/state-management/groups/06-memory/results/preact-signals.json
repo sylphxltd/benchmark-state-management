@@ -9,44 +9,44 @@
             {
               "id": "Large State Read (1000 items) - Preact Signals",
               "name": "Large State Read (1000 items)",
-              "hz": 44385522.49,
+              "hz": 39580507.45,
               "min": 0,
-              "max": 0.6887,
+              "max": 0.5277,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
-              "rme": 0.3,
-              "samples": 22192762
+              "rme": 0.23,
+              "samples": 19790254
             },
             {
               "id": "Large State Update (1000 items) - Preact Signals",
               "name": "Large State Update (1000 items)",
-              "hz": 418743.31,
-              "min": 0.0017,
-              "max": 5.1041,
-              "mean": 0.0024,
-              "p75": 0.0023,
-              "p99": 0.0056,
-              "p995": 0.0061,
-              "p999": 0.0074,
-              "rme": 2.02,
-              "samples": 209372
+              "hz": 349103.02,
+              "min": 0.0018,
+              "max": 0.386,
+              "mean": 0.0029,
+              "p75": 0.003,
+              "p99": 0.0077,
+              "p995": 0.0085,
+              "p999": 0.0093,
+              "rme": 0.53,
+              "samples": 174552
             },
             {
               "id": "Large State Filter - Preact Signals",
               "name": "Large State Filter",
-              "hz": 439794.42,
+              "hz": 345059.4,
               "min": 0.0018,
-              "max": 0.1826,
-              "mean": 0.0023,
-              "p75": 0.0022,
-              "p99": 0.0086,
-              "p995": 0.009,
-              "p999": 0.01,
-              "rme": 0.33,
-              "samples": 219898
+              "max": 0.4595,
+              "mean": 0.0029,
+              "p75": 0.0032,
+              "p99": 0.0101,
+              "p995": 0.0109,
+              "p999": 0.0168,
+              "rme": 0.6,
+              "samples": 172530
             }
           ]
         }

@@ -1,0 +1,70 @@
+{
+  "files": [
+    {
+      "filepath": "groups/10-selectors/tests/redux-toolkit.bench.ts",
+      "groups": [
+        {
+          "fullName": "10-selectors - Redux Toolkit",
+          "benchmarks": [
+            {
+              "id": "Selector - Redux Toolkit",
+              "name": "Selector",
+              "hz": 526193.09,
+              "min": 0.0013,
+              "max": 1.7989,
+              "mean": 0.0019,
+              "p75": 0.0019,
+              "p99": 0.0027,
+              "p995": 0.0034,
+              "p999": 0.0103,
+              "rme": 1.65,
+              "samples": 263097
+            },
+            {
+              "id": "Chained Selectors - Redux Toolkit",
+              "name": "Chained Selectors",
+              "hz": 329656.99,
+              "min": 0.0018,
+              "max": 2.8977,
+              "mean": 0.003,
+              "p75": 0.0031,
+              "p99": 0.0044,
+              "p995": 0.0049,
+              "p999": 0.0179,
+              "rme": 2.29,
+              "samples": 164829
+            },
+            {
+              "id": "Repeated Selector Access - Redux Toolkit",
+              "name": "Repeated Selector Access",
+              "hz": 465591.92,
+              "min": 0.0015,
+              "max": 1.5126,
+              "mean": 0.0021,
+              "p75": 0.0025,
+              "p99": 0.0048,
+              "p995": 0.0048,
+              "p999": 0.006,
+              "rme": 0.65,
+              "samples": 232796
+            },
+            {
+              "id": "Selector Updates - Redux Toolkit",
+              "name": "Selector Updates",
+              "hz": 4885.19,
+              "min": 0.1574,
+              "max": 5.2359,
+              "mean": 0.2047,
+              "p75": 0.2103,
+              "p99": 0.7179,
+              "p995": 0.7877,
+              "p999": 0.9204,
+              "rme": 2.43,
+              "samples": 2443
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

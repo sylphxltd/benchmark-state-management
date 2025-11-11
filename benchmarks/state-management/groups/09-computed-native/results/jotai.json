@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "filepath": "groups/09-computed-native/tests/jotai.bench.ts",
+      "groups": [
+        {
+          "fullName": "09-computed-native - Jotai",
+          "benchmarks": [
+            {
+              "id": "Native Computed - Jotai",
+              "name": "Native Computed",
+              "hz": 605928.17,
+              "min": 0.001,
+              "max": 4.2313,
+              "mean": 0.0017,
+              "p75": 0.0015,
+              "p99": 0.003,
+              "p995": 0.0045,
+              "p999": 0.0143,
+              "rme": 4.25,
+              "samples": 302965
+            },
+            {
+              "id": "Chained Computed - Jotai",
+              "name": "Chained Computed",
+              "hz": 224026.69,
+              "min": 0.0027,
+              "max": 9.1772,
+              "mean": 0.0045,
+              "p75": 0.004,
+              "p99": 0.0079,
+              "p995": 0.0096,
+              "p999": 0.0372,
+              "rme": 6.53,
+              "samples": 112048
+            },
+            {
+              "id": "Computed Updates - Jotai",
+              "name": "Computed Updates",
+              "hz": 5683.3,
+              "min": 0.1163,
+              "max": 8.602,
+              "mean": 0.176,
+              "p75": 0.1631,
+              "p99": 0.3529,
+              "p995": 2.5074,
+              "p999": 5.1282,
+              "rme": 6.69,
+              "samples": 2842
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

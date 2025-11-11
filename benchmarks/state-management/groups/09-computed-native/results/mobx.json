@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "filepath": "groups/09-computed-native/tests/mobx.bench.ts",
+      "groups": [
+        {
+          "fullName": "09-computed-native - MobX",
+          "benchmarks": [
+            {
+              "id": "Native Computed - MobX",
+              "name": "Native Computed",
+              "hz": 3237185.88,
+              "min": 0.0002,
+              "max": 0.3615,
+              "mean": 0.0003,
+              "p75": 0.0003,
+              "p99": 0.0005,
+              "p995": 0.0006,
+              "p999": 0.001,
+              "rme": 0.29,
+              "samples": 1618594
+            },
+            {
+              "id": "Chained Computed - MobX",
+              "name": "Chained Computed",
+              "hz": 1117447.96,
+              "min": 0.0006,
+              "max": 2.6859,
+              "mean": 0.0009,
+              "p75": 0.001,
+              "p99": 0.0017,
+              "p995": 0.0018,
+              "p999": 0.0035,
+              "rme": 1.28,
+              "samples": 558725
+            },
+            {
+              "id": "Computed Updates - MobX",
+              "name": "Computed Updates",
+              "hz": 39173.75,
+              "min": 0.0188,
+              "max": 0.4455,
+              "mean": 0.0255,
+              "p75": 0.029,
+              "p99": 0.0393,
+              "p995": 0.053,
+              "p999": 0.0796,
+              "rme": 0.42,
+              "samples": 19587
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

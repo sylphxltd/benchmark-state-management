@@ -1,26 +1,31 @@
 /**
  * 09-computed-native - Jotai
- * Auto-generated per-library test file
+ * Native computed values (atoms)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import {
+  jotaiStore,
+  jotaiCountAtom,
+  jotaiDoubledAtom,
+  jotaiLevel3Computed
+} from '../../../src/stores/jotai-store';
 
 describe('09-computed-native - Jotai', () => {
   bench('Native Computed', () => {
-    jotaiStore.set(jotaiBaseAtom, Math.random());
-    jotaiStore.get(jotaiComputedAtom);
+    jotaiStore.set(jotaiCountAtom, Math.random());
+    jotaiStore.get(jotaiDoubledAtom);
   });
 
   bench('Chained Computed', () => {
-    jotaiStore.set(jotaiBaseAtom, Math.random());
-    jotaiStore.get(jotaiChainedAtom);
+    jotaiStore.set(jotaiCountAtom, Math.random());
+    jotaiStore.get(jotaiLevel3Computed);
   });
 
   bench('Computed Updates', () => {
     for (let i = 0; i < 100; i++) {
-      jotaiStore.set(jotaiBaseAtom, i);
-      jotaiStore.get(jotaiComputedAtom);
+      jotaiStore.set(jotaiCountAtom, i);
+      jotaiStore.get(jotaiDoubledAtom);
     }
   });
 });

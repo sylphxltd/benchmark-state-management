@@ -9,58 +9,58 @@
             {
               "id": "Batched Updates - Solid Signals",
               "name": "Batched Updates",
-              "hz": 40483558.6,
+              "hz": 32924002.22,
               "min": 0,
-              "max": 3.2026,
+              "max": 0.1497,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 1.26,
-              "samples": 20241781
+              "rme": 0.12,
+              "samples": 16462002
             },
             {
               "id": "Unbatched Updates - Solid Signals",
               "name": "Unbatched Updates",
-              "hz": 41856232.57,
+              "hz": 34790649.36,
               "min": 0,
-              "max": 3.221,
+              "max": 0.062,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 1.26,
-              "samples": 20928118
+              "rme": 0.06,
+              "samples": 17395326
             },
             {
               "id": "Large Batch - Solid Signals",
               "name": "Large Batch",
-              "hz": 27433810.46,
+              "hz": 22836124.4,
               "min": 0,
-              "max": 0.1362,
-              "mean": 0,
-              "p75": 0,
-              "p99": 0,
-              "p995": 0.0001,
-              "p999": 0.0001,
-              "rme": 0.08,
-              "samples": 13716906
-            },
-            {
-              "id": "Batched with Observers - Solid Signals",
-              "name": "Batched with Observers",
-              "hz": 41057306.69,
-              "min": 0,
-              "max": 0.019,
+              "max": 0.2458,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 0.05,
-              "samples": 20528654
+              "rme": 0.1,
+              "samples": 11418063
+            },
+            {
+              "id": "Batched with Observers - Solid Signals",
+              "name": "Batched with Observers",
+              "hz": 32772808.36,
+              "min": 0,
+              "max": 0.1382,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0001,
+              "rme": 0.11,
+              "samples": 16386405
             }
           ]
         }

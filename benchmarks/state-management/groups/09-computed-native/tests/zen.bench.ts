@@ -1,26 +1,31 @@
 /**
  * 09-computed-native - Zen
- * Auto-generated per-library test file
+ * Native computed values (computed)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import { get, set } from '@sylphx/zen';
+import {
+  zenCountStore,
+  zenDoubledStore,
+  zenLevel3Computed
+} from '../../../src/stores/zen-store';
 
 describe('09-computed-native - Zen', () => {
   bench('Native Computed', () => {
-    zenSet(zenValue, Math.random());
-    zenGet(zenDoubled);
+    set(zenCountStore, Math.random());
+    get(zenDoubledStore);
   });
 
   bench('Chained Computed', () => {
-    zenSet(zenValue, Math.random());
-    zenGet(zenChained);
+    set(zenCountStore, Math.random());
+    get(zenLevel3Computed);
   });
 
   bench('Computed Updates', () => {
     for (let i = 0; i < 100; i++) {
-      zenSet(zenValue, i);
-      zenGet(zenDoubled);
+      set(zenCountStore, i);
+      get(zenDoubledStore);
     }
   });
 });

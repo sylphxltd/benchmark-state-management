@@ -9,72 +9,72 @@
             {
               "id": "Single Field Update - Zen",
               "name": "Single Field Update",
-              "hz": 19376256.91,
+              "hz": 18265850.79,
               "min": 0,
-              "max": 0.1307,
+              "max": 0.2314,
               "mean": 0.0001,
-              "p75": 0,
+              "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.09,
-              "samples": 9688129
+              "rme": 0.11,
+              "samples": 9132926
             },
             {
               "id": "Multiple Fields Update (3 fields) - Zen",
               "name": "Multiple Fields Update (3 fields)",
-              "hz": 17775417.3,
+              "hz": 16590122.74,
               "min": 0,
-              "max": 0.2195,
+              "max": 0.2354,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.37,
-              "samples": 8887710
+              "rme": 0.39,
+              "samples": 8295062
             },
             {
               "id": "Nested Field Update - Zen",
               "name": "Nested Field Update",
-              "hz": 15480519.75,
+              "hz": 15692470.11,
               "min": 0,
-              "max": 0.3942,
+              "max": 0.1729,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
-              "p995": 0.0001,
-              "p999": 0.0003,
-              "rme": 0.55,
-              "samples": 7740260
+              "p995": 0.0002,
+              "p999": 0.0002,
+              "rme": 0.13,
+              "samples": 7846237
             },
             {
               "id": "Full Form Reset - Zen",
               "name": "Full Form Reset",
-              "hz": 28547250.34,
+              "hz": 27866893,
               "min": 0,
-              "max": 0.6481,
+              "max": 0.2977,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
-              "p999": 0.0001,
-              "rme": 0.3,
-              "samples": 14273626
+              "p999": 0.0003,
+              "rme": 0.4,
+              "samples": 13933447
             },
             {
               "id": "Conditional Field Update - Zen",
               "name": "Conditional Field Update",
-              "hz": 45680912.35,
+              "hz": 38897278.97,
               "min": 0,
-              "max": 0.0188,
+              "max": 0.3045,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
-              "p999": 0,
-              "rme": 0.04,
-              "samples": 22840458
+              "p999": 0.0001,
+              "rme": 0.14,
+              "samples": 19448641
             }
           ]
         }

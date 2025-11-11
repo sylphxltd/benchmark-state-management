@@ -1,26 +1,30 @@
 /**
  * 09-computed-native - Solid Signals
- * Auto-generated per-library test file
+ * Native computed values (createMemo)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import {
+  setSolidCount,
+  solidDoubledSignal,
+  solidLevel3Computed
+} from '../../../src/stores/solid-store';
 
 describe('09-computed-native - Solid Signals', () => {
   bench('Native Computed', () => {
-    setSolidValue(Math.random());
-    solidDoubled();
+    setSolidCount(Math.random());
+    solidDoubledSignal();
   });
 
   bench('Chained Computed', () => {
-    setSolidValue(Math.random());
-    solidChained();
+    setSolidCount(Math.random());
+    solidLevel3Computed();
   });
 
   bench('Computed Updates', () => {
     for (let i = 0; i < 100; i++) {
-      setSolidValue(i);
-      solidDoubled();
+      setSolidCount(i);
+      solidDoubledSignal();
     }
   });
 });

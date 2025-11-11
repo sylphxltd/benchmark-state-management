@@ -1,26 +1,30 @@
 /**
  * 09-computed-native - Preact Signals
- * Auto-generated per-library test file
+ * Native computed values (signals)
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import {
+  preactCountSignal,
+  preactDoubledSignal,
+  preactLevel3Computed
+} from '../../../src/stores/preact-store';
 
 describe('09-computed-native - Preact Signals', () => {
   bench('Native Computed', () => {
-    preactValue.value = Math.random();
-    preactDoubled.value;
+    preactCountSignal.value = Math.random();
+    preactDoubledSignal.value;
   });
 
   bench('Chained Computed', () => {
-    preactValue.value = Math.random();
-    preactChained.value;
+    preactCountSignal.value = Math.random();
+    preactLevel3Computed.value;
   });
 
   bench('Computed Updates', () => {
     for (let i = 0; i < 100; i++) {
-      preactValue.value = i;
-      preactDoubled.value;
+      preactCountSignal.value = i;
+      preactDoubledSignal.value;
     }
   });
 });

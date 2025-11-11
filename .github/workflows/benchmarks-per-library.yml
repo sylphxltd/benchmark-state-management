@@ -1,19 +1,10 @@
-name: Per-Library Benchmarks
+name: Auto-Update README
 
 on:
   schedule:
     # Run every hour at minute 0
     - cron: '0 * * * *'
   workflow_dispatch:
-    inputs:
-      library:
-        description: 'Library key to benchmark (e.g., jotai, zustand)'
-        required: false
-        type: string
-      category:
-        description: 'Category to benchmark (e.g., state-management)'
-        required: false
-        type: string
   push:
     paths:
       - 'benchmarks/**'
@@ -22,137 +13,10 @@ on:
 
 jobs:
   # ============================================================================
-  # Discover libraries dynamically
-  # ============================================================================
-  discover-libraries:
-    name: Discover Libraries in ${{ matrix.category }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        category: [state-management, immutability, router, css-frameworks]
-      fail-fast: false
-
-    outputs:
-      state-management-matrix: ${{ steps.state-management.outputs.matrix }}
-      immutability-matrix: ${{ steps.immutability.outputs.matrix }}
-      router-matrix: ${{ steps.router.outputs.matrix }}
-      css-frameworks-matrix: ${{ steps.css-frameworks.outputs.matrix }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Discover libraries for ${{ matrix.category }}
-        id: discover
-        run: |
-          # Read library-metadata.json and extract library keys
-          METADATA_FILE="benchmarks/${{ matrix.category }}/library-metadata.json"
-
-          if [ ! -f "$METADATA_FILE" ]; then
-            echo "⚠️  No metadata file found for ${{ matrix.category }}"
-            echo "matrix=[]" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # Extract library keys (object keys) from metadata
-          LIBRARIES=$(jq -r '.libraries | keys | @json' "$METADATA_FILE")
-
-          echo "📦 Found libraries in ${{ matrix.category }}:"
-          echo "$LIBRARIES" | jq -r '.[]' | while read lib; do
-            echo "  - $lib"
-          done
-
-          # Create matrix JSON
-          echo "matrix=$LIBRARIES" >> $GITHUB_OUTPUT
-
-      - name: Set output for state-management
-        if: matrix.category == 'state-management'
-        id: state-management
-        run: echo "matrix=${{ steps.discover.outputs.matrix }}" >> $GITHUB_OUTPUT
-
-      - name: Set output for immutability
-        if: matrix.category == 'immutability'
-        id: immutability
-        run: echo "matrix=${{ steps.discover.outputs.matrix }}" >> $GITHUB_OUTPUT
-
-      - name: Set output for router
-        if: matrix.category == 'router'
-        id: router
-        run: echo "matrix=${{ steps.discover.outputs.matrix }}" >> $GITHUB_OUTPUT
-
-      - name: Set output for css-frameworks
-        if: matrix.category == 'css-frameworks'
-        id: css-frameworks
-        run: echo "matrix=${{ steps.discover.outputs.matrix }}" >> $GITHUB_OUTPUT
-
-  # ============================================================================
-  # Check and benchmark state-management libraries
-  # ============================================================================
-  benchmark-state-management:
-    name: Check ${{ matrix.library }} (state-management)
-    needs: discover-libraries
-    if: needs.discover-libraries.outputs.state-management-matrix != '[]'
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        library: ${{ fromJson(needs.discover-libraries.outputs.state-management-matrix) }}
-      fail-fast: false
-      max-parallel: 3  # Limit concurrent jobs to avoid rate limits
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install root dependencies
-        run: npm ci
-
-      - name: Install state-management dependencies
-        working-directory: benchmarks/state-management
-        run: npm ci
-
-      - name: Check if benchmark needed
-        id: check
-        run: npx tsx scripts/check-single-library.ts "${{ matrix.library }}" benchmarks/state-management
-
-      - name: Run benchmark for ${{ matrix.library }}
-        if: steps.check.outputs.needs_benchmark == 'true'
-        run: npx tsx scripts/benchmark-single-library.ts "${{ matrix.library }}" benchmarks/state-management
-
-      - name: Upload library results
-        if: steps.check.outputs.needs_benchmark == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: result-state-management-${{ matrix.library }}
-          path: |
-            benchmarks/state-management/results/${{ matrix.library }}-benchmark.json
-            benchmarks/state-management/groups/*/results/${{ matrix.library }}.json
-          retention-days: 7
-
-      - name: Upload updated versions.json
-        if: steps.check.outputs.needs_benchmark == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: versions-state-management-${{ matrix.library }}
-          path: benchmarks/state-management/versions.json
-          retention-days: 1
-
-  # ============================================================================
-  # Generate README and commit results
+  # Generate README from existing benchmark results
   # ============================================================================
   generate-readme:
     name: Generate README (state-management)
-    needs: benchmark-state-management
-    if: always()
     runs-on: ubuntu-latest
 
     steps:
@@ -170,53 +34,6 @@ jobs:
       - name: Install state-management dependencies
         working-directory: benchmarks/state-management
         run: npm ci
-
-      - name: Download all library results
-        uses: actions/download-artifact@v4
-        with:
-          pattern: result-state-management-*
-          path: /tmp/benchmark-results/
-          merge-multiple: false
-
-      - name: Restore library results to correct locations
-        run: |
-          echo "📦 Restoring benchmark results..."
-
-          # Restore per-library summary files
-          mkdir -p benchmarks/state-management/results
-
-          for artifact_dir in /tmp/benchmark-results/result-state-management-*; do
-            if [ -d "$artifact_dir" ]; then
-              echo "Processing $(basename $artifact_dir)..."
-
-              # Copy main benchmark file
-              if ls $artifact_dir/benchmarks/state-management/results/*.json 1> /dev/null 2>&1; then
-                cp $artifact_dir/benchmarks/state-management/results/*.json benchmarks/state-management/results/
-              fi
-
-              # Copy per-group results
-              if [ -d "$artifact_dir/benchmarks/state-management/groups" ]; then
-                cp -r $artifact_dir/benchmarks/state-management/groups/* benchmarks/state-management/groups/ 2>/dev/null || true
-              fi
-            fi
-          done
-
-          echo "✓ Results restored"
-
-      - name: Download all versions.json updates
-        uses: actions/download-artifact@v4
-        with:
-          pattern: versions-state-management-*
-          path: /tmp/versions/
-          merge-multiple: true
-
-      - name: Merge versions.json updates
-        run: |
-          # Use the most recent versions.json from artifacts
-          if [ -f "/tmp/versions/versions.json" ]; then
-            cp /tmp/versions/versions.json benchmarks/state-management/versions.json
-            echo "✓ Updated versions.json"
-          fi
 
       - name: Generate category README
         run: |
@@ -242,48 +59,7 @@ jobs:
           git add benchmarks/ README.md
 
           # Create commit message
-          COMMIT_MSG="chore: auto-update per-library benchmarks"
-
-          # List updated libraries from results directory
-          UPDATED_LIBS=""
-          for result_file in benchmarks/state-management/results/*-benchmark.json; do
-            if [ -f "$result_file" ]; then
-              LIBRARY=$(basename "$result_file" -benchmark.json)
-              VERSION=$(jq -r '.version' "$result_file")
-              UPDATED_LIBS="$UPDATED_LIBS\n  - $LIBRARY → $VERSION"
-            fi
-          done
-
-          if [ -n "$UPDATED_LIBS" ]; then
-            COMMIT_MSG="$COMMIT_MSG\n\nUpdated libraries:$UPDATED_LIBS"
-          fi
-
-          COMMIT_MSG="$COMMIT_MSG\n\n✅ Per-library benchmarking (cost optimized)"
-          COMMIT_MSG="$COMMIT_MSG\n- Only tested libraries with new versions"
-          COMMIT_MSG="$COMMIT_MSG\n- Skipped libraries with existing benchmarks"
+          COMMIT_MSG="chore: auto-update README"
 
           git commit -m "$COMMIT_MSG" || echo "No changes to commit"
           git push || echo "Nothing to push"
-
-  # ============================================================================
-  # Summary
-  # ============================================================================
-  summary:
-    name: Benchmark Summary
-    needs: [discover-libraries, benchmark-state-management, generate-readme]
-    if: always()
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Report status
-        run: |
-          echo "📊 Benchmark Run Summary"
-          echo "========================"
-          echo ""
-          echo "Discovered libraries:"
-          echo "  State Management: ${{ needs.discover-libraries.outputs.state-management-matrix }}"
-          echo ""
-          echo "Status:"
-          echo "  Discovery: ${{ needs.discover-libraries.result }}"
-          echo "  Benchmarks: ${{ needs.benchmark-state-management.result }}"
-          echo "  README: ${{ needs.generate-readme.result }}"

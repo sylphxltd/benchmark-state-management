@@ -99,15 +99,19 @@ Each category README includes:
 
 <div align="center">
 
-**Developed and maintained by [Sylph](https://github.com/SylphxAI)**
-
 ### Supporting Tools
 [Vitest](https://vitest.dev) • [Bundlephobia](https://bundlephobia.com) • [GitHub Actions](https://github.com/features/actions)
 
 ---
 
-### Star this repo if you find it useful! ⭐
-
-[⬆ Back to Top](#-javascript-library-benchmarks)
+<p align="center">
+  <strong>JavaScript Library Benchmarks</strong>
+  <br>
+  <sub>Performance comparisons for state management, immutability, and utility libraries</sub>
+  <br><br>
+  <a href="https://sylphx.com">sylphx.com</a> •
+  <a href="https://x.com/SylphxAI">@SylphxAI</a> •
+  <a href="mailto:hi@sylphx.com">hi@sylphx.com</a>
+</p>
 
 </div>

@@ -5,20 +5,20 @@
 
 export interface TestDefinition {
   name: string;
-  code: (store: any) => void | any;
+  execute: (store: any) => void | any;
 }
 
 export const TESTS = {
   SIMPLE_READ: {
     name: 'Simple Read',
-    code: (store) => {
+    execute: (store) => {
       store.increment();
       return store.getCount();
     }
   },
   HIGH_FREQ_READ_X10: {
     name: 'High Frequency Read (x10)',
-    code: (store) => {
+    execute: (store) => {
       for (let i = 0; i < 10; i++) {
         store.getCount();
       }
@@ -26,7 +26,7 @@ export const TESTS = {
   },
   HIGH_FREQ_READ_X100: {
     name: 'High Frequency Read (x100)',
-    code: (store) => {
+    execute: (store) => {
       for (let i = 0; i < 100; i++) {
         store.getCount();
       }
@@ -34,7 +34,7 @@ export const TESTS = {
   },
   HIGH_FREQ_READ_X1000: {
     name: 'High Frequency Read (x1000)',
-    code: (store) => {
+    execute: (store) => {
       for (let i = 0; i < 1000; i++) {
         store.getCount();
       }
@@ -42,7 +42,7 @@ export const TESTS = {
   },
   HIGH_FREQ_READ_X10000: {
     name: 'High Frequency Read (x10000)',
-    code: (store) => {
+    execute: (store) => {
       for (let i = 0; i < 10000; i++) {
         store.getCount();
       }

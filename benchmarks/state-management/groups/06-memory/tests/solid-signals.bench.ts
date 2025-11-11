@@ -11,11 +11,9 @@ import { TESTS } from '../test-registry';
 const store = solidActionsV2;
 
 describe('06-memory - Solid Signals', () => {
-  bench(TESTS.LARGE_STATE_READ.name, () => {
-    return store.getCount()
-  });
-
-  bench(TESTS.LARGE_STATE_UPDATE.name, () => {
-    store.increment()
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

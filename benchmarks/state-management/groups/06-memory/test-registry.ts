@@ -5,19 +5,19 @@
 
 export interface TestDefinition {
   name: string;
-  code: (store: any) => void | any;
+  execute: (store: any) => void | any;
 }
 
 export const TESTS = {
   LARGE_STATE_READ: {
     name: 'Large State Read',
-    code: (store) => {
+    execute: (store) => {
       return store.getCount();
     }
   },
   LARGE_STATE_UPDATE: {
     name: 'Large State Update',
-    code: (store) => {
+    execute: (store) => {
       store.increment();
     }
   },

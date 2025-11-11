@@ -11,7 +11,9 @@ import { TESTS } from '../test-registry';
 const store = zenActionsV2;
 
 describe('03-creation - Zen', () => {
-  bench(TESTS.STORE_CREATION.name, () => {
-    return store
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

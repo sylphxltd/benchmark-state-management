@@ -5,13 +5,13 @@
 
 export interface TestDefinition {
   name: string;
-  code: (store: any) => void | any;
+  execute: (store: any) => void | any;
 }
 
 export const TESTS = {
   STORE_CREATION: {
     name: 'Store Creation',
-    code: (store) => {
+    execute: (store) => {
       // Store creation is handled by setup/initialization
       // This test measures the overhead of store access
       return store;

@@ -11,7 +11,9 @@ import { TESTS } from '../test-registry';
 const store = valtioActionsV2;
 
 describe('03-creation - Valtio', () => {
-  bench(TESTS.STORE_CREATION.name, () => {
-    return store
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

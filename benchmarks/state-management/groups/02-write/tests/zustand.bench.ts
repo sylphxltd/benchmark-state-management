@@ -11,23 +11,9 @@ import { TESTS } from '../test-registry';
 const store = zustandActionsV2;
 
 describe('02-write - Zustand', () => {
-  bench(TESTS.SINGLE_UPDATE.name, () => {
-    store.increment()
-  });
-
-  bench(TESTS.BATCH_UPDATE_X10.name, () => {
-    for(let i=0;i<10;i++){store.increment()}
-  });
-
-  bench(TESTS.BATCH_UPDATE_X100.name, () => {
-    for(let i=0;i<100;i++){store.increment()}
-  });
-
-  bench(TESTS.BATCH_UPDATE_X1000.name, () => {
-    for(let i=0;i<1e3;i++){store.increment()}
-  });
-
-  bench(TESTS.BATCH_UPDATE_X10000.name, () => {
-    for(let i=0;i<1e4;i++){store.increment()}
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

@@ -11,23 +11,9 @@ import { TESTS } from '../test-registry';
 const store = jotaiActionsV2;
 
 describe('01-read - Jotai', () => {
-  bench(TESTS.SIMPLE_READ.name, () => {
-    store.increment();return store.getCount()
-  });
-
-  bench(TESTS.HIGH_FREQ_READ_X10.name, () => {
-    for(let i=0;i<10;i++){store.getCount()}
-  });
-
-  bench(TESTS.HIGH_FREQ_READ_X100.name, () => {
-    for(let i=0;i<100;i++){store.getCount()}
-  });
-
-  bench(TESTS.HIGH_FREQ_READ_X1000.name, () => {
-    for(let i=0;i<1e3;i++){store.getCount()}
-  });
-
-  bench(TESTS.HIGH_FREQ_READ_X10000.name, () => {
-    for(let i=0;i<1e4;i++){store.getCount()}
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

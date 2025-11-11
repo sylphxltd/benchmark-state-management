@@ -11,7 +11,9 @@ import { TESTS } from '../test-registry';
 const store = jotaiActionsV2;
 
 describe('03-creation - Jotai', () => {
-  bench(TESTS.STORE_CREATION.name, () => {
-    return store
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

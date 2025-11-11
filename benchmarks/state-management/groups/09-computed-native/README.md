@@ -28,11 +28,11 @@ Native computed values.
 
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
-| 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 👑 8.0M |
-| 🥈 2 | [**Zen**](https://github.com/SylphxAI/zen) | 4.5M |
-| 🥉 3 | [**Preact Signals**](https://github.com/preactjs/signals) | 4.2M |
-|  4 | [**MobX**](https://github.com/mobxjs/mobx) | 521K |
-|  5 | [**Jotai**](https://github.com/pmndrs/jotai) | 123K |
+| 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 👑 8.9M |
+| 🥈 2 | [**Zen**](https://github.com/SylphxAI/zen) | 5.6M |
+| 🥉 3 | [**Preact Signals**](https://github.com/preactjs/signals) | 4.4M |
+|  4 | [**MobX**](https://github.com/mobxjs/mobx) | 694K |
+|  5 | [**Jotai**](https://github.com/pmndrs/jotai) | 128K |
 
 ---
 
@@ -41,62 +41,62 @@ Native computed values.
 ### Chained Computed
 
 ```
-🥇   Solid Signals      ████████████████████████████████████████     25.7M ops/sec
-🥈   Zen                ███████████████████████████████████          22.2M ops/sec
-🥉   Preact Signals     ████████████████                             10.4M ops/sec
-4.   MobX               ██                                            1.1M ops/sec
-5.   Jotai                                                            319K ops/sec
+🥇   Solid Signals      ████████████████████████████████████████     30.5M ops/sec
+🥈   Zen                █████████████████████████████████████        28.5M ops/sec
+🥉   Preact Signals     ██████████████                               10.6M ops/sec
+4.   MobX               ██                                            1.5M ops/sec
+5.   Jotai                                                            330K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 25,709,393 | ±0.08% | 0.0000ms | 0.1000ms | 12854697 |
-| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 22,177,149 | ±0.04% | 0.0000ms | 0.1000ms | 11088575 |
-| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 10,375,472 | ±0.03% | 0.1000ms | 0.2000ms | 5187736 |
-| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 1,117,448 | ±1.28% | 0.9000ms | 1.7000ms | 558725 |
-| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 318,887 | ±3.74% | 3.1000ms | 3.7000ms | 159444 |
+| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 30,475,134 | ±0.03% | 0.0000ms | 0.1000ms | 15237568 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 28,466,312 | ±0.05% | 0.0000ms | 0.1000ms | 14233157 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 10,647,386 | ±0.03% | 0.1000ms | 0.2000ms | 5323694 |
+| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 1,455,077 | ±2.62% | 0.7000ms | 1.4000ms | 727539 |
+| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 329,889 | ±3.60% | 3.0000ms | 3.5000ms | 164945 |
 
-**Key Insight:** Solid Signals is 80.62x faster than Jotai in this test.
+**Key Insight:** Solid Signals is 92.38x faster than Jotai in this test.
 
 ### Computed Updates
 
 ```
-🥇   Solid Signals      ████████████████████████████████████████      745K ops/sec
-🥈   Preact Signals     ███████████████████                           362K ops/sec
-🥉   Zen                █████████████                                 251K ops/sec
-4.   MobX               ██                                             39K ops/sec
+🥇   Solid Signals      ████████████████████████████████████████      818K ops/sec
+🥈   Preact Signals     ███████████████████                           382K ops/sec
+🥉   Zen                ████████████████                              317K ops/sec
+4.   MobX               ███                                            53K ops/sec
 5.   Jotai                                                              8K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 745,166 | ±0.05% | 1.3000ms | 2.1000ms | 372583 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 362,417 | ±0.06% | 2.8000ms | 3.5000ms | 181209 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 251,384 | ±0.40% | 4.0000ms | 7.0000ms | 125693 |
-| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 39,174 | ±0.42% | 25.5000ms | 39.3000ms | 19587 |
-| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 7,687 | ±4.42% | 130.1000ms | 171.7000ms | 3844 |
+| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 818,056 | ±0.03% | 1.2000ms | 1.5000ms | 409028 |
+| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 381,798 | ±0.07% | 2.6000ms | 3.5000ms | 190899 |
+| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 317,052 | ±0.27% | 3.2000ms | 4.1000ms | 158526 |
+| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 53,278 | ±0.60% | 18.8000ms | 21.3000ms | 26640 |
+| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 8,105 | ±4.05% | 123.4000ms | 156.9000ms | 4053 |
 
-**Key Insight:** Solid Signals is 96.94x faster than Jotai in this test.
+**Key Insight:** Solid Signals is 100.93x faster than Jotai in this test.
 
 ### Native Computed
 
 ```
-🥇   Solid Signals      ████████████████████████████████████████     26.3M ops/sec
-🥈   Preact Signals     ██████████████████████████████               19.5M ops/sec
-🥉   Zen                ████████████████████████                     15.9M ops/sec
-4.   MobX               █████                                         3.2M ops/sec
-5.   Jotai              █                                             766K ops/sec
+🥇   Solid Signals      ████████████████████████████████████████     28.2M ops/sec
+🥈   Preact Signals     █████████████████████████████                20.5M ops/sec
+🥉   Zen                ███████████████████████████                  18.9M ops/sec
+4.   MobX               ██████                                        4.3M ops/sec
+5.   Jotai              █                                             778K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 26,319,412 | ±1.49% | 0.0000ms | 0.1000ms | 13159706 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 19,488,217 | ±0.61% | 0.1000ms | 0.1000ms | 9744109 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 15,924,758 | ±0.26% | 0.1000ms | 0.1000ms | 7962379 |
-| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 3,237,186 | ±0.29% | 0.3000ms | 0.5000ms | 1618594 |
-| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 765,503 | ±3.89% | 1.3000ms | 2.0000ms | 382752 |
+| 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 28,163,724 | ±0.07% | 0.0000ms | 0.1000ms | 14081862 |
+| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 20,495,073 | ±0.37% | 0.0000ms | 0.1000ms | 10247537 |
+| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 18,942,777 | ±0.07% | 0.1000ms | 0.1000ms | 9471389 |
+| 4 | [**MobX**](https://github.com/mobxjs/mobx) | 4,307,874 | ±0.16% | 0.2000ms | 0.3000ms | 2153938 |
+| 5 | [**Jotai**](https://github.com/pmndrs/jotai) | 778,056 | ±3.87% | 1.3000ms | 2.1000ms | 389028 |
 
-**Key Insight:** Solid Signals is 34.38x faster than Jotai in this test.
+**Key Insight:** Solid Signals is 36.20x faster than Jotai in this test.
 
 ---
 
@@ -116,4 +116,4 @@ npx vitest bench groups/09-computed-native/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T11:24:50.024Z*
+*Last generated: 2025-11-11T11:38:36.647Z*

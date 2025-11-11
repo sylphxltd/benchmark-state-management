@@ -4,13 +4,13 @@
   "testFilesHash": "5f95c3f61a71becd2bbc2309c4dab2c48bac8c4b86975745b93053691615ebcf",
   "libraries": {
     "@sylphx/zen": {
-      "current": "1.2.1",
-      "latest": "1.2.1",
-      "lastUpdated": "2025-11-07T02:25:00.000Z",
+      "current": "2.0.0",
+      "latest": "2.0.0",
+      "lastUpdated": "2025-11-11T12:00:00.000Z",
       "size": {
         "gzip": 5478,
         "minified": 18875,
-        "lastChecked": "2025-11-07T02:25:00.000Z"
+        "lastChecked": "2025-11-11T12:00:00.000Z"
       }
     },
     "@preact/signals": {

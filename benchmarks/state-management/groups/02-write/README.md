@@ -32,8 +32,8 @@ Simple increments and burst updates.
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 👑 4.4M |
-| 🥈 2 | [**Preact Signals**](https://github.com/preactjs/signals) | 845K |
-| 🥉 3 | [**Zen**](https://github.com/SylphxAI/zen) | 783K |
+| 🥈 2 | [**Zen**](https://github.com/SylphxAI/zen) | 1.9M |
+| 🥉 3 | [**Preact Signals**](https://github.com/preactjs/signals) | 845K |
 |  4 | [**Zustand**](https://github.com/pmndrs/zustand) | 363K |
 |  5 | [**MobX**](https://github.com/mobxjs/mobx) | 79K |
 |  6 | [**Valtio**](https://github.com/pmndrs/valtio) | 65K |
@@ -48,8 +48,8 @@ Simple increments and burst updates.
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████     40.6M ops/sec
-🥈   Preact Signals     █████████                                     8.8M ops/sec
-🥉   Zen                ████████                                      7.9M ops/sec
+🥈   Zen                ███████████████████                          19.8M ops/sec
+🥉   Preact Signals     █████████                                     8.8M ops/sec
 4.   Zustand            ████                                          3.7M ops/sec
 5.   MobX               █                                             788K ops/sec
 6.   Valtio             █                                             653K ops/sec
@@ -60,8 +60,8 @@ Simple increments and burst updates.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 40,610,087 | ±0.04% | 0.0000ms | 0.0000ms | 20305044 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 8,836,088 | ±0.03% | 0.1000ms | 0.2000ms | 4418044 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 7,873,491 | ±0.03% | 0.1000ms | 0.2000ms | 3936746 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 19,779,517 | ±0.03% | 0.1000ms | 0.1000ms | 9889759 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 8,836,088 | ±0.03% | 0.1000ms | 0.2000ms | 4418044 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 3,706,587 | ±0.20% | 0.3000ms | 0.4000ms | 1853294 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 787,505 | ±0.19% | 1.3000ms | 1.6000ms | 393753 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 653,032 | ±0.07% | 1.5000ms | 1.9000ms | 326516 |
@@ -74,8 +74,8 @@ Simple increments and burst updates.
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      8.8M ops/sec
-🥈   Preact Signals     █████                                         1.1M ops/sec
-🥉   Zen                ████                                          894K ops/sec
+🥈   Zen                █████████████                                 2.9M ops/sec
+🥉   Preact Signals     █████                                         1.1M ops/sec
 4.   Zustand            ██                                            413K ops/sec
 5.   MobX                                                              81K ops/sec
 6.   Valtio                                                            66K ops/sec
@@ -86,8 +86,8 @@ Simple increments and burst updates.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 8,813,111 | ±0.03% | 0.1000ms | 0.2000ms | 4406557 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 1,073,137 | ±0.17% | 0.9000ms | 1.1000ms | 536569 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 894,414 | ±0.06% | 1.1000ms | 1.4000ms | 447207 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 2,939,845 | ±0.02% | 0.3000ms | 0.4000ms | 1469923 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 1,073,137 | ±0.17% | 0.9000ms | 1.1000ms | 536569 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 413,432 | ±0.16% | 2.4000ms | 3.0000ms | 206717 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 81,248 | ±0.22% | 12.3000ms | 15.2000ms | 40625 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 65,911 | ±0.15% | 15.2000ms | 17.7000ms | 32956 |
@@ -100,8 +100,8 @@ Simple increments and burst updates.
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      1.0M ops/sec
-🥈   Preact Signals     ████                                          107K ops/sec
-🥉   Zen                ████                                           98K ops/sec
+🥈   Zen                ████████████                                  306K ops/sec
+🥉   Preact Signals     ████                                          107K ops/sec
 4.   Zustand            ██                                             42K ops/sec
 5.   MobX                                                               8K ops/sec
 6.   Valtio                                                             7K ops/sec
@@ -112,8 +112,8 @@ Simple increments and burst updates.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 1,010,912 | ±0.03% | 1.0000ms | 1.2000ms | 505457 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 107,265 | ±0.11% | 9.3000ms | 11.7000ms | 53633 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 98,374 | ±0.04% | 10.2000ms | 11.6000ms | 49188 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 305,994 | ±0.06% | 3.3000ms | 4.0000ms | 152997 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 107,265 | ±0.11% | 9.3000ms | 11.7000ms | 53633 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 42,307 | ±0.16% | 23.6000ms | 26.8000ms | 21154 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 8,115 | ±0.30% | 123.2000ms | 158.7000ms | 4058 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 6,724 | ±0.14% | 148.7000ms | 158.7000ms | 3362 |
@@ -126,8 +126,8 @@ Simple increments and burst updates.
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      103K ops/sec
-🥈   Preact Signals     ████                                           10K ops/sec
-🥉   Zen                ████                                           10K ops/sec
+🥈   Zen                ████████████                                   30K ops/sec
+🥉   Preact Signals     ████                                           10K ops/sec
 4.   Zustand            ██                                              4K ops/sec
 5.   MobX                                                              807 ops/sec
 6.   Valtio                                                            664 ops/sec
@@ -138,8 +138,8 @@ Simple increments and burst updates.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 102,672 | ±0.07% | 9.7000ms | 13.1000ms | 51336 |
-| 🥈 | [**Preact Signals**](https://github.com/preactjs/signals) | 9,664 | ±0.17% | 103.5000ms | 120.2000ms | 4832 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 9,548 | ±0.21% | 104.7000ms | 120.5000ms | 4774 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 30,211 | ±0.07% | 33.1000ms | 37.6000ms | 15106 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 9,664 | ±0.17% | 103.5000ms | 120.2000ms | 4832 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 4,091 | ±0.30% | 244.4000ms | 303.9000ms | 2046 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 807 | ±1.84% | 1239.4000ms | 1741.3000ms | 404 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 664 | ±0.30% | 1506.7000ms | 1675.3000ms | 332 |
@@ -151,19 +151,19 @@ Simple increments and burst updates.
 ### Single Update
 
 ```
-🥇   Zen                ████████████████████████████████████████     44.5M ops/sec
-🥈   Solid Signals      ████████████████████████████████████████     44.1M ops/sec
-🥉   Preact Signals     ███████████████████████████████████████      43.9M ops/sec
-4.   Zustand            █████████████████████                        23.7M ops/sec
-5.   MobX               ███████                                       7.3M ops/sec
+🥇   Zen                ████████████████████████████████████████     46.6M ops/sec
+🥈   Solid Signals      ██████████████████████████████████████       44.1M ops/sec
+🥉   Preact Signals     ██████████████████████████████████████       43.9M ops/sec
+4.   Zustand            ████████████████████                         23.7M ops/sec
+5.   MobX               ██████                                        7.3M ops/sec
 6.   Valtio             █████                                         5.8M ops/sec
-7.   Jotai              ██                                            1.7M ops/sec
+7.   Jotai              █                                             1.7M ops/sec
 8.   Redux Toolkit      █                                             941K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 44,497,481 | ±0.05% | 0.0000ms | 0.0000ms | 22248741 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 46,613,649 | ±0.05% | 0.0000ms | 0.0000ms | 23306825 |
 | 🥈 | [**Solid Signals**](https://github.com/solidjs/solid) | 44,122,189 | ±0.63% | 0.0000ms | 0.0000ms | 22061095 |
 | 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 43,906,702 | ±0.27% | 0.0000ms | 0.0000ms | 21953352 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 23,660,761 | ±1.07% | 0.0000ms | 0.1000ms | 11830381 |
@@ -172,7 +172,7 @@ Simple increments and burst updates.
 | 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,688,293 | ±1.39% | 0.6000ms | 1.3000ms | 844147 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 941,328 | ±0.22% | 1.1000ms | 1.3000ms | 470665 |
 
-**Key Insight:** Zen is 47.27x faster than Redux Toolkit in this test.
+**Key Insight:** Zen is 49.52x faster than Redux Toolkit in this test.
 
 ---
 
@@ -192,4 +192,4 @@ npx vitest bench groups/02-write/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T10:02:59.028Z*
+*Last generated: 2025-11-11T10:07:48.212Z*

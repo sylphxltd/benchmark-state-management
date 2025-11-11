@@ -248,16 +248,19 @@ readme += `
 
 ## 📈 Library Comparison
 
-| Library | Performance | Description | Best For |
-|---------|-------------|-------------|----------|
+| Library | Score | Description | Best For |
+|---------|:-----:|-------------|----------|
 `;
 
 sortedLibs.forEach(lib => {
   const score = overallScores.get(lib.libraryId) || 0;
   const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
-  const performanceBar = '█'.repeat(Math.round(score / 10));
 
-  readme += `| **[${lib.library}](${meta?.url || '#'})** | ${performanceBar} ${score.toFixed(0)}/100 | ${meta?.description?.substring(0, 60) || 'State management solution'}... | ${meta?.tradeoff?.substring(0, 50) || 'General purpose'}... |\n`;
+  // Truncate to consistent lengths
+  const description = (meta?.description || 'State management solution').substring(0, 50);
+  const tradeoff = (meta?.tradeoff || 'General purpose').substring(0, 40);
+
+  readme += `| **[${lib.library}](${meta?.url || '#'})** | **${score.toFixed(1)}** | ${description}... | ${tradeoff}... |\n`;
 });
 
 readme += `\n---\n\n## 📊 Performance by Test Group\n\n<details open>\n<summary><b>Click to expand/collapse detailed test results</b></summary>\n\n`;

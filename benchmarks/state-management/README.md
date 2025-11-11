@@ -63,26 +63,14 @@ Based on geometric mean across all supported tests (excludes extreme values):
 
 | Rank | Library | Score | Relative |
 |------|---------|-------|----------|
-| 🥇 | **jotai** | 100.0/100 | Baseline |
-| 🥈 | **Concurrent Async** | 97.6/100 | 97.6% |
-| 🥉 | **Async Loading** | 97.3/100 | 97.3% |
-| 4 | **Large State Allocation** | 68.4/100 | 68.4% |
-| 5 | **Solid Signals** | 67.5/100 | 67.5% |
-| 6 | **Zen** | 64.5/100 | 64.5% |
-| 7 | **Preact Signals** | 62.9/100 | 62.9% |
-| 8 | **Jotai** | 34.2/100 | 34.2% |
-| 9 | **High Frequency Read** | 24.6/100 | 24.6% |
-| 10 | **Simple Increment** | 19.6/100 | 19.6% |
-| 11 | **Simple Read** | 19.3/100 | 19.3% |
-| 12 | **Zustand** | 11.6/100 | 11.6% |
-| 13 | **Valtio** | 8.5/100 | 8.5% |
-| 14 | **MobX** | 8.4/100 | 8.4% |
-| 15 | **zustand** | 5.3/100 | 5.3% |
-| 16 | **Store Creation** | 4.9/100 | 4.9% |
-| 17 | **Burst Updates** | 4.8/100 | 4.8% |
-| 18 | **redux-toolkit** | 0.3/100 | 0.3% |
-| 19 | **Redux Toolkit** | 0.0/100 | 0.0% |
-| 19 | **Deep Read Access** | 0.0/100 | 0.0% |
+| 🥇 | **Zen** | 11.0/100 | Baseline |
+| 🥈 | **Solid Signals** | 9.8/100 | 89.1% |
+| 🥉 | **Preact Signals** | 8.6/100 | 78.2% |
+| 4 | **Zustand** | 4.2/100 | 38.2% |
+| 5 | **MobX** | 0.6/100 | 5.5% |
+| 6 | **Valtio** | 0.5/100 | 4.5% |
+| 7 | **Jotai** | 0.3/100 | 2.7% |
+| 8 | **Redux Toolkit** | 0.2/100 | 1.8% |
 
 > 📊 **Methodology:** Geometric mean prevents extreme values from skewing results. Each test is normalized (fastest = 100) then averaged.
 
@@ -92,8 +80,6 @@ Smaller is better. Scores use logarithmic scale (like Lighthouse):
 
 | Rank | Library | Size (gzip) | Score | Rating |
 |------|---------|-------------|-------|--------|
-| 🥇 | **zustand** | 1.17KB | 100/100 | Excellent |
-| 🥈 | **jotai** | 4.29KB | 83/100 | Good |
 
 > 📦 **Scale:** ≤2KB=100, 5KB=90, 10KB=75, 20KB=50. Logarithmic scoring reflects real-world impact.
 
@@ -103,25 +89,14 @@ Percentage of benchmark tests supported:
 
 | Rank | Library | Supported | Coverage |
 |------|---------|-----------|----------|
-| 🥇 | **Jotai** | 36/66 | 55% |
-| 🥇 | **Zen** | 36/66 | 55% |
-| 🥉 | **Zustand** | 35/66 | 53% |
-| 🥉 | **MobX** | 35/66 | 53% |
-| 🥉 | **Valtio** | 35/66 | 53% |
-| 🥉 | **Preact Signals** | 35/66 | 53% |
-| 🥉 | **Solid Signals** | 35/66 | 53% |
-| 8 | **Redux Toolkit** | 34/66 | 52% |
-| 9 | **jotai** | 4/66 | 6% |
-| 9 | **redux-toolkit** | 4/66 | 6% |
-| 9 | **zustand** | 4/66 | 6% |
-| 12 | **Store Creation** | 1/66 | 2% |
-| 12 | **Large State Allocation** | 1/66 | 2% |
-| 12 | **Async Loading** | 1/66 | 2% |
-| 12 | **Concurrent Async** | 1/66 | 2% |
-| 12 | **Simple Read** | 1/66 | 2% |
-| 12 | **High Frequency Read** | 1/66 | 2% |
-| 12 | **Simple Increment** | 1/66 | 2% |
-| 12 | **Burst Updates** | 1/66 | 2% |
+| 🥇 | **Jotai** | 7/7 | 100% |
+| 🥇 | **MobX** | 7/7 | 100% |
+| 🥇 | **Preact Signals** | 7/7 | 100% |
+| 🥇 | **Solid Signals** | 7/7 | 100% |
+| 🥇 | **Zen** | 7/7 | 100% |
+| 🥇 | **Zustand** | 7/7 | 100% |
+| 7 | **Redux Toolkit** | 5/7 | 71% |
+| 7 | **Valtio** | 5/7 | 71% |
 
 > 🎯 **Note:** Higher coverage means more features, but evaluate based on your specific needs.
 
@@ -152,1812 +127,589 @@ Compare state management libraries by their supported features
 
 ### 📑 Test Categories
 
-- [async - Concurrent Async](#async-concurrent-async)
-- [async - Heavy Async Load](#async-heavy-async-load)
-- [async - Sequential Async](#async-sequential-async)
-- [cache - Burst Access Pattern](#cache-burst-access-pattern)
-- [cache - Heavy Computation](#cache-heavy-computation)
-- [cache - Light Memoization](#cache-light-memoization)
-- [form - Complex Form](#form-complex-form)
-- [form - Nested Form](#form-nested-form)
-- [form - Simple Form](#form-simple-form)
-- [memory - Heavy Memory Usage](#memory-heavy-memory-usage)
-- [memory - Light Memory Usage](#memory-light-memory-usage)
-- [memory - Moderate Memory Usage](#memory-moderate-memory-usage)
-- [read - Burst Read](#read-burst-read)
-- [read - Extreme Load](#read-extreme-load)
-- [read - High Frequency](#read-high-frequency)
-- [read - Moderate Load](#read-moderate-load)
-- [read - Single Read](#read-single-read)
-- [write - Batch Operations](#write-batch-operations)
-- [write - Burst Write](#write-burst-write)
-- [write - Heavy Write Load](#write-heavy-write-load)
-- [write - Single Write](#write-single-write)
-- [Store Creation](#store-creation)
-- [Simple Increment](#simple-increment)
-- [High Frequency Read](#high-frequency-read)
-- [Burst Updates](#burst-updates)
-- [Array Splice Operations](#array-splice-operations)
-- [Large Array Sort](#large-array-sort)
-- [Array Find Operations](#array-find-operations)
-- [Deep Object Creation](#deep-object-creation)
-- [10-Level Nested Update](#10-level-nested-update)
-- [Deep Read Access](#deep-read-access)
-- [Complex Computed Chain](#complex-computed-chain)
-- [Computed Invalidation](#computed-invalidation)
-- [Subscription Cascade](#subscription-cascade)
-- [Reaction Performance](#reaction-performance)
-- [Multi-Store Operations](#multi-store-operations)
-- [Memory Allocation](#memory-allocation)
-- [Form State Management](#form-state-management)
-- [Optimistic Update](#optimistic-update)
-- [Undo/Redo Operations](#undoredo-operations)
-- [Batch State Operations](#batch-state-operations)
-- [Null Value Handling](#null-value-handling)
-- [Undefined Value Handling](#undefined-value-handling)
-- [Async State Loading](#async-state-loading)
-- [Concurrent Async Operations](#concurrent-async-operations)
-- [Computed Access](#computed-access)
-- [Nested Update](#nested-update)
-- [Array Push](#array-push)
-- [Loading State Toggle](#loading-state-toggle)
-- [Multiple Subscriptions (10 subscribers)](#multiple-subscriptions-10-subscribers)
-- [Batch Updates (3 state changes)](#batch-updates-3-state-changes)
-- [Array Filter](#array-filter)
-- [Array Remove](#array-remove)
-- [Array Update](#array-update)
-- [Deep Nested Update (5 levels)](#deep-nested-update-5-levels)
-- [Large State Update (1000 items)](#large-state-update-1000-items)
-- [Reactive Async State Access](#reactive-async-state-access)
-- [Cache Performance - Caching patterns and memoization](#cache-performance-caching-patterns-and-memoization)
-- [Deep Nested Updates](#deep-nested-updates)
-- [Form State - Form state management](#form-state-form-state-management)
-- [Read Operations - x1](#read-operations-x1)
-- [Read - 1000x operations (experimental)](#read-1000x-operations-experimental)
-- [Read - 10000x operations (experimental)](#read-10000x-operations-experimental)
-- [Write Operations - x1](#write-operations-x1)
-- [Write - 1000x operations (experimental)](#write-1000x-operations-experimental)
-- [Write - 10000x operations (experimental)](#write-10000x-operations-experimental)
-
-### async - Concurrent Async
-
-**Performance Comparison:**
-
-```
-🥇 jotai - async (Co...  0.00
-🥇 redux-toolkit - a...  0.00
-🥇 zustand - async (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - async (Concurrent async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - async (Concurrent async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - async (Concurrent async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - async (Concurrent async operations) is **NaNx faster** than zustand - async (Concurrent async operations) in this category.
-
-### async - Heavy Async Load
-
-**Performance Comparison:**
-
-```
-🥇 jotai - async (He...  0.00
-🥇 redux-toolkit - a...  0.00
-🥇 zustand - async (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - async (Heavy async operations with many concurrent promises)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - async (Heavy async operations with many concurrent promises)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - async (Heavy async operations with many concurrent promises)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - async (Heavy async operations with many concurrent promises) is **NaNx faster** than zustand - async (Heavy async operations with many concurrent promises) in this category.
-
-### async - Sequential Async
-
-**Performance Comparison:**
-
-```
-🥇 jotai - async (Se...  0.00
-🥇 redux-toolkit - a...  0.00
-🥇 zustand - async (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - async (Sequential async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - async (Sequential async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - async (Sequential async operations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - async (Sequential async operations) is **NaNx faster** than zustand - async (Sequential async operations) in this category.
-
-### cache - Burst Access Pattern
-
-**Performance Comparison:**
-
-```
-🥇 jotai - cache (Bu...  0.00
-🥇 zustand - cache (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - cache (Burst access pattern testing cache pressure)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - cache (Burst access pattern testing cache pressure)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-### cache - Heavy Computation
-
-**Performance Comparison:**
-
-```
-🥇 jotai - cache (He...  0.00
-🥇 zustand - cache (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - cache (Heavy computation that benefits from caching)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - cache (Heavy computation that benefits from caching)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-### cache - Light Memoization
-
-**Performance Comparison:**
-
-```
-🥇 jotai - cache (Li...  0.00
-🥇 zustand - cache (...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - cache (Light computation with frequent cache hits)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - cache (Light computation with frequent cache hits)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-### form - Complex Form
-
-**Performance Comparison:**
-
-```
-🥇 jotai - form (Com...  0.00
-🥇 redux-toolkit - f...  0.00
-🥇 zustand - form (C...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - form (Complex form with arrays and deep nesting)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - form (Complex form with arrays and deep nesting)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - form (Complex form with arrays and deep nesting)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - form (Complex form with arrays and deep nesting) is **NaNx faster** than zustand - form (Complex form with arrays and deep nesting) in this category.
-
-### form - Nested Form
-
-**Performance Comparison:**
-
-```
-🥇 jotai - form (For...  0.00
-🥇 redux-toolkit - f...  0.00
-🥇 zustand - form (F...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - form (Form with nested object structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - form (Form with nested object structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - form (Form with nested object structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - form (Form with nested object structures) is **NaNx faster** than zustand - form (Form with nested object structures) in this category.
-
-### form - Simple Form
-
-**Performance Comparison:**
-
-```
-🥇 jotai - form (Sim...  0.00
-🥇 redux-toolkit - f...  0.00
-🥇 zustand - form (S...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - form (Simple form with basic fields)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - form (Simple form with basic fields)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - form (Simple form with basic fields)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - form (Simple form with basic fields) is **NaNx faster** than zustand - form (Simple form with basic fields) in this category.
-
-### memory - Heavy Memory Usage
-
-**Performance Comparison:**
-
-```
-🥇 jotai - memory (L...  0.00
-🥇 redux-toolkit - m...  0.00
-🥇 zustand - memory ...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - memory (Large object creation and memory pressure)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - memory (Large object creation and memory pressure)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - memory (Large object creation and memory pressure)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - memory (Large object creation and memory pressure) is **NaNx faster** than zustand - memory (Large object creation and memory pressure) in this category.
-
-### memory - Light Memory Usage
-
-**Performance Comparison:**
-
-```
-🥇 jotai - memory (S...  0.00
-🥇 redux-toolkit - m...  0.00
-🥇 zustand - memory ...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - memory (Small object creation and cleanup)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - memory (Small object creation and cleanup)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - memory (Small object creation and cleanup)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - memory (Small object creation and cleanup) is **NaNx faster** than zustand - memory (Small object creation and cleanup) in this category.
-
-### memory - Moderate Memory Usage
-
-**Performance Comparison:**
-
-```
-🥇 jotai - memory (M...  0.00
-🥇 redux-toolkit - m...  0.00
-🥇 zustand - memory ...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - memory (Medium object creation with nested structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - memory (Medium object creation with nested structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - memory (Medium object creation with nested structures)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - memory (Medium object creation with nested structures) is **NaNx faster** than zustand - memory (Medium object creation with nested structures) in this category.
-
-### read - Burst Read
-
-**Performance Comparison:**
-
-```
-🥇 jotai - read (Qui...  0.00
-🥇 redux-toolkit - r...  0.00
-🥇 zustand - read (Q...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - read (Quick burst of 10 reads)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - read (Quick burst of 10 reads)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - read (Quick burst of 10 reads)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - read (Quick burst of 10 reads) is **NaNx faster** than zustand - read (Quick burst of 10 reads) in this category.
-
-### read - Extreme Load
-
-**Performance Comparison:**
-
-```
-🥇 jotai - read (Ext...  0.00
-🥇 redux-toolkit - r...  0.00
-🥇 zustand - read (E...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - read (Extreme read load (10000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - read (Extreme read load (10000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - read (Extreme read load (10000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - read (Extreme read load (10000 ops)) is **NaNx faster** than zustand - read (Extreme read load (10000 ops)) in this category.
-
-### read - High Frequency
-
-**Performance Comparison:**
-
-```
-🥇 jotai - read (Hig...  0.00
-🥇 redux-toolkit - r...  0.00
-🥇 zustand - read (H...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - read (High frequency read operations (1000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - read (High frequency read operations (1000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - read (High frequency read operations (1000 ops))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - read (High frequency read operations (1000 ops)) is **NaNx faster** than zustand - read (High frequency read operations (1000 ops)) in this category.
-
-### read - Moderate Load
-
-**Performance Comparison:**
-
-```
-🥇 jotai - read (Mod...  0.00
-🥇 redux-toolkit - r...  0.00
-🥇 zustand - read (M...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - read (Moderate read load (100 operations))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - read (Moderate read load (100 operations))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - read (Moderate read load (100 operations))** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - read (Moderate read load (100 operations)) is **NaNx faster** than zustand - read (Moderate read load (100 operations)) in this category.
-
-### read - Single Read
-
-**Performance Comparison:**
-
-```
-🥇 jotai - read (Sin...  0.00
-🥇 redux-toolkit - r...  0.00
-🥇 zustand - read (S...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - read (Single state access operation)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **redux-toolkit - read (Single state access operation)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **zustand - read (Single state access operation)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** jotai - read (Single state access operation) is **NaNx faster** than zustand - read (Single state access operation) in this category.
-
-### write - Batch Operations
-
-**Performance Comparison:**
-
-```
-🥇 jotai - write (Ba... ████████████████████████████████████████ 1.42M
-🥈 zustand - write (... █ 40.05K
-🥉 redux-toolkit - w... █ 1.88K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - write (Batch write operations (100 ops))** | 1.42M | ±0.15% | 0.7031ms | 0.7220ms | 711.14K |
-| 🥈 | **zustand - write (Batch write operations (100 ops))** | 40.05K | ±0.38% | 24.9719ms | 34.7860ms | 20.02K |
-| 🥉 | **redux-toolkit - write (Batch write operations (100 ops))** | 1.88K | ±1.50% | 532.8718ms | 1026.8440ms | 939.00 |
-
-**Key Insight:** jotai - write (Batch write operations (100 ops)) is **757.89x faster** than redux-toolkit - write (Batch write operations (100 ops)) in this category.
-
-### write - Burst Write
-
-**Performance Comparison:**
-
-```
-🥇 jotai - write (Qu... ████████████████████████████████████████ 7.41M
-🥈 zustand - write (... ██ 384.57K
-🥉 redux-toolkit - w... █ 19.55K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - write (Quick burst of 10 writes)** | 7.41M | ±0.10% | 0.1349ms | 0.1610ms | 3.71M |
-| 🥈 | **zustand - write (Quick burst of 10 writes)** | 384.57K | ±0.38% | 2.6003ms | 3.0160ms | 192.28K |
-| 🥉 | **redux-toolkit - write (Quick burst of 10 writes)** | 19.55K | ±0.83% | 51.1394ms | 65.2420ms | 9.78K |
-
-**Key Insight:** jotai - write (Quick burst of 10 writes) is **378.95x faster** than redux-toolkit - write (Quick burst of 10 writes) in this category.
-
-### write - Heavy Write Load
-
-**Performance Comparison:**
-
-```
-🥇 jotai - write (He... ████████████████████████████████████████ 157.17K
-🥈 zustand - write (... █ 4.05K
-🥉 redux-toolkit - w... █ 203.06
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - write (Heavy write operations (1000 ops))** | 157.17K | ±0.14% | 6.3626ms | 13.0440ms | 78.58K |
-| 🥈 | **zustand - write (Heavy write operations (1000 ops))** | 4.05K | ±0.43% | 247.0153ms | 347.1210ms | 2.02K |
-| 🥉 | **redux-toolkit - write (Heavy write operations (1000 ops))** | 203.06 | ±0.65% | 4924.5333ms | 5798.5600ms | 102.00 |
-
-**Key Insight:** jotai - write (Heavy write operations (1000 ops)) is **773.98x faster** than redux-toolkit - write (Heavy write operations (1000 ops)) in this category.
-
-### write - Single Write
-
-**Performance Comparison:**
-
-```
-🥇 jotai - write (Si... ████████████████████████████████████████ 13.15M
-🥈 zustand - write (... █████████ 2.84M
-🥉 redux-toolkit - w... █ 193.52K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **jotai - write (Single state mutation operation)** | 13.15M | ±0.10% | 0.0761ms | 0.0900ms | 6.57M |
-| 🥈 | **zustand - write (Single state mutation operation)** | 2.84M | ±0.47% | 0.3520ms | 0.4010ms | 1.42M |
-| 🥉 | **redux-toolkit - write (Single state mutation operation)** | 193.52K | ±0.80% | 5.1674ms | 9.3470ms | 96.76K |
-
-**Key Insight:** jotai - write (Single state mutation operation) is **67.95x faster** than redux-toolkit - write (Single state mutation operation) in this category.
-
-### Store Creation
-
-**Performance Comparison:**
-
-```
-🥇 Store Creation - ... ████████████████████████████████████████ 13.19M
-🥈 Store Creation - ... ███████████████████████████████████████ 13.01M
-🥉 Store Creation - Zen ███████████████████████████████████████ 12.84M
-   Solid Signals        ███████████████████████████████ 10.32M
-   Zen                  ███████████████████████████████ 10.19M
-   Preact Signals       ██████████████████████████████ 9.96M
-   Store Creation - ... ███████████████ 4.97M
-   Zustand              █████████████ 4.24M
-   Store Creation - ... ███ 888.63K
-   Jotai                ██ 808.99K
-   Valtio               █ 327.61K
-   Store Creation - ... █ 280.01K
-   Store Creation - ... █ 90.09K
-   Redux Toolkit        █ 86.90K
-   Store Creation - ... █ 120.39
-   MobX                 █ 113.57
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Store Creation - Preact Signals** | 13.19M | ±0.17% | 0.0758ms | 0.0900ms | 6.59M |
-| 🥈 | **Store Creation - Solid Signals** | 13.01M | ±0.11% | 0.0769ms | 0.0900ms | 6.50M |
-| 🥉 | **Store Creation - Zen** | 12.84M | ±0.17% | 0.0779ms | 0.0910ms | 6.42M |
-| 4 | **Solid Signals** | 10.32M | ±0.10% | 0.0969ms | 0.1400ms | 5.16M |
-| 5 | **Zen** | 10.19M | ±0.09% | 0.0981ms | 0.1110ms | 5.09M |
-| 6 | **Preact Signals** | 9.96M | ±0.10% | 0.1004ms | 0.1410ms | 4.98M |
-| 7 | **Store Creation - Zustand** | 4.97M | ±2.76% | 0.2012ms | 0.4110ms | 2.49M |
-| 8 | **Zustand** | 4.24M | ±0.35% | 0.2357ms | 0.4610ms | 2.12M |
-| 9 | **Store Creation - Jotai** | 888.63K | ±2.16% | 1.1253ms | 1.4230ms | 444.32K |
-| 10 | **Jotai** | 808.99K | ±2.06% | 1.2361ms | 1.7640ms | 404.50K |
-| 11 | **Valtio** | 327.61K | ±15.40% | 3.0524ms | 5.2310ms | 163.81K |
-| 12 | **Store Creation - Valtio** | 280.01K | ±21.43% | 3.5713ms | 4.5890ms | 141.39K |
-| 13 | **Store Creation - Redux Toolkit** | 90.09K | ±0.72% | 11.0996ms | 22.9130ms | 45.05K |
-| 14 | **Redux Toolkit** | 86.90K | ±0.88% | 11.5072ms | 23.4730ms | 43.45K |
-| 15 | **Store Creation - MobX** | 120.39 | ±6.29% | 8306.5825ms | 11284.2630ms | 61.00 |
-| 16 | **MobX** | 113.57 | ±7.55% | 8805.2193ms | 15360.8560ms | 57.00 |
-
-**Key Insight:** Store Creation - Preact Signals is **116120.34x faster** than MobX in this category.
-
-### Simple Increment
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.64M
-🥈 Solid Signals        ████████████████████████████████████████ 10.59M
-🥉 Zen                  ██████████████████████████████████████ 10.18M
-   Preact Signals       ███████████████████████████████████ 9.37M
-   Jotai                ██████████████████████████████████ 9.16M
-   Zen                  ██████████████████████████████████ 9.03M
-   Preact Signals       █████████████████████████████████ 8.65M
-   MobX                 ██████ 1.61M
-   Valtio               ██████ 1.56M
-   Valtio               █████ 1.37M
-   MobX                 ████ 1.12M
-   Jotai                ██ 512.16K
-   Redux Toolkit        █ 289.08K
-   Redux Toolkit        █ 279.21K
-   Zustand              █ 166.97K
-   Zustand              █ 163.25K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.64M | ±0.09% | 0.0940ms | 0.1100ms | 5.32M |
-| 🥈 | **Solid Signals** | 10.59M | ±0.09% | 0.0944ms | 0.1100ms | 5.30M |
-| 🥉 | **Zen** | 10.18M | ±0.16% | 0.0982ms | 0.1400ms | 5.09M |
-| 4 | **Preact Signals** | 9.37M | ±0.16% | 0.1068ms | 0.1700ms | 4.68M |
-| 5 | **Jotai** | 9.16M | ±0.09% | 0.1092ms | 0.1400ms | 4.58M |
-| 6 | **Zen** | 9.03M | ±0.10% | 0.1108ms | 0.1600ms | 4.51M |
-| 7 | **Preact Signals** | 8.65M | ±0.09% | 0.1156ms | 0.1410ms | 4.33M |
-| 8 | **MobX** | 1.61M | ±0.16% | 0.6196ms | 0.8210ms | 806.96K |
-| 9 | **Valtio** | 1.56M | ±0.21% | 0.6420ms | 0.7110ms | 778.79K |
-| 10 | **Valtio** | 1.37M | ±0.35% | 0.7310ms | 0.7910ms | 684.01K |
-| 11 | **MobX** | 1.12M | ±0.34% | 0.8963ms | 1.0710ms | 557.83K |
-| 12 | **Jotai** | 512.16K | ±0.76% | 1.9525ms | 4.5190ms | 256.08K |
-| 13 | **Redux Toolkit** | 289.08K | ±0.81% | 3.4592ms | 6.0210ms | 144.58K |
-| 14 | **Redux Toolkit** | 279.21K | ±0.45% | 3.5815ms | 6.3110ms | 139.61K |
-| 15 | **Zustand** | 166.97K | ±0.22% | 5.9892ms | 6.7230ms | 83.48K |
-| 16 | **Zustand** | 163.25K | ±0.72% | 6.1255ms | 11.3210ms | 81.63K |
-
-**Key Insight:** Solid Signals is **65.15x faster** than Zustand in this category.
-
-### High Frequency Read
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 38.42K
-🥈 Jotai                ███████████████████████████████████████ 37.66K
-🥉 Redux Toolkit        ███████████████████████████████████████ 37.30K
-   Preact Signals       ██████████████████████████████████████ 36.79K
-   Zen                  ██████████████████████████████████████ 36.76K
-   Zustand              ████████████████████████████ 27.29K
-   Valtio               ████████████████████ 19.26K
-   MobX                 ███████████████████ 17.91K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 38.42K | ±0.12% | 26.0281ms | 33.5430ms | 19.21K |
-| 🥈 | **Jotai** | 37.66K | ±0.08% | 26.5548ms | 33.7930ms | 18.83K |
-| 🥉 | **Redux Toolkit** | 37.30K | ±0.12% | 26.8085ms | 35.2170ms | 18.65K |
-| 4 | **Preact Signals** | 36.79K | ±0.09% | 27.1785ms | 34.5150ms | 18.40K |
-| 5 | **Zen** | 36.76K | ±0.09% | 27.2062ms | 34.6450ms | 18.38K |
-| 6 | **Zustand** | 27.29K | ±0.10% | 36.6501ms | 43.9320ms | 13.64K |
-| 7 | **Valtio** | 19.26K | ±0.08% | 51.9126ms | 59.3320ms | 9.63K |
-| 8 | **MobX** | 17.91K | ±0.10% | 55.8294ms | 63.4390ms | 8.96K |
-
-**Key Insight:** Solid Signals is **2.14x faster** than MobX in this category.
-
-### Burst Updates
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 379.48K
-🥈 Jotai                ██████████████████████████████ 280.56K
-🥉 Zen                  ███████████████████████████ 260.10K
-   Preact Signals       ███████████████████████████ 252.93K
-   Valtio               ██ 17.01K
-   MobX                 █ 12.93K
-   Redux Toolkit        █ 3.07K
-   Zustand              █ 1.72K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 379.48K | ±0.16% | 2.6352ms | 2.6450ms | 189.74K |
-| 🥈 | **Jotai** | 280.56K | ±0.33% | 3.5644ms | 4.2280ms | 140.28K |
-| 🥉 | **Zen** | 260.10K | ±0.15% | 3.8447ms | 3.9170ms | 130.05K |
-| 4 | **Preact Signals** | 252.93K | ±0.18% | 3.9537ms | 4.0570ms | 126.46K |
-| 5 | **Valtio** | 17.01K | ±0.26% | 58.7930ms | 68.2780ms | 8.51K |
-| 6 | **MobX** | 12.93K | ±0.28% | 77.3542ms | 91.0110ms | 6.46K |
-| 7 | **Redux Toolkit** | 3.07K | ±0.87% | 326.1201ms | 652.8750ms | 1.53K |
-| 8 | **Zustand** | 1.72K | ±0.25% | 580.2457ms | 715.6140ms | 862.00 |
-
-**Key Insight:** Solid Signals is **220.19x faster** than Zustand in this category.
-
-### Array Splice Operations
-
-**Performance Comparison:**
-
-```
-🥇 Jotai                ████████████████████████████████████████ 4.49M
-🥈 Zen                  ██████████████ 1.54M
-🥉 Solid Signals        █████████████ 1.51M
-   Preact Signals       █████████████ 1.49M
-   MobX                 █ 167.68K
-   Zustand              █ 151.29K
-   Valtio               █ 108.92K
-   Redux Toolkit        █ 10.68K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Jotai** | 4.49M | ±0.53% | 0.2228ms | 0.2500ms | 2.24M |
-| 🥈 | **Zen** | 1.54M | ±0.94% | 0.6512ms | 1.0720ms | 767.86K |
-| 🥉 | **Solid Signals** | 1.51M | ±2.16% | 0.6640ms | 1.0820ms | 753.06K |
-| 4 | **Preact Signals** | 1.49M | ±1.01% | 0.6701ms | 1.1020ms | 746.17K |
-| 5 | **MobX** | 167.68K | ±0.36% | 5.9639ms | 8.9870ms | 83.84K |
-| 6 | **Zustand** | 151.29K | ±0.44% | 6.6099ms | 8.6770ms | 75.64K |
-| 7 | **Valtio** | 108.92K | ±7.18% | 9.1812ms | 19.4260ms | 54.46K |
-| 8 | **Redux Toolkit** | 10.68K | ±0.40% | 93.6330ms | 125.3750ms | 5.34K |
-
-**Key Insight:** Jotai is **420.20x faster** than Redux Toolkit in this category.
-
-### Large Array Sort
-
-**Performance Comparison:**
-
-```
-🥇 Jotai                ████████████████████████████████████████ 32.26K
-🥈 Preact Signals       ███████████████████████████████████████ 31.46K
-🥉 Zen                  ███████████████████████████████████████ 31.36K
-   Solid Signals        ███████████████████████████████████████ 31.22K
-   Zustand              █████████████████████████████████ 26.33K
-   MobX                 ███ 2.39K
-   Valtio               ███ 2.34K
-   Redux Toolkit        █ 658.61
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Jotai** | 32.26K | ±0.30% | 30.9984ms | 39.8550ms | 16.13K |
-| 🥈 | **Preact Signals** | 31.46K | ±0.39% | 31.7849ms | 44.9740ms | 15.73K |
-| 🥉 | **Zen** | 31.36K | ±0.37% | 31.8870ms | 46.4270ms | 15.68K |
-| 4 | **Solid Signals** | 31.22K | ±0.35% | 32.0322ms | 41.4680ms | 15.61K |
-| 5 | **Zustand** | 26.33K | ±0.35% | 37.9790ms | 51.8980ms | 13.17K |
-| 6 | **MobX** | 2.39K | ±0.58% | 418.2841ms | 676.6800ms | 1.20K |
-| 7 | **Valtio** | 2.34K | ±0.51% | 427.9769ms | 498.1750ms | 1.17K |
-| 8 | **Redux Toolkit** | 658.61 | ±0.50% | 1518.3473ms | 1880.0700ms | 330.00 |
-
-**Key Insight:** Jotai is **48.98x faster** than Redux Toolkit in this category.
-
-### Array Find Operations
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 2.15M
-🥈 Jotai                ███████████████████████████████████████ 2.10M
-🥉 Zen                  ███████████████████████████████████████ 2.08M
-   Preact Signals       ███████████████████████████████████████ 2.08M
-   Zustand              █████████████████████████████████████ 2.00M
-   Redux Toolkit        ██ 85.16K
-   Valtio               █ 44.62K
-   MobX                 █ 39.74K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 2.15M | ±0.09% | 0.4640ms | 0.5210ms | 1.08M |
-| 🥈 | **Jotai** | 2.10M | ±0.09% | 0.4752ms | 0.5210ms | 1.05M |
-| 🥉 | **Zen** | 2.08M | ±0.09% | 0.4813ms | 0.5310ms | 1.04M |
-| 4 | **Preact Signals** | 2.08M | ±0.09% | 0.4815ms | 0.5410ms | 1.04M |
-| 5 | **Zustand** | 2.00M | ±0.09% | 0.5008ms | 0.5610ms | 998.32K |
-| 6 | **Redux Toolkit** | 85.16K | ±0.20% | 11.7431ms | 19.1560ms | 42.58K |
-| 7 | **Valtio** | 44.62K | ±0.10% | 22.4090ms | 29.9770ms | 22.31K |
-| 8 | **MobX** | 39.74K | ±0.32% | 25.1667ms | 34.7860ms | 19.87K |
-
-**Key Insight:** Solid Signals is **54.23x faster** than MobX in this category.
-
-### Deep Object Creation
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 2.19M
-🥈 Redux Toolkit        ████████████████████████████████████████ 2.18M
-🥉 Zen                  ███████████████████████████████████████ 2.16M
-   Jotai                ███████████████████████████████████████ 2.16M
-   Preact Signals       ███████████████████████████████████████ 2.14M
-   Valtio               ███████████████████████████████████████ 2.14M
-   Zustand              ██████████████████████████████████████ 2.10M
-   MobX                 ███████████████████████████████ 1.73M
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 2.19M | ±0.23% | 0.4559ms | 0.5210ms | 1.10M |
-| 🥈 | **Redux Toolkit** | 2.18M | ±0.24% | 0.4578ms | 0.5510ms | 1.09M |
-| 🥉 | **Zen** | 2.16M | ±0.26% | 0.4620ms | 0.6410ms | 1.08M |
-| 4 | **Jotai** | 2.16M | ±0.28% | 0.4621ms | 0.5310ms | 1.08M |
-| 5 | **Preact Signals** | 2.14M | ±0.27% | 0.4663ms | 0.5810ms | 1.07M |
-| 6 | **Valtio** | 2.14M | ±0.29% | 0.4664ms | 0.5410ms | 1.07M |
-| 7 | **Zustand** | 2.10M | ±0.28% | 0.4751ms | 0.5410ms | 1.05M |
-| 8 | **MobX** | 1.73M | ±0.09% | 0.5795ms | 0.7220ms | 862.86K |
-
-**Key Insight:** Solid Signals is **1.27x faster** than MobX in this category.
-
-### 10-Level Nested Update
-
-**Performance Comparison:**
-
-```
-🥇 Jotai                ████████████████████████████████████████ 7.18M
-🥈 Valtio               ██████ 1.03M
-🥉 MobX                 ███ 589.73K
-   Solid Signals        ██ 441.59K
-   Zen                  ██ 435.37K
-   Preact Signals       ██ 429.93K
-   Zustand              █ 118.71K
-   Redux Toolkit        █ 47.92K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Jotai** | 7.18M | ±0.65% | 0.1393ms | 0.2410ms | 3.59M |
-| 🥈 | **Valtio** | 1.03M | ±0.22% | 0.9691ms | 1.0820ms | 515.96K |
-| 🥉 | **MobX** | 589.73K | ±0.23% | 1.6957ms | 1.8740ms | 294.87K |
-| 4 | **Solid Signals** | 441.59K | ±0.24% | 2.2645ms | 2.4840ms | 220.80K |
-| 5 | **Zen** | 435.37K | ±0.25% | 2.2969ms | 2.6650ms | 217.69K |
-| 6 | **Preact Signals** | 429.93K | ±0.17% | 2.3260ms | 2.6250ms | 214.97K |
-| 7 | **Zustand** | 118.71K | ±0.26% | 8.4239ms | 11.6510ms | 59.35K |
-| 8 | **Redux Toolkit** | 47.92K | ±0.40% | 20.8667ms | 31.6100ms | 23.96K |
-
-**Key Insight:** Jotai is **149.79x faster** than Redux Toolkit in this category.
-
-### Deep Read Access
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.10M
-🥈 Redux Toolkit        ███████████████████████████████████████ 9.95M
-🥉 Zen                  ███████████████████████████████████████ 9.76M
-   Preact Signals       ██████████████████████████████████████ 9.70M
-   Jotai                ██████████████████████████████████████ 9.54M
-   Zustand              █████████████████████████████████ 8.32M
-   Valtio               ██████████ 2.42M
-   MobX                 ███ 711.30K
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-   Deep Read Access ... █ 0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.10M | ±0.09% | 0.0990ms | 0.1200ms | 5.05M |
-| 🥈 | **Redux Toolkit** | 9.95M | ±0.10% | 0.1005ms | 0.1200ms | 4.97M |
-| 🥉 | **Zen** | 9.76M | ±0.16% | 0.1025ms | 0.1200ms | 4.88M |
-| 4 | **Preact Signals** | 9.70M | ±0.09% | 0.1031ms | 0.1210ms | 4.85M |
-| 5 | **Jotai** | 9.54M | ±0.15% | 0.1049ms | 0.1200ms | 4.77M |
-| 6 | **Zustand** | 8.32M | ±0.12% | 0.1201ms | 0.1310ms | 4.16M |
-| 7 | **Valtio** | 2.42M | ±0.09% | 0.4135ms | 0.4310ms | 1.21M |
-| 8 | **MobX** | 711.30K | ±0.24% | 1.4059ms | 1.5630ms | 355.65K |
-| 9 | **Deep Read Access - Redux Toolkit** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Zustand** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Jotai** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - MobX** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Valtio** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Preact Signals** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Solid Signals** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 9 | **Deep Read Access - Zen** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Solid Signals is **Infinityx faster** than Deep Read Access - Zen in this category.
-
-### Complex Computed Chain
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit        ████████████████████████████████████████ 10.33M
-🥈 Solid Signals        ███████████████████████████████████████ 10.19M
-🥉 Preact Signals       ██████████████████████████████████████ 9.82M
-   Zen                  █████████████████████████████████████ 9.58M
-   Jotai                █████████████████████████████████████ 9.47M
-   Zustand              ███████████████████████████████████ 9.03M
-   Valtio               ███████████████████████████████ 7.92M
-   MobX                 ███████████████████████████ 7.05M
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit** | 10.33M | ±0.10% | 0.0968ms | 0.1300ms | 5.17M |
-| 🥈 | **Solid Signals** | 10.19M | ±0.15% | 0.0981ms | 0.1400ms | 5.09M |
-| 🥉 | **Preact Signals** | 9.82M | ±0.16% | 0.1018ms | 0.1410ms | 4.91M |
-| 4 | **Zen** | 9.58M | ±0.10% | 0.1043ms | 0.1210ms | 4.79M |
-| 5 | **Jotai** | 9.47M | ±0.09% | 0.1056ms | 0.1300ms | 4.73M |
-| 6 | **Zustand** | 9.03M | ±0.18% | 0.1107ms | 0.1210ms | 4.52M |
-| 7 | **Valtio** | 7.92M | ±0.13% | 0.1263ms | 0.1410ms | 3.96M |
-| 8 | **MobX** | 7.05M | ±0.10% | 0.1419ms | 0.1610ms | 3.52M |
-
-**Key Insight:** Redux Toolkit is **1.47x faster** than MobX in this category.
-
-### Computed Invalidation
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.31M
-🥈 Jotai                ████████████████████████████████████ 9.22M
-🥉 Preact Signals       ██████████████████████████████████ 8.82M
-   Zen                  ██████████████████████████████████ 8.66M
-   MobX                 ███████ 1.77M
-   Valtio               █████ 1.36M
-   Redux Toolkit        █ 281.05K
-   Zustand              █ 167.05K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.31M | ±0.09% | 0.0970ms | 0.1210ms | 5.15M |
-| 🥈 | **Jotai** | 9.22M | ±0.09% | 0.1085ms | 0.1400ms | 4.61M |
-| 🥉 | **Preact Signals** | 8.82M | ±0.15% | 0.1133ms | 0.1400ms | 4.41M |
-| 4 | **Zen** | 8.66M | ±0.09% | 0.1154ms | 0.1400ms | 4.33M |
-| 5 | **MobX** | 1.77M | ±0.40% | 0.5661ms | 0.6020ms | 883.23K |
-| 6 | **Valtio** | 1.36M | ±0.25% | 0.7374ms | 0.8120ms | 678.02K |
-| 7 | **Redux Toolkit** | 281.05K | ±0.59% | 3.5581ms | 7.2440ms | 140.53K |
-| 8 | **Zustand** | 167.05K | ±0.37% | 5.9863ms | 6.8930ms | 83.52K |
-
-**Key Insight:** Solid Signals is **61.71x faster** than Zustand in this category.
-
-### Subscription Cascade
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.39M
-🥈 Valtio               ███████████████████████████████████████ 10.25M
-🥉 MobX                 ███████████████████████████████████████ 10.20M
-   Preact Signals       ███████████████████████████████████████ 10.17M
-   Zen                  ███████████████████████████████████████ 10.11M
-   Zustand              ██████████████████████████████████████ 9.75M
-   Jotai                ████████████████████████████████████ 9.41M
-   Redux Toolkit        ██████ 1.60M
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.39M | ±0.09% | 0.0963ms | 0.1110ms | 5.19M |
-| 🥈 | **Valtio** | 10.25M | ±0.10% | 0.0976ms | 0.1200ms | 5.12M |
-| 🥉 | **MobX** | 10.20M | ±0.23% | 0.0980ms | 0.1200ms | 5.10M |
-| 4 | **Preact Signals** | 10.17M | ±0.10% | 0.0983ms | 0.1510ms | 5.08M |
-| 5 | **Zen** | 10.11M | ±0.09% | 0.0989ms | 0.1110ms | 5.06M |
-| 6 | **Zustand** | 9.75M | ±0.26% | 0.1025ms | 0.1300ms | 4.88M |
-| 7 | **Jotai** | 9.41M | ±0.09% | 0.1062ms | 0.1300ms | 4.71M |
-| 8 | **Redux Toolkit** | 1.60M | ±10.98% | 0.6269ms | 1.1120ms | 797.64K |
-
-**Key Insight:** Solid Signals is **6.51x faster** than Redux Toolkit in this category.
-
-### Reaction Performance
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.40M
-🥈 Preact Signals       ██████████████████████████████████ 8.89M
-🥉 Jotai                █████████████████████████████████ 8.53M
-   Zen                  ████████████████████████████████ 8.40M
-   MobX                 ███████ 1.74M
-   Valtio               █████ 1.35M
-   Zustand              █ 164.99K
-   Redux Toolkit        █ 84.60
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.40M | ±0.09% | 0.0962ms | 0.1110ms | 5.20M |
-| 🥈 | **Preact Signals** | 8.89M | ±0.21% | 0.1125ms | 0.1300ms | 4.44M |
-| 🥉 | **Jotai** | 8.53M | ±0.72% | 0.1172ms | 0.1800ms | 4.27M |
-| 4 | **Zen** | 8.40M | ±0.22% | 0.1190ms | 0.1810ms | 4.20M |
-| 5 | **MobX** | 1.74M | ±0.72% | 0.5755ms | 0.6110ms | 868.86K |
-| 6 | **Valtio** | 1.35M | ±0.56% | 0.7403ms | 0.7920ms | 675.38K |
-| 7 | **Zustand** | 164.99K | ±1.08% | 6.0610ms | 6.6930ms | 82.50K |
-| 8 | **Redux Toolkit** | 84.60 | ±0.42% | 11819.8467ms | 12597.3330ms | 43.00 |
-
-**Key Insight:** Solid Signals is **122879.38x faster** than Redux Toolkit in this category.
-
-### Multi-Store Operations
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.04M
-🥈 Jotai                █████████████████████████████████████ 9.31M
-🥉 Preact Signals       ███████████████████████████████████ 8.67M
-   Zen                  █████████████████████████████████ 8.37M
-   MobX                 ███████ 1.74M
-   Valtio               █████ 1.36M
-   Zustand              █ 165.45K
-   Redux Toolkit        █ 83.21
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.04M | ±0.11% | 0.0996ms | 0.1210ms | 5.02M |
-| 🥈 | **Jotai** | 9.31M | ±0.09% | 0.1074ms | 0.1310ms | 4.65M |
-| 🥉 | **Preact Signals** | 8.67M | ±0.09% | 0.1153ms | 0.1400ms | 4.33M |
-| 4 | **Zen** | 8.37M | ±0.10% | 0.1195ms | 0.1700ms | 4.18M |
-| 5 | **MobX** | 1.74M | ±0.78% | 0.5757ms | 0.6110ms | 868.53K |
-| 6 | **Valtio** | 1.36M | ±0.68% | 0.7378ms | 0.7910ms | 677.68K |
-| 7 | **Zustand** | 165.45K | ±0.56% | 6.0440ms | 6.7530ms | 82.73K |
-| 8 | **Redux Toolkit** | 83.21 | ±0.31% | 12018.0504ms | 12274.2300ms | 42.00 |
-
-**Key Insight:** Solid Signals is **120706.13x faster** than Redux Toolkit in this category.
-
-### Memory Allocation
-
-**Performance Comparison:**
-
-```
-🥇 Large State Alloc... ████████████████████████████████████████ 327.95
-🥈 Large State Alloc... ████████████████████████████████████████ 327.35
-🥉 Large State Alloc... ████████████████████████████████████████ 326.32
-   Large State Alloc... ████████████████████████████████████████ 325.81
-   MobX                 █████████████████████████████████████ 304.09
-   Redux Toolkit        █████████████████████████████████████ 300.24
-   Preact Signals       █████████████████████████████████ 269.94
-   Large State Alloc... ████████████████████ 160.60
-   Large State Alloc... ███████████████████ 156.66
-   Zustand              ███████████████████ 155.99
-   Large State Alloc... ███████████████████ 155.55
-   Valtio               ███████████████████ 155.11
-   Zen                  ███████████████████ 155.01
-   Large State Alloc... █████████████████ 143.05
-   Solid Signals        ████████ 65.37
-   Jotai                ████████ 65.08
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Large State Allocation - Solid Signals** | 327.95 | ±0.28% | 3049.2563ms | 3292.7020ms | 164.00 |
-| 🥈 | **Large State Allocation - Redux Toolkit** | 327.35 | ±0.27% | 3054.8524ms | 3298.0140ms | 164.00 |
-| 🥉 | **Large State Allocation - Jotai** | 326.32 | ±0.34% | 3064.5148ms | 3340.1340ms | 164.00 |
-| 4 | **Large State Allocation - Valtio** | 325.81 | ±0.98% | 3069.2481ms | 4427.0490ms | 163.00 |
-| 5 | **MobX** | 304.09 | ±0.39% | 3288.4705ms | 3635.2400ms | 153.00 |
-| 6 | **Redux Toolkit** | 300.24 | ±0.53% | 3330.7197ms | 3713.0860ms | 151.00 |
-| 7 | **Preact Signals** | 269.94 | ±0.28% | 3704.4927ms | 3955.4220ms | 135.00 |
-| 8 | **Large State Allocation - Preact Signals** | 160.60 | ±13.19% | 6226.8001ms | 17652.1410ms | 83.00 |
-| 9 | **Large State Allocation - Zen** | 156.66 | ±12.60% | 6383.3888ms | 16966.5630ms | 79.00 |
-| 10 | **Zustand** | 155.99 | ±12.05% | 6410.6481ms | 11327.2430ms | 78.00 |
-| 11 | **Large State Allocation - MobX** | 155.55 | ±12.68% | 6428.8403ms | 16817.2180ms | 79.00 |
-| 12 | **Valtio** | 155.11 | ±12.03% | 6446.9020ms | 11124.4330ms | 78.00 |
-| 13 | **Zen** | 155.01 | ±12.15% | 6451.2752ms | 13211.6220ms | 79.00 |
-| 14 | **Large State Allocation - Zustand** | 143.05 | ±20.32% | 6990.7875ms | 41149.3180ms | 72.00 |
-| 15 | **Solid Signals** | 65.37 | ±47.21% | 15296.7531ms | 125852.5260ms | 37.00 |
-| 16 | **Jotai** | 65.08 | ±48.64% | 15366.1383ms | 148709.5050ms | 42.00 |
-
-**Key Insight:** Large State Allocation - Solid Signals is **5.04x faster** than Jotai in this category.
-
-### Form State Management
-
-**Performance Comparison:**
-
-```
-🥇 Jotai                ████████████████████████████████████████ 4.20M
-🥈 Valtio               ████████████████████████████ 2.91M
-🥉 MobX                 █████████████████████████ 2.58M
-   Zustand              █████████ 962.29K
-   Preact Signals       ███ 299.18K
-   Solid Signals        ███ 298.99K
-   Zen                  ███ 298.60K
-   Redux Toolkit        █ 84.21
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Jotai** | 4.20M | ±0.41% | 0.2384ms | 0.2710ms | 2.10M |
-| 🥈 | **Valtio** | 2.91M | ±0.12% | 0.3434ms | 0.6210ms | 1.46M |
-| 🥉 | **MobX** | 2.58M | ±0.09% | 0.3878ms | 0.4310ms | 1.29M |
-| 4 | **Zustand** | 962.29K | ±0.58% | 1.0392ms | 1.2830ms | 481.14K |
-| 5 | **Preact Signals** | 299.18K | ±0.50% | 3.3425ms | 3.8180ms | 149.59K |
-| 6 | **Solid Signals** | 298.99K | ±0.62% | 3.3446ms | 3.8070ms | 149.49K |
-| 7 | **Zen** | 298.60K | ±0.66% | 3.3490ms | 3.8180ms | 149.30K |
-| 8 | **Redux Toolkit** | 84.21 | ±0.51% | 11874.7455ms | 12783.4560ms | 43.00 |
-
-**Key Insight:** Jotai is **49815.41x faster** than Redux Toolkit in this category.
-
-### Optimistic Update
-
-**Performance Comparison:**
-
-```
-🥇 Preact Signals       ████████████████████████████████████████ 8.27K
-🥈 Solid Signals        ████████████████████████████████████████ 8.18K
-🥉 Zen                  ████████████████████████████████████████ 8.17K
-   Jotai                ███████████████████████████████████████ 8.03K
-   Zustand              ███████████████████████████████████████ 8.00K
-   MobX                 ███████████ 2.27K
-   Valtio               ███ 595.29
-   Redux Toolkit        █ 0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Preact Signals** | 8.27K | ±8.07% | 120.9074ms | 216.9070ms | 4.14K |
-| 🥈 | **Solid Signals** | 8.18K | ±8.33% | 122.2686ms | 205.7460ms | 4.09K |
-| 🥉 | **Zen** | 8.17K | ±8.53% | 122.4035ms | 203.7920ms | 4.08K |
-| 4 | **Jotai** | 8.03K | ±8.64% | 124.5176ms | 211.9570ms | 4.02K |
-| 5 | **Zustand** | 8.00K | ±8.78% | 125.0657ms | 195.3370ms | 4.00K |
-| 6 | **MobX** | 2.27K | ±1.75% | 439.6140ms | 1205.5930ms | 1.14K |
-| 7 | **Valtio** | 595.29 | ±4.99% | 1679.8596ms | 4975.5080ms | 298.00 |
-| 8 | **Redux Toolkit** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Preact Signals is **Infinityx faster** than Redux Toolkit in this category.
-
-### Undo/Redo Operations
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.12M
-🥈 Zen                  ████████████████████████████████████████ 10.04M
-🥉 Preact Signals       ███████████████████████████████████████ 9.80M
-   Jotai                █████████████████████████████████████ 9.43M
-   Zustand              ████████████████████████████████████ 9.00M
-   Valtio               █████████████████████████ 6.29M
-   MobX                 ███████████ 2.74M
-   Redux Toolkit        █ 84.58
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.12M | ±0.24% | 0.0989ms | 0.1200ms | 5.06M |
-| 🥈 | **Zen** | 10.04M | ±0.24% | 0.0996ms | 0.1110ms | 5.02M |
-| 🥉 | **Preact Signals** | 9.80M | ±0.27% | 0.1020ms | 0.1300ms | 4.90M |
-| 4 | **Jotai** | 9.43M | ±0.09% | 0.1060ms | 0.1300ms | 4.72M |
-| 5 | **Zustand** | 9.00M | ±0.09% | 0.1112ms | 0.1310ms | 4.50M |
-| 6 | **Valtio** | 6.29M | ±0.09% | 0.1590ms | 0.2700ms | 3.15M |
-| 7 | **MobX** | 2.74M | ±0.97% | 0.3655ms | 0.4110ms | 1.37M |
-| 8 | **Redux Toolkit** | 84.58 | ±0.48% | 11823.5849ms | 12749.6270ms | 43.00 |
-
-**Key Insight:** Solid Signals is **119595.85x faster** than Redux Toolkit in this category.
-
-### Batch State Operations
-
-**Performance Comparison:**
-
-```
-🥇 Preact Signals       ████████████████████████████████████████ 6.38M
-🥈 Solid Signals        ██████████████████████████████████ 5.50M
-🥉 Zen                  ██████████████████████████████ 4.84M
-   Zustand              █ 8.76K
-   Jotai                █ 6.89K
-   MobX                 █ 1.32K
-   Valtio               █ 504.23
-   Redux Toolkit        █ 26.73
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Preact Signals** | 6.38M | ±0.10% | 0.1566ms | 0.2510ms | 3.19M |
-| 🥈 | **Solid Signals** | 5.50M | ±0.41% | 0.1818ms | 0.2810ms | 2.75M |
-| 🥉 | **Zen** | 4.84M | ±0.09% | 0.2065ms | 0.3100ms | 2.42M |
-| 4 | **Zustand** | 8.76K | ±19.01% | 114.1637ms | 5739.1670ms | 4.38K |
-| 5 | **Jotai** | 6.89K | ±32.11% | 145.1146ms | 5298.3690ms | 3.48K |
-| 6 | **MobX** | 1.32K | ±5.05% | 758.5318ms | 3648.7150ms | 660.00 |
-| 7 | **Valtio** | 504.23 | ±5.87% | 1983.2219ms | 5745.8490ms | 253.00 |
-| 8 | **Redux Toolkit** | 26.73 | ±0.39% | 37416.2099ms | 37880.0050ms | 14.00 |
-
-**Key Insight:** Preact Signals is **238864.43x faster** than Redux Toolkit in this category.
-
-### Null Value Handling
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 9.62M
-🥈 Jotai                ██████████████████████████████████████ 9.09M
-🥉 Preact Signals       ████████████████████████████████████ 8.65M
-   Zen                  ████████████████████████████████████ 8.65M
-   Valtio               ██████████████████ 4.32M
-   MobX                 ███████ 1.76M
-   Zustand              █ 142.83K
-   Redux Toolkit        █ 83.25
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 9.62M | ±0.09% | 0.1039ms | 0.1310ms | 4.81M |
-| 🥈 | **Jotai** | 9.09M | ±0.09% | 0.1101ms | 0.1310ms | 4.54M |
-| 🥉 | **Preact Signals** | 8.65M | ±0.09% | 0.1156ms | 0.1700ms | 4.33M |
-| 4 | **Zen** | 8.65M | ±0.09% | 0.1156ms | 0.1410ms | 4.32M |
-| 5 | **Valtio** | 4.32M | ±0.10% | 0.2316ms | 0.2600ms | 2.16M |
-| 6 | **MobX** | 1.76M | ±1.98% | 0.5679ms | 0.7110ms | 880.37K |
-| 7 | **Zustand** | 142.83K | ±2.25% | 7.0015ms | 8.5270ms | 71.41K |
-| 8 | **Redux Toolkit** | 83.25 | ±0.36% | 12012.6049ms | 12538.7460ms | 42.00 |
-
-**Key Insight:** Solid Signals is **115599.88x faster** than Redux Toolkit in this category.
-
-### Undefined Value Handling
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 9.64M
-🥈 Jotai                ███████████████████████████████████████ 9.28M
-🥉 Zen                  █████████████████████████████████████ 8.84M
-   Preact Signals       ████████████████████████████████████ 8.73M
-   Valtio               ██████████████████ 4.38M
-   MobX                 ███████ 1.78M
-   Zustand              █ 141.76K
-   Redux Toolkit        █ 84.55
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 9.64M | ±0.09% | 0.1038ms | 0.1310ms | 4.82M |
-| 🥈 | **Jotai** | 9.28M | ±0.09% | 0.1077ms | 0.1300ms | 4.64M |
-| 🥉 | **Zen** | 8.84M | ±0.49% | 0.1131ms | 0.1400ms | 4.42M |
-| 4 | **Preact Signals** | 8.73M | ±0.09% | 0.1145ms | 0.1410ms | 4.37M |
-| 5 | **Valtio** | 4.38M | ±0.25% | 0.2283ms | 0.2710ms | 2.19M |
-| 6 | **MobX** | 1.78M | ±1.81% | 0.5612ms | 0.6410ms | 890.89K |
-| 7 | **Zustand** | 141.76K | ±2.56% | 7.0542ms | 8.0150ms | 70.88K |
-| 8 | **Redux Toolkit** | 84.55 | ±0.35% | 11827.6751ms | 12147.2030ms | 43.00 |
-
-**Key Insight:** Solid Signals is **113986.21x faster** than Redux Toolkit in this category.
-
-### Async State Loading
-
-**Performance Comparison:**
-
-```
-🥇 Async Loading - R... ████████████████████████████████████████ 935.13
-🥈 Valtio               ████████████████████████████████████████ 930.88
-🥉 Solid Signals        ████████████████████████████████████████ 927.50
-   Jotai                ████████████████████████████████████████ 925.74
-   Preact Signals       ████████████████████████████████████████ 925.63
-   Zen                  ████████████████████████████████████████ 924.64
-   MobX                 ███████████████████████████████████████ 920.36
-   Async Loading - S... ███████████████████████████████████████ 919.96
-   Redux Toolkit        ███████████████████████████████████████ 919.26
-   Async Loading - MobX ███████████████████████████████████████ 917.92
-   Zustand              ███████████████████████████████████████ 912.31
-   Async Loading - V... ███████████████████████████████████████ 911.23
-   Async Loading - Z... ███████████████████████████████████████ 906.37
-   Async Loading - P... ███████████████████████████████████████ 904.63
-   Async Loading - Zen  ███████████████████████████████████████ 904.29
-   Async Loading - J... ██████████████████████████████████████ 878.83
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Async Loading - Redux Toolkit** | 935.13 | ±0.72% | 1069.3661ms | 1127.7400ms | 468.00 |
-| 🥈 | **Valtio** | 930.88 | ±0.59% | 1074.2466ms | 1109.3710ms | 466.00 |
-| 🥉 | **Solid Signals** | 927.50 | ±0.84% | 1078.1667ms | 1122.4470ms | 464.00 |
-| 4 | **Jotai** | 925.74 | ±0.94% | 1080.2114ms | 2133.3420ms | 463.00 |
-| 5 | **Preact Signals** | 925.63 | ±0.94% | 1080.3450ms | 2129.7700ms | 463.00 |
-| 6 | **Zen** | 924.64 | ±1.02% | 1081.4979ms | 2132.0140ms | 463.00 |
-| 7 | **MobX** | 920.36 | ±1.10% | 1086.5289ms | 2134.2940ms | 461.00 |
-| 8 | **Async Loading - Solid Signals** | 919.96 | ±1.17% | 1087.0054ms | 2130.1630ms | 460.00 |
-| 9 | **Redux Toolkit** | 919.26 | ±0.93% | 1087.8276ms | 2138.2020ms | 460.00 |
-| 10 | **Async Loading - MobX** | 917.92 | ±1.17% | 1089.4199ms | 2133.9900ms | 459.00 |
-| 11 | **Zustand** | 912.31 | ±1.26% | 1096.1128ms | 2138.0920ms | 457.00 |
-| 12 | **Async Loading - Valtio** | 911.23 | ±1.43% | 1097.4121ms | 2133.0280ms | 457.00 |
-| 13 | **Async Loading - Zustand** | 906.37 | ±1.26% | 1103.2988ms | 2140.3320ms | 454.00 |
-| 14 | **Async Loading - Preact Signals** | 904.63 | ±1.60% | 1105.4304ms | 2138.5080ms | 453.00 |
-| 15 | **Async Loading - Zen** | 904.29 | ±1.60% | 1105.8441ms | 2135.8230ms | 453.00 |
-| 16 | **Async Loading - Jotai** | 878.83 | ±2.21% | 1137.8747ms | 2207.2870ms | 440.00 |
-
-**Key Insight:** Async Loading - Redux Toolkit is **1.06x faster** than Async Loading - Jotai in this category.
-
-### Concurrent Async Operations
-
-**Performance Comparison:**
-
-```
-🥇 MobX                 ████████████████████████████████████████ 930.08
-🥈 Jotai                ████████████████████████████████████████ 925.86
-🥉 Solid Signals        ████████████████████████████████████████ 924.08
-   Zen                  ████████████████████████████████████████ 922.26
-   Valtio               ████████████████████████████████████████ 921.64
-   Zustand              ████████████████████████████████████████ 919.89
-   Preact Signals       ████████████████████████████████████████ 918.54
-   Redux Toolkit        ███████████████████████████████████████ 916.04
-   Concurrent Async ... ███████████████████████████████████████ 913.73
-   Concurrent Async ... ███████████████████████████████████████ 913.30
-   Concurrent Async ... ███████████████████████████████████████ 909.72
-   Concurrent Async ... ███████████████████████████████████████ 908.85
-   Concurrent Async ... ███████████████████████████████████████ 908.67
-   Concurrent Async ... ███████████████████████████████████████ 905.45
-   Concurrent Async ... ███████████████████████████████████████ 903.16
-   Concurrent Async ... ███████████████████████████████████████ 897.24
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **MobX** | 930.08 | ±0.59% | 1075.1712ms | 1109.1530ms | 466.00 |
-| 🥈 | **Jotai** | 925.86 | ±1.10% | 1080.0769ms | 1100.2770ms | 463.00 |
-| 🥉 | **Solid Signals** | 924.08 | ±0.83% | 1082.1578ms | 1112.3970ms | 463.00 |
-| 4 | **Zen** | 922.26 | ±0.93% | 1084.2973ms | 2130.7870ms | 462.00 |
-| 5 | **Valtio** | 921.64 | ±1.18% | 1085.0267ms | 2134.1180ms | 461.00 |
-| 6 | **Zustand** | 919.89 | ±1.02% | 1087.0854ms | 2135.2700ms | 460.00 |
-| 7 | **Preact Signals** | 918.54 | ±0.94% | 1088.6840ms | 2135.1400ms | 460.00 |
-| 8 | **Redux Toolkit** | 916.04 | ±1.10% | 1091.6495ms | 2137.1830ms | 459.00 |
-| 9 | **Concurrent Async - Valtio** | 913.73 | ±1.33% | 1094.4109ms | 2138.8200ms | 457.00 |
-| 10 | **Concurrent Async - Jotai** | 913.30 | ±1.27% | 1094.9285ms | 2139.6410ms | 457.00 |
-| 11 | **Concurrent Async - Zustand** | 909.72 | ±1.18% | 1099.2428ms | 2141.3140ms | 455.00 |
-| 12 | **Concurrent Async - Preact Signals** | 908.85 | ±1.45% | 1100.2864ms | 2137.2360ms | 455.00 |
-| 13 | **Concurrent Async - Redux Toolkit** | 908.67 | ±1.19% | 1100.5049ms | 2148.2960ms | 455.00 |
-| 14 | **Concurrent Async - Solid Signals** | 905.45 | ±1.52% | 1104.4291ms | 2137.4980ms | 453.00 |
-| 15 | **Concurrent Async - MobX** | 903.16 | ±1.51% | 1107.2267ms | 2154.2180ms | 452.00 |
-| 16 | **Concurrent Async - Zen** | 897.24 | ±1.74% | 1114.5236ms | 2135.6340ms | 449.00 |
-
-**Key Insight:** MobX is **1.04x faster** than Concurrent Async - Zen in this category.
-
-### Computed Access
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 10.21M
-🥈 Zen                  ███████████████████████████████████████ 9.88M
-🥉 Preact Signals       ███████████████████████████████████████ 9.87M
-   Redux Toolkit        ██████████████████████████████████████ 9.75M
-   Zustand              ███████████████████████████████████ 9.06M
-   Valtio               █████████████████████████ 6.29M
-   MobX                 █████████████ 3.20M
-   Jotai                ████ 953.31K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 10.21M | ±0.11% | 0.0980ms | 0.1110ms | 5.10M |
-| 🥈 | **Zen** | 9.88M | ±0.09% | 0.1012ms | 0.1210ms | 4.94M |
-| 🥉 | **Preact Signals** | 9.87M | ±0.09% | 0.1013ms | 0.1210ms | 4.94M |
-| 4 | **Redux Toolkit** | 9.75M | ±0.10% | 0.1025ms | 0.1400ms | 4.88M |
-| 5 | **Zustand** | 9.06M | ±0.09% | 0.1104ms | 0.1210ms | 4.53M |
-| 6 | **Valtio** | 6.29M | ±0.18% | 0.1590ms | 0.1810ms | 3.14M |
-| 7 | **MobX** | 3.20M | ±0.71% | 0.3128ms | 0.3700ms | 1.60M |
-| 8 | **Jotai** | 953.31K | ±0.53% | 1.0490ms | 1.1920ms | 476.65K |
-
-**Key Insight:** Solid Signals is **10.71x faster** than Jotai in this category.
-
-### Nested Update
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 8.60M
-🥈 Preact Signals       ██████████████████████████████████████ 8.16M
-🥉 Zen                  █████████████████████████████████████ 8.01M
-   MobX                 ████████ 1.72M
-   Valtio               ██████ 1.36M
-   Jotai                ███ 676.08K
-   Redux Toolkit        █ 201.40K
-   Zustand              █ 160.03K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 8.60M | ±0.10% | 0.1163ms | 0.2110ms | 4.30M |
-| 🥈 | **Preact Signals** | 8.16M | ±0.09% | 0.1225ms | 0.2200ms | 4.08M |
-| 🥉 | **Zen** | 8.01M | ±0.39% | 0.1248ms | 0.2200ms | 4.01M |
-| 4 | **MobX** | 1.72M | ±0.51% | 0.5817ms | 0.7110ms | 859.49K |
-| 5 | **Valtio** | 1.36M | ±0.40% | 0.7345ms | 0.8320ms | 680.73K |
-| 6 | **Jotai** | 676.08K | ±0.60% | 1.4791ms | 3.1760ms | 338.04K |
-| 7 | **Redux Toolkit** | 201.40K | ±0.42% | 4.9653ms | 7.0030ms | 100.70K |
-| 8 | **Zustand** | 160.03K | ±0.25% | 6.2486ms | 8.2960ms | 80.02K |
-
-**Key Insight:** Solid Signals is **53.74x faster** than Zustand in this category.
-
-### Array Push
-
-**Performance Comparison:**
-
-```
-🥇 Valtio               ████████████████████████████████████████ 163.59K
-🥈 MobX                 ███████████████████████████████████ 145.11K
-🥉 Zustand              ███ 12.14K
-   Jotai                ██ 9.60K
-   Solid Signals        ██ 8.30K
-   Zen                  ██ 8.30K
-   Preact Signals       ██ 8.25K
-   Redux Toolkit        █ 4.70K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Valtio** | 163.59K | ±11.16% | 6.1130ms | 7.9840ms | 81.79K |
-| 🥈 | **MobX** | 145.11K | ±6.55% | 6.8912ms | 12.6140ms | 72.56K |
-| 🥉 | **Zustand** | 12.14K | ±7.26% | 82.3433ms | 199.7540ms | 6.07K |
-| 4 | **Jotai** | 9.60K | ±7.58% | 104.1954ms | 206.3670ms | 4.80K |
-| 5 | **Solid Signals** | 8.30K | ±8.00% | 120.4289ms | 192.2400ms | 4.18K |
-| 6 | **Zen** | 8.30K | ±8.07% | 120.4319ms | 185.1770ms | 4.15K |
-| 7 | **Preact Signals** | 8.25K | ±8.23% | 121.2841ms | 191.8390ms | 4.12K |
-| 8 | **Redux Toolkit** | 4.70K | ±1.19% | 212.6066ms | 310.5110ms | 2.35K |
-
-**Key Insight:** Valtio is **34.78x faster** than Redux Toolkit in this category.
-
-### Loading State Toggle
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 8.79M
-🥈 Preact Signals       ███████████████████████████████████████ 8.62M
-🥉 Zen                  █████████████████████████ 5.54M
-   Valtio               ███████████ 2.39M
-   MobX                 █████████ 1.87M
-   Jotai                ███ 562.03K
-   Redux Toolkit        ██ 345.90K
-   Zustand              █ 166.16K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 8.79M | ±0.09% | 0.1138ms | 0.2200ms | 4.40M |
-| 🥈 | **Preact Signals** | 8.62M | ±0.09% | 0.1160ms | 0.2210ms | 4.31M |
-| 🥉 | **Zen** | 5.54M | ±0.09% | 0.1804ms | 0.2810ms | 2.77M |
-| 4 | **Valtio** | 2.39M | ±0.40% | 0.4190ms | 0.6820ms | 1.19M |
-| 5 | **MobX** | 1.87M | ±0.38% | 0.5336ms | 0.6620ms | 937.01K |
-| 6 | **Jotai** | 562.03K | ±11.10% | 1.7793ms | 5.0390ms | 281.07K |
-| 7 | **Redux Toolkit** | 345.90K | ±0.83% | 2.8910ms | 3.6670ms | 172.95K |
-| 8 | **Zustand** | 166.16K | ±0.86% | 6.0183ms | 10.4490ms | 83.08K |
-
-**Key Insight:** Solid Signals is **52.91x faster** than Zustand in this category.
-
-### Multiple Subscriptions (10 subscribers)
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 4.24M
-🥈 Zen                  ███████████ 1.20M
-🥉 Preact Signals       ██████ 656.09K
-   Zustand              █ 105.86K
-   Redux Toolkit        █ 59.16K
-   Jotai                █ 55.79K
-   MobX                 █ 47.93K
-   Valtio               █ 10.60
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 4.24M | ±2.10% | 0.2357ms | 0.2810ms | 2.12M |
-| 🥈 | **Zen** | 1.20M | ±1.62% | 0.8316ms | 1.1220ms | 601.59K |
-| 🥉 | **Preact Signals** | 656.09K | ±1.57% | 1.5242ms | 1.8830ms | 328.04K |
-| 4 | **Zustand** | 105.86K | ±7.79% | 9.4466ms | 17.8330ms | 52.93K |
-| 5 | **Redux Toolkit** | 59.16K | ±22.08% | 16.9027ms | 116.7090ms | 29.75K |
-| 6 | **Jotai** | 55.79K | ±2.96% | 17.9242ms | 40.8270ms | 27.90K |
-| 7 | **MobX** | 47.93K | ±10.67% | 20.8625ms | 32.9520ms | 23.97K |
-| 8 | **Valtio** | 10.60 | ±28.92% | 94369.2268ms | 197332.9710ms | 10.00 |
-
-**Key Insight:** Solid Signals is **400380.98x faster** than Valtio in this category.
-
-### Batch Updates (3 state changes)
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 7.87M
-🥈 Preact Signals       ████████████████████████████████ 6.21M
-🥉 Zen                  ██████████████████████ 4.40M
-   Valtio               ████ 817.78K
-   MobX                 ███ 673.41K
-   Jotai                █ 242.20K
-   Redux Toolkit        █ 171.54K
-   Zustand              █ 155.72K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 7.87M | ±0.09% | 0.1271ms | 0.2310ms | 3.94M |
-| 🥈 | **Preact Signals** | 6.21M | ±0.16% | 0.1611ms | 0.2610ms | 3.10M |
-| 🥉 | **Zen** | 4.40M | ±0.25% | 0.2274ms | 0.3310ms | 2.20M |
-| 4 | **Valtio** | 817.78K | ±0.78% | 1.2228ms | 1.3330ms | 408.89K |
-| 5 | **MobX** | 673.41K | ±1.30% | 1.4850ms | 1.6840ms | 336.70K |
-| 6 | **Jotai** | 242.20K | ±1.47% | 4.1288ms | 8.8370ms | 121.10K |
-| 7 | **Redux Toolkit** | 171.54K | ±1.13% | 5.8296ms | 11.3510ms | 85.77K |
-| 8 | **Zustand** | 155.72K | ±0.96% | 6.4216ms | 7.3140ms | 77.86K |
-
-**Key Insight:** Solid Signals is **50.54x faster** than Zustand in this category.
-
-### Array Filter
-
-**Performance Comparison:**
-
-```
-🥇 Zustand              ████████████████████████████████████████ 9.68K
-🥈 Jotai                ███████████████████ 4.51K
-🥉 Zen                  ███████████████ 3.69K
-   Solid Signals        ██████████████ 3.32K
-   Preact Signals       ██████████████ 3.31K
-   Redux Toolkit        █ 162.99
-   MobX                 █ 40.24
-   Valtio               █ 5.85
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Zustand** | 9.68K | ±2.13% | 103.3064ms | 416.8320ms | 4.84K |
-| 🥈 | **Jotai** | 4.51K | ±1.16% | 221.6590ms | 601.4380ms | 2.26K |
-| 🥉 | **Zen** | 3.69K | ±5.36% | 271.0359ms | 2314.0790ms | 1.84K |
-| 4 | **Solid Signals** | 3.32K | ±4.91% | 301.0733ms | 2207.1100ms | 1.66K |
-| 5 | **Preact Signals** | 3.31K | ±5.06% | 302.1373ms | 2310.4030ms | 1.66K |
-| 6 | **Redux Toolkit** | 162.99 | ±1.36% | 6135.1780ms | 7124.6690ms | 82.00 |
-| 7 | **MobX** | 40.24 | ±2.80% | 24852.3988ms | 28602.9190ms | 21.00 |
-| 8 | **Valtio** | 5.85 | ±0.62% | 170902.2498ms | 173279.5990ms | 10.00 |
-
-**Key Insight:** Zustand is **1654.32x faster** than Valtio in this category.
-
-### Array Remove
-
-**Performance Comparison:**
-
-```
-🥇 Zen                  ████████████████████████████████████████ 33.19K
-🥈 Jotai                ███████████████████████████████████████ 32.62K
-🥉 Solid Signals        █████████████████████████████ 23.76K
-   Preact Signals       ████████████████████████████ 23.59K
-   Zustand              ███████████████████████ 19.44K
-   Redux Toolkit        █ 403.32
-   Valtio               █ 72.34
-   MobX                 █ 61.42
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Zen** | 33.19K | ±0.83% | 30.1304ms | 122.4300ms | 16.59K |
-| 🥈 | **Jotai** | 32.62K | ±1.07% | 30.6562ms | 122.5690ms | 16.34K |
-| 🥉 | **Solid Signals** | 23.76K | ±2.03% | 42.0864ms | 139.3210ms | 11.88K |
-| 4 | **Preact Signals** | 23.59K | ±2.20% | 42.3969ms | 141.9970ms | 11.79K |
-| 5 | **Zustand** | 19.44K | ±2.78% | 51.4367ms | 153.0570ms | 9.72K |
-| 6 | **Redux Toolkit** | 403.32 | ±1.98% | 2479.4414ms | 3766.0520ms | 202.00 |
-| 7 | **Valtio** | 72.34 | ±2.02% | 13823.4030ms | 15935.5150ms | 37.00 |
-| 8 | **MobX** | 61.42 | ±2.70% | 16280.4559ms | 22098.0500ms | 31.00 |
-
-**Key Insight:** Zen is **540.33x faster** than MobX in this category.
-
-### Array Update
-
-**Performance Comparison:**
-
-```
-🥇 Zen                  ████████████████████████████████████████ 33.51K
-🥈 Solid Signals        █████████████ 10.76K
-🥉 Preact Signals       ████████████ 10.37K
-   Zustand              ████████████ 10.16K
-   Jotai                ███████ 6.01K
-   Redux Toolkit        █ 403.02
-   Valtio               █ 72.33
-   MobX                 █ 69.49
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Zen** | 33.51K | ±0.73% | 29.8406ms | 123.2210ms | 16.76K |
-| 🥈 | **Solid Signals** | 10.76K | ±2.40% | 92.9135ms | 178.0440ms | 5.38K |
-| 🥉 | **Preact Signals** | 10.37K | ±2.74% | 96.4031ms | 324.7990ms | 5.19K |
-| 4 | **Zustand** | 10.16K | ±2.51% | 98.4074ms | 310.7920ms | 5.08K |
-| 5 | **Jotai** | 6.01K | ±2.17% | 166.5275ms | 321.9030ms | 3.00K |
-| 6 | **Redux Toolkit** | 403.02 | ±2.15% | 2481.2821ms | 3720.1060ms | 202.00 |
-| 7 | **Valtio** | 72.33 | ±2.13% | 13825.2455ms | 15968.5680ms | 37.00 |
-| 8 | **MobX** | 69.49 | ±4.08% | 14390.7196ms | 21797.7200ms | 36.00 |
-
-**Key Insight:** Zen is **482.25x faster** than MobX in this category.
-
-### Deep Nested Update (5 levels)
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 7.26M
-🥈 Preact Signals       █████████████████████████████████████ 6.66M
-🥉 Zen                  ███████████████████████████████████ 6.33M
-   Valtio               ██████ 1.14M
-   MobX                 █████ 969.51K
-   Jotai                ████ 640.57K
-   Zustand              █ 169.22K
-   Redux Toolkit        █ 77.76K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 7.26M | ±1.24% | 0.1377ms | 0.2210ms | 3.63M |
-| 🥈 | **Preact Signals** | 6.66M | ±1.97% | 0.1502ms | 0.2400ms | 3.33M |
-| 🥉 | **Zen** | 6.33M | ±1.21% | 0.1580ms | 0.2510ms | 3.17M |
-| 4 | **Valtio** | 1.14M | ±1.02% | 0.8771ms | 0.9710ms | 570.04K |
-| 5 | **MobX** | 969.51K | ±0.82% | 1.0315ms | 1.1620ms | 484.75K |
-| 6 | **Jotai** | 640.57K | ±0.48% | 1.5611ms | 3.2960ms | 320.29K |
-| 7 | **Zustand** | 169.22K | ±0.96% | 5.9096ms | 8.4160ms | 84.61K |
-| 8 | **Redux Toolkit** | 77.76K | ±1.12% | 12.8599ms | 22.7020ms | 38.88K |
-
-**Key Insight:** Solid Signals is **93.37x faster** than Redux Toolkit in this category.
-
-### Large State Update (1000 items)
-
-**Performance Comparison:**
-
-```
-🥇 Solid Signals        ████████████████████████████████████████ 115.89K
-🥈 Preact Signals       ████████████████████████████████████ 103.90K
-🥉 Jotai                ███████████████████████████████ 89.28K
-   Zen                  ██████████████████████████████ 88.08K
-   Zustand              ███████████████████████ 66.89K
-   Valtio               ████████ 23.87K
-   MobX                 ██████ 16.43K
-   Redux Toolkit        █ 1.30K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Solid Signals** | 115.89K | ±1.30% | 8.6292ms | 16.8020ms | 57.94K |
-| 🥈 | **Preact Signals** | 103.90K | ±1.22% | 9.6246ms | 18.5850ms | 51.95K |
-| 🥉 | **Jotai** | 89.28K | ±1.37% | 11.2006ms | 21.7400ms | 44.64K |
-| 4 | **Zen** | 88.08K | ±1.58% | 11.3537ms | 19.7170ms | 44.04K |
-| 5 | **Zustand** | 66.89K | ±1.20% | 14.9505ms | 25.2470ms | 33.44K |
-| 6 | **Valtio** | 23.87K | ±1.00% | 41.8940ms | 82.4040ms | 11.94K |
-| 7 | **MobX** | 16.43K | ±1.77% | 60.8802ms | 127.6790ms | 8.21K |
-| 8 | **Redux Toolkit** | 1.30K | ±4.31% | 769.3124ms | 2114.6730ms | 651.00 |
-
-**Key Insight:** Solid Signals is **89.15x faster** than Redux Toolkit in this category.
-
-### Reactive Async State Access
-
-**Performance Comparison:**
-
-```
-🥇 Zen                  ████████████████████████████████████████ 1.24M
-🥈 Jotai                ███████████████████████ 709.22K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Zen** | 1.24M | ±1.11% | 0.8037ms | 1.0720ms | 622.09K |
-| 🥈 | **Jotai** | 709.22K | ±1.10% | 1.4100ms | 1.8240ms | 354.61K |
-
-### Cache Performance - Caching patterns and memoization
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - R...  0.00
-🥇 Zustand - Repeate...  0.00
-🥇 Jotai - Repeated ...  0.00
-🥇 MobX - Repeated A...  0.00
-🥇 Valtio - Repeated...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - R...  0.00
-🥇 Zen - Repeated Ac...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Repeated Access Pattern** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Repeated Access Pattern is **NaNx faster** than Zen - Repeated Access Pattern in this category.
-
-### Deep Nested Updates
-
-**Performance Comparison:**
-
-```
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-🥇 10-Level Nested U...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **10-Level Nested Update - Redux Toolkit** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Zustand** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Jotai** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - MobX** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Valtio** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Preact Signals** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Solid Signals** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **10-Level Nested Update - Zen** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** 10-Level Nested Update - Redux Toolkit is **NaNx faster** than 10-Level Nested Update - Zen in this category.
-
-### Form State - Form state management
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - U...  0.00
-🥇 Zustand - Update ...  0.00
-🥇 Jotai - Update Mu...  0.00
-🥇 MobX - Update Mul...  0.00
-🥇 Valtio - Update M...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - U...  0.00
-🥇 Zen - Update Mult...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Update Multiple Fields** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Update Multiple Fields is **NaNx faster** than Zen - Update Multiple Fields in this category.
-
-### Read Operations - x1
-
-**Performance Comparison:**
-
-```
-🥇 Simple Read - Sol... ████████████████████████████████████████ 12.78M
-🥈 Simple Read - Jotai  █████████████████████████████████████ 11.95M
-🥉 Simple Read - Zen    ████████████████████████████████ 10.35M
-   Simple Read - Pre... ████████████████████████████████ 10.19M
-   High Frequency Re... ████████████████████████ 7.66M
-   High Frequency Re... ████████████████████████ 7.57M
-   High Frequency Re... █████████████████ 5.45M
-   High Frequency Re... ██████████████ 4.55M
-   High Frequency Re... ████████████ 3.93M
-   High Frequency Re... ███████████ 3.38M
-   High Frequency Re... ████ 1.42M
-   Simple Read - Valtio ████ 1.32M
-   Simple Read - MobX   ████ 1.26M
-   High Frequency Re... █ 352.29K
-   Simple Read - Red... █ 308.96K
-   Simple Read - Zus... █ 166.40K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Simple Read - Solid Signals** | 12.78M | ±0.17% | 0.0783ms | 0.1010ms | 6.39M |
-| 🥈 | **Simple Read - Jotai** | 11.95M | ±0.57% | 0.0837ms | 0.1300ms | 5.97M |
-| 🥉 | **Simple Read - Zen** | 10.35M | ±0.11% | 0.0966ms | 0.1200ms | 5.18M |
-| 4 | **Simple Read - Preact Signals** | 10.19M | ±0.12% | 0.0981ms | 0.1600ms | 5.09M |
-| 5 | **High Frequency Read - MobX** | 7.66M | ±0.16% | 0.1306ms | 0.1500ms | 3.83M |
-| 6 | **High Frequency Read - Solid Signals** | 7.57M | ±0.10% | 0.1321ms | 0.1700ms | 3.78M |
-| 7 | **High Frequency Read - Zen** | 5.45M | ±0.09% | 0.1834ms | 0.2010ms | 2.73M |
-| 8 | **High Frequency Read - Jotai** | 4.55M | ±0.09% | 0.2197ms | 0.2300ms | 2.28M |
-| 9 | **High Frequency Read - Preact Signals** | 3.93M | ±0.09% | 0.2545ms | 0.2610ms | 1.96M |
-| 10 | **High Frequency Read - Redux Toolkit** | 3.38M | ±0.09% | 0.2960ms | 0.3010ms | 1.69M |
-| 11 | **High Frequency Read - Zustand** | 1.42M | ±0.15% | 0.7020ms | 0.7020ms | 712.27K |
-| 12 | **Simple Read - Valtio** | 1.32M | ±0.30% | 0.7576ms | 0.8110ms | 659.96K |
-| 13 | **Simple Read - MobX** | 1.26M | ±0.30% | 0.7932ms | 0.9720ms | 630.35K |
-| 14 | **High Frequency Read - Valtio** | 352.29K | ±0.26% | 2.8386ms | 5.8610ms | 176.15K |
-| 15 | **Simple Read - Redux Toolkit** | 308.96K | ±0.45% | 3.2367ms | 5.8010ms | 154.48K |
-| 16 | **Simple Read - Zustand** | 166.40K | ±0.28% | 6.0095ms | 7.8350ms | 83.20K |
-
-**Key Insight:** Simple Read - Solid Signals is **76.78x faster** than Simple Read - Zustand in this category.
-
-### Read - 1000x operations (experimental)
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - S...  0.00
-🥇 Zustand - Simple ...  0.00
-🥇 Jotai - Simple Re...  0.00
-🥇 MobX - Simple Rea...  0.00
-🥇 Valtio - Simple R...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - S...  0.00
-🥇 Zen - Simple Read...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Simple Read (1 iterations) is **NaNx faster** than Zen - Simple Read (1 iterations) in this category.
-
-### Read - 10000x operations (experimental)
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - S...  0.00
-🥇 Zustand - Simple ...  0.00
-🥇 Jotai - Simple Re...  0.00
-🥇 MobX - Simple Rea...  0.00
-🥇 Valtio - Simple R...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - S...  0.00
-🥇 Zen - Simple Read...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Simple Read (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Simple Read (1 iterations) is **NaNx faster** than Zen - Simple Read (1 iterations) in this category.
-
-### Write Operations - x1
-
-**Performance Comparison:**
-
-```
-🥇 Simple Increment ... ████████████████████████████████████████ 12.89M
-🥈 Simple Increment ... ██████████████████████████████████████ 12.21M
-🥉 Simple Increment ... ███████████████████████████████████ 11.39M
-   Burst Updates - S... █████████████████████████████████ 10.71M
-   Simple Increment ... ████████████████████████████████ 10.28M
-   Burst Updates - J... ██████████████████ 5.91M
-   Burst Updates - Zen  ███████████████ 4.79M
-   Burst Updates - P... ██████████████ 4.55M
-   Simple Increment ... ████ 1.35M
-   Simple Increment ... ████ 1.27M
-   Simple Increment ... █ 309.08K
-   Simple Increment ... █ 171.01K
-   Burst Updates - V... █ 170.23K
-   Burst Updates - MobX █ 156.07K
-   Burst Updates - R... █ 33.15K
-   Burst Updates - Z... █ 17.44K
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Simple Increment - Solid Signals** | 12.89M | ±0.12% | 0.0776ms | 0.1000ms | 6.44M |
-| 🥈 | **Simple Increment - Jotai** | 12.21M | ±0.52% | 0.0819ms | 0.1010ms | 6.11M |
-| 🥉 | **Simple Increment - Zen** | 11.39M | ±0.12% | 0.0878ms | 0.1100ms | 5.69M |
-| 4 | **Burst Updates - Solid Signals** | 10.71M | ±0.17% | 0.0934ms | 0.1100ms | 5.35M |
-| 5 | **Simple Increment - Preact Signals** | 10.28M | ±0.09% | 0.0973ms | 0.1100ms | 5.14M |
-| 6 | **Burst Updates - Jotai** | 5.91M | ±0.80% | 0.1692ms | 0.2400ms | 2.95M |
-| 7 | **Burst Updates - Zen** | 4.79M | ±0.09% | 0.2090ms | 0.2210ms | 2.39M |
-| 8 | **Burst Updates - Preact Signals** | 4.55M | ±0.09% | 0.2197ms | 0.2310ms | 2.28M |
-| 9 | **Simple Increment - Valtio** | 1.35M | ±0.27% | 0.7386ms | 0.7810ms | 676.92K |
-| 10 | **Simple Increment - MobX** | 1.27M | ±0.29% | 0.7881ms | 0.9520ms | 634.42K |
-| 11 | **Simple Increment - Redux Toolkit** | 309.08K | ±0.43% | 3.2354ms | 4.4980ms | 154.54K |
-| 12 | **Simple Increment - Zustand** | 171.01K | ±0.27% | 5.8477ms | 7.5740ms | 85.50K |
-| 13 | **Burst Updates - Valtio** | 170.23K | ±0.48% | 5.8744ms | 6.5320ms | 85.11K |
-| 14 | **Burst Updates - MobX** | 156.07K | ±0.42% | 6.4075ms | 9.0060ms | 78.03K |
-| 15 | **Burst Updates - Redux Toolkit** | 33.15K | ±0.57% | 30.1650ms | 41.2580ms | 16.58K |
-| 16 | **Burst Updates - Zustand** | 17.44K | ±0.41% | 57.3333ms | 76.3940ms | 8.72K |
-
-**Key Insight:** Simple Increment - Solid Signals is **738.84x faster** than Burst Updates - Zustand in this category.
-
-### Write - 1000x operations (experimental)
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - S...  0.00
-🥇 Zustand - Simple ...  0.00
-🥇 Jotai - Simple In...  0.00
-🥇 MobX - Simple Inc...  0.00
-🥇 Valtio - Simple I...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - S...  0.00
-🥇 Zen - Simple Incr...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Simple Increment (1 iterations) is **NaNx faster** than Zen - Simple Increment (1 iterations) in this category.
-
-### Write - 10000x operations (experimental)
-
-**Performance Comparison:**
-
-```
-🥇 Redux Toolkit - S...  0.00
-🥇 Zustand - Simple ...  0.00
-🥇 Jotai - Simple In...  0.00
-🥇 MobX - Simple Inc...  0.00
-🥇 Valtio - Simple I...  0.00
-🥇 Preact Signals - ...  0.00
-🥇 Solid Signals - S...  0.00
-🥇 Zen - Simple Incr...  0.00
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|--------|
-| 🥇 | **Redux Toolkit - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zustand - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Jotai - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **MobX - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Valtio - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Preact Signals - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Solid Signals - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-| 🥇 | **Zen - Simple Increment (1 iterations)** | 0.00 | ±0.00% | NaNms | NaNms | 0.00 |
-
-**Key Insight:** Redux Toolkit - Simple Increment (1 iterations) is **NaNx faster** than Zen - Simple Increment (1 iterations) in this category.
+- [Read](#read)
+- [Write](#write)
+- [Creation](#creation)
+- [Complexity](#complexity)
+- [Memory](#memory)
+- [Form](#form)
+- [Async Reactive](#async-reactive)
+
+### Read
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Simple Read    ████████████████████████████████████████ 47.24M
+🥈 Zen - High Freque... ████████████████████████████████████████ 46.92M
+🥉 Solid Signals - S... ███████████████████████████ 31.61M
+   Zen - High Freque... ██████████████████████████ 30.44M
+   Preact Signals - ... █████████████████████████ 30.01M
+   Solid Signals - H... ███████████████████████ 26.61M
+   Zustand - High Fr... ████████████████████ 23.89M
+   Preact Signals - ... ██████████████████ 21.62M
+   Redux Toolkit - H... ████████████████ 19.12M
+   Solid Signals - H... ████████████ 14.42M
+   Zustand - Simple ... ███████████ 12.91M
+   Valtio - High Fre... ██████ 7.03M
+   Zustand - High Fr... █████ 5.69M
+   MobX - Simple Read   ███ 3.91M
+   Redux Toolkit - H... ███ 3.76M
+   Zen - High Freque... ███ 3.72M
+   MobX - High Frequ... ███ 3.37M
+   Preact Signals - ... ███ 3.27M
+   Valtio - Simple Read ███ 2.98M
+   Solid Signals - H... ██ 2.44M
+   Valtio - High Fre... █ 947.55K
+   Jotai - Simple Read  █ 789.03K
+   Zustand - High Fr... █ 618.26K
+   Redux Toolkit - S... █ 576.82K
+   Redux Toolkit - H... █ 487.21K
+   Jotai - High Freq... █ 429.84K
+   Zen - High Freque... █ 409.74K
+   MobX - High Frequ... █ 368.26K
+   Preact Signals - ... █ 347.10K
+   Solid Signals - H... █ 280.49K
+   Valtio - High Fre... █ 92.62K
+   Preact Signals - ... █ 51.52K
+   Zustand - High Fr... █ 49.21K
+   Jotai - High Freq... █ 45.07K
+   MobX - High Frequ... █ 40.00K
+   Redux Toolkit - H... █ 39.87K
+   Valtio - High Fre... █ 9.31K
+   Jotai - High Freq... █ 4.32K
+   MobX - High Frequ... █ 4.24K
+   Jotai - High Freq... █ 410.17
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Simple Read** | 47.24M | ±0.06% | 0.0000ms | 0.0000ms | 23.62M |
+| 🥈 | **Zen - High Frequency Read (x10)** | 46.92M | ±0.05% | 0.0000ms | 0.0000ms | 23.46M |
+| 🥉 | **Solid Signals - Simple Read** | 31.61M | ±2.61% | 0.0000ms | 0.1000ms | 15.81M |
+| 4 | **Zen - High Frequency Read (x100)** | 30.44M | ±0.03% | 0.0000ms | 0.0000ms | 15.22M |
+| 5 | **Preact Signals - Simple Read** | 30.01M | ±2.10% | 0.0000ms | 0.1000ms | 15.00M |
+| 6 | **Solid Signals - High Frequency Read (x10)** | 26.61M | ±2.36% | 0.0000ms | 0.1000ms | 13.31M |
+| 7 | **Zustand - High Frequency Read (x10)** | 23.89M | ±2.75% | 0.0000ms | 0.1000ms | 11.95M |
+| 8 | **Preact Signals - High Frequency Read (x10)** | 21.62M | ±1.78% | 0.0000ms | 0.1000ms | 10.81M |
+| 9 | **Redux Toolkit - High Frequency Read (x10)** | 19.12M | ±2.50% | 0.1000ms | 0.1000ms | 9.56M |
+| 10 | **Solid Signals - High Frequency Read (x100)** | 14.42M | ±11.29% | 0.1000ms | 0.1000ms | 7.21M |
+| 11 | **Zustand - Simple Read** | 12.91M | ±4.27% | 0.1000ms | 0.1000ms | 6.45M |
+| 12 | **Valtio - High Frequency Read (x10)** | 7.03M | ±4.31% | 0.1000ms | 0.2000ms | 3.52M |
+| 13 | **Zustand - High Frequency Read (x100)** | 5.69M | ±3.10% | 0.2000ms | 0.3000ms | 2.84M |
+| 14 | **MobX - Simple Read** | 3.91M | ±1.63% | 0.3000ms | 0.5000ms | 1.96M |
+| 15 | **Redux Toolkit - High Frequency Read (x100)** | 3.76M | ±4.20% | 0.3000ms | 0.3000ms | 1.88M |
+| 16 | **Zen - High Frequency Read (x1000)** | 3.72M | ±0.02% | 0.3000ms | 0.3000ms | 1.86M |
+| 17 | **MobX - High Frequency Read (x10)** | 3.37M | ±5.16% | 0.3000ms | 0.5000ms | 1.69M |
+| 18 | **Preact Signals - High Frequency Read (x100)** | 3.27M | ±10.48% | 0.3000ms | 0.3000ms | 1.64M |
+| 19 | **Valtio - Simple Read** | 2.98M | ±2.41% | 0.3000ms | 0.5000ms | 1.49M |
+| 20 | **Solid Signals - High Frequency Read (x1000)** | 2.44M | ±2.92% | 0.4000ms | 0.5000ms | 1.22M |
+| 21 | **Valtio - High Frequency Read (x100)** | 947.55K | ±3.72% | 1.1000ms | 1.5000ms | 473.77K |
+| 22 | **Jotai - Simple Read** | 789.03K | ±3.61% | 1.3000ms | 2.9000ms | 394.52K |
+| 23 | **Zustand - High Frequency Read (x1000)** | 618.26K | ±6.60% | 1.6000ms | 1.8000ms | 309.13K |
+| 24 | **Redux Toolkit - Simple Read** | 576.82K | ±1.88% | 1.7000ms | 3.6000ms | 288.41K |
+| 25 | **Redux Toolkit - High Frequency Read (x1000)** | 487.21K | ±2.23% | 2.1000ms | 2.6000ms | 243.60K |
+| 26 | **Jotai - High Frequency Read (x10)** | 429.84K | ±2.61% | 2.3000ms | 3.9000ms | 214.92K |
+| 27 | **Zen - High Frequency Read (x10000)** | 409.74K | ±0.03% | 2.4000ms | 2.9000ms | 204.87K |
+| 28 | **MobX - High Frequency Read (x100)** | 368.26K | ±6.69% | 2.7000ms | 4.9000ms | 184.13K |
+| 29 | **Preact Signals - High Frequency Read (x1000)** | 347.10K | ±12.09% | 2.9000ms | 2.5000ms | 173.55K |
+| 30 | **Solid Signals - High Frequency Read (x10000)** | 280.49K | ±1.63% | 3.6000ms | 4.8000ms | 140.25K |
+| 31 | **Valtio - High Frequency Read (x1000)** | 92.62K | ±2.02% | 10.8000ms | 22.4000ms | 46.31K |
+| 32 | **Preact Signals - High Frequency Read (x10000)** | 51.52K | ±4.42% | 19.4000ms | 50.0000ms | 25.76K |
+| 33 | **Zustand - High Frequency Read (x10000)** | 49.21K | ±8.05% | 20.3000ms | 68.3000ms | 24.60K |
+| 34 | **Jotai - High Frequency Read (x100)** | 45.07K | ±4.13% | 22.2000ms | 76.8000ms | 22.54K |
+| 35 | **MobX - High Frequency Read (x1000)** | 40.00K | ±3.30% | 25.0000ms | 84.4000ms | 20.00K |
+| 36 | **Redux Toolkit - High Frequency Read (x10000)** | 39.87K | ±7.99% | 25.1000ms | 68.7000ms | 19.93K |
+| 37 | **Valtio - High Frequency Read (x10000)** | 9.31K | ±3.35% | 107.4000ms | 342.4000ms | 4.67K |
+| 38 | **Jotai - High Frequency Read (x1000)** | 4.32K | ±4.05% | 231.5000ms | 848.1000ms | 2.16K |
+| 39 | **MobX - High Frequency Read (x10000)** | 4.24K | ±3.31% | 235.9000ms | 883.7000ms | 2.12K |
+| 40 | **Jotai - High Frequency Read (x10000)** | 410.17 | ±6.48% | 2438.0000ms | 5531.7000ms | 206.00 |
+
+**Key Insight:** Zen - Simple Read is **115178.84x faster** than Jotai - High Frequency Read (x10000) in this category.
+
+### Write
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Single Update  ████████████████████████████████████████ 48.03M
+🥈 Zen - Batch Updat... ███████████████████████ 27.04M
+🥉 Preact Signals - ... ██████████████████████ 26.14M
+   Solid Signals - S... █████████████████████ 25.73M
+   Solid Signals - B... ████████████████████ 23.71M
+   Zustand - Single ... ██████████ 12.17M
+   Preact Signals - ... █████████ 11.17M
+   Solid Signals - B... █████ 6.03M
+   Zen - Batch Updat... ████ 4.66M
+   MobX - Single Update ███ 4.04M
+   Valtio - Single U... ███ 3.10M
+   Zustand - Batch U... ██ 2.00M
+   Preact Signals - ... █ 1.78M
+   Jotai - Single Up... █ 970.34K
+   Redux Toolkit - S... █ 541.14K
+   Solid Signals - B... █ 516.73K
+   Zen - Batch Updat... █ 514.75K
+   MobX - Batch Upda... █ 448.61K
+   Valtio - Batch Up... █ 362.37K
+   Zustand - Batch U... █ 233.06K
+   Preact Signals - ... █ 181.61K
+   Jotai - Batch Upd... █ 99.76K
+   Solid Signals - B... █ 73.64K
+   Zen - Batch Updat... █ 49.33K
+   MobX - Batch Upda... █ 47.93K
+   Redux Toolkit - B... █ 42.09K
+   Valtio - Batch Up... █ 33.69K
+   Zustand - Batch U... █ 24.01K
+   Preact Signals - ... █ 17.39K
+   Jotai - Batch Upd... █ 10.82K
+   MobX - Batch Upda... █ 4.55K
+   Redux Toolkit - B... █ 4.06K
+   Valtio - Batch Up... █ 2.74K
+   Zustand - Batch U... █ 2.30K
+   Jotai - Batch Upd... █ 986.45
+   MobX - Batch Upda... █ 379.94
+   Valtio - Batch Up... █ 284.55
+   Redux Toolkit - B... █ 279.83
+   Jotai - Batch Upd... █ 113.22
+   Redux Toolkit - B... █ 31.91
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Single Update** | 48.03M | ±0.04% | 0.0000ms | 0.0000ms | 24.02M |
+| 🥈 | **Zen - Batch Update (x10)** | 27.04M | ±0.03% | 0.0000ms | 0.0000ms | 13.52M |
+| 🥉 | **Preact Signals - Single Update** | 26.14M | ±3.43% | 0.0000ms | 0.1000ms | 13.07M |
+| 4 | **Solid Signals - Single Update** | 25.73M | ±4.95% | 0.0000ms | 0.1000ms | 12.86M |
+| 5 | **Solid Signals - Batch Update (x10)** | 23.71M | ±6.57% | 0.0000ms | 0.1000ms | 11.85M |
+| 6 | **Zustand - Single Update** | 12.17M | ±6.06% | 0.1000ms | 0.1000ms | 6.08M |
+| 7 | **Preact Signals - Batch Update (x10)** | 11.17M | ±4.60% | 0.1000ms | 0.1000ms | 5.59M |
+| 8 | **Solid Signals - Batch Update (x100)** | 6.03M | ±2.72% | 0.2000ms | 0.2000ms | 3.02M |
+| 9 | **Zen - Batch Update (x100)** | 4.66M | ±0.02% | 0.2000ms | 0.3000ms | 2.33M |
+| 10 | **MobX - Single Update** | 4.04M | ±2.44% | 0.2000ms | 0.4000ms | 2.02M |
+| 11 | **Valtio - Single Update** | 3.10M | ±2.82% | 0.3000ms | 0.5000ms | 1.55M |
+| 12 | **Zustand - Batch Update (x10)** | 2.00M | ±3.84% | 0.5000ms | 0.9000ms | 1.00M |
+| 13 | **Preact Signals - Batch Update (x100)** | 1.78M | ±3.95% | 0.6000ms | 0.7000ms | 888.47K |
+| 14 | **Jotai - Single Update** | 970.34K | ±4.40% | 1.0000ms | 2.2000ms | 487.75K |
+| 15 | **Redux Toolkit - Single Update** | 541.14K | ±2.23% | 1.8000ms | 3.6000ms | 270.57K |
+| 16 | **Solid Signals - Batch Update (x1000)** | 516.73K | ±12.00% | 1.9000ms | 1.8000ms | 258.37K |
+| 17 | **Zen - Batch Update (x1000)** | 514.75K | ±0.02% | 1.9000ms | 2.4000ms | 257.37K |
+| 18 | **MobX - Batch Update (x10)** | 448.61K | ±5.27% | 2.2000ms | 3.3000ms | 224.31K |
+| 19 | **Valtio - Batch Update (x10)** | 362.37K | ±4.14% | 2.8000ms | 4.4000ms | 181.18K |
+| 20 | **Zustand - Batch Update (x100)** | 233.06K | ±2.76% | 4.3000ms | 7.6000ms | 116.53K |
+| 21 | **Preact Signals - Batch Update (x1000)** | 181.61K | ±1.98% | 5.5000ms | 6.3000ms | 90.81K |
+| 22 | **Jotai - Batch Update (x10)** | 99.76K | ±6.32% | 10.0000ms | 35.3000ms | 49.88K |
+| 23 | **Solid Signals - Batch Update (x10000)** | 73.64K | ±1.40% | 13.6000ms | 22.2000ms | 36.82K |
+| 24 | **Zen - Batch Update (x10000)** | 49.33K | ±0.03% | 20.3000ms | 23.0000ms | 24.67K |
+| 25 | **MobX - Batch Update (x100)** | 47.93K | ±4.63% | 20.9000ms | 74.3000ms | 23.97K |
+| 26 | **Redux Toolkit - Batch Update (x10)** | 42.09K | ±7.73% | 23.8000ms | 97.9000ms | 21.05K |
+| 27 | **Valtio - Batch Update (x100)** | 33.69K | ±3.63% | 29.7000ms | 122.2000ms | 16.84K |
+| 28 | **Zustand - Batch Update (x1000)** | 24.01K | ±2.16% | 41.6000ms | 123.4000ms | 12.01K |
+| 29 | **Preact Signals - Batch Update (x10000)** | 17.39K | ±5.05% | 57.5000ms | 187.9000ms | 8.70K |
+| 30 | **Jotai - Batch Update (x100)** | 10.82K | ±2.37% | 92.4000ms | 326.4000ms | 5.41K |
+| 31 | **MobX - Batch Update (x1000)** | 4.55K | ±4.86% | 219.9000ms | 1109.6000ms | 2.27K |
+| 32 | **Redux Toolkit - Batch Update (x100)** | 4.06K | ±10.50% | 246.2000ms | 2547.8000ms | 2.03K |
+| 33 | **Valtio - Batch Update (x1000)** | 2.74K | ±8.31% | 365.5000ms | 2128.7000ms | 1.37K |
+| 34 | **Zustand - Batch Update (x10000)** | 2.30K | ±5.96% | 435.1000ms | 1208.4000ms | 1.15K |
+| 35 | **Jotai - Batch Update (x1000)** | 986.45 | ±4.47% | 1013.7000ms | 2556.5000ms | 494.00 |
+| 36 | **MobX - Batch Update (x10000)** | 379.94 | ±9.16% | 2632.0000ms | 8532.7000ms | 190.00 |
+| 37 | **Valtio - Batch Update (x10000)** | 284.55 | ±11.24% | 3514.4000ms | 13327.2000ms | 143.00 |
+| 38 | **Redux Toolkit - Batch Update (x1000)** | 279.83 | ±17.91% | 3573.6000ms | 24866.3000ms | 141.00 |
+| 39 | **Jotai - Batch Update (x10000)** | 113.22 | ±7.38% | 8832.1000ms | 14574.2000ms | 57.00 |
+| 40 | **Redux Toolkit - Batch Update (x10000)** | 31.91 | ±21.19% | 31340.9000ms | 54016.2000ms | 17.00 |
+
+**Key Insight:** Zen - Single Update is **1505375.28x faster** than Redux Toolkit - Batch Update (x10000) in this category.
+
+### Creation
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Store Creat... ████████████████████████████████████████ 45.46M
+🥈 Preact Signals - ... ███████████████████████████ 30.69M
+🥉 Solid Signals - S... █████████████████████████ 28.61M
+   Preact Signals - ... ████████████████████████ 27.29M
+   Solid Signals - S... ██████████████████ 20.50M
+   Zen - Store Creat... ███████████████ 17.00M
+   Preact Signals - ... ███████████████ 16.49M
+   Zustand - Store C... ██████ 7.05M
+   Solid Signals - S... ████ 4.05M
+   Preact Signals - ... ██ 2.64M
+   Zen - Store Creat... ██ 2.24M
+   Zustand - Store C... █ 880.26K
+   Jotai - Store Cre... █ 525.33K
+   Solid Signals - S... █ 448.70K
+   Valtio - Store Cr... █ 361.49K
+   Preact Signals - ... █ 289.16K
+   MobX - Store Crea... █ 251.08K
+   Zen - Store Creat... █ 213.35K
+   Zustand - Store C... █ 104.47K
+   Redux Toolkit - S... █ 57.20K
+   Jotai - Store Cre... █ 56.89K
+   Solid Signals - S... █ 54.62K
+   MobX - Store Crea... █ 42.49K
+   Zen - Store Creat... █ 23.13K
+   Valtio - Store Cr... █ 21.94K
+   Zustand - Store C... █ 9.40K
+   Redux Toolkit - S... █ 7.47K
+   Jotai - Store Cre... █ 4.36K
+   Valtio - Store Cr... █ 3.73K
+   MobX - Store Crea... █ 3.73K
+   Zustand - Store C... █ 1.10K
+   Redux Toolkit - S... █ 753.63
+   Jotai - Store Cre... █ 489.80
+   Valtio - Store Cr... █ 485.94
+   MobX - Store Crea... █ 375.73
+   Redux Toolkit - S... █ 68.91
+   Jotai - Store Cre... █ 55.89
+   MobX - Store Crea... █ 38.50
+   Redux Toolkit - S... █ 8.35
+   Valtio - Store Cr... █ 6.42
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Store Creation (x1)** | 45.46M | ±0.07% | 0.0000ms | 0.0000ms | 22.73M |
+| 🥈 | **Preact Signals - Store Creation (x1)** | 30.69M | ±0.92% | 0.0000ms | 0.1000ms | 15.35M |
+| 🥉 | **Solid Signals - Store Creation (x1)** | 28.61M | ±1.63% | 0.0000ms | 0.1000ms | 14.31M |
+| 4 | **Preact Signals - Store Creation (x10)** | 27.29M | ±1.54% | 0.0000ms | 0.1000ms | 13.64M |
+| 5 | **Solid Signals - Store Creation (x10)** | 20.50M | ±2.19% | 0.0000ms | 0.1000ms | 10.25M |
+| 6 | **Zen - Store Creation (x10)** | 17.00M | ±3.09% | 0.1000ms | 0.1000ms | 8.50M |
+| 7 | **Preact Signals - Store Creation (x100)** | 16.49M | ±0.89% | 0.1000ms | 0.1000ms | 8.25M |
+| 8 | **Zustand - Store Creation (x1)** | 7.05M | ±3.17% | 0.1000ms | 0.2000ms | 3.52M |
+| 9 | **Solid Signals - Store Creation (x100)** | 4.05M | ±1.30% | 0.2000ms | 0.8000ms | 2.03M |
+| 10 | **Preact Signals - Store Creation (x1000)** | 2.64M | ±0.71% | 0.4000ms | 0.5000ms | 1.32M |
+| 11 | **Zen - Store Creation (x100)** | 2.24M | ±0.23% | 0.4000ms | 0.7000ms | 1.12M |
+| 12 | **Zustand - Store Creation (x10)** | 880.26K | ±5.23% | 1.1000ms | 2.0000ms | 440.13K |
+| 13 | **Jotai - Store Creation (x1)** | 525.33K | ±35.74% | 1.9000ms | 1.9000ms | 266.37K |
+| 14 | **Solid Signals - Store Creation (x1000)** | 448.70K | ±2.47% | 2.2000ms | 6.5000ms | 224.35K |
+| 15 | **Valtio - Store Creation (x1)** | 361.49K | ±63.51% | 2.8000ms | 3.2000ms | 183.11K |
+| 16 | **Preact Signals - Store Creation (x10000)** | 289.16K | ±0.85% | 3.5000ms | 7.2000ms | 144.58K |
+| 17 | **MobX - Store Creation (x1)** | 251.08K | ±13.90% | 4.0000ms | 6.8000ms | 125.56K |
+| 18 | **Zen - Store Creation (x1000)** | 213.35K | ±3.25% | 4.7000ms | 32.5000ms | 106.67K |
+| 19 | **Zustand - Store Creation (x100)** | 104.47K | ±2.14% | 9.6000ms | 21.7000ms | 52.23K |
+| 20 | **Redux Toolkit - Store Creation (x1)** | 57.20K | ±11.63% | 17.5000ms | 77.2000ms | 28.64K |
+| 21 | **Jotai - Store Creation (x10)** | 56.89K | ±37.09% | 17.6000ms | 17.6000ms | 28.46K |
+| 22 | **Solid Signals - Store Creation (x10000)** | 54.62K | ±0.96% | 18.3000ms | 50.7000ms | 27.31K |
+| 23 | **MobX - Store Creation (x10)** | 42.49K | ±5.31% | 23.5000ms | 84.9000ms | 21.25K |
+| 24 | **Zen - Store Creation (x10000)** | 23.13K | ±0.18% | 43.2000ms | 58.6000ms | 11.57K |
+| 25 | **Valtio - Store Creation (x10)** | 21.94K | ±119.46% | 45.6000ms | 66.0000ms | 10.97K |
+| 26 | **Zustand - Store Creation (x1000)** | 9.40K | ±5.17% | 106.4000ms | 456.3000ms | 4.70K |
+| 27 | **Redux Toolkit - Store Creation (x10)** | 7.47K | ±9.53% | 134.0000ms | 599.6000ms | 3.75K |
+| 28 | **Jotai - Store Creation (x100)** | 4.36K | ±47.93% | 229.5000ms | 1188.0000ms | 2.18K |
+| 29 | **Valtio - Store Creation (x100)** | 3.73K | ±36.34% | 267.8000ms | 1313.4000ms | 1.87K |
+| 30 | **MobX - Store Creation (x100)** | 3.73K | ±7.74% | 267.9000ms | 1416.8000ms | 1.87K |
+| 31 | **Zustand - Store Creation (x10000)** | 1.10K | ±4.48% | 907.6000ms | 3322.3000ms | 551.00 |
+| 32 | **Redux Toolkit - Store Creation (x100)** | 753.63 | ±11.02% | 1326.9000ms | 8244.4000ms | 377.00 |
+| 33 | **Jotai - Store Creation (x1000)** | 489.80 | ±39.87% | 2041.6000ms | 39319.3000ms | 245.00 |
+| 34 | **Valtio - Store Creation (x1000)** | 485.94 | ±25.02% | 2057.9000ms | 25391.0000ms | 243.00 |
+| 35 | **MobX - Store Creation (x1000)** | 375.73 | ±13.62% | 2661.5000ms | 16761.9000ms | 188.00 |
+| 36 | **Redux Toolkit - Store Creation (x1000)** | 68.91 | ±17.24% | 14512.6000ms | 40383.0000ms | 35.00 |
+| 37 | **Jotai - Store Creation (x10000)** | 55.89 | ±34.29% | 17892.7000ms | 48856.5000ms | 28.00 |
+| 38 | **MobX - Store Creation (x10000)** | 38.50 | ±17.07% | 25974.4000ms | 55786.3000ms | 20.00 |
+| 39 | **Redux Toolkit - Store Creation (x10000)** | 8.35 | ±9.36% | 119700.0000ms | 151520.0000ms | 10.00 |
+| 40 | **Valtio - Store Creation (x10000)** | 6.42 | ±178.71% | 155850.0000ms | 2825620.0000ms | 21.00 |
+
+**Key Insight:** Zen - Store Creation (x1) is **7085614.22x faster** than Valtio - Store Creation (x10000) in this category.
+
+### Complexity
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Deep Nested... ████████████████████████████████████████ 47.02M
+🥈 Zen - Large Array... █████████████████████████████████████ 43.53M
+🥉 Preact Signals - ... ██████████████████████████████ 34.76M
+   Preact Signals - ... ████████████████████████████ 32.89M
+   Solid Signals - D... ███████████████████████████ 32.15M
+   Solid Signals - L... ██████████████████████████ 30.02M
+   Zen - Array Splic... ████████████████████████ 27.83M
+   Zustand - Deep Ne... ███████████████████████ 26.47M
+   Solid Signals - A... ██████████████████ 20.81M
+   Preact Signals - ... █████████████████ 20.27M
+   Zen - Deep Nested... ████████████ 13.96M
+   Solid Signals - D... █████████ 10.65M
+   Preact Signals - ... ████████ 9.87M
+   Zustand - Deep Ne... █████ 5.80M
+   MobX - Large Arra... █████ 5.77M
+   Zustand - Multi-f... ████ 4.34M
+   Jotai - Large Arr... ███ 4.05M
+   Jotai - Deep Nest... ███ 3.36M
+   MobX - Array Spli... ██ 2.42M
+   Zustand - Array S... ██ 2.18M
+   MobX - Deep Neste... █ 1.71M
+   MobX - Deep Neste... █ 1.37M
+   Jotai - Array Spl... █ 932.09K
+   Jotai - Deep Nest... █ 711.40K
+   MobX - Multi-fiel... █ 154.46K
+   Zustand - Large A... █ 40.25K
+   Jotai - Multi-fie... █ 16.73K
+   Preact Signals - ... █ 16.71K
+   Zen - Multi-field... █ 15.60K
+   Solid Signals - M... █ 14.46K
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Deep Nested Read (10 levels)** | 47.02M | ±0.04% | 0.0000ms | 0.0000ms | 23.51M |
+| 🥈 | **Zen - Large Array Map (1000 items)** | 43.53M | ±5.79% | 0.0000ms | 0.0000ms | 21.76M |
+| 🥉 | **Preact Signals - Deep Nested Read (10 levels)** | 34.76M | ±0.26% | 0.0000ms | 0.0000ms | 17.38M |
+| 4 | **Preact Signals - Large Array Map (1000 items)** | 32.89M | ±1.35% | 0.0000ms | 0.0000ms | 16.44M |
+| 5 | **Solid Signals - Deep Nested Read (10 levels)** | 32.15M | ±1.37% | 0.0000ms | 0.1000ms | 16.08M |
+| 6 | **Solid Signals - Large Array Map (1000 items)** | 30.02M | ±1.93% | 0.0000ms | 0.1000ms | 15.01M |
+| 7 | **Zen - Array Splice (middle)** | 27.83M | ±0.03% | 0.0000ms | 0.0000ms | 13.92M |
+| 8 | **Zustand - Deep Nested Read (10 levels)** | 26.47M | ±1.28% | 0.0000ms | 0.1000ms | 13.24M |
+| 9 | **Solid Signals - Array Splice (middle)** | 20.81M | ±0.12% | 0.0000ms | 0.1000ms | 10.41M |
+| 10 | **Preact Signals - Array Splice (middle)** | 20.27M | ±0.65% | 0.0000ms | 0.1000ms | 10.13M |
+| 11 | **Zen - Deep Nested Write (10 levels)** | 13.96M | ±0.45% | 0.1000ms | 0.1000ms | 6.98M |
+| 12 | **Solid Signals - Deep Nested Write (10 levels)** | 10.65M | ±0.21% | 0.1000ms | 0.2000ms | 5.33M |
+| 13 | **Preact Signals - Deep Nested Write (10 levels)** | 9.87M | ±0.81% | 0.1000ms | 0.2000ms | 4.94M |
+| 14 | **Zustand - Deep Nested Write (10 levels)** | 5.80M | ±2.48% | 0.2000ms | 0.3000ms | 2.90M |
+| 15 | **MobX - Large Array Map (1000 items)** | 5.77M | ±4.28% | 0.2000ms | 0.3000ms | 2.89M |
+| 16 | **Zustand - Multi-field Update (unrelated)** | 4.34M | ±2.01% | 0.2000ms | 0.4000ms | 2.17M |
+| 17 | **Jotai - Large Array Map (1000 items)** | 4.05M | ±2.78% | 0.2000ms | 0.4000ms | 2.03M |
+| 18 | **Jotai - Deep Nested Read (10 levels)** | 3.36M | ±7.68% | 0.3000ms | 0.4000ms | 1.68M |
+| 19 | **MobX - Array Splice (middle)** | 2.42M | ±3.40% | 0.4000ms | 0.6000ms | 1.21M |
+| 20 | **Zustand - Array Splice (middle)** | 2.18M | ±1.57% | 0.5000ms | 1.4000ms | 1.09M |
+| 21 | **MobX - Deep Nested Read (10 levels)** | 1.71M | ±1.38% | 0.6000ms | 1.0000ms | 857.12K |
+| 22 | **MobX - Deep Nested Write (10 levels)** | 1.37M | ±2.56% | 0.7000ms | 1.2000ms | 684.56K |
+| 23 | **Jotai - Array Splice (middle)** | 932.09K | ±2.37% | 1.1000ms | 1.9000ms | 466.08K |
+| 24 | **Jotai - Deep Nested Write (10 levels)** | 711.40K | ±5.04% | 1.4000ms | 3.3000ms | 355.70K |
+| 25 | **MobX - Multi-field Update (unrelated)** | 154.46K | ±10.12% | 6.5000ms | 15.2000ms | 77.23K |
+| 26 | **Zustand - Large Array Map (1000 items)** | 40.25K | ±3.79% | 24.8000ms | 95.8000ms | 20.12K |
+| 27 | **Jotai - Multi-field Update (unrelated)** | 16.73K | ±9.47% | 59.8000ms | 161.9000ms | 8.37K |
+| 28 | **Preact Signals - Multi-field Update (unrelated)** | 16.71K | ±12.35% | 59.8000ms | 100.9000ms | 8.36K |
+| 29 | **Zen - Multi-field Update (unrelated)** | 15.60K | ±13.94% | 64.1000ms | 114.5000ms | 7.80K |
+| 30 | **Solid Signals - Multi-field Update (unrelated)** | 14.46K | ±13.35% | 69.1000ms | 139.8000ms | 7.23K |
+
+**Key Insight:** Zen - Deep Nested Read (10 levels) is **3251.38x faster** than Solid Signals - Multi-field Update (unrelated) in this category.
+
+### Memory
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Large State... ████████████████████████████████████████ 49.83M
+🥈 Preact Signals - ... ████████████████████████████████ 39.29M
+🥉 Solid Signals - L... ███████████████████████████████ 38.56M
+   Zustand - Large S... ██████████████████████████ 32.94M
+   Redux Toolkit - L... ████████████████████████ 29.36M
+   MobX - Large Stat... █████████████ 15.78M
+   Jotai - Large Sta... ███ 3.30M
+   Zustand - Large S... ██ 2.14M
+   MobX - Large Stat... █ 1.82M
+   Zen - Large State... █ 466.92K
+   Zustand - Large S... █ 443.10K
+   Zen - Large State... █ 435.41K
+   Solid Signals - L... █ 369.70K
+   Preact Signals - ... █ 367.47K
+   Solid Signals - L... █ 321.78K
+   Preact Signals - ... █ 320.18K
+   Jotai - Large Sta... █ 125.43K
+   Jotai - Large Sta... █ 87.26K
+   Redux Toolkit - L... █ 24.84K
+   Redux Toolkit - L... █ 13.41K
+   MobX - Large Stat... █ 9.61K
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Large State Read (1000 items)** | 49.83M | ±0.04% | 0.0000ms | 0.0000ms | 24.92M |
+| 🥈 | **Preact Signals - Large State Read (1000 items)** | 39.29M | ±0.08% | 0.0000ms | 0.0000ms | 19.64M |
+| 🥉 | **Solid Signals - Large State Read (1000 items)** | 38.56M | ±0.51% | 0.0000ms | 0.0000ms | 19.28M |
+| 4 | **Zustand - Large State Read (1000 items)** | 32.94M | ±1.64% | 0.0000ms | 0.0000ms | 16.47M |
+| 5 | **Redux Toolkit - Large State Read (1000 items)** | 29.36M | ±1.03% | 0.0000ms | 0.1000ms | 14.68M |
+| 6 | **MobX - Large State Read (1000 items)** | 15.78M | ±3.14% | 0.1000ms | 0.1000ms | 7.89M |
+| 7 | **Jotai - Large State Read (1000 items)** | 3.30M | ±2.66% | 0.3000ms | 0.4000ms | 1.65M |
+| 8 | **Zustand - Large State Update (1000 items)** | 2.14M | ±1.85% | 0.5000ms | 1.6000ms | 1.07M |
+| 9 | **MobX - Large State Update (1000 items)** | 1.82M | ±1.73% | 0.6000ms | 0.9000ms | 908.47K |
+| 10 | **Zen - Large State Filter** | 466.92K | ±0.55% | 2.1000ms | 7.4000ms | 233.46K |
+| 11 | **Zustand - Large State Filter** | 443.10K | ±0.70% | 2.3000ms | 7.7000ms | 221.55K |
+| 12 | **Zen - Large State Update (1000 items)** | 435.41K | ±0.55% | 2.3000ms | 5.2000ms | 217.71K |
+| 13 | **Solid Signals - Large State Filter** | 369.70K | ±0.63% | 2.7000ms | 8.7000ms | 184.85K |
+| 14 | **Preact Signals - Large State Filter** | 367.47K | ±0.61% | 2.7000ms | 9.3000ms | 183.74K |
+| 15 | **Solid Signals - Large State Update (1000 items)** | 321.78K | ±0.53% | 3.1000ms | 8.6000ms | 160.89K |
+| 16 | **Preact Signals - Large State Update (1000 items)** | 320.18K | ±0.68% | 3.1000ms | 8.5000ms | 160.09K |
+| 17 | **Jotai - Large State Filter** | 125.43K | ±4.64% | 8.0000ms | 27.8000ms | 62.71K |
+| 18 | **Jotai - Large State Update (1000 items)** | 87.26K | ±4.69% | 11.5000ms | 40.2000ms | 43.63K |
+| 19 | **Redux Toolkit - Large State Filter** | 24.84K | ±2.01% | 40.3000ms | 107.8000ms | 12.42K |
+| 20 | **Redux Toolkit - Large State Update (1000 items)** | 13.41K | ±5.51% | 74.6000ms | 255.5000ms | 6.71K |
+| 21 | **MobX - Large State Filter** | 9.61K | ±4.39% | 104.1000ms | 389.6000ms | 4.80K |
+
+**Key Insight:** Zen - Large State Read (1000 items) is **5186.28x faster** than MobX - Large State Filter in this category.
+
+### Form
+
+**Performance Comparison:**
+
+```
+🥇 Zen - Conditional... ████████████████████████████████████████ 46.72M
+🥈 Solid Signals - C... █████████████████████████████████ 39.07M
+🥉 Preact Signals - ... █████████████████████████████████ 38.39M
+   Zustand - Conditi... █████████████████████████████ 34.02M
+   Zen - Full Form R... ███████████████████████████ 31.46M
+   Solid Signals - F... ██████████████████████ 25.96M
+   Preact Signals - ... ██████████████████████ 25.42M
+   Zen - Single Fiel... ██████████████████ 20.52M
+   Zen - Multiple Fi... ████████████████ 18.33M
+   Zen - Nested Fiel... ███████████████ 17.03M
+   Preact Signals - ... ██████████████ 16.80M
+   Solid Signals - S... ██████████████ 16.51M
+   Valtio - Conditio... ██████████████ 16.29M
+   Solid Signals - M... ████████████ 14.57M
+   Preact Signals - ... ████████████ 14.19M
+   Preact Signals - ... ████████████ 13.90M
+   Solid Signals - N... ████████████ 13.53M
+   Zustand - Full Fo... ███████████ 12.82M
+   Zustand - Single ... ███████████ 12.54M
+   Zustand - Multipl... ████████ 9.63M
+   Valtio - Single F... ████████ 9.29M
+   Zustand - Nested ... ████████ 9.18M
+   Valtio - Nested F... ███████ 7.63M
+   MobX - Conditiona... █████ 5.31M
+   MobX - Single Fie... ████ 4.84M
+   Jotai - Condition... ███ 3.72M
+   MobX - Nested Fie... ███ 3.36M
+   Valtio - Multiple... █ 1.57M
+   Jotai - Full Form... █ 1.23M
+   MobX - Multiple F... █ 908.81K
+   Jotai - Single Fi... █ 905.03K
+   Jotai - Nested Fi... █ 877.14K
+   Jotai - Multiple ... █ 799.94K
+   Valtio - Full For... █ 65.19K
+   MobX - Full Form ... █ 63.56K
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zen - Conditional Field Update** | 46.72M | ±0.04% | 0.0000ms | 0.0000ms | 23.36M |
+| 🥈 | **Solid Signals - Conditional Field Update** | 39.07M | ±0.08% | 0.0000ms | 0.0000ms | 19.53M |
+| 🥉 | **Preact Signals - Conditional Field Update** | 38.39M | ±0.12% | 0.0000ms | 0.0000ms | 19.19M |
+| 4 | **Zustand - Conditional Field Update** | 34.02M | ±0.59% | 0.0000ms | 0.0000ms | 17.01M |
+| 5 | **Zen - Full Form Reset** | 31.46M | ±2.04% | 0.0000ms | 0.0000ms | 15.73M |
+| 6 | **Solid Signals - Full Form Reset** | 25.96M | ±0.55% | 0.0000ms | 0.1000ms | 12.98M |
+| 7 | **Preact Signals - Full Form Reset** | 25.42M | ±0.54% | 0.0000ms | 0.1000ms | 12.71M |
+| 8 | **Zen - Single Field Update** | 20.52M | ±0.08% | 0.0000ms | 0.1000ms | 10.26M |
+| 9 | **Zen - Multiple Fields Update (3 fields)** | 18.33M | ±0.28% | 0.1000ms | 0.1000ms | 9.16M |
+| 10 | **Zen - Nested Field Update** | 17.03M | ±0.36% | 0.1000ms | 0.1000ms | 8.51M |
+| 11 | **Preact Signals - Single Field Update** | 16.80M | ±0.26% | 0.1000ms | 0.1000ms | 8.40M |
+| 12 | **Solid Signals - Single Field Update** | 16.51M | ±0.31% | 0.1000ms | 0.1000ms | 8.26M |
+| 13 | **Valtio - Conditional Field Update** | 16.29M | ±8.37% | 0.1000ms | 0.1000ms | 8.15M |
+| 14 | **Solid Signals - Multiple Fields Update (3 fields)** | 14.57M | ±0.55% | 0.1000ms | 0.1000ms | 7.29M |
+| 15 | **Preact Signals - Multiple Fields Update (3 fields)** | 14.19M | ±0.48% | 0.1000ms | 0.1000ms | 7.09M |
+| 16 | **Preact Signals - Nested Field Update** | 13.90M | ±0.67% | 0.1000ms | 0.1000ms | 6.95M |
+| 17 | **Solid Signals - Nested Field Update** | 13.53M | ±0.67% | 0.1000ms | 0.1000ms | 6.76M |
+| 18 | **Zustand - Full Form Reset** | 12.82M | ±7.25% | 0.1000ms | 0.2000ms | 6.41M |
+| 19 | **Zustand - Single Field Update** | 12.54M | ±1.15% | 0.1000ms | 0.2000ms | 6.27M |
+| 20 | **Zustand - Multiple Fields Update (3 fields)** | 9.63M | ±1.69% | 0.1000ms | 0.2000ms | 4.81M |
+| 21 | **Valtio - Single Field Update** | 9.29M | ±0.85% | 0.1000ms | 0.2000ms | 4.64M |
+| 22 | **Zustand - Nested Field Update** | 9.18M | ±0.09% | 0.1000ms | 0.2000ms | 4.59M |
+| 23 | **Valtio - Nested Field Update** | 7.63M | ±4.95% | 0.1000ms | 0.2000ms | 3.81M |
+| 24 | **MobX - Conditional Field Update** | 5.31M | ±2.44% | 0.2000ms | 0.3000ms | 2.65M |
+| 25 | **MobX - Single Field Update** | 4.84M | ±1.91% | 0.2000ms | 0.3000ms | 2.42M |
+| 26 | **Jotai - Conditional Field Update** | 3.72M | ±3.34% | 0.3000ms | 0.4000ms | 1.86M |
+| 27 | **MobX - Nested Field Update** | 3.36M | ±2.02% | 0.3000ms | 0.5000ms | 1.68M |
+| 28 | **Valtio - Multiple Fields Update (3 fields)** | 1.57M | ±2.26% | 0.6000ms | 1.0000ms | 786.24K |
+| 29 | **Jotai - Full Form Reset** | 1.23M | ±3.07% | 0.8000ms | 1.2000ms | 614.14K |
+| 30 | **MobX - Multiple Fields Update (3 fields)** | 908.81K | ±1.53% | 1.1000ms | 1.9000ms | 454.40K |
+| 31 | **Jotai - Single Field Update** | 905.03K | ±2.69% | 1.1000ms | 2.3000ms | 452.51K |
+| 32 | **Jotai - Nested Field Update** | 877.14K | ±2.25% | 1.1000ms | 2.0000ms | 438.57K |
+| 33 | **Jotai - Multiple Fields Update (3 fields)** | 799.94K | ±3.17% | 1.3000ms | 2.3000ms | 399.97K |
+| 34 | **Valtio - Full Form Reset** | 65.19K | ±36.13% | 15.3000ms | 28.0000ms | 32.59K |
+| 35 | **MobX - Full Form Reset** | 63.56K | ±3.23% | 15.7000ms | 62.2000ms | 31.78K |
+
+**Key Insight:** Zen - Conditional Field Update is **735.06x faster** than MobX - Full Form Reset in this category.
+
+### Async Reactive
+
+**Performance Comparison:**
+
+```
+🥇 Zustand - Async C... ████████████████████████████████████████ 878.17
+🥈 Zustand - Async C... ████████████████████████████████████████ 873.52
+🥉 Zustand - Complex... ████████████████████████████████████████ 871.91
+   Redux Toolkit - A... ██████████████████████████████████████ 837.51
+   Redux Toolkit - A... ██████████████████████████████████████ 831.26
+   Redux Toolkit - C... ███████████████████████████████████ 770.55
+   Zustand - Chained... ████████████████████ 438.44
+   Redux Toolkit - C... ███████████████████ 424.43
+   Redux Toolkit - C... ███████████████████ 419.32
+   Zustand - Concurr... ███████████████████ 414.72
+   Valtio - Complex ... ████ 91.81
+   Preact Signals - ... ████ 91.64
+   Valtio - Async Co... ████ 91.53
+   Solid Signals - A... ████ 91.26
+   Solid Signals - C... ████ 90.96
+   MobX - Async Comp... ████ 90.87
+   Preact Signals - ... ████ 90.83
+   Solid Signals - A... ████ 90.80
+   MobX - Complex As... ████ 90.78
+   MobX - Async Comp... ████ 90.74
+   Zen - Async Compu... ████ 90.68
+   Solid Signals - C... ████ 90.67
+   Valtio - Concurre... ████ 90.65
+   Zen - Concurrent ... ████ 90.60
+   Zen - Async Compu... ████ 90.33
+   Preact Signals - ... ████ 90.32
+   Zen - Complex Asy... ████ 89.89
+   Preact Signals - ... ████ 89.86
+   Valtio - Async Co... ████ 89.75
+   MobX - Concurrent... ████ 89.23
+   Jotai - Async Com... ████ 89.08
+   Valtio - Chained ... ████ 88.79
+   Solid Signals - C... ████ 88.64
+   Preact Signals - ... ████ 88.34
+   Jotai - Async Com... ████ 88.33
+   Zen - Chained Asy... ████ 87.87
+   Jotai - Complex A... ████ 87.70
+   Jotai - Concurren... ████ 86.66
+   Jotai - Chained A... ████ 85.67
+   MobX - Chained As... ████ 77.82
+```
+
+| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
+|------|---------|---------|----------|------|-----|--------|
+| 🥇 | **Zustand - Async Computed with Dependency Update** | 878.17 | ±1.80% | 1138.7000ms | 1364.0000ms | 440.00 |
+| 🥈 | **Zustand - Async Computed Read** | 873.52 | ±1.38% | 1144.8000ms | 1336.9000ms | 437.00 |
+| 🥉 | **Zustand - Complex Async Dependencies** | 871.91 | ±0.80% | 1146.9000ms | 1267.8000ms | 436.00 |
+| 4 | **Redux Toolkit - Async Computed with Dependency Update** | 837.51 | ±1.27% | 1194.0000ms | 1400.9000ms | 419.00 |
+| 5 | **Redux Toolkit - Async Computed Read** | 831.26 | ±2.34% | 1203.0000ms | 2056.9000ms | 416.00 |
+| 6 | **Redux Toolkit - Complex Async Dependencies** | 770.55 | ±3.62% | 1297.8000ms | 3049.6000ms | 386.00 |
+| 7 | **Zustand - Chained Async Computed** | 438.44 | ±1.06% | 2280.8000ms | 2463.8000ms | 220.00 |
+| 8 | **Redux Toolkit - Concurrent Async Reads** | 424.43 | ±2.24% | 2356.1000ms | 4015.9000ms | 213.00 |
+| 9 | **Redux Toolkit - Chained Async Computed** | 419.32 | ±1.68% | 2384.8000ms | 3098.2000ms | 210.00 |
+| 10 | **Zustand - Concurrent Async Reads** | 414.72 | ±4.81% | 2411.3000ms | 5165.8000ms | 208.00 |
+| 11 | **Valtio - Complex Async Dependencies** | 91.81 | ±0.83% | 10892.6000ms | 11198.4000ms | 46.00 |
+| 12 | **Preact Signals - Async Computed Read** | 91.64 | ±0.90% | 10912.3000ms | 11107.3000ms | 46.00 |
+| 13 | **Valtio - Async Computed with Dependency Update** | 91.53 | ±1.26% | 10925.8000ms | 13102.1000ms | 46.00 |
+| 14 | **Solid Signals - Async Computed Read** | 91.26 | ±0.63% | 10958.2000ms | 11117.2000ms | 46.00 |
+| 15 | **Solid Signals - Complex Async Dependencies** | 90.96 | ±0.74% | 10993.5000ms | 11295.5000ms | 46.00 |
+| 16 | **MobX - Async Computed Read** | 90.87 | ±1.11% | 11005.0000ms | 11745.0000ms | 46.00 |
+| 17 | **Preact Signals - Async Computed with Dependency Update** | 90.83 | ±0.50% | 11009.4000ms | 11184.2000ms | 46.00 |
+| 18 | **Solid Signals - Async Computed with Dependency Update** | 90.80 | ±0.98% | 11012.8000ms | 11434.0000ms | 46.00 |
+| 19 | **MobX - Complex Async Dependencies** | 90.78 | ±0.96% | 11016.0000ms | 12088.2000ms | 46.00 |
+| 20 | **MobX - Async Computed with Dependency Update** | 90.74 | ±1.17% | 11020.0000ms | 12041.0000ms | 46.00 |
+| 21 | **Zen - Async Computed Read** | 90.68 | ±0.64% | 11027.8000ms | 11336.7000ms | 46.00 |
+| 22 | **Solid Signals - Concurrent Async Reads** | 90.67 | ±1.26% | 11029.4000ms | 11674.6000ms | 46.00 |
+| 23 | **Valtio - Concurrent Async Reads** | 90.65 | ±1.49% | 11031.9000ms | 11822.5000ms | 46.00 |
+| 24 | **Zen - Concurrent Async Reads** | 90.60 | ±1.44% | 11037.5000ms | 11742.5000ms | 46.00 |
+| 25 | **Zen - Async Computed with Dependency Update** | 90.33 | ±0.73% | 11070.3000ms | 11563.8000ms | 46.00 |
+| 26 | **Preact Signals - Complex Async Dependencies** | 90.32 | ±0.79% | 11072.0000ms | 11358.8000ms | 46.00 |
+| 27 | **Zen - Complex Async Dependencies** | 89.89 | ±0.87% | 11124.3000ms | 11522.0000ms | 45.00 |
+| 28 | **Preact Signals - Concurrent Async Reads** | 89.86 | ±1.36% | 11128.9000ms | 11822.0000ms | 45.00 |
+| 29 | **Valtio - Async Computed Read** | 89.75 | ±1.37% | 11141.5000ms | 12957.7000ms | 45.00 |
+| 30 | **MobX - Concurrent Async Reads** | 89.23 | ±1.90% | 11207.4000ms | 14202.3000ms | 45.00 |
+| 31 | **Jotai - Async Computed Read** | 89.08 | ±2.26% | 11225.5000ms | 13679.1000ms | 45.00 |
+| 32 | **Valtio - Chained Async Computed** | 88.79 | ±0.80% | 11262.6000ms | 12077.2000ms | 45.00 |
+| 33 | **Solid Signals - Chained Async Computed** | 88.64 | ±0.72% | 11281.0000ms | 11599.1000ms | 45.00 |
+| 34 | **Preact Signals - Chained Async Computed** | 88.34 | ±0.36% | 11320.2000ms | 11590.8000ms | 45.00 |
+| 35 | **Jotai - Async Computed with Dependency Update** | 88.33 | ±2.56% | 11321.1000ms | 15919.3000ms | 45.00 |
+| 36 | **Zen - Chained Async Computed** | 87.87 | ±0.68% | 11380.3000ms | 11868.8000ms | 44.00 |
+| 37 | **Jotai - Complex Async Dependencies** | 87.70 | ±2.28% | 11402.2000ms | 14165.9000ms | 44.00 |
+| 38 | **Jotai - Concurrent Async Reads** | 86.66 | ±2.69% | 11539.7000ms | 15371.5000ms | 44.00 |
+| 39 | **Jotai - Chained Async Computed** | 85.67 | ±1.66% | 11673.2000ms | 14076.2000ms | 43.00 |
+| 40 | **MobX - Chained Async Computed** | 77.82 | ±14.31% | 12850.1000ms | 32774.5000ms | 39.00 |
+
+**Key Insight:** Zustand - Async Computed with Dependency Update is **11.28x faster** than MobX - Chained Async Computed in this category.
 
 ## 🚀 Running Benchmarks
 
@@ -1979,4 +731,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-11T13:09:05.985Z*
+*Last generated: 2025-11-11T13:14:29.088Z*

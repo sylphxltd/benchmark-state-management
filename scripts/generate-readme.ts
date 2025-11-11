@@ -346,19 +346,30 @@ function formatLibraryName(fullName: string, metadata: LibraryMetadata): string 
 }
 
 function parseResultsFromLatestRun(resultsDir: string): Map<string, BenchmarkResult[]> | null {
-  // Get latest.json file from vitest bench --outputJson
+  // Check if results directory exists
   if (!existsSync(resultsDir)) {
     console.error('❌ Results directory not found:', resultsDir);
     return null;
   }
 
+  // Try per-library files first (new format)
+  const libraryFiles = readdirSync(resultsDir)
+    .filter(f => f.endsWith('-benchmark.json'))
+    .map(f => join(resultsDir, f));
+
+  if (libraryFiles.length > 0) {
+    console.log(`📊 Using per-library results: ${libraryFiles.length} libraries found`);
+    return parsePerLibraryResults(libraryFiles);
+  }
+
+  // Fallback to latest.json (old format)
   const latestFile = join(resultsDir, 'latest.json');
   if (!existsSync(latestFile)) {
-    console.error('❌ No benchmark results found at:', latestFile);
+    console.error('❌ No benchmark results found (neither per-library nor latest.json)');
     return null;
   }
 
-  console.log(`📊 Using latest results: latest.json`);
+  console.log(`📊 Using legacy results: latest.json`);
 
   const data = JSON.parse(readFileSync(latestFile, 'utf-8'));
 
@@ -391,6 +402,58 @@ function parseResultsFromLatestRun(resultsDir: string): Map<string, BenchmarkRes
           metricType: benchmark.metricType || group.metricType,
           metricUnit: benchmark.metricUnit || group.metricUnit,
         });
+      }
+    }
+  }
+
+  return grouped;
+}
+
+/**
+ * Parse per-library benchmark result files and merge them
+ * Format: { library, version, groups: { "01-read": { files: [...] } } }
+ */
+function parsePerLibraryResults(libraryFiles: string[]): Map<string, BenchmarkResult[]> {
+  const grouped = new Map<string, BenchmarkResult[]>();
+
+  for (const filePath of libraryFiles) {
+    const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+    const libraryName = data.library || data.libraryKey;
+
+    // Iterate through groups (e.g., "01-read", "02-write")
+    for (const [groupKey, groupData] of Object.entries(data.groups || {})) {
+      const groupInfo = groupData as any;
+
+      // Extract group display name (remove number prefix)
+      const groupDisplayName = groupKey.replace(/^\d+-/, '').split('-').map(
+        w => w.charAt(0).toUpperCase() + w.slice(1)
+      ).join(' ');
+
+      if (!grouped.has(groupDisplayName)) {
+        grouped.set(groupDisplayName, []);
+      }
+
+      // Parse files in the group
+      for (const file of groupInfo.files || []) {
+        for (const group of file.groups || []) {
+          for (const benchmark of group.benchmarks || []) {
+            grouped.get(groupDisplayName)!.push({
+              name: `${libraryName} - ${benchmark.name}`,
+              hz: benchmark.hz,
+              rme: benchmark.rme,
+              min: benchmark.min,
+              max: benchmark.max,
+              mean: benchmark.mean,
+              p75: benchmark.p75,
+              p99: benchmark.p99,
+              p995: benchmark.p995,
+              p999: benchmark.p999,
+              samples: benchmark.samples || 0,
+              metricType: benchmark.metricType || group.metricType,
+              metricUnit: benchmark.metricUnit || group.metricUnit,
+            });
+          }
+        }
       }
     }
   }

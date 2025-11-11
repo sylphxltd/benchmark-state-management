@@ -4,7 +4,7 @@
  * Calculates Performance, Size, and Coverage rankings
  */
 
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
 interface BenchmarkResult {
@@ -101,22 +101,62 @@ function extractLibraryName(fullName: string, metadata: LibraryMetadata): string
 }
 
 /**
- * Parse benchmark results and calculate rankings
+ * Load benchmark results from per-library files or latest.json
  */
-export function calculateRankings(
-  resultsDir: string,
-  versionsPath: string,
-  metadataPath: string,
-  excludeList: string[] = []
-): RankingResult {
-  // Load data
-  const latestFile = join(resultsDir, 'latest.json');
-  const data = JSON.parse(readFileSync(latestFile, 'utf-8'));
-  const versions: VersionTracker = JSON.parse(readFileSync(versionsPath, 'utf-8'));
-  const metadata: LibraryMetadata = JSON.parse(readFileSync(metadataPath, 'utf-8'));
-
-  // Extract all benchmarks
+function loadBenchmarkResults(resultsDir: string): Map<string, BenchmarkResult[]> {
   const allBenchmarks: Map<string, BenchmarkResult[]> = new Map();
+
+  // Try per-library files first
+  const libraryFiles = readdirSync(resultsDir)
+    .filter(f => f.endsWith('-benchmark.json'))
+    .map(f => join(resultsDir, f));
+
+  if (libraryFiles.length > 0) {
+    // Parse per-library format
+    for (const filePath of libraryFiles) {
+      const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+      const libraryName = data.library || data.libraryKey;
+
+      // Iterate through groups (e.g., "01-read", "02-write")
+      for (const [groupKey, groupData] of Object.entries(data.groups || {})) {
+        const groupInfo = groupData as any;
+
+        // Extract group display name (remove number prefix)
+        const groupDisplayName = groupKey.replace(/^\d+-/, '').split('-').map(
+          w => w.charAt(0).toUpperCase() + w.slice(1)
+        ).join(' ');
+
+        if (!allBenchmarks.has(groupDisplayName)) {
+          allBenchmarks.set(groupDisplayName, []);
+        }
+
+        // Parse files in the group
+        for (const file of groupInfo.files || []) {
+          for (const group of file.groups || []) {
+            for (const benchmark of group.benchmarks || []) {
+              allBenchmarks.get(groupDisplayName)!.push({
+                name: `${libraryName} - ${benchmark.name}`,
+                hz: benchmark.hz,
+                mean: benchmark.mean,
+                metricType: benchmark.metricType || group.metricType || 'throughput'
+              });
+            }
+          }
+        }
+      }
+    }
+
+    return allBenchmarks;
+  }
+
+  // Fallback to latest.json
+  const latestFile = join(resultsDir, 'latest.json');
+  if (!existsSync(latestFile)) {
+    throw new Error('No benchmark results found (neither per-library nor latest.json)');
+  }
+
+  const data = JSON.parse(readFileSync(latestFile, 'utf-8'));
+
   for (const file of data.files || []) {
     for (const group of file.groups || []) {
       const category = group.fullName.split(' > ').pop() || 'Other';
@@ -133,6 +173,25 @@ export function calculateRankings(
       }
     }
   }
+
+  return allBenchmarks;
+}
+
+/**
+ * Parse benchmark results and calculate rankings
+ */
+export function calculateRankings(
+  resultsDir: string,
+  versionsPath: string,
+  metadataPath: string,
+  excludeList: string[] = []
+): RankingResult {
+  // Load data
+  const versions: VersionTracker = JSON.parse(readFileSync(versionsPath, 'utf-8'));
+  const metadata: LibraryMetadata = JSON.parse(readFileSync(metadataPath, 'utf-8'));
+
+  // Extract all benchmarks
+  const allBenchmarks = loadBenchmarkResults(resultsDir);
 
   // Get unique library names (excluding Native implementations)
   const allLibraries = new Set<string>();

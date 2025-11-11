@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/zustand.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - Zustand",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Zustand",
               "name": "Simple Read",
-              "hz": 20029603.04,
+              "hz": 22546783.91,
               "min": 0,
-              "max": 0.2086,
+              "max": 2.0242,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.23,
-              "samples": 10014802
+              "rme": 0.82,
+              "samples": 11273392
             },
             {
               "id": "High Frequency Read (x10) - Zustand",
               "name": "High Frequency Read (x10)",
-              "hz": 33456746.8,
+              "hz": 34797279.03,
               "min": 0,
-              "max": 0.0272,
+              "max": 2.8073,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
-              "rme": 0.05,
-              "samples": 16728374
+              "rme": 1.53,
+              "samples": 17398640
             },
             {
               "id": "High Frequency Read (x100) - Zustand",
               "name": "High Frequency Read (x100)",
-              "hz": 8219747.38,
+              "hz": 8961797.89,
               "min": 0,
-              "max": 0.0261,
+              "max": 0.032,
               "mean": 0.0001,
               "p75": 0.0001,
-              "p99": 0.0002,
+              "p99": 0.0001,
               "p995": 0.0002,
-              "p999": 0.0003,
-              "rme": 0.03,
-              "samples": 4109874
+              "p999": 0.0002,
+              "rme": 0.02,
+              "samples": 4480900
             },
             {
               "id": "High Frequency Read (x1000) - Zustand",
               "name": "High Frequency Read (x1000)",
-              "hz": 985944.75,
+              "hz": 1110475.66,
               "min": 0.0008,
-              "max": 0.0372,
-              "mean": 0.001,
-              "p75": 0.001,
-              "p99": 0.0012,
-              "p995": 0.0013,
-              "p999": 0.0013,
+              "max": 0.07,
+              "mean": 0.0009,
+              "p75": 0.0009,
+              "p99": 0.0011,
+              "p995": 0.0011,
+              "p999": 0.0012,
               "rme": 0.04,
-              "samples": 492973
+              "samples": 555238
             },
             {
               "id": "High Frequency Read (x10000) - Zustand",
               "name": "High Frequency Read (x10000)",
-              "hz": 92846.47,
+              "hz": 99916.74,
               "min": 0.0098,
-              "max": 0.0437,
-              "mean": 0.0108,
-              "p75": 0.0111,
-              "p99": 0.013,
-              "p995": 0.013,
-              "p999": 0.0159,
-              "rme": 0.07,
-              "samples": 46424
+              "max": 0.059,
+              "mean": 0.01,
+              "p75": 0.01,
+              "p99": 0.0118,
+              "p995": 0.0125,
+              "p999": 0.0126,
+              "rme": 0.03,
+              "samples": 49959
             }
           ]
         }

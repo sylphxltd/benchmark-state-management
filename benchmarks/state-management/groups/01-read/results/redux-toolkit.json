@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/redux-toolkit.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - Redux Toolkit",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Redux Toolkit",
               "name": "Simple Read",
-              "hz": 970800.06,
+              "hz": 947174.88,
               "min": 0.0009,
-              "max": 0.1441,
-              "mean": 0.001,
-              "p75": 0.001,
-              "p99": 0.0013,
-              "p995": 0.0016,
-              "p999": 0.0025,
+              "max": 0.1805,
+              "mean": 0.0011,
+              "p75": 0.0011,
+              "p99": 0.0014,
+              "p995": 0.002,
+              "p999": 0.0028,
               "rme": 0.21,
-              "samples": 485401
+              "samples": 473588
             },
             {
               "id": "High Frequency Read (x10) - Redux Toolkit",
               "name": "High Frequency Read (x10)",
-              "hz": 32582262.5,
+              "hz": 32071433.63,
               "min": 0,
-              "max": 1.1614,
+              "max": 1.2687,
               "mean": 0,
               "p75": 0,
               "p99": 0,
-              "p995": 0.0001,
+              "p995": 0,
               "p999": 0.0001,
-              "rme": 0.51,
-              "samples": 16291132
+              "rme": 0.52,
+              "samples": 16035718
             },
             {
               "id": "High Frequency Read (x100) - Redux Toolkit",
               "name": "High Frequency Read (x100)",
-              "hz": 6098221.24,
+              "hz": 6170762.72,
               "min": 0.0001,
-              "max": 0.0375,
+              "max": 0.0259,
               "mean": 0.0002,
               "p75": 0.0002,
               "p99": 0.0002,
               "p995": 0.0002,
               "p999": 0.0003,
-              "rme": 0.05,
-              "samples": 3049111
+              "rme": 0.03,
+              "samples": 3085382
             },
             {
               "id": "High Frequency Read (x1000) - Redux Toolkit",
               "name": "High Frequency Read (x1000)",
-              "hz": 702688.25,
+              "hz": 715112.18,
               "min": 0.0013,
-              "max": 0.0374,
+              "max": 0.0162,
               "mean": 0.0014,
               "p75": 0.0014,
-              "p99": 0.0017,
-              "p995": 0.0018,
-              "p999": 0.0027,
-              "rme": 0.06,
-              "samples": 351345
+              "p99": 0.0015,
+              "p995": 0.0017,
+              "p999": 0.0018,
+              "rme": 0.02,
+              "samples": 357557
             },
             {
               "id": "High Frequency Read (x10000) - Redux Toolkit",
               "name": "High Frequency Read (x10000)",
-              "hz": 64072.1,
-              "min": 0.015,
-              "max": 0.0772,
-              "mean": 0.0156,
-              "p75": 0.0153,
-              "p99": 0.0289,
-              "p995": 0.0334,
-              "p999": 0.0458,
-              "rme": 0.17,
-              "samples": 32037
+              "hz": 66406.01,
+              "min": 0.0148,
+              "max": 0.0305,
+              "mean": 0.0151,
+              "p75": 0.0151,
+              "p99": 0.0171,
+              "p995": 0.0178,
+              "p999": 0.0201,
+              "rme": 0.03,
+              "samples": 33204
             }
           ]
         }

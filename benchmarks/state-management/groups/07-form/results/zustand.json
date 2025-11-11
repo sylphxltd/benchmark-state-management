@@ -9,72 +9,72 @@
             {
               "id": "Single Field Update - Zustand",
               "name": "Single Field Update",
-              "hz": 15907787.11,
+              "hz": 17269387.83,
               "min": 0,
-              "max": 0.2717,
-              "mean": 0.0001,
-              "p75": 0.0001,
-              "p99": 0.0001,
-              "p995": 0.0002,
-              "p999": 0.0005,
-              "rme": 0.36,
-              "samples": 7953894
-            },
-            {
-              "id": "Multiple Fields Update (3 fields) - Zustand",
-              "name": "Multiple Fields Update (3 fields)",
-              "hz": 12467674.38,
-              "min": 0,
-              "max": 0.2967,
+              "max": 2.41,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0003,
-              "rme": 0.34,
-              "samples": 6233838
+              "rme": 0.98,
+              "samples": 8634694
+            },
+            {
+              "id": "Multiple Fields Update (3 fields) - Zustand",
+              "name": "Multiple Fields Update (3 fields)",
+              "hz": 12644080.96,
+              "min": 0,
+              "max": 0.2486,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0003,
+              "rme": 0.29,
+              "samples": 6322041
             },
             {
               "id": "Nested Field Update - Zustand",
               "name": "Nested Field Update",
-              "hz": 11398681.93,
+              "hz": 11120301.04,
               "min": 0,
-              "max": 0.0283,
+              "max": 0.0608,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.03,
-              "samples": 5699342
+              "rme": 0.04,
+              "samples": 5560151
             },
             {
               "id": "Full Form Reset - Zustand",
               "name": "Full Form Reset",
-              "hz": 17196903.66,
+              "hz": 17110309.62,
               "min": 0,
-              "max": 8.5334,
+              "max": 8.8541,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0003,
-              "rme": 3.38,
-              "samples": 8598452
+              "rme": 3.5,
+              "samples": 8555155
             },
             {
               "id": "Conditional Field Update - Zustand",
               "name": "Conditional Field Update",
-              "hz": 40294914.31,
+              "hz": 44481341.82,
               "min": 0,
-              "max": 0.1078,
+              "max": 0.263,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
-              "p999": 0.0001,
-              "rme": 0.08,
-              "samples": 20147458
+              "p999": 0,
+              "rme": 0.17,
+              "samples": 22240671
             }
           ]
         }

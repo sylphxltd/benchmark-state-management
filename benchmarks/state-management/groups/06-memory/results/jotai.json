@@ -9,44 +9,44 @@
             {
               "id": "Large State Read (1000 items) - Jotai",
               "name": "Large State Read (1000 items)",
-              "hz": 6296619.65,
+              "hz": 6462219.06,
               "min": 0.0001,
-              "max": 0.195,
+              "max": 0.1938,
               "mean": 0.0002,
               "p75": 0.0002,
               "p99": 0.0002,
               "p995": 0.0003,
               "p999": 0.0009,
-              "rme": 0.16,
-              "samples": 3148310
+              "rme": 0.17,
+              "samples": 3231110
             },
             {
               "id": "Large State Update (1000 items) - Jotai",
               "name": "Large State Update (1000 items)",
-              "hz": 332615.54,
+              "hz": 328019.86,
               "min": 0.0024,
-              "max": 0.225,
+              "max": 0.2574,
               "mean": 0.003,
               "p75": 0.0026,
-              "p99": 0.006,
-              "p995": 0.0067,
-              "p999": 0.0185,
-              "rme": 0.38,
-              "samples": 166308
+              "p99": 0.0062,
+              "p995": 0.0068,
+              "p999": 0.018,
+              "rme": 0.41,
+              "samples": 164010
             },
             {
               "id": "Large State Filter - Jotai",
               "name": "Large State Filter",
-              "hz": 417651.87,
+              "hz": 422732.3,
               "min": 0.002,
-              "max": 0.3063,
+              "max": 0.2638,
               "mean": 0.0024,
               "p75": 0.0022,
               "p99": 0.0079,
-              "p995": 0.0081,
-              "p999": 0.009,
-              "rme": 0.42,
-              "samples": 208826
+              "p995": 0.008,
+              "p999": 0.0087,
+              "rme": 0.39,
+              "samples": 211367
             }
           ]
         }

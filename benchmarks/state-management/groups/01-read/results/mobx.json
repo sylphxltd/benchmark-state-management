@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/mobx.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - MobX",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - MobX",
               "name": "Simple Read",
-              "hz": 6189663.13,
+              "hz": 6473123.84,
               "min": 0.0001,
-              "max": 3.0505,
+              "max": 1.3839,
               "mean": 0.0002,
               "p75": 0.0002,
               "p99": 0.0002,
-              "p995": 0.0004,
-              "p999": 0.0006,
-              "rme": 1.58,
-              "samples": 3094832
+              "p995": 0.0002,
+              "p999": 0.0003,
+              "rme": 0.54,
+              "samples": 3236562
             },
             {
               "id": "High Frequency Read (x10) - MobX",
               "name": "High Frequency Read (x10)",
-              "hz": 5087151.94,
+              "hz": 5332530.97,
               "min": 0.0001,
-              "max": 0.8677,
+              "max": 0.0801,
               "mean": 0.0002,
               "p75": 0.0002,
-              "p99": 0.0006,
-              "p995": 0.0006,
-              "p999": 0.0006,
-              "rme": 0.39,
-              "samples": 2543576
+              "p99": 0.0003,
+              "p995": 0.0003,
+              "p999": 0.0003,
+              "rme": 0.05,
+              "samples": 2666266
             },
             {
               "id": "High Frequency Read (x100) - MobX",
               "name": "High Frequency Read (x100)",
-              "hz": 553593.87,
+              "hz": 605052.4,
               "min": 0.0015,
-              "max": 0.1431,
-              "mean": 0.0018,
-              "p75": 0.0019,
-              "p99": 0.0024,
-              "p995": 0.0025,
+              "max": 0.4318,
+              "mean": 0.0017,
+              "p75": 0.0017,
+              "p99": 0.002,
+              "p995": 0.0021,
               "p999": 0.0055,
-              "rme": 0.12,
-              "samples": 276797
+              "rme": 0.21,
+              "samples": 302527
             },
             {
               "id": "High Frequency Read (x1000) - MobX",
               "name": "High Frequency Read (x1000)",
-              "hz": 54805.97,
+              "hz": 62495.43,
               "min": 0.0156,
-              "max": 0.1057,
-              "mean": 0.0182,
-              "p75": 0.0193,
-              "p99": 0.0245,
-              "p995": 0.0295,
-              "p999": 0.0538,
-              "rme": 0.19,
-              "samples": 27404
+              "max": 0.0532,
+              "mean": 0.016,
+              "p75": 0.016,
+              "p99": 0.0182,
+              "p995": 0.0188,
+              "p999": 0.0202,
+              "rme": 0.03,
+              "samples": 31248
             },
             {
               "id": "High Frequency Read (x10000) - MobX",
               "name": "High Frequency Read (x10000)",
-              "hz": 5330.54,
-              "min": 0.1615,
-              "max": 0.9448,
-              "mean": 0.1876,
-              "p75": 0.1941,
-              "p99": 0.2772,
-              "p995": 0.3402,
-              "p999": 0.5438,
-              "rme": 0.68,
-              "samples": 2666
+              "hz": 6163.32,
+              "min": 0.1597,
+              "max": 0.1826,
+              "mean": 0.1623,
+              "p75": 0.163,
+              "p99": 0.1705,
+              "p995": 0.1721,
+              "p999": 0.1776,
+              "rme": 0.05,
+              "samples": 3082
             }
           ]
         }

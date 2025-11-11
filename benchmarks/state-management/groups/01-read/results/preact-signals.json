@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/preact-signals.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - Preact Signals",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Preact Signals",
               "name": "Simple Read",
-              "hz": 35723200,
+              "hz": 46422062.47,
               "min": 0,
-              "max": 1.6976,
+              "max": 0.0704,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.06,
+              "samples": 23211033
+            },
+            {
+              "id": "High Frequency Read (x10) - Preact Signals",
+              "name": "High Frequency Read (x10)",
+              "hz": 36089737.4,
+              "min": 0,
+              "max": 0.0323,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
-              "rme": 0.79,
-              "samples": 17861600
-            },
-            {
-              "id": "High Frequency Read (x10) - Preact Signals",
-              "name": "High Frequency Read (x10)",
-              "hz": 28185168.7,
-              "min": 0,
-              "max": 0.1877,
-              "mean": 0,
-              "p75": 0,
-              "p99": 0.0001,
-              "p995": 0.0001,
-              "p999": 0.0001,
-              "rme": 0.1,
-              "samples": 14092585
+              "rme": 0.04,
+              "samples": 18044870
             },
             {
               "id": "High Frequency Read (x100) - Preact Signals",
               "name": "High Frequency Read (x100)",
-              "hz": 6393201.81,
-              "min": 0.0001,
-              "max": 0.0283,
-              "mean": 0.0002,
-              "p75": 0.0002,
-              "p99": 0.0003,
-              "p995": 0.0003,
-              "p999": 0.0003,
-              "rme": 0.05,
-              "samples": 3196601
+              "hz": 8324951.3,
+              "min": 0,
+              "max": 0.0257,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0002,
+              "p995": 0.0002,
+              "p999": 0.0002,
+              "rme": 0.03,
+              "samples": 4162476
             },
             {
               "id": "High Frequency Read (x1000) - Preact Signals",
               "name": "High Frequency Read (x1000)",
-              "hz": 729077.96,
+              "hz": 920881.12,
               "min": 0.001,
-              "max": 0.0395,
-              "mean": 0.0014,
-              "p75": 0.0015,
-              "p99": 0.002,
-              "p995": 0.0022,
-              "p999": 0.0026,
-              "rme": 0.08,
-              "samples": 364539
+              "max": 0.0314,
+              "mean": 0.0011,
+              "p75": 0.0011,
+              "p99": 0.0013,
+              "p995": 0.0014,
+              "p999": 0.0014,
+              "rme": 0.02,
+              "samples": 460441
             },
             {
               "id": "High Frequency Read (x10000) - Preact Signals",
               "name": "High Frequency Read (x10000)",
-              "hz": 64703.67,
-              "min": 0.0115,
-              "max": 0.472,
-              "mean": 0.0155,
-              "p75": 0.0173,
-              "p99": 0.0239,
-              "p995": 0.0255,
-              "p999": 0.0504,
-              "rme": 0.37,
-              "samples": 32352
+              "hz": 88774.52,
+              "min": 0.0111,
+              "max": 0.0303,
+              "mean": 0.0113,
+              "p75": 0.0113,
+              "p99": 0.0128,
+              "p995": 0.0135,
+              "p999": 0.0141,
+              "rme": 0.03,
+              "samples": 44388
             }
           ]
         }

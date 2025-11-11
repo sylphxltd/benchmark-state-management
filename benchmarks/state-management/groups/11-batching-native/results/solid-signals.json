@@ -9,58 +9,58 @@
             {
               "id": "Batched Updates - Solid Signals",
               "name": "Batched Updates",
-              "hz": 32924002.22,
+              "hz": 38797071.07,
               "min": 0,
-              "max": 0.1497,
+              "max": 3.7733,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 0.12,
-              "samples": 16462002
+              "rme": 1.79,
+              "samples": 19398536
             },
             {
               "id": "Unbatched Updates - Solid Signals",
               "name": "Unbatched Updates",
-              "hz": 34790649.36,
+              "hz": 40397555.25,
               "min": 0,
-              "max": 0.062,
+              "max": 0.0164,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 0.06,
-              "samples": 17395326
+              "rme": 0.04,
+              "samples": 20198779
             },
             {
               "id": "Large Batch - Solid Signals",
               "name": "Large Batch",
-              "hz": 22836124.4,
+              "hz": 26421043.37,
               "min": 0,
-              "max": 0.2458,
+              "max": 0.2567,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
               "rme": 0.1,
-              "samples": 11418063
+              "samples": 13210522
             },
             {
               "id": "Batched with Observers - Solid Signals",
               "name": "Batched with Observers",
-              "hz": 32772808.36,
+              "hz": 34694583.99,
               "min": 0,
-              "max": 0.1382,
+              "max": 16.2986,
               "mean": 0,
               "p75": 0,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0001,
-              "rme": 0.11,
-              "samples": 16386405
+              "rme": 7.46,
+              "samples": 17347293
             }
           ]
         }

@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/valtio.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - Valtio",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Valtio",
               "name": "Simple Read",
-              "hz": 5586891.08,
+              "hz": 5221595.06,
               "min": 0.0001,
-              "max": 1.6247,
+              "max": 0.2845,
               "mean": 0.0002,
               "p75": 0.0002,
-              "p99": 0.0002,
+              "p99": 0.0003,
               "p995": 0.0003,
               "p999": 0.0008,
-              "rme": 0.65,
-              "samples": 2793446
+              "rme": 0.16,
+              "samples": 2610798
             },
             {
               "id": "High Frequency Read (x10) - Valtio",
               "name": "High Frequency Read (x10)",
-              "hz": 10872220.65,
+              "hz": 10948362.95,
               "min": 0,
-              "max": 0.0479,
+              "max": 0.0158,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.08,
-              "samples": 5436111
+              "rme": 0.02,
+              "samples": 5474182
             },
             {
               "id": "High Frequency Read (x100) - Valtio",
               "name": "High Frequency Read (x100)",
-              "hz": 1401092.19,
+              "hz": 1384997.26,
               "min": 0.0006,
-              "max": 0.0555,
+              "max": 0.0352,
               "mean": 0.0007,
               "p75": 0.0007,
               "p99": 0.0009,
               "p995": 0.0009,
               "p999": 0.001,
-              "rme": 0.06,
-              "samples": 700547
+              "rme": 0.03,
+              "samples": 692499
             },
             {
               "id": "High Frequency Read (x1000) - Valtio",
               "name": "High Frequency Read (x1000)",
-              "hz": 139327.1,
-              "min": 0.0067,
-              "max": 0.1475,
-              "mean": 0.0072,
-              "p75": 0.007,
-              "p99": 0.0143,
-              "p995": 0.0165,
-              "p999": 0.029,
-              "rme": 0.18,
-              "samples": 69664
+              "hz": 144775.41,
+              "min": 0.0066,
+              "max": 0.0175,
+              "mean": 0.0069,
+              "p75": 0.0069,
+              "p99": 0.0082,
+              "p995": 0.0085,
+              "p999": 0.0087,
+              "rme": 0.03,
+              "samples": 72388
             },
             {
               "id": "High Frequency Read (x10000) - Valtio",
               "name": "High Frequency Read (x10000)",
-              "hz": 14207.39,
+              "hz": 14602.64,
               "min": 0.0671,
-              "max": 0.2301,
-              "mean": 0.0704,
-              "p75": 0.0703,
-              "p99": 0.0931,
-              "p995": 0.1177,
-              "p999": 0.1633,
-              "rme": 0.22,
-              "samples": 7104
+              "max": 0.1027,
+              "mean": 0.0685,
+              "p75": 0.0685,
+              "p99": 0.075,
+              "p995": 0.0764,
+              "p999": 0.0826,
+              "rme": 0.07,
+              "samples": 7302
             }
           ]
         }

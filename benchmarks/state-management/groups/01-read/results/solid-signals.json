@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/01-read/tests/solid-signals.bench.ts",
+      "filepath": "groups/01-read/runner.bench.ts",
       "groups": [
         {
           "fullName": "01-read - Solid Signals",
@@ -9,72 +9,72 @@
             {
               "id": "Simple Read - Solid Signals",
               "name": "Simple Read",
-              "hz": 42334007.41,
+              "hz": 47028358.33,
               "min": 0,
-              "max": 0.1363,
+              "max": 0.0908,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
-              "p999": 0.0001,
-              "rme": 0.1,
-              "samples": 21167004
+              "p999": 0,
+              "rme": 0.06,
+              "samples": 23514181
             },
             {
               "id": "High Frequency Read (x10) - Solid Signals",
               "name": "High Frequency Read (x10)",
-              "hz": 39291267.56,
+              "hz": 45296910.37,
               "min": 0,
-              "max": 0.4051,
+              "max": 0.05,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.05,
+              "samples": 22648456
+            },
+            {
+              "id": "High Frequency Read (x100) - Solid Signals",
+              "name": "High Frequency Read (x100)",
+              "hz": 30042490.5,
+              "min": 0,
+              "max": 0.0748,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
-              "rme": 0.29,
-              "samples": 19645635
-            },
-            {
-              "id": "High Frequency Read (x100) - Solid Signals",
-              "name": "High Frequency Read (x100)",
-              "hz": 24961829.65,
-              "min": 0,
-              "max": 0.11,
-              "mean": 0,
-              "p75": 0,
-              "p99": 0.0001,
-              "p995": 0.0001,
-              "p999": 0.0001,
-              "rme": 0.11,
-              "samples": 12480915
+              "rme": 0.06,
+              "samples": 15021246
             },
             {
               "id": "High Frequency Read (x1000) - Solid Signals",
               "name": "High Frequency Read (x1000)",
-              "hz": 2961731.86,
+              "hz": 3726590.61,
               "min": 0.0002,
-              "max": 0.3991,
+              "max": 0.0185,
               "mean": 0.0003,
-              "p75": 0.0004,
-              "p99": 0.0005,
-              "p995": 0.0005,
-              "p999": 0.0006,
-              "rme": 0.2,
-              "samples": 1480866
+              "p75": 0.0003,
+              "p99": 0.0003,
+              "p995": 0.0003,
+              "p999": 0.0004,
+              "rme": 0.02,
+              "samples": 1863296
             },
             {
               "id": "High Frequency Read (x10000) - Solid Signals",
               "name": "High Frequency Read (x10000)",
-              "hz": 326077.38,
-              "min": 0.0025,
-              "max": 0.0749,
-              "mean": 0.0031,
-              "p75": 0.0033,
-              "p99": 0.0043,
-              "p995": 0.0048,
-              "p999": 0.0056,
-              "rme": 0.11,
-              "samples": 163039
+              "hz": 397964.82,
+              "min": 0.0024,
+              "max": 0.0336,
+              "mean": 0.0025,
+              "p75": 0.0025,
+              "p99": 0.0031,
+              "p995": 0.0032,
+              "p999": 0.0032,
+              "rme": 0.03,
+              "samples": 198983
             }
           ]
         }

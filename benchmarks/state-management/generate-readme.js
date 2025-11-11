@@ -27,7 +27,16 @@ function getAllBenchmarks(resultsData) {
   const benchmarks = [];
   resultsData.files.forEach(file => {
     file.groups?.forEach(group => {
-      group.benchmarks?.forEach(b => benchmarks.push(b));
+      // Extract library name from group fullName (e.g., "01-read - Jotai")
+      const groupParts = (group.fullName || '').split(' - ');
+      const libraryName = groupParts.length > 1 ? groupParts[groupParts.length - 1] : null;
+
+      group.benchmarks?.forEach(b => {
+        benchmarks.push({
+          ...b,
+          _library: libraryName // Add library name to benchmark
+        });
+      });
     });
   });
   return benchmarks;
@@ -456,11 +465,10 @@ function calculateGroupOverall(resultsData) {
   const libraryScores = {};
 
   allBenches.forEach(bench => {
-    const nameParts = bench.name.split(' - ');
-    const libName = nameParts[nameParts.length - 1];
+    const libName = bench._library;
 
     // Only include valid libraries
-    if (!validLibraries.has(libName)) return;
+    if (!libName || !validLibraries.has(libName)) return;
 
     if (!libraryScores[libName]) {
       libraryScores[libName] = [];

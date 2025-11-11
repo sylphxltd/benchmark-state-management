@@ -156,6 +156,92 @@
           "description": "3 fields with observers"
         }
       ]
+    },
+    "12-shopping-cart": {
+      "title": "Shopping Cart",
+      "description": "Real-world e-commerce shopping cart operations",
+      "type": "universal",
+      "benchmarks": [
+        {
+          "name": "Add Item to Cart",
+          "pattern": "Add Item to Cart",
+          "description": "Add product to shopping cart"
+        },
+        {
+          "name": "Update Item Quantity",
+          "pattern": "Update Item Quantity",
+          "description": "Change quantity of cart item"
+        },
+        {
+          "name": "Calculate Cart Total",
+          "pattern": "Calculate Cart Total",
+          "description": "Compute total price including discounts"
+        },
+        {
+          "name": "Bulk Add Items",
+          "pattern": "Bulk Add Multiple Items",
+          "description": "Add multiple items at once"
+        }
+      ]
+    },
+    "13-todo-list": {
+      "title": "Todo List",
+      "description": "Real-world task management operations",
+      "type": "universal",
+      "benchmarks": [
+        {
+          "name": "Add Todo",
+          "pattern": "Add Todo",
+          "description": "Create new todo item"
+        },
+        {
+          "name": "Toggle Todo",
+          "pattern": "Toggle Todo Completion",
+          "description": "Mark todo as complete/incomplete"
+        },
+        {
+          "name": "Filter Todos",
+          "pattern": "Filter Todos",
+          "description": "Filter by active/completed status"
+        },
+        {
+          "name": "Search Todos",
+          "pattern": "Search Todos",
+          "description": "Search todos by text"
+        }
+      ]
+    },
+    "14-data-table": {
+      "title": "Data Table",
+      "description": "Real-world data grid / table operations",
+      "type": "universal",
+      "benchmarks": [
+        {
+          "name": "Load Table Data",
+          "pattern": "Load Table Data",
+          "description": "Load 100 rows of table data"
+        },
+        {
+          "name": "Sort by Column",
+          "pattern": "Sort by Column",
+          "description": "Sort table by column"
+        },
+        {
+          "name": "Select Row",
+          "pattern": "Select Row",
+          "description": "Select single row"
+        },
+        {
+          "name": "Filter Table",
+          "pattern": "Filter Table by Value",
+          "description": "Apply filter criteria"
+        },
+        {
+          "name": "Bulk Delete",
+          "pattern": "Bulk Delete Selected Rows",
+          "description": "Delete multiple rows"
+        }
+      ]
     }
   }
 }

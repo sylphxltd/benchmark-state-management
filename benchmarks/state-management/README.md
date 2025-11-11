@@ -30,7 +30,7 @@ Comprehensive performance benchmarks for JavaScript/TypeScript state management 
 **Last Benchmark Run**: Nov 10, 2025, 4:38 PM
 
 | Rank | Library | Version | Overall Score | Bundle (gzip) | Last Updated |
-|------|---------|---------|---------------|---------------|--------------|
+|:----:|---------|---------|---------------|---------------|--------------|
 | 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 1.9.10 | 👑 98.4/100 | 4.0 KB | Dec 6 |
 | 🥈 2 | [**Preact Signals**](https://github.com/preactjs/signals) | 2.4.0 | 91.5/100 | 3.0 KB | Nov 7 |
 | 🥉 3 | [**Zen**](https://github.com/SylphxAI/zen) | 1.2.1 | 89.6/100 | 5.3 KB | Nov 7 |
@@ -109,7 +109,7 @@ Click on any group to view detailed benchmark results.
 Simple read and high-frequency read patterns
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 28.3M |
 | 🥈 2 | **Jotai** | 24.6M |
 | 🥉 3 | **Zen** | 22.6M |
@@ -128,7 +128,7 @@ Simple read and high-frequency read patterns
 Simple increments and burst updates
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 31.2M |
 | 🥈 2 | **Jotai** | 20.3M |
 | 🥉 3 | **Preact Signals** | 18.4M |
@@ -147,7 +147,7 @@ Simple increments and burst updates
 Instance creation overhead
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Preact Signals** | 👑 33.4M |
 | 🥈 2 | **Zen** | 32.2M |
 | 🥉 3 | **Solid Signals** | 32.1M |
@@ -186,7 +186,7 @@ Repeated access patterns
 Large state allocation performance
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **MobX** | 👑 925 |
 | 🥈 2 | **Zen** | 924 |
 | 🥉 3 | **Solid Signals** | 923 |
@@ -217,7 +217,7 @@ Async atoms/computations
 **Participating Libraries**: Jotai
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Jotai** | 👑 726 |
 
 **[View Detailed Results →](groups/08-async-reactive/README.md)**
@@ -231,7 +231,7 @@ Native computed values
 **Participating Libraries**: Jotai, MobX, Solid Signals, Preact Signals, Zen
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 30.8M |
 | 🥈 2 | **Zen** | 7.0M |
 | 🥉 3 | **Preact Signals** | 5.1M |
@@ -249,7 +249,7 @@ Manual selector pattern
 **Participating Libraries**: Redux Toolkit, Zustand, Valtio
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Valtio** | 👑 913K |
 | 🥈 2 | **Redux Toolkit** | 166K |
 | 🥉 3 | **Zustand** | 137K |
@@ -265,7 +265,7 @@ Built-in batching
 **Participating Libraries**: Solid Signals, MobX, Valtio
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 37.3M |
 | 🥈 2 | **Valtio** | 1.7M |
 | 🥉 3 | **MobX** | 1.6M |

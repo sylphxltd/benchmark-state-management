@@ -25,7 +25,7 @@ Simple read and high-frequency read patterns.
 **Last Benchmark Run**: Nov 10, 2025, 4:38 PM
 
 | Rank | Library | Group Score |
-|------|---------|-------------|
+|:----:|---------|-------------|
 | 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 👑 28.3M |
 | 🥈 2 | [**Jotai**](https://github.com/pmndrs/jotai) | 24.6M |
 | 🥉 3 | [**Zen**](https://github.com/SylphxAI/zen) | 22.6M |
@@ -63,7 +63,7 @@ Simple read and high-frequency read patterns.
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
+|:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 39,913,249.366 | ±0.04% | 0.0251ms | 0.0420ms |  |
 | 🥈 | [**Jotai**](https://github.com/pmndrs/jotai) | 36,293,502.403 | ±1.42% | 0.0276ms | 0.0420ms |  |
 | 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 34,347,738.626 | ±0.04% | 0.0291ms | 0.0420ms |  |
@@ -99,7 +99,7 @@ Simple read and high-frequency read patterns.
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
+|:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
 | 🥈 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
 | 🥉 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
@@ -127,7 +127,7 @@ Simple read and high-frequency read patterns.
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
+|:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
 | 🥈 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
 | 🥉 | **Simple Read (1 iterations)** | N/A | N/A | N/A | N/A |  |
@@ -157,4 +157,4 @@ npx vitest bench groups/01-read/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T01:42:50.751Z*
+*Last generated: 2025-11-11T02:16:16.388Z*

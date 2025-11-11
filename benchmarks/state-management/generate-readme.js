@@ -176,7 +176,7 @@ function generateOverallScore() {
 **Last Benchmark Run**: ${new Date(versions.lastBenchmarkRun).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}
 
 | Rank | Library | Version | Overall Score | Bundle (gzip) | Last Updated |
-|------|---------|---------|---------------|---------------|--------------|
+|:----:|---------|---------|---------------|---------------|--------------|
 `;
 
   indexScores.forEach((entry, index) => {
@@ -468,7 +468,7 @@ Click on any group to view detailed benchmark results.
       const maxOverall = Math.max(...groupScores.map(s => s.overall));
 
       section += `| Rank | Library | Group Score |\n`;
-      section += `|------|---------|-------------|\n`;
+      section += `|:----:|---------|-------------|\n`;
 
       groupScores.forEach((entry, index) => {
         const rank = index + 1;

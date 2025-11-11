@@ -144,7 +144,7 @@ function generateGroupReadme(groupPath, groupName, categoryPath) {
     }
 
     readme += `\n| Rank | Library | Group Score |\n`;
-    readme += `|------|---------|-------------|\n`;
+    readme += `|:----:|---------|-------------|\n`;
 
     const maxOverall = Math.max(...scores.map(s => s.overall));
 
@@ -195,7 +195,7 @@ function generateGroupReadme(groupPath, groupName, categoryPath) {
 
           // Detailed table
           readme += '| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |\n';
-          readme += '|------|---------|---------|----------|------|-----|---------|\n';
+          readme += '|:----:|---------|---------|----------|------|-----|---------|\n';
 
           sorted.forEach((bench, idx) => {
             const nameParts = bench.name.split(' - ');

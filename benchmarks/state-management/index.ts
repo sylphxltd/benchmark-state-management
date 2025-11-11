@@ -1,7 +1,7 @@
 /**
  * State Management Category
  *
- * Example of the new object-reference based API
+ * Comprehensive benchmarks with basic, advanced, and real-world tests
  */
 
 import { createCategory } from '../../src/core';
@@ -39,17 +39,49 @@ export const category = createCategory({
 // ============================================================================
 
 export const groups = {
-  read: category.createGroup({
-    id: '01-read',
-    title: 'Read Operations',
-    description: 'Simple read and high-frequency read patterns',
+  // BASIC TESTS
+  basicRead: category.createGroup({
+    id: '01-basic-read',
+    title: 'Basic Read Operations',
+    description: 'Simple read patterns with different scales',
     type: 'universal',
   }),
 
-  write: category.createGroup({
-    id: '02-write',
-    title: 'Write Operations',
-    description: 'Simple increments and burst updates',
+  basicWrite: category.createGroup({
+    id: '02-basic-write',
+    title: 'Basic Write Operations',
+    description: 'Simple write patterns with different scales',
+    type: 'universal',
+  }),
+
+  // ADVANCED TESTS
+  advancedOperations: category.createGroup({
+    id: '03-advanced-operations',
+    title: 'Advanced Operations',
+    description: 'Nested updates, array operations, and computed values',
+    type: 'universal',
+  }),
+
+  asyncOperations: category.createGroup({
+    id: '04-async-operations',
+    title: 'Async Operations',
+    description: 'Sequential and concurrent async patterns',
+    type: 'universal',
+  }),
+
+  // REAL-WORLD TESTS
+  realWorldScenarios: category.createGroup({
+    id: '05-real-world',
+    title: 'Real-World Scenarios',
+    description: 'Practical use cases: forms, caching, memory management',
+    type: 'universal',
+  }),
+
+  // STRESS TESTS
+  performanceStress: category.createGroup({
+    id: '06-performance-stress',
+    title: 'Performance Stress Tests',
+    description: 'Extreme loads and large-scale operations',
     type: 'universal',
   }),
 };
@@ -59,26 +91,110 @@ export const groups = {
 // ============================================================================
 
 export const tests = {
-  // Read tests
-  simpleRead: groups.read.createTest({
-    name: 'Simple Read',
-    description: 'Read a single counter value',
+  // ========== BASIC READ TESTS (Different Scales) ==========
+  singleRead: groups.basicRead.createTest({
+    name: 'Single Read',
+    description: 'Read counter value once (baseline)',
   }),
 
-  highFrequencyRead: groups.read.createTest({
+  moderateRead: groups.basicRead.createTest({
+    name: 'Moderate Read (100x)',
+    description: 'Read counter 100 times',
+  }),
+
+  highFrequencyRead: groups.basicRead.createTest({
     name: 'High-Frequency Read (1000x)',
-    description: 'Read value 1000 times',
+    description: 'Read counter 1000 times (stress test)',
   }),
 
-  // Write tests
-  simpleIncrement: groups.write.createTest({
-    name: 'Simple Increment',
+  // ========== BASIC WRITE TESTS (Different Scales) ==========
+  singleWrite: groups.basicWrite.createTest({
+    name: 'Single Write',
     description: 'Increment counter once',
   }),
 
-  burstUpdates: groups.write.createTest({
-    name: 'Burst Updates (100x)',
+  batchWrite: groups.basicWrite.createTest({
+    name: 'Batch Write (10x)',
+    description: 'Increment counter 10 times',
+  }),
+
+  burstWrite: groups.basicWrite.createTest({
+    name: 'Burst Write (100x)',
     description: 'Increment counter 100 times rapidly',
+  }),
+
+  heavyWrite: groups.basicWrite.createTest({
+    name: 'Heavy Write (1000x)',
+    description: 'Increment counter 1000 times',
+  }),
+
+  // ========== ADVANCED OPERATIONS ==========
+  nestedUpdate: groups.advancedOperations.createTest({
+    name: 'Nested Object Update',
+    description: 'Update deeply nested property (3 levels)',
+  }),
+
+  arrayPush: groups.advancedOperations.createTest({
+    name: 'Array Push',
+    description: 'Add item to array',
+  }),
+
+  arrayUpdate: groups.advancedOperations.createTest({
+    name: 'Array Update',
+    description: 'Update object in array',
+  }),
+
+  computedValue: groups.advancedOperations.createTest({
+    name: 'Computed Value Access',
+    description: 'Access derived/computed value',
+  }),
+
+  // ========== ASYNC OPERATIONS ==========
+  sequentialAsync: groups.asyncOperations.createTest({
+    name: 'Sequential Async (3 ops)',
+    description: 'Three async operations in sequence',
+  }),
+
+  concurrentAsync: groups.asyncOperations.createTest({
+    name: 'Concurrent Async (3 ops)',
+    description: 'Three async operations in parallel',
+  }),
+
+  // ========== REAL-WORLD SCENARIOS ==========
+  simpleForm: groups.realWorldScenarios.createTest({
+    name: 'Simple Form (3 fields)',
+    description: 'Handle simple form with 3 fields',
+  }),
+
+  complexForm: groups.realWorldScenarios.createTest({
+    name: 'Complex Form (nested + array)',
+    description: 'Handle complex form with nested objects and arrays',
+  }),
+
+  cacheInvalidation: groups.realWorldScenarios.createTest({
+    name: 'Cache Invalidation',
+    description: 'Update data and invalidate cached computed values',
+  }),
+
+  memoryUsage: groups.realWorldScenarios.createTest({
+    name: 'Memory Management',
+    description: 'Create and cleanup 100 subscribers',
+  }),
+
+  // ========== PERFORMANCE STRESS TESTS ==========
+  extremeRead: groups.performanceStress.createTest({
+    name: 'Extreme Read (10000x)',
+    description: 'Read counter 10,000 times',
+  }),
+
+  extremeWrite: groups.performanceStress.createTest({
+    name: 'Extreme Write (10000x)',
+    description: 'Increment counter 10,000 times',
+  }),
+
+  largeArray: groups.performanceStress.createTest({
+    name: 'Large Array (1000 items)',
+    description: 'Manage array with 1000 items',
   }),
 };
 

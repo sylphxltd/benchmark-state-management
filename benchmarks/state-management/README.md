@@ -5,19 +5,19 @@ Comprehensive performance benchmarks for JavaScript/TypeScript state management 
 ## Overall Performance Score
 
 **Based on Universal Tests**: Read, Write, Creation, Memory
-**Methodology**: Geometric mean of operations per second across all universal tests
+**Methodology**: Geometric mean of normalized scores (fastest = 100) across all universal tests
 **Last Benchmark Run**: Nov 10, 2025, 4:38 PM
 
-| Rank | Library | Version | Bundle (gzip) | Overall Score | Read | Write | Creation | Memory | Last Updated |
-|------|---------|---------|---------------|---------------|------|-------|----------|--------|--------------|
-| 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 1.9.10 | 4.0 KB | 👑 2.5M | 👑 39.9M | 33.1M | 32.1M | 923 | Dec 6 |
-| 🥈 2 | [**Preact Signals**](https://github.com/preactjs/signals) | 2.4.0 | 3.0 KB | 2.3M | 34.3M | 28.2M | 👑 33.4M | 904 | Nov 7 |
-| 🥉 3 | [**Zen**](https://github.com/sylphxltd/zen) | 1.2.1 | 5.3 KB | 2.3M | 32.2M | 28.2M | 32.2M | 924 | Nov 7 |
-|  4 | [**Jotai**](https://github.com/pmndrs/jotai) | 2.15.1 | 4.3 KB | 1.3M | 36.3M | 👑 33.9M | 2.3M | 917 | Dec 6 |
-|  5 | [**Valtio**](https://github.com/pmndrs/valtio) | 2.2.0 | 3.1 KB | 258K | 4.9M | 4.2M | 235K | 898 | Nov 6 |
-|  6 | [**Zustand**](https://github.com/pmndrs/zustand) | 5.0.8 | 👑 1.2 KB | 188K | 363K | 351K | 10.9M | 907 | Nov 6 |
-|  7 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 2.10.1 | 13.8 KB | 104K | 960K | 784K | 173K | 892 | Dec 6 |
-|  8 | [**MobX**](https://github.com/mobxjs/mobx) | 6.15.0 | 17.6 KB | 42K | 3.8M | 3.0M | 278 | 👑 925 | Dec 6 |
+| Rank | Library | Overall Score | Bundle (gzip) | Last Updated |
+|------|---------|---------------|---------------|--------------|
+| 🥇 1 | [**Solid Signals**](https://github.com/solidjs/solid) | 👑 98.4/100 | 4.0 KB | Dec 6 |
+| 🥈 2 | [**Preact Signals**](https://github.com/preactjs/signals) | 91.5/100 | 3.0 KB | Nov 7 |
+| 🥉 3 | [**Zen**](https://github.com/sylphxltd/zen) | 89.6/100 | 5.3 KB | Nov 7 |
+|  4 | [**Jotai**](https://github.com/pmndrs/jotai) | 50.0/100 | 4.3 KB | Dec 6 |
+|  5 | [**Valtio**](https://github.com/pmndrs/valtio) | 10.1/100 | 3.1 KB | Nov 6 |
+|  6 | [**Zustand**](https://github.com/pmndrs/zustand) | 7.4/100 | 👑 1.2 KB | Nov 6 |
+|  7 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 4.1/100 | 13.8 KB | Dec 6 |
+|  8 | [**MobX**](https://github.com/mobxjs/mobx) | 1.6/100 | 17.6 KB | Dec 6 |
 
 > **Note**: Groups 04 (Complexity), 05 (Cache Performance), 07 (Form State) currently have incomplete implementations and are excluded from the Overall Performance Score. These tests require refactoring to use real store implementations rather than placeholder logic.
 

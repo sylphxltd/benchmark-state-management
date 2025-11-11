@@ -115,18 +115,33 @@ ${categoryConfig.description}.
 }
 
 function generateOverallScore() {
-  const scores = overallScores.scores.sort((a, b) => b.overall - a.overall);
-  const leader = scores[0];
+  const scores = overallScores.scores;
 
-  // Find best value for each metric
-  const maxOverall = Math.max(...scores.map(s => s.overall));
+  // Calculate index-based scores (fastest = 100)
   const maxRead = Math.max(...scores.map(s => s.read));
   const maxWrite = Math.max(...scores.map(s => s.write));
   const maxCreation = Math.max(...scores.map(s => s.creation));
   const maxMemory = Math.max(...scores.map(s => s.memory));
 
+  const indexScores = scores.map(entry => {
+    // Normalize each metric to 0-100
+    const readIndex = (entry.read / maxRead) * 100;
+    const writeIndex = (entry.write / maxWrite) * 100;
+    const creationIndex = (entry.creation / maxCreation) * 100;
+    const memoryIndex = (entry.memory / maxMemory) * 100;
+
+    // Geometric mean of normalized scores
+    const product = readIndex * writeIndex * creationIndex * memoryIndex;
+    const overallIndex = Math.pow(product, 1 / 4);
+
+    return {
+      library: entry.library,
+      overallIndex: overallIndex
+    };
+  }).sort((a, b) => b.overallIndex - a.overallIndex);
+
   // Find smallest bundle size
-  const minSize = Math.min(...scores.map(entry => {
+  const minSize = Math.min(...indexScores.map(entry => {
     const libKey = Object.keys(libraryMetadata.libraries).find(key =>
       libraryMetadata.libraries[key].displayName === entry.library
     );
@@ -136,14 +151,14 @@ function generateOverallScore() {
   let section = `## Overall Performance Score
 
 **Based on Universal Tests**: ${overallScores.includedTests.join(', ')}
-**Methodology**: Geometric mean of operations per second across all universal tests
+**Methodology**: Geometric mean of normalized scores (fastest = 100) across all universal tests
 **Last Benchmark Run**: ${new Date(versions.lastBenchmarkRun).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}
 
-| Rank | Library | Version | Bundle (gzip) | Overall Score | Read | Write | Creation | Memory | Last Updated |
-|------|---------|---------|---------------|---------------|------|-------|----------|--------|--------------|
+| Rank | Library | Overall Score | Bundle (gzip) | Last Updated |
+|------|---------|---------------|---------------|--------------|
 `;
 
-  scores.forEach((entry, index) => {
+  indexScores.forEach((entry, index) => {
     const rank = index + 1;
     const emoji = rank === 1 ? '🥇 ' : rank === 2 ? '🥈 ' : rank === 3 ? '🥉 ' : ' ';
 
@@ -151,7 +166,6 @@ function generateOverallScore() {
       libraryMetadata.libraries[key].displayName === entry.library
     );
 
-    const version = versions.libraries[libKey]?.current || 'N/A';
     const size = versions.libraries[libKey]?.size?.gzip || 0;
     const sizeKB = (size / 1024).toFixed(1);
     const lastUpdated = versions.libraries[libKey]?.lastUpdated
@@ -159,17 +173,13 @@ function generateOverallScore() {
       : 'N/A';
     const githubUrl = libraryMetadata.libraries[libKey]?.url || '';
 
-    // Add crown to each metric's winner
+    // Add crown to winners
     const sizeCrown = size === minSize ? '👑 ' : '';
-    const overallCrown = entry.overall === maxOverall ? '👑 ' : '';
-    const readCrown = entry.read === maxRead ? '👑 ' : '';
-    const writeCrown = entry.write === maxWrite ? '👑 ' : '';
-    const creationCrown = entry.creation === maxCreation ? '👑 ' : '';
-    const memoryCrown = entry.memory === maxMemory ? '👑 ' : '';
+    const scoreCrown = index === 0 ? '👑 ' : '';
 
     const libraryLink = githubUrl ? `[**${entry.library}**](${githubUrl})` : `**${entry.library}**`;
 
-    section += `| ${emoji}${rank} | ${libraryLink} | ${version} | ${sizeCrown}${sizeKB} KB | ${overallCrown}${formatNumber(entry.overall)} | ${readCrown}${formatNumber(entry.read)} | ${writeCrown}${formatNumber(entry.write)} | ${creationCrown}${formatNumber(entry.creation)} | ${memoryCrown}${formatNumber(entry.memory)} | ${lastUpdated} |\n`;
+    section += `| ${emoji}${rank} | ${libraryLink} | ${scoreCrown}${entry.overallIndex.toFixed(1)}/100 | ${sizeCrown}${sizeKB} KB | ${lastUpdated} |\n`;
   });
 
   const incompleteGroups = Object.entries(groupsConfig.groups)

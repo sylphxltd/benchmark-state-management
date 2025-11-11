@@ -25,7 +25,7 @@ Native async atoms that auto-recompute when dependencies change.
 
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
-| 🥇 1 | [**Zen**](https://github.com/SylphxAI/zen) | 👑 8.2M |
+| 🥇 1 | [**Zen**](https://github.com/SylphxAI/zen) | 👑 8.1M |
 | 🥈 2 | [**Jotai**](https://github.com/pmndrs/jotai) | 12K |
 
 ---
@@ -55,22 +55,22 @@ Native async atoms that auto-recompute when dependencies change.
 ### Async Computed Read
 
 ```
-🥇   Zen                ████████████████████████████████████████     10.8M ops/sec
+🥇   Zen                ████████████████████████████████████████     10.5M ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 10,779,765 | ±0.76% | 0.1000ms | 0.2000ms | 5389883 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 10,515,547 | ±0.70% | 0.1000ms | 0.2000ms | 5257774 |
 
 ### Async Computed with Dependency Update
 
 ```
-🥇   Zen                ████████████████████████████████████████     10.0M ops/sec
+🥇   Zen                ████████████████████████████████████████      9.9M ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 10,037,159 | ±0.27% | 0.1000ms | 0.2000ms | 5018580 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 9,851,391 | ±0.26% | 0.1000ms | 0.2000ms | 4925696 |
 
 ### Chained Async Atoms
 
@@ -85,40 +85,40 @@ Native async atoms that auto-recompute when dependencies change.
 ### Chained Async Computed
 
 ```
-🥇   Zen                ████████████████████████████████████████     10.1M ops/sec
+🥇   Zen                ████████████████████████████████████████      9.9M ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 10,063,048 | ±0.27% | 0.1000ms | 0.2000ms | 5031525 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 9,882,424 | ±0.36% | 0.1000ms | 0.2000ms | 4941212 |
 
 ### Complex Async Dependencies
 
 ```
-🥇   Zen                ████████████████████████████████████████     10.3M ops/sec
+🥇   Zen                ████████████████████████████████████████      9.6M ops/sec
 🥈   Jotai                                                             431 ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 10,338,721 | ±0.28% | 0.1000ms | 0.2000ms | 5169361 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 9,634,307 | ±0.27% | 0.1000ms | 0.2000ms | 4817154 |
 | 🥈 | [**Jotai**](https://github.com/pmndrs/jotai) | 431 | ±1.23% | 2318.6000ms | 2625.4000ms | 216 |
 
-**Key Insight:** Zen is 23971.07x faster than Jotai in this test.
+**Key Insight:** Zen is 22337.83x faster than Jotai in this test.
 
 ### Concurrent Async Reads
 
 ```
-🥇   Zen                ████████████████████████████████████████      3.4M ops/sec
+🥇   Zen                ████████████████████████████████████████      3.5M ops/sec
 🥈   Jotai              ██████                                        549K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 3,379,143 | ±0.38% | 0.3000ms | 0.5000ms | 1689572 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 3,499,901 | ±0.33% | 0.3000ms | 0.5000ms | 1749951 |
 | 🥈 | [**Jotai**](https://github.com/pmndrs/jotai) | 548,762 | ±0.35% | 1.8000ms | 2.9000ms | 274381 |
 
-**Key Insight:** Zen is 6.16x faster than Jotai in this test.
+**Key Insight:** Zen is 6.38x faster than Jotai in this test.
 
 ---
 
@@ -138,4 +138,4 @@ npx vitest bench groups/08-async-reactive/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T12:15:22.140Z*
+*Last generated: 2025-11-11T12:22:16.288Z*

@@ -31,7 +31,7 @@ Simple read and high-frequency read patterns.
 
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
-| 🥇 1 | [**Zen**](https://github.com/SylphxAI/zen) | 👑 10.0M |
+| 🥇 1 | [**Zen**](https://github.com/SylphxAI/zen) | 👑 9.9M |
 | 🥈 2 | [**Solid Signals**](https://github.com/solidjs/solid) | 9.9M |
 | 🥉 3 | [**Preact Signals**](https://github.com/preactjs/signals) | 4.1M |
 |  4 | [**Zustand**](https://github.com/pmndrs/zustand) | 3.8M |
@@ -47,11 +47,11 @@ Simple read and high-frequency read patterns.
 ### High Frequency Read (x10)
 
 ```
-🥇   Zen                ████████████████████████████████████████     46.9M ops/sec
+🥇   Zen                ████████████████████████████████████████     46.6M ops/sec
 🥈   Solid Signals      ███████████████████████████████████████      45.3M ops/sec
 🥉   Preact Signals     ███████████████████████████████              36.1M ops/sec
 4.   Zustand            ██████████████████████████████               34.8M ops/sec
-5.   Redux Toolkit      ███████████████████████████                  32.1M ops/sec
+5.   Redux Toolkit      ████████████████████████████                 32.1M ops/sec
 6.   Valtio             █████████                                    10.9M ops/sec
 7.   MobX               █████                                         5.3M ops/sec
 8.   Jotai              █                                             758K ops/sec
@@ -59,7 +59,7 @@ Simple read and high-frequency read patterns.
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 46,944,739 | ±0.07% | 0.0000ms | 0.0000ms | 23472370 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 46,619,060 | ±0.06% | 0.0000ms | 0.0000ms | 23309530 |
 | 🥈 | [**Solid Signals**](https://github.com/solidjs/solid) | 45,296,910 | ±0.05% | 0.0000ms | 0.0000ms | 22648456 |
 | 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 36,089,737 | ±0.04% | 0.0000ms | 0.0000ms | 18044870 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 34,797,279 | ±1.53% | 0.0000ms | 0.0000ms | 17398640 |
@@ -68,13 +68,13 @@ Simple read and high-frequency read patterns.
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 5,332,531 | ±0.05% | 0.2000ms | 0.3000ms | 2666266 |
 | 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 757,683 | ±0.20% | 1.3000ms | 1.7000ms | 378842 |
 
-**Key Insight:** Zen is 61.96x faster than Jotai in this test.
+**Key Insight:** Zen is 61.53x faster than Jotai in this test.
 
 ### High Frequency Read (x100)
 
 ```
-🥇   Zen                ████████████████████████████████████████     30.3M ops/sec
-🥈   Solid Signals      ████████████████████████████████████████     30.0M ops/sec
+🥇   Zen                ████████████████████████████████████████     30.4M ops/sec
+🥈   Solid Signals      ███████████████████████████████████████      30.0M ops/sec
 🥉   Zustand            ████████████                                  9.0M ops/sec
 4.   Preact Signals     ███████████                                   8.3M ops/sec
 5.   Redux Toolkit      ████████                                      6.2M ops/sec
@@ -85,7 +85,7 @@ Simple read and high-frequency read patterns.
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 30,326,937 | ±0.03% | 0.0000ms | 0.0000ms | 15163469 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 30,449,306 | ±0.05% | 0.0000ms | 0.0000ms | 15224653 |
 | 🥈 | [**Solid Signals**](https://github.com/solidjs/solid) | 30,042,491 | ±0.06% | 0.0000ms | 0.0000ms | 15021246 |
 | 🥉 | [**Zustand**](https://github.com/pmndrs/zustand) | 8,961,798 | ±0.02% | 0.1000ms | 0.1000ms | 4480900 |
 | 4 | [**Preact Signals**](https://github.com/preactjs/signals) | 8,324,951 | ±0.03% | 0.1000ms | 0.2000ms | 4162476 |
@@ -94,13 +94,13 @@ Simple read and high-frequency read patterns.
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 605,052 | ±0.21% | 1.7000ms | 2.0000ms | 302527 |
 | 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 77,490 | ±0.24% | 12.9000ms | 15.4000ms | 38745 |
 
-**Key Insight:** Zen is 391.37x faster than Jotai in this test.
+**Key Insight:** Zen is 392.95x faster than Jotai in this test.
 
 ### High Frequency Read (x1000)
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      3.7M ops/sec
-🥈   Zen                ████████████████████████████████████████      3.7M ops/sec
+🥈   Zen                ███████████████████████████████████████       3.6M ops/sec
 🥉   Zustand            ████████████                                  1.1M ops/sec
 4.   Preact Signals     ██████████                                    921K ops/sec
 5.   Redux Toolkit      ████████                                      715K ops/sec
@@ -112,7 +112,7 @@ Simple read and high-frequency read patterns.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 3,726,591 | ±0.02% | 0.3000ms | 0.3000ms | 1863296 |
-| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 3,704,673 | ±0.02% | 0.3000ms | 0.3000ms | 1852337 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 3,638,195 | ±0.08% | 0.3000ms | 0.4000ms | 1819098 |
 | 🥉 | [**Zustand**](https://github.com/pmndrs/zustand) | 1,110,476 | ±0.04% | 0.9000ms | 1.1000ms | 555238 |
 | 4 | [**Preact Signals**](https://github.com/preactjs/signals) | 920,881 | ±0.02% | 1.1000ms | 1.3000ms | 460441 |
 | 5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 715,112 | ±0.02% | 1.4000ms | 1.5000ms | 357557 |
@@ -126,7 +126,7 @@ Simple read and high-frequency read patterns.
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      398K ops/sec
-🥈   Zen                ███████████████████████████████████████       393K ops/sec
+🥈   Zen                ████████████████████████████████████████      397K ops/sec
 🥉   Zustand            ██████████                                    100K ops/sec
 4.   Preact Signals     █████████                                      89K ops/sec
 5.   Redux Toolkit      ███████                                        66K ops/sec
@@ -138,7 +138,7 @@ Simple read and high-frequency read patterns.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Solid Signals**](https://github.com/solidjs/solid) | 397,965 | ±0.03% | 2.5000ms | 3.1000ms | 198983 |
-| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 392,974 | ±0.06% | 2.5000ms | 3.2000ms | 196488 |
+| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 396,778 | ±0.03% | 2.5000ms | 3.1000ms | 198390 |
 | 🥉 | [**Zustand**](https://github.com/pmndrs/zustand) | 99,917 | ±0.03% | 10.0000ms | 11.8000ms | 49959 |
 | 4 | [**Preact Signals**](https://github.com/preactjs/signals) | 88,775 | ±0.03% | 11.3000ms | 12.8000ms | 44388 |
 | 5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 66,406 | ±0.03% | 15.1000ms | 17.1000ms | 33204 |
@@ -151,7 +151,7 @@ Simple read and high-frequency read patterns.
 ### Simple Read
 
 ```
-🥇   Zen                ████████████████████████████████████████     47.6M ops/sec
+🥇   Zen                ████████████████████████████████████████     47.2M ops/sec
 🥈   Solid Signals      ████████████████████████████████████████     47.0M ops/sec
 🥉   Preact Signals     ███████████████████████████████████████      46.4M ops/sec
 4.   Zustand            ███████████████████                          22.5M ops/sec
@@ -163,7 +163,7 @@ Simple read and high-frequency read patterns.
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 47,620,098 | ±0.06% | 0.0000ms | 0.0000ms | 23810051 |
+| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 47,216,218 | ±0.86% | 0.0000ms | 0.0000ms | 23608110 |
 | 🥈 | [**Solid Signals**](https://github.com/solidjs/solid) | 47,028,358 | ±0.06% | 0.0000ms | 0.0000ms | 23514181 |
 | 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 46,422,062 | ±0.06% | 0.0000ms | 0.0000ms | 23211033 |
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 22,546,784 | ±0.82% | 0.0000ms | 0.1000ms | 11273392 |
@@ -172,7 +172,7 @@ Simple read and high-frequency read patterns.
 | 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,381,060 | ±1.21% | 0.7000ms | 1.5000ms | 690531 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 947,175 | ±0.21% | 1.1000ms | 1.4000ms | 473588 |
 
-**Key Insight:** Zen is 50.28x faster than Redux Toolkit in this test.
+**Key Insight:** Zen is 49.85x faster than Redux Toolkit in this test.
 
 ---
 
@@ -192,4 +192,4 @@ npx vitest bench groups/01-read/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T12:15:21.862Z*
+*Last generated: 2025-11-11T12:22:15.993Z*

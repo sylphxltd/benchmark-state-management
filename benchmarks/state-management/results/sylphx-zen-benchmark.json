@@ -2,7 +2,7 @@
   "library": "Zen",
   "libraryKey": "@sylphx/zen",
   "version": "2.0.0",
-  "lastRun": "2025-11-11T12:31:57.154Z",
+  "lastRun": "2025-11-11T12:58:11.147Z",
   "groups": {
     "01-read": {
       "files": [
@@ -15,72 +15,72 @@
                 {
                   "id": "Simple Read - Zen",
                   "name": "Simple Read",
-                  "hz": 47532188.77,
+                  "hz": 47242903.81,
                   "min": 0,
-                  "max": 0.0325,
+                  "max": 0.0966,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.06,
+                  "samples": 23621452
+                },
+                {
+                  "id": "High Frequency Read (x10) - Zen",
+                  "name": "High Frequency Read (x10)",
+                  "hz": 46916193.65,
+                  "min": 0,
+                  "max": 0.0572,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.05,
-                  "samples": 23766096
-                },
-                {
-                  "id": "High Frequency Read (x10) - Zen",
-                  "name": "High Frequency Read (x10)",
-                  "hz": 47016623.46,
-                  "min": 0,
-                  "max": 0.014,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0,
-                  "p995": 0,
-                  "p999": 0,
-                  "rme": 0.04,
-                  "samples": 23508313
+                  "samples": 23458098
                 },
                 {
                   "id": "High Frequency Read (x100) - Zen",
                   "name": "High Frequency Read (x100)",
-                  "hz": 30658918.65,
+                  "hz": 30440332.9,
                   "min": 0,
-                  "max": 0.0204,
+                  "max": 0.0158,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0.0001,
                   "rme": 0.03,
-                  "samples": 15329460
+                  "samples": 15220167
                 },
                 {
                   "id": "High Frequency Read (x1000) - Zen",
                   "name": "High Frequency Read (x1000)",
-                  "hz": 3696790.51,
+                  "hz": 3724592.7,
                   "min": 0.0002,
-                  "max": 0.1044,
+                  "max": 0.0274,
                   "mean": 0.0003,
                   "p75": 0.0003,
                   "p99": 0.0003,
                   "p995": 0.0004,
                   "p999": 0.0004,
-                  "rme": 0.06,
-                  "samples": 1848396
+                  "rme": 0.02,
+                  "samples": 1862297
                 },
                 {
                   "id": "High Frequency Read (x10000) - Zen",
                   "name": "High Frequency Read (x10000)",
-                  "hz": 385070.4,
-                  "min": 0.0024,
-                  "max": 0.0348,
-                  "mean": 0.0026,
-                  "p75": 0.0026,
-                  "p99": 0.0032,
+                  "hz": 409744.99,
+                  "min": 0.0022,
+                  "max": 0.017,
+                  "mean": 0.0024,
+                  "p75": 0.0025,
+                  "p99": 0.0029,
                   "p995": 0.0032,
-                  "p999": 0.0037,
-                  "rme": 0.05,
-                  "samples": 192536
+                  "p999": 0.0032,
+                  "rme": 0.03,
+                  "samples": 204873
                 }
               ]
             }
@@ -91,7 +91,7 @@
     "02-write": {
       "files": [
         {
-          "filepath": "groups/02-write/tests/zen.bench.ts",
+          "filepath": "groups/02-write/runner.bench.ts",
           "groups": [
             {
               "fullName": "02-write - Zen",
@@ -99,72 +99,72 @@
                 {
                   "id": "Single Update - Zen",
                   "name": "Single Update",
-                  "hz": 47483004.39,
+                  "hz": 48032310.16,
                   "min": 0,
-                  "max": 0.031,
+                  "max": 0.0139,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.04,
-                  "samples": 23741504
+                  "samples": 24016157
                 },
                 {
                   "id": "Batch Update (x10) - Zen",
                   "name": "Batch Update (x10)",
-                  "hz": 25920573.98,
+                  "hz": 27036820.65,
                   "min": 0,
-                  "max": 0.1732,
+                  "max": 0.0323,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
-                  "p995": 0.0001,
+                  "p995": 0,
                   "p999": 0.0001,
-                  "rme": 0.1,
-                  "samples": 12960288
+                  "rme": 0.03,
+                  "samples": 13518411
                 },
                 {
                   "id": "Batch Update (x100) - Zen",
                   "name": "Batch Update (x100)",
-                  "hz": 4369806.39,
+                  "hz": 4657112.28,
                   "min": 0.0002,
-                  "max": 0.089,
+                  "max": 0.0147,
                   "mean": 0.0002,
-                  "p75": 0.0003,
+                  "p75": 0.0002,
                   "p99": 0.0003,
                   "p995": 0.0003,
-                  "p999": 0.0004,
-                  "rme": 0.04,
-                  "samples": 2184904
+                  "p999": 0.0003,
+                  "rme": 0.02,
+                  "samples": 2328557
                 },
                 {
                   "id": "Batch Update (x1000) - Zen",
                   "name": "Batch Update (x1000)",
-                  "hz": 484844.22,
+                  "hz": 514745.99,
                   "min": 0.0019,
-                  "max": 0.0737,
-                  "mean": 0.0021,
-                  "p75": 0.0021,
-                  "p99": 0.0027,
-                  "p995": 0.0027,
-                  "p999": 0.003,
-                  "rme": 0.06,
-                  "samples": 242423
+                  "max": 0.0303,
+                  "mean": 0.0019,
+                  "p75": 0.002,
+                  "p99": 0.0024,
+                  "p995": 0.0024,
+                  "p999": 0.0025,
+                  "rme": 0.02,
+                  "samples": 257373
                 },
                 {
                   "id": "Batch Update (x10000) - Zen",
                   "name": "Batch Update (x10000)",
-                  "hz": 47679.48,
+                  "hz": 49331.02,
                   "min": 0.02,
-                  "max": 0.0418,
-                  "mean": 0.021,
-                  "p75": 0.0207,
-                  "p99": 0.0263,
-                  "p995": 0.0264,
-                  "p999": 0.0266,
-                  "rme": 0.09,
-                  "samples": 23840
+                  "max": 0.0367,
+                  "mean": 0.0203,
+                  "p75": 0.0202,
+                  "p99": 0.023,
+                  "p995": 0.0242,
+                  "p999": 0.0255,
+                  "rme": 0.03,
+                  "samples": 24666
                 }
               ]
             }
@@ -175,7 +175,7 @@
     "03-creation": {
       "files": [
         {
-          "filepath": "groups/03-creation/tests/zen.bench.ts",
+          "filepath": "groups/03-creation/runner.bench.ts",
           "groups": [
             {
               "fullName": "03-creation - Zen",
@@ -183,72 +183,72 @@
                 {
                   "id": "Store Creation (x1) - Zen",
                   "name": "Store Creation (x1)",
-                  "hz": 44938214.56,
+                  "hz": 45464843.64,
                   "min": 0,
-                  "max": 0.1115,
+                  "max": 0.0931,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0.0001,
                   "rme": 0.07,
-                  "samples": 22469108
+                  "samples": 22732422
                 },
                 {
                   "id": "Store Creation (x10) - Zen",
                   "name": "Store Creation (x10)",
-                  "hz": 16549750.84,
+                  "hz": 17001710.27,
                   "min": 0,
-                  "max": 0.1366,
+                  "max": 7.8718,
                   "mean": 0.0001,
                   "p75": 0.0001,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0002,
-                  "rme": 0.06,
-                  "samples": 8274876
+                  "rme": 3.09,
+                  "samples": 8500856
                 },
                 {
                   "id": "Store Creation (x100) - Zen",
                   "name": "Store Creation (x100)",
-                  "hz": 2270317.25,
+                  "hz": 2241033.79,
                   "min": 0.0003,
-                  "max": 0.3258,
+                  "max": 0.1325,
                   "mean": 0.0004,
-                  "p75": 0.0004,
+                  "p75": 0.0005,
                   "p99": 0.0007,
-                  "p995": 0.0009,
-                  "p999": 0.0012,
-                  "rme": 0.46,
-                  "samples": 1135159
+                  "p995": 0.0008,
+                  "p999": 0.0013,
+                  "rme": 0.23,
+                  "samples": 1120517
                 },
                 {
                   "id": "Store Creation (x1000) - Zen",
                   "name": "Store Creation (x1000)",
-                  "hz": 226871.04,
+                  "hz": 213346.73,
                   "min": 0.0037,
-                  "max": 0.5431,
-                  "mean": 0.0044,
-                  "p75": 0.0044,
-                  "p99": 0.0062,
-                  "p995": 0.0073,
-                  "p999": 0.0252,
-                  "rme": 0.76,
-                  "samples": 113436
+                  "max": 8.2007,
+                  "mean": 0.0047,
+                  "p75": 0.0042,
+                  "p99": 0.0325,
+                  "p995": 0.0329,
+                  "p999": 0.0359,
+                  "rme": 3.25,
+                  "samples": 106674
                 },
                 {
                   "id": "Store Creation (x10000) - Zen",
                   "name": "Store Creation (x10000)",
-                  "hz": 22155.88,
-                  "min": 0.0415,
-                  "max": 0.2699,
-                  "mean": 0.0451,
-                  "p75": 0.0452,
-                  "p99": 0.0557,
-                  "p995": 0.1205,
-                  "p999": 0.1683,
-                  "rme": 0.38,
-                  "samples": 11078
+                  "hz": 23132.8,
+                  "min": 0.0417,
+                  "max": 0.1402,
+                  "mean": 0.0432,
+                  "p75": 0.0428,
+                  "p99": 0.0586,
+                  "p995": 0.0815,
+                  "p999": 0.0938,
+                  "rme": 0.18,
+                  "samples": 11567
                 }
               ]
             }
@@ -259,7 +259,7 @@
     "04-complexity": {
       "files": [
         {
-          "filepath": "groups/04-complexity/tests/zen.bench.ts",
+          "filepath": "groups/04-complexity/runner.bench.ts",
           "groups": [
             {
               "fullName": "04-complexity - Zen",
@@ -267,72 +267,72 @@
                 {
                   "id": "Deep Nested Read (10 levels) - Zen",
                   "name": "Deep Nested Read (10 levels)",
-                  "hz": 45745781.63,
+                  "hz": 47021975.34,
                   "min": 0,
-                  "max": 0.1439,
+                  "max": 0.0241,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
-                  "rme": 0.1,
-                  "samples": 22872891
+                  "rme": 0.04,
+                  "samples": 23510988
                 },
                 {
                   "id": "Deep Nested Write (10 levels) - Zen",
                   "name": "Deep Nested Write (10 levels)",
-                  "hz": 12703693.92,
+                  "hz": 13961483.33,
                   "min": 0,
-                  "max": 0.5944,
+                  "max": 0.3663,
                   "mean": 0.0001,
                   "p75": 0.0001,
                   "p99": 0.0001,
-                  "p995": 0.0002,
+                  "p995": 0.0001,
                   "p999": 0.0003,
-                  "rme": 0.77,
-                  "samples": 6351848
+                  "rme": 0.45,
+                  "samples": 6980742
                 },
                 {
                   "id": "Array Splice (middle) - Zen",
                   "name": "Array Splice (middle)",
-                  "hz": 27846723.89,
+                  "hz": 27832933.33,
                   "min": 0,
-                  "max": 0.0421,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.04,
-                  "samples": 13923362
-                },
-                {
-                  "id": "Large Array Map (1000 items) - Zen",
-                  "name": "Large Array Map (1000 items)",
-                  "hz": 40712412.82,
-                  "min": 0,
-                  "max": 14.9775,
+                  "max": 0.0302,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0.0001,
-                  "rme": 5.87,
-                  "samples": 20356208
+                  "rme": 0.03,
+                  "samples": 13916467
+                },
+                {
+                  "id": "Large Array Map (1000 items) - Zen",
+                  "name": "Large Array Map (1000 items)",
+                  "hz": 43527470.43,
+                  "min": 0,
+                  "max": 14.5554,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 5.79,
+                  "samples": 21763737
                 },
                 {
                   "id": "Multi-field Update (unrelated) - Zen",
                   "name": "Multi-field Update (unrelated)",
-                  "hz": 14232.76,
-                  "min": 0.0138,
-                  "max": 20.9384,
-                  "mean": 0.0703,
-                  "p75": 0.0697,
-                  "p99": 0.1282,
-                  "p995": 0.1364,
-                  "p999": 5.7263,
-                  "rme": 16.33,
-                  "samples": 7127
+                  "hz": 15597.3,
+                  "min": 0.0131,
+                  "max": 16.7533,
+                  "mean": 0.0641,
+                  "p75": 0.0664,
+                  "p99": 0.1145,
+                  "p995": 0.1238,
+                  "p999": 5.1265,
+                  "rme": 13.94,
+                  "samples": 7799
                 }
               ]
             }
@@ -343,7 +343,7 @@
     "06-memory": {
       "files": [
         {
-          "filepath": "groups/06-memory/tests/zen.bench.ts",
+          "filepath": "groups/06-memory/runner.bench.ts",
           "groups": [
             {
               "fullName": "06-memory - Zen",
@@ -351,44 +351,44 @@
                 {
                   "id": "Large State Read (1000 items) - Zen",
                   "name": "Large State Read (1000 items)",
-                  "hz": 46802996.91,
+                  "hz": 49834818.81,
                   "min": 0,
-                  "max": 0.0848,
+                  "max": 0.015,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
-                  "rme": 0.06,
-                  "samples": 23401500
+                  "rme": 0.04,
+                  "samples": 24917411
                 },
                 {
                   "id": "Large State Update (1000 items) - Zen",
                   "name": "Large State Update (1000 items)",
-                  "hz": 407509.92,
+                  "hz": 435409.36,
                   "min": 0.0018,
-                  "max": 0.4032,
-                  "mean": 0.0025,
-                  "p75": 0.0023,
-                  "p99": 0.0056,
-                  "p995": 0.006,
-                  "p999": 0.0071,
-                  "rme": 0.6,
-                  "samples": 203755
+                  "max": 0.4016,
+                  "mean": 0.0023,
+                  "p75": 0.002,
+                  "p99": 0.0052,
+                  "p995": 0.0054,
+                  "p999": 0.0058,
+                  "rme": 0.55,
+                  "samples": 217705
                 },
                 {
                   "id": "Large State Filter - Zen",
                   "name": "Large State Filter",
-                  "hz": 419877.42,
+                  "hz": 466922.49,
                   "min": 0.0018,
-                  "max": 0.4089,
-                  "mean": 0.0024,
-                  "p75": 0.0023,
-                  "p99": 0.0082,
-                  "p995": 0.0086,
-                  "p999": 0.0094,
-                  "rme": 0.66,
-                  "samples": 209939
+                  "max": 0.3765,
+                  "mean": 0.0021,
+                  "p75": 0.002,
+                  "p99": 0.0074,
+                  "p995": 0.0076,
+                  "p999": 0.008,
+                  "rme": 0.55,
+                  "samples": 233462
                 }
               ]
             }
@@ -399,7 +399,7 @@
     "07-form": {
       "files": [
         {
-          "filepath": "groups/07-form/tests/zen.bench.ts",
+          "filepath": "groups/07-form/runner.bench.ts",
           "groups": [
             {
               "fullName": "07-form - Zen",
@@ -407,72 +407,72 @@
                 {
                   "id": "Single Field Update - Zen",
                   "name": "Single Field Update",
-                  "hz": 18884258.94,
+                  "hz": 20516890.6,
                   "min": 0,
-                  "max": 0.049,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
+                  "max": 0.1759,
+                  "mean": 0,
+                  "p75": 0,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0002,
-                  "rme": 0.06,
-                  "samples": 9442130
+                  "rme": 0.08,
+                  "samples": 10258446
                 },
                 {
                   "id": "Multiple Fields Update (3 fields) - Zen",
                   "name": "Multiple Fields Update (3 fields)",
-                  "hz": 16280278.05,
+                  "hz": 18325160.97,
                   "min": 0,
-                  "max": 0.3003,
+                  "max": 0.191,
                   "mean": 0.0001,
                   "p75": 0.0001,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0002,
-                  "rme": 0.45,
-                  "samples": 8140421
+                  "rme": 0.28,
+                  "samples": 9162581
                 },
                 {
                   "id": "Nested Field Update - Zen",
                   "name": "Nested Field Update",
-                  "hz": 15746760.77,
+                  "hz": 17029234.77,
                   "min": 0,
-                  "max": 0.3558,
+                  "max": 0.281,
                   "mean": 0.0001,
                   "p75": 0.0001,
                   "p99": 0.0001,
-                  "p995": 0.0001,
+                  "p995": 0.0002,
                   "p999": 0.0003,
-                  "rme": 0.48,
-                  "samples": 7873381
+                  "rme": 0.36,
+                  "samples": 8514618
                 },
                 {
                   "id": "Full Form Reset - Zen",
                   "name": "Full Form Reset",
-                  "hz": 28062996.69,
+                  "hz": 31455361.5,
                   "min": 0,
-                  "max": 0.2613,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0,
-                  "p995": 0.0001,
-                  "p999": 0.0003,
-                  "rme": 0.47,
-                  "samples": 14031500
-                },
-                {
-                  "id": "Conditional Field Update - Zen",
-                  "name": "Conditional Field Update",
-                  "hz": 42800150.49,
-                  "min": 0,
-                  "max": 0.0313,
+                  "max": 5.194,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0.0001,
-                  "rme": 0.05,
-                  "samples": 21400077
+                  "rme": 2.04,
+                  "samples": 15727681
+                },
+                {
+                  "id": "Conditional Field Update - Zen",
+                  "name": "Conditional Field Update",
+                  "hz": 46721412.45,
+                  "min": 0,
+                  "max": 0.0204,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.04,
+                  "samples": 23360708
                 }
               ]
             }
@@ -483,7 +483,7 @@
     "08-async-reactive": {
       "files": [
         {
-          "filepath": "groups/08-async-reactive/tests/zen.bench.ts",
+          "filepath": "groups/08-async-reactive/runner.bench.ts",
           "groups": [
             {
               "fullName": "08-async-reactive - Zen",
@@ -491,128 +491,72 @@
                 {
                   "id": "Async Computed Read - Zen",
                   "name": "Async Computed Read",
-                  "hz": 10373641.76,
-                  "min": 0,
-                  "max": 1.7644,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0002,
-                  "p995": 0.0003,
-                  "p999": 0.0006,
-                  "rme": 0.73,
-                  "samples": 5186822
+                  "hz": 90.6801,
+                  "min": 10.0491,
+                  "max": 11.3367,
+                  "mean": 11.0278,
+                  "p75": 11.1195,
+                  "p99": 11.3367,
+                  "p995": 11.3367,
+                  "p999": 11.3367,
+                  "rme": 0.64,
+                  "samples": 46
                 },
                 {
                   "id": "Async Computed with Dependency Update - Zen",
                   "name": "Async Computed with Dependency Update",
-                  "hz": 9396774.72,
-                  "min": 0,
-                  "max": 0.2341,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0002,
-                  "p995": 0.0003,
-                  "p999": 0.0004,
-                  "rme": 0.3,
-                  "samples": 4698388
+                  "hz": 90.332,
+                  "min": 10.2911,
+                  "max": 11.5638,
+                  "mean": 11.0703,
+                  "p75": 11.2185,
+                  "p99": 11.5638,
+                  "p995": 11.5638,
+                  "p999": 11.5638,
+                  "rme": 0.73,
+                  "samples": 46
                 },
                 {
                   "id": "Chained Async Computed - Zen",
                   "name": "Chained Async Computed",
-                  "hz": 9911255.19,
-                  "min": 0,
-                  "max": 0.2156,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0002,
-                  "p995": 0.0003,
-                  "p999": 0.0004,
-                  "rme": 0.34,
-                  "samples": 4955628
+                  "hz": 87.8714,
+                  "min": 10.3888,
+                  "max": 11.8688,
+                  "mean": 11.3803,
+                  "p75": 11.5092,
+                  "p99": 11.8688,
+                  "p995": 11.8688,
+                  "p999": 11.8688,
+                  "rme": 0.68,
+                  "samples": 44
                 },
                 {
                   "id": "Complex Async Dependencies - Zen",
                   "name": "Complex Async Dependencies",
-                  "hz": 9991571.4,
-                  "min": 0,
-                  "max": 0.2545,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0002,
-                  "p995": 0.0003,
-                  "p999": 0.0004,
-                  "rme": 0.32,
-                  "samples": 4995786
+                  "hz": 89.8931,
+                  "min": 10.2575,
+                  "max": 11.522,
+                  "mean": 11.1243,
+                  "p75": 11.2745,
+                  "p99": 11.522,
+                  "p995": 11.522,
+                  "p999": 11.522,
+                  "rme": 0.87,
+                  "samples": 45
                 },
                 {
                   "id": "Concurrent Async Reads - Zen",
                   "name": "Concurrent Async Reads",
-                  "hz": 3323940.35,
-                  "min": 0.0002,
-                  "max": 0.2007,
-                  "mean": 0.0003,
-                  "p75": 0.0003,
-                  "p99": 0.0005,
-                  "p995": 0.0006,
-                  "p999": 0.0008,
-                  "rme": 0.4,
-                  "samples": 1661971
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "09-computed-native": {
-      "files": [
-        {
-          "filepath": "groups/09-computed-native/tests/zen.bench.ts",
-          "groups": [
-            {
-              "fullName": "09-computed-native - Zen",
-              "benchmarks": [
-                {
-                  "id": "Native Computed - Zen",
-                  "name": "Native Computed",
-                  "hz": 27597191.12,
-                  "min": 0,
-                  "max": 0.022,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0.0001,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.04,
-                  "samples": 13798596
-                },
-                {
-                  "id": "Chained Computed - Zen",
-                  "name": "Chained Computed",
-                  "hz": 27057866.16,
-                  "min": 0,
-                  "max": 0.081,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0.0001,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.08,
-                  "samples": 13528934
-                },
-                {
-                  "id": "Computed Updates - Zen",
-                  "name": "Computed Updates",
-                  "hz": 728174.75,
-                  "min": 0.0012,
-                  "max": 0.1136,
-                  "mean": 0.0014,
-                  "p75": 0.0014,
-                  "p99": 0.0019,
-                  "p995": 0.002,
-                  "p999": 0.0025,
-                  "rme": 0.11,
-                  "samples": 364088
+                  "hz": 90.6,
+                  "min": 10.2276,
+                  "max": 11.7425,
+                  "mean": 11.0375,
+                  "p75": 11.5868,
+                  "p99": 11.7425,
+                  "p995": 11.7425,
+                  "p999": 11.7425,
+                  "rme": 1.44,
+                  "samples": 46
                 }
               ]
             }

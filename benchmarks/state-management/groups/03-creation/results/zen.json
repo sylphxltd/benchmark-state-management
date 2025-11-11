@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "filepath": "groups/03-creation/tests/zen.bench.ts",
+      "filepath": "groups/03-creation/runner.bench.ts",
       "groups": [
         {
           "fullName": "03-creation - Zen",
@@ -9,72 +9,72 @@
             {
               "id": "Store Creation (x1) - Zen",
               "name": "Store Creation (x1)",
-              "hz": 44938214.56,
+              "hz": 45464843.64,
               "min": 0,
-              "max": 0.1115,
+              "max": 0.0931,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0.0001,
               "rme": 0.07,
-              "samples": 22469108
+              "samples": 22732422
             },
             {
               "id": "Store Creation (x10) - Zen",
               "name": "Store Creation (x10)",
-              "hz": 16549750.84,
+              "hz": 17001710.27,
               "min": 0,
-              "max": 0.1366,
+              "max": 7.8718,
               "mean": 0.0001,
               "p75": 0.0001,
               "p99": 0.0001,
               "p995": 0.0001,
               "p999": 0.0002,
-              "rme": 0.06,
-              "samples": 8274876
+              "rme": 3.09,
+              "samples": 8500856
             },
             {
               "id": "Store Creation (x100) - Zen",
               "name": "Store Creation (x100)",
-              "hz": 2270317.25,
+              "hz": 2241033.79,
               "min": 0.0003,
-              "max": 0.3258,
+              "max": 0.1325,
               "mean": 0.0004,
-              "p75": 0.0004,
+              "p75": 0.0005,
               "p99": 0.0007,
-              "p995": 0.0009,
-              "p999": 0.0012,
-              "rme": 0.46,
-              "samples": 1135159
+              "p995": 0.0008,
+              "p999": 0.0013,
+              "rme": 0.23,
+              "samples": 1120517
             },
             {
               "id": "Store Creation (x1000) - Zen",
               "name": "Store Creation (x1000)",
-              "hz": 226871.04,
+              "hz": 213346.73,
               "min": 0.0037,
-              "max": 0.5431,
-              "mean": 0.0044,
-              "p75": 0.0044,
-              "p99": 0.0062,
-              "p995": 0.0073,
-              "p999": 0.0252,
-              "rme": 0.76,
-              "samples": 113436
+              "max": 8.2007,
+              "mean": 0.0047,
+              "p75": 0.0042,
+              "p99": 0.0325,
+              "p995": 0.0329,
+              "p999": 0.0359,
+              "rme": 3.25,
+              "samples": 106674
             },
             {
               "id": "Store Creation (x10000) - Zen",
               "name": "Store Creation (x10000)",
-              "hz": 22155.88,
-              "min": 0.0415,
-              "max": 0.2699,
-              "mean": 0.0451,
-              "p75": 0.0452,
-              "p99": 0.0557,
-              "p995": 0.1205,
-              "p999": 0.1683,
-              "rme": 0.38,
-              "samples": 11078
+              "hz": 23132.8,
+              "min": 0.0417,
+              "max": 0.1402,
+              "mean": 0.0432,
+              "p75": 0.0428,
+              "p99": 0.0586,
+              "p995": 0.0815,
+              "p999": 0.0938,
+              "rme": 0.18,
+              "samples": 11567
             }
           ]
         }

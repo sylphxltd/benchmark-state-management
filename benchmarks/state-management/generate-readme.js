@@ -290,56 +290,53 @@ Libraries participate only if they have native support for the tested capability
   return section + '\n---\n\n';
 }
 
-function generateDetailedResults(results) {
-  let section = `## Detailed Results
+function generateGroupSummaries(results) {
+  let section = `## Group Results Summary
+
+Click on any group to view detailed benchmark results.
 
 `;
 
   Object.entries(groupsConfig.groups).forEach(([groupKey, groupConfig]) => {
     const resultsData = results[groupKey];
-    if (!resultsData || groupConfig.status === 'incomplete') return;
-
     const num = groupKey.match(/\d+/)[0];
     const testType = groupConfig.type === 'feature' ? ' (Feature Test)' : '';
+    const groupPath = `groups/${groupKey}/`;
 
-    section += `### ${num} - ${groupConfig.title}${testType}\n\n`;
+    section += `### [${num} - ${groupConfig.title}](${groupPath})${testType}\n\n`;
+    section += `${groupConfig.description}\n\n`;
 
     if (groupConfig.libraries) {
       section += `**Participating Libraries**: ${groupConfig.libraries.join(', ')}\n\n`;
     }
 
-    if (!groupConfig.benchmarks || groupConfig.benchmarks.length === 0) {
-      section += `*No benchmark configuration defined*\n\n---\n\n`;
+    if (groupConfig.status === 'incomplete') {
+      section += `⚠️ *Implementation incomplete - excluded from Overall Performance Score*\n\n`;
+      section += `**[View Group Details →](${groupPath})**\n\n---\n\n`;
       return;
     }
 
-    groupConfig.benchmarks.forEach((benchConfig, idx) => {
-      let benches = extractBenchmarks(resultsData, benchConfig.pattern);
+    if (!resultsData) {
+      section += `*No results available*\n\n`;
+      section += `**[View Group Details →](${groupPath})**\n\n---\n\n`;
+      return;
+    }
 
-      // Apply filters if specified
-      if (benchConfig.filter && benches.length > 0) {
-        benches = benches.filter(b => {
-          return !benchConfig.filter.some(filterWord => b.name.includes(filterWord));
-        });
-      }
+    // Get all benchmarks and find overall winner
+    const allBenches = getAllBenchmarks(resultsData);
+    if (allBenches.length > 0) {
+      const sorted = allBenches.sort((a, b) => (b.hz || 0) - (a.hz || 0));
+      const winner = sorted[0];
 
-      if (benches.length === 0) return;
+      // Extract library name from benchmark name
+      const nameParts = winner.name.split(' - ');
+      const winnerLib = nameParts[nameParts.length - 1];
 
-      section += generateBenchmarkSection(
-        benchConfig.name,
-        benchConfig.description,
-        benches,
-        !!benchConfig.note,
-        benchConfig.note
-      );
+      section += `**Top Performer**: 👑 **${winnerLib}** - ${formatNumber(winner.hz)} ops/sec\n\n`;
+    }
 
-      // Add spacing between sub-tests
-      if (idx < groupConfig.benchmarks.length - 1) {
-        section += '\n';
-      }
-    });
-
-    section += '---\n\n';
+    section += `**[View Detailed Results →](${groupPath})**\n\n`;
+    section += `---\n\n`;
   });
 
   return section;
@@ -477,7 +474,7 @@ function generateReadme() {
   readme += generateOverallScore();
   readme += generateFeatureMatrix();
   readme += generateTestCategories();
-  readme += generateDetailedResults(results);
+  readme += generateGroupSummaries(results);
   readme += generateMethodology();
   readme += generateInsights(scores);
   readme += generateFooter();

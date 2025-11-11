@@ -21,7 +21,7 @@ Professional performance comparison of JavaScript state management libraries.
 
 - **Last Updated:** November 10, 2025
 - **Last Run:** 4:38:08 PM UTC
-- **Environment:** Node.js v25.0.0, darwin arm64
+- **Environment:** Node.js v20.19.5, linux x64
 - **Test Framework:** Vitest Bench
 - **Iterations:** 3 runs averaged for statistical accuracy
 
@@ -196,6 +196,8 @@ Large state allocation performance
 
 Multi-field updates
 
+*No results available*
+
 **[View Detailed Results →](groups/07-form/README.md)**
 
 ---
@@ -203,6 +205,8 @@ Multi-field updates
 ### [Reactive Async](groups/08-async-reactive/README.md)
 
 Async atoms/computations
+
+*No results available*
 
 **[View Detailed Results →](groups/08-async-reactive/README.md)**
 
@@ -228,4 +232,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-11T08:58:22.202Z*
+*Last generated: 2025-11-11T08:58:54.683Z*

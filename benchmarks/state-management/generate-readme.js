@@ -118,21 +118,55 @@ function generateOverallScore() {
   const scores = overallScores.scores.sort((a, b) => b.overall - a.overall);
   const leader = scores[0];
 
+  // Find best value for each metric
+  const maxOverall = Math.max(...scores.map(s => s.overall));
+  const maxRead = Math.max(...scores.map(s => s.read));
+  const maxWrite = Math.max(...scores.map(s => s.write));
+  const maxCreation = Math.max(...scores.map(s => s.creation));
+  const maxMemory = Math.max(...scores.map(s => s.memory));
+
+  // Find smallest bundle size
+  const minSize = Math.min(...scores.map(entry => {
+    const libKey = Object.keys(libraryMetadata.libraries).find(key =>
+      libraryMetadata.libraries[key].displayName === entry.library
+    );
+    return versions.libraries[libKey]?.size?.gzip || Infinity;
+  }));
+
   let section = `## Overall Performance Score
 
 **Based on Universal Tests**: ${overallScores.includedTests.join(', ')}
 **Methodology**: Geometric mean of operations per second across all universal tests
+**Last Benchmark Run**: ${new Date(versions.lastBenchmarkRun).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}
 
-| Rank | Library | Score (ops/sec) | vs Leader |
-|------|---------|-----------------|-----------|
+| Rank | Library | Version | Bundle (gzip) | Overall Score | Read | Write | Creation | Memory | Last Updated |
+|------|---------|---------|---------------|---------------|------|-------|----------|--------|--------------|
 `;
 
   scores.forEach((entry, index) => {
     const rank = index + 1;
     const emoji = rank === 1 ? '🥇 ' : rank === 2 ? '🥈 ' : rank === 3 ? '🥉 ' : ' ';
-    const vsLeader = (entry.overall / leader.overall).toFixed(2) + 'x';
-    const baseline = rank === 1 ? 'Baseline' : vsLeader;
-    section += `| ${emoji}${rank} | **${entry.library}** | **${formatNumber(entry.overall)}** | ${baseline} |\n`;
+
+    const libKey = Object.keys(libraryMetadata.libraries).find(key =>
+      libraryMetadata.libraries[key].displayName === entry.library
+    );
+
+    const version = versions.libraries[libKey]?.current || 'N/A';
+    const size = versions.libraries[libKey]?.size?.gzip || 0;
+    const sizeKB = (size / 1024).toFixed(1);
+    const lastUpdated = versions.libraries[libKey]?.lastUpdated
+      ? new Date(versions.libraries[libKey].lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      : 'N/A';
+
+    // Add crown to each metric's winner
+    const sizeCrown = size === minSize ? '👑 ' : '';
+    const overallCrown = entry.overall === maxOverall ? '👑 ' : '';
+    const readCrown = entry.read === maxRead ? '👑 ' : '';
+    const writeCrown = entry.write === maxWrite ? '👑 ' : '';
+    const creationCrown = entry.creation === maxCreation ? '👑 ' : '';
+    const memoryCrown = entry.memory === maxMemory ? '👑 ' : '';
+
+    section += `| ${emoji}${rank} | **${entry.library}** | ${version} | ${sizeCrown}${sizeKB} KB | ${overallCrown}${formatNumber(entry.overall)} | ${readCrown}${formatNumber(entry.read)} | ${writeCrown}${formatNumber(entry.write)} | ${creationCrown}${formatNumber(entry.creation)} | ${memoryCrown}${formatNumber(entry.memory)} | ${lastUpdated} |\n`;
   });
 
   const incompleteGroups = Object.entries(groupsConfig.groups)
@@ -441,7 +475,6 @@ function generateReadme() {
   let readme = '';
   readme += generateHeader();
   readme += generateOverallScore();
-  readme += generateLibraryComparison(scores);
   readme += generateFeatureMatrix();
   readme += generateTestCategories();
   readme += generateDetailedResults(results);

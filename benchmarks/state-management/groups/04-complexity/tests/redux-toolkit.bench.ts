@@ -1,19 +1,19 @@
 /**
  * 04-complexity - Redux Toolkit
- * Auto-generated per-library test file
+ * Auto-generated from test registry
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import { reduxActionsV2 } from '../../shared/test-config';
+import { TESTS } from '../test-registry';
+
+// Store initialized outside bench for accurate performance measurement
+const store = reduxActionsV2;
 
 describe('04-complexity - Redux Toolkit', () => {
-  bench('10-Level Nested Update', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Redux Toolkit')!.actions;
-    actions.updateNestedState();
-  });
-
-  bench('Deep Read Access', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Redux Toolkit')!.actions;
-    actions.readNestedState();
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

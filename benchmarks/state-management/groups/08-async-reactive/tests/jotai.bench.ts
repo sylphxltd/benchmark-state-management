@@ -1,5 +1,5 @@
 /**
- * 04-complexity - Jotai
+ * 08-async-reactive - Jotai
  * Auto-generated from test registry
  */
 
@@ -10,7 +10,7 @@ import { TESTS } from '../test-registry';
 // Store initialized outside bench for accurate performance measurement
 const store = jotaiActionsV2;
 
-describe('04-complexity - Jotai', () => {
+describe('08-async-reactive - Jotai', () => {
   Object.values(TESTS).forEach(test => {
     bench(test.name, () => {
       test.execute(store);

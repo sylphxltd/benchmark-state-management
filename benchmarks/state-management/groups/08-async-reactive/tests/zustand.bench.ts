@@ -1,16 +1,16 @@
 /**
- * 04-complexity - Jotai
+ * 08-async-reactive - Zustand
  * Auto-generated from test registry
  */
 
 import { bench, describe } from 'vitest';
-import { jotaiActionsV2 } from '../../shared/test-config';
+import { zustandActionsV2 } from '../../shared/test-config';
 import { TESTS } from '../test-registry';
 
 // Store initialized outside bench for accurate performance measurement
-const store = jotaiActionsV2;
+const store = zustandActionsV2;
 
-describe('04-complexity - Jotai', () => {
+describe('08-async-reactive - Zustand', () => {
   Object.values(TESTS).forEach(test => {
     bench(test.name, () => {
       test.execute(store);

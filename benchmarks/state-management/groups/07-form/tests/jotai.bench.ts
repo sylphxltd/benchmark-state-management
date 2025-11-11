@@ -1,5 +1,5 @@
 /**
- * 04-complexity - Jotai
+ * 07-form - Jotai
  * Auto-generated from test registry
  */
 
@@ -10,7 +10,7 @@ import { TESTS } from '../test-registry';
 // Store initialized outside bench for accurate performance measurement
 const store = jotaiActionsV2;
 
-describe('04-complexity - Jotai', () => {
+describe('07-form - Jotai', () => {
   Object.values(TESTS).forEach(test => {
     bench(test.name, () => {
       test.execute(store);

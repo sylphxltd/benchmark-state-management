@@ -1,16 +1,16 @@
 /**
- * 04-complexity - Jotai
+ * 08-async-reactive - Redux Toolkit
  * Auto-generated from test registry
  */
 
 import { bench, describe } from 'vitest';
-import { jotaiActionsV2 } from '../../shared/test-config';
+import { reduxActionsV2 } from '../../shared/test-config';
 import { TESTS } from '../test-registry';
 
 // Store initialized outside bench for accurate performance measurement
-const store = jotaiActionsV2;
+const store = reduxActionsV2;
 
-describe('04-complexity - Jotai', () => {
+describe('08-async-reactive - Redux Toolkit', () => {
   Object.values(TESTS).forEach(test => {
     bench(test.name, () => {
       test.execute(store);

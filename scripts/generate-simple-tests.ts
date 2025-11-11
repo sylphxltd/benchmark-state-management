@@ -32,7 +32,10 @@ const GROUP_REGISTRIES = [
   '01-read',
   '02-write',
   '03-creation',
+  '04-complexity',
   '06-memory',
+  '07-form',
+  '08-async-reactive',
 ];
 
 function generateTestFile(

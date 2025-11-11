@@ -1,19 +1,19 @@
 /**
  * 04-complexity - Solid Signals
- * Auto-generated per-library test file
+ * Auto-generated from test registry
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import { solidActionsV2 } from '../../shared/test-config';
+import { TESTS } from '../test-registry';
+
+// Store initialized outside bench for accurate performance measurement
+const store = solidActionsV2;
 
 describe('04-complexity - Solid Signals', () => {
-  bench('10-Level Nested Update', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Solid Signals')!.actions;
-    actions.updateNestedState();
-  });
-
-  bench('Deep Read Access', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Solid Signals')!.actions;
-    actions.readNestedState();
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

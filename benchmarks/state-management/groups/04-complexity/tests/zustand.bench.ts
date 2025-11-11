@@ -1,19 +1,19 @@
 /**
  * 04-complexity - Zustand
- * Auto-generated per-library test file
+ * Auto-generated from test registry
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../../shared/test-config';
+import { zustandActionsV2 } from '../../shared/test-config';
+import { TESTS } from '../test-registry';
+
+// Store initialized outside bench for accurate performance measurement
+const store = zustandActionsV2;
 
 describe('04-complexity - Zustand', () => {
-  bench('10-Level Nested Update', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Zustand')!.actions;
-    actions.updateNestedState();
-  });
-
-  bench('Deep Read Access', () => {
-    const actions = LIBRARIES.find(lib => lib.name === 'Zustand')!.actions;
-    actions.readNestedState();
+  Object.values(TESTS).forEach(test => {
+    bench(test.name, () => {
+      test.execute(store);
+    });
   });
 });

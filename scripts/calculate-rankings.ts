@@ -149,32 +149,7 @@ function loadBenchmarkResults(resultsDir: string): Map<string, BenchmarkResult[]
     return allBenchmarks;
   }
 
-  // Fallback to latest.json
-  const latestFile = join(resultsDir, 'latest.json');
-  if (!existsSync(latestFile)) {
-    throw new Error('No benchmark results found (neither per-library nor latest.json)');
-  }
-
-  const data = JSON.parse(readFileSync(latestFile, 'utf-8'));
-
-  for (const file of data.files || []) {
-    for (const group of file.groups || []) {
-      const category = group.fullName.split(' > ').pop() || 'Other';
-      if (!allBenchmarks.has(category)) {
-        allBenchmarks.set(category, []);
-      }
-      for (const benchmark of group.benchmarks || []) {
-        allBenchmarks.get(category)!.push({
-          name: benchmark.name,
-          hz: benchmark.hz,
-          mean: benchmark.mean,
-          metricType: benchmark.metricType || group.metricType || 'throughput'
-        });
-      }
-    }
-  }
-
-  return allBenchmarks;
+  throw new Error('No per-library benchmark results found. Run benchmarks first.');
 }
 
 /**
@@ -207,20 +182,40 @@ export function calculateRankings(
   // 1. Calculate Performance Rankings (Runtime performance only)
   const performanceScores = new Map<string, number[]>();
 
-  for (const [category, results] of allBenchmarks.entries()) {
-    // Filter out excluded benchmarks and non-throughput metrics
-    const libraryResults = results.filter(r =>
-      !excludeList.includes(r.name) &&
-      (r.metricType === 'throughput' || r.metricType === undefined)
-    );
-    if (libraryResults.length === 0) continue;
+  // Group all benchmarks by their benchmark name (without library prefix)
+  // E.g., "Zen - Simple Read" and "Solid Signals - Simple Read" both go to "Simple Read"
+  const benchmarkGroups = new Map<string, BenchmarkResult[]>();
 
-    // Find max for this category
-    const maxHz = Math.max(...libraryResults.map(r => r.hz || 0));
+  for (const [category, results] of allBenchmarks.entries()) {
+    for (const result of results) {
+      // Skip excluded benchmarks and non-throughput metrics
+      if (excludeList.includes(result.name) ||
+          (result.metricType !== 'throughput' && result.metricType !== undefined)) {
+        continue;
+      }
+
+      // Extract benchmark name (remove library prefix)
+      // "Zen - Simple Read" -> "Simple Read"
+      const libraryName = extractLibraryName(result.name, metadata);
+      const benchmarkName = result.name.substring(libraryName.length).replace(/^\s*-\s*/, '');
+
+      if (!benchmarkGroups.has(benchmarkName)) {
+        benchmarkGroups.set(benchmarkName, []);
+      }
+      benchmarkGroups.get(benchmarkName)!.push(result);
+    }
+  }
+
+  // For each benchmark name, calculate scores
+  for (const [benchmarkName, results] of benchmarkGroups.entries()) {
+    if (results.length === 0) continue;
+
+    // Find max Hz for THIS specific benchmark across all libraries
+    const maxHz = Math.max(...results.map(r => r.hz || 0));
     if (maxHz === 0) continue;
 
-    // Calculate relative scores
-    for (const result of libraryResults) {
+    // Calculate scores for each library in this benchmark
+    for (const result of results) {
       const hz = result.hz || 0;
       const score = (hz / maxHz) * 100;
       const libraryName = extractLibraryName(result.name, metadata);

@@ -63,14 +63,14 @@ Based on geometric mean across all supported tests (excludes extreme values):
 
 | Rank | Library | Score | Relative |
 |------|---------|-------|----------|
-| 🥇 | **Zen** | 11.0/100 | Baseline |
-| 🥈 | **Solid Signals** | 9.8/100 | 89.1% |
-| 🥉 | **Preact Signals** | 8.6/100 | 78.2% |
-| 4 | **Zustand** | 4.2/100 | 38.2% |
-| 5 | **MobX** | 0.6/100 | 5.5% |
-| 6 | **Valtio** | 0.5/100 | 4.5% |
-| 7 | **Jotai** | 0.3/100 | 2.7% |
-| 8 | **Redux Toolkit** | 0.2/100 | 1.8% |
+| 🥇 | **Zen** | 46.4/100 | Baseline |
+| 🥈 | **Solid Signals** | 41.2/100 | 88.8% |
+| 🥉 | **Preact Signals** | 36.0/100 | 77.6% |
+| 4 | **Zustand** | 17.6/100 | 37.9% |
+| 5 | **MobX** | 2.6/100 | 5.6% |
+| 6 | **Valtio** | 1.9/100 | 4.1% |
+| 7 | **Jotai** | 1.3/100 | 2.8% |
+| 7 | **Redux Toolkit** | 1.3/100 | 2.8% |
 
 > 📊 **Methodology:** Geometric mean prevents extreme values from skewing results. Each test is normalized (fastest = 100) then averaged.
 
@@ -731,4 +731,4 @@ This benchmark is automatically updated daily by GitHub Actions. Benchmarks run 
 
 ---
 
-*Last generated: 2025-11-11T13:14:29.088Z*
+*Last generated: 2025-11-11T13:18:43.620Z*

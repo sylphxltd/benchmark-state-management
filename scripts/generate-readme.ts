@@ -352,61 +352,18 @@ function parseResultsFromLatestRun(resultsDir: string): Map<string, BenchmarkRes
     return null;
   }
 
-  // Try per-library files first (new format)
+  // Load per-library result files
   const libraryFiles = readdirSync(resultsDir)
     .filter(f => f.endsWith('-benchmark.json'))
     .map(f => join(resultsDir, f));
 
-  if (libraryFiles.length > 0) {
-    console.log(`📊 Using per-library results: ${libraryFiles.length} libraries found`);
-    return parsePerLibraryResults(libraryFiles);
-  }
-
-  // Fallback to latest.json (old format)
-  const latestFile = join(resultsDir, 'latest.json');
-  if (!existsSync(latestFile)) {
-    console.error('❌ No benchmark results found (neither per-library nor latest.json)');
+  if (libraryFiles.length === 0) {
+    console.error('❌ No per-library benchmark results found. Run benchmarks first.');
     return null;
   }
 
-  console.log(`📊 Using legacy results: latest.json`);
-
-  const data = JSON.parse(readFileSync(latestFile, 'utf-8'));
-
-  // Parse Vitest JSON format: { files: [ { groups: [ { fullName, benchmarks: [...] } ] } ] }
-  const grouped = new Map<string, BenchmarkResult[]>();
-
-  for (const file of data.files || []) {
-    for (const group of file.groups || []) {
-      // Extract category from fullName (e.g., "src/benchmark.bench.ts > Simple Increment" -> "Simple Increment")
-      const fullName = group.fullName || 'Other';
-      const category = fullName.split(' > ').pop() || 'Other';
-
-      if (!grouped.has(category)) {
-        grouped.set(category, []);
-      }
-
-      for (const benchmark of group.benchmarks || []) {
-        grouped.get(category)!.push({
-          name: benchmark.name,
-          hz: benchmark.hz,
-          rme: benchmark.rme,
-          min: benchmark.min,
-          max: benchmark.max,
-          mean: benchmark.mean,
-          p75: benchmark.p75,
-          p99: benchmark.p99,
-          p995: benchmark.p995,
-          p999: benchmark.p999,
-          samples: benchmark.sampleCount || 0,
-          metricType: benchmark.metricType || group.metricType,
-          metricUnit: benchmark.metricUnit || group.metricUnit,
-        });
-      }
-    }
-  }
-
-  return grouped;
+  console.log(`📊 Using per-library results: ${libraryFiles.length} libraries found`);
+  return parsePerLibraryResults(libraryFiles);
 }
 
 /**

@@ -1,6 +1,6 @@
 /**
  * Test registry for 03-creation group
- * Tests store creation overhead with different initial states
+ * Tests store creation overhead by creating stores multiple times
  */
 
 export interface TestDefinition {
@@ -10,44 +10,52 @@ export interface TestDefinition {
 }
 
 export const TESTS = {
-  EMPTY_STORE: {
-    name: 'Empty Store Creation',
+  CREATION_X1: {
+    name: 'Store Creation (x1)',
     method: 'createEmptyStore',
     execute: (store) => {
-      // Create a minimal store instance
-      return store.createEmptyStore();
+      // Create 1 store
+      store.createEmptyStore();
     }
   },
-  SMALL_INITIAL_X10: {
-    name: 'Small Initial State (10 items)',
-    method: 'createStoreWithItems',
+  CREATION_X10: {
+    name: 'Store Creation (x10)',
+    method: 'createEmptyStore',
     execute: (store) => {
-      // Create store with 10 items
-      return store.createStoreWithItems(10);
+      // Create 10 stores
+      for (let i = 0; i < 10; i++) {
+        store.createEmptyStore();
+      }
     }
   },
-  MEDIUM_INITIAL_X100: {
-    name: 'Medium Initial State (100 items)',
-    method: 'createStoreWithItems',
+  CREATION_X100: {
+    name: 'Store Creation (x100)',
+    method: 'createEmptyStore',
     execute: (store) => {
-      // Create store with 100 items
-      return store.createStoreWithItems(100);
+      // Create 100 stores
+      for (let i = 0; i < 100; i++) {
+        store.createEmptyStore();
+      }
     }
   },
-  LARGE_INITIAL_X1000: {
-    name: 'Large Initial State (1000 items)',
-    method: 'createStoreWithItems',
+  CREATION_X1000: {
+    name: 'Store Creation (x1000)',
+    method: 'createEmptyStore',
     execute: (store) => {
-      // Create store with 1000 items
-      return store.createStoreWithItems(1000);
+      // Create 1000 stores
+      for (let i = 0; i < 1000; i++) {
+        store.createEmptyStore();
+      }
     }
   },
-  XLARGE_INITIAL_X10000: {
-    name: 'XLarge Initial State (10000 items)',
-    method: 'createStoreWithItems',
+  CREATION_X10000: {
+    name: 'Store Creation (x10000)',
+    method: 'createEmptyStore',
     execute: (store) => {
-      // Create store with 10000 items
-      return store.createStoreWithItems(10000);
+      // Create 10000 stores
+      for (let i = 0; i < 10000; i++) {
+        store.createEmptyStore();
+      }
     }
   },
 } as const satisfies Record<string, TestDefinition>;

@@ -35,11 +35,6 @@ export const zustandActionsV2: StateActions = {
     return create(() => ({ value: 0 }));
   },
 
-  createStoreWithItems: (count: number) => {
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    return create(() => ({ items }));
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     return zustandStore.getState().deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;

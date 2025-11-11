@@ -19,7 +19,6 @@ export interface StateActions {
   // ============================================================================
 
   createEmptyStore?(): any;
-  createStoreWithItems?(count: number): any;
 
   // ============================================================================
   // 04-COMPLEXITY (Optional)

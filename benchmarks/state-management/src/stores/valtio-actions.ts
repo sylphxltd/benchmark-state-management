@@ -28,11 +28,6 @@ export const valtioActionsV2: StateActions = {
     return proxy({ value: 0 });
   },
 
-  createStoreWithItems: (count: number) => {
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    return proxy({ items });
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     return valtioStore.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;

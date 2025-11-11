@@ -75,19 +75,6 @@ export const reduxActionsV2: StateActions = {
     });
   },
 
-  createStoreWithItems: (count: number) => {
-    // Create Redux store with N items
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    const itemsSlice = createSlice({
-      name: 'items',
-      initialState: { items },
-      reducers: {}
-    });
-    return configureStore({
-      reducer: { items: itemsSlice.reducer }
-    });
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     return reduxStore.getState().comprehensive.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;

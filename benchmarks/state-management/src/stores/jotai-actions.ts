@@ -27,14 +27,6 @@ export const jotaiActionsV2: StateActions = {
     return createStore();
   },
 
-  createStoreWithItems: (count: number) => {
-    const store = createStore();
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    const itemsAtom = atom(items);
-    store.set(itemsAtom, items);
-    return store;
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     const state = jotaiStore.get(deepNestedAtom);

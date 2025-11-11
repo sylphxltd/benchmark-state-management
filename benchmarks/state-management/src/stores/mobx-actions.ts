@@ -36,11 +36,6 @@ export const mobxActionsV2: StateActions = {
     return makeAutoObservable({ value: 0 });
   },
 
-  createStoreWithItems: (count: number) => {
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    return makeAutoObservable({ items });
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     return mobxStore.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;

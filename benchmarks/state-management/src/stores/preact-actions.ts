@@ -26,11 +26,6 @@ export const preactActionsV2: StateActions = {
     return signal(0);
   },
 
-  createStoreWithItems: (count: number) => {
-    const items = Array.from({ length: count }, (_, i) => ({ id: i, value: i }));
-    return signal(items);
-  },
-
   // 04-complexity methods
   readNestedState: () => {
     const state = deepNestedSignal.value;

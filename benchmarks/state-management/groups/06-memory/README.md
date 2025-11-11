@@ -33,9 +33,9 @@ Large state allocation performance.
 |:----:|---------|-------------|
 | 🥇 1 | [**Valtio**](https://github.com/pmndrs/valtio) | 👑 15.2M |
 | 🥈 2 | [**Zustand**](https://github.com/pmndrs/zustand) | 4.8M |
-| 🥉 3 | [**Zen**](https://github.com/SylphxAI/zen) | 2.2M |
-|  4 | [**Solid Signals**](https://github.com/solidjs/solid) | 2.0M |
-|  5 | [**Preact Signals**](https://github.com/preactjs/signals) | 2.0M |
+| 🥉 3 | [**Solid Signals**](https://github.com/solidjs/solid) | 2.0M |
+|  4 | [**Preact Signals**](https://github.com/preactjs/signals) | 2.0M |
+|  5 | [**Zen**](https://github.com/SylphxAI/zen) | 1.9M |
 |  6 | [**MobX**](https://github.com/mobxjs/mobx) | 1.2M |
 |  7 | [**Jotai**](https://github.com/pmndrs/jotai) | 964K |
 |  8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 388K |
@@ -48,9 +48,9 @@ Large state allocation performance.
 
 ```
 🥇   Zustand            ████████████████████████████████████████      612K ops/sec
-🥈   Zen                ███████████████████████████████               477K ops/sec
-🥉   Solid Signals      ████████████████████████████                  433K ops/sec
-4.   Jotai              ████████████████████████████                  423K ops/sec
+🥈   Solid Signals      ████████████████████████████                  433K ops/sec
+🥉   Jotai              ████████████████████████████                  423K ops/sec
+4.   Zen                ███████████████████████████                   405K ops/sec
 5.   Preact Signals     ██████████████████████████                    399K ops/sec
 6.   Redux Toolkit      ███                                            46K ops/sec
 7.   MobX               █                                              17K ops/sec
@@ -59,9 +59,9 @@ Large state allocation performance.
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Zustand**](https://github.com/pmndrs/zustand) | 611,733 | ±0.68% | 1.6000ms | 2.3000ms | 305867 |
-| 🥈 | [**Zen**](https://github.com/SylphxAI/zen) | 477,444 | ±0.56% | 2.1000ms | 6.9000ms | 238722 |
-| 🥉 | [**Solid Signals**](https://github.com/solidjs/solid) | 432,717 | ±0.55% | 2.3000ms | 7.9000ms | 216359 |
-| 4 | [**Jotai**](https://github.com/pmndrs/jotai) | 422,732 | ±0.39% | 2.4000ms | 7.9000ms | 211367 |
+| 🥈 | [**Solid Signals**](https://github.com/solidjs/solid) | 432,717 | ±0.55% | 2.3000ms | 7.9000ms | 216359 |
+| 🥉 | [**Jotai**](https://github.com/pmndrs/jotai) | 422,732 | ±0.39% | 2.4000ms | 7.9000ms | 211367 |
+| 4 | [**Zen**](https://github.com/SylphxAI/zen) | 405,474 | ±0.67% | 2.5000ms | 9.0000ms | 202737 |
 | 5 | [**Preact Signals**](https://github.com/preactjs/signals) | 399,323 | ±0.64% | 2.5000ms | 8.3000ms | 199662 |
 | 6 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 46,154 | ±0.27% | 21.7000ms | 29.2000ms | 23078 |
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 17,340 | ±0.15% | 57.7000ms | 64.8000ms | 8671 |
@@ -81,26 +81,26 @@ Large state allocation performance.
 ### Large State Read (1000 items)
 
 ```
-🥇   Zen                ████████████████████████████████████████     47.7M ops/sec
-🥈   Redux Toolkit      ████████████████████████████████████████     47.5M ops/sec
-🥉   Zustand            ████████████████████████████████████████     47.5M ops/sec
-4.   Preact Signals     ████████████████████████████████████████     47.1M ops/sec
-5.   Solid Signals      ███████████████████████████████████████      47.1M ops/sec
+🥇   Redux Toolkit      ████████████████████████████████████████     47.5M ops/sec
+🥈   Zustand            ████████████████████████████████████████     47.5M ops/sec
+🥉   Preact Signals     ████████████████████████████████████████     47.1M ops/sec
+4.   Zen                ████████████████████████████████████████     47.1M ops/sec
+5.   Solid Signals      ████████████████████████████████████████     47.1M ops/sec
 6.   MobX               ███████████████████████████                  31.6M ops/sec
 7.   Jotai              █████                                         6.5M ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
 |:----:|---------|---------|----------|------|-----|---------|
-| 🥇 | [**Zen**](https://github.com/SylphxAI/zen) | 47,699,838 | ±0.04% | 0.0000ms | 0.0000ms | 23849920 |
-| 🥈 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 47,510,900 | ±0.05% | 0.0000ms | 0.0000ms | 23755451 |
-| 🥉 | [**Zustand**](https://github.com/pmndrs/zustand) | 47,459,027 | ±0.08% | 0.0000ms | 0.0000ms | 23729514 |
-| 4 | [**Preact Signals**](https://github.com/preactjs/signals) | 47,141,540 | ±0.04% | 0.0000ms | 0.0000ms | 23570771 |
+| 🥇 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 47,510,900 | ±0.05% | 0.0000ms | 0.0000ms | 23755451 |
+| 🥈 | [**Zustand**](https://github.com/pmndrs/zustand) | 47,459,027 | ±0.08% | 0.0000ms | 0.0000ms | 23729514 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 47,141,540 | ±0.04% | 0.0000ms | 0.0000ms | 23570771 |
+| 4 | [**Zen**](https://github.com/SylphxAI/zen) | 47,109,333 | ±0.05% | 0.0000ms | 0.0000ms | 23554668 |
 | 5 | [**Solid Signals**](https://github.com/solidjs/solid) | 47,081,753 | ±0.05% | 0.0000ms | 0.0000ms | 23540878 |
 | 6 | [**MobX**](https://github.com/mobxjs/mobx) | 31,620,343 | ±0.03% | 0.0000ms | 0.0000ms | 15810172 |
 | 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 6,462,219 | ±0.17% | 0.2000ms | 0.2000ms | 3231110 |
 
-**Key Insight:** Zen is 7.38x faster than Jotai in this test.
+**Key Insight:** Redux Toolkit is 7.35x faster than Jotai in this test.
 
 ### Large State Update
 
@@ -117,9 +117,9 @@ Large state allocation performance.
 ```
 🥇   Zustand            ████████████████████████████████████████      3.8M ops/sec
 🥈   MobX               ███████████████████████████████████           3.3M ops/sec
-🥉   Zen                █████                                         441K ops/sec
-4.   Preact Signals     █████                                         433K ops/sec
-5.   Solid Signals      ████                                          408K ops/sec
+🥉   Preact Signals     █████                                         433K ops/sec
+4.   Solid Signals      ████                                          408K ops/sec
+5.   Zen                ████                                          378K ops/sec
 6.   Jotai              ███                                           328K ops/sec
 7.   Redux Toolkit                                                     27K ops/sec
 ```
@@ -128,9 +128,9 @@ Large state allocation performance.
 |:----:|---------|---------|----------|------|-----|---------|
 | 🥇 | [**Zustand**](https://github.com/pmndrs/zustand) | 3,840,850 | ±0.71% | 0.3000ms | 0.8000ms | 1920426 |
 | 🥈 | [**MobX**](https://github.com/mobxjs/mobx) | 3,330,716 | ±0.03% | 0.3000ms | 0.4000ms | 1665359 |
-| 🥉 | [**Zen**](https://github.com/SylphxAI/zen) | 440,540 | ±0.57% | 2.3000ms | 5.2000ms | 220270 |
-| 4 | [**Preact Signals**](https://github.com/preactjs/signals) | 433,145 | ±0.64% | 2.3000ms | 5.3000ms | 216573 |
-| 5 | [**Solid Signals**](https://github.com/solidjs/solid) | 407,968 | ±0.53% | 2.5000ms | 5.5000ms | 203985 |
+| 🥉 | [**Preact Signals**](https://github.com/preactjs/signals) | 433,145 | ±0.64% | 2.3000ms | 5.3000ms | 216573 |
+| 4 | [**Solid Signals**](https://github.com/solidjs/solid) | 407,968 | ±0.53% | 2.5000ms | 5.5000ms | 203985 |
+| 5 | [**Zen**](https://github.com/SylphxAI/zen) | 377,744 | ±0.71% | 2.6000ms | 7.1000ms | 188872 |
 | 6 | [**Jotai**](https://github.com/pmndrs/jotai) | 328,020 | ±0.41% | 3.0000ms | 6.2000ms | 164010 |
 | 7 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 26,677 | ±0.35% | 37.5000ms | 51.1000ms | 13339 |
 
@@ -154,4 +154,4 @@ npx vitest bench groups/06-memory/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T11:38:36.496Z*
+*Last generated: 2025-11-11T12:10:41.354Z*

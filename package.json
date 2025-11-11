@@ -27,6 +27,11 @@
     "type": "git",
     "url": "https://github.com/SylphxAI/benchmark.git"
   },
+  "homepage": "https://github.com/SylphxAI/benchmark#readme",
+  "bugs": {
+    "url": "https://github.com/SylphxAI/benchmark/issues"
+  },
+  "author": "Sylphx",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/bun": "^1.1.13",

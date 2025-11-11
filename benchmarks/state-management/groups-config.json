@@ -41,11 +41,6 @@
       "description": "Deep nested state",
       "type": "universal"
     },
-    "05-cache": {
-      "title": "Cache Performance",
-      "description": "Repeated access patterns",
-      "type": "universal"
-    },
     "06-memory": {
       "title": "Memory Allocation",
       "description": "Large state allocation performance",
@@ -66,25 +61,35 @@
     },
     "08-async-reactive": {
       "title": "Reactive Async",
-      "description": "Async atoms/computations",
+      "description": "Native async atoms that auto-recompute when dependencies change",
       "type": "feature",
       "libraries": ["Jotai"],
+      "note": "Only Jotai supports true reactive async atoms (atom(async (get) => ...)). Dependencies trigger automatic re-execution.",
       "benchmarks": [
         {
-          "name": "Reactive Async Read",
-          "pattern": "Reactive Async Read -"
+          "name": "Async Atom Read",
+          "pattern": "Async Atom Read -",
+          "description": "Basic async atom resolution"
         },
         {
-          "name": "Async Chain (2 levels)",
-          "pattern": "Async Chain (2 levels) -"
+          "name": "Async Atom with Dependency Update",
+          "pattern": "Async Atom with Dependency Update -",
+          "description": "Update dependency and re-read async atom"
         },
         {
-          "name": "Complex Async Object",
-          "pattern": "Complex Async Object -"
+          "name": "Chained Async Atoms",
+          "pattern": "Chained Async Atoms -",
+          "description": "Async atom depending on another async atom"
         },
         {
-          "name": "Concurrent Async (3 atoms)",
-          "pattern": "Concurrent Async (3 atoms) -"
+          "name": "Complex Async Dependencies",
+          "pattern": "Complex Async Dependencies -",
+          "description": "Multiple dependencies triggering async"
+        },
+        {
+          "name": "Concurrent Async Reads",
+          "pattern": "Concurrent Async Reads -",
+          "description": "Multiple async atoms read concurrently"
         }
       ]
     },

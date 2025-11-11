@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/04-complexity/tests/zen.bench.ts",
+      "groups": [
+        {
+          "fullName": "04-complexity - Zen",
+          "benchmarks": [
+            {
+              "id": "Deep Nested Read (10 levels) - Zen",
+              "name": "Deep Nested Read (10 levels)",
+              "hz": 46585581.02,
+              "min": 0,
+              "max": 0.0883,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0.0001,
+              "rme": 0.07,
+              "samples": 23292792
+            },
+            {
+              "id": "Deep Nested Write (10 levels) - Zen",
+              "name": "Deep Nested Write (10 levels)",
+              "hz": 13955678.02,
+              "min": 0,
+              "max": 0.014,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0003,
+              "rme": 0.03,
+              "samples": 6977840
+            },
+            {
+              "id": "Array Splice (middle) - Zen",
+              "name": "Array Splice (middle)",
+              "hz": 29476513.23,
+              "min": 0,
+              "max": 0.0122,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0.0001,
+              "rme": 0.03,
+              "samples": 14738257
+            },
+            {
+              "id": "Large Array Map (1000 items) - Zen",
+              "name": "Large Array Map (1000 items)",
+              "hz": 44424852,
+              "min": 0,
+              "max": 0.0714,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0.0001,
+              "rme": 0.06,
+              "samples": 22212426
+            },
+            {
+              "id": "Multi-field Update (unrelated) - Zen",
+              "name": "Multi-field Update (unrelated)",
+              "hz": 14273.85,
+              "min": 0.0151,
+              "max": 20.431,
+              "mean": 0.0701,
+              "p75": 0.0663,
+              "p99": 0.1188,
+              "p995": 0.128,
+              "p999": 6.0296,
+              "rme": 16.67,
+              "samples": 7137
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

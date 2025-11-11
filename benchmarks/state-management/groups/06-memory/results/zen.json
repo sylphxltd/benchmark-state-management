@@ -7,32 +7,46 @@
           "fullName": "06-memory - Zen",
           "benchmarks": [
             {
-              "id": "Large State Read - Zen",
-              "name": "Large State Read",
-              "hz": 49803497,
+              "id": "Large State Read (1000 items) - Zen",
+              "name": "Large State Read (1000 items)",
+              "hz": 48930554.09,
               "min": 0,
-              "max": 0.0133,
+              "max": 0.0403,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0,
-              "rme": 0.04,
-              "samples": 24901749
+              "rme": 0.06,
+              "samples": 24465279
             },
             {
-              "id": "Large State Update - Zen",
-              "name": "Large State Update",
-              "hz": 44714114.39,
-              "min": 0,
-              "max": 0.0111,
-              "mean": 0,
-              "p75": 0,
-              "p99": 0,
-              "p995": 0,
-              "p999": 0,
-              "rme": 0.04,
-              "samples": 22357058
+              "id": "Large State Update (1000 items) - Zen",
+              "name": "Large State Update (1000 items)",
+              "hz": 436456.8,
+              "min": 0.0018,
+              "max": 0.3245,
+              "mean": 0.0023,
+              "p75": 0.002,
+              "p99": 0.0053,
+              "p995": 0.0055,
+              "p999": 0.0064,
+              "rme": 0.59,
+              "samples": 218229
+            },
+            {
+              "id": "Large State Filter - Zen",
+              "name": "Large State Filter",
+              "hz": 458968.65,
+              "min": 0.0018,
+              "max": 0.3238,
+              "mean": 0.0022,
+              "p75": 0.002,
+              "p99": 0.0079,
+              "p995": 0.0082,
+              "p999": 0.0094,
+              "rme": 0.67,
+              "samples": 229485
             }
           ]
         }

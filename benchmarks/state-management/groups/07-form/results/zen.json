@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/07-form/tests/zen.bench.ts",
+      "groups": [
+        {
+          "fullName": "07-form - Zen",
+          "benchmarks": [
+            {
+              "id": "Single Field Update - Zen",
+              "name": "Single Field Update",
+              "hz": 19376256.91,
+              "min": 0,
+              "max": 0.1307,
+              "mean": 0.0001,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.09,
+              "samples": 9688129
+            },
+            {
+              "id": "Multiple Fields Update (3 fields) - Zen",
+              "name": "Multiple Fields Update (3 fields)",
+              "hz": 17775417.3,
+              "min": 0,
+              "max": 0.2195,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.37,
+              "samples": 8887710
+            },
+            {
+              "id": "Nested Field Update - Zen",
+              "name": "Nested Field Update",
+              "hz": 15480519.75,
+              "min": 0,
+              "max": 0.3942,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0003,
+              "rme": 0.55,
+              "samples": 7740260
+            },
+            {
+              "id": "Full Form Reset - Zen",
+              "name": "Full Form Reset",
+              "hz": 28547250.34,
+              "min": 0,
+              "max": 0.6481,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0001,
+              "rme": 0.3,
+              "samples": 14273626
+            },
+            {
+              "id": "Conditional Field Update - Zen",
+              "name": "Conditional Field Update",
+              "hz": 45680912.35,
+              "min": 0,
+              "max": 0.0188,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.04,
+              "samples": 22840458
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

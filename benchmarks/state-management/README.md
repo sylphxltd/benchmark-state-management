@@ -49,13 +49,13 @@ See which library wins in each test group:
 | Library | [01](#01---read-operations) | [02](#02---write-operations) | [03](#03---store-creation) | [04](#04---complexity) | [05](#05---cache-performance) | [06](#06---memory-allocation) | [07](#07---form-state) | [08](#08---reactive-async) | [09](#09---computed-native) | [10](#10---selectors) | [11](#11---batching-native) |
 |---------|------|------|------|------|------|------|------|------|------|------|------|
 | [**Solid Signals**](https://github.com/solidjs/solid) | 🥇 | 🥇 | 4 | 🥇 | - | 5 | 🥇 | - | - | - | 🥇 |
-| [**Preact Signals**](https://github.com/preactjs/signals) | 4 | 🥈 | 🥇 | - | - | 🥇 | - | - | - | - | - |
-| [**Zen**](https://github.com/SylphxAI/zen) | 🥉 | 🥉 | 🥈 | - | - | 🥈 | - | - | - | - | - |
-| [**Jotai**](https://github.com/pmndrs/jotai) | 8 | 7 | 6 | 4 | - | 7 | 5 | 🥉 | - | - | - |
-| [**Valtio**](https://github.com/pmndrs/valtio) | 5 | 6 | 8 | - | - | - | 🥉 | - | - | - | 🥈 |
-| [**Zustand**](https://github.com/pmndrs/zustand) | 🥈 | 4 | 5 | 🥈 | - | 4 | 🥈 | - | - | - | - |
-| [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 6 | 8 | 🥉 | - | - | 🥉 | - | - | - | - | - |
-| [**MobX**](https://github.com/mobxjs/mobx) | 7 | 5 | 7 | 🥉 | - | 6 | 4 | - | - | - | 🥉 |
+| [**Preact Signals**](https://github.com/preactjs/signals) | 4 | 🥉 | 🥇 | - | - | 🥇 | - | - | - | - | - |
+| [**Zen**](https://github.com/SylphxAI/zen) | 🥈 | 🥈 | 🥉 | 🥈 | - | 4 | 🥈 | - | - | - | - |
+| [**Jotai**](https://github.com/pmndrs/jotai) | 8 | 7 | 6 | 5 | - | 7 | 6 | 🥉 | - | - | - |
+| [**Valtio**](https://github.com/pmndrs/valtio) | 5 | 6 | 8 | - | - | - | 4 | - | - | - | 🥈 |
+| [**Zustand**](https://github.com/pmndrs/zustand) | 🥉 | 4 | 5 | 🥉 | - | 🥉 | 🥉 | - | - | - | - |
+| [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 6 | 8 | 🥈 | - | - | 🥈 | - | - | - | - | - |
+| [**MobX**](https://github.com/mobxjs/mobx) | 7 | 5 | 7 | 4 | - | 6 | 5 | - | - | - | 🥉 |
 
 **Legend:** 🥇 1st place | 🥈 2nd place | 🥉 3rd place | - Not applicable
 
@@ -108,8 +108,8 @@ Simple read and high-frequency read patterns
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      9.6M ops/sec
-🥈   Zustand            ████████████████                              4.0M ops/sec
-🥉   Zen                █████                                         1.2M ops/sec
+🥈   Zen                █████████████████████████████████████         8.8M ops/sec
+🥉   Zustand            ████████████████                              4.0M ops/sec
 4.   Preact Signals     █████                                         1.2M ops/sec
 5.   Valtio             ███                                           713K ops/sec
 6.   Redux Toolkit      ██                                            528K ops/sec
@@ -120,8 +120,8 @@ Simple read and high-frequency read patterns
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 9.6M |
-| 🥈 2 | **Zustand** | 4.0M |
-| 🥉 3 | **Zen** | 1.2M |
+| 🥈 2 | **Zen** | 8.8M |
+| 🥉 3 | **Zustand** | 4.0M |
 |  4 | **Preact Signals** | 1.2M |
 |  5 | **Valtio** | 713K |
 |  6 | **Redux Toolkit** | 528K |
@@ -138,8 +138,8 @@ Simple increments and burst updates
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      4.4M ops/sec
-🥈   Preact Signals     ████████                                      845K ops/sec
-🥉   Zen                ███████                                       783K ops/sec
+🥈   Zen                █████████████████                             1.9M ops/sec
+🥉   Preact Signals     ████████                                      845K ops/sec
 4.   Zustand            ███                                           363K ops/sec
 5.   MobX               █                                              79K ops/sec
 6.   Valtio             █                                              65K ops/sec
@@ -150,8 +150,8 @@ Simple increments and burst updates
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 4.4M |
-| 🥈 2 | **Preact Signals** | 845K |
-| 🥉 3 | **Zen** | 783K |
+| 🥈 2 | **Zen** | 1.9M |
+| 🥉 3 | **Preact Signals** | 845K |
 |  4 | **Zustand** | 363K |
 |  5 | **MobX** | 79K |
 |  6 | **Valtio** | 65K |
@@ -168,8 +168,8 @@ Instance creation overhead
 
 ```
 🥇   Preact Signals     ████████████████████████████████████████     50.3M ops/sec
-🥈   Zen                ████████████████████████████████████████     50.1M ops/sec
-🥉   Redux Toolkit      ████████████████████████████████████████     50.0M ops/sec
+🥈   Redux Toolkit      ████████████████████████████████████████     50.0M ops/sec
+🥉   Zen                ████████                                     10.1M ops/sec
 4.   Solid Signals      ███                                           3.2M ops/sec
 5.   Zustand                                                          180K ops/sec
 6.   Jotai                                                             14K ops/sec
@@ -180,8 +180,8 @@ Instance creation overhead
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Preact Signals** | 👑 50.3M |
-| 🥈 2 | **Zen** | 50.1M |
-| 🥉 3 | **Redux Toolkit** | 50.0M |
+| 🥈 2 | **Redux Toolkit** | 50.0M |
+| 🥉 3 | **Zen** | 10.1M |
 |  4 | **Solid Signals** | 3.2M |
 |  5 | **Zustand** | 180K |
 |  6 | **Jotai** | 14K |
@@ -198,17 +198,19 @@ Deep nested state
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████      6.7M ops/sec
-🥈   Zustand            ██████████████████████████                    4.4M ops/sec
-🥉   MobX               ██████████████                                2.4M ops/sec
-4.   Jotai              ███████                                       1.1M ops/sec
+🥈   Zen                ███████████████████████████████████████       6.6M ops/sec
+🥉   Zustand            ██████████████████████████                    4.4M ops/sec
+4.   MobX               ██████████████                                2.4M ops/sec
+5.   Jotai              ███████                                       1.1M ops/sec
 ```
 
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 6.7M |
-| 🥈 2 | **Zustand** | 4.4M |
-| 🥉 3 | **MobX** | 2.4M |
-|  4 | **Jotai** | 1.1M |
+| 🥈 2 | **Zen** | 6.6M |
+| 🥉 3 | **Zustand** | 4.4M |
+|  4 | **MobX** | 2.4M |
+|  5 | **Jotai** | 1.1M |
 
 **[View Detailed Results →](groups/04-complexity/README.md)**
 
@@ -230,9 +232,9 @@ Large state allocation performance
 
 ```
 🥇   Preact Signals     ████████████████████████████████████████     47.4M ops/sec
-🥈   Zen                ████████████████████████████████████████     47.2M ops/sec
-🥉   Redux Toolkit      ██████                                        7.0M ops/sec
-4.   Zustand            ████                                          4.9M ops/sec
+🥈   Redux Toolkit      ██████                                        7.0M ops/sec
+🥉   Zustand            ████                                          4.9M ops/sec
+4.   Zen                ██                                            2.1M ops/sec
 5.   Solid Signals      ██                                            2.1M ops/sec
 6.   MobX               █                                             1.1M ops/sec
 7.   Jotai              █                                             971K ops/sec
@@ -241,9 +243,9 @@ Large state allocation performance
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Preact Signals** | 👑 47.4M |
-| 🥈 2 | **Zen** | 47.2M |
-| 🥉 3 | **Redux Toolkit** | 7.0M |
-|  4 | **Zustand** | 4.9M |
+| 🥈 2 | **Redux Toolkit** | 7.0M |
+| 🥉 3 | **Zustand** | 4.9M |
+|  4 | **Zen** | 2.1M |
 |  5 | **Solid Signals** | 2.1M |
 |  6 | **MobX** | 1.1M |
 |  7 | **Jotai** | 971K |
@@ -258,19 +260,21 @@ Multi-field updates
 
 ```
 🥇   Solid Signals      ████████████████████████████████████████     24.0M ops/sec
-🥈   Zustand            ████████████████████████████████             18.9M ops/sec
-🥉   Valtio             ███████                                       4.4M ops/sec
-4.   MobX               ████                                          2.2M ops/sec
-5.   Jotai              ████                                          2.2M ops/sec
+🥈   Zen                ███████████████████████████████████████      23.4M ops/sec
+🥉   Zustand            ████████████████████████████████             18.9M ops/sec
+4.   Valtio             ███████                                       4.4M ops/sec
+5.   MobX               ████                                          2.2M ops/sec
+6.   Jotai              ████                                          2.2M ops/sec
 ```
 
 | Rank | Library | Group Score |
 |:----:|---------|-------------|
 | 🥇 1 | **Solid Signals** | 👑 24.0M |
-| 🥈 2 | **Zustand** | 18.9M |
-| 🥉 3 | **Valtio** | 4.4M |
-|  4 | **MobX** | 2.2M |
-|  5 | **Jotai** | 2.2M |
+| 🥈 2 | **Zen** | 23.4M |
+| 🥉 3 | **Zustand** | 18.9M |
+|  4 | **Valtio** | 4.4M |
+|  5 | **MobX** | 2.2M |
+|  6 | **Jotai** | 2.2M |
 
 **[View Detailed Results →](groups/07-form/README.md)**
 
@@ -288,6 +292,7 @@ Async atoms/computations
 🥉   Jotai              ████████████████████████████████████          676K ops/sec
 4.   Solid Signals      ███████████████████████████████████           657K ops/sec
 5.   MobX               ██████████████████████████████████            639K ops/sec
+6.   Zen                █████████████████████████████████             619K ops/sec
 ```
 
 | Rank | Library | Group Score |
@@ -297,6 +302,7 @@ Async atoms/computations
 | 🥉 3 | **Jotai** | 676K |
 |  4 | **Solid Signals** | 657K |
 |  5 | **MobX** | 639K |
+|  6 | **Zen** | 619K |
 
 **[View Detailed Results →](groups/08-async-reactive/README.md)**
 

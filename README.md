@@ -63,8 +63,9 @@ cd benchmarks/state-management
 npm install
 npm run benchmark
 
-# Generate report
-node generate-readme.js
+# Generate report (from project root)
+cd ../..
+node scripts/generate-readme.js benchmarks/state-management
 ```
 
 ---

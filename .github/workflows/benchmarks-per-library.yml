@@ -242,7 +242,7 @@ jobs:
           echo "✓ Group READMEs generated"
 
       - name: Generate category README
-        run: node benchmarks/state-management/generate-readme.js
+        run: node scripts/generate-readme.js benchmarks/state-management
 
       - name: Generate root README
         run: npx tsx scripts/generate-root-readme.ts

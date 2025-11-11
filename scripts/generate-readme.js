@@ -1,17 +1,39 @@
 #!/usr/bin/env node
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+/**
+ * Universal README Generation Script
+ * Generates README for any benchmark category
+ *
+ * Usage: node scripts/generate-readme.js <category-path>
+ * Example: node scripts/generate-readme.js benchmarks/state-management
+ */
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { readFileSync, readdirSync, writeFileSync, existsSync } from 'fs';
+import { join, resolve } from 'path';
+
+// Get category path from command line argument
+const args = process.argv.slice(2);
+if (args.length === 0) {
+  console.error('❌ Usage: node scripts/generate-readme.js <category-path>');
+  console.error('   Example: node scripts/generate-readme.js benchmarks/state-management');
+  process.exit(1);
+}
+
+const categoryPath = resolve(args[0]);
+
+// Verify category path exists
+if (!existsSync(categoryPath)) {
+  console.error(`❌ Category path does not exist: ${categoryPath}`);
+  process.exit(1);
+}
+
+console.log(`📝 Generating README for: ${categoryPath}\n`);
 
 // Load configuration files
-const categoryConfig = JSON.parse(readFileSync(join(__dirname, 'category-config.json'), 'utf-8'));
-const groupsConfig = JSON.parse(readFileSync(join(__dirname, 'groups-config.json'), 'utf-8'));
-const libraryMetadata = JSON.parse(readFileSync(join(__dirname, 'library-metadata.json'), 'utf-8'));
-const versions = JSON.parse(readFileSync(join(__dirname, 'versions.json'), 'utf-8'));
-const features = JSON.parse(readFileSync(join(__dirname, 'features.json'), 'utf-8'));
+const categoryConfig = JSON.parse(readFileSync(join(categoryPath, 'category-config.json'), 'utf-8'));
+const groupsConfig = JSON.parse(readFileSync(join(categoryPath, 'groups-config.json'), 'utf-8'));
+const libraryMetadata = JSON.parse(readFileSync(join(categoryPath, 'library-metadata.json'), 'utf-8'));
+const versions = JSON.parse(readFileSync(join(categoryPath, 'versions.json'), 'utf-8'));
+const features = JSON.parse(readFileSync(join(categoryPath, 'features.json'), 'utf-8'));
 
 // Utility functions
 function formatNumber(num) {
@@ -170,7 +192,7 @@ function generateBenchmarkSection(title, description, benchmarks, hasNote, noteT
 
 // Load per-library results and merge them
 function loadPerLibraryResults() {
-  const resultsPath = join(__dirname, 'results');
+  const resultsPath = join(categoryPath, 'results');
   const mergedResults = {};
 
   try {
@@ -229,7 +251,7 @@ function loadAllResults() {
 
   // Fall back to group results (old format)
   console.log('📦 Using group-based benchmark results (legacy)\n');
-  const groupsPath = join(__dirname, 'groups');
+  const groupsPath = join(categoryPath, 'groups');
   const results = {};
 
   const groupDirs = readdirSync(groupsPath, { withFileTypes: true })
@@ -757,8 +779,8 @@ function generateReadme() {
   readme += generateInsights(performanceRankings);
   readme += generateFooter();
 
-  writeFileSync(join(__dirname, 'README.md'), readme);
-  console.log('✅ README.md generated successfully');
+  writeFileSync(join(categoryPath, 'README.md'), readme);
+  console.log(`✅ README.md generated successfully at ${categoryPath}/README.md`);
 }
 
 generateReadme();

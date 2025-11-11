@@ -25,11 +25,35 @@ interface LibraryBenchmark {
   results: BenchmarkResult[];
 }
 
+interface LibraryMetadata {
+  name: string;
+  displayName: string;
+  description: string;
+  url: string;
+  npm: string;
+  color?: string;
+  tradeoff?: string;
+}
+
+interface MetadataFile {
+  libraries: Record<string, LibraryMetadata>;
+}
+
 // Get category path
 const categoryPath = process.argv[2] || 'benchmarks/state-management';
 const resultsPath = join(categoryPath, 'results');
+const metadataPath = join(categoryPath, 'library-metadata.json');
 
 console.log(`📝 Generating README for: ${categoryPath}\n`);
+
+// Load library metadata
+let metadata: MetadataFile = { libraries: {} };
+try {
+  metadata = JSON.parse(readFileSync(metadataPath, 'utf-8'));
+  console.log(`✓ Loaded metadata for ${Object.keys(metadata.libraries).length} libraries`);
+} catch (e) {
+  console.warn('⚠️  No library-metadata.json found, skipping enhanced features');
+}
 
 // Load all library results
 const resultFiles = readdirSync(resultsPath)
@@ -125,14 +149,71 @@ function formatGroupName(groupId: string): string {
   return names[groupId] || groupId;
 }
 
+// Get category name from path
+const categoryName = categoryPath.split('/').pop() || 'benchmarks';
+const categoryTitle = categoryName
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
 // Generate README
-let readme = `# State Management Benchmarks
+let readme = `<div align="center">
 
-Comprehensive performance benchmarks for React state management libraries.
+# ${categoryTitle} Benchmarks
 
-> **Latest Update**: ${new Date(libraries[0].timestamp).toLocaleDateString('en-US', {
+Comprehensive performance benchmarks for React ${categoryName} libraries.
+
+[![CI Status](https://img.shields.io/github/actions/workflow/status/SylphxAI/benchmark/benchmarks-per-library.yml?branch=main&label=Benchmarks&style=flat-square)](https://github.com/SylphxAI/benchmark/actions)
+[![Last Updated](https://img.shields.io/badge/Updated-${new Date(libraries[0].timestamp).toLocaleDateString('en-US', {
   year: 'numeric', month: 'short', day: 'numeric'
-})}
+}).replace(/ /g, '%20')}-blue?style=flat-square)](https://github.com/SylphxAI/benchmark)
+[![Libraries](https://img.shields.io/badge/Libraries-${libraries.length}-green?style=flat-square)](#-libraries-tested)
+[![Tests](https://img.shields.io/badge/Tests-${libraries[0].results.length}-orange?style=flat-square)](#-test-coverage)
+
+[⬅️ Back to Main](../../README.md) • [📊 All Categories](../../README.md#-benchmark-categories) • [🔬 Methodology](#-methodology) • [🚀 Run Locally](#-run-locally)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [🎯 Quick Recommendations](#-quick-recommendations)
+- [📊 Overall Performance Rankings](#-overall-performance-rankings)
+- [📈 Library Comparison](#-library-comparison)
+- [📊 Performance by Test Group](#-performance-by-test-group)
+- [🔬 Methodology](#-methodology)
+- [🚀 Run Locally](#-run-locally)
+- [🚀 Libraries Tested](#-libraries-tested)
+
+---
+
+## 🎯 Quick Recommendations
+
+**TL;DR** - Choose based on your needs:
+
+- **⚡ Maximum Performance**: ${sortedLibs[0].library} - Fastest overall with ${(overallScores.get(sortedLibs[0].libraryId) || 0).toFixed(1)}/100 score
+- **⚖️ Best Balance**: ${sortedLibs[1].library} - Great performance (${(overallScores.get(sortedLibs[1].libraryId) || 0).toFixed(1)}/100) with good ecosystem
+- **🎯 Popular Choice**: ${sortedLibs.find(lib => lib.libraryId === 'zustand')?.library || sortedLibs[2].library} - Widely used, good performance, minimal API
+
+<details>
+<summary><b>📊 Detailed Performance Insights</b> (click to expand)</summary>
+
+### When to Choose Each Library
+
+${sortedLibs.slice(0, 5).map(lib => {
+  const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+  const score = overallScores.get(lib.libraryId) || 0;
+
+  return `
+**${lib.library}** (Score: ${score.toFixed(1)}/100)
+- ${meta?.description || 'High-performance state management solution'}
+- **Best for**: ${meta?.tradeoff || 'General purpose state management'}
+- [GitHub](${meta?.url || '#'}) • [npm](https://www.npmjs.com/package/${meta?.npm || lib.libraryId})
+`;
+}).join('\n')}
+
+</details>
 
 ---
 
@@ -140,8 +221,8 @@ Comprehensive performance benchmarks for React state management libraries.
 
 Based on geometric mean of normalized scores across all ${libraries[0].results.length} tests.
 
-| Rank | Library | Overall Score | Relative Performance |
-|:----:|---------|--------------|---------------------|
+| Rank | Library | Overall Score | Relative Performance | Links |
+|:----:|---------|--------------|---------------------|:-----:|
 `;
 
 sortedLibs.forEach((lib, i) => {
@@ -151,10 +232,35 @@ sortedLibs.forEach((lib, i) => {
   const medal = getMedal(i);
   const rank = i + 1;
 
-  readme += `| ${medal} ${rank} | **${lib.library}** | ${score.toFixed(1)}/100 | ${relative}% of fastest |\n`;
+  const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+  const githubLink = meta?.url || '#';
+  const npmLink = `https://www.npmjs.com/package/${meta?.npm || lib.libraryId}`;
+  const bundleLink = `https://bundlephobia.com/package/${meta?.npm || lib.libraryId}`;
+
+  readme += `| ${medal} ${rank} | **[${lib.library}](${githubLink})** | ${score.toFixed(1)}/100 | ${relative}% of fastest | [📦](${npmLink}) [📊](${bundleLink}) |\n`;
 });
 
-readme += `\n---\n\n## 📈 Performance by Test Group\n\n`;
+readme += `
+
+*📦 = npm package • 📊 = bundle size*
+
+---
+
+## 📈 Library Comparison
+
+| Library | Performance | Description | Best For |
+|---------|-------------|-------------|----------|
+`;
+
+sortedLibs.forEach(lib => {
+  const score = overallScores.get(lib.libraryId) || 0;
+  const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+  const performanceBar = '█'.repeat(Math.round(score / 10));
+
+  readme += `| **[${lib.library}](${meta?.url || '#'})** | ${performanceBar} ${score.toFixed(0)}/100 | ${meta?.description?.substring(0, 60) || 'State management solution'}... | ${meta?.tradeoff?.substring(0, 50) || 'General purpose'}... |\n`;
+});
+
+readme += `\n---\n\n## 📊 Performance by Test Group\n\n<details open>\n<summary><b>Click to expand/collapse detailed test results</b></summary>\n\n`;
 
 // Sort groups
 const sortedGroups = Array.from(groupedByGroup.entries()).sort((a, b) =>
@@ -202,15 +308,71 @@ for (const [groupId, testsMap] of sortedGroups) {
   }
 }
 
-readme += `---
+readme += `
+</details>
+
+---
 
 ## 🔬 Methodology
 
-- **Warmup**: 100 iterations
+<details>
+<summary><b>How We Test</b> (click to expand)</summary>
+
+### Test Environment
+- **Runtime**: Bun (latest stable)
+- **Warmup**: 100 iterations to stabilize JIT
 - **Measurement**: 1000 iterations per test
-- **Metrics**: Operations per second, mean time, variance, P99 latency
-- **Environment**: Bun runtime
-- **Scoring**: Geometric mean of normalized performance indices
+- **Execution**: Isolated process per library
+
+### Metrics Collected
+- **Operations/Second**: Higher is better
+- **Mean Time**: Average execution time
+- **P99 Latency**: 99th percentile (worst 1% excluded)
+- **Variance**: Consistency indicator
+
+### Scoring System
+Overall scores use **geometric mean** of normalized performance across all tests:
+- Each test result normalized to best performer (100%)
+- Geometric mean prevents single test from dominating
+- Score of 50 = half the speed of the fastest library on average
+
+### Reproducibility
+All tests are deterministic and reproducible:
+1. Same versions locked in package.json
+2. Same test scenarios for all libraries
+3. Multiple runs to ensure consistency
+4. Automated via GitHub Actions
+
+</details>
+
+---
+
+## 🚀 Run Locally
+
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/SylphxAI/benchmark.git
+cd benchmark
+
+# Install root dependencies
+npm install
+
+# Navigate to this category
+cd ${categoryPath}
+
+# Install category dependencies
+npm install
+
+# Run benchmarks
+npm run benchmark
+
+# Generate README
+npx tsx ../../scripts/generate-simple-readme.ts .
+\`\`\`
+
+**View Test Code**: [./groups/](./groups/) contains all test implementations
+
+---
 
 ## 📦 Test Coverage
 
@@ -226,11 +388,44 @@ readme += `---
 
 ## 🚀 Libraries Tested
 
-${sortedLibs.map(lib => `- **${lib.library}** (\`${lib.version}\`)`).join('\n')}
+${sortedLibs.map(lib => {
+  const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+  return `- **[${lib.library}](${meta?.url || '#'})** (\`${lib.version}\`) - [📦 npm](https://www.npmjs.com/package/${meta?.npm || lib.libraryId}) • [📊 bundle size](https://bundlephobia.com/package/${meta?.npm || lib.libraryId})`;
+}).join('\n')}
 
 ---
 
+## 🤝 Contributing
+
+Want to add a library or improve tests?
+
+- **Add a Library**: Update \`package.json\` and \`library-metadata.json\`, then implement tests
+- **Improve Tests**: Edit files in \`./groups/\` directory
+- **Report Issues**: [Open an issue](https://github.com/SylphxAI/benchmark/issues)
+- **Suggest Features**: [Start a discussion](https://github.com/SylphxAI/benchmark/discussions)
+
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## 📚 Related
+
+- [📊 All Benchmark Categories](../../README.md#-benchmark-categories)
+- [🏗️ Architecture Documentation](../../ARCHITECTURE.md)
+- [⚙️ GitHub Actions Workflow](../../.github/workflows/benchmarks-per-library.yml)
+- [🔄 CI/CD Results](https://github.com/SylphxAI/benchmark/actions)
+
+---
+
+<div align="center">
+
+**Found this useful? Give it a ⭐️!**
+
 *Generated on ${new Date().toISOString()}*
+
+[⬆️ Back to Top](#${categoryTitle.toLowerCase().replace(/ /g, '-')}-benchmarks) • [⬅️ Main README](../../README.md)
+
+</div>
 `;
 
 // Write README

@@ -128,7 +128,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: result-state-management-${{ matrix.library }}
-          path: benchmarks/state-management/results/${{ matrix.library }}-benchmark.json
+          path: |
+            benchmarks/state-management/results/${{ matrix.library }}-benchmark.json
+            benchmarks/state-management/groups/*/results/${{ matrix.library }}.json
           retention-days: 7
 
       - name: Upload updated versions.json
@@ -168,8 +170,33 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: result-state-management-*
-          path: benchmarks/state-management/results/
-          merge-multiple: true
+          path: /tmp/benchmark-results/
+          merge-multiple: false
+
+      - name: Restore library results to correct locations
+        run: |
+          echo "📦 Restoring benchmark results..."
+
+          # Restore per-library summary files
+          mkdir -p benchmarks/state-management/results
+
+          for artifact_dir in /tmp/benchmark-results/result-state-management-*; do
+            if [ -d "$artifact_dir" ]; then
+              echo "Processing $(basename $artifact_dir)..."
+
+              # Copy main benchmark file
+              if ls $artifact_dir/benchmarks/state-management/results/*.json 1> /dev/null 2>&1; then
+                cp $artifact_dir/benchmarks/state-management/results/*.json benchmarks/state-management/results/
+              fi
+
+              # Copy per-group results
+              if [ -d "$artifact_dir/benchmarks/state-management/groups" ]; then
+                cp -r $artifact_dir/benchmarks/state-management/groups/* benchmarks/state-management/groups/ 2>/dev/null || true
+              fi
+            fi
+          done
+
+          echo "✓ Results restored"
 
       - name: Download all versions.json updates
         uses: actions/download-artifact@v4
@@ -186,7 +213,30 @@ jobs:
             echo "✓ Updated versions.json"
           fi
 
-      - name: Generate README
+      - name: Generate group READMEs
+        run: |
+          echo "📝 Generating group READMEs..."
+
+          for group_dir in benchmarks/state-management/groups/*/; do
+            group_name=$(basename "$group_dir")
+
+            # Skip shared directory
+            if [ "$group_name" = "shared" ]; then
+              continue
+            fi
+
+            # Check if results directory exists and has files
+            if [ -d "$group_dir/results" ] && [ "$(ls -A $group_dir/results/*.json 2>/dev/null)" ]; then
+              echo "  Generating README for $group_name..."
+              node scripts/generate-group-readme.cjs "$group_name" benchmarks/state-management
+            else
+              echo "  ⚠️  No results for $group_name, skipping..."
+            fi
+          done
+
+          echo "✓ Group READMEs generated"
+
+      - name: Generate category README
         run: npx tsx scripts/generate-readme.ts benchmarks/state-management
 
       - name: Generate root README

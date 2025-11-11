@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "filepath": "groups/03-creation/tests/jotai.bench.ts",
+      "groups": [
+        {
+          "fullName": "03-creation - Jotai",
+          "benchmarks": [
+            {
+              "id": "Store Creation - Jotai",
+              "name": "Store Creation",
+              "hz": 2399741.8,
+              "min": 0.0001,
+              "max": 3.0095,
+              "mean": 0.0004,
+              "p75": 0.0004,
+              "p99": 0.001,
+              "p995": 0.0012,
+              "p999": 0.0037,
+              "rme": 2.06,
+              "samples": 1199871
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

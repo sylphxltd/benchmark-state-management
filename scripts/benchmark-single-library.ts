@@ -100,59 +100,65 @@ async function benchmarkSingleLibrary(libraryKey: string, categoryPath: string) 
       return statSync(fullPath).isDirectory() && /^\d{2}-/.test(dir);
     });
 
-    // Run benchmark for this library using file path pattern (not -t filter)
-    const testPattern = `groups/*/tests/${testFileLibraryName}.bench.ts`;
-    const benchCmd = `npx vitest bench --run --reporter=json --outputFile=.vitest-results.json "${testPattern}"`;
+    // Run benchmarks for each group individually
+    console.log(`📝 Running benchmarks for ${groups.length} groups...\n`);
 
-    console.log(`📝 Running tests: ${testPattern}\n`);
+    for (const groupDir of groups) {
+      const groupTestPath = join(groupsPath, groupDir, 'tests', `${testFileLibraryName}.bench.ts`);
 
-    execSync(benchCmd, {
-      cwd: categoryPath,
-      stdio: ['inherit', 'pipe', 'inherit'],
-      encoding: 'utf-8'
-    });
-
-    console.log(`\n✅ Benchmarks completed for ${displayName}`);
-
-    // Read the JSON results from vitest
-    const vitestResultsPath = join(categoryPath, '.vitest-results.json');
-
-    if (existsSync(vitestResultsPath)) {
-      const vitestResults = JSON.parse(readFileSync(vitestResultsPath, 'utf-8'));
-
-      // Process results and save per-group
-      console.log(`\n📊 Processing results...`);
-
-      for (const groupDir of groups) {
-        const groupTestPath = join(groupsPath, groupDir, 'tests', `${testFileLibraryName}.bench.ts`);
-
-        if (existsSync(groupTestPath)) {
-          // Extract results for this group from vitest output
-          const groupResult = extractGroupResults(vitestResults, groupDir, testFileLibraryName);
-
-          if (groupResult) {
-            // Save to groups/{group}/results/{library}.json
-            const groupResultsDir = join(groupsPath, groupDir, 'results');
-            if (!existsSync(groupResultsDir)) {
-              mkdirSync(groupResultsDir, { recursive: true });
-            }
-
-            const groupResultPath = join(groupResultsDir, `${testFileLibraryName}.json`);
-            writeFileSync(groupResultPath, JSON.stringify(groupResult, null, 2));
-
-            groupResults[groupDir] = groupResult;
-            console.log(`  ✓ Saved ${groupDir}/results/${testFileLibraryName}.json`);
-          }
-        }
+      if (!existsSync(groupTestPath)) {
+        continue;
       }
 
-      // Clean up vitest results file
-      if (existsSync(vitestResultsPath)) {
-        execSync(`rm ${vitestResultsPath}`, { cwd: categoryPath });
+      console.log(`  Running ${groupDir}...`);
+
+      // Run benchmark for this specific group/library test file
+      const testPath = `groups/${groupDir}/tests/${testFileLibraryName}.bench.ts`;
+      const benchCmd = `npx vitest bench --run "${testPath}"`;
+
+      try {
+        const output = execSync(benchCmd, {
+          cwd: categoryPath,
+          encoding: 'utf-8'
+        });
+
+        // Parse the console output to extract benchmark results
+        const benchmarks = parseBenchmarkOutput(output, groupDir, displayName);
+
+        if (benchmarks.length > 0) {
+          // Create result structure
+          const groupResult = {
+            files: [
+              {
+                filepath: testPath,
+                groups: [
+                  {
+                    fullName: `${groupDir} - ${displayName}`,
+                    benchmarks
+                  }
+                ]
+              }
+            ]
+          };
+
+          // Save to groups/{group}/results/{library}.json
+          const groupResultsDir = join(groupsPath, groupDir, 'results');
+          if (!existsSync(groupResultsDir)) {
+            mkdirSync(groupResultsDir, { recursive: true });
+          }
+
+          const groupResultPath = join(groupResultsDir, `${testFileLibraryName}.json`);
+          writeFileSync(groupResultPath, JSON.stringify(groupResult, null, 2));
+
+          groupResults[groupDir] = groupResult;
+          console.log(`    ✓ Saved ${groupDir}/results/${testFileLibraryName}.json`);
+        }
+      } catch (error) {
+        console.error(`    ✗ Failed to run benchmark for ${groupDir}: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
     }
 
-    console.log(`\n✓ Processed results for ${Object.keys(groupResults).length} groups`);
+    console.log(`\n✅ Benchmarks completed for ${displayName}`);
 
   } catch (error) {
     console.error(`\n❌ Benchmark failed for ${displayName}:`, error instanceof Error ? error.message : 'Unknown error');
@@ -180,47 +186,88 @@ async function benchmarkSingleLibrary(libraryKey: string, categoryPath: string) 
 }
 
 /**
- * Extract group results from vitest JSON output
+ * Strip ANSI color codes from string
  */
-function extractGroupResults(vitestResults: any, groupName: string, libraryKey: string): any | null {
-  if (!vitestResults || !vitestResults.testResults) return null;
+function stripAnsi(str: string): string {
+  return str.replace(/\x1b\[[0-9;]*m/g, '');
+}
 
-  // Find test results for this group's test file
-  const testFileSuffix = `groups/${groupName}/tests/${libraryKey}.bench.ts`;
+/**
+ * Parse benchmark output from vitest console output
+ * Extracts benchmark results from the table format
+ */
+function parseBenchmarkOutput(output: string, groupName: string, libraryName: string): any[] {
+  const benchmarks: any[] = [];
 
-  const groupTestResults = vitestResults.testResults.find((result: any) =>
-    result.name && result.name.endsWith(testFileSuffix)
-  );
+  // Strip ANSI codes first
+  const cleanOutput = stripAnsi(output);
 
-  if (!groupTestResults || !groupTestResults.assertionResults) return null;
+  // Split output into lines
+  const lines = cleanOutput.split('\n');
 
-  // Convert vitest format to our benchmark format
-  const benchmarks = groupTestResults.assertionResults.map((assertion: any) => ({
-    id: assertion.fullName || assertion.title,
-    name: assertion.title,
-    hz: assertion.hz || 0,
-    rme: assertion.rme || 0,
-    mean: assertion.mean || 0,
-    p75: assertion.p75 || 0,
-    p99: assertion.p99 || 0,
-    p995: assertion.p995 || 0,
-    p999: assertion.p999 || 0,
-    samples: assertion.samples || []
-  }));
+  // Find the benchmark table section
+  for (const line of lines) {
+    // Look for benchmark name rows (starts with · or ✓)
+    if (line.trim().startsWith('·') || line.trim().startsWith('✓')) {
+      // Extract all parts from the line
+      const parts = line.trim().split(/\s+/).filter(p => p.length > 0);
 
-  return {
-    files: [
-      {
-        filepath: groupTestResults.name,
-        groups: [
-          {
-            fullName: `${groupName} - ${libraryKey}`,
-            benchmarks
-          }
-        ]
+      if (parts.length < 2) continue;
+
+      // First part is the bullet, second+ are the name, then metrics
+      const bulletIndex = 0;
+      let nameEndIndex = 1;
+
+      // Find where the name ends (when we hit the first number)
+      for (let i = 1; i < parts.length; i++) {
+        const cleaned = parts[i].replace(/,/g, '');
+        if (!isNaN(parseFloat(cleaned)) && /^\d/.test(cleaned)) {
+          nameEndIndex = i;
+          break;
+        }
       }
-    ]
-  };
+
+      const name = parts.slice(1, nameEndIndex).join(' ');
+
+      // Skip lines that look like file paths or headers
+      if (name.includes('/') || name.includes('>') || name.toLowerCase() === 'name') {
+        continue;
+      }
+
+      // Extract metrics (format: hz min max mean p75 p99 p995 p999 rme samples)
+      const metricParts = parts.slice(nameEndIndex);
+      const metrics: number[] = [];
+
+      for (const part of metricParts) {
+        // Clean up the string (remove commas, ± signs, % signs)
+        let cleaned = part.replace(/,/g, '').replace(/±/g, '').replace(/%/g, '');
+        const num = parseFloat(cleaned);
+        if (!isNaN(num)) {
+          metrics.push(num);
+        }
+      }
+
+      // Parse the extracted metrics
+      const bench = {
+        id: `${name} - ${libraryName}`,
+        name: name,
+        hz: metrics[0] || 0,
+        min: metrics[1] || 0,
+        max: metrics[2] || 0,
+        mean: metrics[3] || 0,
+        p75: metrics[4] || 0,
+        p99: metrics[5] || 0,
+        p995: metrics[6] || 0,
+        p999: metrics[7] || 0,
+        rme: metrics[8] || 0,
+        samples: metrics[9] || 0
+      };
+
+      benchmarks.push(bench);
+    }
+  }
+
+  return benchmarks;
 }
 
 // Main execution

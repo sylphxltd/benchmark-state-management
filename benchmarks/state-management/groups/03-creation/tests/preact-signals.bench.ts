@@ -4,7 +4,7 @@
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../shared/test-config';
+import { LIBRARIES } from '../../shared/test-config';
 
 describe('03-creation - Preact Signals', () => {
   bench('Store Creation', () => {

@@ -4,7 +4,7 @@
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../shared/test-config';
+import { LIBRARIES } from '../../shared/test-config';
 
 describe('06-memory - Redux Toolkit', () => {
   bench('Large State Allocation', () => {

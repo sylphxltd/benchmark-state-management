@@ -4,7 +4,7 @@
  */
 
 import { bench, describe } from 'vitest';
-import { LIBRARIES } from '../shared/test-config';
+import { LIBRARIES } from '../../shared/test-config';
 
 describe('04-complexity - MobX', () => {
   bench('10-Level Nested Update', () => {

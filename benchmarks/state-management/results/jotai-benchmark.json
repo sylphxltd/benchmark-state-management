@@ -1,0 +1,148 @@
+{
+  "library": "Jotai",
+  "libraryKey": "jotai",
+  "version": "2.15.1",
+  "lastRun": "2025-11-11T04:46:07.771Z",
+  "groups": {
+    "01-read": {
+      "files": [
+        {
+          "filepath": "groups/01-read/tests/jotai.bench.ts",
+          "groups": [
+            {
+              "fullName": "01-read - Jotai",
+              "benchmarks": [
+                {
+                  "id": "Simple Read - Jotai",
+                  "name": "Simple Read",
+                  "hz": 36406970.25,
+                  "min": 0,
+                  "max": 0.1474,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0001,
+                  "rme": 0.09,
+                  "samples": 18203486
+                },
+                {
+                  "id": "High Frequency Read - Jotai",
+                  "name": "High Frequency Read",
+                  "hz": 19557536.71,
+                  "min": 0,
+                  "max": 0.0277,
+                  "mean": 0.0001,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0001,
+                  "rme": 0.03,
+                  "samples": 9778769
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "02-write": {
+      "files": [
+        {
+          "filepath": "groups/02-write/tests/jotai.bench.ts",
+          "groups": [
+            {
+              "fullName": "02-write - Jotai",
+              "benchmarks": [
+                {
+                  "id": "Simple Increment - Jotai",
+                  "name": "Simple Increment",
+                  "hz": 36172991.68,
+                  "min": 0,
+                  "max": 0.1231,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0001,
+                  "rme": 0.1,
+                  "samples": 18086497
+                },
+                {
+                  "id": "Burst Updates - Jotai",
+                  "name": "Burst Updates",
+                  "hz": 14221232.81,
+                  "min": 0,
+                  "max": 0.1253,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.06,
+                  "samples": 7110617
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "03-creation": {
+      "files": [
+        {
+          "filepath": "groups/03-creation/tests/jotai.bench.ts",
+          "groups": [
+            {
+              "fullName": "03-creation - Jotai",
+              "benchmarks": [
+                {
+                  "id": "Store Creation - Jotai",
+                  "name": "Store Creation",
+                  "hz": 2399741.8,
+                  "min": 0.0001,
+                  "max": 3.0095,
+                  "mean": 0.0004,
+                  "p75": 0.0004,
+                  "p99": 0.001,
+                  "p995": 0.0012,
+                  "p999": 0.0037,
+                  "rme": 2.06,
+                  "samples": 1199871
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "06-memory": {
+      "files": [
+        {
+          "filepath": "groups/06-memory/tests/jotai.bench.ts",
+          "groups": [
+            {
+              "fullName": "06-memory - Jotai",
+              "benchmarks": [
+                {
+                  "id": "Large State Allocation - Jotai",
+                  "name": "Large State Allocation",
+                  "hz": 892.45,
+                  "min": 1.0285,
+                  "max": 5.6181,
+                  "mean": 1.1205,
+                  "p75": 1.0912,
+                  "p99": 1.6405,
+                  "p995": 1.8541,
+                  "p999": 5.6181,
+                  "rme": 2.05,
+                  "samples": 447
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

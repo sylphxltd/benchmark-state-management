@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "filepath": "groups/06-memory/tests/jotai.bench.ts",
+      "groups": [
+        {
+          "fullName": "06-memory - Jotai",
+          "benchmarks": [
+            {
+              "id": "Large State Allocation - Jotai",
+              "name": "Large State Allocation",
+              "hz": 892.45,
+              "min": 1.0285,
+              "max": 5.6181,
+              "mean": 1.1205,
+              "p75": 1.0912,
+              "p99": 1.6405,
+              "p995": 1.8541,
+              "p999": 5.6181,
+              "rme": 2.05,
+              "samples": 447
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

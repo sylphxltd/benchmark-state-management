@@ -3,7 +3,7 @@
  * Generate README for specific test group
  */
 
-const { readFileSync, writeFileSync, existsSync } = require('fs');
+const { readFileSync, writeFileSync, existsSync, readdirSync } = require('fs');
 const { join, dirname } = require('path');
 
 function formatNumber(num) {
@@ -93,13 +93,37 @@ function generateGroupReadme(groupPath, groupName, categoryPath) {
   }
 
   // Merge all library results into a single structure
+  // Also track which library each result came from (based on filename)
   const mergedResults = {
     files: []
   };
 
+  const libraryFromFile = {}; // Map filepath to library name
+
   resultFiles.forEach(file => {
     const libraryResult = JSON.parse(readFileSync(join(resultsDir, file), 'utf-8'));
     if (libraryResult.files) {
+      // Store library name from the fullName in the result
+      libraryResult.files.forEach(fileResult => {
+        if (fileResult.groups && fileResult.groups.length > 0) {
+          const fullName = fileResult.groups[0].fullName;
+          // Extract library name from "01-read - Jotai" format
+          const parts = fullName.split(' - ');
+          if (parts.length >= 2) {
+            const libName = parts.slice(1).join(' - ').trim();
+            libraryFromFile[fileResult.filepath] = libName;
+
+            // Also add library name to each benchmark if it doesn't have it
+            fileResult.groups[0].benchmarks.forEach(bench => {
+              if (!bench.name.includes(' - ')) {
+                bench.name = `${bench.name} - ${libName}`;
+                bench.id = `${bench.name}`;
+              }
+            });
+          }
+        }
+      });
+
       mergedResults.files = mergedResults.files.concat(libraryResult.files);
     }
   });

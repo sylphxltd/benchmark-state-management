@@ -37,7 +37,7 @@ Simple increments and burst updates.
 |  4 | [**Zustand**](https://github.com/pmndrs/zustand) | 291K |
 |  5 | [**MobX**](https://github.com/mobxjs/mobx) | 72K |
 |  6 | [**Valtio**](https://github.com/pmndrs/valtio) | 59K |
-|  7 | [**Jotai**](https://github.com/pmndrs/jotai) | 16K |
+|  7 | [**Jotai**](https://github.com/pmndrs/jotai) | 18K |
 |  8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 9K |
 
 ---
@@ -53,7 +53,7 @@ Simple increments and burst updates.
 4.   Zustand            ███                                           3.0M ops/sec
 5.   MobX               █                                             694K ops/sec
 6.   Valtio             █                                             596K ops/sec
-7.   Jotai                                                            155K ops/sec
+7.   Jotai                                                            180K ops/sec
 8.   Redux Toolkit                                                     90K ops/sec
 ```
 
@@ -65,7 +65,7 @@ Simple increments and burst updates.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 3,028,414 | ±0.31% | 0.3000ms | 0.5000ms | 1514208 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 694,391 | ±1.43% | 1.4000ms | 3.1000ms | 347196 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 595,719 | ±0.65% | 1.7000ms | 2.1000ms | 297860 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 154,770 | ±1.50% | 6.5000ms | 10.8000ms | 77385 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 180,294 | ±0.93% | 5.5000ms | 8.0000ms | 90147 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 90,194 | ±1.84% | 11.1000ms | 21.9000ms | 45097 |
 
 **Key Insight:** Solid Signals is 387.74x faster than Redux Toolkit in this test.
@@ -79,7 +79,7 @@ Simple increments and burst updates.
 4.   Zustand            ██                                            326K ops/sec
 5.   MobX                                                              78K ops/sec
 6.   Valtio                                                            61K ops/sec
-7.   Jotai                                                             16K ops/sec
+7.   Jotai                                                             18K ops/sec
 8.   Redux Toolkit                                                      9K ops/sec
 ```
 
@@ -91,7 +91,7 @@ Simple increments and burst updates.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 325,775 | ±0.36% | 3.1000ms | 4.6000ms | 162888 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 77,540 | ±0.28% | 12.9000ms | 17.0000ms | 38771 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 61,369 | ±0.23% | 16.3000ms | 19.5000ms | 30685 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 15,851 | ±0.90% | 63.1000ms | 125.8000ms | 7926 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 17,840 | ±2.18% | 56.1000ms | 85.8000ms | 8921 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 9,227 | ±0.48% | 108.4000ms | 200.7000ms | 4614 |
 
 **Key Insight:** Solid Signals is 819.99x faster than Redux Toolkit in this test.
@@ -117,7 +117,7 @@ Simple increments and burst updates.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 32,671 | ±0.48% | 30.6000ms | 51.7000ms | 16336 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 7,489 | ±0.95% | 133.5000ms | 296.7000ms | 3745 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 6,097 | ±0.58% | 164.0000ms | 302.6000ms | 3049 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,618 | ±1.62% | 618.0000ms | 1117.4000ms | 810 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,743 | ±2.96% | 573.8000ms | 892.7000ms | 872 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 909 | ±1.01% | 1100.1000ms | 1493.3000ms | 455 |
 
 **Key Insight:** Solid Signals is 947.28x faster than Redux Toolkit in this test.
@@ -131,7 +131,7 @@ Simple increments and burst updates.
 4.   Zustand            ██                                              3K ops/sec
 5.   MobX                                                              769 ops/sec
 6.   Valtio                                                            600 ops/sec
-7.   Jotai                                                             156 ops/sec
+7.   Jotai                                                             186 ops/sec
 8.   Redux Toolkit                                                      93 ops/sec
 ```
 
@@ -143,7 +143,7 @@ Simple increments and burst updates.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 3,371 | ±1.09% | 296.7000ms | 520.5000ms | 1686 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 769 | ±1.74% | 1299.9000ms | 2158.2000ms | 385 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 600 | ±1.37% | 1667.7000ms | 2409.2000ms | 300 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 156 | ±2.11% | 6393.7000ms | 9270.3000ms | 79 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 186 | ±1.05% | 5383.8000ms | 6948.4000ms | 93 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 93 | ±1.00% | 10790.0000ms | 11665.0000ms | 47 |
 
 **Key Insight:** Solid Signals is 915.81x faster than Redux Toolkit in this test.
@@ -157,7 +157,7 @@ Simple increments and burst updates.
 4.   Zustand            ██████████████████                           19.1M ops/sec
 5.   MobX               ██████                                        6.4M ops/sec
 6.   Valtio             █████                                         5.5M ops/sec
-7.   Jotai              █                                             1.5M ops/sec
+7.   Jotai              ██                                            1.7M ops/sec
 8.   Redux Toolkit      █                                             934K ops/sec
 ```
 
@@ -169,7 +169,7 @@ Simple increments and burst updates.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 19,116,129 | ±1.05% | 0.1000ms | 0.1000ms | 9558065 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 6,442,782 | ±1.95% | 0.2000ms | 0.3000ms | 3221391 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 5,456,854 | ±0.20% | 0.2000ms | 0.2000ms | 2728428 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,476,875 | ±1.69% | 0.7000ms | 1.5000ms | 738438 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,717,208 | ±1.43% | 0.6000ms | 1.3000ms | 858604 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 933,602 | ±0.37% | 1.1000ms | 1.5000ms | 466802 |
 
 **Key Insight:** Zen is 45.41x faster than Redux Toolkit in this test.
@@ -192,4 +192,4 @@ npx vitest bench groups/02-write/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T10:30:05.156Z*
+*Last generated: 2025-11-11T10:50:09.724Z*

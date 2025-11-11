@@ -38,7 +38,7 @@ Simple read and high-frequency read patterns.
 |  5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 1.5M |
 |  6 | [**Valtio**](https://github.com/pmndrs/valtio) | 700K |
 |  7 | [**MobX**](https://github.com/mobxjs/mobx) | 348K |
-|  8 | [**Jotai**](https://github.com/pmndrs/jotai) | 50K |
+|  8 | [**Jotai**](https://github.com/pmndrs/jotai) | 54K |
 
 ---
 
@@ -54,7 +54,7 @@ Simple read and high-frequency read patterns.
 5.   Preact Signals     ██████████████████████████                   28.2M ops/sec
 6.   Valtio             ██████████                                   10.9M ops/sec
 7.   MobX               █████                                         5.1M ops/sec
-8.   Jotai              █                                             730K ops/sec
+8.   Jotai              █                                             755K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -66,9 +66,9 @@ Simple read and high-frequency read patterns.
 | 5 | [**Preact Signals**](https://github.com/preactjs/signals) | 28,185,169 | ±0.10% | 0.0000ms | 0.1000ms | 14092585 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 10,872,221 | ±0.08% | 0.1000ms | 0.1000ms | 5436111 |
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 5,087,152 | ±0.39% | 0.2000ms | 0.6000ms | 2543576 |
-| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 730,420 | ±0.23% | 1.4000ms | 1.8000ms | 365210 |
+| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 755,043 | ±0.23% | 1.3000ms | 1.7000ms | 377522 |
 
-**Key Insight:** Zen is 59.73x faster than Jotai in this test.
+**Key Insight:** Zen is 57.78x faster than Jotai in this test.
 
 ### High Frequency Read (x100)
 
@@ -80,7 +80,7 @@ Simple read and high-frequency read patterns.
 5.   Redux Toolkit      ██████████                                    6.1M ops/sec
 6.   Valtio             ██                                            1.4M ops/sec
 7.   MobX               █                                             554K ops/sec
-8.   Jotai                                                             75K ops/sec
+8.   Jotai                                                             76K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -92,9 +92,9 @@ Simple read and high-frequency read patterns.
 | 5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 6,098,221 | ±0.05% | 0.2000ms | 0.2000ms | 3049111 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 1,401,092 | ±0.06% | 0.7000ms | 0.9000ms | 700547 |
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 553,594 | ±0.12% | 1.8000ms | 2.4000ms | 276797 |
-| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 74,771 | ±0.28% | 13.4000ms | 15.2000ms | 37386 |
+| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 76,410 | ±0.28% | 13.1000ms | 15.5000ms | 38205 |
 
-**Key Insight:** Solid Signals is 333.85x faster than Jotai in this test.
+**Key Insight:** Solid Signals is 326.68x faster than Jotai in this test.
 
 ### High Frequency Read (x1000)
 
@@ -106,7 +106,7 @@ Simple read and high-frequency read patterns.
 5.   Redux Toolkit      █████████                                     703K ops/sec
 6.   Valtio             ██                                            139K ops/sec
 7.   MobX               █                                              55K ops/sec
-8.   Jotai                                                              7K ops/sec
+8.   Jotai                                                              8K ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -118,9 +118,9 @@ Simple read and high-frequency read patterns.
 | 5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 702,688 | ±0.06% | 1.4000ms | 1.7000ms | 351345 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 139,327 | ±0.18% | 7.2000ms | 14.3000ms | 69664 |
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 54,806 | ±0.19% | 18.2000ms | 24.5000ms | 27404 |
-| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 6,639 | ±5.31% | 150.6000ms | 375.8000ms | 3322 |
+| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 7,772 | ±0.28% | 128.7000ms | 162.5000ms | 3887 |
 
-**Key Insight:** Zen is 496.15x faster than Jotai in this test.
+**Key Insight:** Zen is 423.83x faster than Jotai in this test.
 
 ### High Frequency Read (x10000)
 
@@ -132,7 +132,7 @@ Simple read and high-frequency read patterns.
 5.   Redux Toolkit      ████████                                       64K ops/sec
 6.   Valtio             ██                                             14K ops/sec
 7.   MobX               █                                               5K ops/sec
-8.   Jotai                                                             663 ops/sec
+8.   Jotai                                                             769 ops/sec
 ```
 
 | Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
@@ -144,9 +144,9 @@ Simple read and high-frequency read patterns.
 | 5 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 64,072 | ±0.17% | 15.6000ms | 28.9000ms | 32037 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 14,207 | ±0.22% | 70.4000ms | 93.1000ms | 7104 |
 | 7 | [**MobX**](https://github.com/mobxjs/mobx) | 5,331 | ±0.68% | 187.6000ms | 277.2000ms | 2666 |
-| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 663 | ±2.54% | 1507.8000ms | 3263.5000ms | 332 |
+| 8 | [**Jotai**](https://github.com/pmndrs/jotai) | 769 | ±0.43% | 1300.9000ms | 1524.6000ms | 385 |
 
-**Key Insight:** Zen is 507.66x faster than Jotai in this test.
+**Key Insight:** Zen is 437.97x faster than Jotai in this test.
 
 ### Simple Read
 
@@ -157,7 +157,7 @@ Simple read and high-frequency read patterns.
 4.   Zustand            ███████████████████                          20.0M ops/sec
 5.   MobX               ██████                                        6.2M ops/sec
 6.   Valtio             █████                                         5.6M ops/sec
-7.   Jotai              █                                             1.3M ops/sec
+7.   Jotai              █                                             1.4M ops/sec
 8.   Redux Toolkit      █                                             971K ops/sec
 ```
 
@@ -169,7 +169,7 @@ Simple read and high-frequency read patterns.
 | 4 | [**Zustand**](https://github.com/pmndrs/zustand) | 20,029,603 | ±0.23% | 0.0000ms | 0.1000ms | 10014802 |
 | 5 | [**MobX**](https://github.com/mobxjs/mobx) | 6,189,663 | ±1.58% | 0.2000ms | 0.2000ms | 3094832 |
 | 6 | [**Valtio**](https://github.com/pmndrs/valtio) | 5,586,891 | ±0.65% | 0.2000ms | 0.2000ms | 2793446 |
-| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,343,846 | ±0.41% | 0.7000ms | 1.5000ms | 671923 |
+| 7 | [**Jotai**](https://github.com/pmndrs/jotai) | 1,366,401 | ±1.21% | 0.7000ms | 1.5000ms | 683201 |
 | 8 | [**Redux Toolkit**](https://github.com/reduxjs/redux-toolkit) | 970,800 | ±0.21% | 1.0000ms | 1.3000ms | 485401 |
 
 **Key Insight:** Zen is 44.10x faster than Redux Toolkit in this test.
@@ -192,4 +192,4 @@ npx vitest bench groups/01-read/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T10:30:05.103Z*
+*Last generated: 2025-11-11T10:50:09.668Z*

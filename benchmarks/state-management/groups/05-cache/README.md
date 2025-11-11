@@ -2,36 +2,6 @@
 
 Repeated access patterns.
 
-## Detailed Results
-
-### groups/05-cache/cache-performance.bench.ts > Cache Performance - Caching patterns and memoization
-
-**Performance Comparison:**
-
-```
-🥇   Repeated Access Pattern                                                  0 ops/sec
-🥈   Repeated Access Pattern                                                  0 ops/sec
-🥉   Repeated Access Pattern                                                  0 ops/sec
-4.   Repeated Access Pattern                                                  0 ops/sec
-5.   Repeated Access Pattern                                                  0 ops/sec
-6.   Repeated Access Pattern                                                  0 ops/sec
-7.   Repeated Access Pattern                                                  0 ops/sec
-8.   Repeated Access Pattern                                                  0 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 🥈 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 🥉 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 4 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 5 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 6 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 7 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-| 8 | **Repeated Access Pattern** | N/A | N/A | N/A | N/A |  |
-
-**Key Insight:** Repeated Access Pattern is 0.00x faster than Repeated Access Pattern in this category.
-
 ---
 
 ## 🔗 Navigation
@@ -50,4 +20,4 @@ npx vitest bench groups/05-cache/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T00:27:16.883Z*
+*Last generated: 2025-11-11T00:30:43.259Z*

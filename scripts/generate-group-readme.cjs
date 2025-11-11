@@ -152,68 +152,7 @@ function generateGroupReadme(groupPath, groupName, categoryPath) {
       readme += `| ${emoji}${rank} | **${entry.library}** | ${version} | ${sizeCrown}${sizeKB} KB | ${overallCrown}${formatNumber(entry.overall)} | ${formatNumber(entry.max)} | ${lastUpdated} |\n`;
     });
 
-    readme += `\n---\n\n`;
-  }
-
-  // Generate detailed performance results
-  readme += `## Detailed Results\n\n`;
-
-  if (results.files && results.files.length > 0) {
-    results.files.forEach(file => {
-      file.groups?.forEach(group => {
-        readme += `### ${group.fullName}\n\n`;
-
-        if (group.benchmarks && group.benchmarks.length > 0) {
-          const sorted = [...group.benchmarks].sort((a, b) => (b.hz || 0) - (a.hz || 0));
-          const maxHz = sorted[0]?.hz || 1;
-
-          // Performance comparison chart
-          readme += '**Performance Comparison:**\n\n```\n';
-          sorted.forEach((bench, idx) => {
-            const nameParts = bench.name.split(' - ');
-            const libName = nameParts[nameParts.length - 1];
-            const emoji = idx === 0 ? '🥇 ' : idx === 1 ? '🥈 ' : idx === 2 ? '🥉 ' : `${idx + 1}. `;
-            const percentage = (bench.hz || 0) / maxHz;
-            const barLength = Math.round(percentage * 40);
-            const bar = '█'.repeat(barLength);
-            const opsText = formatNumber(bench.hz) + ' ops/sec';
-
-            readme += `${emoji.padEnd(4)} ${libName.padEnd(18)} ${bar.padEnd(42)} ${opsText.padStart(15)}\n`;
-          });
-          readme += '```\n\n';
-
-          // Detailed table
-          readme += '| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |\n';
-          readme += '|------|---------|---------|----------|------|-----|---------|\n';
-
-          sorted.forEach((bench, idx) => {
-            const nameParts = bench.name.split(' - ');
-            const libName = nameParts[nameParts.length - 1];
-            const emoji = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : idx + 1;
-            const opsPerSec = bench.hz ? bench.hz.toLocaleString('en-US', { maximumFractionDigits: 3 }) : 'N/A';
-            const variance = bench.rme ? `±${bench.rme.toFixed(2)}%` : 'N/A';
-            const mean = bench.mean ? `${(bench.mean * 1000).toFixed(4)}ms` : 'N/A';
-            const p99 = bench.p99 ? `${(bench.p99 * 1000).toFixed(4)}ms` : 'N/A';
-            const samples = bench.samples || 'N/A';
-
-            readme += `| ${emoji} | **${libName}** | ${opsPerSec} | ${variance} | ${mean} | ${p99} | ${samples} |\n`;
-          });
-
-          // Key insight
-          if (sorted.length >= 2) {
-            const fastest = sorted[0];
-            const slowest = sorted[sorted.length - 1];
-            const fastestName = fastest.name.split(' - ').pop();
-            const slowestName = slowest.name.split(' - ').pop();
-            const ratio = ((fastest.hz || 0) / (slowest.hz || 1)).toFixed(2);
-
-            readme += `\n**Key Insight:** ${fastestName} is ${ratio}x faster than ${slowestName} in this category.\n`;
-          }
-
-          readme += '\n';
-        }
-      });
-    });
+    readme += `\n`;
   }
 
   // Add link back to category README

@@ -20,38 +20,6 @@ Instance creation overhead.
 
 ---
 
-## Detailed Results
-
-### groups/03-creation/store-creation.bench.ts > Store Creation
-
-**Performance Comparison:**
-
-```
-🥇   Preact Signals     ████████████████████████████████████████     33.4M ops/sec
-🥈   Zen                ███████████████████████████████████████      32.2M ops/sec
-🥉   Solid Signals      ███████████████████████████████████████      32.1M ops/sec
-4.   Zustand            █████████████                                10.9M ops/sec
-5.   Jotai              ███                                           2.3M ops/sec
-6.   Valtio                                                           235K ops/sec
-7.   Redux Toolkit                                                    173K ops/sec
-8.   MobX                                                              278 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Preact Signals** | 33,384,299.33 | ±0.77% | 0.0300ms | 0.0420ms |  |
-| 🥈 | **Zen** | 32,150,344.264 | ±1.88% | 0.0311ms | 0.0830ms |  |
-| 🥉 | **Solid Signals** | 32,134,155.751 | ±0.07% | 0.0311ms | 0.0420ms |  |
-| 4 | **Zustand** | 10,875,729.217 | ±0.35% | 0.0919ms | 0.1670ms |  |
-| 5 | **Jotai** | 2,312,931.425 | ±1.77% | 0.4324ms | 1.0420ms |  |
-| 6 | **Valtio** | 235,480.747 | ±116.34% | 4.2466ms | 2.5420ms |  |
-| 7 | **Redux Toolkit** | 173,331.308 | ±1.03% | 5.7693ms | 22.4580ms |  |
-| 8 | **MobX** | 277.545 | ±11.12% | 3603.0229ms | 10863.3750ms |  |
-
-**Key Insight:** Preact Signals is 120284.40x faster than MobX in this category.
-
----
-
 ## 🔗 Navigation
 
 - [← Back to State Management Overview](../../README.md)
@@ -68,4 +36,4 @@ npx vitest bench groups/03-creation/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T00:27:16.819Z*
+*Last generated: 2025-11-11T00:30:43.195Z*

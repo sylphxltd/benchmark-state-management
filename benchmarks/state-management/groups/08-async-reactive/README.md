@@ -13,58 +13,6 @@ Async atoms/computations.
 
 ---
 
-## Detailed Results
-
-### Reactive Async Read
-
-**Performance Comparison:**
-
-```
-🥇   Jotai              ████████████████████████████████████████       872 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Jotai** | 872.01 | ±1.48% | 1.1468ms | 1.2682ms | 437 |
-
-### Reactive Async Chained
-
-**Performance Comparison:**
-
-```
-🥇   Jotai              ████████████████████████████████████████       433 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Jotai** | 432.68 | ±2.19% | 2.3112ms | 2.9319ms | 217 |
-
-### Reactive Async Complex
-
-**Performance Comparison:**
-
-```
-🥇   Jotai              ████████████████████████████████████████       863 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Jotai** | 863.49 | ±1.01% | 1.1581ms | 1.2342ms | 432 |
-
-### Reactive Async Concurrent
-
-**Performance Comparison:**
-
-```
-🥇   Jotai              ████████████████████████████████████████       854 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Jotai** | 853.65 | ±0.95% | 1.1714ms | 1.2563ms | 427 |
-
----
-
 ## 🔗 Navigation
 
 - [← Back to State Management Overview](../../README.md)
@@ -81,4 +29,4 @@ npx vitest bench groups/08-async-reactive/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T00:27:16.991Z*
+*Last generated: 2025-11-11T00:30:43.362Z*

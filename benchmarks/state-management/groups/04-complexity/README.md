@@ -20,66 +20,6 @@ Deep nested state.
 
 ---
 
-## Detailed Results
-
-### groups/04-complexity/nested-state.bench.ts > Deep Nested Updates
-
-**Performance Comparison:**
-
-```
-🥇   Redux Toolkit                                                       0 ops/sec
-🥈   Zustand                                                             0 ops/sec
-🥉   Jotai                                                               0 ops/sec
-4.   MobX                                                                0 ops/sec
-5.   Valtio                                                              0 ops/sec
-6.   Preact Signals                                                      0 ops/sec
-7.   Solid Signals                                                       0 ops/sec
-8.   Zen                                                                 0 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Redux Toolkit** | N/A | N/A | N/A | N/A |  |
-| 🥈 | **Zustand** | N/A | N/A | N/A | N/A |  |
-| 🥉 | **Jotai** | N/A | N/A | N/A | N/A |  |
-| 4 | **MobX** | N/A | N/A | N/A | N/A |  |
-| 5 | **Valtio** | N/A | N/A | N/A | N/A |  |
-| 6 | **Preact Signals** | N/A | N/A | N/A | N/A |  |
-| 7 | **Solid Signals** | N/A | N/A | N/A | N/A |  |
-| 8 | **Zen** | N/A | N/A | N/A | N/A |  |
-
-**Key Insight:** Redux Toolkit is 0.00x faster than Zen in this category.
-
-### groups/04-complexity/nested-state.bench.ts > Deep Read Access
-
-**Performance Comparison:**
-
-```
-🥇   Redux Toolkit                                                       0 ops/sec
-🥈   Zustand                                                             0 ops/sec
-🥉   Jotai                                                               0 ops/sec
-4.   MobX                                                                0 ops/sec
-5.   Valtio                                                              0 ops/sec
-6.   Preact Signals                                                      0 ops/sec
-7.   Solid Signals                                                       0 ops/sec
-8.   Zen                                                                 0 ops/sec
-```
-
-| Rank | Library | Ops/sec | Variance | Mean | p99 | Samples |
-|------|---------|---------|----------|------|-----|---------|
-| 🥇 | **Redux Toolkit** | N/A | N/A | N/A | N/A |  |
-| 🥈 | **Zustand** | N/A | N/A | N/A | N/A |  |
-| 🥉 | **Jotai** | N/A | N/A | N/A | N/A |  |
-| 4 | **MobX** | N/A | N/A | N/A | N/A |  |
-| 5 | **Valtio** | N/A | N/A | N/A | N/A |  |
-| 6 | **Preact Signals** | N/A | N/A | N/A | N/A |  |
-| 7 | **Solid Signals** | N/A | N/A | N/A | N/A |  |
-| 8 | **Zen** | N/A | N/A | N/A | N/A |  |
-
-**Key Insight:** Redux Toolkit is 0.00x faster than Zen in this category.
-
----
-
 ## 🔗 Navigation
 
 - [← Back to State Management Overview](../../README.md)
@@ -96,4 +36,4 @@ npx vitest bench groups/04-complexity/*.bench.ts
 ```
 
 ---
-*Last generated: 2025-11-11T00:27:16.856Z*
+*Last generated: 2025-11-11T00:30:43.231Z*

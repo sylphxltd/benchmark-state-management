@@ -7,32 +7,46 @@
           "fullName": "06-memory - Zustand",
           "benchmarks": [
             {
-              "id": "Large State Read - Zustand",
-              "name": "Large State Read",
-              "hz": 50394579.28,
+              "id": "Large State Read (1000 items) - Zustand",
+              "name": "Large State Read (1000 items)",
+              "hz": 49064312.23,
               "min": 0,
-              "max": 0.0293,
+              "max": 0.0171,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0,
               "rme": 0.05,
-              "samples": 25197291
+              "samples": 24532157
             },
             {
-              "id": "Large State Update - Zustand",
-              "name": "Large State Update",
-              "hz": 369446.1,
-              "min": 0.0025,
-              "max": 0.4035,
-              "mean": 0.0027,
-              "p75": 0.0027,
-              "p99": 0.0033,
-              "p995": 0.0034,
-              "p999": 0.0035,
-              "rme": 0.27,
-              "samples": 184724
+              "id": "Large State Update (1000 items) - Zustand",
+              "name": "Large State Update (1000 items)",
+              "hz": 3943954.39,
+              "min": 0.0001,
+              "max": 0.2012,
+              "mean": 0.0003,
+              "p75": 0.0003,
+              "p99": 0.0007,
+              "p995": 0.0008,
+              "p999": 0.0013,
+              "rme": 0.61,
+              "samples": 1971979
+            },
+            {
+              "id": "Large State Filter - Zustand",
+              "name": "Large State Filter",
+              "hz": 615573.29,
+              "min": 0.0015,
+              "max": 7.4146,
+              "mean": 0.0016,
+              "p75": 0.0015,
+              "p99": 0.0022,
+              "p995": 0.0024,
+              "p999": 0.0054,
+              "rme": 2.92,
+              "samples": 307787
             }
           ]
         }

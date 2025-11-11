@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/04-complexity/tests/jotai.bench.ts",
+      "groups": [
+        {
+          "fullName": "04-complexity - Jotai",
+          "benchmarks": [
+            {
+              "id": "Deep Nested Read (10 levels) - Jotai",
+              "name": "Deep Nested Read (10 levels)",
+              "hz": 6380469.8,
+              "min": 0.0001,
+              "max": 1.4486,
+              "mean": 0.0002,
+              "p75": 0.0002,
+              "p99": 0.0002,
+              "p995": 0.0003,
+              "p999": 0.0008,
+              "rme": 0.59,
+              "samples": 3190235
+            },
+            {
+              "id": "Deep Nested Write (10 levels) - Jotai",
+              "name": "Deep Nested Write (10 levels)",
+              "hz": 1524521.54,
+              "min": 0.0005,
+              "max": 0.3344,
+              "mean": 0.0007,
+              "p75": 0.0006,
+              "p99": 0.0014,
+              "p995": 0.0015,
+              "p999": 0.0105,
+              "rme": 0.36,
+              "samples": 762261
+            },
+            {
+              "id": "Array Splice (middle) - Jotai",
+              "name": "Array Splice (middle)",
+              "hz": 1646875.48,
+              "min": 0.0005,
+              "max": 1.1727,
+              "mean": 0.0006,
+              "p75": 0.0006,
+              "p99": 0.0013,
+              "p995": 0.0015,
+              "p999": 0.002,
+              "rme": 0.65,
+              "samples": 823438
+            },
+            {
+              "id": "Large Array Map (1000 items) - Jotai",
+              "name": "Large Array Map (1000 items)",
+              "hz": 6300665.68,
+              "min": 0.0001,
+              "max": 1.1821,
+              "mean": 0.0002,
+              "p75": 0.0002,
+              "p99": 0.0002,
+              "p995": 0.0003,
+              "p999": 0.0004,
+              "rme": 0.49,
+              "samples": 3150333
+            },
+            {
+              "id": "Multi-field Update (unrelated) - Jotai",
+              "name": "Multi-field Update (unrelated)",
+              "hz": 17809.4,
+              "min": 0.0153,
+              "max": 4.3985,
+              "mean": 0.0562,
+              "p75": 0.0552,
+              "p99": 0.0843,
+              "p995": 0.1996,
+              "p999": 3.1825,
+              "rme": 7.19,
+              "samples": 8905
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

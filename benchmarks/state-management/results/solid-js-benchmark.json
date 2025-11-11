@@ -2,7 +2,7 @@
   "library": "Solid Signals",
   "libraryKey": "solid-js",
   "version": "1.9.10",
-  "lastRun": "2025-11-11T05:29:43.716Z",
+  "lastRun": "2025-11-11T09:57:01.380Z",
   "groups": {
     "01-read": {
       "files": [
@@ -15,72 +15,72 @@
                 {
                   "id": "Simple Read - Solid Signals",
                   "name": "Simple Read",
-                  "hz": 49565854.12,
+                  "hz": 47639720.86,
                   "min": 0,
-                  "max": 0.0724,
+                  "max": 0.0884,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.06,
+                  "samples": 23819862
+                },
+                {
+                  "id": "High Frequency Read (x10) - Solid Signals",
+                  "name": "High Frequency Read (x10)",
+                  "hz": 44849811.94,
+                  "min": 0,
+                  "max": 0.1376,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.07,
-                  "samples": 24782928
-                },
-                {
-                  "id": "High Frequency Read (x10) - Solid Signals",
-                  "name": "High Frequency Read (x10)",
-                  "hz": 11738031.37,
-                  "min": 0,
-                  "max": 0.045,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0001,
-                  "p995": 0.0001,
-                  "p999": 0.0002,
-                  "rme": 0.03,
-                  "samples": 5869016
+                  "samples": 22424907
                 },
                 {
                   "id": "High Frequency Read (x100) - Solid Signals",
                   "name": "High Frequency Read (x100)",
-                  "hz": 1590660.84,
-                  "min": 0.0005,
-                  "max": 0.037,
-                  "mean": 0.0006,
-                  "p75": 0.0007,
-                  "p99": 0.0008,
-                  "p995": 0.0008,
-                  "p999": 0.0009,
-                  "rme": 0.03,
-                  "samples": 795331
+                  "hz": 29082478.55,
+                  "min": 0,
+                  "max": 0.0375,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0001,
+                  "rme": 0.04,
+                  "samples": 14541240
                 },
                 {
                   "id": "High Frequency Read (x1000) - Solid Signals",
                   "name": "High Frequency Read (x1000)",
-                  "hz": 170457.13,
-                  "min": 0.0054,
-                  "max": 0.0191,
-                  "mean": 0.0059,
-                  "p75": 0.006,
-                  "p99": 0.0072,
-                  "p995": 0.0073,
-                  "p999": 0.0076,
-                  "rme": 0.04,
-                  "samples": 85229
+                  "hz": 3604091.15,
+                  "min": 0.0002,
+                  "max": 0.0718,
+                  "mean": 0.0003,
+                  "p75": 0.0003,
+                  "p99": 0.0003,
+                  "p995": 0.0004,
+                  "p999": 0.0004,
+                  "rme": 0.05,
+                  "samples": 1802046
                 },
                 {
                   "id": "High Frequency Read (x10000) - Solid Signals",
                   "name": "High Frequency Read (x10000)",
-                  "hz": 15721.52,
-                  "min": 0.0544,
-                  "max": 0.5307,
-                  "mean": 0.0636,
-                  "p75": 0.0653,
-                  "p99": 0.075,
-                  "p995": 0.0754,
-                  "p999": 0.0949,
-                  "rme": 0.23,
-                  "samples": 7861
+                  "hz": 370348.05,
+                  "min": 0.0025,
+                  "max": 0.0322,
+                  "mean": 0.0027,
+                  "p75": 0.0029,
+                  "p99": 0.0035,
+                  "p995": 0.0036,
+                  "p999": 0.0057,
+                  "rme": 0.07,
+                  "samples": 185175
                 }
               ]
             }
@@ -99,72 +99,72 @@
                 {
                   "id": "Single Update - Solid Signals",
                   "name": "Single Update",
-                  "hz": 49398577.23,
+                  "hz": 44122188.85,
                   "min": 0,
-                  "max": 0.0713,
+                  "max": 1.6015,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
-                  "rme": 0.06,
-                  "samples": 24699290
+                  "rme": 0.63,
+                  "samples": 22061095
                 },
                 {
                   "id": "Batch Update (x10) - Solid Signals",
                   "name": "Batch Update (x10)",
-                  "hz": 12729970.8,
+                  "hz": 40610086.54,
                   "min": 0,
-                  "max": 0.0213,
-                  "mean": 0.0001,
-                  "p75": 0.0001,
-                  "p99": 0.0001,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.02,
-                  "samples": 6364986
+                  "max": 0.0323,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.04,
+                  "samples": 20305044
                 },
                 {
                   "id": "Batch Update (x100) - Solid Signals",
                   "name": "Batch Update (x100)",
-                  "hz": 1707222.88,
-                  "min": 0.0005,
-                  "max": 0.0335,
-                  "mean": 0.0006,
-                  "p75": 0.0006,
-                  "p99": 0.0007,
-                  "p995": 0.0008,
-                  "p999": 0.0017,
-                  "rme": 0.04,
-                  "samples": 853612
+                  "hz": 8813111.46,
+                  "min": 0,
+                  "max": 0.0251,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0002,
+                  "p995": 0.0002,
+                  "p999": 0.0002,
+                  "rme": 0.03,
+                  "samples": 4406557
                 },
                 {
                   "id": "Batch Update (x1000) - Solid Signals",
                   "name": "Batch Update (x1000)",
-                  "hz": 177603.08,
-                  "min": 0.0054,
-                  "max": 0.0242,
-                  "mean": 0.0056,
-                  "p75": 0.0057,
-                  "p99": 0.0069,
-                  "p995": 0.007,
-                  "p999": 0.0073,
+                  "hz": 1010912.34,
+                  "min": 0.0009,
+                  "max": 0.0158,
+                  "mean": 0.001,
+                  "p75": 0.001,
+                  "p99": 0.0012,
+                  "p995": 0.0012,
+                  "p999": 0.0013,
                   "rme": 0.03,
-                  "samples": 88802
+                  "samples": 505457
                 },
                 {
                   "id": "Batch Update (x10000) - Solid Signals",
                   "name": "Batch Update (x10000)",
-                  "hz": 17481.93,
-                  "min": 0.0519,
-                  "max": 0.1779,
-                  "mean": 0.0572,
-                  "p75": 0.057,
-                  "p99": 0.0625,
-                  "p995": 0.0635,
-                  "p999": 0.067,
-                  "rme": 0.08,
-                  "samples": 8741
+                  "hz": 102671.68,
+                  "min": 0.0094,
+                  "max": 0.0528,
+                  "mean": 0.0097,
+                  "p75": 0.0096,
+                  "p99": 0.0131,
+                  "p995": 0.0132,
+                  "p999": 0.0147,
+                  "rme": 0.07,
+                  "samples": 51336
                 }
               ]
             }
@@ -181,18 +181,158 @@
               "fullName": "03-creation - Solid Signals",
               "benchmarks": [
                 {
-                  "id": "Store Creation - Solid Signals",
-                  "name": "Store Creation",
-                  "hz": 50083586.7,
+                  "id": "Store Creation (x1) - Solid Signals",
+                  "name": "Store Creation (x1)",
+                  "hz": 43030859.59,
                   "min": 0,
-                  "max": 0.0335,
+                  "max": 0.2191,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0001,
+                  "rme": 0.1,
+                  "samples": 21515431
+                },
+                {
+                  "id": "Store Creation (x10) - Solid Signals",
+                  "name": "Store Creation (x10)",
+                  "hz": 28109285.16,
+                  "min": 0,
+                  "max": 0.1873,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.33,
+                  "samples": 14054643
+                },
+                {
+                  "id": "Store Creation (x100) - Solid Signals",
+                  "name": "Store Creation (x100)",
+                  "hz": 6271459.21,
+                  "min": 0,
+                  "max": 0.2161,
+                  "mean": 0.0002,
+                  "p75": 0.0002,
+                  "p99": 0.0004,
+                  "p995": 0.0005,
+                  "p999": 0.0008,
+                  "rme": 0.44,
+                  "samples": 3135730
+                },
+                {
+                  "id": "Store Creation (x1000) - Solid Signals",
+                  "name": "Store Creation (x1000)",
+                  "hz": 651287.51,
+                  "min": 0.001,
+                  "max": 0.2687,
+                  "mean": 0.0015,
+                  "p75": 0.0016,
+                  "p99": 0.0032,
+                  "p995": 0.004,
+                  "p999": 0.0099,
+                  "rme": 0.54,
+                  "samples": 325658
+                },
+                {
+                  "id": "Store Creation (x10000) - Solid Signals",
+                  "name": "Store Creation (x10000)",
+                  "hz": 71092.75,
+                  "min": 0.0111,
+                  "max": 0.1921,
+                  "mean": 0.0141,
+                  "p75": 0.0147,
+                  "p99": 0.0291,
+                  "p995": 0.06,
+                  "p999": 0.0844,
+                  "rme": 0.41,
+                  "samples": 35547
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "04-complexity": {
+      "files": [
+        {
+          "filepath": "groups/04-complexity/tests/solid-signals.bench.ts",
+          "groups": [
+            {
+              "fullName": "04-complexity - Solid Signals",
+              "benchmarks": [
+                {
+                  "id": "Deep Nested Read (10 levels) - Solid Signals",
+                  "name": "Deep Nested Read (10 levels)",
+                  "hz": 44286356.32,
+                  "min": 0,
+                  "max": 0.0292,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.05,
-                  "samples": 25041794
+                  "samples": 22143179
+                },
+                {
+                  "id": "Deep Nested Write (10 levels) - Solid Signals",
+                  "name": "Deep Nested Write (10 levels)",
+                  "hz": 14251387.6,
+                  "min": 0,
+                  "max": 0.1572,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.08,
+                  "samples": 7125694
+                },
+                {
+                  "id": "Array Splice (middle) - Solid Signals",
+                  "name": "Array Splice (middle)",
+                  "hz": 27412704.19,
+                  "min": 0,
+                  "max": 0.034,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0.0001,
+                  "p999": 0.0001,
+                  "rme": 0.04,
+                  "samples": 13706353
+                },
+                {
+                  "id": "Large Array Map (1000 items) - Solid Signals",
+                  "name": "Large Array Map (1000 items)",
+                  "hz": 43125029.48,
+                  "min": 0,
+                  "max": 0.2712,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.13,
+                  "samples": 21562515
+                },
+                {
+                  "id": "Multi-field Update (unrelated) - Solid Signals",
+                  "name": "Multi-field Update (unrelated)",
+                  "hz": 17793.6,
+                  "min": 0.0141,
+                  "max": 9.7275,
+                  "mean": 0.0562,
+                  "p75": 0.0542,
+                  "p99": 0.0846,
+                  "p995": 0.0924,
+                  "p999": 7.9073,
+                  "rme": 11.64,
+                  "samples": 8909
                 }
               ]
             }
@@ -209,32 +349,200 @@
               "fullName": "06-memory - Solid Signals",
               "benchmarks": [
                 {
-                  "id": "Large State Read - Solid Signals",
-                  "name": "Large State Read",
-                  "hz": 50503890.36,
+                  "id": "Large State Read (1000 items) - Solid Signals",
+                  "name": "Large State Read (1000 items)",
+                  "hz": 49048449.31,
                   "min": 0,
-                  "max": 0.055,
+                  "max": 2.1616,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
-                  "rme": 0.05,
-                  "samples": 25251947
+                  "rme": 0.85,
+                  "samples": 24524225
                 },
                 {
-                  "id": "Large State Update - Solid Signals",
-                  "name": "Large State Update",
-                  "hz": 49239753.54,
+                  "id": "Large State Update (1000 items) - Solid Signals",
+                  "name": "Large State Update (1000 items)",
+                  "hz": 432638.46,
+                  "min": 0.0018,
+                  "max": 0.4448,
+                  "mean": 0.0023,
+                  "p75": 0.0021,
+                  "p99": 0.0053,
+                  "p995": 0.0055,
+                  "p999": 0.0064,
+                  "rme": 0.57,
+                  "samples": 216320
+                },
+                {
+                  "id": "Large State Filter - Solid Signals",
+                  "name": "Large State Filter",
+                  "hz": 446454,
+                  "min": 0.0018,
+                  "max": 0.4102,
+                  "mean": 0.0022,
+                  "p75": 0.0022,
+                  "p99": 0.0072,
+                  "p995": 0.0077,
+                  "p999": 0.0084,
+                  "rme": 0.66,
+                  "samples": 223227
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "07-form": {
+      "files": [
+        {
+          "filepath": "groups/07-form/tests/solid-signals.bench.ts",
+          "groups": [
+            {
+              "fullName": "07-form - Solid Signals",
+              "benchmarks": [
+                {
+                  "id": "Single Field Update - Solid Signals",
+                  "name": "Single Field Update",
+                  "hz": 19680173.37,
                   "min": 0,
-                  "max": 0.0366,
+                  "max": 2.1021,
+                  "mean": 0.0001,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.85,
+                  "samples": 9840087
+                },
+                {
+                  "id": "Multiple Fields Update (3 fields) - Solid Signals",
+                  "name": "Multiple Fields Update (3 fields)",
+                  "hz": 17371901.58,
+                  "min": 0,
+                  "max": 0.2583,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0003,
+                  "rme": 0.38,
+                  "samples": 8685951
+                },
+                {
+                  "id": "Nested Field Update - Solid Signals",
+                  "name": "Nested Field Update",
+                  "hz": 16548820.81,
+                  "min": 0,
+                  "max": 0.2518,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0003,
+                  "rme": 0.44,
+                  "samples": 8274411
+                },
+                {
+                  "id": "Full Form Reset - Solid Signals",
+                  "name": "Full Form Reset",
+                  "hz": 30618687.08,
+                  "min": 0,
+                  "max": 0.2908,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0002,
+                  "rme": 0.3,
+                  "samples": 15309344
+                },
+                {
+                  "id": "Conditional Field Update - Solid Signals",
+                  "name": "Conditional Field Update",
+                  "hz": 46349005.22,
+                  "min": 0,
+                  "max": 0.0175,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
-                  "rme": 0.05,
-                  "samples": 24619878
+                  "rme": 0.04,
+                  "samples": 23174504
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "08-async-reactive": {
+      "files": [
+        {
+          "filepath": "groups/08-async-reactive/tests/solid-signals.bench.ts",
+          "groups": [
+            {
+              "fullName": "08-async-reactive - Solid Signals",
+              "benchmarks": [
+                {
+                  "id": "Async Reactive Read - Solid Signals",
+                  "name": "Async Reactive Read",
+                  "hz": 1424243.61,
+                  "min": 0,
+                  "max": 54.1078,
+                  "mean": 0.0007,
+                  "p75": 0.0001,
+                  "p99": 0.0003,
+                  "p995": 0.0005,
+                  "p999": 0.0007,
+                  "rme": 38.33,
+                  "samples": 717060
+                },
+                {
+                  "id": "Async Reactive Chained - Solid Signals",
+                  "name": "Async Reactive Chained",
+                  "hz": 877740.59,
+                  "min": 0.0001,
+                  "max": 233.93,
+                  "mean": 0.0011,
+                  "p75": 0.0002,
+                  "p99": 0.0003,
+                  "p995": 0.0005,
+                  "p999": 0.0008,
+                  "rme": 87.39,
+                  "samples": 483852
+                },
+                {
+                  "id": "Async Reactive Complex - Solid Signals",
+                  "name": "Async Reactive Complex",
+                  "hz": 440473.61,
+                  "min": 0.0002,
+                  "max": 26.0381,
+                  "mean": 0.0023,
+                  "p75": 0.0003,
+                  "p99": 0.0007,
+                  "p995": 0.0008,
+                  "p999": 0.001,
+                  "rme": 36.9,
+                  "samples": 222799
+                },
+                {
+                  "id": "Async Reactive Concurrent - Solid Signals",
+                  "name": "Async Reactive Concurrent",
+                  "hz": 337480.81,
+                  "min": 0.0003,
+                  "max": 31.2883,
+                  "mean": 0.003,
+                  "p75": 0.0004,
+                  "p99": 0.0008,
+                  "p995": 0.0009,
+                  "p999": 0.0012,
+                  "rme": 41.74,
+                  "samples": 175167
                 }
               ]
             }
@@ -253,58 +561,58 @@
                 {
                   "id": "Batched Updates - Solid Signals",
                   "name": "Batched Updates",
-                  "hz": 40352276.63,
+                  "hz": 40483558.6,
                   "min": 0,
-                  "max": 0.1648,
+                  "max": 3.2026,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0001,
-                  "rme": 0.12,
-                  "samples": 20176139
+                  "rme": 1.26,
+                  "samples": 20241781
                 },
                 {
                   "id": "Unbatched Updates - Solid Signals",
                   "name": "Unbatched Updates",
-                  "hz": 42581870.76,
+                  "hz": 41856232.57,
                   "min": 0,
-                  "max": 0.0484,
+                  "max": 3.221,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0001,
+                  "rme": 1.26,
+                  "samples": 20928118
+                },
+                {
+                  "id": "Large Batch - Solid Signals",
+                  "name": "Large Batch",
+                  "hz": 27433810.46,
+                  "min": 0,
+                  "max": 0.1362,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0.0001,
+                  "p999": 0.0001,
+                  "rme": 0.08,
+                  "samples": 13716906
+                },
+                {
+                  "id": "Batched with Observers - Solid Signals",
+                  "name": "Batched with Observers",
+                  "hz": 41057306.69,
+                  "min": 0,
+                  "max": 0.019,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0001,
                   "rme": 0.05,
-                  "samples": 21290937
-                },
-                {
-                  "id": "Large Batch - Solid Signals",
-                  "name": "Large Batch",
-                  "hz": 27443126.85,
-                  "min": 0,
-                  "max": 0.104,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.07,
-                  "samples": 13721564
-                },
-                {
-                  "id": "Batched with Observers - Solid Signals",
-                  "name": "Batched with Observers",
-                  "hz": 41416837.67,
-                  "min": 0,
-                  "max": 1.2481,
-                  "mean": 0,
-                  "p75": 0,
-                  "p99": 0.0001,
-                  "p995": 0.0001,
-                  "p999": 0.0001,
-                  "rme": 0.5,
-                  "samples": 20708419
+                  "samples": 20528654
                 }
               ]
             }

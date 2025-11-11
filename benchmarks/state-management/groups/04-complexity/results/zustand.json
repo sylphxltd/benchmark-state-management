@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/04-complexity/tests/zustand.bench.ts",
+      "groups": [
+        {
+          "fullName": "04-complexity - Zustand",
+          "benchmarks": [
+            {
+              "id": "Deep Nested Read (10 levels) - Zustand",
+              "name": "Deep Nested Read (10 levels)",
+              "hz": 46604080.46,
+              "min": 0,
+              "max": 0.098,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.06,
+              "samples": 23302042
+            },
+            {
+              "id": "Deep Nested Write (10 levels) - Zustand",
+              "name": "Deep Nested Write (10 levels)",
+              "hz": 10475361.22,
+              "min": 0,
+              "max": 0.2602,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0002,
+              "p999": 0.0003,
+              "rme": 0.36,
+              "samples": 5237681
+            },
+            {
+              "id": "Array Splice (middle) - Zustand",
+              "name": "Array Splice (middle)",
+              "hz": 4053777.89,
+              "min": 0.0001,
+              "max": 0.1543,
+              "mean": 0.0002,
+              "p75": 0.0003,
+              "p99": 0.0007,
+              "p995": 0.0008,
+              "p999": 0.0013,
+              "rme": 0.38,
+              "samples": 2026889
+            },
+            {
+              "id": "Large Array Map (1000 items) - Zustand",
+              "name": "Large Array Map (1000 items)",
+              "hz": 95215.64,
+              "min": 0.0085,
+              "max": 0.1119,
+              "mean": 0.0105,
+              "p75": 0.0112,
+              "p99": 0.0138,
+              "p995": 0.015,
+              "p999": 0.0577,
+              "rme": 0.24,
+              "samples": 47608
+            },
+            {
+              "id": "Multi-field Update (unrelated) - Zustand",
+              "name": "Multi-field Update (unrelated)",
+              "hz": 8351076.08,
+              "min": 0,
+              "max": 0.1825,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0002,
+              "p995": 0.0002,
+              "p999": 0.0004,
+              "rme": 0.3,
+              "samples": 4175539
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

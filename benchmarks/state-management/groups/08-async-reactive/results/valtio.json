@@ -1,0 +1,70 @@
+{
+  "files": [
+    {
+      "filepath": "groups/08-async-reactive/tests/valtio.bench.ts",
+      "groups": [
+        {
+          "fullName": "08-async-reactive - Valtio",
+          "benchmarks": [
+            {
+              "id": "Async Reactive Read - Valtio",
+              "name": "Async Reactive Read",
+              "hz": 1435798.11,
+              "min": 0,
+              "max": 21.5007,
+              "mean": 0.0007,
+              "p75": 0.0001,
+              "p99": 0.0003,
+              "p995": 0.0005,
+              "p999": 0.0007,
+              "rme": 34.33,
+              "samples": 735046
+            },
+            {
+              "id": "Async Reactive Chained - Valtio",
+              "name": "Async Reactive Chained",
+              "hz": 1051292.94,
+              "min": 0.0001,
+              "max": 132.72,
+              "mean": 0.001,
+              "p75": 0.0002,
+              "p99": 0.0003,
+              "p995": 0.0006,
+              "p999": 0.0008,
+              "rme": 54.9,
+              "samples": 596910
+            },
+            {
+              "id": "Async Reactive Complex - Valtio",
+              "name": "Async Reactive Complex",
+              "hz": 505764.52,
+              "min": 0.0002,
+              "max": 25.8382,
+              "mean": 0.002,
+              "p75": 0.0003,
+              "p99": 0.0007,
+              "p995": 0.0008,
+              "p999": 0.0011,
+              "rme": 36.94,
+              "samples": 262689
+            },
+            {
+              "id": "Async Reactive Concurrent - Valtio",
+              "name": "Async Reactive Concurrent",
+              "hz": 395738.69,
+              "min": 0.0002,
+              "max": 35.5952,
+              "mean": 0.0025,
+              "p75": 0.0004,
+              "p99": 0.0009,
+              "p995": 0.001,
+              "p999": 0.0018,
+              "rme": 39.51,
+              "samples": 202220
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

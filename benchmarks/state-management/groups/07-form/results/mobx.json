@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/07-form/tests/mobx.bench.ts",
+      "groups": [
+        {
+          "fullName": "07-form - MobX",
+          "benchmarks": [
+            {
+              "id": "Single Field Update - MobX",
+              "name": "Single Field Update",
+              "hz": 7384261.73,
+              "min": 0,
+              "max": 0.0797,
+              "mean": 0.0001,
+              "p75": 0.0002,
+              "p99": 0.0002,
+              "p995": 0.0002,
+              "p999": 0.0003,
+              "rme": 0.05,
+              "samples": 3692132
+            },
+            {
+              "id": "Multiple Fields Update (3 fields) - MobX",
+              "name": "Multiple Fields Update (3 fields)",
+              "hz": 1368345.16,
+              "min": 0.0006,
+              "max": 0.2258,
+              "mean": 0.0007,
+              "p75": 0.0008,
+              "p99": 0.001,
+              "p995": 0.001,
+              "p999": 0.0011,
+              "rme": 0.15,
+              "samples": 684173
+            },
+            {
+              "id": "Nested Field Update - MobX",
+              "name": "Nested Field Update",
+              "hz": 5416435.73,
+              "min": 0.0001,
+              "max": 0.1956,
+              "mean": 0.0002,
+              "p75": 0.0002,
+              "p99": 0.0003,
+              "p995": 0.0003,
+              "p999": 0.0003,
+              "rme": 0.11,
+              "samples": 2708218
+            },
+            {
+              "id": "Full Form Reset - MobX",
+              "name": "Full Form Reset",
+              "hz": 122752.33,
+              "min": 0.0071,
+              "max": 0.2345,
+              "mean": 0.0081,
+              "p75": 0.0086,
+              "p99": 0.0101,
+              "p995": 0.0102,
+              "p999": 0.0127,
+              "rme": 0.3,
+              "samples": 61377
+            },
+            {
+              "id": "Conditional Field Update - MobX",
+              "name": "Conditional Field Update",
+              "hz": 8051059.66,
+              "min": 0,
+              "max": 0.0397,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0002,
+              "p995": 0.0002,
+              "p999": 0.0003,
+              "rme": 0.03,
+              "samples": 4025530
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

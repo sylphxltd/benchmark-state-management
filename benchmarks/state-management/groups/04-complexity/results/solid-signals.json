@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/04-complexity/tests/solid-signals.bench.ts",
+      "groups": [
+        {
+          "fullName": "04-complexity - Solid Signals",
+          "benchmarks": [
+            {
+              "id": "Deep Nested Read (10 levels) - Solid Signals",
+              "name": "Deep Nested Read (10 levels)",
+              "hz": 44286356.32,
+              "min": 0,
+              "max": 0.0292,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.05,
+              "samples": 22143179
+            },
+            {
+              "id": "Deep Nested Write (10 levels) - Solid Signals",
+              "name": "Deep Nested Write (10 levels)",
+              "hz": 14251387.6,
+              "min": 0,
+              "max": 0.1572,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.08,
+              "samples": 7125694
+            },
+            {
+              "id": "Array Splice (middle) - Solid Signals",
+              "name": "Array Splice (middle)",
+              "hz": 27412704.19,
+              "min": 0,
+              "max": 0.034,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0.0001,
+              "p999": 0.0001,
+              "rme": 0.04,
+              "samples": 13706353
+            },
+            {
+              "id": "Large Array Map (1000 items) - Solid Signals",
+              "name": "Large Array Map (1000 items)",
+              "hz": 43125029.48,
+              "min": 0,
+              "max": 0.2712,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0,
+              "rme": 0.13,
+              "samples": 21562515
+            },
+            {
+              "id": "Multi-field Update (unrelated) - Solid Signals",
+              "name": "Multi-field Update (unrelated)",
+              "hz": 17793.6,
+              "min": 0.0141,
+              "max": 9.7275,
+              "mean": 0.0562,
+              "p75": 0.0542,
+              "p99": 0.0846,
+              "p995": 0.0924,
+              "p999": 7.9073,
+              "rme": 11.64,
+              "samples": 8909
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

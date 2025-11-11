@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/07-form/tests/valtio.bench.ts",
+      "groups": [
+        {
+          "fullName": "07-form - Valtio",
+          "benchmarks": [
+            {
+              "id": "Single Field Update - Valtio",
+              "name": "Single Field Update",
+              "hz": 16830701.23,
+              "min": 0,
+              "max": 0.1051,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.07,
+              "samples": 8415351
+            },
+            {
+              "id": "Multiple Fields Update (3 fields) - Valtio",
+              "name": "Multiple Fields Update (3 fields)",
+              "hz": 2699362.15,
+              "min": 0.0003,
+              "max": 0.2157,
+              "mean": 0.0004,
+              "p75": 0.0004,
+              "p99": 0.0005,
+              "p995": 0.0005,
+              "p999": 0.0006,
+              "rme": 0.21,
+              "samples": 1349682
+            },
+            {
+              "id": "Nested Field Update - Valtio",
+              "name": "Nested Field Update",
+              "hz": 14122810.62,
+              "min": 0,
+              "max": 0.0131,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.03,
+              "samples": 7061406
+            },
+            {
+              "id": "Full Form Reset - Valtio",
+              "name": "Full Form Reset",
+              "hz": 99436.92,
+              "min": 0.0048,
+              "max": 155.97,
+              "mean": 0.0101,
+              "p75": 0.0059,
+              "p99": 0.0157,
+              "p995": 0.0241,
+              "p999": 0.0407,
+              "rme": 54.89,
+              "samples": 56341
+            },
+            {
+              "id": "Conditional Field Update - Valtio",
+              "name": "Conditional Field Update",
+              "hz": 27295081.73,
+              "min": 0,
+              "max": 0.014,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0,
+              "p995": 0,
+              "p999": 0.0001,
+              "rme": 0.03,
+              "samples": 13647541
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

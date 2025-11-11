@@ -1,0 +1,70 @@
+{
+  "files": [
+    {
+      "filepath": "groups/08-async-reactive/tests/zustand.bench.ts",
+      "groups": [
+        {
+          "fullName": "08-async-reactive - Zustand",
+          "benchmarks": [
+            {
+              "id": "Async Reactive Read - Zustand",
+              "name": "Async Reactive Read",
+              "hz": 1511994.92,
+              "min": 0,
+              "max": 57.1064,
+              "mean": 0.0007,
+              "p75": 0.0001,
+              "p99": 0.0003,
+              "p995": 0.0004,
+              "p999": 0.0007,
+              "rme": 39.04,
+              "samples": 757552
+            },
+            {
+              "id": "Async Reactive Chained - Zustand",
+              "name": "Async Reactive Chained",
+              "hz": 1009912,
+              "min": 0.0001,
+              "max": 32.3337,
+              "mean": 0.001,
+              "p75": 0.0002,
+              "p99": 0.0005,
+              "p995": 0.0006,
+              "p999": 0.001,
+              "rme": 38.35,
+              "samples": 506160
+            },
+            {
+              "id": "Async Reactive Complex - Zustand",
+              "name": "Async Reactive Complex",
+              "hz": 566057.26,
+              "min": 0.0002,
+              "max": 25.0821,
+              "mean": 0.0018,
+              "p75": 0.0003,
+              "p99": 0.0006,
+              "p995": 0.0007,
+              "p999": 0.0009,
+              "rme": 37.06,
+              "samples": 291188
+            },
+            {
+              "id": "Async Reactive Concurrent - Zustand",
+              "name": "Async Reactive Concurrent",
+              "hz": 312134.39,
+              "min": 0.0002,
+              "max": 71.8687,
+              "mean": 0.0032,
+              "p75": 0.0003,
+              "p99": 0.0008,
+              "p995": 0.0009,
+              "p999": 0.0017,
+              "rme": 47.94,
+              "samples": 158414
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

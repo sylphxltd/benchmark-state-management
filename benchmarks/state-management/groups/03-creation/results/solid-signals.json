@@ -7,18 +7,74 @@
           "fullName": "03-creation - Solid Signals",
           "benchmarks": [
             {
-              "id": "Store Creation - Solid Signals",
-              "name": "Store Creation",
-              "hz": 50083586.7,
+              "id": "Store Creation (x1) - Solid Signals",
+              "name": "Store Creation (x1)",
+              "hz": 43030859.59,
               "min": 0,
-              "max": 0.0335,
+              "max": 0.2191,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
-              "p999": 0,
-              "rme": 0.05,
-              "samples": 25041794
+              "p999": 0.0001,
+              "rme": 0.1,
+              "samples": 21515431
+            },
+            {
+              "id": "Store Creation (x10) - Solid Signals",
+              "name": "Store Creation (x10)",
+              "hz": 28109285.16,
+              "min": 0,
+              "max": 0.1873,
+              "mean": 0,
+              "p75": 0,
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0002,
+              "rme": 0.33,
+              "samples": 14054643
+            },
+            {
+              "id": "Store Creation (x100) - Solid Signals",
+              "name": "Store Creation (x100)",
+              "hz": 6271459.21,
+              "min": 0,
+              "max": 0.2161,
+              "mean": 0.0002,
+              "p75": 0.0002,
+              "p99": 0.0004,
+              "p995": 0.0005,
+              "p999": 0.0008,
+              "rme": 0.44,
+              "samples": 3135730
+            },
+            {
+              "id": "Store Creation (x1000) - Solid Signals",
+              "name": "Store Creation (x1000)",
+              "hz": 651287.51,
+              "min": 0.001,
+              "max": 0.2687,
+              "mean": 0.0015,
+              "p75": 0.0016,
+              "p99": 0.0032,
+              "p995": 0.004,
+              "p999": 0.0099,
+              "rme": 0.54,
+              "samples": 325658
+            },
+            {
+              "id": "Store Creation (x10000) - Solid Signals",
+              "name": "Store Creation (x10000)",
+              "hz": 71092.75,
+              "min": 0.0111,
+              "max": 0.1921,
+              "mean": 0.0141,
+              "p75": 0.0147,
+              "p99": 0.0291,
+              "p995": 0.06,
+              "p999": 0.0844,
+              "rme": 0.41,
+              "samples": 35547
             }
           ]
         }

@@ -7,32 +7,46 @@
           "fullName": "06-memory - MobX",
           "benchmarks": [
             {
-              "id": "Large State Read - MobX",
-              "name": "Large State Read",
-              "hz": 50889059.8,
+              "id": "Large State Read (1000 items) - MobX",
+              "name": "Large State Read (1000 items)",
+              "hz": 24659176.96,
               "min": 0,
-              "max": 0.0265,
+              "max": 0.0321,
               "mean": 0,
               "p75": 0,
-              "p99": 0,
-              "p995": 0,
-              "p999": 0,
-              "rme": 0.05,
-              "samples": 25444530
+              "p99": 0.0001,
+              "p995": 0.0001,
+              "p999": 0.0001,
+              "rme": 0.04,
+              "samples": 12329589
             },
             {
-              "id": "Large State Update - MobX",
-              "name": "Large State Update",
-              "hz": 4089232.1,
+              "id": "Large State Update (1000 items) - MobX",
+              "name": "Large State Update (1000 items)",
+              "hz": 3005856.57,
               "min": 0.0002,
-              "max": 0.298,
-              "mean": 0.0002,
+              "max": 0.0359,
+              "mean": 0.0003,
               "p75": 0.0003,
-              "p99": 0.0003,
-              "p995": 0.0003,
+              "p99": 0.0005,
+              "p995": 0.0005,
               "p999": 0.0005,
-              "rme": 0.22,
-              "samples": 2044617
+              "rme": 0.03,
+              "samples": 1502929
+            },
+            {
+              "id": "Large State Filter - MobX",
+              "name": "Large State Filter",
+              "hz": 17105.15,
+              "min": 0.0543,
+              "max": 0.2618,
+              "mean": 0.0585,
+              "p75": 0.0596,
+              "p99": 0.064,
+              "p995": 0.0648,
+              "p999": 0.068,
+              "rme": 0.11,
+              "samples": 8553
             }
           ]
         }

@@ -7,32 +7,46 @@
           "fullName": "06-memory - Solid Signals",
           "benchmarks": [
             {
-              "id": "Large State Read - Solid Signals",
-              "name": "Large State Read",
-              "hz": 50503890.36,
+              "id": "Large State Read (1000 items) - Solid Signals",
+              "name": "Large State Read (1000 items)",
+              "hz": 49048449.31,
               "min": 0,
-              "max": 0.055,
+              "max": 2.1616,
               "mean": 0,
               "p75": 0,
               "p99": 0,
               "p995": 0,
               "p999": 0,
-              "rme": 0.05,
-              "samples": 25251947
+              "rme": 0.85,
+              "samples": 24524225
             },
             {
-              "id": "Large State Update - Solid Signals",
-              "name": "Large State Update",
-              "hz": 49239753.54,
-              "min": 0,
-              "max": 0.0366,
-              "mean": 0,
-              "p75": 0,
-              "p99": 0,
-              "p995": 0,
-              "p999": 0,
-              "rme": 0.05,
-              "samples": 24619878
+              "id": "Large State Update (1000 items) - Solid Signals",
+              "name": "Large State Update (1000 items)",
+              "hz": 432638.46,
+              "min": 0.0018,
+              "max": 0.4448,
+              "mean": 0.0023,
+              "p75": 0.0021,
+              "p99": 0.0053,
+              "p995": 0.0055,
+              "p999": 0.0064,
+              "rme": 0.57,
+              "samples": 216320
+            },
+            {
+              "id": "Large State Filter - Solid Signals",
+              "name": "Large State Filter",
+              "hz": 446454,
+              "min": 0.0018,
+              "max": 0.4102,
+              "mean": 0.0022,
+              "p75": 0.0022,
+              "p99": 0.0072,
+              "p995": 0.0077,
+              "p999": 0.0084,
+              "rme": 0.66,
+              "samples": 223227
             }
           ]
         }

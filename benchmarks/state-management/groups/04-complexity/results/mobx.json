@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "filepath": "groups/04-complexity/tests/mobx.bench.ts",
+      "groups": [
+        {
+          "fullName": "04-complexity - MobX",
+          "benchmarks": [
+            {
+              "id": "Deep Nested Read (10 levels) - MobX",
+              "name": "Deep Nested Read (10 levels)",
+              "hz": 2785779.49,
+              "min": 0.0002,
+              "max": 0.0869,
+              "mean": 0.0004,
+              "p75": 0.0004,
+              "p99": 0.0004,
+              "p995": 0.0005,
+              "p999": 0.0005,
+              "rme": 0.06,
+              "samples": 1392890
+            },
+            {
+              "id": "Deep Nested Write (10 levels) - MobX",
+              "name": "Deep Nested Write (10 levels)",
+              "hz": 2105331.04,
+              "min": 0.0004,
+              "max": 0.4857,
+              "mean": 0.0005,
+              "p75": 0.0005,
+              "p99": 0.0006,
+              "p995": 0.0011,
+              "p999": 0.0012,
+              "rme": 0.25,
+              "samples": 1052666
+            },
+            {
+              "id": "Array Splice (middle) - MobX",
+              "name": "Array Splice (middle)",
+              "hz": 4350729.69,
+              "min": 0.0001,
+              "max": 4.4892,
+              "mean": 0.0002,
+              "p75": 0.0003,
+              "p99": 0.0003,
+              "p995": 0.0003,
+              "p999": 0.0006,
+              "rme": 1.77,
+              "samples": 2175365
+            },
+            {
+              "id": "Large Array Map (1000 items) - MobX",
+              "name": "Large Array Map (1000 items)",
+              "hz": 10255142.93,
+              "min": 0,
+              "max": 1.9431,
+              "mean": 0.0001,
+              "p75": 0.0001,
+              "p99": 0.0002,
+              "p995": 0.0002,
+              "p999": 0.0002,
+              "rme": 0.77,
+              "samples": 5127572
+            },
+            {
+              "id": "Multi-field Update (unrelated) - MobX",
+              "name": "Multi-field Update (unrelated)",
+              "hz": 311307.48,
+              "min": 0.0022,
+              "max": 7.7014,
+              "mean": 0.0032,
+              "p75": 0.0026,
+              "p99": 0.0035,
+              "p995": 0.0038,
+              "p999": 0.0077,
+              "rme": 9.56,
+              "samples": 156420
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

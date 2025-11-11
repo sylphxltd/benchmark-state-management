@@ -1,0 +1,70 @@
+{
+  "files": [
+    {
+      "filepath": "groups/08-async-reactive/tests/solid-signals.bench.ts",
+      "groups": [
+        {
+          "fullName": "08-async-reactive - Solid Signals",
+          "benchmarks": [
+            {
+              "id": "Async Reactive Read - Solid Signals",
+              "name": "Async Reactive Read",
+              "hz": 1424243.61,
+              "min": 0,
+              "max": 54.1078,
+              "mean": 0.0007,
+              "p75": 0.0001,
+              "p99": 0.0003,
+              "p995": 0.0005,
+              "p999": 0.0007,
+              "rme": 38.33,
+              "samples": 717060
+            },
+            {
+              "id": "Async Reactive Chained - Solid Signals",
+              "name": "Async Reactive Chained",
+              "hz": 877740.59,
+              "min": 0.0001,
+              "max": 233.93,
+              "mean": 0.0011,
+              "p75": 0.0002,
+              "p99": 0.0003,
+              "p995": 0.0005,
+              "p999": 0.0008,
+              "rme": 87.39,
+              "samples": 483852
+            },
+            {
+              "id": "Async Reactive Complex - Solid Signals",
+              "name": "Async Reactive Complex",
+              "hz": 440473.61,
+              "min": 0.0002,
+              "max": 26.0381,
+              "mean": 0.0023,
+              "p75": 0.0003,
+              "p99": 0.0007,
+              "p995": 0.0008,
+              "p999": 0.001,
+              "rme": 36.9,
+              "samples": 222799
+            },
+            {
+              "id": "Async Reactive Concurrent - Solid Signals",
+              "name": "Async Reactive Concurrent",
+              "hz": 337480.81,
+              "min": 0.0003,
+              "max": 31.2883,
+              "mean": 0.003,
+              "p75": 0.0004,
+              "p99": 0.0008,
+              "p995": 0.0009,
+              "p999": 0.0012,
+              "rme": 41.74,
+              "samples": 175167
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -39,14 +39,12 @@
     "04-complexity": {
       "title": "Complexity",
       "description": "Deep nested state",
-      "type": "universal",
-      "status": "incomplete"
+      "type": "universal"
     },
     "05-cache": {
       "title": "Cache Performance",
       "description": "Repeated access patterns",
-      "type": "universal",
-      "status": "incomplete"
+      "type": "universal"
     },
     "06-memory": {
       "title": "Memory Allocation",
@@ -64,8 +62,7 @@
     "07-form": {
       "title": "Form State",
       "description": "Multi-field updates",
-      "type": "universal",
-      "status": "incomplete"
+      "type": "universal"
     },
     "08-async-reactive": {
       "title": "Reactive Async",

@@ -2,7 +2,7 @@
   "library": "Zustand",
   "libraryKey": "zustand",
   "version": "5.0.8",
-  "lastRun": "2025-11-11T05:26:49.721Z",
+  "lastRun": "2025-11-11T09:59:31.918Z",
   "groups": {
     "01-read": {
       "files": [
@@ -15,72 +15,72 @@
                 {
                   "id": "Simple Read - Zustand",
                   "name": "Simple Read",
-                  "hz": 404999.3,
-                  "min": 0.0023,
-                  "max": 0.1242,
-                  "mean": 0.0025,
-                  "p75": 0.0025,
-                  "p99": 0.003,
-                  "p995": 0.0031,
-                  "p999": 0.0036,
-                  "rme": 0.11,
-                  "samples": 202500
+                  "hz": 23782107.62,
+                  "min": 0,
+                  "max": 0.178,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.15,
+                  "samples": 11891054
                 },
                 {
                   "id": "High Frequency Read (x10) - Zustand",
                   "name": "High Frequency Read (x10)",
-                  "hz": 9860169.98,
+                  "hz": 38436895.92,
                   "min": 0,
-                  "max": 0.0139,
+                  "max": 4.331,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0.0001,
+                  "rme": 2.01,
+                  "samples": 19218448
+                },
+                {
+                  "id": "High Frequency Read (x100) - Zustand",
+                  "name": "High Frequency Read (x100)",
+                  "hz": 9714174.81,
+                  "min": 0,
+                  "max": 0.0278,
                   "mean": 0.0001,
                   "p75": 0.0001,
                   "p99": 0.0001,
                   "p995": 0.0001,
                   "p999": 0.0002,
-                  "rme": 0.02,
-                  "samples": 4930085
-                },
-                {
-                  "id": "High Frequency Read (x100) - Zustand",
-                  "name": "High Frequency Read (x100)",
-                  "hz": 1189133.35,
-                  "min": 0.0007,
-                  "max": 0.009,
-                  "mean": 0.0008,
-                  "p75": 0.0009,
-                  "p99": 0.001,
-                  "p995": 0.001,
-                  "p999": 0.0012,
-                  "rme": 0.02,
-                  "samples": 594567
+                  "rme": 0.03,
+                  "samples": 4857088
                 },
                 {
                   "id": "High Frequency Read (x1000) - Zustand",
                   "name": "High Frequency Read (x1000)",
-                  "hz": 126997.01,
-                  "min": 0.0076,
-                  "max": 0.0248,
-                  "mean": 0.0079,
-                  "p75": 0.0079,
-                  "p99": 0.0087,
-                  "p995": 0.0096,
-                  "p999": 0.01,
-                  "rme": 0.03,
-                  "samples": 63499
+                  "hz": 1114332.24,
+                  "min": 0.0008,
+                  "max": 0.0136,
+                  "mean": 0.0009,
+                  "p75": 0.0009,
+                  "p99": 0.0011,
+                  "p995": 0.0011,
+                  "p999": 0.0012,
+                  "rme": 0.02,
+                  "samples": 557167
                 },
                 {
                   "id": "High Frequency Read (x10000) - Zustand",
                   "name": "High Frequency Read (x10000)",
-                  "hz": 12329.12,
-                  "min": 0.0692,
-                  "max": 0.1048,
-                  "mean": 0.0811,
-                  "p75": 0.0829,
-                  "p99": 0.0899,
-                  "p995": 0.0918,
-                  "p999": 0.0955,
-                  "rme": 0.14,
-                  "samples": 6165
+                  "hz": 100015.68,
+                  "min": 0.0098,
+                  "max": 0.031,
+                  "mean": 0.01,
+                  "p75": 0.01,
+                  "p99": 0.0112,
+                  "p995": 0.0122,
+                  "p999": 0.0126,
+                  "rme": 0.03,
+                  "samples": 50008
                 }
               ]
             }
@@ -99,72 +99,72 @@
                 {
                   "id": "Single Update - Zustand",
                   "name": "Single Update",
-                  "hz": 384169.17,
-                  "min": 0.0025,
-                  "max": 0.0977,
-                  "mean": 0.0026,
-                  "p75": 0.0026,
-                  "p99": 0.003,
-                  "p995": 0.0032,
-                  "p999": 0.0037,
-                  "rme": 0.09,
-                  "samples": 192085
+                  "hz": 23660761.15,
+                  "min": 0,
+                  "max": 2.6779,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 1.07,
+                  "samples": 11830381
                 },
                 {
                   "id": "Batch Update (x10) - Zustand",
                   "name": "Batch Update (x10)",
-                  "hz": 36753.56,
-                  "min": 0.0249,
-                  "max": 3.5429,
-                  "mean": 0.0272,
-                  "p75": 0.0265,
-                  "p99": 0.0421,
-                  "p995": 0.0436,
-                  "p999": 0.059,
-                  "rme": 1.4,
-                  "samples": 18377
+                  "hz": 3706586.54,
+                  "min": 0.0002,
+                  "max": 0.2085,
+                  "mean": 0.0003,
+                  "p75": 0.0003,
+                  "p99": 0.0004,
+                  "p995": 0.0005,
+                  "p999": 0.0006,
+                  "rme": 0.2,
+                  "samples": 1853294
                 },
                 {
                   "id": "Batch Update (x100) - Zustand",
                   "name": "Batch Update (x100)",
-                  "hz": 3831.58,
-                  "min": 0.2516,
-                  "max": 0.4024,
-                  "mean": 0.261,
-                  "p75": 0.2629,
-                  "p99": 0.289,
-                  "p995": 0.3598,
-                  "p999": 0.4003,
-                  "rme": 0.19,
-                  "samples": 1916
+                  "hz": 413432.04,
+                  "min": 0.0022,
+                  "max": 0.1101,
+                  "mean": 0.0024,
+                  "p75": 0.0024,
+                  "p99": 0.003,
+                  "p995": 0.0031,
+                  "p999": 0.004,
+                  "rme": 0.16,
+                  "samples": 206717
                 },
                 {
                   "id": "Batch Update (x1000) - Zustand",
                   "name": "Batch Update (x1000)",
-                  "hz": 380.54,
-                  "min": 2.5267,
-                  "max": 2.8503,
-                  "mean": 2.6278,
-                  "p75": 2.6625,
-                  "p99": 2.814,
-                  "p995": 2.8503,
-                  "p999": 2.8503,
-                  "rme": 0.3,
-                  "samples": 191
+                  "hz": 42306.89,
+                  "min": 0.0224,
+                  "max": 0.1196,
+                  "mean": 0.0236,
+                  "p75": 0.0235,
+                  "p99": 0.0268,
+                  "p995": 0.0286,
+                  "p999": 0.0711,
+                  "rme": 0.16,
+                  "samples": 21154
                 },
                 {
                   "id": "Batch Update (x10000) - Zustand",
                   "name": "Batch Update (x10000)",
-                  "hz": 38.4421,
-                  "min": 25.4837,
-                  "max": 26.8967,
-                  "mean": 26.0131,
-                  "p75": 26.2096,
-                  "p99": 26.8967,
-                  "p995": 26.8967,
-                  "p999": 26.8967,
-                  "rme": 0.66,
-                  "samples": 20
+                  "hz": 4090.94,
+                  "min": 0.2313,
+                  "max": 0.3636,
+                  "mean": 0.2444,
+                  "p75": 0.245,
+                  "p99": 0.3039,
+                  "p995": 0.318,
+                  "p999": 0.3521,
+                  "rme": 0.3,
+                  "samples": 2046
                 }
               ]
             }
@@ -181,18 +181,158 @@
               "fullName": "03-creation - Zustand",
               "benchmarks": [
                 {
-                  "id": "Store Creation - Zustand",
-                  "name": "Store Creation",
-                  "hz": 50020930,
+                  "id": "Store Creation (x1) - Zustand",
+                  "name": "Store Creation (x1)",
+                  "hz": 13389168.34,
                   "min": 0,
-                  "max": 0.0646,
+                  "max": 4.2183,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0002,
+                  "p995": 0.0002,
+                  "p999": 0.0004,
+                  "rme": 1.67,
+                  "samples": 6694585
+                },
+                {
+                  "id": "Store Creation (x10) - Zustand",
+                  "name": "Store Creation (x10)",
+                  "hz": 1874081.05,
+                  "min": 0.0004,
+                  "max": 0.1607,
+                  "mean": 0.0005,
+                  "p75": 0.0005,
+                  "p99": 0.0008,
+                  "p995": 0.0009,
+                  "p999": 0.0013,
+                  "rme": 0.22,
+                  "samples": 937041
+                },
+                {
+                  "id": "Store Creation (x100) - Zustand",
+                  "name": "Store Creation (x100)",
+                  "hz": 192275.91,
+                  "min": 0.0046,
+                  "max": 0.134,
+                  "mean": 0.0052,
+                  "p75": 0.0052,
+                  "p99": 0.0065,
+                  "p995": 0.0073,
+                  "p999": 0.0459,
+                  "rme": 0.21,
+                  "samples": 96138
+                },
+                {
+                  "id": "Store Creation (x1000) - Zustand",
+                  "name": "Store Creation (x1000)",
+                  "hz": 19684.39,
+                  "min": 0.0475,
+                  "max": 0.228,
+                  "mean": 0.0508,
+                  "p75": 0.0504,
+                  "p99": 0.0888,
+                  "p995": 0.0986,
+                  "p999": 0.1502,
+                  "rme": 0.26,
+                  "samples": 9843
+                },
+                {
+                  "id": "Store Creation (x10000) - Zustand",
+                  "name": "Store Creation (x10000)",
+                  "hz": 1965.91,
+                  "min": 0.481,
+                  "max": 0.7258,
+                  "mean": 0.5087,
+                  "p75": 0.5099,
+                  "p99": 0.5916,
+                  "p995": 0.6247,
+                  "p999": 0.7258,
+                  "rme": 0.29,
+                  "samples": 983
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "04-complexity": {
+      "files": [
+        {
+          "filepath": "groups/04-complexity/tests/zustand.bench.ts",
+          "groups": [
+            {
+              "fullName": "04-complexity - Zustand",
+              "benchmarks": [
+                {
+                  "id": "Deep Nested Read (10 levels) - Zustand",
+                  "name": "Deep Nested Read (10 levels)",
+                  "hz": 46604080.46,
+                  "min": 0,
+                  "max": 0.098,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.06,
-                  "samples": 25010465
+                  "samples": 23302042
+                },
+                {
+                  "id": "Deep Nested Write (10 levels) - Zustand",
+                  "name": "Deep Nested Write (10 levels)",
+                  "hz": 10475361.22,
+                  "min": 0,
+                  "max": 0.2602,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0002,
+                  "p999": 0.0003,
+                  "rme": 0.36,
+                  "samples": 5237681
+                },
+                {
+                  "id": "Array Splice (middle) - Zustand",
+                  "name": "Array Splice (middle)",
+                  "hz": 4053777.89,
+                  "min": 0.0001,
+                  "max": 0.1543,
+                  "mean": 0.0002,
+                  "p75": 0.0003,
+                  "p99": 0.0007,
+                  "p995": 0.0008,
+                  "p999": 0.0013,
+                  "rme": 0.38,
+                  "samples": 2026889
+                },
+                {
+                  "id": "Large Array Map (1000 items) - Zustand",
+                  "name": "Large Array Map (1000 items)",
+                  "hz": 95215.64,
+                  "min": 0.0085,
+                  "max": 0.1119,
+                  "mean": 0.0105,
+                  "p75": 0.0112,
+                  "p99": 0.0138,
+                  "p995": 0.015,
+                  "p999": 0.0577,
+                  "rme": 0.24,
+                  "samples": 47608
+                },
+                {
+                  "id": "Multi-field Update (unrelated) - Zustand",
+                  "name": "Multi-field Update (unrelated)",
+                  "hz": 8351076.08,
+                  "min": 0,
+                  "max": 0.1825,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0002,
+                  "p995": 0.0002,
+                  "p999": 0.0004,
+                  "rme": 0.3,
+                  "samples": 4175539
                 }
               ]
             }
@@ -209,32 +349,200 @@
               "fullName": "06-memory - Zustand",
               "benchmarks": [
                 {
-                  "id": "Large State Read - Zustand",
-                  "name": "Large State Read",
-                  "hz": 50394579.28,
+                  "id": "Large State Read (1000 items) - Zustand",
+                  "name": "Large State Read (1000 items)",
+                  "hz": 49064312.23,
                   "min": 0,
-                  "max": 0.0293,
+                  "max": 0.0171,
                   "mean": 0,
                   "p75": 0,
                   "p99": 0,
                   "p995": 0,
                   "p999": 0,
                   "rme": 0.05,
-                  "samples": 25197291
+                  "samples": 24532157
                 },
                 {
-                  "id": "Large State Update - Zustand",
-                  "name": "Large State Update",
-                  "hz": 369446.1,
-                  "min": 0.0025,
-                  "max": 0.4035,
-                  "mean": 0.0027,
-                  "p75": 0.0027,
-                  "p99": 0.0033,
-                  "p995": 0.0034,
-                  "p999": 0.0035,
-                  "rme": 0.27,
-                  "samples": 184724
+                  "id": "Large State Update (1000 items) - Zustand",
+                  "name": "Large State Update (1000 items)",
+                  "hz": 3943954.39,
+                  "min": 0.0001,
+                  "max": 0.2012,
+                  "mean": 0.0003,
+                  "p75": 0.0003,
+                  "p99": 0.0007,
+                  "p995": 0.0008,
+                  "p999": 0.0013,
+                  "rme": 0.61,
+                  "samples": 1971979
+                },
+                {
+                  "id": "Large State Filter - Zustand",
+                  "name": "Large State Filter",
+                  "hz": 615573.29,
+                  "min": 0.0015,
+                  "max": 7.4146,
+                  "mean": 0.0016,
+                  "p75": 0.0015,
+                  "p99": 0.0022,
+                  "p995": 0.0024,
+                  "p999": 0.0054,
+                  "rme": 2.92,
+                  "samples": 307787
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "07-form": {
+      "files": [
+        {
+          "filepath": "groups/07-form/tests/zustand.bench.ts",
+          "groups": [
+            {
+              "fullName": "07-form - Zustand",
+              "benchmarks": [
+                {
+                  "id": "Single Field Update - Zustand",
+                  "name": "Single Field Update",
+                  "hz": 18047397.06,
+                  "min": 0,
+                  "max": 2.4971,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0003,
+                  "rme": 1,
+                  "samples": 9023699
+                },
+                {
+                  "id": "Multiple Fields Update (3 fields) - Zustand",
+                  "name": "Multiple Fields Update (3 fields)",
+                  "hz": 13357193.2,
+                  "min": 0,
+                  "max": 1.0872,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0003,
+                  "rme": 0.61,
+                  "samples": 6678597
+                },
+                {
+                  "id": "Nested Field Update - Zustand",
+                  "name": "Nested Field Update",
+                  "hz": 12106266.23,
+                  "min": 0,
+                  "max": 0.014,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0002,
+                  "rme": 0.03,
+                  "samples": 6053134
+                },
+                {
+                  "id": "Full Form Reset - Zustand",
+                  "name": "Full Form Reset",
+                  "hz": 18156958.91,
+                  "min": 0,
+                  "max": 9.4345,
+                  "mean": 0.0001,
+                  "p75": 0.0001,
+                  "p99": 0.0001,
+                  "p995": 0.0001,
+                  "p999": 0.0003,
+                  "rme": 3.86,
+                  "samples": 9078480
+                },
+                {
+                  "id": "Conditional Field Update - Zustand",
+                  "name": "Conditional Field Update",
+                  "hz": 45945156,
+                  "min": 0,
+                  "max": 0.0396,
+                  "mean": 0,
+                  "p75": 0,
+                  "p99": 0,
+                  "p995": 0,
+                  "p999": 0,
+                  "rme": 0.06,
+                  "samples": 22972578
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "08-async-reactive": {
+      "files": [
+        {
+          "filepath": "groups/08-async-reactive/tests/zustand.bench.ts",
+          "groups": [
+            {
+              "fullName": "08-async-reactive - Zustand",
+              "benchmarks": [
+                {
+                  "id": "Async Reactive Read - Zustand",
+                  "name": "Async Reactive Read",
+                  "hz": 1511994.92,
+                  "min": 0,
+                  "max": 57.1064,
+                  "mean": 0.0007,
+                  "p75": 0.0001,
+                  "p99": 0.0003,
+                  "p995": 0.0004,
+                  "p999": 0.0007,
+                  "rme": 39.04,
+                  "samples": 757552
+                },
+                {
+                  "id": "Async Reactive Chained - Zustand",
+                  "name": "Async Reactive Chained",
+                  "hz": 1009912,
+                  "min": 0.0001,
+                  "max": 32.3337,
+                  "mean": 0.001,
+                  "p75": 0.0002,
+                  "p99": 0.0005,
+                  "p995": 0.0006,
+                  "p999": 0.001,
+                  "rme": 38.35,
+                  "samples": 506160
+                },
+                {
+                  "id": "Async Reactive Complex - Zustand",
+                  "name": "Async Reactive Complex",
+                  "hz": 566057.26,
+                  "min": 0.0002,
+                  "max": 25.0821,
+                  "mean": 0.0018,
+                  "p75": 0.0003,
+                  "p99": 0.0006,
+                  "p995": 0.0007,
+                  "p999": 0.0009,
+                  "rme": 37.06,
+                  "samples": 291188
+                },
+                {
+                  "id": "Async Reactive Concurrent - Zustand",
+                  "name": "Async Reactive Concurrent",
+                  "hz": 312134.39,
+                  "min": 0.0002,
+                  "max": 71.8687,
+                  "mean": 0.0032,
+                  "p75": 0.0003,
+                  "p99": 0.0008,
+                  "p995": 0.0009,
+                  "p999": 0.0017,
+                  "rme": 47.94,
+                  "samples": 158414
                 }
               ]
             }

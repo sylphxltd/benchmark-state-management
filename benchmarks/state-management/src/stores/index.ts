@@ -1,14 +1,16 @@
 /**
  * Store definitions for all state management libraries
- * Centralized store configuration for benchmark testing
+ * Interface-based architecture where each library implements StateActions
  */
 
-export * from './redux-store.ts';
-export * from './zustand-store.ts';
-export * from './jotai-store.ts';
-export * from './mobx-store.ts';
-export * from './valtio-store.ts';
-export * from './preact-store.ts';
-export * from './solid-store.ts';
-export * from './zen-store.ts';
-export * from './comprehensive-v2-store.ts';
+export * from './interface';
+export * from './helpers';
+
+export * from './redux-actions';
+export * from './zustand-actions';
+export * from './jotai-actions';
+export * from './mobx-actions';
+export * from './valtio-actions';
+export * from './preact-actions';
+export * from './solid-actions';
+export * from './zen-actions';

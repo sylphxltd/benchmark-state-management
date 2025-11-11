@@ -326,6 +326,110 @@ export const reduxActionsV2 = {
 
   getDoubled: () => {
     return reduxStoreV2.getState().comprehensive.count * 2;
+  },
+
+  // ============================================================================
+  // NEW METHODS FOR TEST REGISTRIES
+  // ============================================================================
+
+  // 04-complexity methods
+  readNestedState: () => {
+    return reduxStoreV2.getState().comprehensive.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;
+  },
+
+  updateNestedState: () => {
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.setTenLevelNested(Math.random()));
+  },
+
+  spliceArray: () => {
+    const state = reduxStoreV2.getState().comprehensive;
+    const middleIndex = Math.floor(state.users.length / 2);
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.spliceUser([middleIndex, 1, { id: 9999, name: 'Inserted' }]));
+  },
+
+  mapLargeArray: () => {
+    const users = reduxStoreV2.getState().comprehensive.users;
+    return users.map(u => ({ ...u, mapped: true }));
+  },
+
+  updateMultipleFields: () => {
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.increment());
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.updateFormField(['personal.firstName', 'Updated']));
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.setTenLevelNested(Math.random()));
+  },
+
+  // 06-memory methods
+  getLargeArray: () => {
+    return reduxStoreV2.getState().comprehensive.users;
+  },
+
+  updateLargeArrayItem: () => {
+    const users = reduxStoreV2.getState().comprehensive.users;
+    if (users.length > 0) {
+      reduxStoreV2.dispatch(comprehensiveSlice.actions.spliceUser([0, 1, { ...users[0], updated: true }]));
+    }
+  },
+
+  cloneLargeState: () => {
+    const state = reduxStoreV2.getState().comprehensive;
+    return {
+      count: state.count,
+      users: [...state.users],
+      deepNested: JSON.parse(JSON.stringify(state.deepNested)),
+      formData: JSON.parse(JSON.stringify(state.formData))
+    };
+  },
+
+  filterLargeArray: () => {
+    const users = reduxStoreV2.getState().comprehensive.users;
+    return users.filter(u => u.id % 2 === 0);
+  },
+
+  // 07-form methods
+  updateMultipleFormFields: (fields) => {
+    Object.entries(fields).forEach(([field, value]) => {
+      reduxStoreV2.dispatch(comprehensiveSlice.actions.updateFormField([field, value]));
+    });
+  },
+
+  updateNestedFormField: (path, value) => {
+    reduxStoreV2.dispatch(comprehensiveSlice.actions.updateFormField([path, value]));
+  },
+
+  resetForm: () => {
+    const freshForm = createFormState();
+    Object.entries(freshForm).forEach(([section, fields]) => {
+      Object.entries(fields).forEach(([field, value]) => {
+        reduxStoreV2.dispatch(comprehensiveSlice.actions.updateFormField([`${section}.${field}`, value]));
+      });
+    });
+  },
+
+  conditionalFieldUpdate: () => {
+    const formData = reduxStoreV2.getState().comprehensive.formData;
+    if (formData.preferences.newsletter) {
+      reduxStoreV2.dispatch(comprehensiveSlice.actions.updateFormField(['personal.email', 'subscribed@example.com']));
+    }
+  },
+
+  // 08-async-reactive methods
+  getAsyncValue: async () => {
+    await new Promise(resolve => setTimeout(resolve, 0));
+    return { count: reduxStoreV2.getState().comprehensive.count, timestamp: Date.now() };
+  },
+
+  getChainedAsyncValue: async () => {
+    const first = await new Promise(resolve => setTimeout(() => resolve(reduxStoreV2.getState().comprehensive.count), 0));
+    const second = await new Promise(resolve => setTimeout(() => resolve(first * 2), 0));
+    return second;
+  },
+
+  getComplexAsyncValue: async () => {
+    const [count, users] = await Promise.all([
+      new Promise(resolve => setTimeout(() => resolve(reduxStoreV2.getState().comprehensive.count), 0)),
+      new Promise(resolve => setTimeout(() => resolve(reduxStoreV2.getState().comprehensive.users.length), 0))
+    ]);
+    return { count, users };
   }
 };
 
@@ -589,6 +693,128 @@ export const zustandActionsV2 = {
     const state = zustandStoreV2.getState();
     return state.count * 4 + 100;
   },
+
+  // ============================================================================
+  // NEW METHODS FOR TEST REGISTRIES
+  // ============================================================================
+
+  // 04-complexity methods
+  readNestedState: () => {
+    return zustandStoreV2.getState().deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9.level10.value;
+  },
+
+  updateNestedState: () => {
+    zustandStoreV2.setState(state => ({
+      deepNested: {
+        ...state.deepNested,
+        level1: { ...state.deepNested.level1, level2: { ...state.deepNested.level1.level2, level3: { ...state.deepNested.level1.level2.level3, level4: { ...state.deepNested.level1.level2.level3.level4, level5: { ...state.deepNested.level1.level2.level3.level4.level5, level6: { ...state.deepNested.level1.level2.level3.level4.level5.level6, level7: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7, level8: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7.level8, level9: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9, level10: { value: Math.random() } } } } } } } } } }
+      }
+    }));
+  },
+
+  spliceArray: () => {
+    zustandStoreV2.setState(state => {
+      const middleIndex = Math.floor(state.users.length / 2);
+      const newUsers = [...state.users];
+      newUsers.splice(middleIndex, 1, { id: 9999, name: 'Inserted' });
+      return { users: newUsers };
+    });
+  },
+
+  mapLargeArray: () => {
+    const users = zustandStoreV2.getState().users;
+    return users.map(u => ({ ...u, mapped: true }));
+  },
+
+  updateMultipleFields: () => {
+    zustandStoreV2.setState(state => ({
+      count: state.count + 1,
+      formData: { ...state.formData, personal: { ...state.formData.personal, firstName: 'Updated' } },
+      deepNested: { ...state.deepNested, level1: { ...state.deepNested.level1, level2: { ...state.deepNested.level1.level2, level3: { ...state.deepNested.level1.level2.level3, level4: { ...state.deepNested.level1.level2.level3.level4, level5: { ...state.deepNested.level1.level2.level3.level4.level5, level6: { ...state.deepNested.level1.level2.level3.level4.level5.level6, level7: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7, level8: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7.level8, level9: { ...state.deepNested.level1.level2.level3.level4.level5.level6.level7.level8.level9, level10: { value: Math.random() } } } } } } } } } } }
+    }));
+  },
+
+  // 06-memory methods
+  getLargeArray: () => zustandStoreV2.getState().users,
+
+  updateLargeArrayItem: () => {
+    zustandStoreV2.setState(state => {
+      if (state.users.length > 0) {
+        const newUsers = [...state.users];
+        newUsers[0] = { ...newUsers[0], updated: true };
+        return { users: newUsers };
+      }
+      return state;
+    });
+  },
+
+  cloneLargeState: () => {
+    const state = zustandStoreV2.getState();
+    return {
+      count: state.count,
+      users: [...state.users],
+      deepNested: JSON.parse(JSON.stringify(state.deepNested)),
+      formData: JSON.parse(JSON.stringify(state.formData))
+    };
+  },
+
+  filterLargeArray: () => {
+    return zustandStoreV2.getState().users.filter(u => u.id % 2 === 0);
+  },
+
+  // 07-form methods
+  updateMultipleFormFields: (fields) => {
+    zustandStoreV2.setState(state => ({
+      formData: { ...state.formData, ...fields }
+    }));
+  },
+
+  updateNestedFormField: (path, value) => {
+    zustandStoreV2.setState(state => {
+      const keys = path.split('.');
+      const newFormData = { ...state.formData };
+      let current = newFormData;
+      for (let i = 0; i < keys.length - 1; i++) {
+        current[keys[i]] = { ...current[keys[i]] };
+        current = current[keys[i]];
+      }
+      current[keys[keys.length - 1]] = value;
+      return { formData: newFormData };
+    });
+  },
+
+  resetForm: () => {
+    zustandStoreV2.setState({ formData: createFormState() });
+  },
+
+  conditionalFieldUpdate: () => {
+    const formData = zustandStoreV2.getState().formData;
+    if (formData.preferences.newsletter) {
+      zustandStoreV2.setState(state => ({
+        formData: { ...state.formData, personal: { ...state.formData.personal, email: 'subscribed@example.com' } }
+      }));
+    }
+  },
+
+  // 08-async-reactive methods
+  getAsyncValue: async () => {
+    await new Promise(resolve => setTimeout(resolve, 0));
+    return { count: zustandStoreV2.getState().count, timestamp: Date.now() };
+  },
+
+  getChainedAsyncValue: async () => {
+    const first = await new Promise(resolve => setTimeout(() => resolve(zustandStoreV2.getState().count), 0));
+    const second = await new Promise(resolve => setTimeout(() => resolve(first * 2), 0));
+    return second;
+  },
+
+  getComplexAsyncValue: async () => {
+    const [count, users] = await Promise.all([
+      new Promise(resolve => setTimeout(() => resolve(zustandStoreV2.getState().count), 0)),
+      new Promise(resolve => setTimeout(() => resolve(zustandStoreV2.getState().users.length), 0))
+    ]);
+    return { count, users };
+  }
 };
 
 // ============================================================================

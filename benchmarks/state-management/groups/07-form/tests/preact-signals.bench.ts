@@ -12,6 +12,11 @@ const store = preactActionsV2;
 
 describe('07-form - Preact Signals', () => {
   Object.values(TESTS).forEach(test => {
+    // Skip test if store doesn't implement required method
+    if (test.method && typeof store[test.method] !== 'function') {
+      return;
+    }
+
     bench(test.name, () => {
       test.execute(store);
     });

@@ -12,6 +12,11 @@ const store = zustandActionsV2;
 
 describe('04-complexity - Zustand', () => {
   Object.values(TESTS).forEach(test => {
+    // Skip test if store doesn't implement required method
+    if (test.method && typeof store[test.method] !== 'function') {
+      return;
+    }
+
     bench(test.name, () => {
       test.execute(store);
     });

@@ -5,12 +5,14 @@
 
 export interface TestDefinition {
   name: string;
+  method: string; // Required method name for this test
   execute: (store: any) => void | any;
 }
 
 export const TESTS = {
   SINGLE_FIELD_UPDATE: {
     name: 'Single Field Update',
+    method: 'updateFormField',
     execute: (store) => {
       // Update one form field - most common operation
       store.updateFormField('firstName', 'John');
@@ -18,6 +20,7 @@ export const TESTS = {
   },
   MULTIPLE_FIELDS_UPDATE: {
     name: 'Multiple Fields Update (3 fields)',
+    method: 'updateMultipleFormFields',
     execute: (store) => {
       // Update multiple fields at once (firstName, lastName, email)
       store.updateMultipleFormFields({
@@ -29,6 +32,7 @@ export const TESTS = {
   },
   NESTED_FIELD_UPDATE: {
     name: 'Nested Field Update',
+    method: 'updateNestedFormField',
     execute: (store) => {
       // Update nested form field (address.city)
       store.updateNestedFormField('address.city', 'New York');
@@ -36,6 +40,7 @@ export const TESTS = {
   },
   FULL_FORM_RESET: {
     name: 'Full Form Reset',
+    method: 'resetForm',
     execute: (store) => {
       // Reset entire form to initial state
       store.resetForm();
@@ -43,6 +48,7 @@ export const TESTS = {
   },
   CONDITIONAL_FIELD_UPDATE: {
     name: 'Conditional Field Update',
+    method: 'conditionalFieldUpdate',
     execute: (store) => {
       // Update field based on another field's value
       // e.g., enable billing address when checkbox checked

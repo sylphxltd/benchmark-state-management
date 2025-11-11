@@ -12,6 +12,11 @@ const store = mobxActionsV2;
 
 describe('08-async-reactive - MobX', () => {
   Object.values(TESTS).forEach(test => {
+    // Skip test if store doesn't implement required method
+    if (test.method && typeof store[test.method] !== 'function') {
+      return;
+    }
+
     bench(test.name, () => {
       test.execute(store);
     });

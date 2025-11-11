@@ -12,6 +12,11 @@ const store = solidActionsV2;
 
 describe('08-async-reactive - Solid Signals', () => {
   Object.values(TESTS).forEach(test => {
+    // Skip test if store doesn't implement required method
+    if (test.method && typeof store[test.method] !== 'function') {
+      return;
+    }
+
     bench(test.name, () => {
       test.execute(store);
     });

@@ -1,89 +1,24 @@
 {
-  "description": "Comparison of core features and capabilities across CSS frameworks",
-  "features": [
-    {
-      "id": "typeSafe",
-      "label": "Type Safety",
-      "description": "Native TypeScript support without runtime overhead"
+  "features": {
+    "jit-compilation": {
+      "name": "JIT Compilation",
+      "description": "Just-in-time generation of CSS at build time",
+      "supported": ["tailwindcss", "unocss"]
     },
-    {
-      "id": "codegenRequired",
-      "label": "Codegen Required",
-      "description": "Requires code generation step for type safety"
+    "zero-runtime": {
+      "name": "Zero Runtime",
+      "description": "No runtime JavaScript overhead, styles extracted at build time",
+      "supported": ["silk", "tailwindcss", "pandacss", "unocss"]
     },
-    {
-      "id": "designTokens",
-      "label": "Design Tokens",
-      "description": "Built-in design token/theme configuration system"
+    "typescript": {
+      "name": "TypeScript Support",
+      "description": "Type-safe style definitions and autocompletion",
+      "supported": ["silk", "pandacss"]
     },
-    {
-      "id": "presetSystem",
-      "label": "Preset System",
-      "description": "Installable preset packages for complete design systems"
-    },
-    {
-      "id": "criticalCSS",
-      "label": "Critical CSS",
-      "description": "Automatic critical CSS extraction for performance"
-    },
-    {
-      "id": "cssIcons",
-      "label": "Pure CSS Icons",
-      "description": "Icon support via pure CSS classes (no SVG/font)"
-    }
-  ],
-  "libraries": {
-    "@sylphx/silk": {
-      "typeSafe": true,
-      "codegenRequired": false,
-      "designTokens": true,
-      "presetSystem": "2 official (Material, Minimal)",
-      "criticalCSS": true,
-      "cssIcons": false,
-      "sources": {
-        "typeSafe": "https://github.com/SylphxAI/silk#type-safety",
-        "designTokens": "https://github.com/SylphxAI/silk#design-tokens",
-        "presetSystem": "https://github.com/SylphxAI/silk#presets",
-        "criticalCSS": "https://github.com/SylphxAI/silk#critical-css"
-      }
-    },
-    "tailwindcss": {
-      "typeSafe": false,
-      "codegenRequired": false,
-      "designTokens": true,
-      "presetSystem": false,
-      "criticalCSS": false,
-      "cssIcons": false,
-      "sources": {
-        "designTokens": "https://tailwindcss.com/docs/theme"
-      }
-    },
-    "@pandacss/dev": {
-      "typeSafe": true,
-      "codegenRequired": true,
-      "designTokens": true,
-      "presetSystem": "Community presets",
-      "criticalCSS": false,
-      "cssIcons": false,
-      "sources": {
-        "typeSafe": "https://panda-css.com/docs/concepts/type-safety",
-        "codegenRequired": "https://panda-css.com/docs/installation/cli",
-        "designTokens": "https://panda-css.com/docs/theming/tokens",
-        "presetSystem": "https://panda-css.com/docs/customization/presets"
-      }
-    },
-    "unocss": {
-      "typeSafe": false,
-      "codegenRequired": false,
-      "designTokens": true,
-      "presetSystem": "20+ official presets",
-      "criticalCSS": false,
-      "cssIcons": true,
-      "sources": {
-        "designTokens": "https://unocss.dev/config/theme",
-        "presetSystem": "https://unocss.dev/presets/",
-        "cssIcons": "https://unocss.dev/presets/icons"
-      }
+    "atomic-css": {
+      "name": "Atomic CSS",
+      "description": "Generates single-purpose utility classes",
+      "supported": ["tailwindcss", "unocss", "pandacss"]
     }
   }
 }

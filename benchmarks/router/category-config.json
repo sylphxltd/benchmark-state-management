@@ -1,0 +1,36 @@
+{
+  "name": "Router",
+  "description": "Performance benchmarks for React routing libraries",
+  "performanceTiers": [
+    {
+      "name": "Ultra Fast (Tier S)",
+      "threshold": 5000000,
+      "description": "Exceptional route matching performance"
+    },
+    {
+      "name": "Very Fast (Tier A)",
+      "threshold": 2000000,
+      "description": "Fast route matching with good features"
+    },
+    {
+      "name": "Fast (Tier B)",
+      "threshold": 1000000,
+      "description": "Good performance for most use cases"
+    },
+    {
+      "name": "Standard (Tier C)",
+      "threshold": 0,
+      "description": "Adequate performance with comprehensive features"
+    }
+  ],
+  "benchmarkStandard": {
+    "version": "1.0.0",
+    "file": "../../BENCHMARK_STANDARD.md"
+  },
+  "environment": {
+    "runtime": "Node.js v25.0.0",
+    "framework": "Vitest Bench",
+    "hardware": "[System-dependent]",
+    "iterations": "Automatically determined by Vitest for statistical significance"
+  }
+}

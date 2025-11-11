@@ -1,0 +1,43 @@
+{
+  "groups": {
+    "01-style-application": {
+    "title": "Style Application",
+    "description": "Runtime performance of style generation and concatenation",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Apply 100 inline styles",
+        "pattern": "Apply Styles",
+        "description": "Generate and join 100 style classes"
+      },
+      {
+        "name": "Conditional styling (1000 iterations)",
+        "pattern": "Conditional Styles",
+        "description": "Toggle between conditional style classes"
+      },
+      {
+        "name": "String concatenation (complex className)",
+        "pattern": "String Concat",
+        "description": "Concatenate 10 different utility classes"
+      }
+    ]
+  },
+  "02-dynamic-updates": {
+    "title": "Dynamic Updates",
+    "description": "Runtime style updates and theme switching",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Theme toggle (dark/light mode)",
+        "pattern": "Theme Toggle",
+        "description": "Switch between dark and light theme classes"
+      },
+      {
+        "name": "Responsive breakpoint matching",
+        "pattern": "Breakpoint Matching",
+        "description": "Match and apply responsive breakpoint classes"
+      }
+    ]
+  }
+  }
+}

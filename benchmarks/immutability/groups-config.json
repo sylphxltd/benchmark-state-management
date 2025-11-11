@@ -1,0 +1,143 @@
+{
+  "groups": {
+    "01-simple-updates": {
+    "title": "Simple Updates",
+    "description": "Basic object property updates",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Simple Object Update",
+        "pattern": "Simple Object Update",
+        "description": "Update single property in flat object"
+      }
+    ]
+  },
+  "02-nested-updates": {
+    "title": "Nested Updates",
+    "description": "Updates in nested object structures",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Nested Object Update",
+        "pattern": "Nested Object Update",
+        "description": "Update property in nested object (3 levels)"
+      }
+    ]
+  },
+  "03-array-operations": {
+    "title": "Array Operations",
+    "description": "Common array manipulations",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Array Push",
+        "pattern": "Array Push",
+        "description": "Add element to end of array"
+      },
+      {
+        "name": "Array Remove",
+        "pattern": "Array Remove",
+        "description": "Remove element from array"
+      },
+      {
+        "name": "Array Update",
+        "pattern": "Array Update",
+        "description": "Update object within array"
+      }
+    ]
+  },
+  "04-deep-operations": {
+    "title": "Deep Operations",
+    "description": "Deep nested updates and multiple changes",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Deep Nested Update (5 levels)",
+        "pattern": "Deep Nested Update",
+        "description": "Update value 5 levels deep"
+      },
+      {
+        "name": "Multiple Updates (3 changes)",
+        "pattern": "Multiple Updates",
+        "description": "Three simultaneous property updates"
+      }
+    ]
+  },
+  "05-large-scale": {
+    "title": "Large Scale",
+    "description": "Performance with large data structures",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Large Array Update (1000 items)",
+        "pattern": "Large Array Update",
+        "description": "Update single item in 1000-element array"
+      }
+    ]
+  },
+  "06-patches": {
+    "title": "JSON Patches",
+    "description": "Generate and apply JSON patches for state synchronization",
+    "type": "feature-specific",
+    "benchmarks": [
+      {
+        "name": "JSON Patches - Generate",
+        "pattern": "Patches Generate",
+        "description": "Generate patches from state changes"
+      },
+      {
+        "name": "JSON Patches - Apply",
+        "pattern": "Patches Apply",
+        "description": "Apply patches to state"
+      },
+      {
+        "name": "JSON Patches - Roundtrip",
+        "pattern": "Patches Roundtrip",
+        "description": "Full generate + apply cycle"
+      },
+      {
+        "name": "Undo/Redo - Inverse Patches",
+        "pattern": "Undo Redo",
+        "description": "Undo using inverse patches"
+      }
+    ]
+  },
+  "07-map-set": {
+    "title": "Map & Set Operations",
+    "description": "ES6 Map and Set support",
+    "type": "feature-specific",
+    "benchmarks": [
+      {
+        "name": "Map - Set Operation",
+        "pattern": "Map Set",
+        "description": "Add entry to Map"
+      },
+      {
+        "name": "Map - Update Nested Value",
+        "pattern": "Map Update",
+        "description": "Update nested value in Map"
+      },
+      {
+        "name": "Set - Add Operation",
+        "pattern": "Set Add",
+        "description": "Add item to Set"
+      },
+      {
+        "name": "Set - Delete Operation",
+        "pattern": "Set Delete",
+        "description": "Remove item from Set"
+      },
+      {
+        "name": "Map - Large (100 items)",
+        "pattern": "Map Large",
+        "description": "Operations on large Map"
+      },
+      {
+        "name": "Set - Large (100 items)",
+        "pattern": "Set Large",
+        "description": "Operations on large Set"
+      }
+    ]
+  }
+  }
+}

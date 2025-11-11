@@ -1,0 +1,77 @@
+{
+  "groups": {
+    "01-basic-routes": {
+    "title": "Basic Routes",
+    "description": "Static and simple path matching",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Static Route Matching",
+        "pattern": "Static Route",
+        "description": "Match root path '/'"
+      },
+      {
+        "name": "Simple Route Matching",
+        "pattern": "Simple Route",
+        "description": "Match simple path '/about'"
+      }
+    ]
+  },
+  "02-dynamic-routes": {
+    "title": "Dynamic Routes",
+    "description": "URL parameter extraction",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Dynamic Route Matching (1 param)",
+        "pattern": "Dynamic 1 Param",
+        "description": "Match route with one parameter"
+      },
+      {
+        "name": "Nested Dynamic Routes (2 params)",
+        "pattern": "Dynamic 2 Params",
+        "description": "Match route with two nested parameters"
+      }
+    ]
+  },
+  "03-advanced-routes": {
+    "title": "Advanced Routes",
+    "description": "Wildcard and optional parameters",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Wildcard Route Matching",
+        "pattern": "Wildcard Route",
+        "description": "Match routes with wildcard segments"
+      },
+      {
+        "name": "Optional Parameter Route (with param)",
+        "pattern": "Optional With Param",
+        "description": "Match optional parameter when present"
+      },
+      {
+        "name": "Optional Parameter Route (without param)",
+        "pattern": "Optional Without Param",
+        "description": "Match optional parameter when absent"
+      }
+    ]
+  },
+  "04-real-world": {
+    "title": "Real-World Patterns",
+    "description": "Realistic usage scenarios",
+    "type": "universal",
+    "benchmarks": [
+      {
+        "name": "Mixed Route Matching (realistic usage)",
+        "pattern": "Mixed Routes",
+        "description": "Match multiple diverse routes sequentially"
+      },
+      {
+        "name": "Sequential Route Matching (worst case)",
+        "pattern": "Sequential Worst Case",
+        "description": "Last route in list (worst case performance)"
+      }
+    ]
+  }
+  }
+}

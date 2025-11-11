@@ -1,0 +1,36 @@
+{
+  "name": "Immutability",
+  "description": "Performance benchmarks for immutable data structure libraries",
+  "performanceTiers": [
+    {
+      "name": "High Performance (Tier S)",
+      "threshold": 1000000,
+      "description": "Exceptional performance across all operations"
+    },
+    {
+      "name": "Optimized (Tier A)",
+      "threshold": 500000,
+      "description": "Fast operations with good structural sharing"
+    },
+    {
+      "name": "Standard (Tier B)",
+      "threshold": 100000,
+      "description": "Moderate performance with good ergonomics"
+    },
+    {
+      "name": "Basic (Tier C)",
+      "threshold": 0,
+      "description": "Lower performance but simple API"
+    }
+  ],
+  "benchmarkStandard": {
+    "version": "1.0.0",
+    "file": "../../BENCHMARK_STANDARD.md"
+  },
+  "environment": {
+    "runtime": "Node.js v25.0.0",
+    "framework": "Vitest Bench",
+    "hardware": "[System-dependent]",
+    "iterations": "Automatically determined by Vitest for statistical significance"
+  }
+}

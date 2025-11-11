@@ -1,115 +1,24 @@
 {
-  "description": "Comparison of core features and capabilities across immutability libraries",
-  "features": [
-    {
-      "id": "typeSafe",
-      "label": "Type Safety",
-      "description": "Full TypeScript support with type inference"
+  "features": {
+    "json-patches": {
+      "name": "JSON Patches",
+      "description": "Generate and apply JSON patches for state synchronization",
+      "supported": ["immer", "craft"]
     },
-    {
-      "id": "freeze",
-      "label": "Auto Freeze",
-      "description": "Automatically freezes objects (Object.freeze) in dev mode"
+    "map-set-support": {
+      "name": "Map & Set Support",
+      "description": "Native ES6 Map and Set data structure support",
+      "supported": ["immer", "mutative", "craft"]
     },
-    {
-      "id": "structuralSharing",
-      "label": "Structural Sharing",
-      "description": "Uses structural sharing for memory efficiency"
+    "typescript": {
+      "name": "TypeScript Support",
+      "description": "Full TypeScript type inference and safety",
+      "supported": ["immer", "mutative", "craft", "immutable", "immutability-helper", "seamless-immutable", "native-spread"]
     },
-    {
-      "id": "immutableDataStructures",
-      "label": "Custom Data Structures",
-      "description": "Provides custom immutable data structures (List, Map, Set, etc.)"
-    },
-    {
-      "id": "mutableAPI",
-      "label": "Mutable-style API",
-      "description": "Allows mutable-style API that produces immutable results"
-    },
-    {
-      "id": "jsonCompatible",
-      "label": "JSON Compatible",
-      "description": "Works with plain JavaScript objects (JSON-serializable)"
-    }
-  ],
-  "libraries": {
-    "immer": {
-      "typeSafe": true,
-      "freeze": true,
-      "structuralSharing": true,
-      "immutableDataStructures": false,
-      "mutableAPI": true,
-      "jsonCompatible": true,
-      "sources": {
-        "freeze": "https://immerjs.github.io/immer/api#setautofreeze",
-        "structuralSharing": "https://immerjs.github.io/immer/performance",
-        "mutableAPI": "https://immerjs.github.io/immer/"
-      }
-    },
-    "mutative": {
-      "typeSafe": true,
-      "freeze": false,
-      "structuralSharing": true,
-      "immutableDataStructures": false,
-      "mutableAPI": true,
-      "jsonCompatible": true,
-      "sources": {
-        "freeze": "https://github.com/unadlib/mutative#no-freezing-by-default",
-        "structuralSharing": "https://github.com/unadlib/mutative#shallow-copy-optimization",
-        "jsonCompatible": "https://github.com/unadlib/mutative#json-patch"
-      }
-    },
-    "immutable": {
-      "typeSafe": true,
-      "freeze": false,
-      "structuralSharing": true,
-      "immutableDataStructures": true,
-      "mutableAPI": false,
-      "jsonCompatible": true,
-      "sources": {
-        "structuralSharing": "https://immutable-js.com/#the-case-for-immutability",
-        "immutableDataStructures": "https://immutable-js.com/docs/v4.3.0",
-        "jsonCompatible": "https://immutable-js.com/docs/v4.3.0/Collection/#toJSON()"
-      }
-    },
-    "immutability-helper": {
-      "typeSafe": true,
-      "freeze": false,
-      "structuralSharing": true,
-      "immutableDataStructures": false,
-      "mutableAPI": false,
-      "jsonCompatible": true,
-      "sources": {
-        "structuralSharing": "https://github.com/kolodny/immutability-helper#overview",
-        "typeSafe": "https://github.com/kolodny/immutability-helper/blob/master/index.d.ts"
-      }
-    },
-    "seamless-immutable": {
-      "typeSafe": true,
-      "freeze": true,
-      "structuralSharing": true,
-      "immutableDataStructures": false,
-      "mutableAPI": false,
-      "jsonCompatible": true,
-      "sources": {
-        "freeze": "https://github.com/rtfeldman/seamless-immutable#immutability",
-        "structuralSharing": "https://github.com/rtfeldman/seamless-immutable#usage"
-      }
-    },
-    "@sylphx/craft": {
-      "typeSafe": true,
-      "freeze": true,
-      "structuralSharing": true,
-      "immutableDataStructures": true,
-      "mutableAPI": true,
-      "jsonCompatible": true,
-      "sources": {
-        "typeSafe": "https://github.com/SylphxAI/craft#100-type-safe",
-        "freeze": "https://github.com/SylphxAI/craft#current",
-        "immutableDataStructures": "https://github.com/SylphxAI/craft#map-set-support",
-        "mutableAPI": "https://github.com/SylphxAI/craft",
-        "jsonCompatible": "https://github.com/SylphxAI/craft#json-patches"
-      }
+    "structural-sharing": {
+      "name": "Structural Sharing",
+      "description": "Reuses unchanged parts of data structures for memory efficiency",
+      "supported": ["immer", "mutative", "craft", "immutable"]
     }
   }
 }

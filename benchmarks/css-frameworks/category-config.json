@@ -1,0 +1,36 @@
+{
+  "name": "CSS Frameworks",
+  "description": "Runtime performance benchmarks for CSS-in-JS and utility-first CSS frameworks",
+  "performanceTiers": [
+    {
+      "name": "Zero Runtime (Tier S)",
+      "threshold": 10000000,
+      "description": "No runtime overhead, pure string operations"
+    },
+    {
+      "name": "Optimized (Tier A)",
+      "threshold": 5000000,
+      "description": "Minimal runtime processing"
+    },
+    {
+      "name": "Standard (Tier B)",
+      "threshold": 1000000,
+      "description": "Moderate runtime processing"
+    },
+    {
+      "name": "Heavy (Tier C)",
+      "threshold": 0,
+      "description": "Significant runtime processing overhead"
+    }
+  ],
+  "benchmarkStandard": {
+    "version": "1.0.0",
+    "file": "../../BENCHMARK_STANDARD.md"
+  },
+  "environment": {
+    "runtime": "Node.js v25.0.0",
+    "framework": "Vitest Bench",
+    "hardware": "[System-dependent]",
+    "iterations": "Automatically determined by Vitest for statistical significance"
+  }
+}

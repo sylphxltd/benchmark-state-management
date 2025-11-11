@@ -1,6 +1,6 @@
 /**
- * 13-todo-list - Universal Benchmark Runner
- * Real-world todo list / task management operations
+ * 15-real-world-patterns - Universal Benchmark Runner
+ * Tests complex real-world patterns beyond basic operations
  */
 
 import { bench, describe } from 'vitest';

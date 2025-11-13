@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 0,
-    "meanTime": 0,
-    "variance": 0,
-    "p99": 0,
+    "opsPerSecond": 3517.7971284215046,
+    "meanTime": 0.2842688089999997,
+    "variance": 0.007046356095216743,
+    "p99": 0.7158329999997477,
     "samples": 1000
   }
 }

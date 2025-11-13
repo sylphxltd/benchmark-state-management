@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Wide Fanout (1→100)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 2359364.198497621,
-    "meanTime": 0.00042384300000685473,
-    "variance": 3.4835189424877713e-7,
-    "p99": 0.002624999999625288,
+    "opsPerSecond": 1865849.1759379574,
+    "meanTime": 0.0005359490000028018,
+    "variance": 3.94535111508542e-7,
+    "p99": 0.005458999999973457,
     "samples": 1000
   }
 }

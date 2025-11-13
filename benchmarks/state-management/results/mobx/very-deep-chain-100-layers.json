@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 586424.9657523968,
-    "meanTime": 0.0017052480000011201,
-    "variance": 0.0000020722173238217923,
-    "p99": 0.004415999999764608,
+    "opsPerSecond": 1166828.4668796246,
+    "meanTime": 0.0008570240000008198,
+    "variance": 3.4217859402814796e-7,
+    "p99": 0.004290999999739142,
     "samples": 1000
   }
 }

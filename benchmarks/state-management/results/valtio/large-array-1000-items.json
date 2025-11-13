@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 5730.646677804325,
-    "meanTime": 0.17450037599999904,
-    "variance": 0.0022936605020210062,
-    "p99": 0.5042909999999665,
+    "opsPerSecond": 4891.5293581765445,
+    "meanTime": 0.20443504000000076,
+    "variance": 0.005576415193105493,
+    "p99": 0.6410000000000764,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 7440199.397393354,
-    "meanTime": 0.0001344049999991057,
-    "variance": 2.7751098073458912e-8,
-    "p99": 0.0004590000000916916,
+    "opsPerSecond": 8403643.819997774,
+    "meanTime": 0.00011899599999946986,
+    "variance": 1.2696614598759306e-8,
+    "p99": 0.00041699999997035775,
     "samples": 1000
   }
 }

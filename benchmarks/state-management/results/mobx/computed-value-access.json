@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Computed Value Access",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 1533058.0983027725,
-    "meanTime": 0.000652290999999991,
-    "variance": 0.000019460348352669044,
-    "p99": 0.00516600000003109,
+    "opsPerSecond": 1005482.8982441137,
+    "meanTime": 0.0009945470000000114,
+    "variance": 0.00003220182014594197,
+    "p99": 0.013083999999992102,
     "samples": 1000
   }
 }

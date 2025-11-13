@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 133963.0669183026,
-    "meanTime": 0.007464744000000017,
-    "variance": 0.00002248991373620089,
-    "p99": 0.028333000000003494,
+    "opsPerSecond": 124177.95744396365,
+    "meanTime": 0.008052959000000129,
+    "variance": 0.00008168583289821748,
+    "p99": 0.051250000000003126,
     "samples": 1000
   }
 }

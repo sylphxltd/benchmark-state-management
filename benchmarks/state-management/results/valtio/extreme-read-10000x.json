@@ -4,11 +4,11 @@
   "packageName": "valtio",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 26297104.686533418,
-    "meanTime": 0.000038027000003239664,
-    "variance": 1.555678705747443e-8,
+    "opsPerSecond": 25576755.845351346,
+    "meanTime": 0.0000390979999983756,
+    "variance": 1.3655409805166291e-8,
     "p99": 0.00016700000014679972,
     "samples": 1000
   }

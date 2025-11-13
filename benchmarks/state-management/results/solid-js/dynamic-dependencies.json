@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 10546520.702057859,
-    "meanTime": 0.00009481800000685325,
-    "variance": 9.960683171073065e-8,
-    "p99": 0.0004169999997429841,
+    "opsPerSecond": 11085859.985927511,
+    "meanTime": 0.00009020499999724052,
+    "variance": 2.178497995570202e-8,
+    "p99": 0.0004170000001977314,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 4146538.6768400795,
-    "meanTime": 0.00024116499999996677,
-    "variance": 3.231951726784427e-9,
-    "p99": 0.00041699999999877946,
+    "opsPerSecond": 3713386.0139006055,
+    "meanTime": 0.00026929600000016765,
+    "variance": 1.474393417256605e-7,
+    "p99": 0.0006249999999994316,
     "samples": 1000
   }
 }

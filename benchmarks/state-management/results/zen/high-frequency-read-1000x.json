@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:15:31.148Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 23968821.152212176,
-    "meanTime": 0.000046246000000792265,
-    "variance": 6.341075922132747e-10,
-    "p99": 0.00012200000037410064,
+    "opsPerSecond": 8809020.436905269,
+    "meanTime": 0.00011352000000028539,
+    "variance": 7.342980016018171e-7,
+    "p99": 0.00020899999999812735,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Wide Fanout (1→100)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 0,
-    "meanTime": 0,
-    "variance": 0,
-    "p99": 0,
+    "opsPerSecond": 2545287.019267269,
+    "meanTime": 0.0003928830000036214,
+    "variance": 3.420611444558442e-7,
+    "p99": 0.002124999999978172,
     "samples": 1000
   }
 }

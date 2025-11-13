@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 47679.99173039202,
-    "meanTime": 0.020973157999995693,
-    "variance": 0.011544829676837353,
-    "p99": 0.053666999999904874,
+    "opsPerSecond": 50036.25877491702,
+    "meanTime": 0.01998550700000169,
+    "variance": 0.0066947823258401784,
+    "p99": 0.10070800000016789,
     "samples": 1000
   }
 }

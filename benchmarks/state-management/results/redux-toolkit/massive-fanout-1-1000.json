@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 0,
-    "meanTime": 0,
-    "variance": 0,
-    "p99": 0,
+    "opsPerSecond": 241483.83120857607,
+    "meanTime": 0.004141064000000369,
+    "variance": 0.0000021974878877979473,
+    "p99": 0.008750000000418368,
     "samples": 1000
   }
 }

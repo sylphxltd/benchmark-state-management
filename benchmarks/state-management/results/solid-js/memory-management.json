@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 2399704.356414433,
-    "meanTime": 0.0004167180000015378,
-    "variance": 3.3126507355155455e-7,
-    "p99": 0.004500000000007276,
+    "opsPerSecond": 1364815.06756381,
+    "meanTime": 0.0007326999999970667,
+    "variance": 0.0000016360682622607046,
+    "p99": 0.005458999999973457,
     "samples": 1000
   }
 }

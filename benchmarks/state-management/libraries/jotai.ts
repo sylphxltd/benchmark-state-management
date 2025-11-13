@@ -272,52 +272,63 @@ jotai.implement(tests.largeArray, (ctx) => {
 // ========== REACTIVITY PATTERNS ==========
 
 jotai.implement(tests.diamondPattern, (ctx) => {
-  ctx.store.setCounter((prev) => prev + 1);
-  const result = ctx.store.getDoubled();
+  const { store, counterAtom, doubledAtom } = ctx.store;
+  store.set(counterAtom, (prev) => prev + 1);
+  const result = store.get(doubledAtom);
 });
 
 jotai.implement(tests.deepDiamondPattern, (ctx) => {
+  const { store, counterAtom, doubledAtom } = ctx.store;
   for (let i = 0; i < 5; i++) {
-    ctx.store.setCounter((prev) => prev + 1);
+    store.set(counterAtom, (prev) => prev + 1);
   }
-  const result = ctx.store.getDoubled();
+  const result = store.get(doubledAtom);
 });
 
 jotai.implement(tests.deepChain, (ctx) => {
+  const { store, counterAtom } = ctx.store;
   for (let i = 0; i < 10; i++) {
-    ctx.store.setCounter((prev) => prev * 2);
+    store.set(counterAtom, (prev) => prev * 2);
   }
+  const result = store.get(counterAtom);
 });
 
 jotai.implement(tests.veryDeepChain, (ctx) => {
+  const { store, counterAtom } = ctx.store;
   for (let i = 0; i < 100; i++) {
-    ctx.store.setCounter((prev) => prev * 1.01);
+    store.set(counterAtom, (prev) => prev * 1.01);
   }
+  const result = store.get(counterAtom);
 });
 
 jotai.implement(tests.wideFanout, (ctx) => {
-  ctx.store.setCounter((prev) => prev + 1);
+  const { store, counterAtom } = ctx.store;
+  store.set(counterAtom, (prev) => prev + 1);
   for (let i = 0; i < 100; i++) {
-    const v = ctx.store.getCounter();
+    const v = store.get(counterAtom);
   }
 });
 
 jotai.implement(tests.massiveFanout, (ctx) => {
-  ctx.store.setCounter((prev) => prev + 1);
+  const { store, counterAtom } = ctx.store;
+  store.set(counterAtom, (prev) => prev + 1);
   for (let i = 0; i < 1000; i++) {
-    const v = ctx.store.getCounter();
+    const v = store.get(counterAtom);
   }
 });
 
 jotai.implement(tests.dynamicDependencies, (ctx) => {
-  const toggle = ctx.store.getCounter() % 2 === 0;
-  ctx.store.setCounter((prev) => prev + (toggle ? 1 : 2));
+  const { store, counterAtom } = ctx.store;
+  const toggle = store.get(counterAtom) % 2 === 0;
+  store.set(counterAtom, (prev) => prev + (toggle ? 1 : 2));
+  const result = store.get(counterAtom);
 });
 
 jotai.implement(tests.repeatedDiamonds, (ctx) => {
+  const { store, counterAtom, doubledAtom } = ctx.store;
   for (let i = 0; i < 5; i++) {
-    ctx.store.setCounter((prev) => prev + 1);
-    const a = ctx.store.getCounter();
-    const b = ctx.store.getDoubled();
+    store.set(counterAtom, (prev) => prev + 1);
+    const a = store.get(counterAtom);
+    const b = store.get(doubledAtom);
   }
 });

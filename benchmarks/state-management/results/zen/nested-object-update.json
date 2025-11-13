@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:15:31.148Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 10957350.527265918,
-    "meanTime": 0.00009705899996333756,
-    "variance": 1.7048363586115831e-9,
-    "p99": 0.00025728999971761344,
+    "opsPerSecond": 3388945.936144756,
+    "meanTime": 0.0002950770000000631,
+    "variance": 3.366896367078767e-7,
+    "p99": 0.0007079999999888287,
     "samples": 1000
   }
 }

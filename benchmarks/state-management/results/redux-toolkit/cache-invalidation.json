@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 267874.6742979411,
-    "meanTime": 0.003733088999999154,
-    "variance": 8.585689119890463e-7,
-    "p99": 0.007583000000067841,
+    "opsPerSecond": 268331.3946386496,
+    "meanTime": 0.0037267350000049645,
+    "variance": 0.0000011819610338236441,
+    "p99": 0.00874999999996362,
     "samples": 1000
   }
 }

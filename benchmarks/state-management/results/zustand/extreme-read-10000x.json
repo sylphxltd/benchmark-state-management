@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 11759172.1545408,
-    "meanTime": 0.0000850399999981164,
-    "variance": 2.0905121521489304e-8,
-    "p99": 0.0002080000001569715,
+    "opsPerSecond": 14945895.857401272,
+    "meanTime": 0.0000669079999981932,
+    "variance": 2.8619106642763187e-8,
+    "p99": 0.00016699999991942605,
     "samples": 1000
   }
 }

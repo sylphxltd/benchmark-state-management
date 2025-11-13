@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Computed Value Access",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 28140477.26210577,
-    "meanTime": 0.00003553600000049073,
-    "variance": 7.728395098998853e-9,
-    "p99": 0.0002089999999839165,
+    "opsPerSecond": 15760689.687641667,
+    "meanTime": 0.00006344900000055986,
+    "variance": 4.9151002401596844e-8,
+    "p99": 0.0002910000000042601,
     "samples": 1000
   }
 }

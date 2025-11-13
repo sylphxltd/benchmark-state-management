@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:14:51.973Z",
+  "timestamp": "2025-11-13T21:23:18.135Z",
   "result": {
-    "opsPerSecond": 20521660.612806045,
-    "meanTime": 0.000048728999999930523,
-    "variance": 5.0251006565635413e-8,
-    "p99": 0.0002920000000017353,
+    "opsPerSecond": 9833421.834135836,
+    "meanTime": 0.000101693999999938,
+    "variance": 7.831635275274484e-10,
+    "p99": 0.0001660000000001105,
     "samples": 1000
   }
 }

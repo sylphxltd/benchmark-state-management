@@ -4,12 +4,12 @@
   "packageName": "joi",
   "test": "Validate Email",
   "group": "02-primitive-validation",
-  "timestamp": "2025-11-13T17:31:03.788Z",
+  "timestamp": "2025-11-13T18:04:17.007Z",
   "result": {
-    "opsPerSecond": 159398.6383050772,
-    "meanTime": 0.0065112230000131605,
-    "variance": 0.000004828607755016215,
-    "p99": 0.01749522000053729,
+    "opsPerSecond": 173304.94022675502,
+    "meanTime": 0.006739043000008678,
+    "variance": 0.0006248204204745417,
+    "p99": 0.017127119999540797,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "joi",
   "test": "Multiple Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:31:03.788Z",
+  "timestamp": "2025-11-13T18:04:17.007Z",
   "result": {
-    "opsPerSecond": 14200.49868557953,
-    "meanTime": 0.07277374200002851,
-    "variance": 0.0008368092245075243,
-    "p99": 0.14845003999895195,
+    "opsPerSecond": 12963.858457188531,
+    "meanTime": 0.08044616100003077,
+    "variance": 0.001161539141110707,
+    "p99": 0.14350153999906973,
     "samples": 1000
   }
 }

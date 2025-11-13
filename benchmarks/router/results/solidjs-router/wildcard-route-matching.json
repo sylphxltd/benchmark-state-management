@@ -4,12 +4,12 @@
   "packageName": "@solidjs/router",
   "test": "Wildcard Route Matching",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-13T17:30:59.495Z",
+  "timestamp": "2025-11-13T18:04:19.137Z",
   "result": {
-    "opsPerSecond": 2596287.2042184495,
-    "meanTime": 0.00040712700001131454,
-    "variance": 3.832638567613565e-7,
-    "p99": 0.0006421899999713785,
+    "opsPerSecond": 2688970.9025622765,
+    "meanTime": 0.00040742499999396386,
+    "variance": 5.344072916784054e-7,
+    "p99": 0.0007909999994808459,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "react-router-dom",
   "test": "Static Route Matching",
   "group": "01-basic-routes",
-  "timestamp": "2025-11-13T17:30:59.495Z",
+  "timestamp": "2025-11-13T18:04:19.137Z",
   "result": {
-    "opsPerSecond": 43605.71557575388,
-    "meanTime": 0.024600295000000473,
-    "variance": 0.00007192284304702829,
-    "p99": 0.055934010000001415,
+    "opsPerSecond": 42334.031255676615,
+    "meanTime": 0.025966705000000274,
+    "variance": 0.00010172795544141066,
+    "p99": 0.06595713000000443,
     "samples": 1000
   }
 }

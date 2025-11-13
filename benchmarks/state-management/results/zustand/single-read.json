@@ -4,11 +4,11 @@
   "packageName": "zustand",
   "test": "Single Read",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 11198082.888186501,
-    "meanTime": 0.00008930100000018371,
-    "variance": 0.0000014932680564558874,
+    "opsPerSecond": 22084317.92581524,
+    "meanTime": 0.00004528100000005253,
+    "variance": 1.0932160199243816e-8,
     "p99": 0.0002500000000011937,
     "samples": 1000
   }

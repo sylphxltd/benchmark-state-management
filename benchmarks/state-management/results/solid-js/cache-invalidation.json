@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 15438769.83812707,
-    "meanTime": 0.00006477200000290395,
-    "variance": 4.5162498516228343e-8,
-    "p99": 0.0002919999999448919,
+    "opsPerSecond": 17534630.89505917,
+    "meanTime": 0.00005703000000312386,
+    "variance": 3.996633343538043e-8,
+    "p99": 0.00045799999998052954,
     "samples": 1000
   }
 }

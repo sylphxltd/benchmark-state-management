@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 5443658.138193485,
-    "meanTime": 0.00018370000000254548,
-    "variance": 0.000006960164356344127,
-    "p99": 0.0007920000000467553,
+    "opsPerSecond": 19812573.058591127,
+    "meanTime": 0.00005047300000069299,
+    "variance": 8.68629221935153e-8,
+    "p99": 0.00020900000004075991,
     "samples": 1000
   }
 }

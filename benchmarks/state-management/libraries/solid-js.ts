@@ -279,3 +279,59 @@ solidJs.implement(tests.largeArray, (ctx) => {
     return newArray;
   });
 });
+
+// ========== REACTIVITY PATTERNS ==========
+
+solidJs.implement(tests.diamondPattern, (ctx) => {
+  ctx.store.setCounter((prev) => prev + 1);
+  const result = ctx.store.getDoubled();
+});
+
+solidJs.implement(tests.deepDiamondPattern, (ctx) => {
+  for (let i = 0; i < 5; i++) {
+    ctx.store.setCounter((prev) => prev + 1);
+  }
+  const result = ctx.store.getDoubled();
+});
+
+solidJs.implement(tests.deepChain, (ctx) => {
+  for (let i = 0; i < 10; i++) {
+    ctx.store.setCounter((prev) => prev * 2);
+  }
+  const result = ctx.store.getCounter();
+});
+
+solidJs.implement(tests.veryDeepChain, (ctx) => {
+  for (let i = 0; i < 100; i++) {
+    ctx.store.setCounter((prev) => prev * 1.01);
+  }
+  const result = ctx.store.getCounter();
+});
+
+solidJs.implement(tests.wideFanout, (ctx) => {
+  ctx.store.setCounter((prev) => prev + 1);
+  for (let i = 0; i < 100; i++) {
+    const v = ctx.store.getCounter();
+  }
+});
+
+solidJs.implement(tests.massiveFanout, (ctx) => {
+  ctx.store.setCounter((prev) => prev + 1);
+  for (let i = 0; i < 1000; i++) {
+    const v = ctx.store.getCounter();
+  }
+});
+
+solidJs.implement(tests.dynamicDependencies, (ctx) => {
+  const toggle = ctx.store.getCounter() % 2 === 0;
+  ctx.store.setCounter((prev) => prev + (toggle ? 1 : 2));
+  const result = ctx.store.getCounter();
+});
+
+solidJs.implement(tests.repeatedDiamonds, (ctx) => {
+  for (let i = 0; i < 5; i++) {
+    ctx.store.setCounter((prev) => prev + 1);
+    const a = ctx.store.getCounter();
+    const b = ctx.store.getDoubled();
+  }
+});

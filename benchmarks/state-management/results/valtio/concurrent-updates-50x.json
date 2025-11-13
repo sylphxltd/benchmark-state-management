@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Concurrent Updates (50x)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 76026.43287018091,
-    "meanTime": 0.013153319999999894,
-    "variance": 0.00010312208045606934,
-    "p99": 0.020332999999936874,
+    "opsPerSecond": 80553.4018708512,
+    "meanTime": 0.012414125000000241,
+    "variance": 0.00032087086610950064,
+    "p99": 0.019499999999993634,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 590505.9632241495,
-    "meanTime": 0.001693463000000918,
-    "variance": 0.000001236540118749577,
-    "p99": 0.005541999999991276,
+    "opsPerSecond": 341716.0845079221,
+    "meanTime": 0.002926405999998565,
+    "variance": 0.000005020822785957213,
+    "p99": 0.008125000000006821,
     "samples": 1000
   }
 }

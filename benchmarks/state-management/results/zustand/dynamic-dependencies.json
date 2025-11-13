@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 5056813.297595963,
-    "meanTime": 0.00019775299999218987,
-    "variance": 8.949346145082226e-8,
-    "p99": 0.0006250000001273293,
+    "opsPerSecond": 6349246.661831953,
+    "meanTime": 0.00015749900000128035,
+    "variance": 4.210390590941194e-8,
+    "p99": 0.0007499999996980478,
     "samples": 1000
   }
 }

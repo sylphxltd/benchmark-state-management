@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 401610.45793667977,
-    "meanTime": 0.0024899749999977984,
-    "variance": 0.00021555008544381444,
-    "p99": 0.0038329999999859865,
+    "opsPerSecond": 416606.7794423559,
+    "meanTime": 0.0024003449999986516,
+    "variance": 0.0001834385673133694,
+    "p99": 0.004042000000026746,
     "samples": 1000
   }
 }

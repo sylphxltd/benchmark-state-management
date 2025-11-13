@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Batch Write (10x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 8177417.244523397,
-    "meanTime": 0.00012228800000021068,
-    "variance": 3.5311989045076604e-8,
-    "p99": 0.0010410000000007358,
+    "opsPerSecond": 5459558.321734663,
+    "meanTime": 0.000183164999999903,
+    "variance": 3.742613390877163e-8,
+    "p99": 0.0008339999999975589,
     "samples": 1000
   }
 }

@@ -76,7 +76,7 @@ export async function measurePerformance<TStore>(
   const meanTime = result.mean || 0;
   const variance = result.variance || 0;
   const p99 = result.p99 || meanTime;
-  const samples = result.samples?.length || iterations;
+  const samples = result.samples?.length || (options?.benchmarkIterations ?? 1000);
 
   return {
     type: 'speed',

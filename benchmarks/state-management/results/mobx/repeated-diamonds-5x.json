@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 928325.820082504,
-    "meanTime": 0.0010772080000006098,
-    "variance": 4.736555863236379e-7,
-    "p99": 0.0029580000000350992,
+    "opsPerSecond": 936647.9430706024,
+    "meanTime": 0.0010676370000041971,
+    "variance": 6.826248961335428e-7,
+    "p99": 0.0032919999998739513,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Deep Chain (10 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 966284.404549312,
-    "meanTime": 0.001034892000007403,
-    "variance": 1.6786399032844297e-7,
-    "p99": 0.0019999999999527063,
+    "opsPerSecond": 1042387.651454594,
+    "meanTime": 0.0009593360000039866,
+    "variance": 1.4037502413173074e-7,
+    "p99": 0.0020000000004074536,
     "samples": 1000
   }
 }

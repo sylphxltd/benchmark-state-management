@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:02:23.291Z",
+  "timestamp": "2025-11-13T21:07:44.415Z",
   "result": {
-    "opsPerSecond": 12528.968855339428,
-    "meanTime": 0.07981502799999646,
-    "variance": 0.0029608446736989085,
-    "p99": 0.21433400000000802,
+    "opsPerSecond": 13689.184412218736,
+    "meanTime": 0.07305037100000032,
+    "variance": 0.0023179643850024523,
+    "p99": 0.12145800000001827,
     "samples": 1000
   }
 }

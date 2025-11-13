@@ -1,0 +1,156 @@
+name: Manual Full Rebuild
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for rebuild (optional)'
+        required: false
+        type: string
+
+jobs:
+  full-rebuild:
+    name: Full Rebuild All Benchmarks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Find all benchmark categories
+        id: categories
+        run: |
+          categories=$(find benchmarks -maxdepth 1 -mindepth 1 -type d -exec test -f {}/index.ts \; -print | xargs -n1 basename | jq -R -s -c 'split("\n")[:-1]')
+          echo "categories=$categories" >> $GITHUB_OUTPUT
+          echo "Found categories: $categories"
+
+      - name: Run all benchmarks
+        run: |
+          echo "🚀 Running full rebuild of all benchmarks"
+          echo "Reason: ${{ github.event.inputs.reason || 'Manual trigger' }}"
+
+          categories='${{ steps.categories.outputs.categories }}'
+
+          for category in $(echo "$categories" | jq -r '.[]'); do
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "📦 Category: $category"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+            cd "benchmarks/$category"
+
+            # Install dependencies
+            echo "📥 Installing dependencies..."
+            npm ci
+
+            # Run all benchmarks
+            echo "🏃 Running benchmarks..."
+            npm run benchmark
+
+            # Back to root
+            cd ../..
+
+            # Generate README
+            echo "📝 Generating README..."
+            bun run src/cli.ts generate-readme "$category"
+
+            echo "✅ Completed: $category"
+          done
+
+      - name: Update library versions and bundle sizes
+        run: |
+          echo "🔍 Updating all library versions and bundle sizes..."
+
+          categories='${{ steps.categories.outputs.categories }}'
+
+          for category in $(echo "$categories" | jq -r '.[]'); do
+            echo "Updating: $category"
+            bun run src/cli.ts check-updates "$category" --force
+          done
+
+      - name: Generate all READMEs
+        run: |
+          echo "📝 Regenerating all READMEs with latest data..."
+
+          categories='${{ steps.categories.outputs.categories }}'
+
+          for category in $(echo "$categories" | jq -r '.[]'); do
+            echo "Generating README for: $category"
+            bun run src/cli.ts generate-readme "$category"
+          done
+
+      - name: Generate root README
+        run: |
+          echo "📝 Generating root README..."
+          npx tsx scripts/generate-root-readme.ts
+
+      - name: Show summary
+        run: |
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 REBUILD SUMMARY"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          echo "Categories processed:"
+          categories='${{ steps.categories.outputs.categories }}'
+          echo "$categories" | jq -r '.[]' | while read cat; do
+            test_count=$(find "benchmarks/$cat/results" -name "*.json" 2>/dev/null | wc -l || echo "0")
+            echo "  • $cat: $test_count result files"
+          done
+          echo ""
+          echo "Reason: ${{ github.event.inputs.reason || 'Manual trigger' }}"
+          echo ""
+
+      - name: Commit and push all changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Add all changes
+          git add benchmarks/ README.md
+
+          # Create detailed commit message
+          COMMIT_MSG="chore: manual full rebuild of all benchmarks
+
+Triggered by: @${{ github.actor }}
+Reason: ${{ github.event.inputs.reason || 'Manual trigger' }}
+
+Categories rebuilt:
+$(echo '${{ steps.categories.outputs.categories }}' | jq -r '.[]' | sed 's/^/  - /')
+
+All benchmark results, library versions, bundle sizes, and READMEs updated."
+
+          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
+          git push || echo "Nothing to push"
+
+      - name: Create summary
+        run: |
+          echo "# 🎉 Full Rebuild Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Reason:** ${{ github.event.inputs.reason || 'Manual trigger' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Categories Rebuilt" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          categories='${{ steps.categories.outputs.categories }}'
+          echo "$categories" | jq -r '.[]' | while read cat; do
+            test_count=$(find "benchmarks/$cat/results" -name "*.json" 2>/dev/null | wc -l || echo "0")
+            echo "- **$cat**: $test_count test results" >> $GITHUB_STEP_SUMMARY
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "All benchmarks have been re-run on a fixed GitHub runner (ubuntu-latest) for consistent results." >> $GITHUB_STEP_SUMMARY

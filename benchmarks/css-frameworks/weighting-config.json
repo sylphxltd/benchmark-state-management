@@ -3,9 +3,17 @@
   "version": "1.0",
   "description": "Hybrid weighting configuration for CSS frameworks benchmarks",
   "categoryWeights": {
+    "01-style-application": {
+      "weight": 0.50,
+      "rationale": "Runtime style application is the most common operation in CSS frameworks"
+    },
+    "02-dynamic-updates": {
+      "weight": 0.30,
+      "rationale": "Dynamic updates (theming, responsive) are core framework features"
+    },
     "01-build-performance": {
-      "weight": 1.00,
-      "rationale": "Build performance is the primary metric for CSS frameworks (single category)"
+      "weight": 0.20,
+      "rationale": "Build performance is important but represents one-time cost"
     }
   },
   "metadata": {

@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 2683886.482335351,
-    "meanTime": 0.00037259400000027654,
-    "variance": 1.3778749465863705e-7,
-    "p99": 0.0015829999999965594,
+    "opsPerSecond": 3620792.9895133087,
+    "meanTime": 0.0002873879999788187,
+    "variance": 7.46520066008446e-9,
+    "p99": 0.0007115800006067724,
     "samples": 1000
   }
 }

@@ -1,16 +1,16 @@
 {
-  "lastChecked": "2025-11-11T07:08:29.469Z",
+  "lastChecked": "2025-11-13T18:20:52.133Z",
   "lastBenchmarkRun": "2025-11-11T07:10:04Z",
-  "testFilesHash": "960380b56b645ae35e80d50a01d191a8164ab6d663b9a863907b303f65b709cb",
+  "testFilesHash": "b2fa958b8a2f93fa25f10ae764b71243b26ff4e47cc3891ca1989d9e6e8ba47b",
   "libraries": {
     "@sylphx/zen-router": {
       "current": "1.0.2",
-      "latest": "2.0.0",
-      "lastUpdated": "2025-11-11T07:08:28.283Z",
+      "latest": "3.0.2",
+      "lastUpdated": "2025-11-13T18:20:48.981Z",
       "size": {
         "gzip": 1612,
         "minified": 3564,
-        "lastChecked": "2025-11-11T07:08:29.181Z"
+        "lastChecked": "2025-11-13T18:20:51.674Z"
       }
     },
     "@solidjs/router": {
@@ -21,7 +21,12 @@
     "solid-js": {
       "current": "1.9.10",
       "latest": "1.9.10",
-      "lastUpdated": "2025-11-13T00:00:00.000Z"
+      "lastUpdated": "2025-11-13T00:00:00.000Z",
+      "size": {
+        "gzip": 4058,
+        "minified": 12200,
+        "lastChecked": "2025-11-13T18:20:52.009Z"
+      }
     },
     "wouter": {
       "current": "3.7.1",
@@ -35,38 +40,32 @@
     },
     "react-router-dom": {
       "current": "6.30.1",
-      "latest": "7.9.5",
-      "lastUpdated": "2025-11-11T07:08:27.325Z",
+      "latest": "7.9.6",
+      "lastUpdated": "2025-11-13T18:20:50.744Z",
       "size": {
         "gzip": 26970,
         "minified": 87795,
-        "lastChecked": "2025-11-11T07:08:29.348Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "7.9.5",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
+        "lastChecked": "2025-11-13T18:20:52.048Z"
+      }
     },
     "react": {
       "current": "18.3.1",
       "latest": "19.2.0",
-      "lastUpdated": "2025-11-11T07:08:25.724Z",
+      "lastUpdated": "2025-11-13T18:20:49.630Z",
       "size": {
         "gzip": 2576,
         "minified": 6599,
-        "lastChecked": "2025-11-11T07:08:29.410Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "19.2.0",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/router/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/router/[eval]\n"
+        "lastChecked": "2025-11-13T18:20:52.089Z"
+      }
     },
     "react-dom": {
       "current": "18.3.1",
       "latest": "19.2.0",
-      "lastUpdated": "2025-11-11T07:08:26.677Z",
+      "lastUpdated": "2025-11-13T18:20:50.348Z",
       "size": {
         "gzip": 42942,
         "minified": 133258,
-        "lastChecked": "2025-11-11T07:08:29.469Z"
+        "lastChecked": "2025-11-13T18:20:52.133Z"
       }
     }
   }

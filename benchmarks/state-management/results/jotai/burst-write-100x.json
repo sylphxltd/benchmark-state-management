@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Burst Write (100x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 650248.3298371038,
-    "meanTime": 0.0015378740000001443,
-    "variance": 0.000001552108436560411,
-    "p99": 0.004541000000003237,
+    "opsPerSecond": 356240.7791625512,
+    "meanTime": 0.004151797000107763,
+    "variance": 0.0006148243734943269,
+    "p99": 0.006932099995319727,
     "samples": 1000
   }
 }

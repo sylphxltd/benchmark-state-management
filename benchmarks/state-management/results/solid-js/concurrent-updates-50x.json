@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Concurrent Updates (50x)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 135672.98685709835,
-    "meanTime": 0.007370663999999351,
-    "variance": 0.00015007314918429005,
-    "p99": 0.018875000000093678,
+    "opsPerSecond": 90265.51550402748,
+    "meanTime": 0.011181012999964877,
+    "variance": 0.0000015081372525435949,
+    "p99": 0.01752925000968389,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 47414.88814211343,
-    "meanTime": 0.02109042200000067,
-    "variance": 0.032446861723010305,
-    "p99": 0.07520799999997507,
+    "opsPerSecond": 49756.44291624625,
+    "meanTime": 0.0513023419999663,
+    "variance": 0.5616125256171467,
+    "p99": 0.051264179999125185,
     "samples": 1000
   }
 }

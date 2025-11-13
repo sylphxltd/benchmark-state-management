@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Heavy Write (1000x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 3543548.4385352586,
-    "meanTime": 0.0002822030000000097,
-    "variance": 8.860155946938777e-9,
-    "p99": 0.0006249999999994316,
+    "opsPerSecond": 3230209.9982422073,
+    "meanTime": 0.00032337599993479673,
+    "variance": 8.180336974169617e-9,
+    "p99": 0.0007674399977258868,
     "samples": 1000
   }
 }

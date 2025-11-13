@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Batch Write (10x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 179751.5294608238,
-    "meanTime": 0.005563235000000077,
-    "variance": 0.002366404829295092,
-    "p99": 0.009917000000001508,
+    "opsPerSecond": 120660.09117752204,
+    "meanTime": 0.00843350299996382,
+    "variance": 0.000002184759181092005,
+    "p99": 0.017482109995689825,
     "samples": 1000
   }
 }

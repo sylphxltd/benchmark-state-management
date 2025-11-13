@@ -4,12 +4,12 @@
   "packageName": "react-router-dom",
   "test": "Sequential Route Matching (worst case)",
   "group": "04-real-world",
-  "timestamp": "2025-11-13T18:06:29.996Z",
+  "timestamp": "2025-11-13T18:17:59.222Z",
   "result": {
-    "opsPerSecond": 60244.023466053026,
-    "meanTime": 0.017745949999982257,
-    "variance": 0.00033798436488083615,
-    "p99": 0.034015700000745705,
+    "opsPerSecond": 60487.51137109925,
+    "meanTime": 0.017130213999966146,
+    "variance": 0.000017279242803063698,
+    "p99": 0.033931220001395555,
     "samples": 1000
   }
 }

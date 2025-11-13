@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 7326919.836096924,
-    "meanTime": 0.00013648300000136259,
-    "variance": 1.625315686760482e-8,
-    "p99": 0.0006250000001273293,
+    "opsPerSecond": 3835377.6655305987,
+    "meanTime": 0.0002702390001068125,
+    "variance": 5.442007864937248e-9,
+    "p99": 0.0006732500022917518,
     "samples": 1000
   }
 }

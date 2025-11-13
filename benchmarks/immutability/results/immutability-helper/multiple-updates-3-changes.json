@@ -4,12 +4,12 @@
   "packageName": "immutability-helper",
   "test": "Multiple Updates (3 changes)",
   "group": "04-deep-operations",
-  "timestamp": "2025-11-13T18:06:26.669Z",
+  "timestamp": "2025-11-13T18:17:26.451Z",
   "result": {
-    "opsPerSecond": 529180.9112018386,
-    "meanTime": 0.001946049000012863,
-    "variance": 3.5416732789177656e-7,
-    "p99": 0.0031965999978638133,
+    "opsPerSecond": 503941.9073658785,
+    "meanTime": 0.0020413030000090656,
+    "variance": 2.710303095142238e-7,
+    "p99": 0.003368050001154187,
     "samples": 1000
   }
 }

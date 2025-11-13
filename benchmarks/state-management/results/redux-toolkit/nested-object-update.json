@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 205679.9336394236,
-    "meanTime": 0.004861923000000061,
-    "variance": 0.00000342696357865048,
-    "p99": 0.012792000000004577,
+    "opsPerSecond": 74348.71706833347,
+    "meanTime": 0.015142727000020386,
+    "variance": 0.00003082560879608353,
+    "p99": 0.03191908999528094,
     "samples": 1000
   }
 }

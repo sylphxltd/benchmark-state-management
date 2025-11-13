@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 931128.1735177587,
-    "meanTime": 0.001073965999999814,
-    "variance": 6.919564352803798e-7,
-    "p99": 0.0049999999999954525,
+    "opsPerSecond": 304995.66473468905,
+    "meanTime": 0.0036248069999783184,
+    "variance": 0.00000208640479248991,
+    "p99": 0.00859318000548228,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Burst Write (100x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 6910420.22266092,
-    "meanTime": 0.00014470899999984965,
-    "variance": 2.078886918828299e-8,
-    "p99": 0.0005000000000023874,
+    "opsPerSecond": 5150109.347472215,
+    "meanTime": 0.0002025899999498506,
+    "variance": 4.2700639580984705e-9,
+    "p99": 0.0004994600015197643,
     "samples": 1000
   }
 }

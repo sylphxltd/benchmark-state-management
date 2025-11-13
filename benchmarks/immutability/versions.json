@@ -1,7 +1,7 @@
 {
-  "lastChecked": "2025-11-11T07:08:31.760Z",
+  "lastChecked": "2025-11-13T18:20:47.621Z",
   "lastBenchmarkRun": "2025-11-11T07:10:46Z",
-  "testFilesHash": "e92c80c969cd4574bd8999e71c04c9605ef5814c272cb39d9dc844c396f826b8",
+  "testFilesHash": "317529c335b27e1b5b2dbf678bab0f1f83bdbe7834ae3796d82078cae5f11e63",
   "libraries": {
     "immer": {
       "current": "10.2.0",
@@ -56,15 +56,12 @@
     "@sylphx/craft": {
       "current": "1.2.1",
       "latest": "1.3.0",
-      "lastUpdated": "2025-11-11T07:08:29.806Z",
+      "lastUpdated": "2025-11-13T18:20:45.663Z",
       "size": {
         "gzip": 2825,
         "minified": 9788,
-        "lastChecked": "2025-11-11T07:08:31.760Z"
-      },
-      "incompatible": true,
-      "incompatibleVersion": "1.3.0",
-      "incompatibleReason": "Command failed: npx tsx -e \"import('./src/stores/index.ts').then(() => { console.log('✓ OK'); process.exit(0); }).catch((e) => { console.error('✗', e.message); process.exit(1); })\"\n✗ Cannot find module '/home/runner/work/benchmark/benchmark/benchmarks/immutability/src/stores/index.ts' imported from /home/runner/work/benchmark/benchmark/benchmarks/immutability/[eval]\n"
+        "lastChecked": "2025-11-13T18:20:47.621Z"
+      }
     }
   }
 }

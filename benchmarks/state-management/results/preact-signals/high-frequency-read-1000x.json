@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T18:06:25.573Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 19851764.147659034,
-    "meanTime": 0.00005077000000846965,
-    "variance": 4.0335435450818405e-11,
-    "p99": 0.000060999999736850443,
+    "opsPerSecond": 17665492.550840635,
+    "meanTime": 0.00006676000000152271,
+    "variance": 2.0107291312443247e-9,
+    "p99": 0.0002642699984426142,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 429507.8784630395,
-    "meanTime": 0.002328245999999865,
-    "variance": 0.000005321374866351737,
-    "p99": 0.011291999999997415,
+    "opsPerSecond": 372873.967076169,
+    "meanTime": 0.0027563389999777426,
+    "variance": 5.220369568050983e-7,
+    "p99": 0.004701349996685163,
     "samples": 1000
   }
 }

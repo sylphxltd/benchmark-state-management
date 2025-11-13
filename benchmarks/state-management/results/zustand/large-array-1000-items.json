@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 137080.30465829794,
-    "meanTime": 0.007294993999996677,
-    "variance": 0.0001112810674113915,
-    "p99": 0.011915999999928317,
+    "opsPerSecond": 114604.36050283353,
+    "meanTime": 0.009488060000177939,
+    "variance": 0.00044461379310967023,
+    "p99": 0.012728640005079787,
     "samples": 1000
   }
 }

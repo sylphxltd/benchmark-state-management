@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 16869949.558890812,
-    "meanTime": 0.00005927699999985947,
-    "variance": 2.1469368195298278e-7,
-    "p99": 0.00016700000000469117,
+    "opsPerSecond": 16558084.806210617,
+    "meanTime": 0.00006637400001636706,
+    "variance": 1.2869010279196478e-9,
+    "p99": 0.0002120199990167748,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "yup",
   "test": "Catch Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T18:06:21.686Z",
+  "timestamp": "2025-11-13T18:20:32.180Z",
   "result": {
-    "opsPerSecond": 31592.59767630605,
-    "meanTime": 0.03425755700001173,
-    "variance": 0.0011112535443998487,
-    "p99": 0.07621925000044937,
+    "opsPerSecond": 45026.76823635556,
+    "meanTime": 0.02260036700000819,
+    "variance": 0.000013308572900949318,
+    "p99": 0.039069769999714475,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Array Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 662562.3139861473,
-    "meanTime": 0.0015092919999988225,
-    "variance": 1.9713813887423308e-7,
-    "p99": 0.003249999999979991,
+    "opsPerSecond": 313954.9044369229,
+    "meanTime": 0.003375642000013613,
+    "variance": 0.000001877562982774212,
+    "p99": 0.009286100000390434,
     "samples": 1000
   }
 }

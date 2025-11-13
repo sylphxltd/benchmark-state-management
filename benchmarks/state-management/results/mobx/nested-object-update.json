@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 2039592.5709880544,
-    "meanTime": 0.0004902939999999916,
-    "variance": 3.084260195837077e-7,
-    "p99": 0.003124999999997158,
+    "opsPerSecond": 2991715.5133767407,
+    "meanTime": 0.0003424190001096576,
+    "variance": 1.0981605049585008e-8,
+    "p99": 0.000588700002554105,
     "samples": 1000
   }
 }

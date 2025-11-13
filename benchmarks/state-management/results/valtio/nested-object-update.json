@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 3565672.5571588553,
-    "meanTime": 0.0002804519999999116,
-    "variance": 1.309580917877623e-7,
-    "p99": 0.0014579999999995152,
+    "opsPerSecond": 3368960.2914752816,
+    "meanTime": 0.0003151600000128383,
+    "variance": 6.696312152021606e-8,
+    "p99": 0.0008011300019279587,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "immutable",
   "test": "Large Array Update (1000 items)",
   "group": "05-large-scale",
-  "timestamp": "2025-11-13T18:06:26.669Z",
+  "timestamp": "2025-11-13T18:17:26.451Z",
   "result": {
-    "opsPerSecond": 1106.447804256535,
-    "meanTime": 0.9236889649999139,
-    "variance": 0.03407293079726399,
-    "p99": 1.854487539997317,
+    "opsPerSecond": 1105.6703861636413,
+    "meanTime": 0.9241945029999479,
+    "variance": 0.03542796419090858,
+    "p99": 1.9495273399983852,
     "samples": 1000
   }
 }

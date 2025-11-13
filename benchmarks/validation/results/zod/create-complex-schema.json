@@ -4,12 +4,12 @@
   "packageName": "zod",
   "test": "Create Complex Schema",
   "group": "01-schema-creation",
-  "timestamp": "2025-11-13T18:06:21.686Z",
+  "timestamp": "2025-11-13T18:20:32.180Z",
   "result": {
-    "opsPerSecond": 14484.804089591413,
-    "meanTime": 0.07498483999999758,
-    "variance": 0.0029394215307234064,
-    "p99": 0.14431903000006052,
+    "opsPerSecond": 18213.765611486455,
+    "meanTime": 0.06276686399999994,
+    "variance": 0.0023604884801673868,
+    "p99": 0.12938932999995126,
     "samples": 1000
   }
 }

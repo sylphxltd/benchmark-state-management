@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 1053608.6623502132,
-    "meanTime": 0.0009491189999988876,
-    "variance": 1.8545035118996817e-7,
-    "p99": 0.002082999999998947,
+    "opsPerSecond": 32499.692863339857,
+    "meanTime": 0.0344695829999182,
+    "variance": 0.0013041924378533651,
+    "p99": 0.09658595000451896,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 4039098.473221949,
-    "meanTime": 0.0002475799999999282,
-    "variance": 1.7571329689701458e-7,
-    "p99": 0.001624999999997101,
+    "opsPerSecond": 2670427.0846359674,
+    "meanTime": 0.0003822299999737879,
+    "variance": 5.244201311336679e-9,
+    "p99": 0.0007600499990076059,
     "samples": 1000
   }
 }

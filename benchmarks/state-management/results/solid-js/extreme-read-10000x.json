@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 30732351.948357593,
-    "meanTime": 0.00003253899999845089,
-    "variance": 5.520711190081286e-9,
-    "p99": 0.00012500000002546585,
+    "opsPerSecond": 25425410.318963006,
+    "meanTime": 0.00004371799979708157,
+    "variance": 8.223668605169364e-10,
+    "p99": 0.00012601999900653025,
     "samples": 1000
   }
 }

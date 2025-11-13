@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 604169.372842186,
-    "meanTime": 0.0016551649999994424,
-    "variance": 9.96009487262586e-7,
-    "p99": 0.003999999999962256,
+    "opsPerSecond": 455050.71680281236,
+    "meanTime": 0.0022174249998060985,
+    "variance": 1.1080931775273246e-7,
+    "p99": 0.0031155799995758564,
     "samples": 1000
   }
 }

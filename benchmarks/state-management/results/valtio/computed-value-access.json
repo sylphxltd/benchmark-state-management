@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Computed Value Access",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T17:29:22.458Z",
+  "timestamp": "2025-11-13T18:18:13.240Z",
   "result": {
-    "opsPerSecond": 4441128.401884244,
-    "meanTime": 0.00022516800000101967,
-    "variance": 6.728691869534469e-8,
-    "p99": 0.0002910000000042601,
+    "opsPerSecond": 14362970.89943487,
+    "meanTime": 0.00007386800002859673,
+    "variance": 8.624410093896045e-10,
+    "p99": 0.00017210999998496835,
     "samples": 1000
   }
 }

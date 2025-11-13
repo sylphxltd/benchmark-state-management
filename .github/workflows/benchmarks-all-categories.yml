@@ -66,7 +66,7 @@ jobs:
         id: check
         run: |
           echo "🔍 Checking library versions and bundle sizes..."
-          npx tsx scripts/check-versions.ts benchmarks/${{ matrix.category }}
+          bun run src/cli.ts check-updates ${{ matrix.category }}
           echo "✓ Version check complete"
 
       - name: Run benchmarks
@@ -93,7 +93,7 @@ jobs:
       - name: Generate category README
         run: |
           echo "📝 Generating README for ${{ matrix.category }}..."
-          npx tsx scripts/generate-simple-readme.ts benchmarks/${{ matrix.category }}
+          bun run src/cli.ts generate-readme ${{ matrix.category }}
           echo "✓ README generated"
 
       - name: Upload results as artifact
@@ -146,7 +146,7 @@ jobs:
             category=$(basename "$category_dir")
             if [ -d "$category_dir/results" ] && [ -f "$category_dir/index.ts" ]; then
               echo "📝 Generating README for $category..."
-              npx tsx scripts/generate-simple-readme.ts "benchmarks/$category"
+              bun run src/cli.ts generate-readme "$category"
             fi
           done
 

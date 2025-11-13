@@ -11,7 +11,7 @@
       "bundleSize": {
         "minified": 82628,
         "gzipped": 18671,
-        "measuredAt": "2025-11-13T13:10:49.628Z"
+        "measuredAt": "2025-11-13T13:19:46.317Z"
       }
     },
     "zustand": {
@@ -25,7 +25,7 @@
       "bundleSize": {
         "minified": 546,
         "gzipped": 244,
-        "measuredAt": "2025-11-13T13:10:49.628Z"
+        "measuredAt": "2025-11-13T13:19:46.318Z"
       }
     },
     "jotai": {
@@ -39,7 +39,7 @@
       "bundleSize": {
         "minified": 542,
         "gzipped": 242,
-        "measuredAt": "2025-11-13T13:10:49.628Z"
+        "measuredAt": "2025-11-13T13:19:46.318Z"
       }
     },
     "mobx": {
@@ -53,7 +53,7 @@
       "bundleSize": {
         "minified": 210431,
         "gzipped": 47919,
-        "measuredAt": "2025-11-13T13:10:49.631Z"
+        "measuredAt": "2025-11-13T13:19:46.320Z"
       }
     },
     "valtio": {
@@ -67,7 +67,7 @@
       "bundleSize": {
         "minified": 544,
         "gzipped": 243,
-        "measuredAt": "2025-11-13T13:10:49.631Z"
+        "measuredAt": "2025-11-13T13:19:46.320Z"
       }
     },
     "@preact/signals": {
@@ -81,7 +81,7 @@
       "bundleSize": {
         "minified": 4349,
         "gzipped": 1671,
-        "measuredAt": "2025-11-13T13:10:49.632Z"
+        "measuredAt": "2025-11-13T13:19:46.320Z"
       }
     },
     "solid-js": {
@@ -95,7 +95,7 @@
       "bundleSize": {
         "minified": 20472,
         "gzipped": 5291,
-        "measuredAt": "2025-11-13T13:10:49.632Z"
+        "measuredAt": "2025-11-13T13:19:46.321Z"
       }
     },
     "@sylphx/zen": {
@@ -109,7 +109,7 @@
       "bundleSize": {
         "minified": 4823,
         "gzipped": 1718,
-        "measuredAt": "2025-11-13T13:10:49.633Z"
+        "measuredAt": "2025-11-13T13:19:46.321Z"
       }
     }
   }

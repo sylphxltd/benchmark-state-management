@@ -18,7 +18,7 @@
       "bundleSize": {
         "minified": 39108,
         "gzipped": 9433,
-        "measuredAt": "2025-11-13T13:10:49.634Z"
+        "measuredAt": "2025-11-13T13:19:46.321Z"
       }
     },
     "mutative": {
@@ -31,7 +31,7 @@
       "bundleSize": {
         "minified": 63639,
         "gzipped": 12453,
-        "measuredAt": "2025-11-13T13:10:49.635Z"
+        "measuredAt": "2025-11-13T13:19:46.322Z"
       }
     },
     "immutable": {
@@ -44,7 +44,7 @@
       "bundleSize": {
         "minified": 179381,
         "gzipped": 37123,
-        "measuredAt": "2025-11-13T13:10:49.637Z"
+        "measuredAt": "2025-11-13T13:19:46.324Z"
       }
     },
     "immutability-helper": {
@@ -57,7 +57,7 @@
       "bundleSize": {
         "minified": 10839,
         "gzipped": 2455,
-        "measuredAt": "2025-11-13T13:10:49.638Z"
+        "measuredAt": "2025-11-13T13:19:46.324Z"
       }
     },
     "seamless-immutable": {
@@ -70,7 +70,7 @@
       "bundleSize": {
         "minified": 24230,
         "gzipped": 6134,
-        "measuredAt": "2025-11-13T13:10:49.638Z"
+        "measuredAt": "2025-11-13T13:19:46.324Z"
       }
     },
     "@sylphx/craft": {
@@ -83,7 +83,7 @@
       "bundleSize": {
         "minified": 9401,
         "gzipped": 2912,
-        "measuredAt": "2025-11-13T13:10:49.639Z"
+        "measuredAt": "2025-11-13T13:19:46.325Z"
       }
     }
   }

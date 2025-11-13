@@ -7,7 +7,12 @@
       "url": "https://github.com/reduxjs/redux-toolkit",
       "npm": "@reduxjs/toolkit",
       "color": "#764ABC",
-      "tradeoff": "Feature-rich, DevTools support, larger bundle"
+      "tradeoff": "Feature-rich, DevTools support, larger bundle",
+      "bundleSize": {
+        "minified": 82628,
+        "gzipped": 18671,
+        "measuredAt": "2025-11-13T13:04:35.199Z"
+      }
     },
     "zustand": {
       "name": "Zustand",
@@ -16,7 +21,12 @@
       "url": "https://github.com/pmndrs/zustand",
       "npm": "zustand",
       "color": "#443E38",
-      "tradeoff": "Minimal bundle, simple API, moderate performance"
+      "tradeoff": "Minimal bundle, simple API, moderate performance",
+      "bundleSize": {
+        "minified": 546,
+        "gzipped": 244,
+        "measuredAt": "2025-11-13T13:04:35.199Z"
+      }
     },
     "jotai": {
       "name": "Jotai",
@@ -25,7 +35,12 @@
       "url": "https://github.com/pmndrs/jotai",
       "npm": "jotai",
       "color": "#000000",
-      "tradeoff": "Very fast read/write, slower creation, unique async capabilities"
+      "tradeoff": "Very fast read/write, slower creation, unique async capabilities",
+      "bundleSize": {
+        "minified": 542,
+        "gzipped": 242,
+        "measuredAt": "2025-11-13T13:04:35.199Z"
+      }
     },
     "mobx": {
       "name": "MobX",
@@ -34,7 +49,12 @@
       "url": "https://github.com/mobxjs/mobx",
       "npm": "mobx",
       "color": "#EA6618",
-      "tradeoff": "Automatic tracking, slow creation, largest bundle"
+      "tradeoff": "Automatic tracking, slow creation, largest bundle",
+      "bundleSize": {
+        "minified": 210431,
+        "gzipped": 47919,
+        "measuredAt": "2025-11-13T13:04:35.202Z"
+      }
     },
     "valtio": {
       "name": "Valtio",
@@ -43,7 +63,12 @@
       "url": "https://github.com/pmndrs/valtio",
       "npm": "valtio",
       "color": "#6B46C1",
-      "tradeoff": "Simple API, moderate performance, good for nested mutations"
+      "tradeoff": "Simple API, moderate performance, good for nested mutations",
+      "bundleSize": {
+        "minified": 544,
+        "gzipped": 243,
+        "measuredAt": "2025-11-13T13:04:35.202Z"
+      }
     },
     "@preact/signals": {
       "name": "Preact Signals",
@@ -52,7 +77,12 @@
       "url": "https://github.com/preactjs/signals",
       "npm": "@preact/signals",
       "color": "#673AB8",
-      "tradeoff": "Excellent balance of speed and bundle size"
+      "tradeoff": "Excellent balance of speed and bundle size",
+      "bundleSize": {
+        "minified": 4349,
+        "gzipped": 1671,
+        "measuredAt": "2025-11-13T13:04:35.202Z"
+      }
     },
     "solid-js": {
       "name": "Solid Signals",
@@ -61,7 +91,12 @@
       "url": "https://github.com/solidjs/solid",
       "npm": "solid-js",
       "color": "#2C4F7C",
-      "tradeoff": "Fastest overall, but requires Solid.js ecosystem"
+      "tradeoff": "Fastest overall, but requires Solid.js ecosystem",
+      "bundleSize": {
+        "minified": 20472,
+        "gzipped": 5291,
+        "measuredAt": "2025-11-13T13:04:35.203Z"
+      }
     },
     "@sylphx/zen": {
       "name": "Zen",
@@ -70,7 +105,12 @@
       "url": "https://github.com/SylphxAI/zen",
       "npm": "@sylphx/zen",
       "color": "#00B8D4",
-      "tradeoff": "Similar performance to Preact, slightly larger bundle"
+      "tradeoff": "Similar performance to Preact, slightly larger bundle",
+      "bundleSize": {
+        "minified": 4823,
+        "gzipped": 1718,
+        "measuredAt": "2025-11-13T13:04:35.203Z"
+      }
     }
   }
 }

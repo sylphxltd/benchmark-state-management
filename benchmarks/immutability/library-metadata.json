@@ -1,32 +1,90 @@
 {
   "_config": {
-    "excludeFromCharts": ["Native Spread", "Native Map", "Native Filter"],
+    "excludeFromCharts": [
+      "Native Spread",
+      "Native Map",
+      "Native Filter"
+    ],
     "excludeFromComparison": []
   },
   "libraries": {
     "immer": {
-      "github": "https://github.com/immerjs/immer",
-      "displayName": "Immer"
+      "name": "Immer",
+      "displayName": "Immer",
+      "npm": "immer",
+      "url": "https://github.com/immerjs/immer",
+      "description": "Create the next immutable state by mutating the current one",
+      "color": "#00E7C3",
+      "bundleSize": {
+        "minified": 39108,
+        "gzipped": 9433,
+        "measuredAt": "2025-11-13T13:04:35.204Z"
+      }
     },
     "mutative": {
-      "github": "https://github.com/unadlib/mutative",
-      "displayName": "Mutative"
+      "name": "Mutative",
+      "displayName": "Mutative",
+      "npm": "mutative",
+      "url": "https://github.com/unadlib/mutative",
+      "description": "Efficient immutable updates, 2-6x faster than Immer",
+      "color": "#7C3AED",
+      "bundleSize": {
+        "minified": 63639,
+        "gzipped": 12453,
+        "measuredAt": "2025-11-13T13:04:35.205Z"
+      }
     },
     "immutable": {
-      "github": "https://github.com/immutable-js/immutable-js",
-      "displayName": "Immutable.js"
+      "name": "Immutable.js",
+      "displayName": "Immutable.js",
+      "npm": "immutable",
+      "url": "https://github.com/immutable-js/immutable-js",
+      "description": "Immutable persistent data collections for Javascript",
+      "color": "#FC4349",
+      "bundleSize": {
+        "minified": 179381,
+        "gzipped": 37123,
+        "measuredAt": "2025-11-13T13:04:35.207Z"
+      }
     },
     "immutability-helper": {
-      "github": "https://github.com/kolodny/immutability-helper",
-      "displayName": "Immutability Helper"
+      "name": "Immutability Helper",
+      "displayName": "Immutability Helper",
+      "npm": "immutability-helper",
+      "url": "https://github.com/kolodny/immutability-helper",
+      "description": "Mutate a copy of data without changing the original source",
+      "color": "#F7B731",
+      "bundleSize": {
+        "minified": 10839,
+        "gzipped": 2455,
+        "measuredAt": "2025-11-13T13:04:35.207Z"
+      }
     },
     "seamless-immutable": {
-      "github": "https://github.com/rtfeldman/seamless-immutable",
-      "displayName": "Seamless Immutable"
+      "name": "Seamless Immutable",
+      "displayName": "Seamless Immutable",
+      "npm": "seamless-immutable",
+      "url": "https://github.com/rtfeldman/seamless-immutable",
+      "description": "Immutable data structures for JavaScript which are backwards-compatible with normal JS Arrays and Objects",
+      "color": "#5F27CD",
+      "bundleSize": {
+        "minified": 24230,
+        "gzipped": 6134,
+        "measuredAt": "2025-11-13T13:04:35.208Z"
+      }
     },
     "@sylphx/craft": {
-      "github": "https://github.com/SylphxAI/craft",
-      "displayName": "Craft"
+      "name": "Craft",
+      "displayName": "Craft",
+      "npm": "@sylphx/craft",
+      "url": "https://github.com/SylphxAI/craft",
+      "description": "Performant immutable updates with structural sharing",
+      "color": "#00D2D3",
+      "bundleSize": {
+        "minified": 9401,
+        "gzipped": 2912,
+        "measuredAt": "2025-11-13T13:04:35.208Z"
+      }
     }
   }
 }

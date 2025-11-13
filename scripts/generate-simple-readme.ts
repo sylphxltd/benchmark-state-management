@@ -33,6 +33,11 @@ interface LibraryMetadata {
   npm: string;
   color?: string;
   tradeoff?: string;
+  bundleSize?: {
+    minified: number;
+    gzipped: number;
+    measuredAt: string;
+  };
 }
 
 interface MetadataFile {
@@ -327,12 +332,17 @@ sortedLibs.forEach(lib => {
   const score = overallScores.get(lib.libraryId) || 0;
   const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
 
-  // Get bundle size from versions
-  const versionKey = lib.version || lib.libraryId;
-  const versionData = versions.libraries[versionKey];
-  const bundleSize = versionData?.size
-    ? `**${(versionData.size.gzip / 1024).toFixed(2)} KB**`
-    : 'N/A';
+  // Get bundle size from library-metadata.json first, then fall back to versions.json
+  let bundleSize = 'N/A';
+  if (meta?.bundleSize) {
+    bundleSize = `**${(meta.bundleSize.gzipped / 1024).toFixed(2)} KB**`;
+  } else {
+    const versionKey = lib.version || lib.libraryId;
+    const versionData = versions.libraries[versionKey];
+    if (versionData?.size) {
+      bundleSize = `**${(versionData.size.gzip / 1024).toFixed(2)} KB**`;
+    }
+  }
 
   // Truncate to consistent lengths
   const description = (meta?.description || 'State management solution').substring(0, 50);
@@ -474,9 +484,15 @@ ${sortedLibs.map(lib => {
   const versionKey = lib.version || lib.libraryId;
   const versionData = versions.libraries[versionKey];
   const versionInfo = versionData?.current ? `v${versionData.current}` : '';
-  const sizeInfo = versionData?.size
-    ? ` • ${(versionData.size.gzip / 1024).toFixed(2)} KB gzip`
-    : '';
+
+  // Get bundle size from library-metadata.json first, then fall back to versions.json
+  let sizeInfo = '';
+  if (meta?.bundleSize) {
+    sizeInfo = ` • ${(meta.bundleSize.gzipped / 1024).toFixed(2)} KB gzip`;
+  } else if (versionData?.size) {
+    sizeInfo = ` • ${(versionData.size.gzip / 1024).toFixed(2)} KB gzip`;
+  }
+
   return `- **[${lib.library}](${meta?.url || '#'})** (\`${lib.version}\`) ${versionInfo}${sizeInfo} - [📦 npm](https://www.npmjs.com/package/${meta?.npm || lib.libraryId}) • [📊 bundle size](https://bundlephobia.com/package/${meta?.npm || lib.libraryId})`;
 }).join('\n')}
 

@@ -1,24 +1,64 @@
 {
   "libraries": {
     "react-router-dom": {
-      "github": "https://github.com/remix-run/react-router",
-      "displayName": "React Router"
+      "name": "React Router",
+      "displayName": "React Router",
+      "npm": "react-router-dom",
+      "url": "https://github.com/remix-run/react-router",
+      "description": "Declarative routing for React",
+      "color": "#CA4245",
+      "bundleSize": {
+        "minified": 56722,
+        "gzipped": 15154,
+        "measuredAt": "2025-11-13T13:04:35.209Z"
+      }
     },
     "@tanstack/react-router": {
-      "github": "https://github.com/TanStack/router",
-      "displayName": "TanStack Router"
+      "name": "TanStack Router",
+      "displayName": "TanStack Router",
+      "npm": "@tanstack/react-router",
+      "url": "https://github.com/TanStack/router",
+      "description": "Type-safe router with built-in caching and data loading",
+      "color": "#FF4154"
     },
     "wouter": {
-      "github": "https://github.com/molefrog/wouter",
-      "displayName": "Wouter"
+      "name": "Wouter",
+      "displayName": "Wouter",
+      "npm": "wouter",
+      "url": "https://github.com/molefrog/wouter",
+      "description": "Minimalist-friendly ~2.1KB routing for React and Preact",
+      "color": "#6366F1",
+      "bundleSize": {
+        "minified": 12242,
+        "gzipped": 4545,
+        "measuredAt": "2025-11-13T13:04:35.210Z"
+      }
     },
     "@sylphx/zen-router": {
-      "github": "https://github.com/SylphxAI/zen-router",
-      "displayName": "Zen Router"
+      "name": "Zen Router",
+      "displayName": "Zen Router",
+      "npm": "@sylphx/zen-router",
+      "url": "https://github.com/SylphxAI/zen-router",
+      "description": "Tiny and fast router with regex-based matching",
+      "color": "#00B8D4",
+      "bundleSize": {
+        "minified": 1826,
+        "gzipped": 975,
+        "measuredAt": "2025-11-13T13:04:35.210Z"
+      }
     },
     "@solidjs/router": {
-      "github": "https://github.com/solidjs/solid-router",
-      "displayName": "SolidJS Router"
+      "name": "SolidJS Router",
+      "displayName": "SolidJS Router",
+      "npm": "@solidjs/router",
+      "url": "https://github.com/solidjs/solid-router",
+      "description": "Universal router for Solid with nested routing and data APIs",
+      "color": "#2C4F7C",
+      "bundleSize": {
+        "minified": 56857,
+        "gzipped": 16056,
+        "measuredAt": "2025-11-13T13:04:35.211Z"
+      }
     }
   }
 }

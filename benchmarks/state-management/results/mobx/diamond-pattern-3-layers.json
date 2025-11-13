@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 2186939.5967081278,
-    "meanTime": 0.00045726000000422576,
-    "variance": 0.000001016856761158418,
-    "p99": 0.0029589999999188876,
+    "opsPerSecond": 2715089.380788904,
+    "meanTime": 0.00036831199999369345,
+    "variance": 2.479964230851452e-7,
+    "p99": 0.001959000000169908,
     "samples": 1000
   }
 }

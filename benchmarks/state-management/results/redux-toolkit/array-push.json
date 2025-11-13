@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 3250.009830467233,
-    "meanTime": 0.30769137700000015,
-    "variance": 0.032622309144453306,
-    "p99": 0.7168750000000159,
+    "opsPerSecond": 3702.0006874097057,
+    "meanTime": 0.27012420699999956,
+    "variance": 0.024549311463355365,
+    "p99": 0.5297080000000278,
     "samples": 1000
   }
 }

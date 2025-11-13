@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 13414.49028411239,
-    "meanTime": 0.07454625400000191,
-    "variance": 0.002095728508586377,
-    "p99": 0.19079200000010132,
+    "opsPerSecond": 17615.587540178225,
+    "meanTime": 0.05676790499999879,
+    "variance": 0.00038446062268256495,
+    "p99": 0.07104200000003402,
     "samples": 1000
   }
 }

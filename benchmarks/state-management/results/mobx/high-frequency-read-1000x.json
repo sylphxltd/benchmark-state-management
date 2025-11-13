@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 8471704.506951345,
-    "meanTime": 0.00011803999999993664,
-    "variance": 6.876628468468292e-8,
-    "p99": 0.0015830000000036648,
+    "opsPerSecond": 19498118.431570563,
+    "meanTime": 0.00005128700000000208,
+    "variance": 1.2704941572572818e-8,
+    "p99": 0.00016700000000469117,
     "samples": 1000
   }
 }

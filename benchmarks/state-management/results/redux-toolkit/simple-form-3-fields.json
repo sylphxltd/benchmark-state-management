@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Simple Form (3 fields)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 110029.78726403048,
-    "meanTime": 0.009088447999998151,
-    "variance": 0.00035612082288018996,
-    "p99": 0.012833000000000538,
+    "opsPerSecond": 117408.67776931697,
+    "meanTime": 0.008517257999998832,
+    "variance": 0.0001884438738372284,
+    "p99": 0.011916999999925793,
     "samples": 1000
   }
 }

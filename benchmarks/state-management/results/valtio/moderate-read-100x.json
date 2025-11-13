@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Moderate Read (100x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 11255810.812316028,
-    "meanTime": 0.00008884300000012501,
-    "variance": 4.8838649000011463e-8,
-    "p99": 0.0007909999999995421,
+    "opsPerSecond": 8338753.523126152,
+    "meanTime": 0.00011992199999995989,
+    "variance": 6.451730890923986e-10,
+    "p99": 0.00016699999999758575,
     "samples": 1000
   }
 }

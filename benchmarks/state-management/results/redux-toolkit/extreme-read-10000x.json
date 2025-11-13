@@ -4,11 +4,11 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 11303649.948156944,
-    "meanTime": 0.00008846700000322017,
-    "variance": 6.325555404433935e-7,
+    "opsPerSecond": 14100593.635036545,
+    "meanTime": 0.00007091899999977613,
+    "variance": 1.5262082521948493e-8,
     "p99": 0.00016700000014679972,
     "samples": 1000
   }

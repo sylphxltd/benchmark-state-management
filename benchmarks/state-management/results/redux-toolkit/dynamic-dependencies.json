@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 328048.9029072191,
-    "meanTime": 0.003048325999989174,
-    "variance": 3.099746083247172e-7,
-    "p99": 0.005208000000038737,
+    "opsPerSecond": 343931.82170636544,
+    "meanTime": 0.0029075530000063736,
+    "variance": 2.545666398248029e-7,
+    "p99": 0.005083000000013271,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4651162.790719121,
-    "meanTime": 0.00021499999999900865,
-    "variance": 5.2735367368265504e-8,
-    "p99": 0.0009159999999610591,
+    "opsPerSecond": 2730077.2611751105,
+    "meanTime": 0.000366290000001527,
+    "variance": 0.0000014402264943912491,
+    "p99": 0.002292000000124972,
     "samples": 1000
   }
 }

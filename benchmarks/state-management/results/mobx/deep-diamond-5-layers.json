@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Deep Diamond (5 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 1305465.986076283,
-    "meanTime": 0.0007660100000043712,
-    "variance": 5.170337796844392e-7,
-    "p99": 0.0020829999998568383,
+    "opsPerSecond": 1278934.2896086264,
+    "meanTime": 0.0007819010000162052,
+    "variance": 3.9715309229131176e-7,
+    "p99": 0.002167000000099506,
     "samples": 1000
   }
 }

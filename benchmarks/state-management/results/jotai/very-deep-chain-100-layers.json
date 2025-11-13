@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 10972.005826837278,
-    "meanTime": 0.0911410380000002,
-    "variance": 0.006372375528719553,
-    "p99": 0.1230000000000473,
+    "opsPerSecond": 13565.789466542044,
+    "meanTime": 0.07371484000001237,
+    "variance": 0.001286851687834871,
+    "p99": 0.09237499999971988,
     "samples": 1000
   }
 }

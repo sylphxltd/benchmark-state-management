@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Wide Fanout (1→100)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 51078.44735210236,
-    "meanTime": 0.019577728999995544,
-    "variance": 0.0004947242164175375,
-    "p99": 0.03175000000010186,
+    "opsPerSecond": 57578.30044288637,
+    "meanTime": 0.01736765399999831,
+    "variance": 0.0002879546548952344,
+    "p99": 0.023083000000042375,
     "samples": 1000
   }
 }

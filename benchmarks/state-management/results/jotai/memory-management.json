@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 13707.469952916581,
-    "meanTime": 0.0729529230000046,
-    "variance": 0.008610531015226271,
-    "p99": 0.4323339999998552,
+    "opsPerSecond": 17036.389540659144,
+    "meanTime": 0.058697882999998,
+    "variance": 0.0036989432325136642,
+    "p99": 0.16745799999989686,
     "samples": 1000
   }
 }

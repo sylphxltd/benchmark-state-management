@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:24:18.329Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 897848.0072300504,
-    "meanTime": 0.001113953000116453,
-    "variance": 2.1155234219269364e-10,
-    "p99": 0.001173089996955241,
+    "opsPerSecond": 1012470.6003925705,
+    "meanTime": 0.0009876829999925577,
+    "variance": 0.0000011573089614774383,
+    "p99": 0.002207999999882304,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 394568.683161916,
-    "meanTime": 0.0025344130000039514,
-    "variance": 0.0000023489445129378397,
-    "p99": 0.0076249999997344275,
+    "opsPerSecond": 517288.55959547736,
+    "meanTime": 0.0019331569999962994,
+    "variance": 0.0000014242400584406794,
+    "p99": 0.005000000000109139,
     "samples": 1000
   }
 }

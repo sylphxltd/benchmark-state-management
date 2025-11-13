@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 1103994.029598355,
-    "meanTime": 0.0009058020000015858,
-    "variance": 0.0000012782355643644132,
-    "p99": 0.006457999999838648,
+    "opsPerSecond": 1304937.8849416599,
+    "meanTime": 0.0007663200000088182,
+    "variance": 3.409075691746071e-7,
+    "p99": 0.003125000000181899,
     "samples": 1000
   }
 }

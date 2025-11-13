@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Heavy Write (1000x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4265793.032254315,
-    "meanTime": 0.00023442299999996407,
-    "variance": 8.403610017120323e-8,
-    "p99": 0.0007920000000041227,
+    "opsPerSecond": 3858530.8258062513,
+    "meanTime": 0.000259165999999766,
+    "variance": 6.215910354301685e-9,
+    "p99": 0.00045899999999221563,
     "samples": 1000
   }
 }

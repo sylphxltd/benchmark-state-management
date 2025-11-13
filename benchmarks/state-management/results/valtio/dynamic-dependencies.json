@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 5094087.80163116,
-    "meanTime": 0.0001963060000025507,
-    "variance": 2.9316500862943746e-8,
-    "p99": 0.0007500000001527951,
+    "opsPerSecond": 5356588.067781601,
+    "meanTime": 0.00018668599999591606,
+    "variance": 3.690099039284006e-8,
+    "p99": 0.0007499999996980478,
     "samples": 1000
   }
 }

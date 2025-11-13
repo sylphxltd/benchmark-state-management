@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 16504918.465502663,
-    "meanTime": 0.00006058800000073461,
-    "variance": 6.63221964523365e-8,
-    "p99": 0.00016700000014679972,
+    "opsPerSecond": 15979035.506572805,
+    "meanTime": 0.00006258199999547286,
+    "variance": 5.720333260891568e-8,
+    "p99": 0.0002090000002681336,
     "samples": 1000
   }
 }

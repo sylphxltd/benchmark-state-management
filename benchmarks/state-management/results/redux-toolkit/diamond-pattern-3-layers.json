@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 283892.5069417105,
-    "meanTime": 0.0035224599999933164,
-    "variance": 7.28652615013771e-7,
-    "p99": 0.006582999999864114,
+    "opsPerSecond": 293419.48129351926,
+    "meanTime": 0.003408089999994445,
+    "variance": 4.4649719910980293e-7,
+    "p99": 0.006000000000312866,
     "samples": 1000
   }
 }

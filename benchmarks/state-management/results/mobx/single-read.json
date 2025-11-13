@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Single Read",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4770332.349053797,
-    "meanTime": 0.00020962900000004225,
-    "variance": 0.0000022961060213803026,
-    "p99": 0.0013750000000030127,
+    "opsPerSecond": 6429173.015470342,
+    "meanTime": 0.00015554100000011317,
+    "variance": 7.210447479385853e-8,
+    "p99": 0.0012499999999988631,
     "samples": 1000
   }
 }

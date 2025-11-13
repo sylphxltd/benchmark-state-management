@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4259669.449728167,
-    "meanTime": 0.00023475999999573104,
-    "variance": 8.914160400991449e-8,
-    "p99": 0.0011250000002291927,
+    "opsPerSecond": 5808280.2846016325,
+    "meanTime": 0.00017216799999323485,
+    "variance": 9.777199977408298e-8,
+    "p99": 0.0006250000001273293,
     "samples": 1000
   }
 }

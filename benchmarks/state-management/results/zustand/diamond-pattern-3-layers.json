@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4024242.034050737,
-    "meanTime": 0.0002484939999976632,
-    "variance": 3.560603600106749e-8,
-    "p99": 0.0007909999999355932,
+    "opsPerSecond": 4706945.569027867,
+    "meanTime": 0.00021245199999339094,
+    "variance": 2.1170862557865085e-8,
+    "p99": 0.0006670000002486631,
     "samples": 1000
   }
 }

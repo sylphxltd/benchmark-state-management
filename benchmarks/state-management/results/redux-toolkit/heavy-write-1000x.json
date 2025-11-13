@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Heavy Write (1000x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 239218.3111091472,
-    "meanTime": 0.004180282000000133,
-    "variance": 0.0005331373115139889,
-    "p99": 0.008167000000000257,
+    "opsPerSecond": 191092.30847725747,
+    "meanTime": 0.005233072999999962,
+    "variance": 0.002876839529429131,
+    "p99": 0.00837500000000091,
     "samples": 1000
   }
 }

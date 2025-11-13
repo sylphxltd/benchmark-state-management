@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 3703689.986331329,
-    "meanTime": 0.0002700010000001498,
-    "variance": 8.178575805793701e-7,
-    "p99": 0.0015000000000071623,
+    "opsPerSecond": 4039751.151326283,
+    "meanTime": 0.0002475400000001713,
+    "variance": 3.17886250250416e-8,
+    "p99": 0.0008330000000000837,
     "samples": 1000
   }
 }

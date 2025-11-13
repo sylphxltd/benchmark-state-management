@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 4075660.562727116,
-    "meanTime": 0.00024535899999750656,
-    "variance": 2.9299271389218254e-8,
-    "p99": 0.0005839999998897838,
+    "opsPerSecond": 5292209.338656024,
+    "meanTime": 0.0001889569999991636,
+    "variance": 1.32760063217059e-7,
+    "p99": 0.0005419999999958236,
     "samples": 1000
   }
 }

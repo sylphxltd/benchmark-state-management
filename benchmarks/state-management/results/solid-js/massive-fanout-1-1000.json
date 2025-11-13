@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 1168228.3933310977,
-    "meanTime": 0.0008559969999946588,
-    "variance": 4.785715024818549e-7,
-    "p99": 0.003666999999950349,
+    "opsPerSecond": 1162982.7250481017,
+    "meanTime": 0.000859858000004806,
+    "variance": 5.151757756091431e-7,
+    "p99": 0.0037080000001878943,
     "samples": 1000
   }
 }

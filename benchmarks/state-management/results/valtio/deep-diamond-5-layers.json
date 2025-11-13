@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Deep Diamond (5 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 1620243.9763396217,
-    "meanTime": 0.0006171909999993659,
-    "variance": 1.2621815867612938e-7,
-    "p99": 0.0016249999998763087,
+    "opsPerSecond": 1580540.3867496816,
+    "meanTime": 0.000632695000003423,
+    "variance": 4.136441239019977e-8,
+    "p99": 0.0013330000001587905,
     "samples": 1000
   }
 }

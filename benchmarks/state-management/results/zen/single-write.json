@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:24:18.329Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 18375733.174034502,
-    "meanTime": 0.000056776000015815955,
-    "variance": 2.5545928310303103e-10,
-    "p99": 0.00008100000013655517,
+    "opsPerSecond": 10808824.32417982,
+    "meanTime": 0.00009251699999998663,
+    "variance": 3.8237329040000346e-8,
+    "p99": 0.0009170000000011669,
     "samples": 1000
   }
 }

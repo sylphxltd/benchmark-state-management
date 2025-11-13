@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Array Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 2714949.3254770366,
-    "meanTime": 0.0003683309999991593,
-    "variance": 7.920196330709795e-7,
-    "p99": 0.0023339999999620886,
+    "opsPerSecond": 4913884.179770304,
+    "meanTime": 0.00020350499999915428,
+    "variance": 1.0119690488007456e-7,
+    "p99": 0.0007909999999924366,
     "samples": 1000
   }
 }

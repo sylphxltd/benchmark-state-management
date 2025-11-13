@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 239480.8629642453,
-    "meanTime": 0.004175699000004442,
-    "variance": 0.000004253529890326492,
-    "p99": 0.007374999999683496,
+    "opsPerSecond": 296475.0597771018,
+    "meanTime": 0.003372964999996384,
+    "variance": 0.000001202781451207877,
+    "p99": 0.005583000000115135,
     "samples": 1000
   }
 }

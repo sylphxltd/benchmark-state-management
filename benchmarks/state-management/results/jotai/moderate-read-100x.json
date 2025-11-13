@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Moderate Read (100x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 2644355.3590512294,
-    "meanTime": 0.0003781639999999058,
-    "variance": 1.1916012122521945e-7,
-    "p99": 0.0021249999999994884,
+    "opsPerSecond": 2819522.3729107734,
+    "meanTime": 0.00035466999999990634,
+    "variance": 8.806705615616488e-8,
+    "p99": 0.0015409999999960178,
     "samples": 1000
   }
 }

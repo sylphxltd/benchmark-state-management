@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Array Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 3202531.2807272165,
-    "meanTime": 0.0003122529999997141,
-    "variance": 0.0000020032248578484636,
-    "p99": 0.0023339999999620886,
+    "opsPerSecond": 7207103.321068077,
+    "meanTime": 0.00013875199999932873,
+    "variance": 8.795530580166069e-8,
+    "p99": 0.0006660000000238142,
     "samples": 1000
   }
 }

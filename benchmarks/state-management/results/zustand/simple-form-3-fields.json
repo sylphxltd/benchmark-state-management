@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Simple Form (3 fields)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:23:18.135Z",
+  "timestamp": "2025-11-13T21:39:31.879Z",
   "result": {
-    "opsPerSecond": 2076519.7528950402,
-    "meanTime": 0.0004815749999997934,
-    "variance": 9.64666890652152e-8,
-    "p99": 0.0015409999999747015,
+    "opsPerSecond": 2133515.393315173,
+    "meanTime": 0.00046870999999964623,
+    "variance": 7.93044223222632e-8,
+    "p99": 0.0015839999999798238,
     "samples": 1000
   }
 }

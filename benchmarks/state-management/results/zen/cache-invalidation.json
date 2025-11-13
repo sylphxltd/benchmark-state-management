@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T23:00:14.647Z",
+  "timestamp": "2025-11-13T23:05:26.022Z",
   "result": {
-    "opsPerSecond": 19559291.127077293,
-    "meanTime": 0.000051891999959480014,
-    "variance": 4.645078703064638e-11,
-    "p99": 0.00007099999857018702,
+    "opsPerSecond": 22132847.295279935,
+    "meanTime": 0.000057000000018888384,
+    "variance": 1.258145645568685e-7,
+    "p99": 0.00005100000271340832,
     "samples": 1000
   }
 }

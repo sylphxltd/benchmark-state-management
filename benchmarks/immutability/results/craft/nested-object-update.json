@@ -4,12 +4,12 @@
   "packageName": "@sylphx/craft",
   "test": "Nested Object Update",
   "group": "02-nested-updates",
-  "timestamp": "2025-11-13T23:00:08.362Z",
+  "timestamp": "2025-11-13T23:05:27.700Z",
   "result": {
-    "opsPerSecond": 685788.1629137261,
-    "meanTime": 0.0015000189999909708,
-    "variance": 2.7377388452053537e-7,
-    "p99": 0.002787110000131177,
+    "opsPerSecond": 700347.5330012457,
+    "meanTime": 0.0014640270000086276,
+    "variance": 1.7526403029498627e-7,
+    "p99": 0.002426599999675999,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "wouter",
   "test": "Optional Parameter Route (without param)",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-13T23:00:21.586Z",
+  "timestamp": "2025-11-13T23:05:25.254Z",
   "result": {
-    "opsPerSecond": 170937.7769052942,
-    "meanTime": 0.005972132999966562,
-    "variance": 0.000001335166978228129,
-    "p99": 0.009178890000239333,
+    "opsPerSecond": 212931.3229003881,
+    "meanTime": 0.004850570000022344,
+    "variance": 0.0000014770097708268622,
+    "p99": 0.009388210000070101,
     "samples": 1000
   }
 }

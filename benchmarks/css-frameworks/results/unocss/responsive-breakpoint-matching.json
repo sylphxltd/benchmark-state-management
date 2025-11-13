@@ -4,12 +4,12 @@
   "packageName": "unocss",
   "test": "Responsive breakpoint matching",
   "group": "02-dynamic-updates",
-  "timestamp": "2025-11-13T11:58:46.339Z",
+  "timestamp": "2025-11-13T12:05:59.533Z",
   "result": {
-    "opsPerSecond": 338150.28413080797,
-    "meanTime": 0.0029572649999997226,
-    "variance": 0.000027574819528774803,
-    "p99": 0.02967599999999493,
+    "opsPerSecond": 288670.1859410519,
+    "meanTime": 0.0034641610000008993,
+    "variance": 0.000012324740091079344,
+    "p99": 0.02646900000002006,
     "samples": 1000
   }
 }

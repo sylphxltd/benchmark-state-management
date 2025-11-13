@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen-router",
   "test": "Nested Dynamic Routes (2 params)",
   "group": "02-dynamic-routes",
-  "timestamp": "2025-11-13T11:58:30.561Z",
+  "timestamp": "2025-11-13T12:05:54.613Z",
   "result": {
-    "opsPerSecond": 423867.8278383845,
-    "meanTime": 0.0023592260000003763,
-    "variance": 0.000003066318650925211,
-    "p99": 0.00936699999999746,
+    "opsPerSecond": 713421.4551517261,
+    "meanTime": 0.0014016959999995039,
+    "variance": 0.0000020866481855864846,
+    "p99": 0.007514000000014676,
     "samples": 1000
   }
 }

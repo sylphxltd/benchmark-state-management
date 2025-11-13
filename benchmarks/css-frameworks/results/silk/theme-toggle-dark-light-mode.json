@@ -4,12 +4,12 @@
   "packageName": "@sylphx/silk",
   "test": "Theme toggle (dark/light mode)",
   "group": "02-dynamic-updates",
-  "timestamp": "2025-11-13T11:58:46.339Z",
+  "timestamp": "2025-11-13T12:05:59.533Z",
   "result": {
-    "opsPerSecond": 514022.5347478845,
-    "meanTime": 0.0019454400000001471,
-    "variance": 0.0000045346701924000006,
-    "p99": 0.003968000000000416,
+    "opsPerSecond": 468083.0547849138,
+    "meanTime": 0.0021363729999999775,
+    "variance": 0.000011264722753870181,
+    "p99": 0.006090999999997848,
     "samples": 1000
   }
 }

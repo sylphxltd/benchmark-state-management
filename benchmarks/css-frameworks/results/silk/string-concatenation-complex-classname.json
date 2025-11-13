@@ -4,12 +4,12 @@
   "packageName": "@sylphx/silk",
   "test": "String concatenation (complex className)",
   "group": "01-style-application",
-  "timestamp": "2025-11-13T11:58:46.339Z",
+  "timestamp": "2025-11-13T12:05:59.533Z",
   "result": {
-    "opsPerSecond": 596726.0031113308,
-    "meanTime": 0.001675810999999996,
-    "variance": 0.000002109050657279495,
-    "p99": 0.005931000000003905,
+    "opsPerSecond": 736994.0812004699,
+    "meanTime": 0.0013568630000001178,
+    "variance": 0.000001878767886231164,
+    "p99": 0.007594000000011647,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T11:58:44.565Z",
+  "timestamp": "2025-11-13T12:05:50.856Z",
   "result": {
-    "opsPerSecond": 426618.9763533609,
-    "meanTime": 0.0023440120000000134,
-    "variance": 0.00000547491515385654,
-    "p99": 0.011231000000002211,
+    "opsPerSecond": 381427.23970259103,
+    "meanTime": 0.002621732000000122,
+    "variance": 0.000038600924186176904,
+    "p99": 0.011871999999996774,
     "samples": 1000
   }
 }

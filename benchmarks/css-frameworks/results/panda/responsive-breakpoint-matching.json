@@ -4,12 +4,12 @@
   "packageName": "@pandacss/dev",
   "test": "Responsive breakpoint matching",
   "group": "02-dynamic-updates",
-  "timestamp": "2025-11-13T11:58:46.339Z",
+  "timestamp": "2025-11-13T12:05:59.533Z",
   "result": {
-    "opsPerSecond": 297321.3722927512,
-    "meanTime": 0.003363363999999876,
-    "variance": 0.000015535238789503087,
-    "p99": 0.022442000000012285,
+    "opsPerSecond": 267833.8508775894,
+    "meanTime": 0.003733658000000304,
+    "variance": 0.00002614057077903659,
+    "p99": 0.027902999999980693,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "Array Push",
   "group": "03-array-operations",
-  "timestamp": "2025-11-13T11:58:44.265Z",
+  "timestamp": "2025-11-13T12:05:54.543Z",
   "result": {
-    "opsPerSecond": 116627.97727900503,
-    "meanTime": 0.008574271999999923,
-    "variance": 0.000056525137348016924,
-    "p99": 0.030998999999980015,
+    "opsPerSecond": 131718.58640140417,
+    "meanTime": 0.0075919429999997306,
+    "variance": 0.00001957998061175008,
+    "p99": 0.03012699999999313,
     "samples": 1000
   }
 }

@@ -52,14 +52,12 @@ export async function measurePerformance<TStore>(
   ctx: TestContext<TStore>,
   options?: PerformanceOptions
 ): Promise<SpeedMetric> {
-  const warmupIterations = options?.warmupIterations ?? 100;
-  const iterations = options?.benchmarkIterations ?? 1000;
-
-  // Create bench instance
+  // Use tinybench defaults: warmupTime: 100ms, warmupIterations: 5
+  // These are battle-tested defaults that handle JIT optimization properly
   const bench = new Bench({
-    warmupIterations,
-    iterations,
-    time: 0, // Run exact number of iterations
+    warmupIterations: options?.warmupIterations,
+    iterations: options?.benchmarkIterations,
+    time: options?.benchmarkIterations ? 0 : undefined,
   });
 
   // Add benchmark task

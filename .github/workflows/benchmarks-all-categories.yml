@@ -1,0 +1,163 @@
+name: Auto-Benchmark All Categories
+
+on:
+  schedule:
+    # Run every hour at minute 0
+    - cron: '0 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'benchmarks/**'
+      - 'scripts/**'
+      - 'src/**'
+      - '.github/workflows/benchmarks-all-categories.yml'
+
+jobs:
+  # Discover all benchmark categories dynamically
+  discover-categories:
+    name: Discover Categories
+    runs-on: ubuntu-latest
+    outputs:
+      categories: ${{ steps.find.outputs.categories }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find all benchmark categories
+        id: find
+        run: |
+          # Find all directories in benchmarks/ that have an index.ts file
+          categories=$(find benchmarks -maxdepth 1 -mindepth 1 -type d -exec test -f {}/index.ts \; -print | xargs -n1 basename | jq -R -s -c 'split("\n")[:-1]')
+          echo "categories=$categories" >> $GITHUB_OUTPUT
+          echo "Found categories: $categories"
+
+  # Run benchmarks for each category
+  benchmark-category:
+    name: Benchmark (${{ matrix.category }})
+    needs: discover-categories
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        category: ${{ fromJson(needs.discover-categories.outputs.categories) }}
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install category dependencies
+        working-directory: benchmarks/${{ matrix.category }}
+        run: npm ci
+
+      - name: Check versions and bundle sizes
+        id: check
+        run: |
+          echo "🔍 Checking library versions and bundle sizes..."
+          npx tsx scripts/check-versions.ts benchmarks/${{ matrix.category }}
+          echo "✓ Version check complete"
+
+      - name: Run benchmarks
+        if: steps.check.outputs.has_updates == 'true'
+        run: |
+          echo "🚀 Running benchmarks for ${{ matrix.category }}..."
+          cd benchmarks/${{ matrix.category }}
+
+          # Get updated libraries from check step
+          UPDATED_LIBS='${{ steps.check.outputs.updated_libs }}'
+
+          # If specific libraries were updated, only benchmark those
+          if [ -n "$UPDATED_LIBS" ] && [ "$UPDATED_LIBS" != "[]" ]; then
+            LIBS=$(echo "$UPDATED_LIBS" | jq -r 'join(",")')
+            echo "📦 Updated libraries: $LIBS"
+            npm run benchmark -- --libraries="$LIBS"
+          else
+            echo "📝 Test files changed, running all benchmarks"
+            npm run benchmark
+          fi
+
+          echo "✓ Benchmarks complete"
+
+      - name: Generate category README
+        run: |
+          echo "📝 Generating README for ${{ matrix.category }}..."
+          npx tsx scripts/generate-simple-readme.ts benchmarks/${{ matrix.category }}
+          echo "✓ README generated"
+
+      - name: Upload results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.category }}
+          path: benchmarks/${{ matrix.category }}/results/
+          retention-days: 1
+
+  # Commit all results after all categories complete
+  commit-results:
+    name: Commit & Push Results
+    needs: benchmark-category
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Download all result artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Copy results back to repository
+        run: |
+          # Copy each category's results back
+          for category_results in artifacts/results-*/; do
+            category=$(basename "$category_results" | sed 's/results-//')
+            if [ -d "$category_results" ]; then
+              echo "Copying results for $category"
+              mkdir -p "benchmarks/$category/results"
+              cp -r "$category_results"* "benchmarks/$category/results/"
+            fi
+          done
+
+      - name: Generate root README
+        run: npx tsx scripts/generate-root-readme.ts
+
+      - name: Check if there are changes
+        id: changes
+        run: |
+          git diff --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push results
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Add all changes (benchmark results, versions, READMEs)
+          git add benchmarks/ README.md
+
+          # Create commit message
+          COMMIT_MSG="chore: auto-benchmark and update results (all categories)"
+
+          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
+          git push || echo "Nothing to push"

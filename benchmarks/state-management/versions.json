@@ -1,26 +1,26 @@
 {
-  "lastChecked": "2025-11-12T23:08:28.351Z",
+  "lastChecked": "2025-11-13T00:33:40.300Z",
   "lastBenchmarkRun": "2025-11-10T16:38:08Z",
   "testFilesHash": "8c14d64010e59e9bfc37fb46c355126ba8aa41a2819006706d28dcaf156a0764",
   "libraries": {
     "@sylphx/zen": {
       "current": "3.0.0",
-      "latest": "3.0.0",
-      "lastUpdated": "2025-11-11T22:01:27Z",
+      "latest": "3.1.0",
+      "lastUpdated": "2025-11-13T00:33:37.468Z",
       "size": {
         "gzip": 1219,
         "minified": 3368,
-        "lastChecked": "2025-11-11T22:01:38.123Z"
+        "lastChecked": "2025-11-13T00:33:40.271Z"
       }
     },
     "@preact/signals": {
       "current": "2.4.0",
       "latest": "2.5.0",
-      "lastUpdated": "2025-11-12T23:08:24.839Z",
+      "lastUpdated": "2025-11-13T00:33:36.612Z",
       "size": {
         "gzip": 3108,
         "minified": 9207,
-        "lastChecked": "2025-11-12T23:08:28.350Z"
+        "lastChecked": "2025-11-13T00:33:40.300Z"
       }
     },
     "solid-js": {

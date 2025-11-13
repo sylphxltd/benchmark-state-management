@@ -4,12 +4,12 @@
   "packageName": "superstruct",
   "test": "Validate Flat Object",
   "group": "03-object-validation",
-  "timestamp": "2025-11-13T17:23:52.316Z",
+  "timestamp": "2025-11-13T17:31:03.788Z",
   "result": {
-    "opsPerSecond": 106086.4350403839,
-    "meanTime": 0.009663136000008309,
-    "variance": 0.000004116854003528607,
-    "p99": 0.018080110000519192,
+    "opsPerSecond": 78475.61243523053,
+    "meanTime": 0.013968057000002773,
+    "variance": 0.00002779520736525531,
+    "p99": 0.029090919999780446,
     "samples": 1000
   }
 }

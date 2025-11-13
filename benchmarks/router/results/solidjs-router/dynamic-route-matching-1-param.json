@@ -4,12 +4,12 @@
   "packageName": "@solidjs/router",
   "test": "Dynamic Route Matching (1 param)",
   "group": "02-dynamic-routes",
-  "timestamp": "2025-11-13T17:24:10.734Z",
+  "timestamp": "2025-11-13T17:30:59.495Z",
   "result": {
-    "opsPerSecond": 3560406.8911757553,
-    "meanTime": 0.000298903000001701,
-    "variance": 1.1349235193487075e-7,
-    "p99": 0.0006810100004349806,
+    "opsPerSecond": 3490835.8937394423,
+    "meanTime": 0.00031230599999526024,
+    "variance": 1.2715781818318536e-7,
+    "p99": 0.0007412999998359734,
     "samples": 1000
   }
 }

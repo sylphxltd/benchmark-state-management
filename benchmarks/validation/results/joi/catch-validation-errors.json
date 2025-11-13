@@ -4,12 +4,12 @@
   "packageName": "joi",
   "test": "Catch Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:23:52.316Z",
+  "timestamp": "2025-11-13T17:31:03.788Z",
   "result": {
-    "opsPerSecond": 34531.925169296075,
-    "meanTime": 0.031920505999998565,
-    "variance": 0.005647527566584731,
-    "p99": 0.05687674000104378,
+    "opsPerSecond": 35751.545858177065,
+    "meanTime": 0.029233134999978573,
+    "variance": 0.000787281014354707,
+    "p99": 0.04805100999943534,
     "samples": 1000
   }
 }

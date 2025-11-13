@@ -4,12 +4,12 @@
   "packageName": "yup",
   "test": "Create Complex Schema",
   "group": "01-schema-creation",
-  "timestamp": "2025-11-13T17:23:52.316Z",
+  "timestamp": "2025-11-13T17:31:03.788Z",
   "result": {
-    "opsPerSecond": 26012.856492874635,
-    "meanTime": 0.040345321999996485,
-    "variance": 0.0007632179969631968,
-    "p99": 0.08071864999998977,
+    "opsPerSecond": 19839.967984242317,
+    "meanTime": 0.058776383000002395,
+    "variance": 0.004962052277099267,
+    "p99": 0.10150262000012161,
     "samples": 1000
   }
 }

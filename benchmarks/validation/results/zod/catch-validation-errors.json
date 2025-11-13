@@ -4,12 +4,12 @@
   "packageName": "zod",
   "test": "Catch Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:23:52.316Z",
+  "timestamp": "2025-11-13T17:31:03.788Z",
   "result": {
-    "opsPerSecond": 22612.390439804734,
-    "meanTime": 0.046927066000023845,
-    "variance": 0.001446280302525797,
-    "p99": 0.08166195999910994,
+    "opsPerSecond": 21831.897893788493,
+    "meanTime": 0.047614229999977394,
+    "variance": 0.0007746856273445408,
+    "p99": 0.07500502999950184,
     "samples": 1000
   }
 }

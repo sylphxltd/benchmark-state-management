@@ -32,7 +32,7 @@ Comprehensive performance benchmarks for React validation libraries.
 **TL;DR** - Choose based on your needs:
 
 - **⚡ Maximum Performance**: Superstruct - Fastest overall with 100.0/100 score
-- **⚖️ Best Balance**: Yup - Great performance (12.1/100) with good ecosystem
+- **⚖️ Best Balance**: Yup - Great performance (12.9/100) with good ecosystem
 - **🎯 Popular Choice**: Joi - Widely used, good performance, minimal API
 
 <details>
@@ -47,19 +47,19 @@ Comprehensive performance benchmarks for React validation libraries.
 - [GitHub](git://github.com/ianstormtaylor/superstruct) • [npm](https://www.npmjs.com/package/superstruct)
 
 
-**Yup** (Score: 12.1/100)
+**Yup** (Score: 12.9/100)
 - Dead simple Object schema validation
 - **Best for**: General purpose state management
 - [GitHub](https://github.com/jquense/yup) • [npm](https://www.npmjs.com/package/yup)
 
 
-**Joi** (Score: 10.8/100)
+**Joi** (Score: 11.1/100)
 - Object schema validation
 - **Best for**: General purpose state management
 - [GitHub](git://github.com/hapijs/joi) • [npm](https://www.npmjs.com/package/joi)
 
 
-**Zod** (Score: 7.3/100)
+**Zod** (Score: 7.6/100)
 - TypeScript-first schema declaration and validation library with static type inference
 - **Best for**: General purpose state management
 - [GitHub](https://github.com/colinhacks/zod) • [npm](https://www.npmjs.com/package/zod)
@@ -76,9 +76,9 @@ Based on geometric mean of normalized scores across all 10 tests.
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|
 | 🥇 1 | **[Superstruct](git://github.com/ianstormtaylor/superstruct)** | 100.0/100 | 100% of fastest | [📦](https://www.npmjs.com/package/superstruct) [📊](https://bundlephobia.com/package/superstruct) |
-| 🥈 2 | **[Yup](https://github.com/jquense/yup)** | 12.1/100 | 12% of fastest | [📦](https://www.npmjs.com/package/yup) [📊](https://bundlephobia.com/package/yup) |
-| 🥉 3 | **[Joi](git://github.com/hapijs/joi)** | 10.8/100 | 11% of fastest | [📦](https://www.npmjs.com/package/joi) [📊](https://bundlephobia.com/package/joi) |
-|  4 | **[Zod](https://github.com/colinhacks/zod)** | 7.3/100 | 7% of fastest | [📦](https://www.npmjs.com/package/zod) [📊](https://bundlephobia.com/package/zod) |
+| 🥈 2 | **[Yup](https://github.com/jquense/yup)** | 12.9/100 | 13% of fastest | [📦](https://www.npmjs.com/package/yup) [📊](https://bundlephobia.com/package/yup) |
+| 🥉 3 | **[Joi](git://github.com/hapijs/joi)** | 11.1/100 | 11% of fastest | [📦](https://www.npmjs.com/package/joi) [📊](https://bundlephobia.com/package/joi) |
+|  4 | **[Zod](https://github.com/colinhacks/zod)** | 7.6/100 | 8% of fastest | [📦](https://www.npmjs.com/package/zod) [📊](https://bundlephobia.com/package/zod) |
 
 
 *📦 = npm package • 📊 = bundle size*
@@ -90,9 +90,9 @@ Based on geometric mean of normalized scores across all 10 tests.
 | Library | Score | Bundle Size (gzip) | Description | Best For |
 |---------|:-----:|:------------------:|-------------|----------|
 | **[Superstruct](git://github.com/ianstormtaylor/superstruct)** | **100.0** | **3.44 KB** | A simple and composable way to validate data in Ja... | General purpose... |
-| **[Yup](https://github.com/jquense/yup)** | **12.1** | **13.33 KB** | Dead simple Object schema validation... | General purpose... |
-| **[Joi](git://github.com/hapijs/joi)** | **10.8** | **52.64 KB** | Object schema validation... | General purpose... |
-| **[Zod](https://github.com/colinhacks/zod)** | **7.3** | **52.88 KB** | TypeScript-first schema declaration and validation... | General purpose... |
+| **[Yup](https://github.com/jquense/yup)** | **12.9** | **13.33 KB** | Dead simple Object schema validation... | General purpose... |
+| **[Joi](git://github.com/hapijs/joi)** | **11.1** | **52.64 KB** | Object schema validation... | General purpose... |
+| **[Zod](https://github.com/colinhacks/zod)** | **7.6** | **52.88 KB** | TypeScript-first schema declaration and validation... | General purpose... |
 
 ---
 
@@ -106,134 +106,134 @@ Based on geometric mean of normalized scores across all 10 tests.
 #### Create Complex Schema
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   912K ops/sec
-🥈 Yup                █                                          26K ops/sec
-🥉 Zod                █                                          16K ops/sec
- Joi                █                                          12K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   851K ops/sec
+🥈 Yup                █                                          20K ops/sec
+🥉 Zod                █                                          15K ops/sec
+ Joi                █                                          11K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 912K | 0.001ms | 0.003ms | 1000 |
-| Yup | 26K | 0.040ms | 0.081ms | 1000 |
-| Zod | 16K | 0.069ms | 0.141ms | 1000 |
-| Joi | 12K | 0.089ms | 0.190ms | 1000 |
+| Superstruct | 851K | 0.002ms | 0.003ms | 1000 |
+| Yup | 20K | 0.059ms | 0.102ms | 1000 |
+| Zod | 15K | 0.068ms | 0.116ms | 1000 |
+| Joi | 11K | 0.100ms | 0.198ms | 1000 |
 
 #### Create Simple Schema
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   2.8M ops/sec
-🥈 Zod                █                                          83K ops/sec
-🥉 Yup                █                                          47K ops/sec
- Joi                                                           28K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   2.7M ops/sec
+🥈 Zod                █                                          101K ops/sec
+🥉 Yup                █                                          87K ops/sec
+ Joi                █                                          48K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 2.8M | 0.000ms | 0.001ms | 1000 |
-| Zod | 83K | 0.014ms | 0.035ms | 1000 |
-| Yup | 47K | 0.024ms | 0.045ms | 1000 |
-| Joi | 28K | 0.038ms | 0.064ms | 1000 |
+| Superstruct | 2.7M | 0.000ms | 0.001ms | 1000 |
+| Zod | 101K | 0.011ms | 0.029ms | 1000 |
+| Yup | 87K | 0.013ms | 0.026ms | 1000 |
+| Joi | 48K | 0.023ms | 0.054ms | 1000 |
 
 ### 02-primitive-validation
 
 #### Validate Email
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   953K ops/sec
-🥈 Yup                ██████████                                 227K ops/sec
-🥉 Joi                ███████                                    174K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   907K ops/sec
+🥈 Yup                ██████████                                 224K ops/sec
+🥉 Joi                ███████                                    159K ops/sec
  Zod                ██                                         45K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 953K | 0.001ms | 0.003ms | 1000 |
-| Yup | 227K | 0.005ms | 0.008ms | 1000 |
-| Joi | 174K | 0.006ms | 0.011ms | 1000 |
+| Superstruct | 907K | 0.002ms | 0.004ms | 1000 |
+| Yup | 224K | 0.005ms | 0.008ms | 1000 |
+| Joi | 159K | 0.007ms | 0.017ms | 1000 |
 | Zod | 45K | 0.023ms | 0.039ms | 1000 |
 
 #### Validate Number
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   925K ops/sec
-🥈 Joi                ███████                                    159K ops/sec
-🥉 Yup                ███████                                    151K ops/sec
- Zod                ███                                        73K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   1.0M ops/sec
+🥈 Joi                ██████                                     152K ops/sec
+🥉 Yup                █████                                      144K ops/sec
+ Zod                ███                                        71K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 925K | 0.001ms | 0.005ms | 1000 |
-| Joi | 159K | 0.006ms | 0.010ms | 1000 |
-| Yup | 151K | 0.007ms | 0.010ms | 1000 |
-| Zod | 73K | 0.015ms | 0.028ms | 1000 |
+| Superstruct | 1.0M | 0.001ms | 0.003ms | 1000 |
+| Joi | 152K | 0.007ms | 0.011ms | 1000 |
+| Yup | 144K | 0.008ms | 0.015ms | 1000 |
+| Zod | 71K | 0.015ms | 0.040ms | 1000 |
 
 #### Validate String
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   970K ops/sec
-🥈 Yup                ███████                                    163K ops/sec
-🥉 Joi                ██████                                     147K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   986K ops/sec
+🥈 Yup                ██████                                     159K ops/sec
+🥉 Joi                ██████                                     146K ops/sec
  Zod                ██                                         46K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 970K | 0.001ms | 0.003ms | 1000 |
-| Yup | 163K | 0.007ms | 0.010ms | 1000 |
-| Joi | 147K | 0.007ms | 0.018ms | 1000 |
-| Zod | 46K | 0.023ms | 0.043ms | 1000 |
+| Superstruct | 986K | 0.001ms | 0.003ms | 1000 |
+| Yup | 159K | 0.006ms | 0.009ms | 1000 |
+| Joi | 146K | 0.007ms | 0.011ms | 1000 |
+| Zod | 46K | 0.023ms | 0.040ms | 1000 |
 
 ### 03-object-validation
 
 #### Validate Array
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   41K ops/sec
-🥈 Zod                ███████████████████                        19K ops/sec
-🥉 Joi                ███████████████                            15K ops/sec
- Yup                █████████████                              13K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   39K ops/sec
+🥈 Zod                ███████████████████                        18K ops/sec
+🥉 Joi                ███████████████                            14K ops/sec
+ Yup                ██████████████                             14K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 41K | 0.026ms | 0.039ms | 1000 |
-| Zod | 19K | 0.055ms | 0.086ms | 1000 |
-| Joi | 15K | 0.072ms | 0.139ms | 1000 |
-| Yup | 13K | 0.077ms | 0.117ms | 1000 |
+| Superstruct | 39K | 0.029ms | 0.065ms | 1000 |
+| Zod | 18K | 0.059ms | 0.121ms | 1000 |
+| Joi | 14K | 0.072ms | 0.134ms | 1000 |
+| Yup | 14K | 0.077ms | 0.117ms | 1000 |
 
 #### Validate Flat Object
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   106K ops/sec
-🥈 Yup                ██████                                     16K ops/sec
-🥉 Joi                ██████                                     15K ops/sec
- Zod                ████                                       10K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   78K ops/sec
+🥈 Joi                ████████                                   15K ops/sec
+🥉 Yup                ███████                                    15K ops/sec
+ Zod                █████                                      10K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 106K | 0.010ms | 0.018ms | 1000 |
-| Yup | 16K | 0.075ms | 0.132ms | 1000 |
-| Joi | 15K | 0.070ms | 0.135ms | 1000 |
-| Zod | 10K | 0.108ms | 0.180ms | 1000 |
+| Superstruct | 78K | 0.014ms | 0.029ms | 1000 |
+| Joi | 15K | 0.069ms | 0.146ms | 1000 |
+| Yup | 15K | 0.083ms | 0.130ms | 1000 |
+| Zod | 10K | 0.104ms | 0.153ms | 1000 |
 
 #### Validate Nested Object
 
 ```
 🥇 Superstruct        ████████████████████████████████████████   52K ops/sec
-🥈 Yup                ██████████                                 13K ops/sec
-🥉 Joi                █████████                                  11K ops/sec
+🥈 Yup                ███████████                                14K ops/sec
+🥉 Joi                ███████                                    9K ops/sec
  Zod                ████                                       5K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 52K | 0.021ms | 0.032ms | 1000 |
-| Yup | 13K | 0.084ms | 0.213ms | 1000 |
-| Joi | 11K | 0.094ms | 0.161ms | 1000 |
-| Zod | 5K | 0.214ms | 0.318ms | 1000 |
+| Superstruct | 52K | 0.021ms | 0.033ms | 1000 |
+| Yup | 14K | 0.077ms | 0.127ms | 1000 |
+| Joi | 9K | 0.114ms | 0.171ms | 1000 |
+| Zod | 5K | 0.207ms | 0.367ms | 1000 |
 
 ### 04-error-handling
 
@@ -241,33 +241,33 @@ Based on geometric mean of normalized scores across all 10 tests.
 
 ```
 🥇 Superstruct        ████████████████████████████████████████   117K ops/sec
-🥈 Joi                ████████████                               35K ops/sec
-🥉 Yup                ██████████                                 31K ops/sec
- Zod                ████████                                   23K ops/sec
+🥈 Joi                ████████████                               36K ops/sec
+🥉 Yup                ██████████                                 30K ops/sec
+ Zod                ███████                                    22K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 117K | 0.010ms | 0.022ms | 1000 |
-| Joi | 35K | 0.032ms | 0.057ms | 1000 |
-| Yup | 31K | 0.034ms | 0.058ms | 1000 |
-| Zod | 23K | 0.047ms | 0.082ms | 1000 |
+| Superstruct | 117K | 0.009ms | 0.023ms | 1000 |
+| Joi | 36K | 0.029ms | 0.048ms | 1000 |
+| Yup | 30K | 0.035ms | 0.058ms | 1000 |
+| Zod | 22K | 0.048ms | 0.075ms | 1000 |
 
 #### Multiple Validation Errors
 
 ```
-🥇 Superstruct        ████████████████████████████████████████   161K ops/sec
-🥈 Joi                ████                                       17K ops/sec
-🥉 Yup                ███                                        10K ops/sec
+🥇 Superstruct        ████████████████████████████████████████   163K ops/sec
+🥈 Joi                ███                                        14K ops/sec
+🥉 Yup                ███                                        12K ops/sec
  Zod                ██                                         9K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Superstruct | 161K | 0.006ms | 0.017ms | 1000 |
-| Joi | 17K | 0.062ms | 0.098ms | 1000 |
-| Yup | 10K | 0.103ms | 0.153ms | 1000 |
-| Zod | 9K | 0.111ms | 0.169ms | 1000 |
+| Superstruct | 163K | 0.006ms | 0.016ms | 1000 |
+| Joi | 14K | 0.073ms | 0.148ms | 1000 |
+| Yup | 12K | 0.089ms | 0.133ms | 1000 |
+| Zod | 9K | 0.118ms | 0.158ms | 1000 |
 
 
 </details>
@@ -382,7 +382,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T17:25:06.976Z*
+*Generated on 2025-11-13T17:32:30.724Z*
 
 [⬆️ Back to Top](#validation-benchmarks) • [⬅️ Main README](../../README.md)
 

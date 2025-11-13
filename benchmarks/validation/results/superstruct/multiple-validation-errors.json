@@ -4,12 +4,12 @@
   "packageName": "superstruct",
   "test": "Multiple Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:23:52.316Z",
+  "timestamp": "2025-11-13T17:31:03.788Z",
   "result": {
-    "opsPerSecond": 160876.07364472153,
-    "meanTime": 0.0064231670000008305,
-    "variance": 0.0000028583880871622916,
-    "p99": 0.01714182000085201,
+    "opsPerSecond": 163384.7587425775,
+    "meanTime": 0.006361410999956206,
+    "variance": 0.0000035811228047720418,
+    "p99": 0.016466909999253397,
     "samples": 1000
   }
 }

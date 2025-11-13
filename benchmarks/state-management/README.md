@@ -31,8 +31,8 @@ Comprehensive performance benchmarks for React state-management libraries.
 
 **TL;DR** - Choose based on your needs:
 
-- **⚡ Maximum Performance**: Zen - Fastest overall with 79.8/100 score
-- **⚖️ Best Balance**: Solid Signals - Great performance (76.4/100) with good ecosystem
+- **⚡ Maximum Performance**: Zen - Fastest overall with 81.5/100 score
+- **⚖️ Best Balance**: Solid Signals - Great performance (78.1/100) with good ecosystem
 - **🎯 Popular Choice**: Zustand - Widely used, good performance, minimal API
 
 <details>
@@ -41,31 +41,31 @@ Comprehensive performance benchmarks for React state-management libraries.
 ### When to Choose Each Library
 
 
-**Zen** (Score: 79.8/100)
+**Zen** (Score: 81.5/100)
 - Minimal and fast state management with signal-based reactivity
 - **Best for**: Similar performance to Preact, slightly larger bundle
 - [GitHub](https://github.com/SylphxAI/zen) • [npm](https://www.npmjs.com/package/@sylphx/zen)
 
 
-**Solid Signals** (Score: 76.4/100)
+**Solid Signals** (Score: 78.1/100)
 - Fine-grained reactivity primitive from Solid.js for building performant UIs
 - **Best for**: Fastest overall, but requires Solid.js ecosystem
 - [GitHub](https://github.com/solidjs/solid) • [npm](https://www.npmjs.com/package/solid-js)
 
 
-**Preact Signals** (Score: 64.2/100)
+**Preact Signals** (Score: 37.7/100)
 - Fast and reactive signals for Preact and React with automatic dependency tracking
 - **Best for**: Excellent balance of speed and bundle size
 - [GitHub](https://github.com/preactjs/signals) • [npm](https://www.npmjs.com/package/@preact/signals)
 
 
-**Zustand** (Score: 34.9/100)
+**Zustand** (Score: 35.7/100)
 - Small, fast and scalable bearbones state management solution
 - **Best for**: Minimal bundle, simple API, moderate performance
 - [GitHub](https://github.com/pmndrs/zustand) • [npm](https://www.npmjs.com/package/zustand)
 
 
-**Valtio** (Score: 5.4/100)
+**Valtio** (Score: 5.6/100)
 - Proxy-based state management library that makes state usage simple
 - **Best for**: Simple API, moderate performance, good for nested mutations
 - [GitHub](https://github.com/pmndrs/valtio) • [npm](https://www.npmjs.com/package/valtio)
@@ -81,14 +81,14 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|
-| 🥇 1 | **[Zen](https://github.com/SylphxAI/zen)** | 79.8/100 | 100% of fastest | [📦](https://www.npmjs.com/package/@sylphx/zen) [📊](https://bundlephobia.com/package/@sylphx/zen) |
-| 🥈 2 | **[Solid Signals](https://github.com/solidjs/solid)** | 76.4/100 | 96% of fastest | [📦](https://www.npmjs.com/package/solid-js) [📊](https://bundlephobia.com/package/solid-js) |
-| 🥉 3 | **[Preact Signals](https://github.com/preactjs/signals)** | 64.2/100 | 81% of fastest | [📦](https://www.npmjs.com/package/@preact/signals) [📊](https://bundlephobia.com/package/@preact/signals) |
-|  4 | **[Zustand](https://github.com/pmndrs/zustand)** | 34.9/100 | 44% of fastest | [📦](https://www.npmjs.com/package/zustand) [📊](https://bundlephobia.com/package/zustand) |
-|  5 | **[Valtio](https://github.com/pmndrs/valtio)** | 5.4/100 | 7% of fastest | [📦](https://www.npmjs.com/package/valtio) [📊](https://bundlephobia.com/package/valtio) |
-|  6 | **[MobX](https://github.com/mobxjs/mobx)** | 3.2/100 | 4% of fastest | [📦](https://www.npmjs.com/package/mobx) [📊](https://bundlephobia.com/package/mobx) |
-|  7 | **[Jotai](https://github.com/pmndrs/jotai)** | 2.3/100 | 3% of fastest | [📦](https://www.npmjs.com/package/jotai) [📊](https://bundlephobia.com/package/jotai) |
-|  8 | **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | 1.2/100 | 2% of fastest | [📦](https://www.npmjs.com/package/@reduxjs/toolkit) [📊](https://bundlephobia.com/package/@reduxjs/toolkit) |
+| 🥇 1 | **[Zen](https://github.com/SylphxAI/zen)** | 81.5/100 | 100% of fastest | [📦](https://www.npmjs.com/package/@sylphx/zen) [📊](https://bundlephobia.com/package/@sylphx/zen) |
+| 🥈 2 | **[Solid Signals](https://github.com/solidjs/solid)** | 78.1/100 | 96% of fastest | [📦](https://www.npmjs.com/package/solid-js) [📊](https://bundlephobia.com/package/solid-js) |
+| 🥉 3 | **[Preact Signals](https://github.com/preactjs/signals)** | 37.7/100 | 46% of fastest | [📦](https://www.npmjs.com/package/@preact/signals) [📊](https://bundlephobia.com/package/@preact/signals) |
+|  4 | **[Zustand](https://github.com/pmndrs/zustand)** | 35.7/100 | 44% of fastest | [📦](https://www.npmjs.com/package/zustand) [📊](https://bundlephobia.com/package/zustand) |
+|  5 | **[Valtio](https://github.com/pmndrs/valtio)** | 5.6/100 | 7% of fastest | [📦](https://www.npmjs.com/package/valtio) [📊](https://bundlephobia.com/package/valtio) |
+|  6 | **[MobX](https://github.com/mobxjs/mobx)** | 3.3/100 | 4% of fastest | [📦](https://www.npmjs.com/package/mobx) [📊](https://bundlephobia.com/package/mobx) |
+|  7 | **[Jotai](https://github.com/pmndrs/jotai)** | 2.4/100 | 3% of fastest | [📦](https://www.npmjs.com/package/jotai) [📊](https://bundlephobia.com/package/jotai) |
+|  8 | **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | 1.3/100 | 2% of fastest | [📦](https://www.npmjs.com/package/@reduxjs/toolkit) [📊](https://bundlephobia.com/package/@reduxjs/toolkit) |
 
 
 *📦 = npm package • 📊 = bundle size*
@@ -99,14 +99,14 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 | Library | Score | Bundle Size (gzip) | Description | Best For |
 |---------|:-----:|:------------------:|-------------|----------|
-| **[Zen](https://github.com/SylphxAI/zen)** | **79.8** | **1.19 KB** | Minimal and fast state management with signal-base... | Similar performance to Preact, slightly ... |
-| **[Solid Signals](https://github.com/solidjs/solid)** | **76.4** | **3.96 KB** | Fine-grained reactivity primitive from Solid.js fo... | Fastest overall, but requires Solid.js e... |
-| **[Preact Signals](https://github.com/preactjs/signals)** | **64.2** | **3.04 KB** | Fast and reactive signals for Preact and React wit... | Excellent balance of speed and bundle si... |
-| **[Zustand](https://github.com/pmndrs/zustand)** | **34.9** | **1.17 KB** | Small, fast and scalable bearbones state managemen... | Minimal bundle, simple API, moderate per... |
-| **[Valtio](https://github.com/pmndrs/valtio)** | **5.4** | **3.07 KB** | Proxy-based state management library that makes st... | Simple API, moderate performance, good f... |
-| **[MobX](https://github.com/mobxjs/mobx)** | **3.2** | **17.56 KB** | Simple, scalable state management with transparent... | Automatic tracking, slow creation, large... |
-| **[Jotai](https://github.com/pmndrs/jotai)** | **2.3** | **4.29 KB** | Primitive and flexible state management for React... | Very fast read/write, slower creation, u... |
-| **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | **1.2** | **13.83 KB** | The official, opinionated, batteries-included tool... | Feature-rich, DevTools support, larger b... |
+| **[Zen](https://github.com/SylphxAI/zen)** | **81.5** | **1.19 KB** | Minimal and fast state management with signal-base... | Similar performance to Preact, slightly ... |
+| **[Solid Signals](https://github.com/solidjs/solid)** | **78.1** | **3.96 KB** | Fine-grained reactivity primitive from Solid.js fo... | Fastest overall, but requires Solid.js e... |
+| **[Preact Signals](https://github.com/preactjs/signals)** | **37.7** | **3.04 KB** | Fast and reactive signals for Preact and React wit... | Excellent balance of speed and bundle si... |
+| **[Zustand](https://github.com/pmndrs/zustand)** | **35.7** | **1.17 KB** | Small, fast and scalable bearbones state managemen... | Minimal bundle, simple API, moderate per... |
+| **[Valtio](https://github.com/pmndrs/valtio)** | **5.6** | **3.07 KB** | Proxy-based state management library that makes st... | Simple API, moderate performance, good f... |
+| **[MobX](https://github.com/mobxjs/mobx)** | **3.3** | **17.56 KB** | Simple, scalable state management with transparent... | Automatic tracking, slow creation, large... |
+| **[Jotai](https://github.com/pmndrs/jotai)** | **2.4** | **4.29 KB** | Primitive and flexible state management for React... | Very fast read/write, slower creation, u... |
+| **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | **1.3** | **13.83 KB** | The official, opinionated, batteries-included tool... | Feature-rich, DevTools support, larger b... |
 
 ---
 
@@ -121,9 +121,9 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 ```
 🥇 Zen                ████████████████████████████████████████   639K ops/sec
-🥈 Preact Signals     ██████████████████████████████             479K ops/sec
-🥉 Zustand            █████████████████████████████              458K ops/sec
- Solid Signals      ███████████████████████                    368K ops/sec
+🥈 Zustand            █████████████████████████████              458K ops/sec
+🥉 Solid Signals      ███████████████████████                    368K ops/sec
+ Preact Signals     ████████████████                           255K ops/sec
  Jotai              █████                                      83K ops/sec
  Valtio             ███                                        43K ops/sec
  Redux Toolkit      ██                                         24K ops/sec
@@ -133,9 +133,9 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
 | Zen | 639K | 0.002ms | 0.008ms | 1000 |
-| Preact Signals | 479K | 0.002ms | 0.011ms | 1000 |
 | Zustand | 458K | 0.002ms | 0.010ms | 1000 |
 | Solid Signals | 368K | 0.003ms | 0.011ms | 1000 |
+| Preact Signals | 255K | 0.004ms | 0.020ms | 1000 |
 | Jotai | 83K | 0.012ms | 0.033ms | 1000 |
 | Valtio | 43K | 0.023ms | 0.071ms | 1000 |
 | Redux Toolkit | 24K | 0.041ms | 0.091ms | 1000 |
@@ -146,8 +146,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Zustand            ████████████████████████████████████████   847K ops/sec
 🥈 Zen                ████████████████████████████████████       765K ops/sec
-🥉 Preact Signals     ██████████████████████████████             641K ops/sec
- Solid Signals      ███████████████████████                    478K ops/sec
+🥉 Solid Signals      ███████████████████████                    478K ops/sec
+ Preact Signals     ███████████████                            317K ops/sec
  Valtio             ██                                         50K ops/sec
  Redux Toolkit      ██                                         32K ops/sec
  MobX               █                                          23K ops/sec
@@ -158,8 +158,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Zustand | 847K | 0.001ms | 0.003ms | 1000 |
 | Zen | 765K | 0.001ms | 0.003ms | 1000 |
-| Preact Signals | 641K | 0.002ms | 0.005ms | 1000 |
 | Solid Signals | 478K | 0.002ms | 0.005ms | 1000 |
+| Preact Signals | 317K | 0.003ms | 0.014ms | 1000 |
 | Valtio | 50K | 0.020ms | 0.049ms | 1000 |
 | Redux Toolkit | 32K | 0.031ms | 0.068ms | 1000 |
 | MobX | 23K | 0.044ms | 0.079ms | 1000 |
@@ -171,7 +171,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 🥇 Zustand            ████████████████████████████████████████   544K ops/sec
 🥈 Solid Signals      ███████████████████████████████████████    534K ops/sec
 🥉 Zen                ██████████████████████████████████████     514K ops/sec
- Preact Signals     ███████████████████████████████████        475K ops/sec
+ Preact Signals     ███████████████████████                    316K ops/sec
  Valtio             █████                                      69K ops/sec
  Redux Toolkit      ███                                        39K ops/sec
  MobX               ██                                         27K ops/sec
@@ -183,7 +183,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Zustand | 544K | 0.002ms | 0.004ms | 1000 |
 | Solid Signals | 534K | 0.002ms | 0.007ms | 1000 |
 | Zen | 514K | 0.002ms | 0.011ms | 1000 |
-| Preact Signals | 475K | 0.002ms | 0.011ms | 1000 |
+| Preact Signals | 316K | 0.003ms | 0.011ms | 1000 |
 | Valtio | 69K | 0.014ms | 0.033ms | 1000 |
 | Redux Toolkit | 39K | 0.026ms | 0.056ms | 1000 |
 | MobX | 27K | 0.037ms | 0.062ms | 1000 |
@@ -196,8 +196,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Zen                ████████████████████████████████████████   1.3M ops/sec
 🥈 Solid Signals      ████████████████████████████████           1.1M ops/sec
-🥉 Preact Signals     ████████████████████████████               944K ops/sec
- Zustand            ████████████████████████                   806K ops/sec
+🥉 Zustand            ████████████████████████                   806K ops/sec
+ Preact Signals     ████████████                               405K ops/sec
  Valtio             ██                                         73K ops/sec
  Jotai              ██                                         60K ops/sec
  MobX               █                                          27K ops/sec
@@ -208,8 +208,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Zen | 1.3M | 0.001ms | 0.002ms | 1000 |
 | Solid Signals | 1.1M | 0.001ms | 0.003ms | 1000 |
-| Preact Signals | 944K | 0.001ms | 0.005ms | 1000 |
 | Zustand | 806K | 0.001ms | 0.004ms | 1000 |
+| Preact Signals | 405K | 0.002ms | 0.012ms | 1000 |
 | Valtio | 73K | 0.014ms | 0.042ms | 1000 |
 | Jotai | 60K | 0.017ms | 0.046ms | 1000 |
 | MobX | 27K | 0.036ms | 0.082ms | 1000 |
@@ -220,7 +220,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Zen                ████████████████████████████████████████   1.3M ops/sec
 🥈 Solid Signals      █████████████████████████████              962K ops/sec
-🥉 Preact Signals     █████████████████████████████              953K ops/sec
+🥉 Preact Signals     ██████████████                             453K ops/sec
  Zustand            ███████████                                361K ops/sec
  Valtio             ██                                         62K ops/sec
  MobX               █                                          29K ops/sec
@@ -232,7 +232,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Zen | 1.3M | 0.001ms | 0.002ms | 1000 |
 | Solid Signals | 962K | 0.001ms | 0.003ms | 1000 |
-| Preact Signals | 953K | 0.001ms | 0.002ms | 1000 |
+| Preact Signals | 453K | 0.002ms | 0.008ms | 1000 |
 | Zustand | 361K | 0.003ms | 0.008ms | 1000 |
 | Valtio | 62K | 0.016ms | 0.041ms | 1000 |
 | MobX | 29K | 0.034ms | 0.073ms | 1000 |
@@ -244,7 +244,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Solid Signals      ████████████████████████████████████████   561K ops/sec
 🥈 Zen                ███████████████████████████████████████    542K ops/sec
-🥉 Preact Signals     █████████████████████████████████          469K ops/sec
+🥉 Preact Signals     ███████████████████                        273K ops/sec
  Zustand            ███                                        48K ops/sec
  MobX               ██                                         25K ops/sec
  Valtio             █                                          19K ops/sec
@@ -256,7 +256,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Solid Signals | 561K | 0.002ms | 0.005ms | 1000 |
 | Zen | 542K | 0.002ms | 0.004ms | 1000 |
-| Preact Signals | 469K | 0.002ms | 0.004ms | 1000 |
+| Preact Signals | 273K | 0.004ms | 0.012ms | 1000 |
 | Zustand | 48K | 0.021ms | 0.038ms | 1000 |
 | MobX | 25K | 0.040ms | 0.071ms | 1000 |
 | Valtio | 19K | 0.052ms | 0.116ms | 1000 |
@@ -267,7 +267,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 ```
 🥇 Zen                ████████████████████████████████████████   332K ops/sec
-🥈 Preact Signals     ███████████████████                        159K ops/sec
+🥈 Preact Signals     ████████████                               100K ops/sec
 🥉 Solid Signals      █████████                                  74K ops/sec
  MobX               █                                          6K ops/sec
  Zustand            █                                          5K ops/sec
@@ -279,7 +279,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
 | Zen | 332K | 0.003ms | 0.018ms | 1000 |
-| Preact Signals | 159K | 0.006ms | 0.021ms | 1000 |
+| Preact Signals | 100K | 0.010ms | 0.036ms | 1000 |
 | Solid Signals | 74K | 0.014ms | 0.039ms | 1000 |
 | MobX | 6K | 0.166ms | 0.375ms | 1000 |
 | Zustand | 5K | 0.184ms | 0.261ms | 1000 |
@@ -292,10 +292,10 @@ Based on geometric mean of normalized scores across all 20 tests.
 #### Nested Object Update
 
 ```
-🥇 Preact Signals     ████████████████████████████████████████   928K ops/sec
-🥈 Zustand            █████████████████████████████████████      863K ops/sec
-🥉 Zen                ████████████████████████████████           742K ops/sec
- Solid Signals      ███████████████████████████                631K ops/sec
+🥇 Zustand            ████████████████████████████████████████   863K ops/sec
+🥈 Zen                ██████████████████████████████████         742K ops/sec
+🥉 Solid Signals      █████████████████████████████              631K ops/sec
+ Preact Signals     ██████████████████                         380K ops/sec
  Jotai              ███                                        70K ops/sec
  Valtio             ███                                        64K ops/sec
  MobX               ██                                         36K ops/sec
@@ -304,10 +304,10 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Preact Signals | 928K | 0.001ms | 0.003ms | 1000 |
 | Zustand | 863K | 0.001ms | 0.004ms | 1000 |
 | Zen | 742K | 0.001ms | 0.004ms | 1000 |
 | Solid Signals | 631K | 0.002ms | 0.003ms | 1000 |
+| Preact Signals | 380K | 0.003ms | 0.014ms | 1000 |
 | Jotai | 70K | 0.014ms | 0.039ms | 1000 |
 | Valtio | 64K | 0.016ms | 0.040ms | 1000 |
 | MobX | 36K | 0.028ms | 0.066ms | 1000 |
@@ -317,9 +317,9 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 ```
 🥇 Zen                ████████████████████████████████████████   1.1M ops/sec
-🥈 Preact Signals     ██████████████████████████████████████     1.1M ops/sec
-🥉 Solid Signals      ████████████████████████████████████       997K ops/sec
- Zustand            █████████████████████████████              811K ops/sec
+🥈 Solid Signals      ████████████████████████████████████       997K ops/sec
+🥉 Zustand            █████████████████████████████              811K ops/sec
+ Preact Signals     ███████████                                295K ops/sec
  Jotai              ███                                        75K ops/sec
  Valtio             ██                                         57K ops/sec
  MobX               █                                          27K ops/sec
@@ -329,9 +329,9 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
 | Zen | 1.1M | 0.001ms | 0.004ms | 1000 |
-| Preact Signals | 1.1M | 0.001ms | 0.004ms | 1000 |
 | Solid Signals | 997K | 0.001ms | 0.003ms | 1000 |
 | Zustand | 811K | 0.001ms | 0.004ms | 1000 |
+| Preact Signals | 295K | 0.003ms | 0.011ms | 1000 |
 | Jotai | 75K | 0.013ms | 0.039ms | 1000 |
 | Valtio | 57K | 0.018ms | 0.044ms | 1000 |
 | MobX | 27K | 0.037ms | 0.087ms | 1000 |
@@ -340,22 +340,22 @@ Based on geometric mean of normalized scores across all 20 tests.
 #### Array Update
 
 ```
-🥇 Preact Signals     ████████████████████████████████████████   1.2M ops/sec
-🥈 Solid Signals      ██████████████████████████████             876K ops/sec
-🥉 Zustand            ███████████████████                        559K ops/sec
- Zen                █████████████                              372K ops/sec
- Valtio             ██                                         64K ops/sec
- Jotai              ██                                         60K ops/sec
+🥇 Solid Signals      ████████████████████████████████████████   876K ops/sec
+🥈 Zustand            ██████████████████████████                 559K ops/sec
+🥉 Zen                █████████████████                          372K ops/sec
+ Preact Signals     ██████████                                 225K ops/sec
+ Valtio             ███                                        64K ops/sec
+ Jotai              ███                                        60K ops/sec
  MobX               █                                          27K ops/sec
- Redux Toolkit                                                 13K ops/sec
+ Redux Toolkit      █                                          13K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Preact Signals | 1.2M | 0.001ms | 0.002ms | 1000 |
 | Solid Signals | 876K | 0.001ms | 0.004ms | 1000 |
 | Zustand | 559K | 0.002ms | 0.006ms | 1000 |
 | Zen | 372K | 0.003ms | 0.003ms | 1000 |
+| Preact Signals | 225K | 0.004ms | 0.012ms | 1000 |
 | Valtio | 64K | 0.016ms | 0.030ms | 1000 |
 | Jotai | 60K | 0.017ms | 0.042ms | 1000 |
 | MobX | 27K | 0.037ms | 0.090ms | 1000 |
@@ -367,7 +367,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 🥇 Zen                ████████████████████████████████████████   1.6M ops/sec
 🥈 Solid Signals      ████████████████████████████████           1.3M ops/sec
 🥉 Zustand            ██████████████████████████████             1.2M ops/sec
- Preact Signals     ████████████████                           641K ops/sec
+ Preact Signals     ████████                                   332K ops/sec
  Jotai              ██                                         100K ops/sec
  Valtio             ██                                         68K ops/sec
  Redux Toolkit      █                                          44K ops/sec
@@ -379,7 +379,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Zen | 1.6M | 0.001ms | 0.002ms | 1000 |
 | Solid Signals | 1.3M | 0.001ms | 0.002ms | 1000 |
 | Zustand | 1.2M | 0.001ms | 0.002ms | 1000 |
-| Preact Signals | 641K | 0.002ms | 0.009ms | 1000 |
+| Preact Signals | 332K | 0.003ms | 0.012ms | 1000 |
 | Jotai | 100K | 0.010ms | 0.028ms | 1000 |
 | Valtio | 68K | 0.015ms | 0.036ms | 1000 |
 | Redux Toolkit | 44K | 0.023ms | 0.051ms | 1000 |
@@ -392,8 +392,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Solid Signals      ████████████████████████████████████████   318K ops/sec
 🥈 Zen                █████████████████████████████████          264K ops/sec
-🥉 Preact Signals     ████████████████████████████████           252K ops/sec
- Zustand            ████████████████                           125K ops/sec
+🥉 Zustand            ████████████████                           125K ops/sec
+ Preact Signals     ████████████████                           124K ops/sec
  Valtio             █████                                      43K ops/sec
  MobX               ████                                       29K ops/sec
  Jotai              ██                                         15K ops/sec
@@ -404,8 +404,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Solid Signals | 318K | 0.003ms | 0.009ms | 1000 |
 | Zen | 264K | 0.004ms | 0.015ms | 1000 |
-| Preact Signals | 252K | 0.004ms | 0.009ms | 1000 |
 | Zustand | 125K | 0.008ms | 0.020ms | 1000 |
+| Preact Signals | 124K | 0.008ms | 0.024ms | 1000 |
 | Valtio | 43K | 0.023ms | 0.046ms | 1000 |
 | MobX | 29K | 0.034ms | 0.080ms | 1000 |
 | Jotai | 15K | 0.069ms | 0.137ms | 1000 |
@@ -416,8 +416,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Solid Signals      ████████████████████████████████████████   94K ops/sec
 🥈 Zen                █████████████████████████████████          78K ops/sec
-🥉 Preact Signals     ████████████████████████████████           75K ops/sec
- Zustand            █████████████████                          41K ops/sec
+🥉 Zustand            █████████████████                          41K ops/sec
+ Preact Signals     ███████████████                            35K ops/sec
  Valtio             ██████████                                 24K ops/sec
  MobX               █████████                                  21K ops/sec
  Jotai              ██                                         5K ops/sec
@@ -428,8 +428,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Solid Signals | 94K | 0.011ms | 0.022ms | 1000 |
 | Zen | 78K | 0.013ms | 0.028ms | 1000 |
-| Preact Signals | 75K | 0.013ms | 0.025ms | 1000 |
 | Zustand | 41K | 0.025ms | 0.056ms | 1000 |
+| Preact Signals | 35K | 0.029ms | 0.055ms | 1000 |
 | Valtio | 24K | 0.042ms | 0.095ms | 1000 |
 | MobX | 21K | 0.049ms | 0.108ms | 1000 |
 | Jotai | 5K | 0.189ms | 0.394ms | 1000 |
@@ -440,10 +440,10 @@ Based on geometric mean of normalized scores across all 20 tests.
 #### Simple Form (3 fields)
 
 ```
-🥇 Preact Signals     ████████████████████████████████████████   1.3M ops/sec
-🥈 Zen                █████████████████████████████████          1.1M ops/sec
-🥉 Solid Signals      █████████████████████████████              921K ops/sec
- Zustand            ████████████████                           518K ops/sec
+🥇 Preact Signals     ████████████████████████████████████████   1.2M ops/sec
+🥈 Zen                ███████████████████████████████████        1.1M ops/sec
+🥉 Solid Signals      ███████████████████████████████            921K ops/sec
+ Zustand            █████████████████                          518K ops/sec
  Valtio             ██                                         72K ops/sec
  Jotai              ██                                         52K ops/sec
  MobX               █                                          38K ops/sec
@@ -452,7 +452,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Preact Signals | 1.3M | 0.001ms | 0.002ms | 1000 |
+| Preact Signals | 1.2M | 0.001ms | 0.002ms | 1000 |
 | Zen | 1.1M | 0.001ms | 0.003ms | 1000 |
 | Solid Signals | 921K | 0.001ms | 0.006ms | 1000 |
 | Zustand | 518K | 0.002ms | 0.006ms | 1000 |
@@ -464,11 +464,11 @@ Based on geometric mean of normalized scores across all 20 tests.
 #### Complex Form (nested + array)
 
 ```
-🥇 Preact Signals     ████████████████████████████████████████   1.2M ops/sec
-🥈 Zen                ███████████████████████████████████████    1.1M ops/sec
-🥉 Solid Signals      ████████████████████████████████████       1.1M ops/sec
- Zustand            ████████████████████                       598K ops/sec
- Valtio             ██                                         71K ops/sec
+🥇 Zen                ████████████████████████████████████████   1.1M ops/sec
+🥈 Solid Signals      ██████████████████████████████████████     1.1M ops/sec
+🥉 Preact Signals     ████████████████████████████████           921K ops/sec
+ Zustand            █████████████████████                      598K ops/sec
+ Valtio             ███                                        71K ops/sec
  Jotai              ██                                         53K ops/sec
  MobX               █                                          36K ops/sec
  Redux Toolkit                                                 13K ops/sec
@@ -476,9 +476,9 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Preact Signals | 1.2M | 0.001ms | 0.002ms | 1000 |
 | Zen | 1.1M | 0.001ms | 0.003ms | 1000 |
 | Solid Signals | 1.1M | 0.001ms | 0.003ms | 1000 |
+| Preact Signals | 921K | 0.001ms | 0.003ms | 1000 |
 | Zustand | 598K | 0.002ms | 0.007ms | 1000 |
 | Valtio | 71K | 0.014ms | 0.026ms | 1000 |
 | Jotai | 53K | 0.019ms | 0.044ms | 1000 |
@@ -489,8 +489,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 ```
 🥇 Zen                ████████████████████████████████████████   1.6M ops/sec
-🥈 Preact Signals     ███████████████████████████████████        1.4M ops/sec
-🥉 Solid Signals      ██████████████████████████████████         1.4M ops/sec
+🥈 Solid Signals      ██████████████████████████████████         1.4M ops/sec
+🥉 Preact Signals     █████████████████████████████              1.2M ops/sec
  Zustand            ███████████████████                        778K ops/sec
  Valtio             ██                                         79K ops/sec
  Jotai              ██                                         66K ops/sec
@@ -501,8 +501,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
 | Zen | 1.6M | 0.001ms | 0.002ms | 1000 |
-| Preact Signals | 1.4M | 0.001ms | 0.002ms | 1000 |
 | Solid Signals | 1.4M | 0.001ms | 0.002ms | 1000 |
+| Preact Signals | 1.2M | 0.001ms | 0.004ms | 1000 |
 | Zustand | 778K | 0.001ms | 0.003ms | 1000 |
 | Valtio | 79K | 0.013ms | 0.030ms | 1000 |
 | Jotai | 66K | 0.015ms | 0.030ms | 1000 |
@@ -515,7 +515,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 🥇 Solid Signals      ████████████████████████████████████████   466K ops/sec
 🥈 Zen                ████████                                   94K ops/sec
 🥉 Zustand            ██████                                     68K ops/sec
- Preact Signals     ███                                        39K ops/sec
+ Preact Signals     ███                                        38K ops/sec
  Valtio             ██                                         26K ops/sec
  Redux Toolkit      ██                                         18K ops/sec
  Jotai              █                                          6K ops/sec
@@ -527,7 +527,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Solid Signals | 466K | 0.002ms | 0.005ms | 1000 |
 | Zen | 94K | 0.011ms | 0.025ms | 1000 |
 | Zustand | 68K | 0.015ms | 0.037ms | 1000 |
-| Preact Signals | 39K | 0.025ms | 0.058ms | 1000 |
+| Preact Signals | 38K | 0.026ms | 0.067ms | 1000 |
 | Valtio | 26K | 0.039ms | 0.096ms | 1000 |
 | Redux Toolkit | 18K | 0.055ms | 0.139ms | 1000 |
 | Jotai | 6K | 0.159ms | 0.442ms | 1000 |
@@ -541,7 +541,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 🥇 Solid Signals      ████████████████████████████████████████   259K ops/sec
 🥈 Zen                ██████████████████████                     145K ops/sec
 🥉 Zustand            ██████████████████████                     141K ops/sec
- Preact Signals     ████████                                   50K ops/sec
+ Preact Signals     ██████                                     37K ops/sec
  Redux Toolkit      ████                                       28K ops/sec
  Valtio             ███                                        21K ops/sec
  MobX               █                                          5K ops/sec
@@ -553,7 +553,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Solid Signals | 259K | 0.004ms | 0.006ms | 1000 |
 | Zen | 145K | 0.007ms | 0.010ms | 1000 |
 | Zustand | 141K | 0.007ms | 0.010ms | 1000 |
-| Preact Signals | 50K | 0.020ms | 0.041ms | 1000 |
+| Preact Signals | 37K | 0.027ms | 0.056ms | 1000 |
 | Redux Toolkit | 28K | 0.036ms | 0.075ms | 1000 |
 | Valtio | 21K | 0.048ms | 0.069ms | 1000 |
 | MobX | 5K | 0.184ms | 0.309ms | 1000 |
@@ -564,7 +564,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 ```
 🥇 Solid Signals      ████████████████████████████████████████   23K ops/sec
 🥈 Zen                █████████████████████████████████          19K ops/sec
-🥉 Preact Signals     ██████████████████████████████             17K ops/sec
+🥉 Preact Signals     █████████████████████████                  14K ops/sec
  MobX               █                                          662 ops/sec
  Zustand            █                                          515 ops/sec
  Valtio             █                                          413 ops/sec
@@ -576,7 +576,7 @@ Based on geometric mean of normalized scores across all 20 tests.
 |---------|---------|-----------|-----|----------|
 | Solid Signals | 23K | 0.044ms | 0.469ms | 1000 |
 | Zen | 19K | 0.054ms | 0.070ms | 1000 |
-| Preact Signals | 17K | 0.058ms | 0.074ms | 1000 |
+| Preact Signals | 14K | 0.071ms | 0.124ms | 1000 |
 | MobX | 662 | 1.510ms | 2.059ms | 1000 |
 | Zustand | 515 | 1.943ms | 2.477ms | 1000 |
 | Valtio | 413 | 2.420ms | 3.672ms | 1000 |
@@ -587,8 +587,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 
 ```
 🥇 Zen                ████████████████████████████████████████   85K ops/sec
-🥈 Zustand            ████████████████████████                   50K ops/sec
-🥉 Preact Signals     ██████████████████████                     46K ops/sec
+🥈 Preact Signals     ████████████████████████████               59K ops/sec
+🥉 Zustand            ████████████████████████                   50K ops/sec
  Solid Signals      █████████████████████                      45K ops/sec
  Jotai              ███████████████                            32K ops/sec
  MobX               ███                                        7K ops/sec
@@ -599,8 +599,8 @@ Based on geometric mean of normalized scores across all 20 tests.
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
 | Zen | 85K | 0.012ms | 0.028ms | 1000 |
+| Preact Signals | 59K | 0.017ms | 0.041ms | 1000 |
 | Zustand | 50K | 0.020ms | 0.046ms | 1000 |
-| Preact Signals | 46K | 0.022ms | 0.039ms | 1000 |
 | Solid Signals | 45K | 0.022ms | 0.037ms | 1000 |
 | Jotai | 32K | 0.031ms | 0.077ms | 1000 |
 | MobX | 7K | 0.138ms | 0.293ms | 1000 |
@@ -724,7 +724,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T02:46:05.534Z*
+*Generated on 2025-11-13T02:58:18.848Z*
 
 [⬆️ Back to Top](#state-management-benchmarks) • [⬅️ Main README](../../README.md)
 

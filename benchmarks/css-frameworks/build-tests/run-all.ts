@@ -7,7 +7,13 @@
  * 3. Bundle size impact
  */
 
-import { writeFileSync } from 'fs';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+import { readFileSync, writeFileSync, statSync, readdirSync } from 'fs';
+import { join } from 'path';
+import { gzipSync } from 'zlib';
+
+const execAsync = promisify(exec);
 
 interface BuildResult {
   name: string;
@@ -33,146 +39,198 @@ interface TestGroup {
   metricUnit: string;
 }
 
-// Placeholder implementation - will be replaced with actual build tests
-export async function runBuildTests(): Promise<{ groups: TestGroup[] }> {
-  console.log('🏗️  Running build tests...');
+interface FrameworkConfig {
+  name: string;
+  dir: string;
+  buildCommand: string;
+  cssPath: string; // Relative path from dist to CSS file
+  prepareBuild?: string; // Optional command to run before build
+}
 
-  // Build time measurements in milliseconds (lower is better)
+const frameworks: FrameworkConfig[] = [
+  {
+    name: 'Silk',
+    dir: 'build-tests/fixtures/silk',
+    buildCommand: 'npx vite build',
+    cssPath: 'assets/*.css',
+  },
+  {
+    name: 'Tailwind CSS',
+    dir: 'build-tests/fixtures/tailwind',
+    buildCommand: 'npx vite build',
+    cssPath: 'assets/*.css',
+  },
+  {
+    name: 'Panda CSS',
+    dir: 'build-tests/fixtures/panda',
+    buildCommand: 'npx vite build',
+    cssPath: 'assets/*.css',
+    prepareBuild: 'npx panda codegen',
+  },
+  {
+    name: 'UnoCSS',
+    dir: 'build-tests/fixtures/unocss',
+    buildCommand: 'npx vite build',
+    cssPath: 'assets/*.css',
+  },
+];
+
+function findCSSFile(distDir: string, pattern: string): string | null {
+  const assetsDir = join(distDir, 'assets');
+  try {
+    const files = readdirSync(assetsDir);
+    const cssFile = files.find(f => f.endsWith('.css'));
+    return cssFile ? join(assetsDir, cssFile) : null;
+  } catch {
+    return null;
+  }
+}
+
+async function measureBuild(config: FrameworkConfig, runs: number = 3): Promise<{ buildTimes: number[]; cssSize: number }> {
+  const buildTimes: number[] = [];
+  let cssSize = 0;
+
+  console.log(`\n📦 Building ${config.name}...`);
+
+  for (let i = 0; i < runs; i++) {
+    // Clean previous build
+    try {
+      await execAsync(`rm -rf ${config.dir}/dist`, { cwd: process.cwd() });
+    } catch {}
+
+    // Prepare build if needed (e.g., Panda codegen)
+    if (config.prepareBuild) {
+      await execAsync(config.prepareBuild, { cwd: config.dir });
+    }
+
+    // Measure build time
+    const startTime = performance.now();
+    try {
+      await execAsync(config.buildCommand, { cwd: config.dir });
+    } catch (error: any) {
+      console.error(`❌ Build failed for ${config.name}:`, error.message);
+      throw error;
+    }
+    const buildTime = performance.now() - startTime;
+    buildTimes.push(buildTime);
+
+    // Measure CSS size on last run
+    if (i === runs - 1) {
+      const distDir = join(config.dir, 'dist');
+      const cssFile = findCSSFile(distDir, config.cssPath);
+
+      if (cssFile) {
+        const cssContent = readFileSync(cssFile);
+        const gzipped = gzipSync(cssContent);
+        cssSize = gzipped.length;
+
+        console.log(`  ✓ Build ${i + 1}/${runs}: ${buildTime.toFixed(0)}ms`);
+        console.log(`  📊 CSS size: ${(cssSize / 1024).toFixed(2)} KB (gzipped)`);
+      } else {
+        // Some frameworks (like Panda CSS) don't output separate CSS files
+        // They use runtime or atomic CSS embedded in JS
+        console.log(`  ✓ Build ${i + 1}/${runs}: ${buildTime.toFixed(0)}ms`);
+        console.log(`  ℹ️  No separate CSS file (zero-runtime or atomic CSS)`);
+        cssSize = 0; // Mark as zero to indicate no separate CSS file
+      }
+    } else {
+      console.log(`  ✓ Build ${i + 1}/${runs}: ${buildTime.toFixed(0)}ms`);
+    }
+  }
+
+  return { buildTimes, cssSize };
+}
+
+function calculateStats(values: number[]) {
+  const sorted = values.slice().sort((a, b) => a - b);
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const min = sorted[0] || 0;
+  const max = sorted[sorted.length - 1] || 0;
+
+  const p75Idx = Math.floor(sorted.length * 0.75);
+  const p99Idx = Math.floor(sorted.length * 0.99);
+  const p995Idx = Math.floor(sorted.length * 0.995);
+  const p999Idx = Math.floor(sorted.length * 0.999);
+
+  return {
+    mean,
+    min,
+    max,
+    p75: sorted[p75Idx] || max,
+    p99: sorted[p99Idx] || max,
+    p995: sorted[p995Idx] || max,
+    p999: sorted[p999Idx] || max,
+  };
+}
+
+export async function runBuildTests(): Promise<{ groups: TestGroup[] }> {
+  console.log('🏗️  Running build tests...\n');
+  console.log('This will build each framework 3 times to get reliable measurements.');
+
+  const buildTimeResults: BuildResult[] = [];
+  const cssSizeResults: BuildResult[] = [];
+
+  // Measure each framework
+  for (const framework of frameworks) {
+    try {
+      const { buildTimes, cssSize } = await measureBuild(framework);
+      const buildStats = calculateStats(buildTimes);
+
+      // Build time result
+      buildTimeResults.push({
+        name: framework.name,
+        ...buildStats,
+        rme: 0,
+        samples: buildTimes.length,
+        rank: 0, // Will be set later
+        metricType: 'time',
+        metricUnit: 'ms',
+      });
+
+      // CSS size result
+      cssSizeResults.push({
+        name: framework.name,
+        mean: cssSize,
+        min: cssSize,
+        max: cssSize,
+        p75: cssSize,
+        p99: cssSize,
+        p995: cssSize,
+        p999: cssSize,
+        rme: 0,
+        samples: 1,
+        rank: 0, // Will be set later
+        metricType: 'size',
+        metricUnit: 'bytes',
+      });
+    } catch (error: any) {
+      console.error(`\n❌ Failed to measure ${framework.name}:`, error.message);
+    }
+  }
+
+  // Assign ranks (lower is better for both time and size)
+  buildTimeResults.sort((a, b) => a.mean - b.mean);
+  buildTimeResults.forEach((result, index) => {
+    result.rank = index + 1;
+  });
+
+  cssSizeResults.sort((a, b) => a.mean - b.mean);
+  cssSizeResults.forEach((result, index) => {
+    result.rank = index + 1;
+  });
+
   const buildTimes: TestGroup = {
     fullName: 'Cold Build Time (Small App)',
     metricType: 'time',
     metricUnit: 'ms',
-    benchmarks: [
-      {
-        name: 'Silk',
-        mean: 234,
-        min: 234,
-        max: 234,
-        p75: 234,
-        p99: 234,
-        p995: 234,
-        p999: 234,
-        rme: 0,
-        samples: 1,
-        rank: 1,
-        metricType: 'time',
-        metricUnit: 'ms',
-      },
-      {
-        name: 'Tailwind CSS',
-        mean: 678,
-        min: 678,
-        max: 678,
-        p75: 678,
-        p99: 678,
-        p995: 678,
-        p999: 678,
-        rme: 0,
-        samples: 1,
-        rank: 4,
-        metricType: 'time',
-        metricUnit: 'ms',
-      },
-      {
-        name: 'Panda CSS',
-        mean: 890,
-        min: 890,
-        max: 890,
-        p75: 890,
-        p99: 890,
-        p995: 890,
-        p999: 890,
-        rme: 0,
-        samples: 1,
-        rank: 3,
-        metricType: 'time',
-        metricUnit: 'ms',
-      },
-      {
-        name: 'UnoCSS',
-        mean: 456,
-        min: 456,
-        max: 456,
-        p75: 456,
-        p99: 456,
-        p995: 456,
-        p999: 456,
-        rme: 0,
-        samples: 1,
-        rank: 2,
-        metricType: 'time',
-        metricUnit: 'ms',
-      },
-    ],
+    benchmarks: buildTimeResults,
   };
 
-  // CSS output size in bytes (lower is better)
   const cssSize: TestGroup = {
     fullName: 'CSS Output Size (Small App - 10 components)',
     metricType: 'size',
     metricUnit: 'bytes',
-    benchmarks: [
-      {
-        name: 'Silk',
-        mean: 1800,
-        min: 1800,
-        max: 1800,
-        p75: 1800,
-        p99: 1800,
-        p995: 1800,
-        p999: 1800,
-        rme: 0,
-        samples: 1,
-        rank: 1,
-        metricType: 'size',
-        metricUnit: 'bytes',
-      },
-      {
-        name: 'Tailwind CSS',
-        mean: 12300,
-        min: 12300,
-        max: 12300,
-        p75: 12300,
-        p99: 12300,
-        p995: 12300,
-        p999: 12300,
-        rme: 0,
-        samples: 1,
-        rank: 4,
-        metricType: 'size',
-        metricUnit: 'bytes',
-      },
-      {
-        name: 'Panda CSS',
-        mean: 8100,
-        min: 8100,
-        max: 8100,
-        p75: 8100,
-        p99: 8100,
-        p995: 8100,
-        p999: 8100,
-        rme: 0,
-        samples: 1,
-        rank: 3,
-        metricType: 'size',
-        metricUnit: 'bytes',
-      },
-      {
-        name: 'UnoCSS',
-        mean: 6500,
-        min: 6500,
-        max: 6500,
-        p75: 6500,
-        p99: 6500,
-        p995: 6500,
-        p999: 6500,
-        rme: 0,
-        samples: 1,
-        rank: 2,
-        metricType: 'size',
-        metricUnit: 'bytes',
-      },
-    ],
+    benchmarks: cssSizeResults,
   };
 
   const results = {
@@ -185,7 +243,19 @@ export async function runBuildTests(): Promise<{ groups: TestGroup[] }> {
     JSON.stringify(results, null, 2)
   );
 
-  console.log('✅ Build tests complete');
+  console.log('\n✅ Build tests complete');
+  console.log('\n📊 Summary:');
+  console.log('\nBuild Times (faster is better):');
+  buildTimeResults.forEach((result, index) => {
+    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '  ';
+    console.log(`  ${medal} ${result.name}: ${result.mean.toFixed(0)}ms`);
+  });
+
+  console.log('\nCSS Sizes (smaller is better):');
+  cssSizeResults.forEach((result, index) => {
+    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '  ';
+    console.log(`  ${medal} ${result.name}: ${(result.mean / 1024).toFixed(2)} KB (gzipped)`);
+  });
 
   return results;
 }

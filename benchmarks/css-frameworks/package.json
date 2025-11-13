@@ -11,20 +11,22 @@
     "clean": "rm -rf results dist && mkdir -p results"
   },
   "dependencies": {
-    "@sylphx/silk": "^1.0.0",
-    "tailwindcss": "^3.4.15",
     "@pandacss/dev": "^1.4.3",
-    "unocss": "^0.65.3",
+    "@sylphx/silk": "^1.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.15",
+    "unocss": "^0.65.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tsx": "^4.20.6",
     "vite": "^6.0.7",
-    "vitest": "^4.0.7",
-    "tsx": "^4.20.6"
+    "vitest": "^4.0.7"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -1,0 +1,37 @@
+/* Silk CSS utilities - minimal example */
+/* In real usage, Silk would generate these at build time */
+
+.s-min-h-screen { min-height: 100vh; }
+.s-bg-gray-50 { background-color: #f9fafb; }
+.s-bg-white { background-color: #ffffff; }
+.s-bg-blue-500 { background-color: #3b82f6; }
+.hover\:s-bg-blue-600:hover { background-color: #2563eb; }
+.s-bg-gray-900 { background-color: #111827; }
+.s-text-gray-600 { color: #4b5563; }
+.s-text-gray-800 { color: #1f2937; }
+.s-text-gray-900 { color: #111827; }
+.s-text-white { color: #ffffff; }
+.s-p-4 { padding: 1rem; }
+.s-p-6 { padding: 1.5rem; }
+.s-py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.s-px-4 { padding-left: 1rem; padding-right: 1rem; }
+.s-pb-2 { padding-bottom: 0.5rem; }
+.s-mb-2 { margin-bottom: 0.5rem; }
+.s-mb-4 { margin-bottom: 1rem; }
+.s-mb-6 { margin-bottom: 1.5rem; }
+.s-mt-6 { margin-top: 1.5rem; }
+.s-shadow-sm { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); }
+.s-shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+.s-rounded { border-radius: 0.25rem; }
+.s-rounded-lg { border-radius: 0.5rem; }
+.s-text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.s-text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.s-font-bold { font-weight: 700; }
+.s-font-semibold { font-weight: 600; }
+.s-font-medium { font-weight: 500; }
+.s-transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.s-space-y-2 > * + * { margin-top: 0.5rem; }
+.s-border-b { border-bottom-width: 1px; }
+.s-border-gray-200 { border-color: #e5e7eb; }
+.last\:s-border-b-0:last-child { border-bottom-width: 0; }
+.s-text-center { text-align: center; }

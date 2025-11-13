@@ -314,6 +314,16 @@ export async function scaffoldCategory(options: ScaffoldOptions): Promise<void> 
   await writeFile(join(categoryPath, 'library-metadata.json'), libraryMetadata);
   console.log('   ✅ library-metadata.json');
 
+  // versions.json (initial empty state)
+  const versionsJson = JSON.stringify({
+    lastChecked: new Date().toISOString(),
+    lastBenchmarkRun: null,
+    testFilesHash: "",
+    libraries: {}
+  }, null, 2);
+  await writeFile(join(categoryPath, 'versions.json'), versionsJson);
+  console.log('   ✅ versions.json');
+
   // index.ts
   const indexTs = generateIndexTs(options);
   await writeFile(join(categoryPath, 'index.ts'), indexTs);

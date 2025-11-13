@@ -1,0 +1,47 @@
+{
+  "lastChecked": "2025-11-13T14:56:20.494Z",
+  "lastBenchmarkRun": null,
+  "testFilesHash": "3cbd2d92e022fbabd3f117108bd3834fb000eff52e3e2224993dec7365e97750",
+  "libraries": {
+    "zod": {
+      "current": "4.1.12",
+      "latest": "4.1.12",
+      "lastUpdated": "2025-11-13T14:56:15.355Z",
+      "size": {
+        "gzip": 54149,
+        "minified": 275455,
+        "lastChecked": "2025-11-13T14:56:16.198Z"
+      }
+    },
+    "yup": {
+      "current": "1.7.1",
+      "latest": "1.7.1",
+      "lastUpdated": "2025-11-13T14:56:15.562Z",
+      "size": {
+        "gzip": 13648,
+        "minified": 45144,
+        "lastChecked": "2025-11-13T14:56:19.048Z"
+      }
+    },
+    "joi": {
+      "current": "18.0.1",
+      "latest": "18.0.1",
+      "lastUpdated": "2025-11-13T14:56:15.752Z",
+      "size": {
+        "gzip": 53902,
+        "minified": 171850,
+        "lastChecked": "2025-11-13T14:56:19.919Z"
+      }
+    },
+    "superstruct": {
+      "current": "2.0.2",
+      "latest": "2.0.2",
+      "lastUpdated": "2025-11-13T14:56:15.977Z",
+      "size": {
+        "gzip": 3523,
+        "minified": 11979,
+        "lastChecked": "2025-11-13T14:56:20.494Z"
+      }
+    }
+  }
+}

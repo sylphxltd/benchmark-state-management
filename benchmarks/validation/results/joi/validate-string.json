@@ -4,12 +4,12 @@
   "packageName": "joi",
   "test": "Validate String",
   "group": "02-primitive-validation",
-  "timestamp": "2025-11-13T18:20:32.180Z",
+  "timestamp": "2025-11-13T23:48:40.764Z",
   "result": {
-    "opsPerSecond": 129065.96539100583,
-    "meanTime": 0.008572439999996278,
-    "variance": 0.0004322771516602746,
-    "p99": 0.016545460000297676,
+    "opsPerSecond": 268964.1223378353,
+    "meanTime": 0.0037179679999994166,
+    "variance": 0.000004536176897874526,
+    "p99": 0.013833000000005313,
     "samples": 1000
   }
 }

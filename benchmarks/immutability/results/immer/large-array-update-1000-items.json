@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "Large Array Update (1000 items)",
   "group": "05-large-scale",
-  "timestamp": "2025-11-13T23:37:29.974Z",
+  "timestamp": "2025-11-13T23:48:37.182Z",
   "result": {
-    "opsPerSecond": 1651.9164335421688,
-    "meanTime": 0.616170208000025,
-    "variance": 0.014476372519770282,
-    "p99": 1.3638217800003622,
+    "opsPerSecond": 4276.876737029422,
+    "meanTime": 0.23381548300000043,
+    "variance": 0.0028098493750687843,
+    "p99": 0.5194169999999758,
     "samples": 1000
   }
 }

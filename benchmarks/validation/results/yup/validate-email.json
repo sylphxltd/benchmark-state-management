@@ -4,12 +4,12 @@
   "packageName": "yup",
   "test": "Validate Email",
   "group": "02-primitive-validation",
-  "timestamp": "2025-11-13T18:20:32.180Z",
+  "timestamp": "2025-11-13T23:48:40.764Z",
   "result": {
-    "opsPerSecond": 259907.17732662603,
-    "meanTime": 0.0039544929999810845,
-    "variance": 7.568362341623067e-7,
-    "p99": 0.005931180000588938,
+    "opsPerSecond": 474817.80053940153,
+    "meanTime": 0.0021060710000003835,
+    "variance": 0.0000010304442482075107,
+    "p99": 0.005374999999986585,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "yup",
   "test": "Validate Nested Object",
   "group": "03-object-validation",
-  "timestamp": "2025-11-13T18:20:32.180Z",
+  "timestamp": "2025-11-13T23:48:40.764Z",
   "result": {
-    "opsPerSecond": 16944.642036502737,
-    "meanTime": 0.06566633299999466,
-    "variance": 0.0018432628893318885,
-    "p99": 0.12280716000063877,
+    "opsPerSecond": 38646.8769922459,
+    "meanTime": 0.025875312000000407,
+    "variance": 0.0011471356348675239,
+    "p99": 0.0472920000000272,
     "samples": 1000
   }
 }

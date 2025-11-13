@@ -71,9 +71,33 @@ Comprehensive performance benchmarks for React css-frameworks libraries.
 
 ## 📊 Overall Performance Rankings
 
-Based on **weighted geometric mean** of normalized scores across all 6 tests.
+> **🆕 Dual Ranking System**
+>
+> This category uses **hybrid weighting** that balances functional importance with data-driven stability.
+> Both ranking systems are shown below for comparison.
+>
+> - **Hybrid Weighted** (primary): Balances category importance × test stability
+> - **Variance-Based** (reference): Pure data-driven weighting
+>
+> See [Hybrid Weighting Analysis](../../HYBRID_WEIGHTING_ANALYSIS.md) for methodology.
 
-*Scores use variance-based weighting to prevent unstable tests from dominating results. See [Methodology](#-methodology) for details.*
+### 🎯 Hybrid Weighted Rankings
+
+Based on **two-tier weighted geometric mean** combining category importance with variance-based test weights.
+
+| Rank | Library | Overall Score | Relative Performance | Links |
+|:----:|---------|--------------|---------------------|:-----:|
+| 🥇 1 | **[Panda CSS](#)** | 0.0/100 | 0% of fastest | [📦](#) [📊](#) |
+| 🥈 2 | **[Silk](#)** | 0.0/100 | 0% of fastest | [📦](#) [📊](#) |
+| 🥉 3 | **[Tailwind CSS](#)** | 0.0/100 | 0% of fastest | [📦](#) [📊](#) |
+|  4 | **[UnoCSS](#)** | 0.0/100 | 0% of fastest | [📦](#) [📊](#) |
+
+
+*📦 = npm package • 📊 = bundle size*
+
+### 📐 Variance-Based Rankings (Reference)
+
+Pure data-driven weighting based on test stability across implementations.
 
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|
@@ -330,7 +354,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T23:39:15.933Z*
+*Generated on 2025-11-13T23:50:32.136Z*
 
 [⬆️ Back to Top](#css-frameworks-benchmarks) • [⬅️ Main README](../../README.md)
 

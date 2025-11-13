@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "Map - Large (100 items)",
   "group": "07-map-set",
-  "timestamp": "2025-11-13T23:37:29.974Z",
+  "timestamp": "2025-11-13T23:48:37.182Z",
   "result": {
-    "opsPerSecond": 14577.857289210839,
-    "meanTime": 0.07159336999988226,
-    "variance": 0.002618057277245952,
-    "p99": 0.10042050000178278,
+    "opsPerSecond": 30327.734540368663,
+    "meanTime": 0.03297311900000045,
+    "variance": 0.001192771550904091,
+    "p99": 0.04975000000013097,
     "samples": 1000
   }
 }

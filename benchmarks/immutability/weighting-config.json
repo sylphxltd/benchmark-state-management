@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/weighting-config.schema.json",
+  "version": "1.0",
+  "description": "Hybrid weighting configuration for immutability benchmarks",
+  "categoryWeights": {
+    "01-simple-updates": {
+      "weight": 0.30,
+      "rationale": "Simple object updates are most common operation"
+    },
+    "03-array-operations": {
+      "weight": 0.25,
+      "rationale": "Array manipulation is frequent in real applications"
+    },
+    "02-nested-updates": {
+      "weight": 0.20,
+      "rationale": "Nested object updates are common in complex state"
+    },
+    "04-deep-operations": {
+      "weight": 0.10,
+      "rationale": "Deep nesting less common but important for edge cases"
+    },
+    "05-large-scale": {
+      "weight": 0.10,
+      "rationale": "Large data structures test scalability"
+    },
+    "06-patches": {
+      "weight": 0.03,
+      "rationale": "JSON patches are specialized use case"
+    },
+    "07-map-set": {
+      "weight": 0.02,
+      "rationale": "Map/Set operations are specialized"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-11-13",
+    "author": "benchmark-methodology-team",
+    "reviewedBy": "architecture-team"
+  }
+}

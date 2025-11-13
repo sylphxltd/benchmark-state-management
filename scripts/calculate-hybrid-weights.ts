@@ -148,9 +148,20 @@ export function loadCategoryWeightsSync(categoryPath: string): Record<string, nu
 // Test Group Classification
 // ========================================
 
-function classifyTestGroup(testName: string): string {
+/**
+ * Classify test into category group
+ * First tries to extract from test.group property, falls back to name-based classification
+ */
+function classifyTestGroup(testName: string, groupName?: string): string {
+  // If group name is provided (from test.group), use it directly
+  if (groupName) {
+    return groupName.toLowerCase().replace(/\s+/g, '-');
+  }
+
+  // Otherwise, classify by test name (legacy support)
   const lower = testName.toLowerCase();
 
+  // State management patterns
   if (lower.includes('read') && !lower.includes('async')) {
     return 'basic-read';
   }
@@ -163,17 +174,70 @@ function classifyTestGroup(testName: string): string {
   if (lower.includes('stress') || lower.includes('extreme') || lower.includes('high-frequency') || lower.includes('moderate')) {
     return 'performance-stress';
   }
-  if (lower.includes('shallow') || lower.includes('deep') || lower.includes('nested')) {
-    return 'advanced-operations';
-  }
   if (lower.includes('async')) {
     return 'async-operations';
   }
-  if (lower.includes('todo') || lower.includes('form') || lower.includes('counter')) {
+  if (lower.includes('todo') || lower.includes('form') || lower.includes('counter') || lower.includes('cache') || lower.includes('memory')) {
     return 'real-world';
   }
 
-  // Default to advanced operations
+  // Router patterns
+  if (lower.includes('static') || lower.includes('simple')) {
+    return '01-basic-routes';
+  }
+  if (lower.includes('dynamic') || lower.includes('param')) {
+    return '02-dynamic-routes';
+  }
+  if (lower.includes('wildcard') || lower.includes('optional')) {
+    return '03-advanced-routes';
+  }
+  if (lower.includes('mixed') || lower.includes('sequential') || lower.includes('realistic')) {
+    return '04-real-world';
+  }
+
+  // Immutability patterns
+  if (lower.includes('simple') && lower.includes('update')) {
+    return '01-simple-updates';
+  }
+  if (lower.includes('nested') && !lower.includes('deep')) {
+    return '02-nested-updates';
+  }
+  if (lower.includes('array') || lower.includes('push') || lower.includes('remove')) {
+    return '03-array-operations';
+  }
+  if (lower.includes('deep')) {
+    return '04-deep-operations';
+  }
+  if (lower.includes('large')) {
+    return '05-large-scale';
+  }
+  if (lower.includes('patch')) {
+    return '06-patches';
+  }
+  if (lower.includes('map') || lower.includes('set')) {
+    return '07-map-set';
+  }
+
+  // Validation patterns
+  if (lower.includes('schema')) {
+    return '01-schema-creation';
+  }
+  if (lower.includes('string') || lower.includes('number') || lower.includes('boolean') || lower.includes('primitive')) {
+    return '02-primitive-validation';
+  }
+  if (lower.includes('object')) {
+    return '03-object-validation';
+  }
+  if (lower.includes('error')) {
+    return '04-error-handling';
+  }
+
+  // CSS frameworks
+  if (lower.includes('build')) {
+    return '01-build-performance';
+  }
+
+  // Default fallback
   return 'advanced-operations';
 }
 
@@ -247,7 +311,9 @@ export function calculateHybridWeights(
     const p90Factor = percentile90(factors);
     const rawWeight = 1 / p90Factor;
 
-    const category = classifyTestGroup(testName);
+    // Get group name from first test result
+    const groupName = testResults[0]?.group;
+    const category = classifyTestGroup(testName, groupName);
 
     testVarianceData.push({
       testName,

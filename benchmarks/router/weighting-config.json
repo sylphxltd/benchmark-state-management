@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/weighting-config.schema.json",
+  "version": "1.0",
+  "description": "Hybrid weighting configuration for router benchmarks",
+  "categoryWeights": {
+    "01-basic-routes": {
+      "weight": 0.40,
+      "rationale": "Static and simple routes are most common in real applications"
+    },
+    "02-dynamic-routes": {
+      "weight": 0.30,
+      "rationale": "Dynamic params are core router functionality"
+    },
+    "04-real-world": {
+      "weight": 0.20,
+      "rationale": "Mixed patterns and realistic usage scenarios"
+    },
+    "03-advanced-routes": {
+      "weight": 0.10,
+      "rationale": "Optional params and wildcards are less common"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-11-13",
+    "author": "benchmark-methodology-team",
+    "reviewedBy": "architecture-team"
+  }
+}

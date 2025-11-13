@@ -4,12 +4,12 @@
   "packageName": "superstruct",
   "test": "Validate Number",
   "group": "02-primitive-validation",
-  "timestamp": "2025-11-13T18:20:32.180Z",
+  "timestamp": "2025-11-13T23:48:40.764Z",
   "result": {
-    "opsPerSecond": 1091628.1293479358,
-    "meanTime": 0.001004025999978694,
-    "variance": 2.743799432776343e-7,
-    "p99": 0.0031379500002640254,
+    "opsPerSecond": 1360185.2028177285,
+    "meanTime": 0.0007351939999997228,
+    "variance": 0.0000021763779282928074,
+    "p99": 0.00329200000001606,
     "samples": 1000
   }
 }

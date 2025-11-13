@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/weighting-config.schema.json",
+  "version": "1.0",
+  "description": "Hybrid weighting configuration for validation benchmarks",
+  "categoryWeights": {
+    "03-object-validation": {
+      "weight": 0.45,
+      "rationale": "Object validation is primary use case for schema validators"
+    },
+    "02-primitive-validation": {
+      "weight": 0.30,
+      "rationale": "Primitive type checks are fundamental building blocks"
+    },
+    "04-error-handling": {
+      "weight": 0.15,
+      "rationale": "Error handling quality impacts developer experience"
+    },
+    "01-schema-creation": {
+      "weight": 0.10,
+      "rationale": "Schema creation is one-time setup, less performance critical"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-11-13",
+    "author": "benchmark-methodology-team",
+    "reviewedBy": "architecture-team"
+  }
+}

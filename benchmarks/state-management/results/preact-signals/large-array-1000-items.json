@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:05:19.735Z",
+  "timestamp": "2025-11-13T21:08:42.068Z",
   "result": {
-    "opsPerSecond": 127845.91143067108,
-    "meanTime": 0.009897166999973705,
-    "variance": 0.0005014906317646768,
-    "p99": 0.02717270000153803,
+    "opsPerSecond": 218680.8231984524,
+    "meanTime": 0.004658029999984137,
+    "variance": 0.0000010790253142837079,
+    "p99": 0.007066699997376414,
     "samples": 1000
   }
 }

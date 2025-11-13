@@ -4,12 +4,12 @@
   "packageName": "@sylphx/craft",
   "test": "Map - Update Nested Value",
   "group": "07-map-set",
-  "timestamp": "2025-11-13T21:05:15.138Z",
+  "timestamp": "2025-11-13T21:08:52.692Z",
   "result": {
-    "opsPerSecond": 1297469.9735787886,
-    "meanTime": 0.0008198700000393728,
-    "variance": 1.942312223934975e-7,
-    "p99": 0.001613400000351248,
+    "opsPerSecond": 1361622.9697067013,
+    "meanTime": 0.0007843500000708445,
+    "variance": 1.9222833780057218e-7,
+    "p99": 0.0015731999977651866,
     "samples": 1000
   }
 }

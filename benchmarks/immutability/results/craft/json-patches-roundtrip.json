@@ -4,12 +4,12 @@
   "packageName": "@sylphx/craft",
   "test": "JSON Patches - Roundtrip",
   "group": "06-patches",
-  "timestamp": "2025-11-13T21:05:15.138Z",
+  "timestamp": "2025-11-13T21:08:52.692Z",
   "result": {
-    "opsPerSecond": 289474.18882418395,
-    "meanTime": 0.0035478470000089146,
-    "variance": 5.778675111246564e-7,
-    "p99": 0.006303890001909166,
+    "opsPerSecond": 274368.7209802131,
+    "meanTime": 0.0037366659999206603,
+    "variance": 7.913346011099807e-7,
+    "p99": 0.006396499999318617,
     "samples": 1000
   }
 }

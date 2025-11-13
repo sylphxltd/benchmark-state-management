@@ -4,12 +4,12 @@
   "packageName": "seamless-immutable",
   "test": "Simple Object Update",
   "group": "01-simple-updates",
-  "timestamp": "2025-11-13T21:05:15.138Z",
+  "timestamp": "2025-11-13T21:08:52.692Z",
   "result": {
-    "opsPerSecond": 288682.8879181708,
-    "meanTime": 0.0035289640000028158,
-    "variance": 6.287851558754481e-7,
-    "p99": 0.005672399999893968,
+    "opsPerSecond": 287743.8705140286,
+    "meanTime": 0.003544621000000916,
+    "variance": 6.204011985582605e-7,
+    "p99": 0.006291500000143059,
     "samples": 1000
   }
 }

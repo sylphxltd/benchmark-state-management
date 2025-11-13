@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:07:44.415Z",
+  "timestamp": "2025-11-13T21:08:42.068Z",
   "result": {
-    "opsPerSecond": 9649249.771894401,
-    "meanTime": 0.00010363499998857151,
-    "variance": 1.0889895673412119e-7,
-    "p99": 0.00029200000017226557,
+    "opsPerSecond": 19729108.55457071,
+    "meanTime": 0.00005102200001419988,
+    "variance": 2.3050566968732988e-11,
+    "p99": 0.000060999998822808266,
     "samples": 1000
   }
 }

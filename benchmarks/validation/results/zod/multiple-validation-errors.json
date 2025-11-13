@@ -4,12 +4,12 @@
   "packageName": "zod",
   "test": "Multiple Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:05:47.110Z",
+  "timestamp": "2025-11-13T17:18:23.341Z",
   "result": {
-    "opsPerSecond": 8917.946092185732,
-    "meanTime": 0.11735285899998599,
-    "variance": 0.0034698414157904862,
-    "p99": 0.21647597000051966,
+    "opsPerSecond": 9324.990304756837,
+    "meanTime": 0.11149119899995276,
+    "variance": 0.0029845137218832683,
+    "p99": 0.1844614200013529,
     "samples": 1000
   }
 }

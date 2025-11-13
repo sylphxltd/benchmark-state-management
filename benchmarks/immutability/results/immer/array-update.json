@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "Array Update",
   "group": "03-array-operations",
-  "timestamp": "2025-11-13T17:05:50.895Z",
+  "timestamp": "2025-11-13T17:18:23.221Z",
   "result": {
-    "opsPerSecond": 217130.74175062458,
-    "meanTime": 0.004693412999988141,
-    "variance": 9.188300624278301e-7,
-    "p99": 0.007922120000675931,
+    "opsPerSecond": 236587.34991787534,
+    "meanTime": 0.004320240000000922,
+    "variance": 9.913104168732218e-7,
+    "p99": 0.007675599998929101,
     "samples": 1000
   }
 }

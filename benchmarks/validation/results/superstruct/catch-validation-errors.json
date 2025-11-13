@@ -4,12 +4,12 @@
   "packageName": "superstruct",
   "test": "Catch Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:05:47.110Z",
+  "timestamp": "2025-11-13T17:18:23.341Z",
   "result": {
-    "opsPerSecond": 116597.67321774058,
-    "meanTime": 0.008862626999985877,
-    "variance": 0.000004921870516299348,
-    "p99": 0.021452410000183587,
+    "opsPerSecond": 107365.4449525637,
+    "meanTime": 0.011366791999935231,
+    "variance": 0.0006312102888116507,
+    "p99": 0.029252519999972703,
     "samples": 1000
   }
 }

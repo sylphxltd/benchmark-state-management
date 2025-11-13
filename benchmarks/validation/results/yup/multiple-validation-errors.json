@@ -4,12 +4,12 @@
   "packageName": "yup",
   "test": "Multiple Validation Errors",
   "group": "04-error-handling",
-  "timestamp": "2025-11-13T17:05:47.110Z",
+  "timestamp": "2025-11-13T17:18:23.341Z",
   "result": {
-    "opsPerSecond": 8698.964291778304,
-    "meanTime": 0.12476973799999178,
-    "variance": 0.003149382509415509,
-    "p99": 0.19854731999967043,
+    "opsPerSecond": 11078.464307650045,
+    "meanTime": 0.09383716299998196,
+    "variance": 0.0053683737681566686,
+    "p99": 0.1542502400005651,
     "samples": 1000
   }
 }

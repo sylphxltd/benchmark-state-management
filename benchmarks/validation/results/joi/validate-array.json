@@ -4,12 +4,12 @@
   "packageName": "joi",
   "test": "Validate Array",
   "group": "03-object-validation",
-  "timestamp": "2025-11-13T17:05:47.110Z",
+  "timestamp": "2025-11-13T17:18:23.341Z",
   "result": {
-    "opsPerSecond": 16959.66813091492,
-    "meanTime": 0.06086313299998437,
-    "variance": 0.0012428879885216899,
-    "p99": 0.08540282000107254,
+    "opsPerSecond": 16681.35315229796,
+    "meanTime": 0.06249308100000235,
+    "variance": 0.0020489368105319965,
+    "p99": 0.09498750999884577,
     "samples": 1000
   }
 }

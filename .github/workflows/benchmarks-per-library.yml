@@ -48,10 +48,24 @@ jobs:
           echo "✓ Version check complete"
 
       - name: Run benchmarks
+        if: steps.check.outputs.has_updates == 'true'
         run: |
           echo "🚀 Running benchmarks..."
           cd benchmarks/state-management
-          npm run benchmark
+
+          # Get updated libraries from check step
+          UPDATED_LIBS='${{ steps.check.outputs.updated_libs }}'
+
+          # If specific libraries were updated, only benchmark those
+          if [ -n "$UPDATED_LIBS" ] && [ "$UPDATED_LIBS" != "[]" ]; then
+            LIBS=$(echo "$UPDATED_LIBS" | jq -r 'join(",")')
+            echo "📦 Updated libraries: $LIBS"
+            npm run benchmark -- --libraries="$LIBS"
+          else
+            echo "📝 Test files changed, running all benchmarks"
+            npm run benchmark
+          fi
+
           echo "✓ Benchmarks complete"
 
       - name: Generate category README

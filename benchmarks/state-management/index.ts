@@ -199,19 +199,55 @@ export const tests = {
 };
 
 // ============================================================================
-// 4. Main Entry Point
+// 4. Package Name to Library File Mapping
+// ============================================================================
+
+const PACKAGE_TO_LIBRARY: Record<string, string> = {
+  '@sylphx/zen': 'zen',
+  'solid-js': 'solid-js',
+  'jotai': 'jotai',
+  '@preact/signals': 'preact-signals',
+  'zustand': 'zustand',
+  'valtio': 'valtio',
+  'mobx': 'mobx',
+  '@reduxjs/toolkit': 'redux-toolkit',
+};
+
+const ALL_LIBRARIES = Object.values(PACKAGE_TO_LIBRARY);
+
+// ============================================================================
+// 5. Main Entry Point
 // ============================================================================
 
 async function main() {
+  // Parse CLI arguments for selective library benchmarking
+  const librariesArg = process.argv.find((arg) => arg.startsWith('--libraries='));
+  const libraryFilter = librariesArg?.split('=')[1]?.split(',').filter(Boolean) || null;
+
+  // Convert package names to library file names
+  let librariesToRun: string[];
+  if (libraryFilter) {
+    librariesToRun = libraryFilter
+      .map((pkg) => PACKAGE_TO_LIBRARY[pkg])
+      .filter(Boolean);
+
+    if (librariesToRun.length === 0) {
+      console.error('❌ No valid libraries specified');
+      console.error(`   Received: ${libraryFilter.join(', ')}`);
+      console.error(`   Valid packages: ${Object.keys(PACKAGE_TO_LIBRARY).join(', ')}`);
+      process.exit(1);
+    }
+
+    console.log(`🎯 Running benchmarks for: ${librariesToRun.join(', ')}\n`);
+  } else {
+    librariesToRun = ALL_LIBRARIES;
+    console.log('🎯 Running benchmarks for all libraries\n');
+  }
+
   // Import libraries AFTER category/groups/tests are defined
-  await import('./libraries/jotai');
-  await import('./libraries/zustand');
-  await import('./libraries/redux-toolkit');
-  await import('./libraries/mobx');
-  await import('./libraries/valtio');
-  await import('./libraries/preact-signals');
-  await import('./libraries/solid-js');
-  await import('./libraries/zen');
+  for (const lib of librariesToRun) {
+    await import(`./libraries/${lib}`);
+  }
 
   // Print summary
   category.printSummary();

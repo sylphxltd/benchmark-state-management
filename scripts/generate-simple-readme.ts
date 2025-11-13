@@ -67,6 +67,9 @@ try {
 
 // Load versions data (includes bundle sizes)
 interface VersionsFile {
+  lastChecked: string;
+  lastBenchmarkRun: string | null;
+  testFilesHash: string;
   libraries: {
     [key: string]: {
       current: string;
@@ -79,7 +82,7 @@ interface VersionsFile {
   };
 }
 
-let versions: VersionsFile = { libraries: {} };
+let versions: VersionsFile = { lastChecked: new Date().toISOString(), lastBenchmarkRun: null, testFilesHash: '', libraries: {} };
 try {
   versions = JSON.parse(readFileSync(versionsPath, 'utf-8'));
   console.log(`✓ Loaded version data with bundle sizes`);
@@ -89,14 +92,19 @@ try {
 
 // Load all library results from new folder structure
 // results/zen/*.json, results/solid-js/*.json, etc.
-const libraryDirs = readdirSync(resultsPath, { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
-  .map(dirent => dirent.name)
-  .sort();
+let libraryDirs: string[] = [];
+
+// Check if results directory exists
+const { existsSync } = require('fs');
+if (existsSync(resultsPath)) {
+  libraryDirs = readdirSync(resultsPath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+    .sort();
+}
 
 if (libraryDirs.length === 0) {
-  console.error('❌ No benchmark results found');
-  process.exit(1);
+  console.warn('⚠️  No benchmark results found yet. Generating README with library metadata only.');
 }
 
 // Load results for each library
@@ -236,19 +244,115 @@ const categoryTitle = categoryName
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
   .join(' ');
 
+// Prepare header badge values with fallbacks for when there are no results
+const lastUpdatedDate = libraries.length > 0
+  ? new Date(libraries[0].timestamp).toLocaleDateString('en-US', {
+      year: 'numeric', month: 'short', day: 'numeric'
+    }).replace(/ /g, '%20')
+  : new Date(versions.lastChecked).toLocaleDateString('en-US', {
+      year: 'numeric', month: 'short', day: 'numeric'
+    }).replace(/ /g, '%20');
+
+const libraryCount = libraries.length > 0
+  ? libraries.length
+  : Object.keys(metadata.libraries).length;
+
+const testCount = libraries.length > 0
+  ? libraries[0].results.length
+  : 'TBD';
+
 // Generate README
-let readme = `<div align="center">
+let readme = '';
+
+// If no results yet, generate a simplified README
+if (libraries.length === 0) {
+  readme = `<div align="center">
+
+# ${categoryTitle} Benchmarks
+
+Comprehensive performance benchmarks for ${categoryName} libraries.
+
+[![CI Status](https://img.shields.io/github/actions/workflow/status/SylphxAI/benchmark/benchmarks-per-library.yml?branch=main&label=Benchmarks&style=flat-square)](https://github.com/SylphxAI/benchmark/actions)
+[![Last Updated](https://img.shields.io/badge/Updated-${lastUpdatedDate}-blue?style=flat-square)](https://github.com/SylphxAI/benchmark)
+[![Libraries](https://img.shields.io/badge/Libraries-${libraryCount}-green?style=flat-square)](#-libraries-tested)
+
+[⬅️ Back to Main](../../README.md) • [📊 All Categories](../../README.md#-benchmark-categories) • [🚀 Run Locally](#-run-locally)
+
+</div>
+
+---
+
+## ⏳ Benchmark Results Pending
+
+Benchmark tests have not been run yet for this category. Results will be available once the automated benchmarks complete.
+
+---
+
+## 📚 Libraries Tested
+
+${Object.entries(metadata.libraries).map(([libId, lib]) => {
+  const versionData = versions.libraries[libId];
+  const bundleSize = versionData?.size
+    ? '**' + (versionData.size.gzip / 1024).toFixed(2) + ' KB** (gzip)'
+    : 'TBD';
+
+  return '### [' + lib.displayName + '](' + lib.url + ')\n\n' +
+    '- **npm**: [' + lib.npm + '](https://www.npmjs.com/package/' + lib.npm + ')\n' +
+    '- **Version**: ' + (versionData?.current || 'TBD') + '\n' +
+    '- **Bundle Size**: ' + bundleSize + '\n' +
+    '- **Description**: ' + lib.description +
+    '\n';
+}).join('\n')}
+
+---
+
+## 🚀 Run Locally
+
+Want to run these benchmarks yourself? Follow these steps:
+
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/SylphxAI/benchmark.git
+cd benchmark
+
+# Install root dependencies
+npm install
+
+# Navigate to this category
+cd ${relativeCategoryPath}
+
+# Install category dependencies
+npm install
+
+# Run benchmarks
+npm run benchmark
+
+# Generate README with results
+bun run ../../scripts/generate-simple-readme.ts .
+\`\`\`
+
+---
+
+<div align="center">
+
+**[⬆ Back to Top](#${categoryTitle.toLowerCase().replace(/ /g, '-')}-benchmarks)**
+
+Made with ❤️ by [Sylph](https://github.com/SylphxAI)
+
+</div>
+`;
+} else {
+  // Generate full README with results
+  readme = `<div align="center">
 
 # ${categoryTitle} Benchmarks
 
 Comprehensive performance benchmarks for React ${categoryName} libraries.
 
 [![CI Status](https://img.shields.io/github/actions/workflow/status/SylphxAI/benchmark/benchmarks-per-library.yml?branch=main&label=Benchmarks&style=flat-square)](https://github.com/SylphxAI/benchmark/actions)
-[![Last Updated](https://img.shields.io/badge/Updated-${new Date(libraries[0].timestamp).toLocaleDateString('en-US', {
-  year: 'numeric', month: 'short', day: 'numeric'
-}).replace(/ /g, '%20')}-blue?style=flat-square)](https://github.com/SylphxAI/benchmark)
-[![Libraries](https://img.shields.io/badge/Libraries-${libraries.length}-green?style=flat-square)](#-libraries-tested)
-[![Tests](https://img.shields.io/badge/Tests-${libraries[0].results.length}-orange?style=flat-square)](#-test-coverage)
+[![Last Updated](https://img.shields.io/badge/Updated-${lastUpdatedDate}-blue?style=flat-square)](https://github.com/SylphxAI/benchmark)
+[![Libraries](https://img.shields.io/badge/Libraries-${libraryCount}-green?style=flat-square)](#-libraries-tested)
+[![Tests](https://img.shields.io/badge/Tests-${testCount}-orange?style=flat-square)](#-test-coverage)
 
 [⬅️ Back to Main](../../README.md) • [📊 All Categories](../../README.md#-benchmark-categories) • [🔬 Methodology](#-methodology) • [🚀 Run Locally](#-run-locally)
 
@@ -534,14 +638,21 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 </div>
 `;
+}
 
 // Write README
 const readmePath = join(categoryPath, 'README.md');
 writeFileSync(readmePath, readme);
 
 console.log(`✅ Generated ${readmePath}\n`);
-console.log(`📊 Summary:`);
-console.log(`   - ${libraries.length} libraries`);
-console.log(`   - ${groupedByGroup.size} test groups`);
-console.log(`   - ${libraries[0].results.length} tests per library`);
-console.log(`   - ${libraries[0].results.length * libraries.length} total benchmark runs`);
+if (libraries.length > 0) {
+  console.log(`📊 Summary:`);
+  console.log(`   - ${libraries.length} libraries`);
+  console.log(`   - ${groupedByGroup.size} test groups`);
+  console.log(`   - ${libraries[0].results.length} tests per library`);
+  console.log(`   - ${libraries[0].results.length * libraries.length} total benchmark runs`);
+} else {
+  console.log(`📊 Summary:`);
+  console.log(`   - ${Object.keys(metadata.libraries).length} libraries configured`);
+  console.log(`   - No benchmark results yet (pending first run)`);
+}

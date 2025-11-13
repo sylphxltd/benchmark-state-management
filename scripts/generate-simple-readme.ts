@@ -46,6 +46,10 @@ interface MetadataFile {
 
 // Get category path
 const categoryPath = process.argv[2] || 'benchmarks/state-management';
+// Convert to relative path for README (extract benchmarks/<category>)
+const relativeCategoryPath = categoryPath.includes('/benchmarks/')
+  ? categoryPath.substring(categoryPath.indexOf('/benchmarks/') + 1)
+  : categoryPath;
 const resultsPath = join(categoryPath, 'results');
 const metadataPath = join(categoryPath, 'library-metadata.json');
 const versionsPath = join(categoryPath, 'versions.json');
@@ -449,7 +453,7 @@ cd benchmark
 npm install
 
 # Navigate to this category
-cd ${categoryPath}
+cd ${relativeCategoryPath}
 
 # Install category dependencies
 npm install

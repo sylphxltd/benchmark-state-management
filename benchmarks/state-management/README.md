@@ -657,7 +657,7 @@ cd benchmark
 npm install
 
 # Navigate to this category
-cd /home/runner/work/benchmark/benchmark/benchmarks/state-management
+cd benchmarks/state-management
 
 # Install category dependencies
 npm install
@@ -724,7 +724,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T14:29:20.798Z*
+*Generated on 2025-11-13T14:30:32.954Z*
 
 [⬆️ Back to Top](#state-management-benchmarks) • [⬅️ Main README](../../README.md)
 

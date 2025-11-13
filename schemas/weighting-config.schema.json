@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Benchmark Weighting Configuration",
+  "description": "Configuration for hybrid weighting system in benchmark categories",
+  "type": "object",
+  "required": ["version", "categoryWeights"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Configuration schema version",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of this configuration"
+    },
+    "categoryWeights": {
+      "type": "object",
+      "description": "Weights for each test category/group",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "object",
+          "required": ["weight"],
+          "properties": {
+            "weight": {
+              "type": "number",
+              "description": "Category weight (must sum to 1.0 across all categories)",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "rationale": {
+              "type": "string",
+              "description": "Explanation for this weight value"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "lastUpdated": {
+          "type": "string",
+          "format": "date"
+        },
+        "author": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

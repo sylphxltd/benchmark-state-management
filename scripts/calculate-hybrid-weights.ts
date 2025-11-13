@@ -24,18 +24,12 @@ import type {
 // ========================================
 
 /**
- * Category-level weights based on functional importance
+ * DEFAULT category-level weights (state-management specific)
  *
- * Rationale:
- * - basic-read (35%): Most common operation in real apps
- * - reactivity-patterns (15%): Core state management functionality (increased from data-driven 5.9%)
- * - performance-stress (15%): Critical for high-load scenarios
- * - advanced-operations (15%): Complex use cases
- * - basic-write (10%): Less frequent but important
- * - real-world (5%): Integration scenarios
- * - async-operations (5%): Specialized patterns
+ * Used as fallback when no weighting-config.json is provided.
+ * For production use, create weighting-config.json in your category folder.
  */
-export const CATEGORY_WEIGHTS: Record<string, number> = {
+export const DEFAULT_CATEGORY_WEIGHTS: Record<string, number> = {
   'basic-read': 0.35,
   'reactivity-patterns': 0.15,
   'performance-stress': 0.15,
@@ -45,10 +39,109 @@ export const CATEGORY_WEIGHTS: Record<string, number> = {
   'async-operations': 0.05,
 };
 
-// Validate category weights sum to 1.0
-const categoryWeightSum = Object.values(CATEGORY_WEIGHTS).reduce((a, b) => a + b, 0);
-if (Math.abs(categoryWeightSum - 1.0) > 0.001) {
-  throw new Error(`Category weights must sum to 1.0, got ${categoryWeightSum}`);
+/**
+ * Load category weights from weighting-config.json
+ * Falls back to DEFAULT_CATEGORY_WEIGHTS if config not found
+ */
+export async function loadCategoryWeights(
+  categoryPath: string
+): Promise<Record<string, number>> {
+  try {
+    const { readFile } = await import('fs/promises');
+    const { join } = await import('path');
+
+    const configPath = join(categoryPath, 'weighting-config.json');
+    const configContent = await readFile(configPath, 'utf-8');
+    const config = JSON.parse(configContent);
+
+    if (!config.categoryWeights) {
+      console.warn('⚠️  weighting-config.json missing categoryWeights, using defaults');
+      return DEFAULT_CATEGORY_WEIGHTS;
+    }
+
+    // Extract weights from config (ignore rationale)
+    const weights: Record<string, number> = {};
+    for (const [key, value] of Object.entries(config.categoryWeights)) {
+      if (typeof value === 'object' && value !== null && 'weight' in value) {
+        weights[key] = (value as any).weight;
+      }
+    }
+
+    // Validate weights sum to 1.0
+    const sum = Object.values(weights).reduce((a, b) => a + b, 0);
+    if (Math.abs(sum - 1.0) > 0.001) {
+      throw new Error(`Category weights must sum to 1.0, got ${sum}`);
+    }
+
+    console.log(`✓ Loaded hybrid weighting config with ${Object.keys(weights).length} categories`);
+    return weights;
+
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
+      // Config file not found - use defaults silently
+      return DEFAULT_CATEGORY_WEIGHTS;
+    }
+    throw error;
+  }
+}
+
+/**
+ * Check if hybrid weighting is configured for a category
+ */
+export async function hasHybridWeightingConfig(categoryPath: string): Promise<boolean> {
+  try {
+    const { access } = await import('fs/promises');
+    const { join } = await import('path');
+    const configPath = join(categoryPath, 'weighting-config.json');
+    await access(configPath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Sync version: Load category weights from weighting-config.json
+ * Falls back to DEFAULT_CATEGORY_WEIGHTS if config not found
+ */
+export function loadCategoryWeightsSync(categoryPath: string): Record<string, number> | null {
+  try {
+    const { readFileSync } = require('fs');
+    const { join } = require('path');
+
+    const configPath = join(categoryPath, 'weighting-config.json');
+    const configContent = readFileSync(configPath, 'utf-8');
+    const config = JSON.parse(configContent);
+
+    if (!config.categoryWeights) {
+      console.warn('⚠️  weighting-config.json missing categoryWeights');
+      return null;
+    }
+
+    // Extract weights from config (ignore rationale)
+    const weights: Record<string, number> = {};
+    for (const [key, value] of Object.entries(config.categoryWeights)) {
+      if (typeof value === 'object' && value !== null && 'weight' in value) {
+        weights[key] = (value as any).weight;
+      }
+    }
+
+    // Validate weights sum to 1.0
+    const sum = Object.values(weights).reduce((a, b) => a + b, 0);
+    if (Math.abs(sum - 1.0) > 0.001) {
+      console.error(`❌ Category weights must sum to 1.0, got ${sum}`);
+      return null;
+    }
+
+    console.log(`✓ Loaded hybrid weighting config with ${Object.keys(weights).length} categories`);
+    return weights;
+
+  } catch (error: any) {
+    if (error.code !== 'ENOENT') {
+      console.error(`Error loading weighting config: ${error.message}`);
+    }
+    return null;
+  }
 }
 
 // ========================================
@@ -114,7 +207,8 @@ function percentile90(values: number[]): number {
 }
 
 export function calculateHybridWeights(
-  libraries: LibraryBenchmark[]
+  libraries: LibraryBenchmark[],
+  categoryWeights: Record<string, number> = DEFAULT_CATEGORY_WEIGHTS
 ): Map<string, HybridTestWeight> {
   if (libraries.length === 0) {
     return new Map();
@@ -194,7 +288,7 @@ export function calculateHybridWeights(
   for (const testData of testVarianceData) {
     const { testName, category, p90Factor, rawWeight } = testData;
 
-    const categoryWeight = CATEGORY_WEIGHTS[category] || 0;
+    const categoryWeight = categoryWeights[category] || 0;
     const categoryTestWeight = categoryTestWeights.get(category)?.get(testName) || 0;
     const hybridWeight = categoryWeight * categoryTestWeight;
     const rawVarianceWeight = rawWeight / totalRawWeight;
@@ -291,7 +385,9 @@ if (import.meta.main) {
       }
     }
 
-    const hybridWeights = calculateHybridWeights(libraries);
+    // Load category weights from config or use defaults
+    const categoryWeights = await loadCategoryWeights(benchmarkDir);
+    const hybridWeights = calculateHybridWeights(libraries, categoryWeights);
 
     console.log('\n╔════════════════════════════════════════════════════════════════╗');
     console.log('║        Hybrid Weight System (Category × Test Weights)         ║');
@@ -301,7 +397,7 @@ if (import.meta.main) {
     const categories = [...new Set([...hybridWeights.values()].map(w => w.category))];
 
     for (const category of categories) {
-      const categoryWeightValue = CATEGORY_WEIGHTS[category] || 0;
+      const categoryWeightValue = categoryWeights[category] || 0;
       const categoryTests = [...hybridWeights.values()]
         .filter(w => w.category === category)
         .sort((a, b) => b.hybridWeight - a.hybridWeight);
@@ -362,7 +458,7 @@ if (import.meta.main) {
     console.log('-----------------------|---------------|--------------|----------------');
 
     for (const category of categories) {
-      const catWeight = CATEGORY_WEIGHTS[category] || 0;
+      const catWeight = categoryWeights[category] || 0;
       const catTests = [...hybridWeights.values()].filter(w => w.category === category);
       const avgTestWeight = catTests.length > 0
         ? catTests.reduce((sum, w) => sum + w.hybridWeight, 0) / catTests.length

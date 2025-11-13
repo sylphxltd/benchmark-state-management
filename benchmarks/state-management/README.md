@@ -77,9 +77,37 @@ Comprehensive performance benchmarks for React state-management libraries.
 
 ## 📊 Overall Performance Rankings
 
-Based on **weighted geometric mean** of normalized scores across all 28 tests.
+> **🆕 Dual Ranking System**
+>
+> This category uses **hybrid weighting** that balances functional importance with data-driven stability.
+> Both ranking systems are shown below for comparison.
+>
+> - **Hybrid Weighted** (primary): Balances category importance × test stability
+> - **Variance-Based** (reference): Pure data-driven weighting
+>
+> See [Hybrid Weighting Analysis](../../HYBRID_WEIGHTING_ANALYSIS.md) for methodology.
 
-*Scores use variance-based weighting to prevent unstable tests from dominating results. See [Methodology](#-methodology) for details.*
+### 🎯 Hybrid Weighted Rankings
+
+Based on **two-tier weighted geometric mean** combining category importance with variance-based test weights.
+
+| Rank | Library | Overall Score | Relative Performance | Links |
+|:----:|---------|--------------|---------------------|:-----:|
+| 🥇 1 | **[Zen](https://github.com/SylphxAI/zen)** | 42.8/100 | 100% of fastest | [📦](https://www.npmjs.com/package/@sylphx/zen) [📊](https://bundlephobia.com/package/@sylphx/zen) |
+| 🥈 2 | **[Solid Signals](https://github.com/solidjs/solid)** | 41.6/100 | 97% of fastest | [📦](https://www.npmjs.com/package/solid-js) [📊](https://bundlephobia.com/package/solid-js) |
+| 🥉 3 | **[Preact Signals](https://github.com/preactjs/signals)** | 38.8/100 | 91% of fastest | [📦](https://www.npmjs.com/package/@preact/signals) [📊](https://bundlephobia.com/package/@preact/signals) |
+|  4 | **[Valtio](https://github.com/pmndrs/valtio)** | 24.3/100 | 57% of fastest | [📦](https://www.npmjs.com/package/valtio) [📊](https://bundlephobia.com/package/valtio) |
+|  5 | **[Zustand](https://github.com/pmndrs/zustand)** | 24.0/100 | 56% of fastest | [📦](https://www.npmjs.com/package/zustand) [📊](https://bundlephobia.com/package/zustand) |
+|  6 | **[MobX](https://github.com/mobxjs/mobx)** | 20.0/100 | 47% of fastest | [📦](https://www.npmjs.com/package/mobx) [📊](https://bundlephobia.com/package/mobx) |
+|  7 | **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | 6.8/100 | 16% of fastest | [📦](https://www.npmjs.com/package/@reduxjs/toolkit) [📊](https://bundlephobia.com/package/@reduxjs/toolkit) |
+|  8 | **[Jotai](https://github.com/pmndrs/jotai)** | 5.3/100 | 12% of fastest | [📦](https://www.npmjs.com/package/jotai) [📊](https://bundlephobia.com/package/jotai) |
+
+
+*📦 = npm package • 📊 = bundle size*
+
+### 📐 Variance-Based Rankings (Reference)
+
+Pure data-driven weighting based on test stability across implementations.
 
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|
@@ -932,7 +960,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T23:39:16.174Z*
+*Generated on 2025-11-13T23:45:05.583Z*
 
 [⬆️ Back to Top](#state-management-benchmarks) • [⬅️ Main README](../../README.md)
 

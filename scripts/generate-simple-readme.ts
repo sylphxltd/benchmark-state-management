@@ -4,9 +4,10 @@
  * Generates README from per-library benchmark JSON files
  */
 
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { calculateTestWeights, weightedGeometricMean } from './calculate-test-weights';
+import { loadCategoryWeightsSync, calculateHybridWeights } from './calculate-hybrid-weights';
 
 interface BenchmarkResult {
   test: string;
@@ -217,12 +218,54 @@ for (const lib of libraries) {
   }
 }
 
-// Sort libraries by score
+// Check for hybrid weighting configuration
+const hybridWeights = loadCategoryWeightsSync(categoryPath);
+const overallScoresHybrid = new Map<string, number>();
+const hasHybridConfig = hybridWeights !== null;
+
+if (hasHybridConfig && hybridWeights) {
+  // Calculate hybrid weighted scores
+  const hybridTestWeights = calculateHybridWeights(libraries, hybridWeights);
+
+  for (const lib of libraries) {
+    const scores: number[] = [];
+    const weights: number[] = [];
+
+    for (const result of lib.results) {
+      const testResults = Array.from(groupedByGroup.values())
+        .flatMap(g => Array.from(g.values()))
+        .filter(tests => tests.has(lib.libraryId))
+        .flatMap(tests => Array.from(tests.values()))
+        .filter(r => r.test === result.test);
+
+      const maxOps = Math.max(...testResults.map(r => r.opsPerSecond));
+      const score = (result.opsPerSecond / maxOps) * 100;
+      const weight = hybridTestWeights.get(result.test)?.hybridWeight || (1 / lib.results.length);
+
+      scores.push(score);
+      weights.push(weight);
+    }
+
+    if (scores.length > 0) {
+      const weightedGM = weightedGeometricMean(scores, weights);
+      overallScoresHybrid.set(lib.libraryId, weightedGM);
+    }
+  }
+}
+
+// Sort libraries by score (variance-based by default)
 const sortedLibs = [...libraries].sort((a, b) => {
   const scoreA = overallScores.get(a.libraryId) || 0;
   const scoreB = overallScores.get(b.libraryId) || 0;
   return scoreB - scoreA;
 });
+
+// Sort by hybrid if available
+const sortedLibsHybrid = hasHybridConfig ? [...libraries].sort((a, b) => {
+  const scoreA = overallScoresHybrid.get(a.libraryId) || 0;
+  const scoreB = overallScoresHybrid.get(b.libraryId) || 0;
+  return scoreB - scoreA;
+}) : sortedLibs;
 
 // Helper functions
 function formatNumber(num: number | undefined | null): string {
@@ -417,9 +460,46 @@ ${sortedLibs.slice(0, 5).map(lib => {
 
 ## 📊 Overall Performance Rankings
 
-Based on **weighted geometric mean** of normalized scores across all ${libraries[0].results.length} tests.
+${hasHybridConfig ? `> **🆕 Dual Ranking System**
+>
+> This category uses **hybrid weighting** that balances functional importance with data-driven stability.
+> Both ranking systems are shown below for comparison.
+>
+> - **Hybrid Weighted** (primary): Balances category importance × test stability
+> - **Variance-Based** (reference): Pure data-driven weighting
+>
+> See [Hybrid Weighting Analysis](../../HYBRID_WEIGHTING_ANALYSIS.md) for methodology.
 
-*Scores use variance-based weighting to prevent unstable tests from dominating results. See [Methodology](#-methodology) for details.*
+### 🎯 Hybrid Weighted Rankings
+
+Based on **two-tier weighted geometric mean** combining category importance with variance-based test weights.
+
+| Rank | Library | Overall Score | Relative Performance | Links |
+|:----:|---------|--------------|---------------------|:-----:|
+${sortedLibsHybrid.map((lib, i) => {
+  const score = overallScoresHybrid.get(lib.libraryId) || 0;
+  const topScore = overallScoresHybrid.get(sortedLibsHybrid[0].libraryId) || 100;
+  const relative = (score / topScore * 100).toFixed(0);
+
+  const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+  const githubUrl = meta?.url || '#';
+  const npmUrl = meta?.npm ? `https://www.npmjs.com/package/${meta.npm}` : '#';
+  const bundleUrl = meta?.npm ? `https://bundlephobia.com/package/${meta.npm}` : '#';
+
+  const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : '';
+  const rank = `${medal} ${i + 1}`;
+
+  return `| ${rank} | **[${lib.library}](${githubUrl})** | ${score.toFixed(1)}/100 | ${relative}% of fastest | [📦](${npmUrl}) [📊](${bundleUrl}) |`;
+}).join('\n')}
+
+
+*📦 = npm package • 📊 = bundle size*
+
+### 📐 Variance-Based Rankings (Reference)
+
+Pure data-driven weighting based on test stability across implementations.` : `Based on **weighted geometric mean** of normalized scores across all ${libraries[0].results.length} tests.
+
+*Scores use variance-based weighting to prevent unstable tests from dominating results. See [Methodology](#-methodology) for details.*`}
 
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|

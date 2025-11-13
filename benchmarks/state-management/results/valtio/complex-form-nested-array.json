@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 1213399.3260780647,
-    "meanTime": 0.0008241309999999657,
-    "variance": 3.3288552736737194e-7,
-    "p99": 0.0025830000000723885,
+    "opsPerSecond": 1421296.4213173208,
+    "meanTime": 0.0007035830000002079,
+    "variance": 1.492371963059125e-7,
+    "p99": 0.0017920000000231084,
     "samples": 1000
   }
 }

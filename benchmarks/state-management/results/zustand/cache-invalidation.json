@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 3696980.675875892,
-    "meanTime": 0.00027049100000044743,
-    "variance": 1.1531136728634445e-7,
-    "p99": 0.0010829999998804851,
+    "opsPerSecond": 3102872.6394669153,
+    "meanTime": 0.00032228200000236027,
+    "variance": 1.4164239686875937e-7,
+    "p99": 0.0009999999999763531,
     "samples": 1000
   }
 }

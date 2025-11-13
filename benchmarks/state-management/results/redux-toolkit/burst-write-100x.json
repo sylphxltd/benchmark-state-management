@@ -4,12 +4,12 @@
   "packageName": "@reduxjs/toolkit",
   "test": "Burst Write (100x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 226346.76324128604,
-    "meanTime": 0.004417999999999992,
-    "variance": 0.000004046608054054221,
-    "p99": 0.009500000000002728,
+    "opsPerSecond": 256210.74050797336,
+    "meanTime": 0.0039030369999999265,
+    "variance": 0.0000021908687283595355,
+    "p99": 0.0073330000000026985,
     "samples": 1000
   }
 }

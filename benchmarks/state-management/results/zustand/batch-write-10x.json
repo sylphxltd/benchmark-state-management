@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Batch Write (10x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 4383657.724014935,
-    "meanTime": 0.0002281199999994783,
-    "variance": 6.362680640658124e-8,
-    "p99": 0.0014169999999893435,
+    "opsPerSecond": 4755270.028004522,
+    "meanTime": 0.0002102930000001777,
+    "variance": 4.6388211362461455e-8,
+    "p99": 0.0013339999999999463,
     "samples": 1000
   }
 }

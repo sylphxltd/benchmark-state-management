@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 630564.7337755343,
-    "meanTime": 0.0015858800000000883,
-    "variance": 0.000010836877429053015,
-    "p99": 0.007666999999855761,
+    "opsPerSecond": 759543.6661652765,
+    "meanTime": 0.0013165800000001582,
+    "variance": 4.64142650233154e-7,
+    "p99": 0.003499999999803549,
     "samples": 1000
   }
 }

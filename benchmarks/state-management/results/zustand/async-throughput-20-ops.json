@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 241208.08587400324,
-    "meanTime": 0.004145797999998877,
-    "variance": 0.000003333016051239188,
-    "p99": 0.007624999999961801,
+    "opsPerSecond": 261150.94968854767,
+    "meanTime": 0.0038292029999990973,
+    "variance": 0.0000017727462360369476,
+    "p99": 0.008459000000016204,
     "samples": 1000
   }
 }

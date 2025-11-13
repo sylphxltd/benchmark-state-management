@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Simple Form (3 fields)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 6732012.063749466,
-    "meanTime": 0.0001485440000003564,
-    "variance": 8.288531537841987e-8,
-    "p99": 0.0007500000000391083,
+    "opsPerSecond": 5575876.527726092,
+    "meanTime": 0.00017934400000206097,
+    "variance": 7.010403970311697e-8,
+    "p99": 0.0007909999999355932,
     "samples": 1000
   }
 }

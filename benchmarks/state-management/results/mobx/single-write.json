@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 715307.5822602903,
-    "meanTime": 0.0013980000000001595,
-    "variance": 0.000005179178212212012,
-    "p99": 0.005541000000000906,
+    "opsPerSecond": 1318101.3540857264,
+    "meanTime": 0.0007586669999998818,
+    "variance": 0.000005309151555666676,
+    "p99": 0.0032500000000013074,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "solid-js",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 452962.55630341684,
-    "meanTime": 0.002207687999999166,
-    "variance": 0.00026425246046914364,
-    "p99": 0.0038749999999936335,
+    "opsPerSecond": 397127.1819656,
+    "meanTime": 0.002518085000000383,
+    "variance": 0.00022449163936314015,
+    "p99": 0.004540999999903761,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 253973.99458671777,
-    "meanTime": 0.003937411000001248,
-    "variance": 0.0000014273882943731563,
-    "p99": 0.00791700000002038,
+    "opsPerSecond": 248193.6466397875,
+    "meanTime": 0.004029111999999486,
+    "variance": 0.0000010805265760318975,
+    "p99": 0.007833000000005086,
     "samples": 1000
   }
 }

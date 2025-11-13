@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 97146.33609193799,
-    "meanTime": 0.01029374899999948,
-    "variance": 0.000993046426989148,
-    "p99": 0.0679170000000795,
+    "opsPerSecond": 98614.69041347716,
+    "meanTime": 0.010140477000000146,
+    "variance": 0.0017279161609519247,
+    "p99": 0.06295900000009169,
     "samples": 1000
   }
 }

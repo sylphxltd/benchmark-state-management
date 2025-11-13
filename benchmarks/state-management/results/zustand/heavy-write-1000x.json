@@ -4,12 +4,12 @@
   "packageName": "zustand",
   "test": "Heavy Write (1000x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 2469995.726906774,
-    "meanTime": 0.00040485900000010135,
-    "variance": 1.76005036226476e-8,
-    "p99": 0.0007910000000066475,
+    "opsPerSecond": 2485095.638904594,
+    "meanTime": 0.00040239900000017315,
+    "variance": 9.82318856847161e-8,
+    "p99": 0.0009160000000036916,
     "samples": 1000
   }
 }

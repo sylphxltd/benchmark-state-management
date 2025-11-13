@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Simple Form (3 fields)",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 2262509.9833274237,
-    "meanTime": 0.00044198699999958537,
-    "variance": 2.729222390688596e-7,
-    "p99": 0.0013749999999390639,
+    "opsPerSecond": 2655795.6099739377,
+    "meanTime": 0.0003765349999994214,
+    "variance": 2.090796464209424e-7,
+    "p99": 0.001207999999905951,
     "samples": 1000
   }
 }

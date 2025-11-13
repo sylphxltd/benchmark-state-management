@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 30793.099685147365,
-    "meanTime": 0.032474807999999314,
-    "variance": 0.0026324306296326956,
-    "p99": 0.08137500000003683,
+    "opsPerSecond": 40476.5924473023,
+    "meanTime": 0.024705637000000193,
+    "variance": 0.0019203891743176887,
+    "p99": 0.05937499999998863,
     "samples": 1000
   }
 }

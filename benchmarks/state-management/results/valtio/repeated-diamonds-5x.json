@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 577008.4075877346,
-    "meanTime": 0.0017330770000053234,
-    "variance": 0.0006394619932343481,
-    "p99": 0.0020829999998568383,
+    "opsPerSecond": 1453165.2117810084,
+    "meanTime": 0.0006881530000118801,
+    "variance": 5.0491284875618175e-8,
+    "p99": 0.0015829999997549749,
     "samples": 1000
   }
 }

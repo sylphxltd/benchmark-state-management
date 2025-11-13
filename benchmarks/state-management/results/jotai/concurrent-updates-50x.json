@@ -4,12 +4,12 @@
   "packageName": "jotai",
   "test": "Concurrent Updates (50x)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 13282.43257232827,
-    "meanTime": 0.07528741400000274,
-    "variance": 0.008299912647662727,
-    "p99": 0.17508299999997234,
+    "opsPerSecond": 14146.156790513598,
+    "meanTime": 0.0706905779999978,
+    "variance": 0.005088484830800863,
+    "p99": 0.17375000000004093,
     "samples": 1000
   }
 }

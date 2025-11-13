@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 270419.65886015835,
-    "meanTime": 0.0036979560000004598,
-    "variance": 0.000032222492878949776,
-    "p99": 0.01433299999999349,
+    "opsPerSecond": 307239.57835671084,
+    "meanTime": 0.0032547889999998032,
+    "variance": 0.000003310312899377786,
+    "p99": 0.010333000000002812,
     "samples": 1000
   }
 }

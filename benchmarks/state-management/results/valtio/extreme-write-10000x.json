@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 5155808.53386822,
-    "meanTime": 0.00019395600000098056,
-    "variance": 9.935286492912509e-8,
-    "p99": 0.001125000000001819,
+    "opsPerSecond": 5325777.829883997,
+    "meanTime": 0.00018776599999887367,
+    "variance": 3.456664589002897e-8,
+    "p99": 0.0007920000000467553,
     "samples": 1000
   }
 }

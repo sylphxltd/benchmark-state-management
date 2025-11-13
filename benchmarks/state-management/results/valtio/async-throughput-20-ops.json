@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 211137.54787815738,
-    "meanTime": 0.004736248999998224,
-    "variance": 0.000003288249366362372,
-    "p99": 0.009666999999922155,
+    "opsPerSecond": 200167.54023114644,
+    "meanTime": 0.0049958150000006755,
+    "variance": 0.000002285410405182807,
+    "p99": 0.01254099999994196,
     "samples": 1000
   }
 }

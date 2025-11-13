@@ -4,12 +4,12 @@
   "packageName": "valtio",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 3605721.5589314913,
-    "meanTime": 0.0002773370000029445,
-    "variance": 9.450956499519983e-8,
-    "p99": 0.0009170000000722212,
+    "opsPerSecond": 4171115.856942197,
+    "meanTime": 0.0002397439999983817,
+    "variance": 8.552348394536129e-8,
+    "p99": 0.0009999999999763531,
     "samples": 1000
   }
 }

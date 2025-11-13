@@ -4,12 +4,12 @@
   "packageName": "mobx",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-13T21:00:44.830Z",
+  "timestamp": "2025-11-13T21:02:23.291Z",
   "result": {
-    "opsPerSecond": 11258.755680971106,
-    "meanTime": 0.08881976199999986,
-    "variance": 0.06554495483096692,
-    "p99": 1.0035420000001523,
+    "opsPerSecond": 11374.064571338335,
+    "meanTime": 0.08791931799999747,
+    "variance": 0.04070785343895155,
+    "p99": 0.7678750000000036,
     "samples": 1000
   }
 }

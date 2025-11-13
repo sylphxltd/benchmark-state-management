@@ -1,0 +1,36 @@
+{
+  "libraries": {
+    "axios": {
+      "name": "Axios",
+      "displayName": "Axios",
+      "npm": "axios",
+      "url": "https://github.com/axios/axios",
+      "description": "Promise based HTTP client for the browser and node.js",
+      "color": "#5A29E4"
+    },
+    "ky": {
+      "name": "Ky",
+      "displayName": "Ky",
+      "npm": "ky",
+      "url": "https://github.com/sindresorhus/ky",
+      "description": "Tiny and elegant HTTP client based on Fetch API",
+      "color": "#00D9FF"
+    },
+    "wretch": {
+      "name": "Wretch",
+      "displayName": "Wretch",
+      "npm": "wretch",
+      "url": "https://github.com/elbywan/wretch",
+      "description": "A tiny wrapper built around fetch with an intuitive syntax",
+      "color": "#FF6B6B"
+    },
+    "ofetch": {
+      "name": "ofetch",
+      "displayName": "ofetch",
+      "npm": "ofetch",
+      "url": "https://github.com/unjs/ofetch",
+      "description": "A better fetch API. Works on node, browser and workers",
+      "color": "#00DC82"
+    }
+  }
+}

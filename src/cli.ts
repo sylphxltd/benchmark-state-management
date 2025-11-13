@@ -3,7 +3,8 @@
  * Unified CLI for Benchmark Framework
  *
  * All operations should go through this CLI:
- * - bun run benchmark <category>           # Run benchmarks
+ * - bun run benchmark run <category>       # Run benchmarks
+ * - bun run benchmark scaffold <category>  # Create new category
  * - bun run benchmark measure-sizes        # Measure bundle sizes
  * - bun run benchmark generate-readme      # Generate READMEs
  * - bun run benchmark check-updates        # Check for version updates
@@ -14,6 +15,7 @@ import { parseArgs } from 'util';
 
 const commands = {
   run: 'Run benchmarks for a category',
+  scaffold: 'Create a new benchmark category with boilerplate',
   'measure-sizes': 'Measure bundle sizes for all categories',
   'generate-readme': 'Generate README for a category or all categories',
   'check-updates': 'Check for library version updates',
@@ -31,6 +33,13 @@ Usage:
 Commands:
   run <category>              Run benchmarks for a category
                               Example: bun run benchmark run state-management
+
+  scaffold <category> [libs]  Create a new benchmark category
+                              Example: bun run benchmark scaffold fetch axios ky wretch
+                              Options:
+                                --name        Category display name (default: auto-generated)
+                                --description Category description (default: auto-generated)
+                                --emoji       Category emoji (default: 📦)
 
   measure-sizes [category]    Measure bundle sizes
                               Example: bun run benchmark measure-sizes
@@ -53,6 +62,7 @@ Options:
 
 Examples:
   bun run benchmark run state-management
+  bun run benchmark scaffold fetch axios ky wretch ofetch
   bun run benchmark measure-sizes
   bun run benchmark generate-readme state-management
   bun run benchmark update-all
@@ -73,6 +83,10 @@ async function main() {
   switch (command) {
     case 'run':
       await runBenchmark(commandArgs);
+      break;
+
+    case 'scaffold':
+      await scaffold(commandArgs);
       break;
 
     case 'measure-sizes':
@@ -118,6 +132,81 @@ async function runBenchmark(args: string[]) {
     await import(categoryPath);
   } catch (error: any) {
     console.error(`❌ Error running benchmarks:`, error.message);
+    process.exit(1);
+  }
+}
+
+async function scaffold(args: string[]) {
+  const categoryId = args[0];
+  const libraries: string[] = [];
+
+  // Parse arguments
+  let name: string | undefined;
+  let description: string | undefined;
+  let emoji = '📦';
+
+  let i = 1;
+  while (i < args.length) {
+    const arg = args[i];
+
+    if (arg === '--name') {
+      name = args[i + 1];
+      i += 2;
+    } else if (arg === '--description') {
+      description = args[i + 1];
+      i += 2;
+    } else if (arg === '--emoji') {
+      emoji = args[i + 1];
+      i += 2;
+    } else if (!arg.startsWith('--')) {
+      libraries.push(arg);
+      i++;
+    } else {
+      i++;
+    }
+  }
+
+  if (!categoryId) {
+    console.error('❌ Error: Category ID required');
+    console.log('\nUsage: bun run benchmark scaffold <category-id> <library1> <library2> ...');
+    console.log('Example: bun run benchmark scaffold fetch axios ky wretch');
+    console.log('\nOptions:');
+    console.log('  --name <name>              Category display name');
+    console.log('  --description <desc>       Category description');
+    console.log('  --emoji <emoji>            Category emoji (default: 📦)');
+    process.exit(1);
+  }
+
+  if (libraries.length === 0) {
+    console.error('❌ Error: At least one library required');
+    console.log('\nExample: bun run benchmark scaffold fetch axios ky wretch');
+    process.exit(1);
+  }
+
+  // Auto-generate name and description if not provided
+  if (!name) {
+    name = categoryId
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
+  if (!description) {
+    description = `Benchmark comparing ${libraries.join(', ')} libraries`;
+  }
+
+  const { scaffoldCategory } = await import('./core/scaffolder.js');
+
+  try {
+    await scaffoldCategory({
+      categoryId,
+      categoryName: name,
+      categoryDescription: description,
+      emoji,
+      libraries,
+    });
+  } catch (error: any) {
+    console.error(`❌ Error scaffolding category:`, error.message);
     process.exit(1);
   }
 }

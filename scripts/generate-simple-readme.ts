@@ -212,7 +212,8 @@ const sortedLibs = [...libraries].sort((a, b) => {
 });
 
 // Helper functions
-function formatNumber(num: number): string {
+function formatNumber(num: number | undefined | null): string {
+  if (num === undefined || num === null || isNaN(num)) return 'N/A';
   if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
   if (num >= 1000) return `${(num / 1000).toFixed(0)}K`;
   return num.toFixed(0);
@@ -500,7 +501,10 @@ for (const [groupId, testsMap] of sortedGroups) {
     readme += '|---------|---------|-----------|-----|----------|\n';
 
     sorted.forEach(({ lib, result }) => {
-      readme += `| ${lib.library} | ${formatNumber(result.opsPerSecond)} | ${result.meanTime.toFixed(3)}ms | ${result.p99.toFixed(3)}ms | ${result.samples} |\n`;
+      const meanTime = result.meanTime !== undefined ? result.meanTime.toFixed(3) : 'N/A';
+      const p99 = result.p99 !== undefined ? result.p99.toFixed(3) : 'N/A';
+      const samples = result.samples !== undefined ? result.samples : 'N/A';
+      readme += `| ${lib.library} | ${formatNumber(result.opsPerSecond)} | ${meanTime}ms | ${p99}ms | ${samples} |\n`;
     });
 
     readme += '\n';

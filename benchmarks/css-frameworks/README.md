@@ -90,9 +90,9 @@ Based on geometric mean of normalized scores across all 5 tests.
 | Library | Score | Bundle Size (gzip) | Description | Best For |
 |---------|:-----:|:------------------:|-------------|----------|
 | **[Panda CSS](#)** | **88.4** | **8.02 KB** | State management solution... | General purpose... |
-| **[UnoCSS](#)** | **87.0** | **3.42 KB** | State management solution... | General purpose... |
+| **[UnoCSS](#)** | **87.0** | **0.28 KB** | State management solution... | General purpose... |
 | **[Silk](#)** | **83.8** | **9.46 KB** | State management solution... | General purpose... |
-| **[Tailwind CSS](#)** | **77.8** | **516.69 KB** | State management solution... | General purpose... |
+| **[Tailwind CSS](#)** | **77.8** | **526.39 KB** | State management solution... | General purpose... |
 
 ---
 
@@ -266,9 +266,9 @@ npx tsx ../../scripts/generate-simple-readme.ts .
 ## 🚀 Libraries Tested
 
 - **[Panda CSS](#)** (`@pandacss/dev`) v1.4.3 • 8.02 KB gzip - [📦 npm](https://www.npmjs.com/package/panda) • [📊 bundle size](https://bundlephobia.com/package/panda)
-- **[UnoCSS](#)** (`unocss`) v0.65.3 • 3.42 KB gzip - [📦 npm](https://www.npmjs.com/package/unocss) • [📊 bundle size](https://bundlephobia.com/package/unocss)
+- **[UnoCSS](#)** (`unocss`) v0.65.3 • 0.28 KB gzip - [📦 npm](https://www.npmjs.com/package/unocss) • [📊 bundle size](https://bundlephobia.com/package/unocss)
 - **[Silk](#)** (`@sylphx/silk`) v1.0.0 • 9.46 KB gzip - [📦 npm](https://www.npmjs.com/package/silk) • [📊 bundle size](https://bundlephobia.com/package/silk)
-- **[Tailwind CSS](#)** (`tailwindcss`) v3.4.15 • 516.69 KB gzip - [📦 npm](https://www.npmjs.com/package/tailwind) • [📊 bundle size](https://bundlephobia.com/package/tailwind)
+- **[Tailwind CSS](#)** (`tailwindcss`) v3.4.15 • 526.39 KB gzip - [📦 npm](https://www.npmjs.com/package/tailwind) • [📊 bundle size](https://bundlephobia.com/package/tailwind)
 
 ---
 
@@ -298,7 +298,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-13T16:08:17.755Z*
+*Generated on 2025-11-13T16:09:41.226Z*
 
 [⬆️ Back to Top](#css-frameworks-benchmarks) • [⬅️ Main README](../../README.md)
 

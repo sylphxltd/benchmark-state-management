@@ -47,9 +47,11 @@ Our benchmarks follow **professional-grade methodology** (88/100 credibility rat
 
 ### Key Documents
 
+- **[⚡ Quick Reference](./QUICK_REFERENCE.md)** - 5-minute guide to methodology (START HERE!)
 - **[📊 Executive Summary](./EXECUTIVE_SUMMARY.md)** - Overview of methodology improvements and results
+- **[🔬 Full Methodology Analysis](./BENCHMARK_METHODOLOGY_ANALYSIS.md)** - Deep dive with credibility assessment
 - **[⚖️ Weighted Scoring](./WEIGHTED_SCORING_COMPARISON.md)** - Before/after comparison of scoring system
-- **[📈 Ranking Analysis](./RANKING_ANALYSIS.md)** - Detailed analysis of performance rankings
+- **[📈 Ranking Analysis](./RANKING_ANALYSIS.md)** - Why Solid Signals overtook Zen
 - **[🏗️ Architecture](./ARCHITECTURE.md)** - System design and cost optimization
 
 ---

@@ -25,9 +25,6 @@ import {
   min,
   max,
   size,
-  integer,
-  positive,
-  email,
   record,
   any,
   union,
@@ -66,7 +63,7 @@ const booleanSchema = boolean();
 
 // Flat object schema
 const userSchema = object({
-  id: positive(number()),
+  id: refine(number(), 'positive', (value) => value > 0),
   username: size(string(), 3, 20),
   email: Email,
   age: refine(number(), 'age-range', (value) => value >= 18 && value <= 120),
@@ -97,8 +94,8 @@ const profileSchema = object({
 const itemSchema = object({
   id: number(),
   name: string(),
-  price: positive(number()),
-  quantity: min(integer(number()), 0),
+  price: refine(number(), 'positive', (value) => value > 0),
+  quantity: refine(number(), 'integer-min', (value) => Number.isInteger(value) && value >= 0),
 });
 
 const itemsArraySchema = array(itemSchema);
@@ -187,396 +184,278 @@ const transformData = {
 // ============================================================================
 
 // Schema Creation Tests
-library.addTest(tests.createSimpleSchema, {
-  name: 'superstruct',
-  fn() {
-    // Schema creation - demonstrating that schemas are created in setup
-    const schema = object({
-      name: string(),
-      age: number(),
-      email: Email,
-    });
-    return schema;
-  },
+library.implement(tests.createSimpleSchema, () => {
+  // Schema creation - demonstrating that schemas are created in setup
+  const schema = object({
+    name: string(),
+    age: number(),
+    email: Email,
+  });
+  return schema;
 });
 
-library.addTest(tests.createComplexSchema, {
-  name: 'superstruct',
-  fn() {
-    // Complex schema creation
-    const schema = object({
-      user: object({
-        id: number(),
-        profile: object({
-          bio: string(),
-          avatar: string(), // Superstruct doesn't have built-in URL validation
-        }),
+library.implement(tests.createComplexSchema, () => {
+  // Complex schema creation
+  const schema = object({
+    user: object({
+      id: number(),
+      profile: object({
+        bio: string(),
+        avatar: string(), // Superstruct doesn't have built-in URL validation
       }),
-      settings: array(
-        object({
-          key: string(),
-          value: any(),
-        })
-      ),
-    });
-    return schema;
-  },
+    }),
+    settings: array(
+      object({
+        key: string(),
+        value: any(),
+      })
+    ),
+  });
+  return schema;
 });
 
 // Primitive Validation Tests
-library.addTest(tests.validateString, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: stringSchema,
-      validData: 'Hello World',
-      invalidData: 'Hi', // too short
-    };
-  },
-  run(ctx) {
-    // Test both success and failure paths using validate
-    const [validError] = validate(ctx.validData, ctx.schema);
-    const [invalidError] = validate(ctx.invalidData, ctx.schema);
-    return { valid: !validError, invalid: !!invalidError };
-  },
+library.implement(tests.validateString, () => {
+  const validData = 'Hello World';
+  const invalidData = 'Hi'; // too short
+
+  // Test both success and failure paths using validate
+  const [validError] = validate(validData, stringSchema);
+  const [invalidError] = validate(invalidData, stringSchema);
+  return { valid: !validError, invalid: !!invalidError };
 });
 
-library.addTest(tests.validateNumber, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: numberSchema,
-      validData: 42,
-      invalidData: 150, // exceeds max
-    };
-  },
-  run(ctx) {
-    const [validError] = validate(ctx.validData, ctx.schema);
-    const [invalidError] = validate(ctx.invalidData, ctx.schema);
-    return { valid: !validError, invalid: !!invalidError };
-  },
+library.implement(tests.validateNumber, () => {
+  const validData = 42;
+  const invalidData = 150; // exceeds max
+
+  const [validError] = validate(validData, numberSchema);
+  const [invalidError] = validate(invalidData, numberSchema);
+  return { valid: !validError, invalid: !!invalidError };
 });
 
-library.addTest(tests.validateEmail, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: emailSchema,
-      validEmails: [
-        'user@example.com',
-        'john.doe@company.org',
-        'test+tag@domain.co.uk',
-      ],
-      invalidEmails: [
-        'invalid',
-        '@example.com',
-        'user@',
-        'user..name@example.com',
-      ],
-    };
-  },
-  run(ctx) {
-    let validCount = 0;
-    let invalidCount = 0;
+library.implement(tests.validateEmail, () => {
+  const validEmails = [
+    'user@example.com',
+    'john.doe@company.org',
+    'test+tag@domain.co.uk',
+  ];
+  const invalidEmails = [
+    'invalid',
+    '@example.com',
+    'user@',
+    'user..name@example.com',
+  ];
 
-    // Validate multiple emails
-    for (const email of ctx.validEmails) {
-      const [error] = validate(email, ctx.schema);
-      if (!error) validCount++;
-    }
+  let validCount = 0;
+  let invalidCount = 0;
 
-    for (const email of ctx.invalidEmails) {
-      const [error] = validate(email, ctx.schema);
-      if (error) invalidCount++;
-    }
+  // Validate multiple emails
+  for (const email of validEmails) {
+    const [error] = validate(email, emailSchema);
+    if (!error) validCount++;
+  }
 
-    return { validCount, invalidCount };
-  },
+  for (const email of invalidEmails) {
+    const [error] = validate(email, emailSchema);
+    if (error) invalidCount++;
+  }
+
+  return { validCount, invalidCount };
 });
 
 // Object Validation Tests
-library.addTest(tests.validateFlatObject, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: userSchema,
-      validData: validUser,
-      invalidData: invalidUser,
-    };
-  },
-  run(ctx) {
-    // Test object validation performance
-    const [validError, validValue] = validate(ctx.validData, ctx.schema);
-    const [invalidError] = validate(ctx.invalidData, ctx.schema);
-    return {
-      valid: !validError,
-      invalid: !!invalidError,
-      validData: validValue || null,
-    };
-  },
+library.implement(tests.validateFlatObject, () => {
+  // Test object validation performance
+  const [validError, validValue] = validate(validUser, userSchema);
+  const [invalidError] = validate(invalidUser, userSchema);
+  return {
+    valid: !validError,
+    invalid: !!invalidError,
+    validData: validValue || null,
+  };
 });
 
-library.addTest(tests.validateNestedObject, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: profileSchema,
-      validData: validProfile,
-      invalidData: invalidProfile,
-    };
-  },
-  run(ctx) {
-    // Test complex nested validation
-    const [validError, validValue] = validate(ctx.validData, ctx.schema);
-    const [invalidError] = validate(ctx.invalidData, ctx.schema);
-    return {
-      valid: !validError,
-      invalid: !!invalidError,
-      hasData: !!validValue,
-    };
-  },
+library.implement(tests.validateNestedObject, () => {
+  // Test complex nested validation
+  const [validError, validValue] = validate(validProfile, profileSchema);
+  const [invalidError] = validate(invalidProfile, profileSchema);
+  return {
+    valid: !validError,
+    invalid: !!invalidError,
+    hasData: !!validValue,
+  };
 });
 
-library.addTest(tests.validateArray, {
-  name: 'superstruct',
-  setup() {
-    return {
-      schema: itemsArraySchema,
-      validData: validItems,
-      invalidData: [
-        ...validItems.slice(0, 5),
-        { id: -1, name: '', price: -10, quantity: -5 }, // invalid item
-        ...validItems.slice(5),
-      ],
-    };
-  },
-  run(ctx) {
-    // Test array validation
-    const [validError, validValue] = validate(ctx.validData, ctx.schema);
-    const [invalidError] = validate(ctx.invalidData, ctx.schema);
-    return {
-      valid: !validError,
-      invalid: !!invalidError,
-      itemCount: validValue ? validValue.length : 0,
-    };
-  },
+library.implement(tests.validateArray, () => {
+  const invalidData = [
+    ...validItems.slice(0, 5),
+    { id: -1, name: '', price: -10, quantity: -5 }, // invalid item
+    ...validItems.slice(5),
+  ];
+
+  // Test array validation
+  const [validError, validValue] = validate(validItems, itemsArraySchema);
+  const [invalidError] = validate(invalidData, itemsArraySchema);
+  return {
+    valid: !validError,
+    invalid: !!invalidError,
+    itemCount: validValue ? validValue.length : 0,
+  };
 });
 
 // Error Handling Tests
-library.addTest(tests.catchValidationErrors, {
-  name: 'superstruct',
-  setup() {
+library.implement(tests.catchValidationErrors, () => {
+  // Test error handling performance
+  const [error] = validate(invalidUser, userSchema);
+
+  if (error) {
+    const failures = error.failures();
     return {
-      schema: userSchema,
-      invalidData: invalidUser,
+      success: false,
+      errorCount: failures.length,
+      hasErrors: true,
+      firstError: error.message,
     };
-  },
-  run(ctx) {
-    // Test error handling performance
-    const [error] = validate(ctx.invalidData, ctx.schema);
+  }
 
-    if (error) {
-      const failures = error.failures();
-      return {
-        success: false,
-        errorCount: failures.length,
-        hasErrors: true,
-        firstError: error.message,
-      };
-    }
-
-    return { success: true, errorCount: 0, hasErrors: false };
-  },
+  return { success: true, errorCount: 0, hasErrors: false };
 });
 
-library.addTest(tests.multipleErrors, {
-  name: 'superstruct',
-  setup() {
+library.implement(tests.multipleErrors, () => {
+  // Test multiple error collection
+  const [error] = validate(invalidProfile, profileSchema);
+
+  if (error) {
+    const failures = error.failures();
+    const errorPaths = failures.map(f => f.path.join('.'));
+    const errorTypes = failures.map(f => f.type);
+
     return {
-      schema: profileSchema,
-      invalidData: invalidProfile,
+      errorCount: failures.length,
+      hasMultiple: failures.length > 1,
+      paths: errorPaths.length,
+      types: new Set(errorTypes).size,
     };
-  },
-  run(ctx) {
-    // Test multiple error collection
-    const [error] = validate(ctx.invalidData, ctx.schema);
+  }
 
-    if (error) {
-      const failures = error.failures();
-      const errorPaths = failures.map(f => f.path.join('.'));
-      const errorTypes = failures.map(f => f.type);
-
-      return {
-        errorCount: failures.length,
-        hasMultiple: failures.length > 1,
-        paths: errorPaths.length,
-        types: new Set(errorTypes).size,
-      };
-    }
-
-    return { errorCount: 0, hasMultiple: false, paths: 0, types: 0 };
-  },
+  return { errorCount: 0, hasMultiple: false, paths: 0, types: 0 };
 });
 
 // Additional Performance Tests
 
 // Batch validation test
-library.addTest(tests.validateFlatObject, {
-  name: 'superstruct-batch',
-  setup() {
-    // Create batch of objects for validation
-    const batchData = Array.from({ length: 100 }, (_, i) => ({
-      id: i + 1,
-      username: `user${i}`,
-      email: `user${i}@example.com`,
-      age: 20 + (i % 50),
-      active: i % 2 === 0,
-    }));
+library.implement(tests.validateFlatObject, () => {
+  // Create batch of objects for validation
+  const batchData = Array.from({ length: 100 }, (_, i) => ({
+    id: i + 1,
+    username: `user${i}`,
+    email: `user${i}@example.com`,
+    age: 20 + (i % 50),
+    active: i % 2 === 0,
+  }));
 
-    return {
-      schema: userSchema,
-      batchData,
-    };
-  },
-  run(ctx) {
-    // Batch validate multiple objects
-    let validCount = 0;
-    let invalidCount = 0;
+  // Batch validate multiple objects
+  let validCount = 0;
+  let invalidCount = 0;
 
-    for (const item of ctx.batchData) {
-      const [error] = validate(item, ctx.schema);
-      if (!error) {
-        validCount++;
-      } else {
-        invalidCount++;
-      }
+  for (const item of batchData) {
+    const [error] = validate(item, userSchema);
+    if (!error) {
+      validCount++;
+    } else {
+      invalidCount++;
     }
+  }
 
-    return { validCount, invalidCount, total: ctx.batchData.length };
-  },
+  return { validCount, invalidCount, total: batchData.length };
 });
 
 // Transform validation test
-library.addTest(tests.validateNestedObject, {
-  name: 'superstruct-transform',
-  setup() {
+library.implement(tests.validateNestedObject, () => {
+  // Test transformation performance
+  const [error, value] = validate(transformData, transformSchema, { coerce: true });
+
+  if (!error && value) {
     return {
-      schema: transformSchema,
-      data: transformData,
+      success: true,
+      transformed: true,
+      hasDate: value.date instanceof Date,
+      hasNumber: typeof value.number === 'number',
+      hasTrimmed: value.trimmed === 'hello world',
+      hasUpper: value.upper === 'HELLO',
     };
-  },
-  run(ctx) {
-    // Test transformation performance
-    const [error, value] = validate(ctx.data, ctx.schema, { coerce: true });
+  }
 
-    if (!error && value) {
-      return {
-        success: true,
-        transformed: true,
-        hasDate: value.date instanceof Date,
-        hasNumber: typeof value.number === 'number',
-        hasTrimmed: value.trimmed === 'hello world',
-        hasUpper: value.upper === 'HELLO',
-      };
-    }
-
-    return { success: false, transformed: false };
-  },
+  return { success: false, transformed: false };
 });
 
 // Fast check test using 'is' method
-library.addTest(tests.validateFlatObject, {
-  name: 'superstruct-is',
-  setup() {
-    return {
-      schema: userSchema,
-      validData: validUser,
-      invalidData: invalidUser,
-    };
-  },
-  run(ctx) {
-    // Test fast boolean check performance
-    const valid = is(ctx.validData, ctx.schema);
-    const invalid = is(ctx.invalidData, ctx.schema);
+library.implement(tests.validateFlatObject, () => {
+  // Test fast boolean check performance
+  const valid = is(validUser, userSchema);
+  const invalid = is(invalidUser, userSchema);
 
-    return {
-      valid,
-      invalid: !invalid,
-      fastCheck: true,
-    };
-  },
+  return {
+    valid,
+    invalid: !invalid,
+    fastCheck: true,
+  };
 });
 
 // Assert test (throws on error)
-library.addTest(tests.validateFlatObject, {
-  name: 'superstruct-assert',
-  setup() {
-    return {
-      schema: userSchema,
-      validData: validUser,
-      invalidData: invalidUser,
-    };
-  },
-  run(ctx) {
-    // Test assertion-based validation
-    let valid = false;
-    let invalid = true;
+library.implement(tests.validateFlatObject, () => {
+  // Test assertion-based validation
+  let valid = false;
+  let invalid = true;
 
-    try {
-      assert(ctx.validData, ctx.schema);
-      valid = true;
-    } catch {
-      valid = false;
-    }
+  try {
+    assert(validUser, userSchema);
+    valid = true;
+  } catch {
+    valid = false;
+  }
 
-    try {
-      assert(ctx.invalidData, ctx.schema);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    assert(invalidUser, userSchema);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
 
-    return {
-      valid,
-      invalid,
-      assertMode: true,
-    };
-  },
+  return {
+    valid,
+    invalid,
+    assertMode: true,
+  };
 });
 
 // Create test (returns validated & transformed value)
-library.addTest(tests.validateNestedObject, {
-  name: 'superstruct-create',
-  setup() {
-    // Schema with defaults
-    const schemaWithDefaults = object({
-      id: number(),
-      name: string(),
-      active: refine(boolean(), 'default', () => true),
-      createdAt: coerce(date(), any(), () => new Date()),
-    });
+library.implement(tests.validateNestedObject, () => {
+  // Schema with defaults
+  const schemaWithDefaults = object({
+    id: number(),
+    name: string(),
+    active: refine(boolean(), 'default', () => true),
+    createdAt: coerce(date(), any(), () => new Date()),
+  });
 
+  const partialData = { id: 1, name: 'Test' };
+
+  // Test create method which validates and applies defaults
+  try {
+    const result = create(partialData, schemaWithDefaults);
     return {
-      schema: schemaWithDefaults,
-      partialData: { id: 1, name: 'Test' },
+      success: true,
+      hasDefaults: true,
+      hasId: !!result.id,
+      hasName: !!result.name,
+      hasActive: result.active === true,
+      hasCreatedAt: result.createdAt instanceof Date,
     };
-  },
-  run(ctx) {
-    // Test create method which validates and applies defaults
-    try {
-      const result = create(ctx.partialData, ctx.schema);
-      return {
-        success: true,
-        hasDefaults: true,
-        hasId: !!result.id,
-        hasName: !!result.name,
-        hasActive: result.active === true,
-        hasCreatedAt: result.createdAt instanceof Date,
-      };
-    } catch {
-      return { success: false, hasDefaults: false };
-    }
-  },
+  } catch {
+    return { success: false, hasDefaults: false };
+  }
 });
 
 console.log('✅ Superstruct library benchmarks registered');

@@ -156,430 +156,240 @@ const transformData = {
 // ============================================================================
 
 // Schema Creation Tests
-library.addTest(tests.createSimpleSchema, {
-  name: 'yup',
-  fn() {
-    // Schema creation - demonstrating that schemas are created in setup
-    const schema = yup.object({
-      name: yup.string().required(),
-      age: yup.number().required(),
-      email: yup.string().email().required(),
-    });
-    return schema;
-  },
+library.implement(tests.createSimpleSchema, () => {
+  // Schema creation - demonstrating that schemas are created in setup
+  const schema = yup.object({
+    name: yup.string().required(),
+    age: yup.number().required(),
+    email: yup.string().email().required(),
+  });
+  return schema;
 });
 
-library.addTest(tests.createComplexSchema, {
-  name: 'yup',
-  fn() {
-    // Complex schema creation
-    const schema = yup.object({
-      user: yup.object({
-        id: yup.number().required(),
-        profile: yup.object({
-          bio: yup.string().required(),
-          avatar: yup.string().url().required(),
-        }),
+library.implement(tests.createComplexSchema, () => {
+  // Complex schema creation
+  const schema = yup.object({
+    user: yup.object({
+      id: yup.number().required(),
+      profile: yup.object({
+        bio: yup.string().required(),
+        avatar: yup.string().url().required(),
       }),
-      settings: yup.array().of(
-        yup.object({
-          key: yup.string().required(),
-          value: yup.mixed().required(),
-        })
-      ),
-    });
-    return schema;
-  },
+    }),
+    settings: yup.array().of(
+      yup.object({
+        key: yup.string().required(),
+        value: yup.mixed().required(),
+      })
+    ),
+  });
+  return schema;
 });
 
 // Primitive Validation Tests
-library.addTest(tests.validateString, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: stringSchema,
-      validData: 'Hello World',
-      invalidData: 'Hi', // too short
-    };
-  },
-  run(ctx) {
-    // Use validateSync for better performance (avoid async overhead)
-    let valid = false;
-    let invalid = true;
+library.implement(tests.validateString, () => {
+  const validData = 'Hello World';
+  const invalidData = 'Hi'; // too short
 
-    try {
-      ctx.schema.validateSync(ctx.validData);
-      valid = true;
-    } catch {
-      valid = false;
-    }
+  let valid = false;
+  let invalid = true;
 
-    try {
-      ctx.schema.validateSync(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    stringSchema.validateSync(validData);
+    valid = true;
+  } catch {
+    valid = false;
+  }
 
-    return { valid, invalid };
-  },
+  try {
+    stringSchema.validateSync(invalidData);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
+
+  return { valid, invalid };
 });
 
-library.addTest(tests.validateNumber, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: numberSchema,
-      validData: 42,
-      invalidData: 150, // exceeds max
-    };
-  },
-  run(ctx) {
-    let valid = false;
-    let invalid = true;
+library.implement(tests.validateNumber, () => {
+  const validData = 42;
+  const invalidData = 150; // exceeds max
 
-    try {
-      ctx.schema.validateSync(ctx.validData);
-      valid = true;
-    } catch {
-      valid = false;
-    }
+  let valid = false;
+  let invalid = true;
 
-    try {
-      ctx.schema.validateSync(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    numberSchema.validateSync(validData);
+    valid = true;
+  } catch {
+    valid = false;
+  }
 
-    return { valid, invalid };
-  },
+  try {
+    numberSchema.validateSync(invalidData);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
+
+  return { valid, invalid };
 });
 
-library.addTest(tests.validateEmail, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: emailSchema,
-      validEmails: [
-        'user@example.com',
-        'john.doe@company.org',
-        'test+tag@domain.co.uk',
-      ],
-      invalidEmails: [
-        'invalid',
-        '@example.com',
-        'user@',
-        'user..name@example.com',
-      ],
-    };
-  },
-  run(ctx) {
-    let validCount = 0;
-    let invalidCount = 0;
+library.implement(tests.validateEmail, () => {
+  const validEmails = [
+    'user@example.com',
+    'john.doe@company.org',
+    'test+tag@domain.co.uk',
+  ];
+  const invalidEmails = [
+    'invalid',
+    '@example.com',
+    'user@',
+    'user..name@example.com',
+  ];
 
-    // Validate multiple emails
-    for (const email of ctx.validEmails) {
-      try {
-        ctx.schema.validateSync(email);
-        validCount++;
-      } catch {
-        // Invalid
-      }
+  let validCount = 0;
+  let invalidCount = 0;
+
+  // Validate multiple emails
+  for (const email of validEmails) {
+    try {
+      emailSchema.validateSync(email);
+      validCount++;
+    } catch {
+      // Invalid
     }
+  }
 
-    for (const email of ctx.invalidEmails) {
-      try {
-        ctx.schema.validateSync(email);
-      } catch {
-        invalidCount++;
-      }
+  for (const email of invalidEmails) {
+    try {
+      emailSchema.validateSync(email);
+    } catch {
+      invalidCount++;
     }
+  }
 
-    return { validCount, invalidCount };
-  },
+  return { validCount, invalidCount };
 });
 
 // Object Validation Tests
-library.addTest(tests.validateFlatObject, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: userSchema,
-      validData: validUser,
-      invalidData: invalidUser,
-    };
-  },
-  run(ctx) {
-    // Test object validation performance
-    let valid = false;
-    let invalid = true;
-    let validData = null;
+library.implement(tests.validateFlatObject, () => {
+  let valid = false;
+  let invalid = true;
+  let validData = null;
 
-    try {
-      validData = ctx.schema.validateSync(ctx.validData);
-      valid = true;
-    } catch {
-      valid = false;
-    }
+  try {
+    validData = userSchema.validateSync(validUser);
+    valid = true;
+  } catch {
+    valid = false;
+  }
 
-    try {
-      ctx.schema.validateSync(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    userSchema.validateSync(invalidUser);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
 
-    return {
-      valid,
-      invalid,
-      validData,
-    };
-  },
+  return {
+    valid,
+    invalid,
+    validData,
+  };
 });
 
-library.addTest(tests.validateNestedObject, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: profileSchema,
-      validData: validProfile,
-      invalidData: invalidProfile,
-    };
-  },
-  run(ctx) {
-    // Test complex nested validation
-    let valid = false;
-    let invalid = true;
-    let hasData = false;
+library.implement(tests.validateNestedObject, () => {
+  let valid = false;
+  let invalid = true;
+  let hasData = false;
 
-    try {
-      const data = ctx.schema.validateSync(ctx.validData);
-      valid = true;
-      hasData = !!data;
-    } catch {
-      valid = false;
-    }
+  try {
+    const data = profileSchema.validateSync(validProfile);
+    valid = true;
+    hasData = !!data;
+  } catch {
+    valid = false;
+  }
 
-    try {
-      ctx.schema.validateSync(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    profileSchema.validateSync(invalidProfile);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
 
-    return {
-      valid,
-      invalid,
-      hasData,
-    };
-  },
+  return {
+    valid,
+    invalid,
+    hasData,
+  };
 });
 
-library.addTest(tests.validateArray, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: itemsArraySchema,
-      validData: validItems,
-      invalidData: [
-        ...validItems.slice(0, 5),
-        { id: -1, name: '', price: -10, quantity: -5 }, // invalid item
-        ...validItems.slice(5),
-      ],
-    };
-  },
-  run(ctx) {
-    // Test array validation
-    let valid = false;
-    let invalid = true;
-    let itemCount = 0;
+library.implement(tests.validateArray, () => {
+  const invalidItems = [
+    ...validItems.slice(0, 5),
+    { id: -1, name: '', price: -10, quantity: -5 }, // invalid item
+    ...validItems.slice(5),
+  ];
 
-    try {
-      const data = ctx.schema.validateSync(ctx.validData);
-      valid = true;
-      itemCount = data.length;
-    } catch {
-      valid = false;
-    }
+  let valid = false;
+  let invalid = true;
+  let itemCount = 0;
 
-    try {
-      ctx.schema.validateSync(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
+  try {
+    const data = itemsArraySchema.validateSync(validItems);
+    valid = true;
+    itemCount = data.length;
+  } catch {
+    valid = false;
+  }
 
-    return {
-      valid,
-      invalid,
-      itemCount,
-    };
-  },
+  try {
+    itemsArraySchema.validateSync(invalidItems);
+    invalid = false;
+  } catch {
+    invalid = true;
+  }
+
+  return {
+    valid,
+    invalid,
+    itemCount,
+  };
 });
 
 // Error Handling Tests
-library.addTest(tests.catchValidationErrors, {
-  name: 'yup',
-  setup() {
+library.implement(tests.catchValidationErrors, () => {
+  try {
+    userSchema.validateSync(invalidUser, { abortEarly: false });
+    return { success: true, errorCount: 0, hasErrors: false };
+  } catch (error: any) {
+    const errors = error.errors || [];
     return {
-      schema: userSchema,
-      invalidData: invalidUser,
+      success: false,
+      errorCount: errors.length,
+      hasErrors: true,
+      firstError: errors[0],
     };
-  },
-  run(ctx) {
-    // Test error handling performance
-    try {
-      ctx.schema.validateSync(ctx.invalidData, { abortEarly: false });
-      return { success: true, errorCount: 0, hasErrors: false };
-    } catch (error: any) {
-      const errors = error.errors || [];
-      return {
-        success: false,
-        errorCount: errors.length,
-        hasErrors: true,
-        firstError: errors[0],
-      };
-    }
-  },
+  }
 });
 
-library.addTest(tests.multipleErrors, {
-  name: 'yup',
-  setup() {
-    return {
-      schema: profileSchema,
-      invalidData: invalidProfile,
-    };
-  },
-  run(ctx) {
-    // Test multiple error collection
-    try {
-      ctx.schema.validateSync(ctx.invalidData, { abortEarly: false });
-      return { errorCount: 0, hasMultiple: false, paths: 0, types: 0 };
-    } catch (error: any) {
-      const errors = error.errors || [];
-      const inner = error.inner || [];
-
-      return {
-        errorCount: errors.length,
-        hasMultiple: errors.length > 1,
-        paths: inner.length,
-        types: new Set(inner.map((e: any) => e.type)).size,
-      };
-    }
-  },
-});
-
-// Additional Performance Tests
-
-// Batch validation test
-library.addTest(tests.validateFlatObject, {
-  name: 'yup-batch',
-  setup() {
-    // Create batch of objects for validation
-    const batchData = Array.from({ length: 100 }, (_, i) => ({
-      id: i + 1,
-      username: `user${i}`,
-      email: `user${i}@example.com`,
-      age: 20 + (i % 50),
-      active: i % 2 === 0,
-    }));
+library.implement(tests.multipleErrors, () => {
+  try {
+    profileSchema.validateSync(invalidProfile, { abortEarly: false });
+    return { errorCount: 0, hasMultiple: false, paths: 0, types: 0 };
+  } catch (error: any) {
+    const errors = error.errors || [];
+    const inner = error.inner || [];
 
     return {
-      schema: userSchema,
-      batchData,
+      errorCount: errors.length,
+      hasMultiple: errors.length > 1,
+      paths: inner.length,
+      types: new Set(inner.map((e: any) => e.type)).size,
     };
-  },
-  run(ctx) {
-    // Batch validate multiple objects
-    let validCount = 0;
-    let invalidCount = 0;
-
-    for (const item of ctx.batchData) {
-      try {
-        ctx.schema.validateSync(item);
-        validCount++;
-      } catch {
-        invalidCount++;
-      }
-    }
-
-    return { validCount, invalidCount, total: ctx.batchData.length };
-  },
-});
-
-// Transform validation test
-library.addTest(tests.validateNestedObject, {
-  name: 'yup-transform',
-  setup() {
-    return {
-      schema: transformSchema,
-      data: transformData,
-    };
-  },
-  run(ctx) {
-    // Test transformation performance
-    try {
-      const result = ctx.schema.validateSync(ctx.data);
-
-      return {
-        success: true,
-        transformed: true,
-        hasDate: result.date instanceof Date,
-        hasNumber: typeof result.number === 'number',
-        hasTrimmed: result.trimmed === 'hello world',
-        hasUpper: result.upper === 'HELLO',
-      };
-    } catch {
-      return { success: false, transformed: false };
-    }
-  },
-});
-
-// Async validation test (Yup-specific strength)
-library.addTest(tests.validateNestedObject, {
-  name: 'yup-async',
-  setup() {
-    // Create a schema with async validation
-    const asyncSchema = yup.object({
-      username: yup
-        .string()
-        .test('async-test', 'Username check', async (value) => {
-          // Simulate async validation (e.g., checking database)
-          await new Promise(resolve => setTimeout(resolve, 1));
-          return !!value && value.length > 3;
-        }),
-      email: yup.string().email().required(),
-    });
-
-    return {
-      schema: asyncSchema,
-      validData: { username: 'johndoe', email: 'john@example.com' },
-      invalidData: { username: 'jo', email: 'invalid' },
-    };
-  },
-  async run(ctx) {
-    // Test async validation performance
-    let valid = false;
-    let invalid = true;
-
-    try {
-      await ctx.schema.validate(ctx.validData);
-      valid = true;
-    } catch {
-      valid = false;
-    }
-
-    try {
-      await ctx.schema.validate(ctx.invalidData);
-      invalid = false;
-    } catch {
-      invalid = true;
-    }
-
-    return { valid, invalid, async: true };
-  },
+  }
 });
 
 console.log('✅ Yup library benchmarks registered');

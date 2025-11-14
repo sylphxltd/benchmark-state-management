@@ -6,8 +6,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
-import { calculateTestWeights, weightedGeometricMean } from './calculate-test-weights';
-import { loadCategoryWeightsSync, calculateHybridWeights } from './calculate-hybrid-weights';
+import { calculateTestWeights, weightedGeometricMean, loadCategoryWeightsSync, calculateHybridWeights } from '../src/core/scoring.js';
 
 interface BenchmarkResult {
   test: string;

@@ -3,31 +3,31 @@
   "version": "1.0",
   "description": "Hybrid weighting configuration for state-management benchmarks",
   "categoryWeights": {
-    "basic-read": {
+    "01-basic-read": {
       "weight": 0.35,
       "rationale": "Most common operation in real-world apps"
     },
-    "reactivity-patterns": {
+    "07-reactivity-patterns": {
       "weight": 0.15,
       "rationale": "Core differentiator for reactive state libraries"
     },
-    "performance-stress": {
+    "06-performance-stress": {
       "weight": 0.15,
       "rationale": "Tests scalability and edge cases"
     },
-    "advanced-operations": {
+    "03-advanced-operations": {
       "weight": 0.15,
       "rationale": "Complex state transformations"
     },
-    "basic-write": {
+    "02-basic-write": {
       "weight": 0.10,
       "rationale": "Common but less frequent than reads"
     },
-    "async-operations": {
+    "04-async-operations": {
       "weight": 0.05,
       "rationale": "Specialized use case"
     },
-    "real-world": {
+    "05-real-world": {
       "weight": 0.05,
       "rationale": "Integration scenarios"
     }

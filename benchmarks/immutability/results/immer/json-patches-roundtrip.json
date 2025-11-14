@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "JSON Patches - Roundtrip",
   "group": "06-patches",
-  "timestamp": "2025-11-14T12:08:35.339Z",
+  "timestamp": "2025-11-14T12:22:08.478Z",
   "result": {
-    "opsPerSecond": 62824.91394133942,
-    "meanTime": 0.016315377999984775,
-    "variance": 0.000012918068175293174,
-    "p99": 0.03470420999881752,
+    "opsPerSecond": 64838.20099902871,
+    "meanTime": 0.015798515999947995,
+    "variance": 0.000013746828910864712,
+    "p99": 0.03313953000073523,
     "samples": 1000
   }
 }

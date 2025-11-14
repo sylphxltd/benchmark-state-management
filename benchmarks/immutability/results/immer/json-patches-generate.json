@@ -5,12 +5,12 @@
   "version": "10.2.0",
   "test": "JSON Patches - Generate",
   "group": "06-patches",
-  "timestamp": "2025-11-14T20:06:12.624Z",
+  "timestamp": "2025-11-14T21:04:32.416Z",
   "result": {
-    "opsPerSecond": 166816.6208118109,
-    "meanTime": 0.006089471000002959,
-    "variance": 9.09632781961718e-7,
-    "p99": 0.010385700000988424,
+    "opsPerSecond": 151792.24353632692,
+    "meanTime": 0.007109099000008428,
+    "variance": 0.000009290881904995152,
+    "p99": 0.020239700000965966,
     "samples": 1000
   }
 }

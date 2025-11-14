@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-14T20:06:10.330Z",
+  "timestamp": "2025-11-14T21:04:35.311Z",
   "result": {
-    "opsPerSecond": 61304.60474361848,
-    "meanTime": 0.016397092000202975,
-    "variance": 0.000002279483332544476,
-    "p99": 0.02393669999750273,
+    "opsPerSecond": 61509.82270734719,
+    "meanTime": 0.016298785999882968,
+    "variance": 9.753319221993678e-7,
+    "p99": 0.023584109995063045,
     "samples": 1000
   }
 }

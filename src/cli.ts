@@ -301,11 +301,8 @@ async function generateReadme(args: string[]) {
 
     // Also generate root README
     console.log('\n📝 Generating root README...');
-    const scriptPath = join(rootDir, 'scripts/generate-root-readme.ts');
-    execSync(`npx tsx ${scriptPath}`, {
-      stdio: 'inherit',
-      cwd: rootDir,
-    });
+    const { generateRootReadme } = await import('./core/root-readme-generator.js');
+    await generateRootReadme(rootDir);
   }
 
   console.log('\n✅ README generation complete');

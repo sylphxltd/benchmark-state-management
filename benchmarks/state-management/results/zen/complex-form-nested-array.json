@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-14T12:45:20.535Z",
+  "timestamp": "2025-11-14T13:07:27.232Z",
   "result": {
-    "opsPerSecond": 18200734.74360518,
-    "meanTime": 0.00005825300001743017,
-    "variance": 1.4567437311545445e-9,
-    "p99": 0.00008499999967170879,
+    "opsPerSecond": 18231616.913197827,
+    "meanTime": 0.00005651900006705546,
+    "variance": 3.5659823655626415e-10,
+    "p99": 0.00008099999835394556,
     "samples": 1000
   }
 }

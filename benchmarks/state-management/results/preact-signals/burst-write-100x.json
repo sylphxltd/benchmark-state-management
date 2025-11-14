@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "Burst Write (100x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-14T12:45:20.535Z",
+  "timestamp": "2025-11-14T13:07:27.232Z",
   "result": {
-    "opsPerSecond": 2535830.550923968,
-    "meanTime": 0.00040596899999036394,
-    "variance": 8.193879917232886e-9,
-    "p99": 0.0007509999995818362,
+    "opsPerSecond": 959124.6995333916,
+    "meanTime": 0.001077026000029946,
+    "variance": 1.8723095426345923e-7,
+    "p99": 0.0018640999998387996,
     "samples": 1000
   }
 }

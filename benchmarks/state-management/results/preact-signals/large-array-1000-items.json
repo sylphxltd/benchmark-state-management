@@ -5,12 +5,12 @@
   "version": "2.4.0",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-14T14:58:41.351Z",
+  "timestamp": "2025-11-14T15:05:52.195Z",
   "result": {
-    "opsPerSecond": 184772.58137912268,
-    "meanTime": 0.006461691999953473,
-    "variance": 0.00047822445865209397,
-    "p99": 0.00881370999901264,
+    "opsPerSecond": 158188.1296470567,
+    "meanTime": 0.006363579000033496,
+    "variance": 5.340261519998385e-7,
+    "p99": 0.00878909999890311,
     "samples": 1000
   }
 }

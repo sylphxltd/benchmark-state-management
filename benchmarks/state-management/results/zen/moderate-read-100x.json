@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Moderate Read (100x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-14T00:26:13.687Z",
+  "timestamp": "2025-11-14T01:33:04.227Z",
   "result": {
-    "opsPerSecond": 22042718.60610775,
-    "meanTime": 0.00004619600000023638,
-    "variance": 5.2201785708486296e-11,
-    "p99": 0.00006108999973548626,
+    "opsPerSecond": 17452559.059358116,
+    "meanTime": 0.00005973899998934939,
+    "variance": 3.535884673486989e-10,
+    "p99": 0.00012803999968127752,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Deep Chain (10 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-14T00:26:13.687Z",
+  "timestamp": "2025-11-14T01:33:04.227Z",
   "result": {
-    "opsPerSecond": 13329038.777998565,
-    "meanTime": 0.00009004700010700617,
-    "variance": 2.0403669348431087e-7,
-    "p99": 0.00012000000424450263,
+    "opsPerSecond": 18114341.89649056,
+    "meanTime": 0.0000583720001814072,
+    "variance": 6.922718946593971e-10,
+    "p99": 0.0001460499985114438,
     "samples": 1000
   }
 }

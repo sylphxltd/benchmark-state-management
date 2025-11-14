@@ -5,12 +5,12 @@
   "version": "5.1.4",
   "test": "Array Push",
   "group": "03-array-operations",
-  "timestamp": "2025-11-14T15:20:48.079Z",
+  "timestamp": "2025-11-14T16:06:26.112Z",
   "result": {
-    "opsPerSecond": 2322815.116924313,
-    "meanTime": 0.000470977000003586,
-    "variance": 3.03426332811915e-7,
-    "p99": 0.0010222900003645915,
+    "opsPerSecond": 2251218.828537508,
+    "meanTime": 0.0004644140000136758,
+    "variance": 1.7241780384846818e-8,
+    "p99": 0.0010421999998743556,
     "samples": 1000
   }
 }

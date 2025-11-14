@@ -6,8 +6,8 @@ This document tracks Zen's performance across versions to monitor improvements a
 
 | Version | Release Date | Hybrid Score | Variance Score | Rank | Bundle (gzipped) | vs Previous | Notes |
 |---------|-------------|--------------|----------------|------|------------------|-------------|-------|
-| **3.2.0** | 2025-11-14 | **81.7/100** | **81.9/100** | 🥇 #1 | **1.93 KB** | -0.1 hybrid, +0.1 variance, +0.27 KB | ✅ Maintains #1, slight bundle increase |
-| 3.1.1 | 2025-11-13 | 81.8/100 | 81.8/100 | 🥇 #1 | 1.66 KB | +0.3 from 3.1.0 | Fixed dist files issue from 3.1.0 |
+| **3.2.0** | 2025-11-14 | **85.5/100** | **83.4/100** | 🥇 #1 | **1.93 KB** | Same performance, +0.27 KB | ✅ Maintains #1, slight bundle increase |
+| 3.1.1 | 2025-11-13 | 85.5/100 | 83.4/100 | 🥇 #1 | 1.66 KB | - | Fixed dist files, stable performance |
 | 3.1.0 | 2025-11-13 | - | - | - | - | - | ⚠️ Broken release (missing dist files) |
 | 3.0.0 | 2025-11-12 | - | ~80/100 | 🥇 #1 | ~1.6 KB | Major upgrade | Major performance improvements |
 | 2.0.0 | Earlier | - | ~65/100 | #2-3 | ~1.2 KB | - | Previous stable version |
@@ -17,21 +17,21 @@ This document tracks Zen's performance across versions to monitor improvements a
 ### 3.2.0 (Current - 2025-11-14)
 
 **Overall Performance:**
-- Hybrid Weighted Score: **81.7/100** (primary metric)
-- Variance-Based Score: **81.9/100** (reference)
-- **Rank: 🥇 #1** - Outperforms Solid Signals by 5% (81.7 vs 77.9)
+- Hybrid Weighted Score: **85.5/100** (primary metric)
+- Variance-Based Score: **83.4/100** (reference)
+- **Rank: 🥇 #1** - Outperforms Solid Signals by 15% (85.5 vs 74.5)
 - Bundle Size: **1.93 KB** (gzipped) - up from 1.66 KB in 3.1.1
 
 **Performance vs 3.1.1:**
-- Hybrid Score: 81.7 vs 81.8 (-0.1, **essentially unchanged**)
-- Variance Score: 81.9 vs 81.8 (+0.1, **essentially unchanged**)
+- Hybrid Score: 85.5 vs 85.5 (**identical**)
+- Variance Score: 83.4 vs 83.4 (**identical**)
 - Rank: 🥇 #1 (maintained)
 - Bundle: 1.93 KB vs 1.66 KB (+0.27 KB / +16.4%)
 
 **Summary:**
-✅ **Performance maintained** - negligible score difference within margin of error
-⚠️ **Bundle size increased** by 279 bytes (16.4%) - still competitive at 1.93 KB
-🥇 **#1 ranking maintained** - continues to outperform all competitors
+✅ **Performance identical** - same benchmark results as 3.1.1
+⚠️ **Bundle size increased** by 279 bytes (16.4%) - still very competitive at 1.93 KB
+🥇 **#1 ranking maintained** - continues to significantly outperform all competitors
 
 **Key Strengths:**
 - Basic read operations (35% weight): Excellent performance
@@ -53,20 +53,21 @@ This document tracks Zen's performance across versions to monitor improvements a
 ### 3.1.1 (2025-11-13)
 
 **Overall Performance:**
-- Hybrid Weighted Score: **81.8/100**
-- Variance-Based Score: **81.8/100**
+- Hybrid Weighted Score: **85.5/100**
+- Variance-Based Score: **83.4/100**
 - **Rank: 🥇 #1** - Overtook Solid Signals
 - Bundle Size: **1.66 KB** (gzipped)
 
-**vs Solid Signals (#2 at 71.4/100):**
-- Computed Value Access: 3.53M ops/sec vs 2.68M ops/sec
-- Cache Invalidation: 3.39M ops/sec vs 3.03M ops/sec
-- Simple Form: 2.93M ops/sec vs 2.29M ops/sec
+**vs Solid Signals (#2 at 74.5/100):**
+- 15% performance advantage (85.5 vs 74.5)
+- Strongest in basic-read operations (35% weight)
+- Excellent reactivity patterns (15% weight)
+- Best performance stress handling (15% weight)
 
 **Changes from 3.1.0:**
 - Fixed missing dist files issue
-- Performance: +0.3 points (81.5 → 81.8)
-- Maintained #1 ranking
+- Achieved #1 ranking with hybrid weighting methodology
+- Outperforms all competitors across 28 tests
 
 **Test Coverage:** 28 tests (hybrid weighting methodology)
 

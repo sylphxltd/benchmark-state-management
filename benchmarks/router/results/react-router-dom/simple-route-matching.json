@@ -5,12 +5,12 @@
   "version": "6.30.1",
   "test": "Simple Route Matching",
   "group": "01-basic-routes",
-  "timestamp": "2025-11-14T22:05:28.960Z",
+  "timestamp": "2025-11-14T23:05:26.901Z",
   "result": {
-    "opsPerSecond": 17531.275786314895,
-    "meanTime": 0.058380542999993394,
-    "variance": 0.0003875327496537549,
-    "p99": 0.090720699999697,
+    "opsPerSecond": 17534.817071868893,
+    "meanTime": 0.05876666299999761,
+    "variance": 0.000637861266021721,
+    "p99": 0.08653782999992017,
     "samples": 1000
   }
 }

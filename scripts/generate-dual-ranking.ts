@@ -16,12 +16,10 @@ import { join } from 'path';
 import {
   calculateTestWeights,
   weightedGeometricMean,
-} from './calculate-test-weights';
-import {
   calculateHybridWeights,
   loadCategoryWeights,
   type HybridTestWeight,
-} from './calculate-hybrid-weights';
+} from '../src/core/scoring.js';
 
 interface BenchmarkResult {
   test: string;

@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Burst Write (100x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-14T04:07:13.460Z",
+  "timestamp": "2025-11-14T05:05:37.927Z",
   "result": {
-    "opsPerSecond": 19716776.676885363,
-    "meanTime": 0.00005114200005664315,
-    "variance": 3.410193746666573e-11,
-    "p99": 0.00006100000064179767,
+    "opsPerSecond": 21141179.069930803,
+    "meanTime": 0.00004799300001832307,
+    "variance": 4.6757708690554264e-11,
+    "p99": 0.00005100000089441892,
     "samples": 1000
   }
 }

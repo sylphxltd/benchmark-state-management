@@ -4,11 +4,11 @@
   "packageName": "@sylphx/zen",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-14T04:07:13.460Z",
+  "timestamp": "2025-11-14T05:05:37.927Z",
   "result": {
-    "opsPerSecond": 21071616.323597237,
-    "meanTime": 0.00004796300000452902,
-    "variance": 2.6922553456731956e-11,
+    "opsPerSecond": 21202704.893081237,
+    "meanTime": 0.00004776799996034242,
+    "variance": 5.0602780274695896e-11,
     "p99": 0.00005100000271340832,
     "samples": 1000
   }

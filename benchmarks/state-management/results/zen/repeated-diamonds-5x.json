@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-14T04:07:13.460Z",
+  "timestamp": "2025-11-14T05:05:37.927Z",
   "result": {
-    "opsPerSecond": 11363961.966221755,
-    "meanTime": 0.00008833899997989648,
-    "variance": 3.302510479401724e-11,
-    "p99": 0.00011000000085914508,
+    "opsPerSecond": 11115391.808699006,
+    "meanTime": 0.00009032699997624149,
+    "variance": 4.606813893051098e-11,
+    "p99": 0.00011001000078977085,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "react-router-dom",
   "test": "Wildcard Route Matching",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-14T04:07:09.454Z",
+  "timestamp": "2025-11-14T05:05:39.583Z",
   "result": {
-    "opsPerSecond": 34402.27609794208,
-    "meanTime": 0.03123370000000341,
-    "variance": 0.00039641768403011075,
-    "p99": 0.07381300000010015,
+    "opsPerSecond": 37130.950423426075,
+    "meanTime": 0.028252847999988263,
+    "variance": 0.00035281358529189915,
+    "p99": 0.04620200999966982,
     "samples": 1000
   }
 }

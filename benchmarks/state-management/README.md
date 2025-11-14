@@ -48,9 +48,9 @@ Comprehensive performance benchmarks for React state-management libraries.
 
 
 **Zen** (Score: 49.8/100)
-- High-performance state management solution
-- **Best for**: General purpose state management
-- [GitHub](#) • [npm](https://www.npmjs.com/package/zen)
+- Minimal and fast state management with signal-based reactivity
+- **Best for**: Similar performance to Preact, slightly larger bundle
+- [GitHub](https://github.com/SylphxAI/zen) • [npm](https://www.npmjs.com/package/@sylphx/zen)
 
 
 **Zustand** (Score: 46.1/100)
@@ -60,9 +60,9 @@ Comprehensive performance benchmarks for React state-management libraries.
 
 
 **Preact Signals** (Score: 36.5/100)
-- High-performance state management solution
-- **Best for**: General purpose state management
-- [GitHub](#) • [npm](https://www.npmjs.com/package/preact-signals)
+- Fast and reactive signals for Preact and React with automatic dependency tracking
+- **Best for**: Excellent balance of speed and bundle size
+- [GitHub](https://github.com/preactjs/signals) • [npm](https://www.npmjs.com/package/@preact/signals)
 
 
 **Valtio** (Score: 34.2/100)
@@ -95,8 +95,8 @@ Based on **two-tier weighted geometric mean** combining category importance with
 |:----:|---------|--------------|---------------------|:-----:|
 | 🥇 1 | **[Solid Signals](https://github.com/solidjs/solid)** | 86.0/100 | 100% of fastest | [📦](https://www.npmjs.com/package/solid-js) [📊](https://bundlephobia.com/package/solid-js) |
 | 🥈 2 | **[Zustand](https://github.com/pmndrs/zustand)** | 49.3/100 | 57% of fastest | [📦](https://www.npmjs.com/package/zustand) [📊](https://bundlephobia.com/package/zustand) |
-| 🥉 3 | **[Zen](#)** | 46.7/100 | 54% of fastest | [📦](#) [📊](#) |
-|  4 | **[Preact Signals](#)** | 33.2/100 | 39% of fastest | [📦](#) [📊](#) |
+| 🥉 3 | **[Zen](https://github.com/SylphxAI/zen)** | 46.7/100 | 54% of fastest | [📦](https://www.npmjs.com/package/@sylphx/zen) [📊](https://bundlephobia.com/package/@sylphx/zen) |
+|  4 | **[Preact Signals](https://github.com/preactjs/signals)** | 33.2/100 | 39% of fastest | [📦](https://www.npmjs.com/package/@preact/signals) [📊](https://bundlephobia.com/package/@preact/signals) |
 |  5 | **[Valtio](https://github.com/pmndrs/valtio)** | 26.8/100 | 31% of fastest | [📦](https://www.npmjs.com/package/valtio) [📊](https://bundlephobia.com/package/valtio) |
 |  6 | **[MobX](https://github.com/mobxjs/mobx)** | 26.4/100 | 31% of fastest | [📦](https://www.npmjs.com/package/mobx) [📊](https://bundlephobia.com/package/mobx) |
 |  7 | **[Jotai](https://github.com/pmndrs/jotai)** | 8.5/100 | 10% of fastest | [📦](https://www.npmjs.com/package/jotai) [📊](https://bundlephobia.com/package/jotai) |
@@ -112,9 +112,9 @@ Pure data-driven weighting based on test stability across implementations.
 | Rank | Library | Overall Score | Relative Performance | Links |
 |:----:|---------|--------------|---------------------|:-----:|
 | 🥇 1 | **[Solid Signals](https://github.com/solidjs/solid)** | 85.8/100 | 100% of fastest | [📦](https://www.npmjs.com/package/solid-js) [📊](https://bundlephobia.com/package/solid-js) |
-| 🥈 2 | **[Zen](#)** | 49.8/100 | 58% of fastest | [📦](https://www.npmjs.com/package/zen) [📊](https://bundlephobia.com/package/zen) |
+| 🥈 2 | **[Zen](https://github.com/SylphxAI/zen)** | 49.8/100 | 58% of fastest | [📦](https://www.npmjs.com/package/@sylphx/zen) [📊](https://bundlephobia.com/package/@sylphx/zen) |
 | 🥉 3 | **[Zustand](https://github.com/pmndrs/zustand)** | 46.1/100 | 54% of fastest | [📦](https://www.npmjs.com/package/zustand) [📊](https://bundlephobia.com/package/zustand) |
-|  4 | **[Preact Signals](#)** | 36.5/100 | 42% of fastest | [📦](https://www.npmjs.com/package/preact-signals) [📊](https://bundlephobia.com/package/preact-signals) |
+|  4 | **[Preact Signals](https://github.com/preactjs/signals)** | 36.5/100 | 42% of fastest | [📦](https://www.npmjs.com/package/@preact/signals) [📊](https://bundlephobia.com/package/@preact/signals) |
 |  5 | **[Valtio](https://github.com/pmndrs/valtio)** | 34.2/100 | 40% of fastest | [📦](https://www.npmjs.com/package/valtio) [📊](https://bundlephobia.com/package/valtio) |
 |  6 | **[MobX](https://github.com/mobxjs/mobx)** | 27.6/100 | 32% of fastest | [📦](https://www.npmjs.com/package/mobx) [📊](https://bundlephobia.com/package/mobx) |
 |  7 | **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | 10.3/100 | 12% of fastest | [📦](https://www.npmjs.com/package/@reduxjs/toolkit) [📊](https://bundlephobia.com/package/@reduxjs/toolkit) |
@@ -130,9 +130,9 @@ Pure data-driven weighting based on test stability across implementations.
 | Library | Score | Bundle Size (gzip) | Description | Best For |
 |---------|:-----:|:------------------:|-------------|----------|
 | **[Solid Signals](https://github.com/solidjs/solid)** | **85.8** | **3.96 KB** | Fine-grained reactivity primitive from Solid.js fo... | Fastest overall, but requires Solid.js e... |
-| **[Zen](#)** | **49.8** | N/A | State management solution... | General purpose... |
+| **[Zen](https://github.com/SylphxAI/zen)** | **49.8** | **1.66 KB** | Minimal and fast state management with signal-base... | Similar performance to Preact, slightly ... |
 | **[Zustand](https://github.com/pmndrs/zustand)** | **46.1** | **0.59 KB** | Small, fast and scalable bearbones state managemen... | Minimal bundle, simple API, moderate per... |
-| **[Preact Signals](#)** | **36.5** | N/A | State management solution... | General purpose... |
+| **[Preact Signals](https://github.com/preactjs/signals)** | **36.5** | **3.04 KB** | Fast and reactive signals for Preact and React wit... | Excellent balance of speed and bundle si... |
 | **[Valtio](https://github.com/pmndrs/valtio)** | **34.2** | **2.66 KB** | Proxy-based state management library that makes st... | Simple API, moderate performance, good f... |
 | **[MobX](https://github.com/mobxjs/mobx)** | **27.6** | **17.56 KB** | Simple, scalable state management with transparent... | Automatic tracking, slow creation, large... |
 | **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** | **10.3** | **13.83 KB** | The official, opinionated, batteries-included tool... | Feature-rich, DevTools support, larger b... |
@@ -925,9 +925,9 @@ npx tsx ../../scripts/generate-simple-readme.ts .
 ## 🚀 Libraries Tested
 
 - **[Solid Signals](https://github.com/solidjs/solid)** (`solid-js`) v1.9.10 • 3.96 KB gzip - [📦 npm](https://www.npmjs.com/package/solid-js) • [📊 bundle size](https://bundlephobia.com/package/solid-js)
-- **[Zen](#)** (`3.1.1`)  - [📦 npm](https://www.npmjs.com/package/zen) • [📊 bundle size](https://bundlephobia.com/package/zen)
+- **[Zen](https://github.com/SylphxAI/zen)** (`3.1.1`)  • 1.66 KB gzip - [📦 npm](https://www.npmjs.com/package/@sylphx/zen) • [📊 bundle size](https://bundlephobia.com/package/@sylphx/zen)
 - **[Zustand](https://github.com/pmndrs/zustand)** (`zustand`) v5.0.8 • 0.59 KB gzip - [📦 npm](https://www.npmjs.com/package/zustand) • [📊 bundle size](https://bundlephobia.com/package/zustand)
-- **[Preact Signals](#)** (`2.4.0`)  - [📦 npm](https://www.npmjs.com/package/preact-signals) • [📊 bundle size](https://bundlephobia.com/package/preact-signals)
+- **[Preact Signals](https://github.com/preactjs/signals)** (`2.4.0`)  • 3.04 KB gzip - [📦 npm](https://www.npmjs.com/package/@preact/signals) • [📊 bundle size](https://bundlephobia.com/package/@preact/signals)
 - **[Valtio](https://github.com/pmndrs/valtio)** (`valtio`) v2.2.0 • 2.66 KB gzip - [📦 npm](https://www.npmjs.com/package/valtio) • [📊 bundle size](https://bundlephobia.com/package/valtio)
 - **[MobX](https://github.com/mobxjs/mobx)** (`mobx`) v6.15.0 • 17.56 KB gzip - [📦 npm](https://www.npmjs.com/package/mobx) • [📊 bundle size](https://bundlephobia.com/package/mobx)
 - **[Redux Toolkit](https://github.com/reduxjs/redux-toolkit)** (`@reduxjs/toolkit`) v2.10.1 • 13.83 KB gzip - [📦 npm](https://www.npmjs.com/package/@reduxjs/toolkit) • [📊 bundle size](https://bundlephobia.com/package/@reduxjs/toolkit)
@@ -961,7 +961,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-14T15:18:47.784Z*
+*Generated on 2025-11-14T15:20:19.923Z*
 
 [⬆️ Back to Top](#state-management-benchmarks) • [⬅️ Main README](../../README.md)
 

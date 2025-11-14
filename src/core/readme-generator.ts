@@ -188,6 +188,7 @@ export async function generateCategoryReadme(categoryPath: string): Promise<void
     libraries.push({
       library: libraryName,
       libraryId: libraryId,
+      packageName: packageName,
       version: version,
       timestamp: timestamp,
       results: testResults,
@@ -527,7 +528,7 @@ Comprehensive performance benchmarks for React ${categoryName} libraries.
 ${sortedLibs
   .slice(0, 5)
   .map((lib) => {
-    const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+    const meta = metadata.libraries[lib.packageName];
     const score = overallScores.get(lib.libraryId) || 0;
 
     return `
@@ -569,7 +570,7 @@ ${sortedLibsHybrid
     const topScore = overallScoresHybrid.get(sortedLibsHybrid[0].libraryId) || 100;
     const relative = ((score / topScore) * 100).toFixed(0);
 
-    const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+    const meta = metadata.libraries[lib.packageName];
     const githubUrl = meta?.url || '#';
     const npmUrl = meta?.npm ? `https://www.npmjs.com/package/${meta.npm}` : '#';
     const bundleUrl = meta?.npm ? `https://bundlephobia.com/package/${meta.npm}` : '#';
@@ -602,7 +603,7 @@ ${sortedLibs
     const medal = getMedal(i);
     const rank = i + 1;
 
-    const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+    const meta = metadata.libraries[lib.packageName];
     const githubLink = meta?.url || '#';
     const npmLink = `https://www.npmjs.com/package/${meta?.npm || lib.libraryId}`;
     const bundleLink = `https://bundlephobia.com/package/${meta?.npm || lib.libraryId}`;
@@ -623,15 +624,15 @@ ${sortedLibs
 ${sortedLibs
   .map((lib) => {
     const score = overallScores.get(lib.libraryId) || 0;
-    const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+    const meta = metadata.libraries[lib.packageName];
 
     // Get bundle size from library-metadata.json first, then fall back to versions.json
     let bundleSize = 'N/A';
     if (meta?.bundleSize) {
       bundleSize = `**${(meta.bundleSize.gzipped / 1024).toFixed(2)} KB**`;
     } else {
-      const versionKey = lib.version || lib.libraryId;
-      const versionData = versions.libraries[versionKey];
+      // Use packageName as key for versions.json lookup
+      const versionData = versions.libraries[lib.packageName];
       if (versionData?.size) {
         bundleSize = `**${(versionData.size.gzip / 1024).toFixed(2)} KB**`;
       }
@@ -741,7 +742,7 @@ ${generateTestCoverage(groupedByGroup, libraries)}
 
 ${sortedLibs
   .map((lib) => {
-    const meta = metadata.libraries[lib.version] || metadata.libraries[lib.libraryId];
+    const meta = metadata.libraries[lib.packageName];
     const versionKey = lib.version || lib.libraryId;
     const versionData = versions.libraries[versionKey];
     const versionInfo = versionData?.current ? `v${versionData.current}` : '';

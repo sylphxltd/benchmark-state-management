@@ -30,6 +30,7 @@ export interface BenchmarkResult {
 export interface LibraryBenchmark {
   library: string;
   libraryId: string;
+  packageName: string;
   version: string;
   timestamp: string;
   results: BenchmarkResult[];

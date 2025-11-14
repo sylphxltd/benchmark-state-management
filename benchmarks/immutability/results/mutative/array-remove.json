@@ -4,12 +4,12 @@
   "packageName": "mutative",
   "test": "Array Remove",
   "group": "03-array-operations",
-  "timestamp": "2025-11-14T12:22:08.478Z",
+  "timestamp": "2025-11-14T12:45:17.960Z",
   "result": {
-    "opsPerSecond": 76760.28199303316,
-    "meanTime": 0.013199826999974903,
-    "variance": 0.000004329511156150168,
-    "p99": 0.024626699998552794,
+    "opsPerSecond": 76996.59951796565,
+    "meanTime": 0.013154154000021663,
+    "variance": 0.0000042456547350962235,
+    "p99": 0.025170709999783863,
     "samples": 1000
   }
 }

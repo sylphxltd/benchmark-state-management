@@ -4,12 +4,12 @@
   "packageName": "@preact/signals",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-14T12:22:05.066Z",
+  "timestamp": "2025-11-14T12:45:20.535Z",
   "result": {
-    "opsPerSecond": 7155593.637464763,
-    "meanTime": 0.00014348699998845404,
-    "variance": 1.8344242558969655e-9,
-    "p99": 0.00028000999930554826,
+    "opsPerSecond": 8247491.57845549,
+    "meanTime": 0.0001254570000091917,
+    "variance": 2.0535837358621344e-9,
+    "p99": 0.00022176000024046446,
     "samples": 1000
   }
 }

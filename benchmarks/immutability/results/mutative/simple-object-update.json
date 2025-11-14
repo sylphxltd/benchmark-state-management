@@ -4,12 +4,12 @@
   "packageName": "mutative",
   "test": "Simple Object Update",
   "group": "01-simple-updates",
-  "timestamp": "2025-11-14T08:07:06.239Z",
+  "timestamp": "2025-11-14T09:05:45.294Z",
   "result": {
-    "opsPerSecond": 1190356.7812245812,
-    "meanTime": 0.0013868440000003375,
-    "variance": 0.00019731864945712923,
-    "p99": 0.002906490000051462,
+    "opsPerSecond": 1297787.9721665469,
+    "meanTime": 0.0008299269999997705,
+    "variance": 4.7228434401240985e-7,
+    "p99": 0.00150559999995721,
     "samples": 1000
   }
 }

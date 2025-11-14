@@ -4,12 +4,12 @@
   "packageName": "@sylphx/zen",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-14T13:16:52.564Z",
+  "timestamp": "2025-11-14T13:24:50.228Z",
   "result": {
-    "opsPerSecond": 12319.153225044694,
-    "meanTime": 0.08127096900001925,
-    "variance": 0.00001018578871754554,
-    "p99": 0.09078650999865202,
+    "opsPerSecond": 13682.410726757815,
+    "meanTime": 0.07337573600008909,
+    "variance": 0.00002324853263654665,
+    "p99": 0.08894550000106391,
     "samples": 1000
   }
 }

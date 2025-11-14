@@ -4,12 +4,12 @@
   "packageName": "native",
   "test": "Map - Update Nested Value",
   "group": "07-map-set",
-  "timestamp": "2025-11-14T13:16:54.139Z",
+  "timestamp": "2025-11-14T13:24:47.541Z",
   "result": {
-    "opsPerSecond": 3980966.2941157445,
-    "meanTime": 0.0002763550000345276,
-    "variance": 1.8266861817712785e-8,
-    "p99": 0.0006620899985500727,
+    "opsPerSecond": 3894051.556169573,
+    "meanTime": 0.00027755500001876496,
+    "variance": 1.3905610575150621e-8,
+    "p99": 0.0006220899995969375,
     "samples": 1000
   }
 }

@@ -4,12 +4,12 @@
   "packageName": "@solidjs/router",
   "test": "Optional Parameter Route (without param)",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-14T13:16:56.146Z",
+  "timestamp": "2025-11-14T13:24:54.295Z",
   "result": {
-    "opsPerSecond": 1016864.9758268122,
-    "meanTime": 0.0009931450000112817,
-    "variance": 1.0263186184134662e-7,
-    "p99": 0.0010621000011815339,
+    "opsPerSecond": 961430.4240925062,
+    "meanTime": 0.001060187000022779,
+    "variance": 3.348385587967621e-8,
+    "p99": 0.001783100001503044,
     "samples": 1000
   }
 }

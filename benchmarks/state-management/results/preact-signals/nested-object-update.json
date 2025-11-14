@@ -5,12 +5,12 @@
   "version": "2.4.0",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-14T14:44:37.953Z",
+  "timestamp": "2025-11-14T14:58:41.351Z",
   "result": {
-    "opsPerSecond": 7767263.664937573,
-    "meanTime": 0.00013359199996375537,
-    "variance": 2.6385120454021634e-9,
-    "p99": 0.000290300001743162,
+    "opsPerSecond": 8474640.665750366,
+    "meanTime": 0.0001213900000693684,
+    "variance": 1.5699498485475338e-9,
+    "p99": 0.00019913000005544735,
     "samples": 1000
   }
 }

@@ -5,12 +5,12 @@
   "version": "unknown",
   "test": "Map - Set Operation",
   "group": "07-map-set",
-  "timestamp": "2025-11-14T14:44:34.132Z",
+  "timestamp": "2025-11-14T14:57:59.295Z",
   "result": {
-    "opsPerSecond": 5112428.264610701,
-    "meanTime": 0.0002239949999966484,
-    "variance": 2.7346323303698822e-8,
-    "p99": 0.0005613100007394675,
+    "opsPerSecond": 4722735.8508030195,
+    "meanTime": 0.0008159870000708907,
+    "variance": 0.00031697824647199205,
+    "p99": 0.0010920099986105923,
     "samples": 1000
   }
 }

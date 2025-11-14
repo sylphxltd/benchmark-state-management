@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Deep Nested Update (5 levels)",
   "group": "04-deep-operations",
-  "timestamp": "2025-11-14T14:44:34.132Z",
+  "timestamp": "2025-11-14T14:57:59.295Z",
   "result": {
-    "opsPerSecond": 614471.4098572525,
-    "meanTime": 0.0016756159999749799,
-    "variance": 2.3801482338486472e-7,
-    "p99": 0.0030963000003612247,
+    "opsPerSecond": 616802.7358082737,
+    "meanTime": 0.002302257000010286,
+    "variance": 0.0003813299417508239,
+    "p99": 0.003546509999923728,
     "samples": 1000
   }
 }

@@ -5,12 +5,12 @@
   "version": "2.4.0",
   "test": "Deep Chain (10 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-14T14:44:37.953Z",
+  "timestamp": "2025-11-14T14:58:41.351Z",
   "result": {
-    "opsPerSecond": 4973658.354093948,
-    "meanTime": 0.000201664999985951,
-    "variance": 1.553180918904721e-10,
-    "p99": 0.0002410000015515834,
+    "opsPerSecond": 3983120.0298047643,
+    "meanTime": 0.00025132000001030976,
+    "variance": 9.97233206828232e-11,
+    "p99": 0.00026800999614351895,
     "samples": 1000
   }
 }

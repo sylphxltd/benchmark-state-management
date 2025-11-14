@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Array Remove",
   "group": "03-array-operations",
-  "timestamp": "2025-11-14T14:44:34.132Z",
+  "timestamp": "2025-11-14T14:57:59.295Z",
   "result": {
-    "opsPerSecond": 1101288.6340116384,
-    "meanTime": 0.0009304589999919699,
-    "variance": 2.1409335567144143e-7,
-    "p99": 0.0014732000002550191,
+    "opsPerSecond": 1094143.7130430907,
+    "meanTime": 0.0009360569999989821,
+    "variance": 1.3183384758442273e-7,
+    "p99": 0.00159309999904508,
     "samples": 1000
   }
 }

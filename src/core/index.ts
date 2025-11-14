@@ -32,3 +32,4 @@ export {
 export { generateCategoryReadme } from './readme-generator';
 export { generateRootReadme } from './root-readme-generator';
 export { scaffoldCategory } from './scaffolder';
+export { logger, formatError, type Logger, type LogLevel } from './logger';

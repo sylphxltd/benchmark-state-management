@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Array Update",
   "group": "03-array-operations",
-  "timestamp": "2025-11-14T16:06:26.112Z",
+  "timestamp": "2025-11-14T17:04:44.961Z",
   "result": {
-    "opsPerSecond": 473366.4840564203,
-    "meanTime": 0.0024147440000069765,
-    "variance": 0.0000020414993057717226,
-    "p99": 0.00474810000117941,
+    "opsPerSecond": 483117.9700353981,
+    "meanTime": 0.002106675999961226,
+    "variance": 2.3199942246517007e-7,
+    "p99": 0.003307150000855472,
     "samples": 1000
   }
 }

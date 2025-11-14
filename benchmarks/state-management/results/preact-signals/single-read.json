@@ -5,11 +5,11 @@
   "version": "2.4.0",
   "test": "Single Read",
   "group": "01-basic-read",
-  "timestamp": "2025-11-14T16:06:22.413Z",
+  "timestamp": "2025-11-14T17:04:43.850Z",
   "result": {
-    "opsPerSecond": 16630991.092459125,
-    "meanTime": 0.000062633000002279,
-    "variance": 2.4361392484823723e-10,
+    "opsPerSecond": 17227497.790994152,
+    "meanTime": 0.00006115000000113468,
+    "variance": 2.694309308210593e-10,
     "p99": 0.00010999999994965037,
     "samples": 1000
   }

@@ -5,12 +5,12 @@
   "version": "2.4.0",
   "test": "Async Throughput (20 ops)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-14T16:06:22.413Z",
+  "timestamp": "2025-11-14T17:04:43.850Z",
   "result": {
-    "opsPerSecond": 1003.3568860273119,
-    "meanTime": 1.088609318000028,
-    "variance": 0.01508250729081634,
-    "p99": 1.6258031100002335,
+    "opsPerSecond": 936.4990644617206,
+    "meanTime": 1.1288151310000358,
+    "variance": 0.062283002387080226,
+    "p99": 2.1504531000006684,
     "samples": 1000
   }
 }

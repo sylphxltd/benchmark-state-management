@@ -4,12 +4,12 @@
   "packageName": "immer",
   "test": "Simple Object Update",
   "group": "01-simple-updates",
-  "timestamp": "2025-11-14T11:04:33.457Z",
+  "timestamp": "2025-11-14T12:08:35.339Z",
   "result": {
-    "opsPerSecond": 757045.5772476458,
-    "meanTime": 0.00156396700000073,
-    "variance": 0.0000010654531971057366,
-    "p99": 0.004178399999967723,
+    "opsPerSecond": 787341.0957843983,
+    "meanTime": 0.0015347269999997479,
+    "variance": 0.0000024050686090790854,
+    "p99": 0.0032277999999843114,
     "samples": 1000
   }
 }

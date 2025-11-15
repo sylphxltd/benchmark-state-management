@@ -180,5 +180,39 @@ jobs:
           # Create commit message
           COMMIT_MSG="chore: auto-benchmark and update results (all categories)"
 
-          git commit -m "$COMMIT_MSG" || echo "No changes to commit"
-          git push || echo "Nothing to push"
+          git commit -m "$COMMIT_MSG" || { echo "No changes to commit"; exit 0; }
+
+          # Push with retry logic (handles race conditions)
+          MAX_RETRIES=5
+          RETRY_COUNT=0
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            if git push; then
+              echo "✅ Successfully pushed results"
+              exit 0
+            fi
+
+            RETRY_COUNT=$((RETRY_COUNT + 1))
+            echo "⚠️  Push failed (attempt $RETRY_COUNT/$MAX_RETRIES)"
+
+            if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+              echo "🔄 Fetching and rebasing..."
+              git fetch origin main
+
+              # Rebase with strategy to prefer our changes for result files
+              # Results are atomic per-run, so our version is always correct
+              git rebase origin/main || {
+                echo "❌ Rebase failed, aborting and trying fresh fetch"
+                git rebase --abort
+                git reset --soft HEAD~1
+                git pull --rebase origin main
+                git add benchmarks/ README.md
+                git commit -m "$COMMIT_MSG"
+              }
+
+              sleep $((RETRY_COUNT * 2))  # Exponential backoff
+            fi
+          done
+
+          echo "❌ Failed to push after $MAX_RETRIES attempts"
+          exit 1

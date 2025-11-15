@@ -5,18 +5,18 @@
   "version": "unknown",
   "test": "Array Update",
   "group": "03-array-operations",
-  "timestamp": "2025-11-15T23:14:56.500Z",
+  "timestamp": "2025-11-15T23:40:02.200Z",
   "result": {
-    "opsPerSecond": 8157675.888225366,
-    "meanTime": 0.00014197499995680118,
-    "variance": 1.0967912549331424e-7,
-    "p99": 0.0004710999993949371,
+    "opsPerSecond": 8303812.476990977,
+    "meanTime": 0.00013037999999323803,
+    "variance": 5.0184320285348065e-9,
+    "p99": 0.0005610999989403353,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-15T23-14-56-500Z",
+    "runId": "run-2025-11-15T23-40-02-200Z",
     "mode": "production",
-    "timestamp": "2025-11-15T23:14:56.500Z",
+    "timestamp": "2025-11-15T23:40:02.200Z",
     "completedLibraries": [
       "immer",
       "mutative",

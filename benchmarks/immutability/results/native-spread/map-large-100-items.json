@@ -5,12 +5,12 @@
   "version": "unknown",
   "test": "Map - Large (100 items)",
   "group": "07-map-set",
-  "timestamp": "2025-11-15T02:33:03.546Z",
+  "timestamp": "2025-11-15T03:21:37.573Z",
   "result": {
-    "opsPerSecond": 582942.2474484873,
-    "meanTime": 0.0017628819999335973,
-    "variance": 4.3307761768240214e-7,
-    "p99": 0.003547090000283788,
+    "opsPerSecond": 224233.44319872386,
+    "meanTime": 0.010058371000079206,
+    "variance": 0.0010621732950193102,
+    "p99": 0.026674719998954963,
     "samples": 1000
   }
 }

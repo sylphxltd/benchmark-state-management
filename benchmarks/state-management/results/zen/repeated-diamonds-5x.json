@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-15T02:33:12.458Z",
+  "timestamp": "2025-11-15T03:21:35.116Z",
   "result": {
-    "opsPerSecond": 19071725.41497285,
-    "meanTime": 0.00006296300003305078,
-    "variance": 1.0297391147273649e-7,
-    "p99": 0.00006100000609876588,
+    "opsPerSecond": 17270366.28756116,
+    "meanTime": 0.000060021999983291607,
+    "variance": 2.0927879647106502e-10,
+    "p99": 0.00011000000085914508,
     "samples": 1000
   }
 }

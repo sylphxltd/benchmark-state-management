@@ -5,12 +5,12 @@
   "version": "0.15.9",
   "test": "Sequential Route Matching (worst case)",
   "group": "04-real-world",
-  "timestamp": "2025-11-15T07:05:03.359Z",
+  "timestamp": "2025-11-15T08:05:35.552Z",
   "result": {
-    "opsPerSecond": 915970.1582083112,
-    "meanTime": 0.0011047409999991942,
-    "variance": 1.1556205794815827e-7,
-    "p99": 0.001493289999762055,
+    "opsPerSecond": 902889.9660480964,
+    "meanTime": 0.00111351100002139,
+    "variance": 1.4058924804242855e-8,
+    "p99": 0.0016131000003588268,
     "samples": 1000
   }
 }

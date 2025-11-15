@@ -809,7 +809,18 @@ function generateTestGroupSections(
   for (const [groupId, testsMap] of sortedGroups) {
     sections += `### ${formatGroupName(groupId)}\n\n`;
 
-    for (const [testName, libResults] of testsMap.entries()) {
+    // Sort tests by extracting numeric scale from test name
+    const sortedTests = Array.from(testsMap.entries()).sort((a, b) => {
+      const extractScale = (name: string): number => {
+        // Extract number from patterns like "Single Read", "Moderate (100x)", "High-Frequency (1000x)"
+        if (name.toLowerCase().includes('single')) return 1;
+        const match = name.match(/\((\d+)x?\)/);
+        return match ? parseInt(match[1], 10) : 0;
+      };
+      return extractScale(a[0]) - extractScale(b[0]);
+    });
+
+    for (const [testName, libResults] of sortedTests) {
       sections += `#### ${testName}\n\n`;
 
       // Sort by ops/sec

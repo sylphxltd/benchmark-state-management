@@ -147,29 +147,29 @@ Pure data-driven weighting based on test stability across implementations.
 
 ### Basic Read Operations
 
-#### High-Frequency Read (1000x)
+#### Single Read
 
 ```
-🥇 Zustand            ████████████████████████████████████████   2.8M ops/sec
-🥈 Redux Toolkit      ████████████████████████████████████████   2.8M ops/sec
-🥉 Solid.js           ████████████████████████████████████████   2.8M ops/sec
- Preact Signals     ███████████████                            1.0M ops/sec
- Zen                ███████████                                769K ops/sec
- MobX               █                                          85K ops/sec
- Valtio             █                                          50K ops/sec
- Jotai                                                         3K ops/sec
+🥇 Solid.js           ████████████████████████████████████████   22.5M ops/sec
+🥈 Preact Signals     ████████████████████████████████████████   22.3M ops/sec
+🥉 Zustand            ████████████████████████████████████████   22.3M ops/sec
+ Redux Toolkit      ███████████████████████████████████████    22.0M ops/sec
+ Zen                █████████████████████████████████          18.7M ops/sec
+ MobX               ██████████████████████████████             17.1M ops/sec
+ Valtio             ███████████████████████████                15.1M ops/sec
+ Jotai              ████                                       2.4M ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Zustand | 2.8M | 0.000ms | 0.000ms | 1000 |
-| Redux Toolkit | 2.8M | 0.000ms | 0.000ms | 1000 |
-| Solid.js | 2.8M | 0.000ms | 0.000ms | 1000 |
-| Preact Signals | 1.0M | 0.001ms | 0.001ms | 1000 |
-| Zen | 769K | 0.001ms | 0.002ms | 1000 |
-| MobX | 85K | 0.012ms | 0.019ms | 1000 |
-| Valtio | 50K | 0.021ms | 0.041ms | 1000 |
-| Jotai | 3K | 0.334ms | 0.773ms | 1000 |
+| Solid.js | 22.5M | 0.000ms | 0.000ms | 1000 |
+| Preact Signals | 22.3M | 0.000ms | 0.000ms | 1000 |
+| Zustand | 22.3M | 0.000ms | 0.000ms | 1000 |
+| Redux Toolkit | 22.0M | 0.000ms | 0.000ms | 1000 |
+| Zen | 18.7M | 0.000ms | 0.000ms | 1000 |
+| MobX | 17.1M | 0.000ms | 0.000ms | 1000 |
+| Valtio | 15.1M | 0.000ms | 0.000ms | 1000 |
+| Jotai | 2.4M | 0.000ms | 0.001ms | 1000 |
 
 #### Moderate Read (100x)
 
@@ -195,31 +195,55 @@ Pure data-driven weighting based on test stability across implementations.
 | Valtio | 500K | 0.003ms | 0.004ms | 1000 |
 | Jotai | 32K | 0.033ms | 0.051ms | 1000 |
 
-#### Single Read
+#### High-Frequency Read (1000x)
 
 ```
-🥇 Solid.js           ████████████████████████████████████████   22.5M ops/sec
-🥈 Preact Signals     ████████████████████████████████████████   22.3M ops/sec
-🥉 Zustand            ████████████████████████████████████████   22.3M ops/sec
- Redux Toolkit      ███████████████████████████████████████    22.0M ops/sec
- Zen                █████████████████████████████████          18.7M ops/sec
- MobX               ██████████████████████████████             17.1M ops/sec
- Valtio             ███████████████████████████                15.1M ops/sec
- Jotai              ████                                       2.4M ops/sec
+🥇 Zustand            ████████████████████████████████████████   2.8M ops/sec
+🥈 Redux Toolkit      ████████████████████████████████████████   2.8M ops/sec
+🥉 Solid.js           ████████████████████████████████████████   2.8M ops/sec
+ Preact Signals     ███████████████                            1.0M ops/sec
+ Zen                ███████████                                769K ops/sec
+ MobX               █                                          85K ops/sec
+ Valtio             █                                          50K ops/sec
+ Jotai                                                         3K ops/sec
 ```
 
 | Library | ops/sec | Mean Time | P99 | Samples |
 |---------|---------|-----------|-----|----------|
-| Solid.js | 22.5M | 0.000ms | 0.000ms | 1000 |
-| Preact Signals | 22.3M | 0.000ms | 0.000ms | 1000 |
-| Zustand | 22.3M | 0.000ms | 0.000ms | 1000 |
-| Redux Toolkit | 22.0M | 0.000ms | 0.000ms | 1000 |
-| Zen | 18.7M | 0.000ms | 0.000ms | 1000 |
-| MobX | 17.1M | 0.000ms | 0.000ms | 1000 |
-| Valtio | 15.1M | 0.000ms | 0.000ms | 1000 |
-| Jotai | 2.4M | 0.000ms | 0.001ms | 1000 |
+| Zustand | 2.8M | 0.000ms | 0.000ms | 1000 |
+| Redux Toolkit | 2.8M | 0.000ms | 0.000ms | 1000 |
+| Solid.js | 2.8M | 0.000ms | 0.000ms | 1000 |
+| Preact Signals | 1.0M | 0.001ms | 0.001ms | 1000 |
+| Zen | 769K | 0.001ms | 0.002ms | 1000 |
+| MobX | 85K | 0.012ms | 0.019ms | 1000 |
+| Valtio | 50K | 0.021ms | 0.041ms | 1000 |
+| Jotai | 3K | 0.334ms | 0.773ms | 1000 |
 
 ### Basic Write Operations
+
+#### Single Write
+
+```
+🥇 Solid.js           ████████████████████████████████████████   21.5M ops/sec
+🥈 Zen                ████████████████████████████████████       19.6M ops/sec
+🥉 Preact Signals     ████████████                               6.4M ops/sec
+ Zustand            █████████                                  4.8M ops/sec
+ MobX               ██████                                     3.4M ops/sec
+ Valtio             ██████                                     3.0M ops/sec
+ Jotai              █                                          334K ops/sec
+ Redux Toolkit                                                 153K ops/sec
+```
+
+| Library | ops/sec | Mean Time | P99 | Samples |
+|---------|---------|-----------|-----|----------|
+| Solid.js | 21.5M | 0.000ms | 0.000ms | 1000 |
+| Zen | 19.6M | 0.000ms | 0.000ms | 1000 |
+| Preact Signals | 6.4M | 0.000ms | 0.000ms | 1000 |
+| Zustand | 4.8M | 0.000ms | 0.001ms | 1000 |
+| MobX | 3.4M | 0.000ms | 0.001ms | 1000 |
+| Valtio | 3.0M | 0.000ms | 0.001ms | 1000 |
+| Jotai | 334K | 0.005ms | 0.009ms | 1000 |
+| Redux Toolkit | 153K | 0.007ms | 0.010ms | 1000 |
 
 #### Batch Write (10x)
 
@@ -292,30 +316,6 @@ Pure data-driven weighting based on test stability across implementations.
 | Valtio | 4K | 0.253ms | 0.289ms | 1000 |
 | Jotai | 353 | 2.872ms | 4.786ms | 1000 |
 | Redux Toolkit | 153 | 6.561ms | 7.601ms | 1000 |
-
-#### Single Write
-
-```
-🥇 Solid.js           ████████████████████████████████████████   21.5M ops/sec
-🥈 Zen                ████████████████████████████████████       19.6M ops/sec
-🥉 Preact Signals     ████████████                               6.4M ops/sec
- Zustand            █████████                                  4.8M ops/sec
- MobX               ██████                                     3.4M ops/sec
- Valtio             ██████                                     3.0M ops/sec
- Jotai              █                                          334K ops/sec
- Redux Toolkit                                                 153K ops/sec
-```
-
-| Library | ops/sec | Mean Time | P99 | Samples |
-|---------|---------|-----------|-----|----------|
-| Solid.js | 21.5M | 0.000ms | 0.000ms | 1000 |
-| Zen | 19.6M | 0.000ms | 0.000ms | 1000 |
-| Preact Signals | 6.4M | 0.000ms | 0.000ms | 1000 |
-| Zustand | 4.8M | 0.000ms | 0.001ms | 1000 |
-| MobX | 3.4M | 0.000ms | 0.001ms | 1000 |
-| Valtio | 3.0M | 0.000ms | 0.001ms | 1000 |
-| Jotai | 334K | 0.005ms | 0.009ms | 1000 |
-| Redux Toolkit | 153K | 0.007ms | 0.010ms | 1000 |
 
 ### Advanced Operations
 
@@ -565,6 +565,30 @@ Pure data-driven weighting based on test stability across implementations.
 
 ### Performance Stress Tests
 
+#### Large Array (1000 items)
+
+```
+🥇 Solid.js           ████████████████████████████████████████   2.4M ops/sec
+🥈 Valtio             █████████████                              786K ops/sec
+🥉 MobX               ████                                       219K ops/sec
+ Jotai              ███                                        172K ops/sec
+ Preact Signals     ██                                         129K ops/sec
+ Zen                ██                                         106K ops/sec
+ Zustand            █                                          81K ops/sec
+ Redux Toolkit                                                 814 ops/sec
+```
+
+| Library | ops/sec | Mean Time | P99 | Samples |
+|---------|---------|-----------|-----|----------|
+| Solid.js | 2.4M | 0.000ms | 0.002ms | 1000 |
+| Valtio | 786K | 0.001ms | 0.007ms | 1000 |
+| MobX | 219K | 0.006ms | 0.019ms | 1000 |
+| Jotai | 172K | 0.006ms | 0.012ms | 1000 |
+| Preact Signals | 129K | 0.008ms | 0.016ms | 1000 |
+| Zen | 106K | 0.010ms | 0.028ms | 1000 |
+| Zustand | 81K | 0.012ms | 0.021ms | 1000 |
+| Redux Toolkit | 814 | 1.259ms | 3.175ms | 1000 |
+
 #### Extreme Read (10000x)
 
 ```
@@ -612,30 +636,6 @@ Pure data-driven weighting based on test stability across implementations.
 | Valtio | 426 | 2.362ms | 2.979ms | 1000 |
 | Jotai | 33 | 29.956ms | 33.468ms | 1000 |
 | Redux Toolkit | 14 | 70.012ms | 73.328ms | 1000 |
-
-#### Large Array (1000 items)
-
-```
-🥇 Solid.js           ████████████████████████████████████████   2.4M ops/sec
-🥈 Valtio             █████████████                              786K ops/sec
-🥉 MobX               ████                                       219K ops/sec
- Jotai              ███                                        172K ops/sec
- Preact Signals     ██                                         129K ops/sec
- Zen                ██                                         106K ops/sec
- Zustand            █                                          81K ops/sec
- Redux Toolkit                                                 814 ops/sec
-```
-
-| Library | ops/sec | Mean Time | P99 | Samples |
-|---------|---------|-----------|-----|----------|
-| Solid.js | 2.4M | 0.000ms | 0.002ms | 1000 |
-| Valtio | 786K | 0.001ms | 0.007ms | 1000 |
-| MobX | 219K | 0.006ms | 0.019ms | 1000 |
-| Jotai | 172K | 0.006ms | 0.012ms | 1000 |
-| Preact Signals | 129K | 0.008ms | 0.016ms | 1000 |
-| Zen | 106K | 0.010ms | 0.028ms | 1000 |
-| Zustand | 81K | 0.012ms | 0.021ms | 1000 |
-| Redux Toolkit | 814 | 1.259ms | 3.175ms | 1000 |
 
 ### 07-reactivity-patterns
 
@@ -759,30 +759,6 @@ Pure data-driven weighting based on test stability across implementations.
 | Jotai | 7K | 0.147ms | 0.339ms | 1000 |
 | MobX | 6K | 0.170ms | 0.204ms | 1000 |
 
-#### Repeated Diamonds (5x)
-
-```
-🥇 Solid.js           ████████████████████████████████████████   14.7M ops/sec
-🥈 Zen                █████████████████████████████████████      13.5M ops/sec
-🥉 Preact Signals     ████████                                   2.9M ops/sec
- Zustand            ██████                                     2.0M ops/sec
- Valtio             ████                                       1.5M ops/sec
- MobX                                                          113K ops/sec
- Jotai                                                         107K ops/sec
- Redux Toolkit                                                 61K ops/sec
-```
-
-| Library | ops/sec | Mean Time | P99 | Samples |
-|---------|---------|-----------|-----|----------|
-| Solid.js | 14.7M | 0.000ms | 0.000ms | 1000 |
-| Zen | 13.5M | 0.000ms | 0.000ms | 1000 |
-| Preact Signals | 2.9M | 0.000ms | 0.000ms | 1000 |
-| Zustand | 2.0M | 0.000ms | 0.002ms | 1000 |
-| Valtio | 1.5M | 0.001ms | 0.001ms | 1000 |
-| MobX | 113K | 0.009ms | 0.018ms | 1000 |
-| Jotai | 107K | 0.009ms | 0.012ms | 1000 |
-| Redux Toolkit | 61K | 0.016ms | 0.023ms | 1000 |
-
 #### Very Deep Chain (100 layers)
 
 ```
@@ -830,6 +806,30 @@ Pure data-driven weighting based on test stability across implementations.
 | Valtio | 92K | 0.011ms | 0.021ms | 1000 |
 | MobX | 81K | 0.012ms | 0.022ms | 1000 |
 | Jotai | 58K | 0.017ms | 0.023ms | 1000 |
+
+#### Repeated Diamonds (5x)
+
+```
+🥇 Solid.js           ████████████████████████████████████████   14.7M ops/sec
+🥈 Zen                █████████████████████████████████████      13.5M ops/sec
+🥉 Preact Signals     ████████                                   2.9M ops/sec
+ Zustand            ██████                                     2.0M ops/sec
+ Valtio             ████                                       1.5M ops/sec
+ MobX                                                          113K ops/sec
+ Jotai                                                         107K ops/sec
+ Redux Toolkit                                                 61K ops/sec
+```
+
+| Library | ops/sec | Mean Time | P99 | Samples |
+|---------|---------|-----------|-----|----------|
+| Solid.js | 14.7M | 0.000ms | 0.000ms | 1000 |
+| Zen | 13.5M | 0.000ms | 0.000ms | 1000 |
+| Preact Signals | 2.9M | 0.000ms | 0.000ms | 1000 |
+| Zustand | 2.0M | 0.000ms | 0.002ms | 1000 |
+| Valtio | 1.5M | 0.001ms | 0.001ms | 1000 |
+| MobX | 113K | 0.009ms | 0.018ms | 1000 |
+| Jotai | 107K | 0.009ms | 0.012ms | 1000 |
+| Redux Toolkit | 61K | 0.016ms | 0.023ms | 1000 |
 
 
 
@@ -961,7 +961,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for detailed guidelines.
 
 **Found this useful? Give it a ⭐️!**
 
-*Generated on 2025-11-15T21:58:15.166Z*
+*Generated on 2025-11-15T22:06:01.918Z*
 
 [⬆️ Back to Top](#state-management-benchmarks) • [⬅️ Main README](../../README.md)
 

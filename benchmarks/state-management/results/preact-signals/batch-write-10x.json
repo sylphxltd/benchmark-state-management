@@ -5,11 +5,11 @@
   "version": "2.4.0",
   "test": "Batch Write (10x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 10927858.840458926,
-    "meanTime": 0.00011248199999681674,
-    "variance": 2.7162391960784463e-7,
+    "opsPerSecond": 11345981.748930575,
+    "meanTime": 0.00009234800001104304,
+    "variance": 5.884973918671483e-10,
     "p99": 0.00015100000018719584,
     "samples": 1000
   }

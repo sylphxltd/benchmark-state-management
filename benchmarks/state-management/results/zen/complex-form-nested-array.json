@@ -2,15 +2,15 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.1.1",
+  "version": "3.9.0",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 19287833.398585428,
-    "meanTime": 0.00005386899994482519,
-    "variance": 5.637035410776883e-10,
-    "p99": 0.00008100000195554458,
+    "opsPerSecond": 15132233.719757672,
+    "meanTime": 0.00007149899999421905,
+    "variance": 1.7089709689926873e-9,
+    "p99": 0.00013011000035476162,
     "samples": 1000
   }
 }

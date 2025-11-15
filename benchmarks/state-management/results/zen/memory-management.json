@@ -2,15 +2,15 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.1.1",
+  "version": "3.9.0",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 145119.1534739001,
-    "meanTime": 0.007348620999975537,
-    "variance": 0.00014646553711892212,
-    "p99": 0.009251120001790692,
+    "opsPerSecond": 289542.9475680676,
+    "meanTime": 0.003944818999996642,
+    "variance": 0.00015054998281976913,
+    "p99": 0.00579181000284734,
     "samples": 1000
   }
 }

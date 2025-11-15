@@ -2,15 +2,15 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.1.1",
+  "version": "3.9.0",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 12334.197625014654,
-    "meanTime": 0.08114235600006213,
-    "variance": 0.000006062169838761081,
-    "p99": 0.0905808100003196,
+    "opsPerSecond": 8878.218806532177,
+    "meanTime": 0.11297963600002914,
+    "variance": 0.000069122870118815,
+    "p99": 0.13263899999914427,
     "samples": 1000
   }
 }

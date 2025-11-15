@@ -5,12 +5,12 @@
   "version": "2.4.0",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 7278235.647611472,
-    "meanTime": 0.00014775200017902535,
-    "variance": 9.732926378268228e-8,
-    "p99": 0.00017099999975471293,
+    "opsPerSecond": 6467464.98142192,
+    "meanTime": 0.0001554609999366221,
+    "variance": 1.6675523032445865e-10,
+    "p99": 0.0001810000030673109,
     "samples": 1000
   }
 }

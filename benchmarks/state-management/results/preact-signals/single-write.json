@@ -5,11 +5,11 @@
   "version": "2.4.0",
   "test": "Single Write",
   "group": "02-basic-write",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 21315521.17931589,
-    "meanTime": 0.00004740699997182674,
-    "variance": 2.2115466317550747e-11,
+    "opsPerSecond": 21351220.384403195,
+    "meanTime": 0.00004737299995758803,
+    "variance": 2.552539612564979e-11,
     "p99": 0.000050999999984924216,
     "samples": 1000
   }

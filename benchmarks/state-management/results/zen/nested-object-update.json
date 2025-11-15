@@ -2,15 +2,15 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.1.1",
+  "version": "3.9.0",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 6935447.963963029,
-    "meanTime": 0.00016927900001792296,
-    "variance": 2.49830131258055e-7,
-    "p99": 0.0003711900000962485,
+    "opsPerSecond": 6306923.817963446,
+    "meanTime": 0.00016363999999884982,
+    "variance": 2.0886930915853194e-9,
+    "p99": 0.0003615999985231605,
     "samples": 1000
   }
 }

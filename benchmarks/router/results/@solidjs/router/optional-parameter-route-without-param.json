@@ -5,12 +5,12 @@
   "version": "0.15.4",
   "test": "Optional Parameter Route (without param)",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-15T18:21:13.401Z",
+  "timestamp": "2025-11-15T18:23:46.662Z",
   "result": {
-    "opsPerSecond": 1302930.2144243948,
-    "meanTime": 0.0007743910000190226,
-    "variance": 3.76448429726357e-8,
-    "p99": 0.0008930500003589258,
+    "opsPerSecond": 975523.2559802252,
+    "meanTime": 0.0010362879999956931,
+    "variance": 1.0310640548453833e-7,
+    "p99": 0.0011219999996683327,
     "samples": 1000
   }
 }

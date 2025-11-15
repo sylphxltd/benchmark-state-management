@@ -2,15 +2,15 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.1.1",
+  "version": "3.9.0",
   "test": "Very Deep Chain (100 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-15T18:17:38.591Z",
+  "timestamp": "2025-11-15T18:23:49.858Z",
   "result": {
-    "opsPerSecond": 19441520.31329833,
-    "meanTime": 0.000052048999874386934,
-    "variance": 4.876736526354932e-11,
-    "p99": 0.00009000000136438757,
+    "opsPerSecond": 13677474.202278147,
+    "meanTime": 0.00007516900014161365,
+    "variance": 5.6747591597679e-10,
+    "p99": 0.00014108999683230643,
     "samples": 1000
   }
 }

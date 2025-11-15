@@ -98,6 +98,53 @@ function getTestFilesHash(benchmarkDir: string): string {
 }
 
 /**
+ * Sync bundle sizes from versions.json to library-metadata.json
+ */
+async function syncBundleSizesToMetadata(benchmarkDir: string, versions: VersionTracker): Promise<void> {
+  const metadataPath = join(benchmarkDir, 'library-metadata.json');
+
+  if (!existsSync(metadataPath)) {
+    return; // No metadata file, skip
+  }
+
+  try {
+    const metadata = JSON.parse(readFileSync(metadataPath, 'utf-8'));
+
+    for (const [packageName, versionInfo] of Object.entries(versions.libraries)) {
+      if (!versionInfo.size) continue;
+
+      // Find library in metadata (could be under package name or a key)
+      let libraryKey: string | null = null;
+
+      if (metadata.libraries[packageName]) {
+        libraryKey = packageName;
+      } else {
+        // Search for library with matching npm field
+        for (const [key, lib] of Object.entries(metadata.libraries) as any) {
+          if (lib.npm === packageName) {
+            libraryKey = key;
+            break;
+          }
+        }
+      }
+
+      if (libraryKey && metadata.libraries[libraryKey]) {
+        metadata.libraries[libraryKey].bundleSize = {
+          minified: versionInfo.size.minified,
+          gzipped: versionInfo.size.gzip,
+          measuredAt: versionInfo.size.lastChecked,
+          source: 'bundlephobia'
+        };
+      }
+    }
+
+    writeFileSync(metadataPath, JSON.stringify(metadata, null, 2) + '\n');
+  } catch (error) {
+    console.warn('   ⚠️  Failed to sync bundle sizes to metadata:', error instanceof Error ? error.message : 'Unknown error');
+  }
+}
+
+/**
  * Main version checking logic
  */
 export async function checkVersions(benchmarkDir: string): Promise<boolean> {
@@ -204,6 +251,9 @@ export async function checkVersions(benchmarkDir: string): Promise<boolean> {
 
   // Save updated versions
   writeFileSync(versionsPath, JSON.stringify(versions, null, 2));
+
+  // Sync bundle sizes to library-metadata.json
+  await syncBundleSizesToMetadata(benchmarkDir, versions);
 
   // Determine if we need to run benchmarks
   const shouldRunBenchmark = updatedLibs.length > 0 || testFilesChanged;

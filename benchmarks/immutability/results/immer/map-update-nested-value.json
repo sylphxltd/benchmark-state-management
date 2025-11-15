@@ -5,12 +5,12 @@
   "version": "10.2.0",
   "test": "Map - Update Nested Value",
   "group": "07-map-set",
-  "timestamp": "2025-11-15T14:04:18.187Z",
+  "timestamp": "2025-11-15T15:04:30.425Z",
   "result": {
-    "opsPerSecond": 205068.4469008933,
-    "meanTime": 0.004947836000021198,
-    "variance": 8.277753464193309e-7,
-    "p99": 0.007286499999354416,
+    "opsPerSecond": 206653.62531825577,
+    "meanTime": 0.004926254999940284,
+    "variance": 0.000001146631255225917,
+    "p99": 0.007104390000276907,
     "samples": 1000
   }
 }

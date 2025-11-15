@@ -5,12 +5,12 @@
   "version": "3.7.1",
   "test": "Wildcard Route Matching",
   "group": "03-advanced-routes",
-  "timestamp": "2025-11-15T14:04:19.157Z",
+  "timestamp": "2025-11-15T15:04:32.315Z",
   "result": {
-    "opsPerSecond": 1573309.2585485317,
-    "meanTime": 0.000650339999994685,
-    "variance": 1.3402841082460727e-7,
-    "p99": 0.0010019999999713036,
+    "opsPerSecond": 1572279.8462844416,
+    "meanTime": 0.0006425459999964005,
+    "variance": 8.45940329009805e-9,
+    "p99": 0.0011121999999159013,
     "samples": 1000
   }
 }

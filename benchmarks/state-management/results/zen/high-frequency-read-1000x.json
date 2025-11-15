@@ -5,11 +5,11 @@
   "version": "3.1.1",
   "test": "High-Frequency Read (1000x)",
   "group": "01-basic-read",
-  "timestamp": "2025-11-15T17:04:10.897Z",
+  "timestamp": "2025-11-15T18:05:58.467Z",
   "result": {
-    "opsPerSecond": 2787406.5913220486,
-    "meanTime": 0.00035880500000621396,
-    "variance": 1.7214189014522525e-11,
+    "opsPerSecond": 2784572.922364966,
+    "meanTime": 0.00035945500001889743,
+    "variance": 2.0142940454718676e-10,
     "p99": 0.00036100000033911783,
     "samples": 1000
   }

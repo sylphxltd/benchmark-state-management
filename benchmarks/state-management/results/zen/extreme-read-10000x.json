@@ -5,12 +5,12 @@
   "version": "3.1.1",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-15T17:04:10.897Z",
+  "timestamp": "2025-11-15T18:05:58.467Z",
   "result": {
-    "opsPerSecond": 107004.5583108919,
-    "meanTime": 0.009379990000015824,
-    "variance": 5.863925462871099e-7,
-    "p99": 0.011190589995458095,
+    "opsPerSecond": 104228.2648443634,
+    "meanTime": 0.009815522000124473,
+    "variance": 0.000004016455431144658,
+    "p99": 0.01877580000047601,
     "samples": 1000
   }
 }

@@ -5,18 +5,18 @@
   "version": "5.1.4",
   "test": "Map - Set Operation",
   "group": "07-map-set",
-  "timestamp": "2025-11-16T20:37:54.110Z",
+  "timestamp": "2025-11-16T21:28:39.377Z",
   "result": {
-    "opsPerSecond": 2514734.901766399,
-    "meanTime": 0.0004294359998966684,
-    "variance": 1.6345514306207205e-7,
-    "p99": 0.001081999998896208,
+    "opsPerSecond": 2399612.3412828734,
+    "meanTime": 0.00045039900004121593,
+    "variance": 1.3860359136730542e-7,
+    "p99": 0.0011621000004743108,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T20-37-54-110Z",
+    "runId": "run-2025-11-16T21-28-39-377Z",
     "mode": "production",
-    "timestamp": "2025-11-16T20:37:54.110Z",
+    "timestamp": "2025-11-16T21:28:39.377Z",
     "completedLibraries": [
       "immer",
       "mutative",

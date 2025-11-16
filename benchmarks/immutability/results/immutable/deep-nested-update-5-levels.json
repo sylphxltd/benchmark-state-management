@@ -5,18 +5,18 @@
   "version": "5.1.4",
   "test": "Deep Nested Update (5 levels)",
   "group": "04-deep-operations",
-  "timestamp": "2025-11-16T20:37:54.110Z",
+  "timestamp": "2025-11-16T21:28:39.377Z",
   "result": {
-    "opsPerSecond": 1115488.7446464181,
-    "meanTime": 0.0009303969999582477,
-    "variance": 2.3123933872901686e-7,
-    "p99": 0.001502010000986047,
+    "opsPerSecond": 1135398.5145770435,
+    "meanTime": 0.0009056660000169358,
+    "variance": 1.3732869313616062e-7,
+    "p99": 0.0015330000005633337,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T20-37-54-110Z",
+    "runId": "run-2025-11-16T21-28-39-377Z",
     "mode": "production",
-    "timestamp": "2025-11-16T20:37:54.110Z",
+    "timestamp": "2025-11-16T21:28:39.377Z",
     "completedLibraries": [
       "immer",
       "mutative",

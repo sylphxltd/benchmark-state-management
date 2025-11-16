@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Deep Diamond (5 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-16T22:56:17.714Z",
+  "timestamp": "2025-11-16T23:21:20.756Z",
   "result": {
-    "opsPerSecond": 4852084.099223125,
-    "meanTime": 0.00020673300104681402,
-    "variance": 1.570467209056031e-10,
-    "p99": 0.0002509999321773648,
+    "opsPerSecond": 4690097.344943006,
+    "meanTime": 0.00021369399968534708,
+    "variance": 1.6380215017539817e-10,
+    "p99": 0.00024099997244775295,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T22-56-17-714Z",
+    "runId": "run-2025-11-16T23-21-20-756Z",
     "mode": "production",
-    "timestamp": "2025-11-16T22:56:17.714Z",
+    "timestamp": "2025-11-16T23:21:20.756Z",
     "completedLibraries": [
       "zen",
       "solid-js",

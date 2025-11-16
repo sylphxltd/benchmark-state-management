@@ -5,18 +5,18 @@
   "version": "2.2.0",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-16T09:07:20.812Z",
+  "timestamp": "2025-11-16T18:55:51.188Z",
   "result": {
-    "opsPerSecond": 398.9873554918907,
-    "meanTime": 2.5176730439995882,
-    "variance": 0.03343429835171087,
-    "p99": 3.1447638300052496,
+    "opsPerSecond": 424.3093609200146,
+    "meanTime": 2.3680557219998444,
+    "variance": 0.031859876993187805,
+    "p99": 2.971872319991817,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T09-07-20-812Z",
+    "runId": "run-2025-11-16T18-55-51-188Z",
     "mode": "production",
-    "timestamp": "2025-11-16T09:07:20.812Z",
+    "timestamp": "2025-11-16T18:55:51.188Z",
     "completedLibraries": [
       "zen",
       "solid-js",

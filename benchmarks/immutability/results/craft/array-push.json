@@ -5,18 +5,18 @@
   "version": "1.2.1",
   "test": "Array Push",
   "group": "03-array-operations",
-  "timestamp": "2025-11-16T18:55:48.657Z",
+  "timestamp": "2025-11-16T20:37:54.110Z",
   "result": {
-    "opsPerSecond": 417963.6152314638,
-    "meanTime": 0.0024918310000020937,
-    "variance": 9.661298262484048e-7,
-    "p99": 0.005415209999764551,
+    "opsPerSecond": 404637.53035961604,
+    "meanTime": 0.0025978860000213898,
+    "variance": 0.000001143309862860922,
+    "p99": 0.005932000000593688,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T18-55-48-657Z",
+    "runId": "run-2025-11-16T20-37-54-110Z",
     "mode": "production",
-    "timestamp": "2025-11-16T18:55:48.657Z",
+    "timestamp": "2025-11-16T20:37:54.110Z",
     "completedLibraries": [
       "immer",
       "mutative",

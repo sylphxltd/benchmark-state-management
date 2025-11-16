@@ -5,18 +5,18 @@
   "version": "1.9.10",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-16T06:26:16.262Z",
+  "timestamp": "2025-11-16T09:07:20.812Z",
   "result": {
-    "opsPerSecond": 3908335.307005259,
-    "meanTime": 0.0002743629999604309,
-    "variance": 1.0391003122612404e-7,
-    "p99": 0.0006920900014665676,
+    "opsPerSecond": 4302518.258463437,
+    "meanTime": 0.0002630389999394538,
+    "variance": 6.779211962413571e-8,
+    "p99": 0.0011625000005005854,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T06-26-16-262Z",
+    "runId": "run-2025-11-16T09-07-20-812Z",
     "mode": "production",
-    "timestamp": "2025-11-16T06:26:16.262Z",
+    "timestamp": "2025-11-16T09:07:20.812Z",
     "completedLibraries": [
       "zen",
       "solid-js",

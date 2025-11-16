@@ -5,18 +5,18 @@
   "version": "2.2.0",
   "test": "Diamond Pattern (3 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-16T06:26:16.262Z",
+  "timestamp": "2025-11-16T09:07:20.812Z",
   "result": {
-    "opsPerSecond": 2424057.0980034284,
-    "meanTime": 0.0004175940005807206,
-    "variance": 4.0564795134660585e-9,
-    "p99": 0.0007722000568173824,
+    "opsPerSecond": 2498844.860942133,
+    "meanTime": 0.0004171769993845373,
+    "variance": 1.2044641391461951e-7,
+    "p99": 0.0009521000308450311,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T06-26-16-262Z",
+    "runId": "run-2025-11-16T09-07-20-812Z",
     "mode": "production",
-    "timestamp": "2025-11-16T06:26:16.262Z",
+    "timestamp": "2025-11-16T09:07:20.812Z",
     "completedLibraries": [
       "zen",
       "solid-js",

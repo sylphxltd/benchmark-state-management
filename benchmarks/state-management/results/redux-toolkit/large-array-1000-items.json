@@ -5,18 +5,18 @@
   "version": "2.10.1",
   "test": "Large Array (1000 items)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-16T03:12:13.364Z",
+  "timestamp": "2025-11-16T03:50:12.983Z",
   "result": {
-    "opsPerSecond": 820.6237523985822,
-    "meanTime": 1.25145948700211,
-    "variance": 0.12600714791609116,
-    "p99": 2.9716569899022574,
+    "opsPerSecond": 825.4885464085958,
+    "meanTime": 1.219920497998828,
+    "variance": 0.026878726778616104,
+    "p99": 1.4583576900081243,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T03-12-13-364Z",
+    "runId": "run-2025-11-16T03-50-12-983Z",
     "mode": "production",
-    "timestamp": "2025-11-16T03:12:13.364Z",
+    "timestamp": "2025-11-16T03:50:12.983Z",
     "completedLibraries": [
       "zen",
       "solid-js",

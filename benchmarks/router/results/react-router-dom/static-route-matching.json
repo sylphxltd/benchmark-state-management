@@ -5,18 +5,18 @@
   "version": "6.30.1",
   "test": "Static Route Matching",
   "group": "01-basic-routes",
-  "timestamp": "2025-11-16T21:28:40.447Z",
+  "timestamp": "2025-11-16T21:38:17.907Z",
   "result": {
-    "opsPerSecond": 13062.61602765056,
-    "meanTime": 0.07853928499999888,
-    "variance": 0.0007640983148545632,
-    "p99": 0.11503686000000127,
+    "opsPerSecond": 12574.90348691243,
+    "meanTime": 0.08167669299999966,
+    "variance": 0.0008945252892020016,
+    "p99": 0.12100542999999106,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T21-28-40-448Z",
+    "runId": "run-2025-11-16T21-38-17-907Z",
     "mode": "production",
-    "timestamp": "2025-11-16T21:28:40.447Z",
+    "timestamp": "2025-11-16T21:38:17.907Z",
     "completedLibraries": [
       "react-router-dom",
       "wouter",

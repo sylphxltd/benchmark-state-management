@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Array Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-16T23:54:01.676Z",
+  "timestamp": "2025-11-17T02:13:51.437Z",
   "result": {
-    "opsPerSecond": 6390277.3569545895,
-    "meanTime": 0.0001686729999637464,
-    "variance": 7.107255304720723e-9,
-    "p99": 0.0006611099981819278,
+    "opsPerSecond": 6766237.139057446,
+    "meanTime": 0.00015400100003171247,
+    "variance": 2.903146154156962e-9,
+    "p99": 0.0005113000056007874,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T23-54-01-676Z",
+    "runId": "run-2025-11-17T02-13-51-437Z",
     "mode": "production",
-    "timestamp": "2025-11-16T23:54:01.676Z",
+    "timestamp": "2025-11-17T02:13:51.437Z",
     "completedLibraries": [
       "zen",
       "solid-js",

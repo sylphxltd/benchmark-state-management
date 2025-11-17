@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-16T23:54:01.676Z",
+  "timestamp": "2025-11-17T02:13:51.437Z",
   "result": {
-    "opsPerSecond": 3033273.073286715,
-    "meanTime": 0.00033963699999731037,
-    "variance": 9.336068723681183e-8,
-    "p99": 0.00037100003100931644,
+    "opsPerSecond": 2873276.1386195454,
+    "meanTime": 0.0003483090017689392,
+    "variance": 1.1105057594213906e-10,
+    "p99": 0.0003809999907389283,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-16T23-54-01-676Z",
+    "runId": "run-2025-11-17T02-13-51-437Z",
     "mode": "production",
-    "timestamp": "2025-11-16T23:54:01.676Z",
+    "timestamp": "2025-11-17T02:13:51.437Z",
     "completedLibraries": [
       "zen",
       "solid-js",

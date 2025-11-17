@@ -5,18 +5,18 @@
   "version": "5.0.8",
   "test": "Computed Value Access",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-17T13:59:19.041Z",
+  "timestamp": "2025-11-17T23:15:04.551Z",
   "result": {
-    "opsPerSecond": 22373579.14284552,
-    "meanTime": 0.000046064000154729004,
-    "variance": 2.0260650872260189e-10,
-    "p99": 0.00007000000914558768,
+    "opsPerSecond": 22551207.689831473,
+    "meanTime": 0.000045089999955962415,
+    "variance": 4.246236217408922e-11,
+    "p99": 0.000060000005760230124,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-17T13-59-19-041Z",
+    "runId": "run-2025-11-17T23-15-04-551Z",
     "mode": "production",
-    "timestamp": "2025-11-17T13:59:19.041Z",
+    "timestamp": "2025-11-17T23:15:04.551Z",
     "completedLibraries": [
       "zen",
       "solid-js",

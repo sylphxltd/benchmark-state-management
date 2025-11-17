@@ -5,18 +5,18 @@
   "version": "6.30.1",
   "test": "Mixed Route Matching (realistic usage)",
   "group": "04-real-world",
-  "timestamp": "2025-11-17T05:17:33.733Z",
+  "timestamp": "2025-11-17T06:55:01.020Z",
   "result": {
-    "opsPerSecond": 2173.1723587379283,
-    "meanTime": 0.4680552309999948,
-    "variance": 0.007570779290839399,
-    "p99": 1.0993725900014033,
+    "opsPerSecond": 2236.7301962863226,
+    "meanTime": 0.45225586499999737,
+    "variance": 0.004967860527416046,
+    "p99": 0.9889227300000675,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-17T05-17-33-733Z",
+    "runId": "run-2025-11-17T06-55-01-020Z",
     "mode": "production",
-    "timestamp": "2025-11-17T05:17:33.733Z",
+    "timestamp": "2025-11-17T06:55:01.020Z",
     "completedLibraries": [
       "react-router-dom",
       "wouter",

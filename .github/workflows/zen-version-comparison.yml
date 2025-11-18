@@ -55,18 +55,21 @@ jobs:
         with:
           bun-version: '1.3.2'  # Fixed version to avoid bun.sh outages
 
-      - name: Install dependencies (without Zen)
+      - name: Set Zen version in package.json
         working-directory: benchmarks/state-management
         run: |
-          # Remove Zen from dependencies temporarily
-          npm uninstall @sylphx/zen --no-save || true
-          npm install --no-package-lock
+          echo "Setting Zen version to ${{ matrix.version }}"
+          # Modify package.json to use specific version
+          jq '.dependencies["@sylphx/zen"] = "${{ matrix.version }}"' package.json > package.json.tmp
+          mv package.json.tmp package.json
+          cat package.json | jq '.dependencies["@sylphx/zen"]'
 
-      - name: Install Zen ${{ matrix.version }}
+      - name: Install dependencies
         working-directory: benchmarks/state-management
         run: |
-          echo "Installing @sylphx/zen@${{ matrix.version }}"
-          npm install @sylphx/zen@${{ matrix.version }} --force --no-save
+          # Clean install to ensure correct version
+          rm -rf node_modules package-lock.json
+          npm install
           echo "Installation complete"
 
       - name: Verify Zen version

@@ -5,18 +5,18 @@
   "version": "2.2.0",
   "test": "Deep Chain (10 layers)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-17T23:15:04.551Z",
+  "timestamp": "2025-11-18T02:12:56.187Z",
   "result": {
-    "opsPerSecond": 1979509.1724124395,
-    "meanTime": 0.0005250400016084313,
-    "variance": 1.2204870819692874e-7,
-    "p99": 0.0011119999701622873,
+    "opsPerSecond": 2057551.5607223816,
+    "meanTime": 0.0005021959987934678,
+    "variance": 1.1999651858492542e-7,
+    "p99": 0.0009025000000838186,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-17T23-15-04-551Z",
+    "runId": "run-2025-11-18T02-12-56-187Z",
     "mode": "production",
-    "timestamp": "2025-11-17T23:15:04.551Z",
+    "timestamp": "2025-11-18T02:12:56.187Z",
     "completedLibraries": [
       "zen",
       "solid-js",

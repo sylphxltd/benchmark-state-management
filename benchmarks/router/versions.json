@@ -13,21 +13,6 @@
         "lastChecked": "2025-11-13T18:20:51.674Z"
       }
     },
-    "@solidjs/router": {
-      "current": "0.15.9",
-      "latest": "0.15.9",
-      "lastUpdated": "2025-11-13T00:00:00.000Z"
-    },
-    "solid-js": {
-      "current": "1.9.10",
-      "latest": "1.9.10",
-      "lastUpdated": "2025-11-13T00:00:00.000Z",
-      "size": {
-        "gzip": 4058,
-        "minified": 12200,
-        "lastChecked": "2025-11-13T18:20:52.009Z"
-      }
-    },
     "wouter": {
       "current": "3.7.1",
       "latest": "3.7.1",

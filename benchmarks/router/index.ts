@@ -137,7 +137,6 @@ async function main() {
   await import('./libraries/react-router');
   await import('./libraries/wouter');
   await import('./libraries/zen-router');
-  await import('./libraries/solidjs-router');
 
   // Print summary
   category.printSummary();

@@ -23,16 +23,6 @@
         "lastChecked": "2025-11-14T13:14:02.557Z"
       }
     },
-    "solid-js": {
-      "current": "1.9.10",
-      "latest": "1.9.10",
-      "lastUpdated": "2024-12-06T00:00:00.000Z",
-      "size": {
-        "gzip": 4058,
-        "minified": 12200,
-        "lastChecked": "2025-11-06T17:48:12.526Z"
-      }
-    },
     "zustand": {
       "current": "5.0.8",
       "latest": "5.0.8",

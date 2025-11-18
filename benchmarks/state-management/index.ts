@@ -248,7 +248,6 @@ export const tests = {
 
 const PACKAGE_TO_LIBRARY: Record<string, string> = {
   '@sylphx/zen': 'zen',
-  'solid-js': 'solid-js',
   'jotai': 'jotai',
   '@preact/signals': 'preact-signals',
   'zustand': 'zustand',

@@ -55,20 +55,6 @@
         "measuredAt": "2025-11-13T16:03:14.412Z",
         "source": "bundlephobia"
       }
-    },
-    "@solidjs/router": {
-      "name": "SolidJS Router",
-      "displayName": "SolidJS Router",
-      "npm": "@solidjs/router",
-      "url": "https://github.com/solidjs/solid-router",
-      "description": "Universal router for Solid with nested routing and data APIs",
-      "color": "#2C4F7C",
-      "bundleSize": {
-        "minified": 26794,
-        "gzipped": 9455,
-        "measuredAt": "2025-11-13T16:03:14.426Z",
-        "source": "bundlephobia"
-      }
     }
   }
 }

@@ -90,21 +90,6 @@
         "source": "bundlephobia"
       }
     },
-    "solid-js": {
-      "name": "Solid Signals",
-      "displayName": "Solid Signals",
-      "description": "Fine-grained reactivity primitive from Solid.js for building performant UIs",
-      "url": "https://github.com/solidjs/solid",
-      "npm": "solid-js",
-      "color": "#2C4F7C",
-      "tradeoff": "Fastest overall, but requires Solid.js ecosystem",
-      "bundleSize": {
-        "minified": 12200,
-        "gzipped": 4058,
-        "measuredAt": "2025-11-13T16:03:14.250Z",
-        "source": "bundlephobia"
-      }
-    },
     "@sylphx/zen": {
       "name": "Zen",
       "displayName": "Zen",

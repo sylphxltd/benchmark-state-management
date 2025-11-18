@@ -1,0 +1,135 @@
+/**
+ * 測試：Solid.js 在 Node.js 下是否工作？
+ */
+
+import { createSignal, createMemo, createEffect, createRoot } from 'solid-js';
+
+console.log('='.repeat(80));
+console.log('Solid.js 在 Node.js 下的測試');
+console.log('Runtime:', process.version);
+console.log('='.repeat(80));
+
+// ============================================================================
+// 測試 1: 最簡單的 Signal + Effect
+// ============================================================================
+
+console.log('\n📊 測試 1: Signal + Effect\n');
+
+let effectCount = 0;
+const values: number[] = [];
+
+createRoot(() => {
+  const [count, setCount] = createSignal(0);
+
+  createEffect(() => {
+    effectCount++;
+    const value = count();
+    values.push(value);
+    console.log(`[Effect #${effectCount}] count = ${value}`);
+  });
+
+  console.log('\n執行 setCount(1):');
+  setCount(1);
+
+  console.log('\n執行 setCount(2):');
+  setCount(2);
+
+  console.log('\n執行 setCount(3):');
+  setCount(3);
+});
+
+console.log('\n結果:');
+console.log(`  Effect 執行次數: ${effectCount}`);
+console.log(`  收集的值: [${values.join(', ')}]`);
+console.log(`  預期: [0, 1, 2, 3]`);
+
+if (effectCount >= 4 && values.length === 4) {
+  console.log('\n✅ Solid.js Effect 正常工作！');
+} else if (effectCount === 1) {
+  console.log('\n⚠️  Effect 只執行了一次');
+} else {
+  console.log('\n❌ Solid.js Effect 不工作！');
+}
+
+// ============================================================================
+// 測試 2: Signal + Memo
+// ============================================================================
+
+console.log('\n\n📊 測試 2: Signal + Memo\n');
+
+let memoCount = 0;
+
+createRoot(() => {
+  const [signal, setSignal] = createSignal(1);
+  const memo = createMemo(() => {
+    memoCount++;
+    return signal() + 1;
+  });
+
+  console.log(`初始: signal=${signal()}, memo=${memo()}, 執行=${memoCount}`);
+
+  memoCount = 0;
+  setSignal(10);
+  console.log(`更新到 10: signal=${signal()}, memo=${memo()}, 執行=${memoCount}`);
+
+  memoCount = 0;
+  setSignal(100);
+  console.log(`更新到 100: signal=${signal()}, memo=${memo()}, 執行=${memoCount}`);
+});
+
+// ============================================================================
+// 測試 3: 100 層深度鏈 Benchmark
+// ============================================================================
+
+console.log('\n\n📊 測試 3: 100 層深度鏈 Benchmark\n');
+
+let deepExecCount = 0;
+
+const deepResult = createRoot(() => {
+  const [signal, setSignal] = createSignal(1);
+  const memos: any[] = [];
+  let prev: any = signal;
+
+  for (let i = 0; i < 100; i++) {
+    const current = prev;
+    const memo = createMemo(() => {
+      deepExecCount++;
+      return current() + 1;
+    });
+    memos.push(memo);
+    prev = memo;
+  }
+
+  // Benchmark
+  deepExecCount = 0;
+  const start = performance.now();
+
+  for (let i = 0; i < 100; i++) {
+    setSignal((prev: number) => prev + 1);
+    memos[99]();
+  }
+
+  const end = performance.now();
+  const time = end - start;
+  const opsPerSec = Math.round(100 / (time / 1000));
+
+  return { execCount: deepExecCount, time, opsPerSec };
+});
+
+console.log(`執行次數: ${deepResult.execCount.toLocaleString()}`);
+console.log(`預期: 10,000 (100 layers × 100 iterations)`);
+console.log(`時間: ${deepResult.time.toFixed(2)}ms`);
+console.log(`Ops/sec: ${deepResult.opsPerSec.toLocaleString()}`);
+
+if (deepResult.execCount === 10000) {
+  console.log('\n🎉 完美！Solid.js 在 Node.js 下完全正常工作！');
+  console.log(`\n性能: ${deepResult.opsPerSec.toLocaleString()} ops/sec`);
+  console.log('\n💡 這證明問題確實是 Bun 與 Solid.js 不兼容！');
+  console.log('   Benchmark 應該用 Node.js 而不是 Bun！');
+} else if (deepResult.execCount > 0) {
+  console.log(`\n⚠️  部分工作：執行了 ${deepResult.execCount} 次（預期 10,000）`);
+} else {
+  console.log('\n❌ 完全不工作');
+}
+
+console.log('\n' + '='.repeat(80));

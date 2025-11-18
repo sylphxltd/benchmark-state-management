@@ -1,0 +1,263 @@
+name: Zen Version Comparison
+
+on:
+  workflow_dispatch:
+    inputs:
+      versions:
+        description: 'Comma-separated versions to test (leave empty for all)'
+        required: false
+        default: ''
+      iterations:
+        description: 'Number of iterations per version for stability'
+        required: false
+        default: '3'
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      version-matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set version matrix
+        id: set-matrix
+        run: |
+          if [ -z "${{ github.event.inputs.versions }}" ]; then
+            # All v3 versions from 3.1.0 onwards
+            VERSIONS='["3.1.0","3.1.1","3.1.2","3.1.3","3.1.4","3.1.5","3.2.0","3.3.0","3.5.0","3.7.0","3.8.0","3.9.0","3.10.0","3.11.0","3.12.0","3.13.0","3.13.1","3.14.0","3.15.0","3.15.1","3.16.0","3.16.1","3.17.0","3.17.1","3.18.0","3.19.0","3.19.1","3.19.2","3.20.0","3.20.1","3.21.0","3.21.1","3.21.2","3.22.0","3.24.0","3.27.0","3.28.0","3.29.0","3.30.0","3.32.0","3.34.0","3.36.0","3.38.0","3.40.0","3.41.1","3.43.0","3.43.1","3.44.0","3.44.1","3.44.2","3.45.0","3.45.1","3.45.2","3.46.0","3.47.0","3.48.0"]'
+          else
+            # Convert comma-separated input to JSON array
+            VERSIONS=$(echo "${{ github.event.inputs.versions }}" | jq -R 'split(",") | map(gsub("^\\s+|\\s+$";""))')
+          fi
+          echo "matrix=$VERSIONS" >> $GITHUB_OUTPUT
+          echo "Testing versions: $VERSIONS"
+
+  benchmark-version:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ${{ fromJson(needs.prepare.outputs.version-matrix) }}
+        iteration: [1, 2, 3]
+      max-parallel: 1  # Run sequentially for fairness
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.3.2'  # Fixed version to avoid bun.sh outages
+
+      - name: Install dependencies
+        working-directory: benchmarks/state-management
+        run: npm install
+
+      - name: Install Zen ${{ matrix.version }}
+        working-directory: benchmarks/state-management
+        run: npm install @sylphx/zen@${{ matrix.version }}
+
+      - name: Verify Zen version
+        working-directory: benchmarks/state-management
+        run: |
+          INSTALLED_VERSION=$(node -p "require('@sylphx/zen/package.json').version")
+          echo "Installed version: $INSTALLED_VERSION"
+          if [ "$INSTALLED_VERSION" != "${{ matrix.version }}" ]; then
+            echo "Error: Version mismatch!"
+            exit 1
+          fi
+
+      - name: Run benchmarks (iteration ${{ matrix.iteration }})
+        working-directory: benchmarks/state-management
+        run: bun run benchmark
+        timeout-minutes: 15
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.version }}-iter${{ matrix.iteration }}
+          path: benchmarks/state-management/results/zen/*.json
+          retention-days: 30
+
+  aggregate-results:
+    needs: benchmark-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.3.2'
+
+      - name: Download all results
+        uses: actions/download-artifact@v4
+        with:
+          path: collected-results
+
+      - name: Aggregate and analyze results
+        run: |
+          cat > analyze.ts << 'EOF'
+          import { readdirSync, readFileSync, writeFileSync } from 'fs';
+          import { join } from 'path';
+
+          interface BenchmarkResult {
+            version: string;
+            test: string;
+            opsPerSecond: number;
+            meanTime: number;
+          }
+
+          const resultsDir = 'collected-results';
+          const results: Map<string, BenchmarkResult[]> = new Map();
+
+          // Read all result files
+          const artifacts = readdirSync(resultsDir);
+          for (const artifact of artifacts) {
+            const match = artifact.match(/results-(.+)-iter(\d+)/);
+            if (!match) continue;
+
+            const version = match[1];
+            const iteration = match[2];
+
+            const files = readdirSync(join(resultsDir, artifact));
+            for (const file of files) {
+              if (!file.endsWith('.json')) continue;
+
+              const data = JSON.parse(
+                readFileSync(join(resultsDir, artifact, file), 'utf-8')
+              );
+
+              const key = `${version}:${data.test}`;
+              if (!results.has(key)) results.set(key, []);
+
+              results.get(key)!.push({
+                version,
+                test: data.test,
+                opsPerSecond: data.result.opsPerSecond,
+                meanTime: data.result.meanTime
+              });
+            }
+          }
+
+          // Calculate averages
+          const averages: Map<string, { version: string; test: string; avgOps: number; stdDev: number }> = new Map();
+
+          for (const [key, values] of results.entries()) {
+            const ops = values.map(v => v.opsPerSecond);
+            const avg = ops.reduce((a, b) => a + b, 0) / ops.length;
+            const variance = ops.reduce((sum, val) => sum + Math.pow(val - avg, 2), 0) / ops.length;
+            const stdDev = Math.sqrt(variance);
+
+            averages.set(key, {
+              version: values[0].version,
+              test: values[0].test,
+              avgOps: avg,
+              stdDev
+            });
+          }
+
+          // Group by test
+          const byTest: Map<string, Array<{ version: string; avgOps: number; stdDev: number }>> = new Map();
+
+          for (const [_, data] of averages.entries()) {
+            if (!byTest.has(data.test)) byTest.set(data.test, []);
+            byTest.get(data.test)!.push({
+              version: data.version,
+              avgOps: data.avgOps,
+              stdDev: data.stdDev
+            });
+          }
+
+          // Generate markdown report
+          let markdown = '# Zen Version Performance Comparison\n\n';
+          markdown += `Generated: ${new Date().toISOString()}\n\n`;
+          markdown += '## Key Tests\n\n';
+
+          const keyTests = [
+            'Single Read',
+            'Single Write',
+            'Batch Write (10x)',
+            'Computed Value Access',
+            'Deep Chain (10 layers)',
+            'Very Deep Chain (100 layers)',
+            'Wide Fanout (1→100)',
+            'Massive Fanout (1→1000)'
+          ];
+
+          for (const test of keyTests) {
+            const data = byTest.get(test);
+            if (!data) continue;
+
+            // Sort by avgOps descending
+            data.sort((a, b) => b.avgOps - a.avgOps);
+
+            markdown += `### ${test}\n\n`;
+            markdown += '| Rank | Version | Ops/sec | Std Dev | vs Best |\n';
+            markdown += '|------|---------|---------|---------|----------|\n';
+
+            const best = data[0].avgOps;
+            data.slice(0, 10).forEach((item, idx) => {
+              const pct = ((item.avgOps / best) * 100).toFixed(1);
+              const ops = item.avgOps >= 1000000
+                ? `${(item.avgOps / 1000000).toFixed(2)}M`
+                : item.avgOps >= 1000
+                ? `${(item.avgOps / 1000).toFixed(0)}K`
+                : item.avgOps.toFixed(0);
+              const std = item.stdDev >= 1000
+                ? `${(item.stdDev / 1000).toFixed(1)}K`
+                : item.stdDev.toFixed(0);
+              markdown += `| ${idx + 1} | ${item.version} | ${ops} | ±${std} | ${pct}% |\n`;
+            });
+            markdown += '\n';
+          }
+
+          // Summary table - find best version for each test
+          markdown += '## Best Version by Test\n\n';
+          markdown += '| Test | Best Version | Ops/sec |\n';
+          markdown += '|------|--------------|----------|\n';
+
+          for (const test of keyTests) {
+            const data = byTest.get(test);
+            if (!data) continue;
+            const best = data.sort((a, b) => b.avgOps - a.avgOps)[0];
+            const ops = best.avgOps >= 1000000
+              ? `${(best.avgOps / 1000000).toFixed(2)}M`
+              : best.avgOps >= 1000
+              ? `${(best.avgOps / 1000).toFixed(0)}K`
+              : best.avgOps.toFixed(0);
+            markdown += `| ${test} | **${best.version}** | ${ops} |\n`;
+          }
+
+          writeFileSync('VERSION_COMPARISON.md', markdown);
+          console.log('Report generated: VERSION_COMPARISON.md');
+          EOF
+
+          bun run analyze.ts
+
+      - name: Upload comparison report
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-comparison-report
+          path: VERSION_COMPARISON.md
+
+      - name: Comment on workflow run
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ -f VERSION_COMPARISON.md ]; then
+            echo "## Version Comparison Report" >> $GITHUB_STEP_SUMMARY
+            cat VERSION_COMPARISON.md >> $GITHUB_STEP_SUMMARY
+          fi

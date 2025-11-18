@@ -5,18 +5,18 @@
   "version": "2.15.1",
   "test": "Extreme Read (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-18T03:54:29.973Z",
+  "timestamp": "2025-11-18T05:27:53.173Z",
   "result": {
-    "opsPerSecond": 283.62074921074424,
-    "meanTime": 3.542300375999883,
-    "variance": 0.06483919970187071,
-    "p99": 4.158103509999928,
+    "opsPerSecond": 288.14557344763455,
+    "meanTime": 3.4853170919999394,
+    "variance": 0.05763905136756164,
+    "p99": 4.087143829991692,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T03-54-29-974Z",
+    "runId": "run-2025-11-18T05-27-53-173Z",
     "mode": "production",
-    "timestamp": "2025-11-18T03:54:29.973Z",
+    "timestamp": "2025-11-18T05:27:53.173Z",
     "completedLibraries": [
       "zen",
       "jotai",

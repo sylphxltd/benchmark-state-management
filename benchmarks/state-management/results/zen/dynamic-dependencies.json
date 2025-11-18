@@ -2,21 +2,21 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.45.2",
+  "version": "3.46.0",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-18T03:54:29.973Z",
+  "timestamp": "2025-11-18T05:27:53.173Z",
   "result": {
-    "opsPerSecond": 7191542.511215976,
-    "meanTime": 0.00013964399858377874,
-    "variance": 9.145873418603462e-11,
+    "opsPerSecond": 7760597.310238501,
+    "meanTime": 0.00012954400130547582,
+    "variance": 1.1261873259006654e-10,
     "p99": 0.0001700000138953328,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T03-54-29-974Z",
+    "runId": "run-2025-11-18T05-27-53-173Z",
     "mode": "production",
-    "timestamp": "2025-11-18T03:54:29.973Z",
+    "timestamp": "2025-11-18T05:27:53.173Z",
     "completedLibraries": [
       "zen",
       "jotai",

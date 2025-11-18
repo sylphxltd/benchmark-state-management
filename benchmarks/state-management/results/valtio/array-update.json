@@ -5,18 +5,18 @@
   "version": "2.2.0",
   "test": "Array Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-18T03:54:29.973Z",
+  "timestamp": "2025-11-18T05:27:53.173Z",
   "result": {
-    "opsPerSecond": 2152055.6118648625,
-    "meanTime": 0.0004893649999139597,
-    "variance": 1.219320518853596e-7,
-    "p99": 0.0009930000011081565,
+    "opsPerSecond": 2134329.25779729,
+    "meanTime": 0.0004871620000049006,
+    "variance": 3.4783679468144644e-8,
+    "p99": 0.0011436100009450442,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T03-54-29-974Z",
+    "runId": "run-2025-11-18T05-27-53-173Z",
     "mode": "production",
-    "timestamp": "2025-11-18T03:54:29.973Z",
+    "timestamp": "2025-11-18T05:27:53.173Z",
     "completedLibraries": [
       "zen",
       "jotai",

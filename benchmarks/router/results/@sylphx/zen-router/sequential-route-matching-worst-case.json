@@ -5,18 +5,18 @@
   "version": "1.0.2",
   "test": "Sequential Route Matching (worst case)",
   "group": "04-real-world",
-  "timestamp": "2025-11-18T05:05:26.825Z",
+  "timestamp": "2025-11-18T05:27:50.020Z",
   "result": {
-    "opsPerSecond": 873482.6881707049,
-    "meanTime": 0.0011594500000264817,
-    "variance": 1.1121306254322288e-7,
-    "p99": 0.0014831099996808906,
+    "opsPerSecond": 853316.5371014355,
+    "meanTime": 0.0011941800000404327,
+    "variance": 2.1429930890171865e-7,
+    "p99": 0.0016731000006438988,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T05-05-26-826Z",
+    "runId": "run-2025-11-18T05-27-50-020Z",
     "mode": "production",
-    "timestamp": "2025-11-18T05:05:26.825Z",
+    "timestamp": "2025-11-18T05:27:50.020Z",
     "completedLibraries": [
       "react-router-dom",
       "wouter",

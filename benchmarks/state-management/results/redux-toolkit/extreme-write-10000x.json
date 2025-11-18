@@ -5,20 +5,21 @@
   "version": "2.10.1",
   "test": "Extreme Write (10000x)",
   "group": "06-performance-stress",
-  "timestamp": "2025-11-18T06:48:28.043Z",
+  "timestamp": "2025-11-18T15:56:59.909Z",
   "result": {
-    "opsPerSecond": 14.299568335322778,
-    "meanTime": 69.96946446599992,
-    "variance": 2.725440653810514,
-    "p99": 73.95749483001768,
+    "opsPerSecond": 39.41864326754968,
+    "meanTime": 25.368706710999934,
+    "variance": 2.512841886939994,
+    "p99": 31.325665999997,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-48-28-044Z",
+    "runId": "run-2025-11-18T15-56-59-909Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:48:28.043Z",
+    "timestamp": "2025-11-18T15:56:59.909Z",
     "completedLibraries": [
       "zen",
+      "zen-ultimate",
       "jotai",
       "preact-signals",
       "zustand",
@@ -26,11 +27,11 @@
       "mobx",
       "redux-toolkit"
     ],
-    "totalLibraries": 7,
+    "totalLibraries": 8,
     "isComplete": true,
     "environment": {
-      "platform": "linux",
-      "arch": "x64",
+      "platform": "darwin",
+      "arch": "arm64",
       "nodeVersion": "v24.3.0"
     }
   }

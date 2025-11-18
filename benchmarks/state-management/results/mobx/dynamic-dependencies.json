@@ -5,20 +5,21 @@
   "version": "6.15.0",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-18T06:48:28.043Z",
+  "timestamp": "2025-11-18T15:56:59.909Z",
   "result": {
-    "opsPerSecond": 780756.178051308,
-    "meanTime": 0.0013070029999362304,
-    "variance": 1.4675955320219102e-7,
-    "p99": 0.002565599974477663,
+    "opsPerSecond": 990265.6882672551,
+    "meanTime": 0.0010098300000172457,
+    "variance": 0.000017714908727694764,
+    "p99": 0.005917000002227724,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-48-28-044Z",
+    "runId": "run-2025-11-18T15-56-59-909Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:48:28.043Z",
+    "timestamp": "2025-11-18T15:56:59.909Z",
     "completedLibraries": [
       "zen",
+      "zen-ultimate",
       "jotai",
       "preact-signals",
       "zustand",
@@ -26,11 +27,11 @@
       "mobx",
       "redux-toolkit"
     ],
-    "totalLibraries": 7,
+    "totalLibraries": 8,
     "isComplete": true,
     "environment": {
-      "platform": "linux",
-      "arch": "x64",
+      "platform": "darwin",
+      "arch": "arm64",
       "nodeVersion": "v24.3.0"
     }
   }

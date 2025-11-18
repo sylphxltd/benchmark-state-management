@@ -1,0 +1,38 @@
+{
+  "library": "Zen Ultimate",
+  "libraryId": "zen-ultimate",
+  "packageName": "@sylphx/zen-ultimate",
+  "version": "unknown",
+  "test": "Diamond Pattern (3 layers)",
+  "group": "07-reactivity-patterns",
+  "timestamp": "2025-11-18T15:56:59.909Z",
+  "result": {
+    "opsPerSecond": 355111.7447905429,
+    "meanTime": 0.0028160149999821443,
+    "variance": 0.0027669042535268065,
+    "p99": 0.0065410000024712645,
+    "samples": 1000
+  },
+  "runMetadata": {
+    "runId": "run-2025-11-18T15-56-59-909Z",
+    "mode": "production",
+    "timestamp": "2025-11-18T15:56:59.909Z",
+    "completedLibraries": [
+      "zen",
+      "zen-ultimate",
+      "jotai",
+      "preact-signals",
+      "zustand",
+      "valtio",
+      "mobx",
+      "redux-toolkit"
+    ],
+    "totalLibraries": 8,
+    "isComplete": true,
+    "environment": {
+      "platform": "darwin",
+      "arch": "arm64",
+      "nodeVersion": "v24.3.0"
+    }
+  }
+}

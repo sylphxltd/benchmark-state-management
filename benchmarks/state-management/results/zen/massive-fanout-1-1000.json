@@ -2,23 +2,24 @@
   "library": "Zen",
   "libraryId": "zen",
   "packageName": "@sylphx/zen",
-  "version": "3.47.0",
+  "version": "3.1.1",
   "test": "Massive Fanout (1→1000)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-18T06:48:28.043Z",
+  "timestamp": "2025-11-18T15:56:59.909Z",
   "result": {
-    "opsPerSecond": 4679.350489697996,
-    "meanTime": 0.21544540200254414,
-    "variance": 0.0015955662788650375,
-    "p99": 0.26338762994972054,
+    "opsPerSecond": 2753.422577228222,
+    "meanTime": 0.3631843540001282,
+    "variance": 0.013720649392460106,
+    "p99": 1.1434580000059213,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-48-28-044Z",
+    "runId": "run-2025-11-18T15-56-59-909Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:48:28.043Z",
+    "timestamp": "2025-11-18T15:56:59.909Z",
     "completedLibraries": [
       "zen",
+      "zen-ultimate",
       "jotai",
       "preact-signals",
       "zustand",
@@ -26,11 +27,11 @@
       "mobx",
       "redux-toolkit"
     ],
-    "totalLibraries": 7,
+    "totalLibraries": 8,
     "isComplete": true,
     "environment": {
-      "platform": "linux",
-      "arch": "x64",
+      "platform": "darwin",
+      "arch": "arm64",
       "nodeVersion": "v24.3.0"
     }
   }

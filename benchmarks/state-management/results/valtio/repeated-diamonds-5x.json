@@ -5,20 +5,21 @@
   "version": "2.2.0",
   "test": "Repeated Diamonds (5x)",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-18T06:48:28.043Z",
+  "timestamp": "2025-11-18T15:56:59.909Z",
   "result": {
-    "opsPerSecond": 1522344.4423534474,
-    "meanTime": 0.0006638749985722825,
-    "variance": 1.07520352809428e-8,
-    "p99": 0.0010821000882424413,
+    "opsPerSecond": 991884.4018407946,
+    "meanTime": 0.0010081819999832077,
+    "variance": 9.366302350869144e-7,
+    "p99": 0.0033750000002328306,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-48-28-044Z",
+    "runId": "run-2025-11-18T15-56-59-909Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:48:28.043Z",
+    "timestamp": "2025-11-18T15:56:59.909Z",
     "completedLibraries": [
       "zen",
+      "zen-ultimate",
       "jotai",
       "preact-signals",
       "zustand",
@@ -26,11 +27,11 @@
       "mobx",
       "redux-toolkit"
     ],
-    "totalLibraries": 7,
+    "totalLibraries": 8,
     "isComplete": true,
     "environment": {
-      "platform": "linux",
-      "arch": "x64",
+      "platform": "darwin",
+      "arch": "arm64",
       "nodeVersion": "v24.3.0"
     }
   }

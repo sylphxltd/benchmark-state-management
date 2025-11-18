@@ -5,20 +5,21 @@
   "version": "2.2.0",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-18T06:48:28.043Z",
+  "timestamp": "2025-11-18T15:56:59.909Z",
   "result": {
-    "opsPerSecond": 2498165.394210361,
-    "meanTime": 0.0004184529999038205,
-    "variance": 1.08184734545489e-7,
-    "p99": 0.0008711100037908181,
+    "opsPerSecond": 4168872.6951584155,
+    "meanTime": 0.00023987299999862443,
+    "variance": 6.348604933364176e-7,
+    "p99": 0.0009159999999610591,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-48-28-044Z",
+    "runId": "run-2025-11-18T15-56-59-909Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:48:28.043Z",
+    "timestamp": "2025-11-18T15:56:59.909Z",
     "completedLibraries": [
       "zen",
+      "zen-ultimate",
       "jotai",
       "preact-signals",
       "zustand",
@@ -26,11 +27,11 @@
       "mobx",
       "redux-toolkit"
     ],
-    "totalLibraries": 7,
+    "totalLibraries": 8,
     "isComplete": true,
     "environment": {
-      "platform": "linux",
-      "arch": "x64",
+      "platform": "darwin",
+      "arch": "arm64",
       "nodeVersion": "v24.3.0"
     }
   }

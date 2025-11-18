@@ -7,7 +7,7 @@
       "dependencies": {
         "@preact/signals": "^2.4.0",
         "@reduxjs/toolkit": "^2.10.1",
-        "@sylphx/zen": "^3.49.0",
+        "@sylphx/zen": "^3.49.1",
         "jotai": "^2.15.1",
         "mobx": "^6.15.0",
         "react": "^18.3.1",
@@ -129,7 +129,7 @@
 
     "@standard-schema/utils": ["@standard-schema/utils@0.3.0", "", {}, "sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g=="],
 
-    "@sylphx/zen": ["@sylphx/zen@3.49.0", "", {}, "sha512-Lzr2eZcl1zMxdK0phUiv94dYgdgn/IK5Je1uVe/KSS5oE6+QvSYDXq9jdhCIaAg041uUjA2U9rKRb7+Eubcoiw=="],
+    "@sylphx/zen": ["@sylphx/zen@3.49.1", "", {}, "sha512-NFvKmn88G4yQ506e+iyQM7F6P90BOdbpUGel0g9dR5lwIal7NcSRQ+qmLVcvWWyj7DZ56eSYS+meZXpCPkwj5w=="],
 
     "@types/chai": ["@types/chai@5.2.3", "", { "dependencies": { "@types/deep-eql": "*", "assertion-error": "^2.0.1" } }, "sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA=="],
 

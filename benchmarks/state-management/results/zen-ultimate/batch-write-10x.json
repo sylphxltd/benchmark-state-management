@@ -1,0 +1,38 @@
+{
+  "library": "Zen Ultimate",
+  "libraryId": "zen-ultimate",
+  "packageName": "@sylphx/zen-ultimate",
+  "version": "unknown",
+  "test": "Batch Write (10x)",
+  "group": "02-basic-write",
+  "timestamp": "2025-11-18T15:56:59.909Z",
+  "result": {
+    "opsPerSecond": 2063055.2197326813,
+    "meanTime": 0.00048471800000078244,
+    "variance": 4.2039949397001635e-7,
+    "p99": 0.003084000000001197,
+    "samples": 1000
+  },
+  "runMetadata": {
+    "runId": "run-2025-11-18T15-56-59-909Z",
+    "mode": "production",
+    "timestamp": "2025-11-18T15:56:59.909Z",
+    "completedLibraries": [
+      "zen",
+      "zen-ultimate",
+      "jotai",
+      "preact-signals",
+      "zustand",
+      "valtio",
+      "mobx",
+      "redux-toolkit"
+    ],
+    "totalLibraries": 8,
+    "isComplete": true,
+    "environment": {
+      "platform": "darwin",
+      "arch": "arm64",
+      "nodeVersion": "v24.3.0"
+    }
+  }
+}

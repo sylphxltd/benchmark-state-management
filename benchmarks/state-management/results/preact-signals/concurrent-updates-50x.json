@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Concurrent Updates (50x)",
   "group": "04-async-operations",
-  "timestamp": "2025-11-18T06:12:04.768Z",
+  "timestamp": "2025-11-18T06:48:28.043Z",
   "result": {
-    "opsPerSecond": 102794.56516128326,
-    "meanTime": 0.009815046999996411,
-    "variance": 0.0000013397454147509924,
-    "p99": 0.012816500013577705,
+    "opsPerSecond": 106840.87935054579,
+    "meanTime": 0.01005669799966563,
+    "variance": 0.00035226427053182516,
+    "p99": 0.01646802000308524,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-12-04-768Z",
+    "runId": "run-2025-11-18T06-48-28-044Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:12:04.768Z",
+    "timestamp": "2025-11-18T06:48:28.043Z",
     "completedLibraries": [
       "zen",
       "jotai",

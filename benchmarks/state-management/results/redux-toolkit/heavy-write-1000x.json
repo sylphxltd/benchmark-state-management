@@ -5,18 +5,18 @@
   "version": "2.10.1",
   "test": "Heavy Write (1000x)",
   "group": "02-basic-write",
-  "timestamp": "2025-11-18T06:12:04.768Z",
+  "timestamp": "2025-11-18T06:48:28.043Z",
   "result": {
-    "opsPerSecond": 152.28331452096577,
-    "meanTime": 6.5781901080000384,
-    "variance": 0.08601128746900122,
-    "p99": 7.771445659999008,
+    "opsPerSecond": 158.08353457942408,
+    "meanTime": 6.366434848999983,
+    "variance": 0.38403158906002516,
+    "p99": 8.724390199999107,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-12-04-768Z",
+    "runId": "run-2025-11-18T06-48-28-044Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:12:04.768Z",
+    "timestamp": "2025-11-18T06:48:28.043Z",
     "completedLibraries": [
       "zen",
       "jotai",

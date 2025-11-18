@@ -5,18 +5,18 @@
   "version": "5.0.8",
   "test": "Array Push",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-18T06:12:04.768Z",
+  "timestamp": "2025-11-18T06:48:28.043Z",
   "result": {
-    "opsPerSecond": 3580758.6046051765,
-    "meanTime": 0.0002927559999152436,
-    "variance": 2.2647808260473636e-8,
-    "p99": 0.000811009998069494,
+    "opsPerSecond": 3661716.993120706,
+    "meanTime": 0.0002835619999896153,
+    "variance": 1.1631982137092895e-8,
+    "p99": 0.0007012999972357645,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-12-04-768Z",
+    "runId": "run-2025-11-18T06-48-28-044Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:12:04.768Z",
+    "timestamp": "2025-11-18T06:48:28.043Z",
     "completedLibraries": [
       "zen",
       "jotai",

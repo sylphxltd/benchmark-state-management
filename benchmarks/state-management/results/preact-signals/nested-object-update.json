@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Nested Object Update",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-18T06:12:04.768Z",
+  "timestamp": "2025-11-18T06:48:28.043Z",
   "result": {
-    "opsPerSecond": 7057813.65161502,
-    "meanTime": 0.00014845700005389518,
-    "variance": 9.687157294974618e-9,
-    "p99": 0.0002414899943687483,
+    "opsPerSecond": 6152081.182106049,
+    "meanTime": 0.00017733099997712998,
+    "variance": 1.2866157298579783e-7,
+    "p99": 0.0003020000000105929,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-12-04-768Z",
+    "runId": "run-2025-11-18T06-48-28-044Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:12:04.768Z",
+    "timestamp": "2025-11-18T06:48:28.043Z",
     "completedLibraries": [
       "zen",
       "jotai",

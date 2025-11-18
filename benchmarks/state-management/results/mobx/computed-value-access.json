@@ -5,18 +5,18 @@
   "version": "6.15.0",
   "test": "Computed Value Access",
   "group": "03-advanced-operations",
-  "timestamp": "2025-11-18T06:12:04.768Z",
+  "timestamp": "2025-11-18T06:48:28.043Z",
   "result": {
-    "opsPerSecond": 8202162.028197671,
-    "meanTime": 0.00012473899994802195,
-    "variance": 1.589382286813179e-9,
-    "p99": 0.0001610000035725534,
+    "opsPerSecond": 5437511.953506928,
+    "meanTime": 0.0001868890001278487,
+    "variance": 1.6472819651682387e-9,
+    "p99": 0.00022999999790044968,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T06-12-04-768Z",
+    "runId": "run-2025-11-18T06-48-28-044Z",
     "mode": "production",
-    "timestamp": "2025-11-18T06:12:04.768Z",
+    "timestamp": "2025-11-18T06:48:28.043Z",
     "completedLibraries": [
       "zen",
       "jotai",

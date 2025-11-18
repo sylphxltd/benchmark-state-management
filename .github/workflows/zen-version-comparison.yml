@@ -55,13 +55,19 @@ jobs:
         with:
           bun-version: '1.3.2'  # Fixed version to avoid bun.sh outages
 
-      - name: Install dependencies
+      - name: Install dependencies (without Zen)
         working-directory: benchmarks/state-management
-        run: npm install
+        run: |
+          # Remove Zen from dependencies temporarily
+          npm uninstall @sylphx/zen --no-save || true
+          npm install --no-package-lock
 
       - name: Install Zen ${{ matrix.version }}
         working-directory: benchmarks/state-management
-        run: npm install @sylphx/zen@${{ matrix.version }}
+        run: |
+          echo "Installing @sylphx/zen@${{ matrix.version }}"
+          npm install @sylphx/zen@${{ matrix.version }} --force --no-save
+          echo "Installation complete"
 
       - name: Verify Zen version
         working-directory: benchmarks/state-management

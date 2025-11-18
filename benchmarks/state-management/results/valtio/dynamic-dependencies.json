@@ -5,18 +5,18 @@
   "version": "2.2.0",
   "test": "Dynamic Dependencies",
   "group": "07-reactivity-patterns",
-  "timestamp": "2025-11-18T05:27:53.173Z",
+  "timestamp": "2025-11-18T06:12:04.768Z",
   "result": {
-    "opsPerSecond": 1035871.1509075614,
-    "meanTime": 0.0009985669972375035,
-    "variance": 1.5675344346922461e-7,
-    "p99": 0.002184400098631158,
+    "opsPerSecond": 1092197.4308821217,
+    "meanTime": 0.0009469089997000993,
+    "variance": 2.590871826701826e-7,
+    "p99": 0.0014830000000074506,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T05-27-53-173Z",
+    "runId": "run-2025-11-18T06-12-04-768Z",
     "mode": "production",
-    "timestamp": "2025-11-18T05:27:53.173Z",
+    "timestamp": "2025-11-18T06:12:04.768Z",
     "completedLibraries": [
       "zen",
       "jotai",

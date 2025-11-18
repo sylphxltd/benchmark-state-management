@@ -5,18 +5,18 @@
   "version": "6.15.0",
   "test": "Cache Invalidation",
   "group": "05-real-world",
-  "timestamp": "2025-11-18T05:27:53.173Z",
+  "timestamp": "2025-11-18T06:12:04.768Z",
   "result": {
-    "opsPerSecond": 2296627.873796559,
-    "meanTime": 0.00045227700022223874,
-    "variance": 1.0613203639104823e-7,
-    "p99": 0.0008933999964210658,
+    "opsPerSecond": 2392992.3078794754,
+    "meanTime": 0.00044966100018064024,
+    "variance": 4.273792852908795e-7,
+    "p99": 0.0009221999920555389,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T05-27-53-173Z",
+    "runId": "run-2025-11-18T06-12-04-768Z",
     "mode": "production",
-    "timestamp": "2025-11-18T05:27:53.173Z",
+    "timestamp": "2025-11-18T06:12:04.768Z",
     "completedLibraries": [
       "zen",
       "jotai",

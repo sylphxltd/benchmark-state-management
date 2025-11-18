@@ -5,18 +5,18 @@
   "version": "6.15.0",
   "test": "Complex Form (nested + array)",
   "group": "05-real-world",
-  "timestamp": "2025-11-18T05:27:53.173Z",
+  "timestamp": "2025-11-18T06:12:04.768Z",
   "result": {
-    "opsPerSecond": 452415.0929708513,
-    "meanTime": 0.0022453419999947074,
-    "variance": 2.413829943778821e-7,
-    "p99": 0.0031469000027573193,
+    "opsPerSecond": 434328.16570621205,
+    "meanTime": 0.0023681199999555248,
+    "variance": 6.227270903473679e-7,
+    "p99": 0.003707300010719336,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T05-27-53-173Z",
+    "runId": "run-2025-11-18T06-12-04-768Z",
     "mode": "production",
-    "timestamp": "2025-11-18T05:27:53.173Z",
+    "timestamp": "2025-11-18T06:12:04.768Z",
     "completedLibraries": [
       "zen",
       "jotai",

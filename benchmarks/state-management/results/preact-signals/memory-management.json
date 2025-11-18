@@ -5,18 +5,18 @@
   "version": "2.4.0",
   "test": "Memory Management",
   "group": "05-real-world",
-  "timestamp": "2025-11-18T05:27:53.173Z",
+  "timestamp": "2025-11-18T06:12:04.768Z",
   "result": {
-    "opsPerSecond": 114425.5956685826,
-    "meanTime": 0.009367583999890485,
-    "variance": 0.00023774924994384306,
-    "p99": 0.01872570999417803,
+    "opsPerSecond": 124645.53647519353,
+    "meanTime": 0.009183112000057008,
+    "variance": 0.0004844181778400833,
+    "p99": 0.017073610002407803,
     "samples": 1000
   },
   "runMetadata": {
-    "runId": "run-2025-11-18T05-27-53-173Z",
+    "runId": "run-2025-11-18T06-12-04-768Z",
     "mode": "production",
-    "timestamp": "2025-11-18T05:27:53.173Z",
+    "timestamp": "2025-11-18T06:12:04.768Z",
     "completedLibraries": [
       "zen",
       "jotai",
